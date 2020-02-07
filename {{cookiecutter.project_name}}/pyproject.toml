@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "{{cookiecutter.project_name}}"
-version = "0.2.2"
+version = "{{cookiecutter.version}}"
 description = "The hypermodern Python project"
 authors = ["{{cookiecutter.author}} <mail@claudiojolowicz.com>"]
 license = "MIT"
