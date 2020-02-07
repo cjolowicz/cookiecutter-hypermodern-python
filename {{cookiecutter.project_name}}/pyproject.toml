@@ -5,8 +5,8 @@ description = "The hypermodern Python project"
 authors = ["{{cookiecutter.author}} <mail@claudiojolowicz.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/cjolowicz/{{cookiecutter.project_name}}"
-repository = "https://github.com/cjolowicz/{{cookiecutter.project_name}}"
+homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
+repository = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 keywords = ["hypermodern"]
 
