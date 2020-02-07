@@ -101,7 +101,7 @@ def pytype(session: Session) -> None:
 @nox.session(python=["3.8", "3.7"])
 def tests(session: Session) -> None:
     """Run the test suite."""
-    args = session.posargs or ["--cov", "-m", "not e2e"]
+    args = session.posargs or ["--cov"]
     session.run("poetry", "install", "--no-dev", external=True)
     install_with_constraints(
         session, "coverage[toml]", "pytest", "pytest-cov", "pytest-mock"
@@ -112,10 +112,9 @@ def tests(session: Session) -> None:
 @nox.session(python=["3.8", "3.7"])
 def typeguard(session: Session) -> None:
     """Runtime type checking using Typeguard."""
-    args = session.posargs or ["-m", "not e2e"]
     session.run("poetry", "install", "--no-dev", external=True)
     install_with_constraints(session, "pytest", "pytest-mock", "typeguard")
-    session.run("pytest", f"--typeguard-packages={package}", *args)
+    session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
 
 
 @nox.session(python=["3.8", "3.7"])
