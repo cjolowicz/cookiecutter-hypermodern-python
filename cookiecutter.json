@@ -1,3 +1,4 @@
 {
-  "project_name": "hypermodern-python"
+  "project_name": "hypermodern-python",
+  "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
 }

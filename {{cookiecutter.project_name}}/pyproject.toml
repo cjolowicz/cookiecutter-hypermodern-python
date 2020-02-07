@@ -42,14 +42,14 @@ sphinx-autodoc-typehints = "^1.10.3"
 codecov = "^2.0.15"
 
 [tool.poetry.scripts]
-{{cookiecutter.project_name}} = "hypermodern_python.console:main"
+{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.console:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
 
 [tool.coverage.run]
 branch = true
-source = ["hypermodern_python"]
+source = ["{{cookiecutter.package_name}}"]
 
 [tool.coverage.report]
 show_missing = true

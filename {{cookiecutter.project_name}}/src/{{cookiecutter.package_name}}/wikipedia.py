@@ -46,7 +46,7 @@ def random_page(language: str = "en") -> Page:
             contained an invalid body.
 
     Example:
-        >>> from hypermodern_python import wikipedia
+        >>> from {{cookiecutter.package_name}} import wikipedia
         >>> page = wikipedia.random_page(language="en")
         >>> bool(page.title)
         True

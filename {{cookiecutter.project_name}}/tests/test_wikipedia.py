@@ -4,7 +4,7 @@ from unittest.mock import Mock
 import click
 import pytest
 
-from hypermodern_python import wikipedia
+from {{cookiecutter.package_name}} import wikipedia
 
 
 def test_random_page_uses_given_language(mock_requests_get: Mock) -> None:

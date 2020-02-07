@@ -1,1 +1,1 @@
-"""Test suite for the hypermodern_python package."""
+"""Test suite for the {{cookiecutter.package_name}} package."""

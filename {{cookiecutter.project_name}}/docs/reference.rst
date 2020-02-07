@@ -6,15 +6,15 @@ Reference
     :backlinks: none
 
 
-hypermodern_python.console
+{{cookiecutter.package_name}}.console
 --------------------------
 
-.. automodule:: hypermodern_python.console
+.. automodule:: {{cookiecutter.package_name}}.console
    :members:
 
 
-hypermodern_python.wikipedia
+{{cookiecutter.package_name}}.wikipedia
 ----------------------------
 
-.. automodule:: hypermodern_python.wikipedia
+.. automodule:: {{cookiecutter.package_name}}.wikipedia
    :members:
