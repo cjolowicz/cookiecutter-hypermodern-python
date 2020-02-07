@@ -2,7 +2,7 @@
 name = "{{cookiecutter.project_name}}"
 version = "{{cookiecutter.version}}"
 description = "The hypermodern Python project"
-authors = ["{{cookiecutter.author}} <mail@claudiojolowicz.com>"]
+authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
