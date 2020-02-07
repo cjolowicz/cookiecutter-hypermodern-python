@@ -1,4 +1,4 @@
-The Hypermodern Python Project
+{{cookiecutter.friendly_name}}
 ==============================
 
 .. toctree::
@@ -18,7 +18,7 @@ using the `Wikipedia API <https://en.wikipedia.org/api/rest_v1/#/>`_.
 Installation
 ------------
 
-To install the Hypermodern Python project,
+To install {{cookiecutter.friendly_name}},
 run this command in your terminal:
 
 .. code-block:: console
@@ -29,7 +29,7 @@ run this command in your terminal:
 Usage
 -----
 
-Hypermodern Python's usage looks like:
+{{cookiecutter.friendly_name}}'s usage looks like:
 
 .. code-block:: console
 

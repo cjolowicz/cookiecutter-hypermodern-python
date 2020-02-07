@@ -1,6 +1,7 @@
 {
   "project_name": "hypermodern-python",
   "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
+  "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
   "author": "Claudio Jolowicz",
   "email": "mail@claudiojolowicz.com",
   "github_user": "cjolowicz",

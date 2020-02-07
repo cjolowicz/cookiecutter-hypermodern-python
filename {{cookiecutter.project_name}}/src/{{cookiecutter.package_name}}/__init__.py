@@ -1,4 +1,4 @@
-"""The hypermodern Python project."""
+"""{{cookiecutter.friendly_name}}."""
 try:
     from importlib.metadata import version, PackageNotFoundError  # type: ignore
 except ImportError:  # pragma: no cover

@@ -17,7 +17,7 @@ from . import __version__, wikipedia
 )
 @click.version_option(version=__version__)
 def main(language: str) -> None:
-    """The hypermodern Python project."""
+    """{{cookiecutter.friendly_name}}."""
     page = wikipedia.random_page(language=language)
 
     click.secho(page.title, fg="green")
