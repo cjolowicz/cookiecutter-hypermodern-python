@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@v5.6.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
