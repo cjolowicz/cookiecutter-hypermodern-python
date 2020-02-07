@@ -4,6 +4,3 @@
 [![Read the Docs](https://readthedocs.org/projects/{{cookiecutter.project_name}}/badge/)](https://{{cookiecutter.project_name}}.readthedocs.io/)
 
 # {{cookiecutter.project_name}}
-
-Companion repository for the Hypermodern Python article series<br>
-https://medium.com/@cjolowicz/{{cookiecutter.project_name}}-d44485d9d769
