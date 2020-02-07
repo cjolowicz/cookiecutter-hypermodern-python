@@ -8,8 +8,7 @@
    license
    reference
 
-The command-line interface prints random facts to your console,
-using the `Wikipedia API <https://en.wikipedia.org/api/rest_v1/#/>`_.
+This package has a command-line interface.
 
 
 Installation
@@ -31,13 +30,6 @@ Usage
 .. code-block:: console
 
    $ {{cookiecutter.project_name}} [OPTIONS]
-
-.. option:: -l <language>, --language <language>
-
-   The Wikipedia language edition,
-   as identified by its subdomain on
-   `wikipedia.org <https://www.wikipedia.org/>`_.
-   By default, the English Wikipedia is selected.
 
 .. option:: --version
 

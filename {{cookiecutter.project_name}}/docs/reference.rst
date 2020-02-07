@@ -11,10 +11,3 @@ Reference
 
 .. automodule:: {{cookiecutter.package_name}}.console
    :members:
-
-
-{{cookiecutter.package_name}}.wikipedia
-----------------------------
-
-.. automodule:: {{cookiecutter.package_name}}.wikipedia
-   :members:
