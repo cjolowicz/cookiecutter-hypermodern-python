@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "hypermodern-python"
+version = "0.2.2"
+description = "The hypermodern Python project"
+authors = ["Claudio Jolowicz <mail@claudiojolowicz.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/cjolowicz/hypermodern-python"
+repository = "https://github.com/cjolowicz/hypermodern-python"
+documentation = "https://hypermodern-python.readthedocs.io"
+keywords = ["hypermodern"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^7.0"
+requests = "^2.22.0"
+marshmallow = "^3.3.0"
+desert = "^2020.1.6"
+importlib-metadata = {version = "^1.5.0", python = "<3.8"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.3.2"
+coverage = {extras = ["toml"], version = "^5.0.1"}
+pytest-cov = "^2.8.1"
+pytest-mock = "^2.0.0"
+flake8 = "^3.7.9"
+black = "^19.10b0"
+flake8-black = "^0.1.1"
+flake8-import-order = "^0.18.1"
+flake8-bugbear = "^20.1.2"
+flake8-bandit = "^2.1.2"
+safety = "^1.8.5"
+mypy = "^0.761"
+pytype = {version = "^2020.1.8", python = "3.7"}
+flake8-annotations = "^1.1.3"
+typeguard = "^2.7.1"
+flake8-docstrings = "^1.5.0"
+darglint = "^1.1.2"
+xdoctest = "^0.11.0"
+sphinx = "^2.3.1"
+sphinx-autodoc-typehints = "^1.10.3"
+codecov = "^2.0.15"
+
+[tool.poetry.scripts]
+hypermodern-python = "hypermodern_python.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["hypermodern_python"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
