@@ -9,7 +9,7 @@ The Hypermodern Python Project
    reference
 
 The example project for the
-`Hypermodern Python <https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769>`_
+`Hypermodern Python <https://medium.com/@cjolowicz/{{cookiecutter.project_name}}-d44485d9d769>`_
 article series.
 The command-line interface prints random facts to your console,
 using the `Wikipedia API <https://en.wikipedia.org/api/rest_v1/#/>`_.
@@ -23,7 +23,7 @@ run this command in your terminal:
 
 .. code-block:: console
 
-   $ pip install hypermodern-python
+   $ pip install {{cookiecutter.project_name}}
 
 
 Usage
@@ -33,7 +33,7 @@ Hypermodern Python's usage looks like:
 
 .. code-block:: console
 
-   $ hypermodern-python [OPTIONS]
+   $ {{cookiecutter.project_name}} [OPTIONS]
 
 .. option:: -l <language>, --language <language>
 

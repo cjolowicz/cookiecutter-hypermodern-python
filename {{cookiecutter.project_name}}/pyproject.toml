@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "hypermodern-python"
+name = "{{cookiecutter.project_name}}"
 version = "0.2.2"
 description = "The hypermodern Python project"
 authors = ["Claudio Jolowicz <mail@claudiojolowicz.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/cjolowicz/hypermodern-python"
-repository = "https://github.com/cjolowicz/hypermodern-python"
-documentation = "https://hypermodern-python.readthedocs.io"
+homepage = "https://github.com/cjolowicz/{{cookiecutter.project_name}}"
+repository = "https://github.com/cjolowicz/{{cookiecutter.project_name}}"
+documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 keywords = ["hypermodern"]
 
 [tool.poetry.dependencies]
@@ -42,7 +42,7 @@ sphinx-autodoc-typehints = "^1.10.3"
 codecov = "^2.0.15"
 
 [tool.poetry.scripts]
-hypermodern-python = "hypermodern_python.console:main"
+{{cookiecutter.project_name}} = "hypermodern_python.console:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
