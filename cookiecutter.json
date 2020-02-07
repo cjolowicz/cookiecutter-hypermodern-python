@@ -1,4 +1,5 @@
 {
   "project_name": "hypermodern-python",
   "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
+  "author": "Claudio Jolowicz"
 }
