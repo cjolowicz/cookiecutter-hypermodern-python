@@ -8,7 +8,6 @@ readme = "README.md"
 homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 repository = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
-keywords = ["hypermodern"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
