@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.friendly_name}}"
+authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
+repository = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
+documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^7.0"
+importlib-metadata = {version = "^1.5.0", python = "<3.8"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.3.2"
+coverage = {extras = ["toml"], version = "^5.0.1"}
+pytest-cov = "^2.8.1"
+flake8 = "^3.7.9"
+black = "^19.10b0"
+flake8-black = "^0.1.1"
+flake8-import-order = "^0.18.1"
+flake8-bugbear = "^20.1.2"
+flake8-bandit = "^2.1.2"
+safety = "^1.8.5"
+mypy = "^0.761"
+pytype = {version = "^2020.1.8", python = "3.7"}
+flake8-annotations = "^1.1.3"
+typeguard = "^2.7.1"
+flake8-docstrings = "^1.5.0"
+darglint = "^1.1.2"
+xdoctest = "^0.11.0"
+sphinx = "^2.3.1"
+sphinx-autodoc-typehints = "^1.10.3"
+codecov = "^2.0.15"
+
+[tool.poetry.scripts]
+{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["{{cookiecutter.package_name}}"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
