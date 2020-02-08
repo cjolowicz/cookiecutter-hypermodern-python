@@ -1,3 +1,5 @@
+<p align="center"><img alt="Logo" src="Logo.png" width="50%" /></p>
+
 # cookiecutter-hypermodern-python
 
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
