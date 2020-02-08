@@ -2,6 +2,8 @@
 
 # cookiecutter-hypermodern-python
 
+[![Tests](https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg)](https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests)
+
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
 Python package based on the
 [Hypermodern Python](https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769)
