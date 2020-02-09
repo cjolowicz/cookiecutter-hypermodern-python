@@ -604,7 +604,7 @@ marker = "python_version == \"3.7\""
 name = "pytype"
 optional = false
 python-versions = "*"
-version = "2020.1.8"
+version = "2020.2.6"
 
 [package.dependencies]
 attrs = "*"
@@ -1195,7 +1195,7 @@ pytest-cov = [
     {file = "pytest_cov-2.8.1-py2.py3-none-any.whl", hash = "sha256:cdbdef4f870408ebdbfeb44e63e07eb18bb4619fae852f6e760645fa36172626"},
 ]
 pytype = [
-    {file = "pytype-2020.1.8.tar.gz", hash = "sha256:9312283c9db829f9abaa12bb8cb20a5a3cef6911feb11e837f7d6d996206015f"},
+    {file = "pytype-2020.2.6.tar.gz", hash = "sha256:53803f0f1fadf4923efc88a0bd0cfa4c242d2fa3f04421b6f8ab4d658ffd2b90"},
 ]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
