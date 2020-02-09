@@ -396,7 +396,7 @@ python-versions = "*"
 version = "0.6.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "More routines for operating on iterables, beyond itertools"
 name = "more-itertools"
 optional = false
@@ -899,14 +899,11 @@ marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
-version = "2.0.0"
-
-[package.dependencies]
-more-itertools = "*"
+version = "2.2.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pathlib2", "contextlib2", "unittest2"]
+testing = ["jaraco.itertools"]
 
 [metadata]
 content-hash = "987c33948b7f1609d976d013aced15d85ab545142294b3b5a7a5a2020f1ea4ab"
@@ -1343,6 +1340,6 @@ xdoctest = [
     {file = "xdoctest-0.11.0.tar.gz", hash = "sha256:71951c60bb8b15fdf3c368c5636a6bbbd658ef5c2e5949e784adf5e1a1275fbd"},
 ]
 zipp = [
-    {file = "zipp-2.0.0-py3-none-any.whl", hash = "sha256:57147f6b0403b59f33fd357f169f860e031303415aeb7d04ede4839d23905ab8"},
-    {file = "zipp-2.0.0.tar.gz", hash = "sha256:7ae5ccaca427bafa9760ac3cd8f8c244bfc259794b5b6bb9db4dda2241575d09"},
+    {file = "zipp-2.2.0-py36-none-any.whl", hash = "sha256:d65287feb793213ffe11c0f31b81602be31448f38aeb8ffc2eb286c4f6f6657e"},
+    {file = "zipp-2.2.0.tar.gz", hash = "sha256:5c56e330306215cd3553342cfafc73dda2c60792384117893f3a83f8a1209f50"},
 ]
