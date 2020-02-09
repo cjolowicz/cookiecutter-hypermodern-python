@@ -22,6 +22,6 @@ categories:
   - title: ':rotating_light: Testing'
     label: 'testing'
 template: |
-  ## What’s Changed
+  ## Changes
 
   $CHANGES
