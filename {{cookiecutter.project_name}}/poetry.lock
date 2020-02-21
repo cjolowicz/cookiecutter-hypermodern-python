@@ -212,18 +212,15 @@ category = "dev"
 description = "Flake8 Type Annotation Checks"
 name = "flake8-annotations"
 optional = false
-python-versions = ">=3.6"
-version = "1.1.3"
+python-versions = ">=3.6,<4.0"
+version = "2.0.0"
 
 [package.dependencies]
-flake8 = ">=3.7.9,<3.8"
+flake8 = ">=3.7.9,<4.0.0"
 
 [package.dependencies.typed-ast]
 python = "<3.8"
 version = ">=1.4,<2.0"
-
-[package.extras]
-dev = ["flake8-bugbear (>=19.8,<20.0)", "flake8-docstrings (>=1.5,<2.0)", "flake8-formatter-junit-xml (>=0.0,<1.0)", "flake8-import-order (>=0.18,<1.0)", "flake8-tidy-imports (>=3.1,<4.0)", "flake8-todo (>=0.7,<1.0)", "pipenv-setup (>=2.2,<3.0)", "pre-commit (>=1.20,<2.0)", "pytest (>=5.3,<6.0)", "pytest-check (>=0.3,<1.0)", "pytest-cov (>=2.8,<3.0)", "tox (>=3.14,<4.0)"]
 
 [[package]]
 category = "dev"
@@ -906,7 +903,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools"]
 
 [metadata]
-content-hash = "987c33948b7f1609d976d013aced15d85ab545142294b3b5a7a5a2020f1ea4ab"
+content-hash = "fa708e72f95c4dc2c2fb851dbb96489275957d8d308dfc9f05fef74fe1406a22"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -1016,8 +1013,8 @@ flake8 = [
     {file = "flake8-3.7.9.tar.gz", hash = "sha256:45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb"},
 ]
 flake8-annotations = [
-    {file = "flake8-annotations-1.1.3.tar.gz", hash = "sha256:43e5233a76fda002b91a54a7cc4510f099c4bfd6279502ec70164016250eebd1"},
-    {file = "flake8_annotations-1.1.3-py3-none-any.whl", hash = "sha256:05b85538014c850a86dce7374bb6621c64481c24e35e8e90af1315f4d7a3dbaa"},
+    {file = "flake8-annotations-2.0.0.tar.gz", hash = "sha256:19a6637a5da1bb7ea7948483ca9e2b9e15b213e687e7bf5ff8c1bfc91c185006"},
+    {file = "flake8_annotations-2.0.0-py3-none-any.whl", hash = "sha256:bb033b72cdd3a2b0a530bbdf2081f12fbea7d70baeaaebb5899723a45f424b8e"},
 ]
 flake8-bandit = [
     {file = "flake8_bandit-2.1.2.tar.gz", hash = "sha256:687fc8da2e4a239b206af2e54a90093572a60d0954f3054e23690739b0b0de3b"},
