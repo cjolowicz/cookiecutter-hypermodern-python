@@ -300,8 +300,8 @@ category = "dev"
 description = "Git Object Database"
 name = "gitdb2"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.0.6"
+python-versions = ">=3.4"
+version = "3.0.2"
 
 [package.dependencies]
 smmap2 = ">=2.0.0"
@@ -1039,8 +1039,8 @@ flake8-polyfill = [
     {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
 ]
 gitdb2 = [
-    {file = "gitdb2-2.0.6-py2.py3-none-any.whl", hash = "sha256:96bbb507d765a7f51eb802554a9cfe194a174582f772e0d89f4e87288c288b7b"},
-    {file = "gitdb2-2.0.6.tar.gz", hash = "sha256:1b6df1433567a51a4a9c1a5a0de977aa351a405cc56d7d35f3388bad1f630350"},
+    {file = "gitdb2-3.0.2-py2.py3-none-any.whl", hash = "sha256:b2b3a67090c17dc61f8407ca485e79ae811225ab5ebcd98ac5ee01448e8987b5"},
+    {file = "gitdb2-3.0.2.tar.gz", hash = "sha256:0375d983fd887d03c8942e81b1b0abc6c320cfb500cd3fe0d9c0eac87fbf2b52"},
 ]
 gitpython = [
     {file = "GitPython-3.0.7-py3-none-any.whl", hash = "sha256:99c77677f31f255e130f3fed4c8e0eebb35f1a09df98ff965fff6774f71688cf"},
