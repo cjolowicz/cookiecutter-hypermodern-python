@@ -600,8 +600,8 @@ description = "Python type inferencer"
 marker = "python_version == \"3.7\""
 name = "pytype"
 optional = false
-python-versions = "*"
-version = "2020.2.6"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,<3.8,>=2.7"
+version = "2020.2.20"
 
 [package.dependencies]
 attrs = "*"
@@ -609,7 +609,10 @@ importlab = ">=0.5.1"
 ninja = "*"
 pyyaml = ">=3.11"
 six = "*"
-typed_ast = "*"
+
+[package.dependencies.typed_ast]
+python = ">=3.3"
+version = "*"
 
 [[package]]
 category = "dev"
@@ -1190,7 +1193,7 @@ pytest-cov = [
     {file = "pytest_cov-2.8.1-py2.py3-none-any.whl", hash = "sha256:cdbdef4f870408ebdbfeb44e63e07eb18bb4619fae852f6e760645fa36172626"},
 ]
 pytype = [
-    {file = "pytype-2020.2.6.tar.gz", hash = "sha256:53803f0f1fadf4923efc88a0bd0cfa4c242d2fa3f04421b6f8ab4d658ffd2b90"},
+    {file = "pytype-2020.2.20.tar.gz", hash = "sha256:b22aaf5dd125134cad2cb3f45231c2fd4aa158b129bff81f880a0c6d6bb3c2a8"},
 ]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
