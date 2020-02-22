@@ -8,6 +8,7 @@ from nox.sessions import Session
 
 
 package = "{{cookiecutter.package_name}}"
+python_versions = ["3.8", "3.7", "3.6"]
 nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
 locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
@@ -113,7 +114,7 @@ def black(session: Session) -> None:
     session.run("black", *args)
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session(python=python_versions)
 def lint(session: Session) -> None:
     """Lint using flake8."""
     args = session.posargs or locations
@@ -140,7 +141,7 @@ def safety(session: Session) -> None:
         session.run("safety", "check", f"--file={requirements}", "--bare")
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or locations
@@ -148,7 +149,7 @@ def mypy(session: Session) -> None:
     session.run("mypy", *args)
 
 
-@nox.session(python="3.7")
+@nox.session(python=["3.7", "3.6"])
 def pytype(session: Session) -> None:
     """Type-check using pytype."""
     args = session.posargs or ["--disable=import-error", *locations]
@@ -156,7 +157,7 @@ def pytype(session: Session) -> None:
     session.run("pytype", *args)
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session(python=python_versions)
 def tests(session: Session) -> None:
     """Run the test suite."""
     args = session.posargs or ["--cov"]
@@ -165,7 +166,7 @@ def tests(session: Session) -> None:
     session.run("pytest", *args)
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session(python=python_versions)
 def typeguard(session: Session) -> None:
     """Runtime type checking using Typeguard."""
     install_package(session)
@@ -173,7 +174,7 @@ def typeguard(session: Session) -> None:
     session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session(python=python_versions)
 def xdoctest(session: Session) -> None:
     """Run examples with xdoctest."""
     args = session.posargs or ["all"]

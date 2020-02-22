@@ -155,7 +155,7 @@ version = "1.1.3"
 [[package]]
 category = "dev"
 description = "Decorators for Humans"
-marker = "python_version == \"3.7\""
+marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "decorator"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
@@ -347,7 +347,7 @@ version = "1.2.0"
 [[package]]
 category = "dev"
 description = "A library to calculate python dependency graphs."
-marker = "python_version == \"3.7\""
+marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "importlab"
 optional = false
 python-versions = ">=2.7.0"
@@ -438,7 +438,7 @@ version = "0.4.3"
 [[package]]
 category = "dev"
 description = "Python package for creating and manipulating graphs and networks"
-marker = "python_version == \"3.7\""
+marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "networkx"
 optional = false
 python-versions = ">=3.5"
@@ -463,7 +463,7 @@ scipy = ["scipy"]
 [[package]]
 category = "dev"
 description = "Ninja is a small build system with a focus on speed"
-marker = "python_version == \"3.7\""
+marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "ninja"
 optional = false
 python-versions = "*"
@@ -608,7 +608,7 @@ testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "virtualenv"]
 [[package]]
 category = "dev"
 description = "Python type inferencer"
-marker = "python_version == \"3.7\""
+marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "pytype"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,<3.8,>=2.7"
@@ -929,8 +929,8 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "fa708e72f95c4dc2c2fb851dbb96489275957d8d308dfc9f05fef74fe1406a22"
-python-versions = "^3.7"
+content-hash = "3078c84c66c406c7779b40a23d609682f7c1869f9df1e31c2e559928573cb60d"
+python-versions = "^3.6"
 
 [metadata.files]
 alabaster = [
