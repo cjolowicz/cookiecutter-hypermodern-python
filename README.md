@@ -51,6 +51,7 @@ The linter suite uses the following tools and Flake8 plugins:
 - [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings) for integration with pydocstyle
 - [flake8-import-order](https://github.com/PyCQA/flake8-import-order) to check the order of import statements
 - [mccabe](https://github.com/PyCQA/mccabe) to limit the code complexity
+- [pep8-naming](https://github.com/pycqa/pep8-naming) to enforce naming conventions from [PEP 8](http://www.python.org/dev/peps/pep-0008/)
 - [pycodestyle](https://github.com/pycqa/pycodestyle) to enforce style conventions from [PEP 8](http://www.python.org/dev/peps/pep-0008/)
 - [pydocstyle](http://www.pydocstyle.org/) to enforce docstring conventions from [PEP 257](http://www.python.org/dev/peps/pep-0257/)
 - [pyflakes](https://github.com/PyCQA/pyflakes) to find invalid Python code
