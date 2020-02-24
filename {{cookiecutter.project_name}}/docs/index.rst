@@ -7,7 +7,7 @@
 
    license
    reference
-   Changelog <https://github.com/{{github_user}}/{{cookiecutter.project_name}}/releases>
+   Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
 
 This package has a command-line interface.
 
