@@ -195,5 +195,5 @@ def coverage(session: Session) -> None:
 def docs(session: Session) -> None:
     """Build the documentation."""
     install_package(session)
-    install(session, "sphinx", "sphinx-autodoc-typehints")
+    install(session, "recommonmark", "sphinx", "sphinx-autodoc-typehints")
     session.run("sphinx-build", "docs", "docs/_build")
