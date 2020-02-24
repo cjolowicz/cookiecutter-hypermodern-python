@@ -13,7 +13,7 @@ documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.6"
 click = "^7.0"
 importlib-metadata = {version = "^1.5.0", python = "<3.8"}
 
@@ -29,7 +29,7 @@ flake8-bugbear = "^20.1.2"
 flake8-bandit = "^2.1.2"
 safety = "^1.8.5"
 mypy = "^0.761"
-pytype = {version = "^2020.1.8", python = "3.7"}
+pytype = {version = "^2020.2.20", python = ">=3.6,<3.8"}
 flake8-annotations = "2.0.0"
 typeguard = "^2.7.1"
 flake8-docstrings = "^1.5.0"
