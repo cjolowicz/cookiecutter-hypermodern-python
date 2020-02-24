@@ -9,6 +9,9 @@ homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.proje
 repository = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 
+[tool.poetry.urls]
+Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 click = "^7.0"
