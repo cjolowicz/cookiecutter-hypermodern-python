@@ -39,7 +39,7 @@ cookiecutter https://github.com/cjolowicz/cookiecutter-hypermodern-python
   [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), and
   [sphinx-autodoc-typehints](https://github.com/agronholm/sphinx-autodoc-typehints)
 
-The template currently supports Python 3.7 and 3.8.
+The template supports Python 3.6, 3.7, and 3.8.
 
 The linter suite uses the following tools and Flake8 plugins:
 
