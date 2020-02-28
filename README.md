@@ -79,7 +79,7 @@ pip install --user --upgrade cookiecutter
 ```
 
 It is also recommended to use [pyenv](https://github.com/pyenv/pyenv) to
-set up Python 3.7 and 3.8.
+set up Python 3.6, 3.7, and 3.8.
 
 ### Creating a project
 
