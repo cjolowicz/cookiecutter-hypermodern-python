@@ -9,6 +9,6 @@ extensions = ["recommonmark"]
 html_theme_options = {
     "logo": "../../Logo.png",
     "logo_name": True,
-    "sidebar_width": "250px",
     "fixed_sidebar": True,
+    "sidebar_width": "250px",
 }
