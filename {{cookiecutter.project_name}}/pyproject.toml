@@ -37,7 +37,6 @@ darglint = "^1.1.2"
 xdoctest = "^0.11.0"
 sphinx = "^2.3.1"
 sphinx-autodoc-typehints = "^1.10.3"
-codecov = "^2.0.15"
 recommonmark = "^0.6.0"
 pep8-naming = "^0.9.1"
 
