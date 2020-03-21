@@ -5,6 +5,11 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: https://github.com/prettier/prettier
+    rev: 1.19.1
+    hooks:
+      - id: prettier
+        args: [--prose-wrap=always, --print-width=88]
   - repo: local
     hooks:
       - id: black
