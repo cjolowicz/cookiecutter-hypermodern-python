@@ -3,6 +3,7 @@
 # cookiecutter-hypermodern-python
 
 [![Tests](https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg)](https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests)
+[![calver YYYY.MM.DD](https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg)](http://calver.org/)
 
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template for a
 Python package based on the
