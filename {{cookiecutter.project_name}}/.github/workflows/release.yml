@@ -15,5 +15,7 @@ jobs:
       - run: pip install poetry==1.0.3
       - run: nox
       - run: poetry build
-      - run:
-          poetry publish --username=__token__ --password={% raw %}${{ secrets.PYPI_TOKEN }}{% endraw %}
+      - uses: pypa/gh-action-pypi-publish@v1.1.0
+        with:
+          user: __token__
+          password: {% raw %}${{ secrets.PYPI_TOKEN }}{% endraw %}

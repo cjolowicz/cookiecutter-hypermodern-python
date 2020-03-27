@@ -18,7 +18,7 @@ jobs:
           version=$(poetry version | awk '{print $2}') &&
           poetry version $version.dev.$(date +%s)
       - run: poetry build
-      - uses: pypa/gh-action-pypi-publish@v1.0.0a0
+      - uses: pypa/gh-action-pypi-publish@v1.1.0
         with:
           user: __token__
           password: {% raw %}${{ secrets.TEST_PYPI_TOKEN }}{% endraw %}
