@@ -131,10 +131,6 @@ nox --list-sessions
 
 1. Sign up at [Codecov](https://codecov.io/), and install their GitHub app.
 2. Add your repository to Codecov.
-3. Go to your repository settings on Codecov,
-   and copy the _Repository Upload Token_.
-4. Go to your repository settings on GitHub,
-   and add a secret named `CODECOV_TOKEN` with the token you just copied.
 
 #### Read the Docs
 
