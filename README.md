@@ -79,7 +79,7 @@ pip install --user --upgrade cookiecutter
 ```
 
 It is also recommended to use [pyenv](https://github.com/pyenv/pyenv) to
-set up Python 3.7 and 3.8.
+set up Python 3.6, 3.7, and 3.8.
 
 ### Creating a project
 
@@ -172,7 +172,7 @@ Create the remaining labels on the Issues tab of your GitHub repository.
 
 When upgrading Sphinx or its extensions using Poetry,
 also update the requirements located in
-[docs/requirements.txt]([docs/requirements.txt])
+[docs/requirements.txt]({{cookiecutter.project_name}}/docs/requirements.txt)
 for Read the Docs.
 
 ## Guide
