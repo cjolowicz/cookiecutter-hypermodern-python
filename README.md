@@ -23,7 +23,7 @@ cookiecutter https://github.com/cjolowicz/cookiecutter-hypermodern-python
 - Documentation with [Sphinx](http://www.sphinx-doc.org/) and [Read the Docs](https://readthedocs.org/)
 - Automated uploads to [PyPI](https://pypi.org/) and [TestPyPI](https://test.pypi.org)
 - Automated release notes with [Release Drafter](https://github.com/release-drafter/release-drafter)
-- Code formatting with [Black](https://github.com/psf/black)
+- Code formatting with [Black](https://github.com/psf/black) and [Prettier](https://github.com/prettier/prettier)
 - Testing with [Pytest](https://docs.pytest.org/en/latest/)
 - Code coverage with [Coverage.py](https://coverage.readthedocs.io/)
 - Coverage reporting with [Codecov](https://codecov.io/)
