@@ -9,7 +9,6 @@ repos:
     rev: 1.19.1
     hooks:
       - id: prettier
-        args: [--prose-wrap=always, --print-width=88]
   - repo: local
     hooks:
       - id: black
