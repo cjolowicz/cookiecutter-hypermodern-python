@@ -7,19 +7,19 @@ jobs:
   test_pypi:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.8'
-        architecture: x64
-    - run: pip install poetry==1.0.3
-    - run: >-
-        poetry version patch &&
-        version=$(poetry version | awk '{print $2}') &&
-        poetry version $version.dev.$(date +%s)
-    - run: poetry build
-    - uses: pypa/gh-action-pypi-publish@v1.0.0a0
-      with:
-        user: __token__
-        password: {% raw %}${{ secrets.TEST_PYPI_TOKEN }}{% endraw %}
-        repository_url: https://test.pypi.org/legacy/
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+          architecture: x64
+      - run: pip install poetry==1.0.3
+      - run: >-
+          poetry version patch &&
+          version=$(poetry version | awk '{print $2}') &&
+          poetry version $version.dev.$(date +%s)
+      - run: poetry build
+      - uses: pypa/gh-action-pypi-publish@v1.0.0a0
+        with:
+          user: __token__
+          password: {% raw %}${{ secrets.TEST_PYPI_TOKEN }}{% endraw %}
+          repository_url: https://test.pypi.org/legacy/

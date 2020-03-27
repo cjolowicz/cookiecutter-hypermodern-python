@@ -34,7 +34,7 @@ cookiecutter https://github.com/cjolowicz/cookiecutter-hypermodern-python
 - Security audit with [Bandit](https://github.com/PyCQA/bandit) and [Safety](https://github.com/pyupio/safety)
 - Git hook management with [pre-commit](https://pre-commit.com/)
 - Check documentation examples with [xdoctest](https://github.com/Erotemic/xdoctest)
-- Generate API documentation with 
+- Generate API documentation with
   [autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html),
   [napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), and
   [sphinx-autodoc-typehints](https://github.com/agronholm/sphinx-autodoc-typehints)
@@ -132,14 +132,14 @@ nox --list-sessions
 1. Sign up at [Codecov](https://codecov.io/), and install their GitHub app.
 2. Add your repository to Codecov.
 3. Go to your repository settings on Codecov,
-   and copy the *Repository Upload Token*.
+   and copy the _Repository Upload Token_.
 4. Go to your repository settings on GitHub,
    and add a secret named `CODECOV_TOKEN` with the token you just copied.
 
 #### Read the Docs
 
 1. Sign up at [Read the Docs](https://readthedocs.org/).
-2. Import your GitHub repository, using the button *Import a Project*.
+2. Import your GitHub repository, using the button _Import a Project_.
 
 ### Releasing
 
@@ -152,7 +152,7 @@ Release notes are pre-filled with titles and authors of merged pull requests.
 Use labels to group the pull requests into sections:
 
 | Label           | Section                                      |
-| ---             | ---                                          |
+| --------------- | -------------------------------------------- |
 | `breaking`      | :boom: Breaking Changes                      |
 | `bug`           | :beetle: Fixes                               |
 | `build`         | :package: Build System and Dependencies      |

@@ -1,18 +1,22 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
-    -   id: check-yaml
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
--   repo: local
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/prettier/prettier
+    rev: 1.19.1
     hooks:
-    -   id: black
+      - id: prettier
+  - repo: local
+    hooks:
+      - id: black
         name: black
         entry: poetry run black
         language: system
         types: [python]
-    -   id: flake8
+      - id: flake8
         name: flake8
         entry: poetry run flake8
         language: system
