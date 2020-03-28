@@ -9,7 +9,7 @@ from nox.sessions import Session
 @nox.session
 def docs(session: Session) -> None:
     """Build the documentation."""
-    args = session.posargs or ["docs", "docs/_build"]
+    args = session.posargs or ["-W", "docs", "docs/_build"]
 
     if session.interactive and not session.posargs:
         args.append("--open-browser")
