@@ -1,5 +1,7 @@
 """Nox sessions."""
 import contextlib
+from pathlib import Path
+import shutil
 import tempfile
 from typing import Iterator
 
@@ -195,6 +197,9 @@ def coverage(session: Session) -> None:
 @nox.session(python="3.8")
 def docs(session: Session) -> None:
     """Build the documentation."""
+    builddir = Path("docs", "_build")
+    if builddir.exists():
+        shutil.rmtree(builddir)
     install_package(session)
     install(session, "recommonmark", "sphinx", "sphinx-autodoc-typehints")
     session.run("sphinx-build", "docs", "docs/_build")
