@@ -64,6 +64,12 @@ The linter suite uses the following tools and Flake8 plugins:
 
 ### Requirements
 
+Install Cookiecutter:
+
+```sh
+pipx install cookiecutter
+```
+
 Install Poetry:
 
 ```sh
@@ -76,17 +82,11 @@ Install Nox:
 pipx install nox
 ```
 
-Install the Cookiecutter:
-
-```sh
-pipx install cookiecutter
-```
-
-It is also recommended to use [pyenv](https://github.com/pyenv/pyenv) to
-set up Python 3.6, 3.7, and 3.8.
-
 [pipx](https://github.com/pipxproject/pipx) is preferred,
 but you can also install with `pip install --user`.
+
+It is recommended to set up Python 3.6, 3.7, and 3.8
+using [pyenv](https://github.com/pyenv/pyenv).
 
 ### Creating a project
 
@@ -94,11 +94,18 @@ Generate a Python project:
 
 ```sh
 cookiecutter \
-    https://github.com/cjolowicz/cookiecutter-hypermodern-python \
-    --checkout=2020.3.27
+   https://github.com/cjolowicz/cookiecutter-hypermodern-python \
+   --checkout=2020.3.27
 ```
 
-Change to the root directory of your new project.
+Change to the root directory of your new project,
+and create a Git repository:
+
+```sh
+git init
+git add .
+git commit
+```
 
 ### Local testing
 
@@ -114,27 +121,28 @@ List the available Nox sessions:
 nox --list-sessions
 ```
 
-### External Services
+### Continuous Integration
+
+#### GitHub
+
+1. Create an empty repository for your project.
+2. Follow the instructions to push an existing repository from the command line.
 
 #### PyPI
 
 1. Sign up at [PyPI](https://pypi.org/).
 2. Go to the Account Settings on PyPI,
-   generate an API token,
-   and copy it.
-3. Go to the repository settings on GitHub,
-   and add a secret named `PYPI_TOKEN`
-   with the token you just copied.
+   generate an API token, and copy it.
+3. Go to the repository settings on GitHub, and
+   add a secret named `PYPI_TOKEN` with the token you just copied.
 
 #### TestPyPI
 
 1. Sign up at [TestPyPI](https://test.pypi.org/).
 2. Go to the Account Settings on TestPyPI,
-   generate an API token,
-   and copy it.
-3. Go to the repository settings on GitHub,
-   and add a secret named `TEST_PYPI_TOKEN`
-   with the token you just copied.
+   generate an API token, and copy it.
+3. Go to the repository settings on GitHub, and
+   add a secret named `TEST_PYPI_TOKEN` with the token you just copied.
 
 #### Codecov
 
