@@ -13,7 +13,9 @@ article series.
 ## Usage
 
 ```sh
-cookiecutter https://github.com/cjolowicz/cookiecutter-hypermodern-python
+cookiecutter \
+    https://github.com/cjolowicz/cookiecutter-hypermodern-python \
+    --checkout=2020.3.27
 ```
 
 ## Features
@@ -91,7 +93,9 @@ but you can also install with `pip install --user`.
 Generate a Python project:
 
 ```sh
-cookiecutter https://github.com/cjolowicz/cookiecutter-hypermodern-python
+cookiecutter \
+    https://github.com/cjolowicz/cookiecutter-hypermodern-python \
+    --checkout=2020.3.27
 ```
 
 Change to the root directory of your new project.
