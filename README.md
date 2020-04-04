@@ -44,22 +44,6 @@ cookiecutter \
 
 The template supports Python 3.6, 3.7, and 3.8.
 
-The linter suite uses the following tools and Flake8 plugins:
-
-- [darglint](https://github.com/terrencepreilly/darglint) to detect inaccurate docstrings
-- [flake8-annotations](https://github.com/python-discord/flake8-annotations) to enforce type coverage
-- [flake8-bandit](https://github.com/tylerwince/flake8-bandit) for integration with Bandit
-- [flake8-black](https://github.com/peterjc/flake8-black) for integration with Black
-- [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear) to detect bugs and design problems
-- [flake8-docstrings](https://gitlab.com/pycqa/flake8-docstrings) for integration with pydocstyle
-- [flake8-import-order](https://github.com/PyCQA/flake8-import-order) to check the order of import statements
-- [flake8-rst-docstrings](https://github.com/peterjc/flake8-rst-docstrings) to check that docstrings are valid reStructuredText
-- [mccabe](https://github.com/PyCQA/mccabe) to limit the code complexity
-- [pep8-naming](https://github.com/pycqa/pep8-naming) to enforce naming conventions from [PEP 8](http://www.python.org/dev/peps/pep-0008/)
-- [pycodestyle](https://github.com/pycqa/pycodestyle) to enforce style conventions from [PEP 8](http://www.python.org/dev/peps/pep-0008/)
-- [pydocstyle](http://www.pydocstyle.org/) to enforce docstring conventions from [PEP 257](http://www.python.org/dev/peps/pep-0257/)
-- [pyflakes](https://github.com/PyCQA/pyflakes) to find invalid Python code
-
 ## Quickstart
 
 ### Requirements
