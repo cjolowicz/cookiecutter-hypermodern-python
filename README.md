@@ -71,17 +71,20 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 Install Nox:
 
 ```sh
-pip install --user --upgrade nox
+pipx install nox
 ```
 
-Install the latest Cookiecutter:
+Install the Cookiecutter:
 
 ```sh
-pip install --user --upgrade cookiecutter
+pipx install cookiecutter
 ```
 
 It is also recommended to use [pyenv](https://github.com/pyenv/pyenv) to
 set up Python 3.6, 3.7, and 3.8.
+
+[pipx](https://github.com/pipxproject/pipx) is preferred,
+but you can also install with `pip install --user`.
 
 ### Creating a project
 
