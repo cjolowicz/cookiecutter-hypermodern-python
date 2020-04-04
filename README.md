@@ -13,8 +13,7 @@ article series.
 ## Usage
 
 ```sh
-cookiecutter \
-    https://github.com/cjolowicz/cookiecutter-hypermodern-python \
+cookiecutter gh:cookiecutter-hypermodern-python \
     --checkout=2020.3.27
 ```
 
@@ -78,7 +77,7 @@ Generate a Python project:
 
 ```sh
 cookiecutter \
-   https://github.com/cjolowicz/cookiecutter-hypermodern-python \
+   gh:cjolowicz/cookiecutter-hypermodern-python \
    --checkout=2020.3.27
 ```
 
