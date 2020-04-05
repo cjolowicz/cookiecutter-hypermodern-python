@@ -197,3 +197,7 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the `bug`, `enhancement`, and `documentation` labels for you.
 Create the remaining labels on the Issues tab of your GitHub repository.
+
+## Documentation
+
+[Read the full documentation][docs]
