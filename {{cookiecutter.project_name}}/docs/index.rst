@@ -5,11 +5,11 @@
    :hidden:
    :maxdepth: 1
 
-   license
    reference
-   Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
    CONTRIBUTING
    Code of Conduct <CODE_OF_CONDUCT>
+   license
+   Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
 
 This package has a command-line interface.
 
