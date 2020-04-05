@@ -11,11 +11,11 @@ Here is a list of important resources for contributors:
 - [Issue Tracker]
 - [Code of Conduct]
 
-[MIT License]: https://opensource.org/licenses/MIT
-[Source Code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-[Documentation]: https://{{cookiecutter.project_name}}.readthedocs.io/
-[Issue Tracker]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
-[Code of Conduct]: CODE_OF_CONDUCT.md
+[mit license]: https://opensource.org/licenses/MIT
+[source code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
+[documentation]: https://{{cookiecutter.project_name}}.readthedocs.io/
+[issue tracker]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
+[code of conduct]: CODE_OF_CONDUCT.md
 
 ## How to report a bug
 
@@ -57,8 +57,8 @@ $ poetry run python
 $ poetry run {{cookiecutter.project_name}}
 ```
 
-[Poetry]: https://python-poetry.org/
-[Nox]: https://nox.thea.codes/
+[poetry]: https://python-poetry.org/
+[nox]: https://nox.thea.codes/
 
 ## How to test the project
 
@@ -108,4 +108,4 @@ It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
 [pull request]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
-[Black]: https://black.readthedocs.io/
+[black]: https://black.readthedocs.io/
