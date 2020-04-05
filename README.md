@@ -3,12 +3,14 @@
 # cookiecutter-hypermodern-python
 
 [![Tests](https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg)][tests]
+[![Read the Docs](https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/)][docs]
 [![calver YYYY.MM.DD](https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg)][calver]
 
 [Cookiecutter] template for a Python package based on the
 [Hypermodern Python] article series.
 
 [tests]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
+[docs]: https://cookiecutter-hypermodern-python.readthedocs.io/
 [calver]: http://calver.org/
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
