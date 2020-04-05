@@ -2053,7 +2053,8 @@ from the local repository as well:
 
 .. code:: console
 
-   $ git branch --delete --force --remotes my-topic-branch
+   $ git remote prune origin
+   $ git branch --delete --force my-topic-branch
 
 The original commits remain accessible from the pull request
 (*Commits* tab).
