@@ -197,10 +197,3 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the `bug`, `enhancement`, and `documentation` labels for you.
 Create the remaining labels on the Issues tab of your GitHub repository.
-
-## Caveats
-
-When upgrading Sphinx or its extensions using Poetry,
-also update the requirements located in [docs/requirements.txt] for Read the Docs.
-
-[docs/requirements.txt]: {{cookiecutter.project_name}}/docs/requirements.txt
