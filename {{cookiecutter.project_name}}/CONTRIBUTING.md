@@ -96,7 +96,7 @@ Your pull request needs to meet the following guidelines for acceptance:
 - Include unit tests. This project maintains 100% code coverage.
 - If your changes add functionality, update the documentation accordingly.
 
-Feel free to submit early, though---we can always iterate on this.
+Feel free to submit early, though—we can always iterate on this.
 
 You can ensure that your changes adhere to the code style by reformatting with [Black]:
 
