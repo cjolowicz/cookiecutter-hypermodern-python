@@ -12,9 +12,8 @@ article series.
 
 ## Usage
 
-```sh
-cookiecutter gh:cookiecutter-hypermodern-python \
-    --checkout=2020.3.27
+```console
+$ cookiecutter gh:cookiecutter-hypermodern-python --checkout=2020.3.27
 ```
 
 ## Features
@@ -49,20 +48,20 @@ The template supports Python 3.6, 3.7, and 3.8.
 
 Install Cookiecutter:
 
-```sh
-pipx install cookiecutter
+```console
+$ pipx install cookiecutter
 ```
 
 Install Poetry:
 
-```sh
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+```console
+$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ```
 
 Install Nox:
 
-```sh
-pipx install nox
+```console
+$ pipx install nox
 ```
 
 [pipx](https://github.com/pipxproject/pipx) is preferred,
@@ -75,33 +74,31 @@ using [pyenv](https://github.com/pyenv/pyenv).
 
 Generate a Python project:
 
-```sh
-cookiecutter \
-   gh:cjolowicz/cookiecutter-hypermodern-python \
-   --checkout=2020.3.27
+```console
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.3.27
 ```
 
 Change to the root directory of your new project,
 and create a Git repository:
 
-```sh
-git init
-git add .
-git commit
+```console
+$ git init
+$ git add .
+$ git commit
 ```
 
 ### Local testing
 
 Run the full test suite:
 
-```sh
-nox
+```console
+$ nox
 ```
 
 List the available Nox sessions:
 
-```sh
-nox --list-sessions
+```console
+$ nox --list-sessions
 ```
 
 ### Continuous Integration
