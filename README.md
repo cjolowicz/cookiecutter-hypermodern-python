@@ -204,16 +204,3 @@ When upgrading Sphinx or its extensions using Poetry,
 also update the requirements located in [docs/requirements.txt] for Read the Docs.
 
 [docs/requirements.txt]: {{cookiecutter.project_name}}/docs/requirements.txt
-
-## Guide
-
-The project setup is described in detail in the [Hypermodern Python] article series:
-
-- [Chapter 1: Setup](https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769)
-- [Chapter 2: Testing](https://medium.com/@cjolowicz/hypermodern-python-2-testing-ae907a920260)
-- [Chapter 3: Linting](https://medium.com/@cjolowicz/hypermodern-python-3-linting-e2f15708da80)
-- [Chapter 4: Typing](https://medium.com/@cjolowicz/hypermodern-python-4-typing-31bcf12314ff)
-- [Chapter 5: Documentation](https://medium.com/@cjolowicz/hypermodern-python-5-documentation-13219991028c)
-- [Chapter 6: CI/CD](https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6)
-
-You can also read the articles on [this blog](https://cjolowicz.github.io/).
