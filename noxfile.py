@@ -18,7 +18,7 @@ def docs(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("sphinx", "sphinx-autobuild", "recommonmark")
+    session.install("-r", "docs/requirements.txt")
 
     if session.interactive:
         session.run("sphinx-autobuild", *args)
