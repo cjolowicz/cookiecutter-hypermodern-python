@@ -9,7 +9,7 @@
 [Cookiecutter] template for a Python package based on the
 [Hypermodern Python] article series.
 
-[Read the full documentation][docs]
+:books: [Read the full documentation][docs]
 
 [tests]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
 [docs]: https://cookiecutter-hypermodern-python.readthedocs.io/
