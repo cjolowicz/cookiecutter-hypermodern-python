@@ -40,6 +40,7 @@ sphinx-autodoc-typehints = "^1.10.3"
 recommonmark = "^0.6.0"
 pep8-naming = "^0.9.1"
 flake8-rst-docstrings = "^0.0.13"
+sphinx-autobuild = "^0.7.1"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.console:main"
