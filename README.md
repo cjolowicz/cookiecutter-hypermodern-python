@@ -9,6 +9,8 @@
 [Cookiecutter] template for a Python package based on the
 [Hypermodern Python] article series.
 
+:books: [Read the full documentation][docs]
+
 [tests]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
 [docs]: https://cookiecutter-hypermodern-python.readthedocs.io/
 [calver]: http://calver.org/
@@ -18,7 +20,7 @@
 ## Usage
 
 ```console
-$ cookiecutter gh:cookiecutter-hypermodern-python --checkout=2020.3.27
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.3.27
 ```
 
 ## Features
@@ -197,7 +199,3 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the `bug`, `enhancement`, and `documentation` labels for you.
 Create the remaining labels on the Issues tab of your GitHub repository.
-
-## Documentation
-
-[Read the full documentation][docs]
