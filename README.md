@@ -20,7 +20,7 @@
 ## Usage
 
 ```console
-$ cookiecutter gh:cookiecutter-hypermodern-python --checkout=2020.3.27
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.3.27
 ```
 
 ## Features
