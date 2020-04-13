@@ -197,9 +197,25 @@ def coverage(session: Session) -> None:
 @nox.session(python="3.8")
 def docs(session: Session) -> None:
     """Build the documentation."""
+    args = session.posargs or ["docs", "docs/_build"]
+
+    if session.interactive and not session.posargs:
+        args.insert(0, "--open-browser")
+
     builddir = Path("docs", "_build")
     if builddir.exists():
         shutil.rmtree(builddir)
+
     install_package(session)
-    install(session, "recommonmark", "sphinx", "sphinx-autodoc-typehints")
-    session.run("sphinx-build", "docs", "docs/_build")
+    install(
+        session,
+        "recommonmark",
+        "sphinx",
+        "sphinx-autobuild",
+        "sphinx-autodoc-typehints",
+    )
+
+    if session.interactive:
+        session.run("sphinx-autobuild", *args)
+    else:
+        session.run("sphinx-build", *args)

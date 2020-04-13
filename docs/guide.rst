@@ -1655,8 +1655,14 @@ __ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
 
 .. _`sphinx-autobuild`: https://github.com/GaretJax/sphinx-autobuild
 
-This Nox session always runs with the current major release of Python,
-and currently does not accept additional options.
+Use the ``--`` separator to pass additional options to either tool.
+For example, to treat warnings as errors and run in nit-picky mode:
+
+.. code:: console
+
+   $ nox --session=docs -- -W -n docs docs/_build
+
+This Nox session always runs with the current major release of Python.
 
 
 .. _`The xdoctest session`:
