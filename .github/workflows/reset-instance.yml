@@ -21,14 +21,14 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.8"
+      - name: Install cookiecutter
+        run: pip install cookiecutter==1.7.0
       - name: Remove working tree
         run: |
           mv cookiecutter-hypermodern-python-instance/.git tmp.git
           rm -rf cookiecutter-hypermodern-python-instance
           mkdir cookiecutter-hypermodern-python-instance
           mv tmp.git cookiecutter-hypermodern-python-instance/.git
-      - name: Install cookiecutter
-        run: pip install cookiecutter
       - name: Invoke cookiecutter
         run: >-
           cookiecutter
