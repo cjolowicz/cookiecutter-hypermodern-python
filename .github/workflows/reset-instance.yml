@@ -16,7 +16,7 @@ jobs:
         with:
           repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
           path: cookiecutter-hypermodern-python-instance
-          token: {{ secrets.X_GITHUB_TOKEN }}
+          token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Remove working tree
         run: |
           mv cookiecutter-hypermodern-python-instance/.git tmp.git
