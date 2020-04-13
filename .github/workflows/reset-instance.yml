@@ -42,7 +42,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git add .
-          git commit --allow-empty --message="${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+          git commit --allow-empty --message="Import ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
       - name: Push
         run: >-
           git
