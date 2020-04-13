@@ -712,7 +712,7 @@ marker = "python_version >= \"3.6\" and python_version < \"3.8\""
 name = "pytype"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,<3.8,>=2.7"
-version = "2020.2.20"
+version = "2020.4.1"
 
 [package.dependencies]
 attrs = "*"
@@ -1119,7 +1119,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "100eca76425cfe2275bed7f9024c23961eb3c43777738860a6126eaee4725239"
+content-hash = "154e47cb7adacea3905e14159b14fb08b33aa15601317aa33d3f3e779671dffc"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1447,7 +1447,7 @@ pytest-cov = [
     {file = "pytest_cov-2.8.1-py2.py3-none-any.whl", hash = "sha256:cdbdef4f870408ebdbfeb44e63e07eb18bb4619fae852f6e760645fa36172626"},
 ]
 pytype = [
-    {file = "pytype-2020.2.20.tar.gz", hash = "sha256:b22aaf5dd125134cad2cb3f45231c2fd4aa158b129bff81f880a0c6d6bb3c2a8"},
+    {file = "pytype-2020.4.1.tar.gz", hash = "sha256:d160eebdc43dade6f8ef699b91e4aa18a3f094fb87f272aeaffa73b0aed03459"},
 ]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
