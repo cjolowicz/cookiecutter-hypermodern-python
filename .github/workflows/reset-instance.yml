@@ -17,6 +17,10 @@ jobs:
           repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
           path: cookiecutter-hypermodern-python-instance
           token: ${{ secrets.X_GITHUB_TOKEN }}
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
       - name: Remove working tree
         run: |
           mv cookiecutter-hypermodern-python-instance/.git tmp.git
