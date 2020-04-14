@@ -1322,6 +1322,8 @@ Run Safety_ using the ``safety`` session:
 This session always runs with the current version of Python.
 
 
+.. _`Linting with pre-commit`:
+
 Linting with pre-commit
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1763,10 +1765,12 @@ Workflow                                            File                     Des
 =================================================== ======================== =================================== ===============
 `Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_        Push
 `Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_    Push
+`pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_        Push
 `Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release     Push (master)
 `Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_         GitHub Release
 `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_     Push (master)
 =================================================== ======================== =================================== ===============
+
 
 .. _`The Tests workflow`:
 
@@ -1817,6 +1821,29 @@ The workflow uses the following GitHub Actions:
 The workflow runs on the current Python version and the latest supported Ubuntu image.
 
 It is defined in ``.github/workflows/coverage.yml``.
+
+
+.. _`The pre-commit workflow`:
+
+The pre-commit workflow
+.......................
+
+The pre-commit workflow runs `pre-commit <Linting with pre-commit_>`__
+on all files in the repository.
+
+The workflow is triggered on every push to the GitHub repository.
+
+The workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+- `actions/cache`_ for caching pre-commit environments
+
+.. _`actions/cache`: https://github.com/actions/cache
+
+The workflow runs on the current Python version and the latest supported Ubuntu image.
+
+It is defined in ``.github/workflows/pre-commit.yml``.
 
 
 .. _`The Release Drafter workflow`:
