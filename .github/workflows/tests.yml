@@ -20,7 +20,7 @@ jobs:
           pip install
           cookiecutter==1.7.0
           nox==2019.11.9
-          poetry==1.0.3
+          poetry==1.0.5
           pre-commit==2.2.0
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-hypermodern-python
