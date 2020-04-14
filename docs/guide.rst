@@ -22,7 +22,7 @@ About this project
 The *Hypermodern Python Cookiecutter* is
 a general-purpose template for Python libraries and applications,
 released under the `MIT license`_
-and hosted on `GitHub <Hypermodern Python Cookiecutter_>`_.
+and hosted on `GitHub <Hypermodern Python Cookiecutter_>`__.
 
 The main objective of this project template is to
 enable current best practises
@@ -145,7 +145,7 @@ Add the following lines to your ``~/.bashrc``:
 
 Install the Python build dependencies for your platform,
 using one of the commands listed in the
-`official instructions <pyenv wiki_>`_.
+`official instructions <pyenv wiki_>`__.
 
 .. _`pyenv wiki`: https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
@@ -228,8 +228,8 @@ Creating a project
 ------------------
 
 Create a project from this template
-by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`_.
-Use the ``--checkout`` option with the `current stable release <2020.3.27_>`_:
+by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
+Use the ``--checkout`` option with the `current stable release <2020.3.27_>`__:
 
 .. code:: console
 
@@ -344,7 +344,7 @@ in the root directory of the project,
 and named ``pyproject.toml``.
 It uses the TOML_ configuration file format,
 and contains two sections---*tables* in TOML parlance---,
-specified in `PEP 517`_ and `518 <PEP 518_>`_:
+specified in `PEP 517`_ and `518 <PEP 518_>`__:
 
 - The ``build-system`` table
   declares the requirements and the entry point
@@ -358,7 +358,7 @@ The ``tool.poetry`` table
 contains the metadata for your package,
 such as its name, version, and authors,
 as well as the list of dependencies for the package.
-Please refer to the `Poetry documentation <pyproject.toml_>`_
+Please refer to the `Poetry documentation <pyproject.toml_>`__
 for a detailed description of each configuration key.
 
 .. _`pyproject.toml`: https://python-poetry.org/docs/pyproject/
@@ -750,16 +750,16 @@ The following tables gives an overview of the available Nox sessions:
 ====================================== ============================== ================== =========
 Session                                Description                    Python              Default
 ====================================== ============================== ================== =========
-`black <The black session_>`_          Format code with Black_        ``3.8``
-`coverage <The coverage session_>`_    Generate a coverage report     ``3.8``
-`docs <The docs session_>`_            Build Sphinx_ documentation    ``3.8``
-`lint <The lint session_>`_            Lint with Flake8_              ``3.6`` … ``3.8``      ✓
-`mypy <The mypy session_>`_            Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-`pytype <The pytype session_>`_        Type-check with pytype_        ``3.6`` … ``3.7``      ✓
-`safety <The safety session_>`_        Scan dependencies with Safety_ ``3.8``                ✓
-`tests <The tests session_>`_          Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-`typeguard <The typeguard session_>`_  Type-check with Typeguard_     ``3.6`` … ``3.8``
-`xdoctest <The xdoctest session_>`_    Run examples with xdoctest_    ``3.6`` … ``3.8``
+`black <The black session_>`__         Format code with Black_        ``3.8``
+`coverage <The coverage session_>`__   Generate a coverage report     ``3.8``
+`docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
+`lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
+`mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
+`pytype <The pytype session_>`__       Type-check with pytype_        ``3.6`` … ``3.7``      ✓
+`safety <The safety session_>`__       Scan dependencies with Safety_ ``3.8``                ✓
+`tests <The tests session_>`__         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
+`typeguard <The typeguard session_>`__ Type-check with Typeguard_     ``3.6`` … ``3.8``
+`xdoctest <The xdoctest session_>`__   Run examples with xdoctest_    ``3.6`` … ``3.8``
 ====================================== ============================== ================== =========
 
 
@@ -838,7 +838,7 @@ The test suite is located in the ``tests`` directory::
    ├── __init__.py
    └── test_console.py
 
-The test suite is `declared as a package <tests-outside-application-code_>`_,
+The test suite is `declared as a package <tests-outside-application-code_>`__,
 and mirrors the source layout of the package under test.
 The file ``test_console.py`` contains tests for the ``console`` module.
 
@@ -912,7 +912,7 @@ The coverage session
 .. note::
 
    This session is intended for use inside Continuous Integration.
-   For a coverage report, simply run the `tests <the tests session_>`_ session.
+   For a coverage report, simply run the `tests <the tests session_>`__ session.
 
 Run the coverage session like this:
 
@@ -989,18 +989,18 @@ and links to their lists of error codes.
 ======================= ============================================================== =========
 Tool                    Description                                                    Code     
 ======================= ============================================================== =========
-pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`_
-pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`_
-pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`_
-flake8-import-order_    Enforce import conventions from `PEP 8`_                       `I <flake8-import-order codes_>`_
-flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`_
-flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`_
-flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`_
-flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`_
-mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`_
-flake8-annotations_     Enforce type coverage                                          `ANN <flake8-annotations codes_>`_
-darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`_
-flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`_
+pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
+pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
+pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
+flake8-import-order_    Enforce import conventions from `PEP 8`_                       `I <flake8-import-order codes_>`__
+flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
+flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
+flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
+flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
+mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
+flake8-annotations_     Enforce type coverage                                          `ANN <flake8-annotations codes_>`__
+darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
+flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`__
 ======================= ============================================================== =========
 
 The linters
@@ -1079,7 +1079,7 @@ __ https://github.com/PyCQA/flake8-import-order#warnings
 
 The *Hypermodern Python Cookiecutter* 
 selects the recommendations of the
-`Google styleguide <Google import style_>`_.
+`Google styleguide <Google import style_>`__.
 Imports need to be arranged in three sorted groups, like this:
 
 .. _`Google import style`: https://google.github.io/styleguide/pyguide.html?showone=Imports_formatting#313-imports-formatting
@@ -1115,7 +1115,7 @@ __ http://www.pydocstyle.org/en/stable/error_codes.html
 
 The *Hypermodern Python Cookiecutter*
 selects the recommendations of the
-`Google styleguide <Google docstring style_>`_.
+`Google styleguide <Google docstring style_>`__.
 Here is an example of a function documented in Google style:
 
 .. code:: python
@@ -1189,7 +1189,7 @@ mccabe
 ......
 
 The mccabe_ tool
-checks the `code complexity <Cyclomatic complexity_>`_
+checks the `code complexity <Cyclomatic complexity_>`__
 of your Python package against a configured limit.
 `Error codes`__ are prefixed by ``C`` for "complexity".
 It is included with Flake8_.
@@ -1365,16 +1365,16 @@ consisting of the following hooks:
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
-======================= ===============================================
-Hook                    Description
-======================= ===============================================
-`black <Black_>`_       Run the Black_ code formatter
-`flake8 <Flake8_>`_     Run the Flake8_ linter
-`prettier <Prettier_>`_ Run the Prettier_ code formatter
-check-yaml_             Validate YAML_ files
-end-of-file-fixer_      Ensure files are terminated by a single newline
-trailing-whitespace_    Ensure lines do not contain trailing whitespace
-======================= ===============================================
+======================== ===============================================
+Hook                     Description
+======================== ===============================================
+`black <Black_>`__       Run the Black_ code formatter
+`flake8 <Flake8_>`__     Run the Flake8_ linter
+`prettier <Prettier_>`__ Run the Prettier_ code formatter
+check-yaml_              Validate YAML_ files
+end-of-file-fixer_       Ensure files are terminated by a single newline
+trailing-whitespace_     Ensure lines do not contain trailing whitespace
+======================== ===============================================
 
 .. _`check-yaml`: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _`end-of-file-fixer`: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
@@ -1539,7 +1539,7 @@ Run Typeguard_ using Nox:
    $ nox --session=typeguard
 
 The typeguard session runs the test suite with runtime type-checking enabled.
-It is similar to the `tests session <The tests session_>`_,
+It is similar to the `tests session <The tests session_>`__,
 with the difference that your package is instrumented by Typeguard.
 
 Typeguard_ checks that arguments passed to functions
@@ -1614,7 +1614,7 @@ File                   Contents
 The Contributor Guide and Code of Conduct are included
 from the Markdown files via the recommonmark_ extension.
 The documentation menu also has a *Changelog* entry,
-which links to the `GitHub Releases <GitHub Release_>`_ page.
+which links to the `GitHub Releases <GitHub Release_>`__ page.
 
 The API documentation is generated from docstrings and type annotations,
 using the autodoc_, napoleon_, and sphinx-autodoc-typehints_ extensions.
@@ -1758,15 +1758,15 @@ Available workflows
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
 
-================================================== ======================== =================================== ===============
-Workflow                                           File                     Description                         Trigger
-================================================== ======================== =================================== ===============
-`Tests <The Tests workflow_>`_                     ``tests.yml``            Run the test suite with Nox_        Push
-`Coverage <The Coverage workflow_>`_               ``coverage.yml``         Upload coverage data to Codecov_    Push
-`Release Drafter <The Release Drafter workflow_>`_ ``release-drafter.yml``  Update the draft GitHub Release     Push (master)
-`Release <The Release workflow_>`_                 ``release.yml``          Upload the package to PyPI_         GitHub Release
-`TestPyPI <The TestPyPI workflow_>`_               ``test-pypi.yml``        Upload the package to TestPyPI_     Push (master)
-================================================== ======================== =================================== ===============
+=================================================== ======================== =================================== ===============
+Workflow                                            File                     Description                         Trigger
+=================================================== ======================== =================================== ===============
+`Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_        Push
+`Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_    Push
+`Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release     Push (master)
+`Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_         GitHub Release
+`TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_     Push (master)
+=================================================== ======================== =================================== ===============
 
 .. _`The Tests workflow`:
 
@@ -1800,9 +1800,9 @@ The Coverage workflow
 The Coverage workflow uploads coverage data to Codecov_.
 
 The workflow is triggered on every push to the GitHub repository.
-It executes the `tests session <the tests session_>`_
+It executes the `tests session <the tests session_>`__
 to collect coverage data,
-and the `coverage session <the coverage session_>`_
+and the `coverage session <the coverage session_>`__
 to produce a coverage report in XML format.
 This coverage report is then uploaded to Codecov_.
 
@@ -1928,19 +1928,19 @@ whenever you add, upgrade, or remove a Sphinx extension.
 Tutorials
 ~~~~~~~~~
 
-First, make sure you have all the `requirements <Installation_>`_ installed.
+First, make sure you have all the `requirements <Installation_>`__ installed.
 
 
 How to test your project
 ------------------------
 
-Run the test suite using `Nox <Using Nox_>`_:
+Run the test suite using `Nox <Using Nox_>`__:
 
 .. code:: console
 
    $ nox -r
 
-Additional checks are provided by `pre-commit <Linting with pre-commit_>`_:
+Additional checks are provided by `pre-commit <Linting with pre-commit_>`__:
 
 .. code:: console
 
@@ -1972,11 +1972,11 @@ Invoke the command-line interface of your package:
 How to make code changes
 ------------------------
 
-1. | Run the tests, `as explained above <How to test your project_>`_.
+1. | Run the tests, `as explained above <How to test your project_>`__.
    | All tests should pass.
-2. | Add a failing test `under the tests directory <Testing_>`_.
+2. | Add a failing test `under the tests directory <Testing_>`__.
    | Run the tests again to verify that your test fails.
-3. | Make your changes to the package, `under the src directory <The initial package_>`_.
+3. | Make your changes to the package, `under the src directory <The initial package_>`__.
    | Run the tests to verify that all tests pass again.
 
 
