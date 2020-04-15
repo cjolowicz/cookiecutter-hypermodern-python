@@ -15,13 +15,13 @@ jobs:
       - name: set PYTHON_VERSION_HASH
         run: |
           echo "::set-env name=PYTHON_VERSION_HASH::$(python -c '
-            import hashlib
-            import sys
+          import hashlib
+          import sys
 
-            payload = sys.version.encode() + sys.executable.encode()
-            digest = hashlib.sha256(payload).hexdigest()
+          payload = sys.version.encode() + sys.executable.encode()
+          digest = hashlib.sha256(payload).hexdigest()
 
-            print(digest)
+          print(digest)
           ')"
       - uses: actions/cache@v1
         with:
