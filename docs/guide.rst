@@ -2023,11 +2023,6 @@ Open a pull request for your branch on GitHub:
 
 Release notes are pre-filled with the titles of merged pull requests.
 
-Opening the pull request triggers another automated step:
-
-- Codecov_ comments on the pull request,
-  summarizing how the changes impact code coverage.
-
 
 How to accept a pull request
 ----------------------------
