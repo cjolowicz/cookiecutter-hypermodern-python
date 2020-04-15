@@ -27,5 +27,5 @@ jobs:
         with:
           path: ~/.cache/pre-commit
           key: pre-commit-{% raw %}${{ env.PYTHON_VERSION_HASH }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
-      - run: poetry install
+      - run: poetry install --ansi
       - run: pre-commit run --all-files --show-diff-on-failure --color=always

@@ -33,10 +33,10 @@ jobs:
           git commit --message="Initial import"
         working-directory: hypermodern-python
       - name: Run test suite using Nox
-        run: nox
+        run: nox --force-color
         working-directory: hypermodern-python
       - name: Install dependencies using Poetry
-        run: poetry install
+        run: poetry install --ansi
         working-directory: hypermodern-python
       - name: Set cache key identifying the Python installation
         run: |

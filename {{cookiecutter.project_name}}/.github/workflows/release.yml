@@ -13,8 +13,8 @@ jobs:
           architecture: x64
       - run: pip install nox==2019.11.9
       - run: pip install poetry==1.0.5
-      - run: nox
-      - run: poetry build
+      - run: nox --force-color
+      - run: poetry build --ansi
       - uses: pypa/gh-action-pypi-publish@v1.1.0
         with:
           user: __token__
