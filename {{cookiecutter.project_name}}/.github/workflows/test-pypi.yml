@@ -17,7 +17,7 @@ jobs:
           poetry version patch &&
           version=$(poetry version | awk '{print $2}') &&
           poetry version $version.dev.$(date +%s)
-      - run: poetry build
+      - run: poetry build --ansi
       - uses: pypa/gh-action-pypi-publish@v1.1.0
         with:
           user: __token__
