@@ -751,7 +751,6 @@ The following tables gives an overview of the available Nox sessions:
 Session                                Description                    Python              Default
 ====================================== ============================== ================== =========
 `black <The black session_>`__         Format code with Black_        ``3.8``
-`coverage <The coverage session_>`__   Generate a coverage report     ``3.8``
 `docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
 `lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
 `mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
@@ -902,31 +901,6 @@ in the ``tool.coverage`` table.
 The configuration informs the tool about your package name and source tree layout.
 It also enables branch analysis and the display of line numbers for missing coverage,
 and specifies the target coverage percentage.
-
-
-.. _`The coverage session`:
-
-The coverage session
---------------------
-
-.. note::
-
-   This session is intended for use inside Continuous Integration.
-   For a coverage report, simply run the `tests <the tests session_>`__ session.
-
-Run the coverage session like this:
-
-.. code:: console
-
-   $ nox --session=coverage
-
-The coverage session exports the coverage data to `cobertura`__ XML format,
-the format expected by Codecov_.
-
-__ https://cobertura.github.io/cobertura/
-
-This session always runs with the current major release of Python.
-It does not accept additional options.
 
 
 Linting with Flake8
@@ -1805,10 +1779,10 @@ The Coverage workflow uploads coverage data to Codecov_.
 
 The workflow is triggered on every push to the GitHub repository.
 It executes the `tests session <the tests session_>`__
-to collect coverage data,
-and the `coverage session <the coverage session_>`__
-to produce a coverage report in XML format.
+to generate a coverage report in `cobertura`__ XML format.
 This coverage report is then uploaded to Codecov_.
+
+__ https://cobertura.github.io/cobertura/
 
 The workflow uses the following GitHub Actions:
 
