@@ -20,7 +20,7 @@
 ## Usage
 
 ```console
-$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15.1
 ```
 
 ## Features
@@ -106,7 +106,7 @@ It is recommended to set up Python 3.6, 3.7, and 3.8 using [pyenv].
 Generate a Python project:
 
 ```console
-$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15.1
 ```
 
 Change to the root directory of your new project,
