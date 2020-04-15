@@ -11,6 +11,6 @@ jobs:
           architecture: x64
       - run: pip install nox==2019.11.9
       - run: pip install poetry==1.0.5
-      - run: nox --sessions tests-3.8 coverage
+      - run: nox --sessions tests-3.8 -- --cov --cov-report=xml
       - if: always()
         uses: codecov/codecov-action@v1
