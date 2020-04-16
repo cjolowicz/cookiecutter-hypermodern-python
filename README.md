@@ -149,8 +149,6 @@ $ nox --list-sessions
 3. Go to the repository settings on GitHub, and
    add a secret named `PYPI_TOKEN` with the token you just copied.
 
-[pypi]: https://pypi.org/
-
 #### TestPyPI
 
 1. Sign up at [TestPyPI].
@@ -159,28 +157,20 @@ $ nox --list-sessions
 3. Go to the repository settings on GitHub, and
    add a secret named `TEST_PYPI_TOKEN` with the token you just copied.
 
-[testpypi]: https://test.pypi.org/
-
 #### Codecov
 
 1. Sign up at [Codecov], and install their GitHub app.
 2. Add your repository to Codecov.
-
-[codecov]: https://codecov.io/
 
 #### Dependabot
 
 1. Sign up at [Dependabot], and install their GitHub app.
 2. Add your repository to Dependabot.
 
-[dependabot]: https://dependabot.com/
-
 #### Read the Docs
 
 1. Sign up at [Read the Docs].
 2. Import your GitHub repository, using the button _Import a Project_.
-
-[read the docs]: https://readthedocs.org/
 
 ### Releasing
 
