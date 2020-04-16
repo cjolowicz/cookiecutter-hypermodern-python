@@ -6,7 +6,7 @@
    :maxdepth: 1
 
    reference
-   CONTRIBUTING
+   contributing
    Code of Conduct <codeofconduct>
    license
    Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
