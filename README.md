@@ -187,7 +187,7 @@ Use labels to group the pull requests into sections:
 | --------------- | -------------------------------------------- |
 | `breaking`      | :boom: Breaking Changes                      |
 | `bug`           | :beetle: Fixes                               |
-| `build`         | :package: Build System and Dependencies      |
+| `dependencies`  | :package: Dependencies                       |
 | `ci`            | :construction_worker: Continuous Integration |
 | `documentation` | :books: Documentation                        |
 | `enhancement`   | :rocket: Features                            |
