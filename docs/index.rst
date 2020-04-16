@@ -8,7 +8,7 @@ Hypermodern Python Cookiecutter
    Quickstart <quickstart>
    guide
    CONTRIBUTING
-   Code of Conduct <CODE_OF_CONDUCT>
+   Code of Conduct <codeofconduct>
    license
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
