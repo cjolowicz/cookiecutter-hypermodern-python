@@ -36,14 +36,21 @@ jobs:
           --overwrite-if-exists
           --no-input
           project_name=cookiecutter-hypermodern-python-instance
-      - name: Commit
+      - name: Create commit
         run: |
-          cd cookiecutter-hypermodern-python-instance
+          cd cookiecutter-hypermodern-python
+          author="$(git show --no-patch --format='%an <%ae>')"
+          date="$(git show --no-patch --format=%ad)"
+          message="$(git show --no-patch --format=%B)
+
+          Original-Commit: ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+
+          cd ../cookiecutter-hypermodern-python-instance
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git add .
-          git commit --allow-empty --message="Import ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
-      - name: Push
+          git commit --allow-empty --author="$author" --date="$date" --message="$message"
+      - name: Push to instance
         run: >-
           git
           -C cookiecutter-hypermodern-python-instance
