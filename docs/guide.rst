@@ -1850,7 +1850,7 @@ Label               Section
 ``documentation``   📚 Documentation
 ``refactoring``     🔨 Refactoring
 ``style``           💄 Style
-``build``           📦 Build System and Dependencies
+``dependencies``    📦 Dependencies
 =================== ================================
 
 .. table-release-drafter-sections-end
