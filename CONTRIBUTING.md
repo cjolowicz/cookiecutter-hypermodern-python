@@ -15,7 +15,7 @@ Here is a list of important resources for contributors:
 [source code]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [documentation]: https://cookiecutter-hypermodern-python.readthedocs.io/
 [issue tracker]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
-[code of conduct]: CODE_OF_CONDUCT.md
+[code of conduct]: https://cookiecutter-hypermodern-python.readthedocs.io/codeofconduct.html
 
 ## How to report a bug
 
