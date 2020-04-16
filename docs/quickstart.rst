@@ -103,6 +103,13 @@ Codecov
 2. Add your repository to Codecov.
 
 
+Dependabot
+~~~~~~~~~~
+
+1. Sign up at Dependabot_, and install their GitHub app.
+2. Add your repository to Dependabot.
+
+
 Read the Docs
 ~~~~~~~~~~~~~
 

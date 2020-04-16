@@ -31,6 +31,7 @@ $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15
 - Documentation with [Sphinx] and [Read the Docs]
 - Automated uploads to [PyPI] and [TestPyPI]
 - Automated release notes with [Release Drafter]
+- Automated dependency updates with [Dependabot]
 - Code formatting with [Black] and [Prettier]
 - Testing with [Pytest]
 - Code coverage with [Coverage.py]
@@ -54,6 +55,7 @@ The template supports Python 3.6, 3.7, and 3.8.
 [pypi]: https://pypi.org/
 [testpypi]: https://test.pypi.org
 [release drafter]: https://github.com/release-drafter/release-drafter
+[dependabot]: https://dependabot.com/
 [black]: https://github.com/psf/black
 [prettier]: https://github.com/prettier/prettier
 [pytest]: https://docs.pytest.org/en/latest/
@@ -165,6 +167,13 @@ $ nox --list-sessions
 2. Add your repository to Codecov.
 
 [codecov]: https://codecov.io/
+
+#### Dependabot
+
+1. Sign up at [Dependabot], and install their GitHub app.
+2. Add your repository to Dependabot.
+
+[dependabot]: https://dependabot.com/
 
 #### Read the Docs
 

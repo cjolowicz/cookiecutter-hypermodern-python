@@ -60,6 +60,7 @@ Here is a detailed list of features for this Python template:
 - Documentation with Sphinx_ and `Read the Docs`_
 - Automated uploads to PyPI_ and TestPyPI_
 - Automated release notes with `Release Drafter`_
+- Automated dependency updates with Dependabot_
 - Code formatting with Black_ and Prettier_
 - Testing with pytest_
 - Code coverage with Coverage.py_
@@ -2153,6 +2154,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`Codecov`: https://codecov.io/
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`Coverage.py`: https://coverage.readthedocs.io/
+.. _`Dependabot`: https://dependabot.com/
 .. _`Flake8`: http://flake8.pycqa.org
 .. _`GitHub Actions`: https://github.com/features/actions
 .. _`GitHub Release`: https://help.github.com/en/github/administering-a-repository/about-releases
