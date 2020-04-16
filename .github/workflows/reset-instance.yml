@@ -41,7 +41,7 @@ jobs:
           cd cookiecutter-hypermodern-python
           author="$(git show --no-patch --format='%an <%ae>')"
           date="$(git show --no-patch --format=%ad)"
-          message="$(git show --no-patch --format=%B)
+          message="$(git show --no-patch --format=%B | sed 's/ *(#[0-9]\+)//g')
 
           Original-Commit: ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
 
