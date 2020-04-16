@@ -1825,16 +1825,17 @@ Available workflows
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
 
-=================================================== ======================== =================================== ===============
-Workflow                                            File                     Description                         Trigger
-=================================================== ======================== =================================== ===============
-`Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_        Push
-`Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_    Push
-`pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_        Push
-`Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release     Push (master)
-`Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_         GitHub Release
-`TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_     Push (master)
-=================================================== ======================== =================================== ===============
+=================================================== ======================== ==================================== ===============
+Workflow                                            File                     Description                          Trigger
+=================================================== ======================== ==================================== ===============
+`Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_         Push
+`Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_     Push
+`pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_         Push
+`Build documentation <The Docs workflow_>`__        ``docs.yml``             Build the documentation with Sphinx_ Push
+`Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
+`Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_          GitHub Release
+`TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
+=================================================== ======================== ==================================== ===============
 
 
 .. _`The Tests workflow`:
@@ -1909,6 +1910,28 @@ The workflow uses the following GitHub Actions:
 The workflow runs on the current Python version and the latest supported Ubuntu image.
 
 It is defined in ``.github/workflows/pre-commit.yml``.
+
+
+.. _`The Docs workflow`:
+
+The Docs workflow
+.................
+
+The Docs workflow builds the Sphinx_ documentation
+using the `docs <The docs session_>`__ Nox session.
+This is done solely to ensure that the build process is functional.
+The actual project documentation is built independently on `Read the Docs`_.
+
+The workflow is triggered on every push to the GitHub repository.
+
+The workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+
+The workflow runs on the current Python version and the latest supported Ubuntu image.
+
+It is defined in ``.github/workflows/docs.yml``.
 
 
 .. _`The Release Drafter workflow`:
@@ -2098,6 +2121,7 @@ The push triggers the following automated steps:
 
 - `The test suite runs against your branch <The Tests workflow_>`__.
 - `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
+- `The documentation is built from your branch <The Docs workflow_>`__.
 
 
 How to open a pull request
@@ -2130,8 +2154,10 @@ This triggers the following automated steps:
 
 - `The test suite runs against the master branch <The Tests workflow_>`__.
 - `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
+- `The documentation is built from the master branch <The Docs workflow_>`__.
 - `The draft GitHub Release is updated <The Release Drafter workflow_>`__.
 - `A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow_>`__.
+- `Read the Docs`_ rebuilds the *latest* version of the documentation.
 
 In your local repository,
 update the master branch:
