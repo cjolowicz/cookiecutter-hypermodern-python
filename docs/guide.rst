@@ -2121,6 +2121,7 @@ The push triggers the following automated steps:
 
 - `The test suite runs against your branch <The Tests workflow_>`__.
 - `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
+- `The pre-commit linter suite runs against your branch <The pre-commit workflow_>`__.
 - `The documentation is built from your branch <The Docs workflow_>`__.
 
 
@@ -2154,6 +2155,7 @@ This triggers the following automated steps:
 
 - `The test suite runs against the master branch <The Tests workflow_>`__.
 - `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
+- `The pre-commit linter suite runs against the master branch <The pre-commit workflow_>`__.
 - `The documentation is built from the master branch <The Docs workflow_>`__.
 - `The draft GitHub Release is updated <The Release Drafter workflow_>`__.
 - `A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow_>`__.
