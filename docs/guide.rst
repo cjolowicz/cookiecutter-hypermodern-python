@@ -1551,22 +1551,22 @@ not the resulting object as seen by the test suite.
 Documentation
 ~~~~~~~~~~~~~
 
-Markdown files
---------------
+Stand-alone documents
+---------------------
 
 The project repository contains several documentation files
-written in Markdown__ or plain text:
+written in Markdown__, reStructuredText_, and plain text:
 
 __ https://www.markdownguide.org/
 
-====================== ============================================
-File                   Contents   
-====================== ============================================
-``README.md``          Project description for GitHub and PyPI
-``CONTRIBUTING.md``    Contributor Guide
-``CODE_OF_CONDUCT.md`` Code of Conduct
-``LICENSE``            License
-====================== ============================================
+======================= ============================================
+File                    Contents
+======================= ============================================
+``README.md``           Project description for GitHub and PyPI
+``CONTRIBUTING.rst``    Contributor Guide
+``CODE_OF_CONDUCT.rst`` Code of Conduct
+``LICENSE``             License
+======================= ============================================
 
 
 Sphinx documentation
@@ -1578,18 +1578,18 @@ processed by Sphinx_,
 and accessible on `Read the Docs`_.
 It consists of the following files:
 
-====================== ============================================
-File                   Contents   
-====================== ============================================
+====================== =======================================================
+File                   Contents
+====================== =======================================================
 ``conf.py``            Sphinx configuration file
 ``index.rst``          Master document
+``contributing.rst``   Contributor Guide (included from ``CONTRIBUTING.rst``)
+``codeofconduct.rst``  Code of Conduct (included from ``CODE_OF_CONDUCT.rst``)
 ``license.rst``        License (included from ``LICENSE``)
 ``reference.rst``      API documentation
 ``requirements.txt``   Build dependencies for `Read the Docs`_
-====================== ============================================
+====================== =======================================================
 
-The Contributor Guide and Code of Conduct are included
-from the Markdown files via the recommonmark_ extension.
 The documentation menu also has a *Changelog* entry,
 which links to the `GitHub Releases <GitHub Release_>`__ page.
 
@@ -2324,7 +2324,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`pytest`: https://docs.pytest.org/en/latest/
 .. _`pytype`: https://google.github.io/pytype/
 .. _`reStructuredText`: https://docutils.sourceforge.io/rst.html
-.. _`recommonmark`: https://recommonmark.readthedocs.io/en/latest/
 .. _`sphinx-autodoc-typehints`: https://github.com/agronholm/sphinx-autodoc-typehints
 .. _`xdoctest`: https://github.com/Erotemic/xdoctest
 
