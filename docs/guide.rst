@@ -1704,6 +1704,103 @@ Real-time logs for workflow runs are available
 from the *Actions* tab in your GitHub repository.
 
 
+External Services
+-----------------
+
+Your repository can be integrated with several external services
+for continuous integration and delivery.
+This section describes these external services,
+what they do, and how to set them up for your repository.
+
+
+PyPI
+....
+
+PyPI_ is the official Python Package Index.
+Uploading your package to PyPI allows others to
+download and install it to their system.
+
+Follow these steps to set up PyPI for your repository:
+
+1. Sign up at PyPI_.
+2. Go to the Account Settings on PyPI,
+   generate an API token, and copy it.
+3. Go to the repository settings on GitHub, and
+   add a secret named ``PYPI_TOKEN`` with the token you just copied.
+
+PyPI is integrated with your repository
+via the `Release workflow <The Release workflow_>`__.
+
+
+TestPyPI
+........
+
+TestPyPI_ is a test instance of the Python package registry.
+It allows you to check your release before uploading it to the real index.
+
+Follow these steps to set up TestPyPI for your repository:
+
+1. Sign up at TestPyPI_.
+2. Go to the Account Settings on TestPyPI,
+   generate an API token, and copy it.
+3. Go to the repository settings on GitHub, and
+   add a secret named ``TEST_PYPI_TOKEN`` with the token you just copied.
+
+TestPyPI is integrated with your repository
+via the `TestPyPI workflow <The TestPyPI workflow_>`__.
+
+
+Codecov
+.......
+
+Codecov_ is a reporting service for code coverage.
+
+Follow these steps to set up Codecov for your repository:
+
+1. Sign up at Codecov_.
+2. Install their GitHub app.
+3. Add your repository to Codecov.
+
+The configuration is included in the repository, as ``codecov.yml``.
+
+Codecov integrates with your repository
+via its GitHub app.
+The `Coverage workflow <The Coverage workflow_>`__ uploads the coverage data.
+
+
+Dependabot
+..........
+
+Dependabot_ creates pull requests with automated dependency updates.
+
+Follow these steps to set up Dependabot for your repository:
+
+1. Sign up at Dependabot_.
+2. Install their GitHub app.
+3. Add your repository to Dependabot.
+
+The configuration is included in the repository, as ``.dependabot/config.yml``.
+
+Dependabot integrates with your repository via its GitHub app.
+
+
+Read the Docs
+.............
+
+`Read the Docs`_ automates the building, versioning, and hosting of documentation.
+
+Follow these steps to set up Read the Docs for your repository:
+
+1. Sign up at `Read the Docs`_.
+2. Import your GitHub repository, using the button *Import a Project*.
+
+The configuration is included in the repository, as ``.readthedocs.yml``.
+
+Read the Docs integrates with your repository via a webhook__.
+
+__ https://docs.readthedocs.io/en/stable/webhooks.html
+
+
 Secrets
 -------
 
@@ -1720,13 +1817,6 @@ Name                Description
 
 You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
-
-
-GitHub Apps
------------
-
-Install the Codecov_ GitHub app, and add your repository to Codecov.
-The sign up process will guide you through these steps.
 
 
 Available workflows
