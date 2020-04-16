@@ -20,7 +20,9 @@ categories:
   - title: ":lipstick: Style"
     label: "style"
   - title: ":package: Dependencies"
-    label: "dependencies"
+    labels:
+      - "dependencies"
+      - "build"
 template: |
   ## Changes
 
