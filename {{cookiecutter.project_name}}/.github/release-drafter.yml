@@ -19,8 +19,8 @@ categories:
     label: "refactoring"
   - title: ":lipstick: Style"
     label: "style"
-  - title: ":package: Build System"
-    label: "build"
+  - title: ":package: Dependencies"
+    label: "dependencies"
 template: |
   ## Changes
 
