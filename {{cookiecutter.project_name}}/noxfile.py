@@ -3,7 +3,7 @@ import contextlib
 from pathlib import Path
 import shutil
 import tempfile
-from typing import Iterator
+from typing import cast, Iterator
 
 import nox
 from nox.sessions import Session
@@ -56,7 +56,7 @@ class Poetry:
         output = self.session.run(
             "poetry", "version", external=True, silent=True, stderr=None
         )
-        return output.split()[1]
+        return cast(str, output).split()[1]
 
     def build(self, *args: str) -> None:
         """Build the package.
