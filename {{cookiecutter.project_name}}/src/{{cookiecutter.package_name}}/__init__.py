@@ -1,8 +1,10 @@
 """{{cookiecutter.friendly_name}}."""
-try:
-    from importlib.metadata import version, PackageNotFoundError  # type: ignore
-except ImportError:  # pragma: no cover
-    from importlib_metadata import version, PackageNotFoundError  # type: ignore
+import sys
+
+if sys.version_info[:2] >= (3, 8):
+    from importlib.metadata import version, PackageNotFoundError  # pragma: no cover
+else:
+    from importlib_metadata import version, PackageNotFoundError  # pragma: no cover
 
 
 try:
