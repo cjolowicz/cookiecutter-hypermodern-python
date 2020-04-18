@@ -1468,8 +1468,8 @@ The *Hypermodern Python Cookiecutter* enables the strictness options
 - :option:`disallow_untyped_calls <mypy --disallow-untyped-calls>`
 - :option:`disallow_untyped_decorators <mypy --disallow-untyped-decorators>`
 - :option:`disallow_untyped_defs <mypy --disallow-untyped-defs>`
-- [*no*] :option:`implicit_reexport <mypy --no-implicit-reexport>`
 - :option:`no_implicit_optional <mypy --no-implicit-optional>`
+- :option:`no_implicit_reexport <mypy --no-implicit-reexport>`
 - :option:`strict_equality <mypy --strict-equality>`
 - :option:`warn_redundant_casts <mypy --warn-redundant-casts>`
 - :option:`warn_return_any <mypy --warn-return-any>`
