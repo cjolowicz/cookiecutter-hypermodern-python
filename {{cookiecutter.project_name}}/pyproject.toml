@@ -30,7 +30,6 @@ flake8-bandit = "^2.1.2"
 safety = "^1.8.5"
 mypy = "^0.770"
 pytype = {version = "^2020.4.1", python = ">=3.6,<3.8"}
-flake8-annotations = "^2.0.0"
 typeguard = "^2.7.1"
 flake8-docstrings = "^1.5.0"
 darglint = "^1.2.2"
