@@ -1337,7 +1337,7 @@ Available hooks
 ---------------
 
 The *Hypermodern Python Cookiecutter* comes with
-a minimal pre-commit configuration,
+a pre-commit configuration
 consisting of the following hooks:
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
@@ -1347,6 +1347,7 @@ Hook                     Description
 ======================== ===============================================
 `black <Black_>`__       Run the Black_ code formatter
 `flake8 <Flake8_>`__     Run the Flake8_ linter
+`mypy <mypy_>`__         Run the mypy_ static type checker
 `prettier <Prettier_>`__ Run the Prettier_ code formatter
 check-yaml_              Validate YAML_ files
 end-of-file-fixer_       Ensure files are terminated by a single newline
@@ -1357,9 +1358,14 @@ trailing-whitespace_     Ensure lines do not contain trailing whitespace
 .. _`end-of-file-fixer`: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
 .. _`trailing-whitespace`: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
-Black_ and Flake8_ are managed as development dependencies by Poetry.
-Therefore, their hooks are run in the Poetry environment,
-rather than in pre-commit environments.
+Black_, Flake8_, and mypy_ are run via Poetry using a `repository-local hook`_.
+This allows you to manage these tools as development dependencies in Poetry,
+rather than having duplicate and potentially diverging version pins in the pre-commit configuration.
+This does require you, however, to run `poetry install`_
+before you can use pre-commit with your project.
+
+.. _`repository-local hook`: https://pre-commit.com/#repository-local-hooks
+
 These checks run somewhat faster than the corresponding Nox sessions,
 for several reasons:
 
@@ -1490,6 +1496,11 @@ The *Hypermodern Python Cookiecutter* enables the strictness options
 The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
 is used to disable import errors for selected packages
 where type information is not yet available.
+
+The :ref:`mypy_path <mypy:config-file-import-discovery>` option is set to the
+``src`` directory. This is required to avoid errors about missing imports
+related to your own package when mypy is invoked on files located outside of it,
+such as modules in the test suite.
 
 The following options are enabled for enhanced output:
 
