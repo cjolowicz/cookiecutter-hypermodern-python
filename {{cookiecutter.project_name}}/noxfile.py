@@ -123,7 +123,6 @@ def lint(session: Session) -> None:
     install(
         session,
         "flake8",
-        "flake8-annotations",
         "flake8-bandit",
         "flake8-black",
         "flake8-bugbear",
