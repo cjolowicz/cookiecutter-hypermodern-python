@@ -973,7 +973,6 @@ flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings            
 flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
 flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
 mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
-flake8-annotations_     Enforce type coverage                                          `ANN <flake8-annotations codes_>`__
 darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
 flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`__
 ======================= ============================================================== =========
@@ -1176,22 +1175,6 @@ The *Hypermodern Python Cookiecutter*
 limits code complexity to a value of 10.
 
 .. _`Cyclomatic complexity`: https://en.wikipedia.org/wiki/Cyclomatic_complexity
-
-
-flake8-annotations
-..................
-
-flake8-annotations_ detects the absence of type annotations for functions,
-helping you keep track of unannotated code.
-`Error codes`__ are prefixed by ``ANN`` for "annotation".
-
-The *Hypermodern Python Cookiecutter*
-disables the warning ``ANN101``
-(missing type annotation for ``self`` in method),
-because annotating ``self`` is normally not required.
-
-.. _`flake8-annotations codes`:
-__ https://github.com/python-discord/flake8-annotations#table-of-warnings
 
 
 darglint
@@ -2342,7 +2325,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`bash`: https://www.gnu.org/software/bash/
 .. _`curl`: https://curl.haxx.se
 .. _`darglint`: https://github.com/terrencepreilly/darglint
-.. _`flake8-annotations`: https://github.com/python-discord/flake8-annotations
 .. _`flake8-bandit`: https://github.com/tylerwince/flake8-bandit
 .. _`flake8-black`: https://github.com/peterjc/flake8-black
 .. _`flake8-bugbear`: https://github.com/PyCQA/flake8-bugbear
