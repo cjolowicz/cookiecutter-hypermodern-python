@@ -35,6 +35,8 @@ Usage
 Features
 ========
 
+.. features-begin
+
 - Packaging and dependency management with Poetry_
 - Test automation with Nox_
 - Continuous integration with `GitHub Actions`_
@@ -58,6 +60,8 @@ Features
 The template supports Python 3.6, 3.7, and 3.8.
 
 __ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#available-linters
+
+.. features-end
 
 
 Quickstart
