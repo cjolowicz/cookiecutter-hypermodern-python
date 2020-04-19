@@ -200,6 +200,8 @@ Release notes are pre-filled with titles and authors of merged pull requests.
 
 Use labels to group the pull requests into sections:
 
+.. table-release-drafter-sections-begin
+
 =================== ================================
 Label               Section
 =================== ================================
@@ -215,6 +217,8 @@ Label               Section
 ``style``           💄 Style
 ``dependencies``    📦 Dependencies
 =================== ================================
+
+.. table-release-drafter-sections-end
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Create the remaining labels on the Issues tab of your GitHub repository.
