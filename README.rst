@@ -65,19 +65,21 @@ Quickstart
 Requirements
 ~~~~~~~~~~~~
 
-Install Cookiecutter:
+Install Cookiecutter_:
 
 .. code:: console
 
    $ pipx install cookiecutter
 
-Install Poetry:
+Install Poetry_ by downloading and running get-poetry.py_:
+
+.. _`get-poetry.py`: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
 
 .. code:: console
 
-   $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+   $ python get-poetry.py
 
-Install Nox:
+Install Nox_:
 
 .. code:: console
 
