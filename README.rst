@@ -181,9 +181,11 @@ Read the Docs
 Releasing
 ~~~~~~~~~
 
-1. Bump the version using ``poetry version``. Push to GitHub.
+1. Bump the version using `poetry version`_. Push to GitHub.
 2. Publish a GitHub Release.
 3. GitHub Action triggers the PyPI upload.
+
+.. _`poetry version`: https://python-poetry.org/docs/cli/#version
 
 Release notes are pre-filled with titles and authors of merged pull requests.
 
