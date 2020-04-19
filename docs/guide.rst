@@ -1343,7 +1343,7 @@ These checks run somewhat faster than the corresponding Nox sessions,
 for several reasons:
 
 - They only run on files staged for a commit, by default.
-- They only run on the current version of Python.
+- They only run in the active Poetry environment.
 - They assume that the tools are already installed.
 
 
