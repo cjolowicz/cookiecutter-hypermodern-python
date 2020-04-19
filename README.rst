@@ -218,10 +218,12 @@ Label               Section
 ``dependencies``    📦 Dependencies
 =================== ================================
 
-.. table-release-drafter-sections-end
-
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
-Create the remaining labels on the Issues tab of your GitHub repository.
+Dependabot creates the ``dependencies`` label.
+Create the remaining labels on the Issues tab of your GitHub repository,
+when you need them.
+
+.. table-release-drafter-sections-end
 
 .. quickstart-end
 
