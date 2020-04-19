@@ -12,6 +12,6 @@ Caveats
 When upgrading Sphinx or its extensions using Poetry,
 also update the requirements located in ``docs/requirements.txt`` for Read the Docs.
 
-.. include:: guide.rst
+.. include:: ../README.rst
    :start-after: references-begin
    :end-before: references-end
