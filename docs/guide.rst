@@ -273,35 +273,47 @@ under the ``src`` directory::
   └── <package>
       ├── __init__.py
       ├── __main__.py
-      └── console.py
+      ├── console.py
+      └── py.typed
 
-The ``__init__.py`` file declares the directory as a `Python package`_.
-It also defines a ``__version__`` attribute,
-containing the version of your package.
-The version is determined using the installed package metadata,
-by means of the standard `importlib.metadata`_ library.
+``__init__.py``
+   This file declares the directory as a `Python package`_.
+   It also defines a ``__version__`` attribute,
+   containing the version of your package.
+   The version is determined using the installed package metadata,
+   by means of the standard `importlib.metadata`_ library.
 
-.. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
-.. _`importlib.metadata`: https://docs.python.org/3/library/importlib.metadata.html
+   .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
+   .. _`importlib.metadata`: https://docs.python.org/3/library/importlib.metadata.html
 
-The ``console.py`` module defines the ``console.main`` entry point
-for the command-line interface.
-The command-line interface is implemented using Click_,
-and supports ``--help`` and ``--version`` options.
-When the package is installed,
-a script named ``<project>`` is placed
-in the ``bin`` directory of the Python installation or virtual environment,
-allowing you to invoke the command-line interface
-like any other console application.
+``console.py``
+   This module defines the ``console.main`` entry point
+   for the command-line interface.
+   The command-line interface is implemented using Click_,
+   and supports ``--help`` and ``--version`` options.
+   When the package is installed,
+   a script named ``<project>`` is placed
+   in the ``bin`` directory of the Python installation or virtual environment,
+   allowing you to invoke the command-line interface
+   like any other console application.
 
-The ``__main__.py`` module allows you to
-invoke the command-line interface
-by specifying a Python interpreter and the package name:
+``__main__.py``
+   This module allows you to
+   invoke the command-line interface
+   by specifying a Python interpreter and the package name:
 
-.. code:: console
+   .. code:: console
 
-   $ python -m <package> [<options>]
+      $ python -m <package> [<options>]
 
+``py.typed``
+   This is an empty marker file,
+   which declares that your package supports typing
+   and is distributed with its own type information
+   (`PEP 561`_).
+   This allows people using your package
+   to type-check their Python code against it.
+ 
 
 Uploading to GitHub
 -------------------
@@ -1480,11 +1492,6 @@ The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
 is used to disable import errors for selected packages
 where type information is not yet available.
 
-The :ref:`mypy_path <mypy:config-file-import-discovery>` option is set to the
-``src`` directory. This is required to avoid errors about missing imports
-related to your own package when mypy is invoked on files located outside of it,
-such as modules in the test suite.
-
 The following options are enabled for enhanced output:
 
 - :option:`pretty <mypy --pretty>`
@@ -2309,6 +2316,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`PEP 440`: https://www.python.org/dev/peps/pep-0440/
 .. _`PEP 517`: https://www.python.org/dev/peps/pep-0517/
 .. _`PEP 518`: https://www.python.org/dev/peps/pep-0518/
+.. _`PEP 561`: https://www.python.org/dev/peps/pep-0561/
 .. _`PEP 8`: http://www.python.org/dev/peps/pep-0008/
 .. _`Poetry`: https://python-poetry.org/
 .. _`Prettier`: https://prettier.io/
