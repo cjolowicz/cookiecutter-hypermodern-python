@@ -35,7 +35,7 @@ Usage
 Features
 --------
 
-.. include:: guide.rst
+.. include:: ../README.rst
    :start-after: features-begin
    :end-before: features-end
 
@@ -77,6 +77,6 @@ All images on the
 .. _`Hypermodernism`: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
 .. _`Retrofuturism`: https://en.wikipedia.org/wiki/Retrofuturism
 
-.. include:: guide.rst
+.. include:: ../README.rst
    :start-after: references-begin
    :end-before: references-end

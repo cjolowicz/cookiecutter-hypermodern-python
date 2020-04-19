@@ -52,31 +52,9 @@ Features
 
 Here is a detailed list of features for this Python template:
 
-.. features-begin
-
-- Packaging and dependency management with Poetry_
-- Test automation with Nox_
-- Continuous integration with `GitHub Actions`_
-- Documentation with Sphinx_ and `Read the Docs`_
-- Automated uploads to PyPI_ and TestPyPI_
-- Automated release notes with `Release Drafter`_
-- Automated dependency updates with Dependabot_
-- Code formatting with Black_ and Prettier_
-- Testing with pytest_
-- Code coverage with Coverage.py_
-- Coverage reporting with Codecov_
-- Command-line interface with Click_
-- Linting with Flake8_ and various :ref:`awesome plugins <Available linters>`
-- Static type-checking with mypy_ and pytype_
-- Runtime type-checking with Typeguard_
-- Security audit with Bandit_ and Safety_
-- Git hook management with pre-commit_
-- Checked documentation examples with xdoctest_
-- API documentation with autodoc_, napoleon_, and sphinx-autodoc-typehints_
-
-The template supports Python 3.6, 3.7, and 3.8.
-
-.. features-end
+.. include:: ../README.rst
+   :start-after: features-begin
+   :end-before: features-end
 
 
 Release cadence
@@ -1979,25 +1957,9 @@ The *Hypermodern Python Cookiecutter* groups pull requests by type,
 using GitHub labels.
 The following table shows the section headings and corresponding labels:
 
-.. table-release-drafter-sections-begin
-
-=================== ================================
-Label               Section
-=================== ================================
-``breaking``        💥 Breaking Changes
-``enhancement``     🚀 Features
-``removal``         🔥 Removals and Deprecations
-``bug``             🐞 Fixes
-``performance``     🐎 Performance
-``testing``         🚨 Testing
-``ci``              👷 Continuous Integration
-``documentation``   📚 Documentation
-``refactoring``     🔨 Refactoring
-``style``           💄 Style
-``dependencies``    📦 Dependencies
-=================== ================================
-
-.. table-release-drafter-sections-end
+.. include:: ../README.rst
+   :start-after: table-release-drafter-sections-begin
+   :end-before: table-release-drafter-sections-end
 
 The workflow is defined in ``.github/workflows/release-drafter.yml``.
 The configuration file is located in ``.github/release-drafter.yml``.
@@ -2293,43 +2255,23 @@ You can also read the articles on `this blog`__.
 
 __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 
-.. references-begin
+.. include:: ../README.rst
+   :start-after: references-begin
+   :end-before: references-end
 
-.. _`Bandit`: https://github.com/PyCQA/bandit
-.. _`Black`: https://github.com/psf/black
 .. _`Calendar Versioning`: https://calver.org
-.. _`Click`: https://click.palletsprojects.com/
-.. _`Codecov`: https://codecov.io/
-.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
-.. _`Coverage.py`: https://coverage.readthedocs.io/
-.. _`Dependabot`: https://dependabot.com/
-.. _`Flake8`: http://flake8.pycqa.org
-.. _`GitHub Actions`: https://github.com/features/actions
 .. _`GitHub Release`: https://help.github.com/en/github/administering-a-repository/about-releases
-.. _`GitHub`: https://github.com/
 .. _`Hypermodern Python Cookiecutter`: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _`Hypermodern Python`: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 .. _`Jinja`: https://palletsprojects.com/p/jinja/
 .. _`MIT license`: https://opensource.org/licenses/MIT
-.. _`Nox`: https://nox.thea.codes/
 .. _`PEP 257`: http://www.python.org/dev/peps/pep-0257/
 .. _`PEP 440`: https://www.python.org/dev/peps/pep-0440/
 .. _`PEP 517`: https://www.python.org/dev/peps/pep-0517/
 .. _`PEP 518`: https://www.python.org/dev/peps/pep-0518/
 .. _`PEP 561`: https://www.python.org/dev/peps/pep-0561/
 .. _`PEP 8`: http://www.python.org/dev/peps/pep-0008/
-.. _`Poetry`: https://python-poetry.org/
-.. _`Prettier`: https://prettier.io/
-.. _`PyPI`: https://pypi.org/
-.. _`Read the Docs`: https://readthedocs.org/
-.. _`Release Drafter`: https://github.com/release-drafter/release-drafter
-.. _`Safety`: https://github.com/pyupio/safety
-.. _`Sphinx`: http://www.sphinx-doc.org/
 .. _`TOML`: https://github.com/toml-lang/toml
-.. _`TestPyPI`: https://test.pypi.org/
-.. _`Typeguard`: https://github.com/agronholm/typeguard
 .. _`YAML`: https://yaml.org/
-.. _`autodoc`: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
 .. _`bash`: https://www.gnu.org/software/bash/
 .. _`curl`: https://curl.haxx.se
 .. _`darglint`: https://github.com/terrencepreilly/darglint
@@ -2341,20 +2283,9 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`flake8-rst-docstrings`: https://github.com/peterjc/flake8-rst-docstrings 
 .. _`git`: https://www.git-scm.com
 .. _`mccabe`: https://github.com/PyCQA/mccabe
-.. _`mypy`: http://mypy-lang.org/
-.. _`napoleon`: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 .. _`pep8-naming`: https://github.com/pycqa/pep8-naming
 .. _`pip`: https://pip.pypa.io/
-.. _`pipx`: https://pipxproject.github.io/pipx/
-.. _`pre-commit`: https://pre-commit.com/
 .. _`pycodestyle`: https://pycodestyle.pycqa.org/en/latest/
 .. _`pydocstyle`: http://www.pydocstyle.org/
-.. _`pyenv`: https://github.com/pyenv/pyenv
 .. _`pyflakes`: https://github.com/PyCQA/pyflakes
-.. _`pytest`: https://docs.pytest.org/en/latest/
-.. _`pytype`: https://google.github.io/pytype/
 .. _`reStructuredText`: https://docutils.sourceforge.io/rst.html
-.. _`sphinx-autodoc-typehints`: https://github.com/agronholm/sphinx-autodoc-typehints
-.. _`xdoctest`: https://github.com/Erotemic/xdoctest
-
-.. references-end
