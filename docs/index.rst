@@ -35,7 +35,7 @@ Usage
 Features
 --------
 
-.. include:: guide.rst
+.. include:: ../README.rst
    :start-after: features-begin
    :end-before: features-end
 
