@@ -52,31 +52,9 @@ Features
 
 Here is a detailed list of features for this Python template:
 
-.. features-begin
-
-- Packaging and dependency management with Poetry_
-- Test automation with Nox_
-- Continuous integration with `GitHub Actions`_
-- Documentation with Sphinx_ and `Read the Docs`_
-- Automated uploads to PyPI_ and TestPyPI_
-- Automated release notes with `Release Drafter`_
-- Automated dependency updates with Dependabot_
-- Code formatting with Black_ and Prettier_
-- Testing with pytest_
-- Code coverage with Coverage.py_
-- Coverage reporting with Codecov_
-- Command-line interface with Click_
-- Linting with Flake8_ and various :ref:`awesome plugins <Available linters>`
-- Static type-checking with mypy_ and pytype_
-- Runtime type-checking with Typeguard_
-- Security audit with Bandit_ and Safety_
-- Git hook management with pre-commit_
-- Checked documentation examples with xdoctest_
-- API documentation with autodoc_, napoleon_, and sphinx-autodoc-typehints_
-
-The template supports Python 3.6, 3.7, and 3.8.
-
-.. features-end
+.. include:: ../README.rst
+   :start-after: features-begin
+   :end-before: features-end
 
 
 Release cadence
