@@ -1957,25 +1957,9 @@ The *Hypermodern Python Cookiecutter* groups pull requests by type,
 using GitHub labels.
 The following table shows the section headings and corresponding labels:
 
-.. table-release-drafter-sections-begin
-
-=================== ================================
-Label               Section
-=================== ================================
-``breaking``        💥 Breaking Changes
-``enhancement``     🚀 Features
-``removal``         🔥 Removals and Deprecations
-``bug``             🐞 Fixes
-``performance``     🐎 Performance
-``testing``         🚨 Testing
-``ci``              👷 Continuous Integration
-``documentation``   📚 Documentation
-``refactoring``     🔨 Refactoring
-``style``           💄 Style
-``dependencies``    📦 Dependencies
-=================== ================================
-
-.. table-release-drafter-sections-end
+.. include:: ../README.rst
+   :start-after: table-release-drafter-sections-begin
+   :end-before: table-release-drafter-sections-end
 
 The workflow is defined in ``.github/workflows/release-drafter.yml``.
 The configuration file is located in ``.github/release-drafter.yml``.
