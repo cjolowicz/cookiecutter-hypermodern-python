@@ -3,6 +3,7 @@
    <p align="center"><img alt="Logo" src="Logo.png" width="50%" /></p>
 
 
+===============================
 cookiecutter-hypermodern-python
 ===============================
 
@@ -24,7 +25,7 @@ __ https://cookiecutter-hypermodern-python.readthedocs.io/
 
 
 Usage
------
+=====
 
 .. code:: console
 
@@ -32,7 +33,7 @@ Usage
 
 
 Features
---------
+========
 
 - Packaging and dependency management with Poetry_
 - Test automation with Nox_
@@ -60,10 +61,10 @@ __ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#a
 
 
 Quickstart
-----------
+==========
 
 Requirements
-~~~~~~~~~~~~
+------------
 
 Install Cookiecutter_:
 
@@ -91,7 +92,7 @@ It is recommended to set up Python 3.6, 3.7, and 3.8 using pyenv_.
 
 
 Creating a project
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Generate a Python project:
 
@@ -111,7 +112,7 @@ and create a Git repository:
 
 
 Local testing
-~~~~~~~~~~~~~
+-------------
 
 Run the full test suite:
 
@@ -127,10 +128,10 @@ List the available Nox sessions:
 
 
 Continuous Integration
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 GitHub
-......
+~~~~~~
 
 1. Sign up at GitHub_.
 2. Create an empty repository for your project.
@@ -138,7 +139,7 @@ GitHub
 
 
 PyPI
-....
+~~~~
 
 1. Sign up at PyPI_.
 2. Go to the Account Settings on PyPI,
@@ -148,7 +149,7 @@ PyPI
 
 
 TestPyPI
-........
+~~~~~~~~
 
 1. Sign up at TestPyPI_.
 2. Go to the Account Settings on TestPyPI,
@@ -158,28 +159,28 @@ TestPyPI
 
 
 Codecov
-.......
+~~~~~~~
 
 1. Sign up at Codecov_, and install their GitHub app.
 2. Add your repository to Codecov.
 
 
 Dependabot
-..........
+~~~~~~~~~~
 
 1. Sign up at Dependabot_, and install their GitHub app.
 2. Add your repository to Dependabot.
 
 
 Read the Docs
-.............
+~~~~~~~~~~~~~
 
 1. Sign up at `Read the Docs`_.
 2. Import your GitHub repository, using the button *Import a Project*.
 
 
 Releasing
-~~~~~~~~~
+---------
 
 1. Bump the version using `poetry version`_. Push to GitHub.
 2. Publish a GitHub Release.
