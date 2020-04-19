@@ -11,6 +11,10 @@
    license
    Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
 
+.. include:: ../README.rst
+   :start-after: badges-begin
+   :end-before: badges-end
+
 This package has a command-line interface.
 
 
