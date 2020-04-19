@@ -273,7 +273,8 @@ under the ``src`` directory::
   └── <package>
       ├── __init__.py
       ├── __main__.py
-      └── console.py
+      ├── console.py
+      └── py.typed
 
 The ``__init__.py`` file declares the directory as a `Python package`_.
 It also defines a ``__version__`` attribute,
@@ -301,6 +302,13 @@ by specifying a Python interpreter and the package name:
 .. code:: console
 
    $ python -m <package> [<options>]
+
+The ``py.typed`` file is an empty marker file,
+which declares that your package supports typing,
+and is distributed with its own type information
+(see `PEP 561`_).
+This allows people using your package
+to type-check their Python code against it.
 
 
 Uploading to GitHub
@@ -2304,6 +2312,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`PEP 440`: https://www.python.org/dev/peps/pep-0440/
 .. _`PEP 517`: https://www.python.org/dev/peps/pep-0517/
 .. _`PEP 518`: https://www.python.org/dev/peps/pep-0518/
+.. _`PEP 561`: https://www.python.org/dev/peps/pep-0561/
 .. _`PEP 8`: http://www.python.org/dev/peps/pep-0008/
 .. _`Poetry`: https://python-poetry.org/
 .. _`Prettier`: https://prettier.io/
