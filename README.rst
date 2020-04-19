@@ -46,7 +46,7 @@ Features
 - Code coverage with Coverage.py_
 - Coverage reporting with Codecov_
 - Command-line interface with Click_
-- Linting with Flake8_ and various awesome plugins
+- Linting with Flake8_ and various `awesome plugins`__
 - Static type-checking with mypy_ and pytype_
 - Runtime type-checking with Typeguard_
 - Security audit with Bandit_ and Safety_
@@ -55,6 +55,8 @@ Features
 - Generate API documentation with autodoc_, napoleon_, and sphinx-autodoc-typehints_
 
 The template supports Python 3.6, 3.7, and 3.8.
+
+__ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#available-linters
 
 
 Quickstart
