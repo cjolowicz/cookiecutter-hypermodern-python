@@ -221,6 +221,8 @@ Create the remaining labels on the Issues tab of your GitHub repository.
 
 .. quickstart-end
 
+.. references-begin
+
 .. _`Bandit`: https://github.com/PyCQA/bandit
 .. _`Black`: https://github.com/psf/black
 .. _`Click`: https://click.palletsprojects.com/
@@ -252,3 +254,5 @@ Create the remaining labels on the Issues tab of your GitHub repository.
 .. _`pytype`: https://google.github.io/pytype/
 .. _`sphinx-autodoc-typehints`: https://github.com/agronholm/sphinx-autodoc-typehints
 .. _`xdoctest`: https://github.com/Erotemic/xdoctest
+
+.. references-end
