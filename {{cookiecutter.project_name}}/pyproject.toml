@@ -41,7 +41,7 @@ flake8-rst-docstrings = "^0.0.13"
 sphinx-autobuild = "^0.7.1"
 
 [tool.poetry.scripts]
-{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.console:main"
+{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
@@ -49,7 +49,6 @@ source = ["src", "*/site-packages"]
 [tool.coverage.run]
 branch = true
 source = ["{{cookiecutter.package_name}}"]
-omit = ["*/{{cookiecutter.package_name}}/__main__.py"]
 
 [tool.coverage.report]
 show_missing = true
