@@ -67,6 +67,8 @@ __ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#a
 Quickstart
 ==========
 
+.. quickstart-begin
+
 Requirements
 ------------
 
@@ -216,6 +218,8 @@ Label               Section
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Create the remaining labels on the Issues tab of your GitHub repository.
+
+.. quickstart-end
 
 .. _`Bandit`: https://github.com/PyCQA/bandit
 .. _`Black`: https://github.com/psf/black
