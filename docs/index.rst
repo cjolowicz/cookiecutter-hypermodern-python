@@ -12,12 +12,9 @@ Hypermodern Python Cookiecutter
    license
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
-|Tests| |CalVer|
-
-.. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
-   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
-.. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
-   :target: http://calver.org/
+.. include:: ../README.rst
+   :start-after: badges-begin
+   :end-before: badges-end
 
 Cookiecutter_ template for a Python package
 based on the `Hypermodern Python`_ article series.
