@@ -18,7 +18,7 @@ cookiecutter-hypermodern-python
 Cookiecutter_ template for a Python package based on the
 `Hypermodern Python`_ article series.
 
-📚 `Read the full documentation`__
+✨📚✨ `Read the full documentation`__
 
 __ https://cookiecutter-hypermodern-python.readthedocs.io/
 
