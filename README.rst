@@ -7,6 +7,8 @@
 cookiecutter-hypermodern-python
 ===============================
 
+.. badges-begin
+
 |Tests| |Read the Docs| |CalVer|
 
 .. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
@@ -15,6 +17,8 @@ cookiecutter-hypermodern-python
    :target: https://cookiecutter-hypermodern-python.readthedocs.io/
 .. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
    :target: http://calver.org/
+
+.. badges-end
 
 Cookiecutter_ template for a Python package based on the
 `Hypermodern Python`_ article series.
