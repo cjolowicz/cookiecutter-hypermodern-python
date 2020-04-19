@@ -97,7 +97,8 @@ Generate a Python project:
 
 .. code:: console
 
-   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15.1
+   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
+     --checkout="2020.4.15.1"
 
 Change to the root directory of your new project,
 and create a Git repository:
@@ -131,8 +132,9 @@ Continuous Integration
 GitHub
 ......
 
-1. Create an empty repository for your project.
-2. Follow the instructions to push an existing repository from the command line.
+1. Sign up at GitHub_.
+2. Create an empty repository for your project.
+3. Follow the instructions to push an existing repository from the command line.
 
 
 PyPI
@@ -214,6 +216,7 @@ Create the remaining labels on the Issues tab of your GitHub repository.
 .. _`Coverage.py`: https://coverage.readthedocs.io/
 .. _`Dependabot`: https://dependabot.com/
 .. _`Flake8`: http://flake8.pycqa.org
+.. _`GitHub`: https://github.com/
 .. _`GitHub Actions`: https://github.com/features/actions
 .. _`Hypermodern Python`: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 .. _`Nox`: https://nox.thea.codes/
