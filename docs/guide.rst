@@ -251,7 +251,6 @@ under the ``src`` directory::
   └── <package>
       ├── __init__.py
       ├── __main__.py
-      ├── console.py
       └── py.typed
 
 ``__init__.py``
@@ -264,8 +263,8 @@ under the ``src`` directory::
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
    .. _`importlib.metadata`: https://docs.python.org/3/library/importlib.metadata.html
 
-``console.py``
-   This module defines the ``console.main`` entry point
+``__main__.py``
+   This module defines the ``__main__.main`` entry point
    for the command-line interface.
    The command-line interface is implemented using Click_,
    and supports ``--help`` and ``--version`` options.
@@ -274,10 +273,7 @@ under the ``src`` directory::
    in the ``bin`` directory of the Python installation or virtual environment,
    allowing you to invoke the command-line interface
    like any other console application.
-
-``__main__.py``
-   This module allows you to
-   invoke the command-line interface
+   The command-line interface can also be invoked
    by specifying a Python interpreter and the package name:
 
    .. code:: console
@@ -826,11 +822,11 @@ The test suite is located in the ``tests`` directory::
 
    tests
    ├── __init__.py
-   └── test_console.py
+   └── test_main.py
 
 The test suite is `declared as a package <tests-outside-application-code_>`__,
 and mirrors the source layout of the package under test.
-The file ``test_console.py`` contains tests for the ``console`` module.
+The file ``test_main.py`` contains tests for the ``__main__`` module.
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
@@ -933,11 +929,11 @@ using the current stable release of Python:
    $ nox --session=lint-3.8
 
 Use the separator ``--`` to pass additional options to ``flake8``.
-For example, the following command only lints the ``console`` module:
+For example, the following command only lints the ``__main__`` module:
 
 .. code:: console
 
-   $ nox --session=lint -- src/<project>/console.py
+   $ nox --session=lint -- src/<project>/__main__.py
 
 
 .. _`Available linters`:
@@ -1434,11 +1430,11 @@ using the current stable release of Python:
    $ nox --session=mypy-3.8
 
 Use the separator ``--`` to pass additional options and arguments to ``mypy``.
-For example, the following command type-checks only the ``console`` module:
+For example, the following command type-checks only the ``__main__`` module:
 
 .. code:: console
 
-   $ nox --session=mypy -- src/<package>/console.py
+   $ nox --session=mypy -- src/<package>/__main__.py
 
 
 Configuring mypy
@@ -1501,11 +1497,11 @@ pytype `does not yet support`__ Python 3.8.
 __ https://github.com/google/pytype/issues/440
 
 Use the separator ``--`` to pass additional options and arguments to ``pytype``.
-For example, the following command type-checks only the ``console`` module:
+For example, the following command type-checks only the ``__main__`` module:
 
 .. code:: console
 
-   $ nox --session=pytype -- --disable=import-error src/<package>/console.py
+   $ nox --session=pytype -- --disable=import-error src/<package>/__main__.py
 
 The command-line option ``--disable=import-error``
 avoids errors for third-party packages without typing information.
@@ -1544,14 +1540,14 @@ with the current stable release of Python:
    $ nox --session=typeguard-3.8
 
 Use the separator ``--`` to pass additional options and arguments to pytest.
-For example, the following command runs only tests for the ``console`` module:
+For example, the following command runs only tests for the ``__main__`` module:
 
 .. code:: console
 
-   $ nox --session=typeguard -- tests/test_console.py
+   $ nox --session=typeguard -- tests/test_main.py
 
 Typeguard generates a warning about missing type annotations for a Click object.
-This is due to the fact that ``console.main`` is wrapped by a decorator,
+This is due to the fact that ``__main__.main`` is wrapped by a decorator,
 and its type annotations only apply to the inner function,
 not the resulting object as seen by the test suite.
 
