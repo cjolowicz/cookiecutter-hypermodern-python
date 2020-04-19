@@ -1480,11 +1480,6 @@ The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
 is used to disable import errors for selected packages
 where type information is not yet available.
 
-The :ref:`mypy_path <mypy:config-file-import-discovery>` option is set to the
-``src`` directory. This is required to avoid errors about missing imports
-related to your own package when mypy is invoked on files located outside of it,
-such as modules in the test suite.
-
 The following options are enabled for enhanced output:
 
 - :option:`pretty <mypy --pretty>`
