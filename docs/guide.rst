@@ -1563,14 +1563,12 @@ Stand-alone documents
 ---------------------
 
 The project repository contains several documentation files
-written in Markdown__, reStructuredText_, and plain text:
-
-__ https://www.markdownguide.org/
+written in reStructuredText_ and plain text:
 
 ======================= ============================================
 File                    Contents
 ======================= ============================================
-``README.md``           Project description for GitHub and PyPI
+``README.rst``          Project description for GitHub and PyPI
 ``CONTRIBUTING.rst``    Contributor Guide
 ``CODE_OF_CONDUCT.rst`` Code of Conduct
 ``LICENSE``             License
