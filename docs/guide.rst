@@ -1586,8 +1586,8 @@ File                   Contents
 The documentation menu also has a *Changelog* entry,
 which links to the `GitHub Releases <GitHub Release_>`__ page.
 
-The API documentation is generated from docstrings and type annotations,
-using the autodoc_, napoleon_, and sphinx-autodoc-typehints_ extensions.
+The API documentation is generated from docstrings and type annotations
+using the autodoc_ and napoleon_ extensions.
 
 The ``requirements.txt`` is necessary
 because Read the Docs currently does not support

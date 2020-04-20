@@ -59,7 +59,7 @@ Features
 - Security audit with Bandit_ and Safety_
 - Git hook management with pre-commit_
 - Check documentation examples with xdoctest_
-- Generate API documentation with autodoc_, napoleon_, and sphinx-autodoc-typehints_
+- Generate API documentation with autodoc_ and napoleon_
 
 The template supports Python 3.6, 3.7, and 3.8.
 
@@ -262,7 +262,6 @@ when you need them.
 .. _`pyenv`: https://github.com/pyenv/pyenv
 .. _`pytest`: https://docs.pytest.org/en/latest/
 .. _`pytype`: https://google.github.io/pytype/
-.. _`sphinx-autodoc-typehints`: https://github.com/agronholm/sphinx-autodoc-typehints
 .. _`xdoctest`: https://github.com/Erotemic/xdoctest
 
 .. references-end
