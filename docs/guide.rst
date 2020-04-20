@@ -255,13 +255,8 @@ under the ``src`` directory::
 
 ``__init__.py``
    This file declares the directory as a `Python package`_.
-   It also defines a ``__version__`` attribute,
-   containing the version of your package.
-   The version is determined using the installed package metadata,
-   by means of the standard `importlib.metadata`_ library.
 
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
-   .. _`importlib.metadata`: https://docs.python.org/3/library/importlib.metadata.html
 
 ``__main__.py``
    This module defines the ``__main__.main`` entry point
@@ -444,15 +439,11 @@ and they come in two types:
   These dependencies are not a part of distribution packages,
   because users do not require them to run your code.
 
-This project template has two core dependencies:
-
-- Click_, a library for creating command-line interfaces
-- `importlib_metadata`_, a backport of `importlib.metadata`_
+This project template has a core dependency on Click_,
+a library for creating command-line interfaces
 
 The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
-
-.. _`importlib_metadata`: https://importlib-metadata.readthedocs.io/
 
 
 Managing dependencies
