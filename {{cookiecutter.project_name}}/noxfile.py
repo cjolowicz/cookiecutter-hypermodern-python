@@ -11,7 +11,7 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
+nox.options.sessions = "lint", "safety", "mypy", "tests"
 locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 
@@ -152,14 +152,6 @@ def mypy(session: Session) -> None:
     install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
-
-
-@nox.session(python=["3.7", "3.6"])
-def pytype(session: Session) -> None:
-    """Type-check using pytype."""
-    args = session.posargs or ["--disable=import-error", *locations]
-    install(session, "pytype")
-    session.run("pytype", *args)
 
 
 @nox.session(python=python_versions)
