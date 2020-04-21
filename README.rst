@@ -54,7 +54,7 @@ Features
 - Coverage reporting with Codecov_
 - Command-line interface with Click_
 - Linting with Flake8_ and various `awesome plugins`__
-- Static type-checking with mypy_ and pytype_
+- Static type-checking with mypy_
 - Runtime type-checking with Typeguard_
 - Security audit with Bandit_ and Safety_
 - Git hook management with pre-commit_
@@ -261,7 +261,6 @@ when you need them.
 .. _`pre-commit`: https://pre-commit.com/
 .. _`pyenv`: https://github.com/pyenv/pyenv
 .. _`pytest`: https://docs.pytest.org/en/latest/
-.. _`pytype`: https://google.github.io/pytype/
 .. _`xdoctest`: https://github.com/Erotemic/xdoctest
 
 .. references-end
