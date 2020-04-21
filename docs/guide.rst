@@ -732,7 +732,6 @@ Session                                Description                    Python    
 `docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
 `lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
 `mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-`pytype <The pytype session_>`__       Type-check with pytype_        ``3.6`` … ``3.7``      ✓
 `safety <The safety session_>`__       Scan dependencies with Safety_ ``3.8``                ✓
 `tests <The tests session_>`__         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
 `typeguard <The typeguard session_>`__ Type-check with Typeguard_     ``3.6`` … ``3.8``
@@ -1389,12 +1388,10 @@ There are two kinds of type checkers:
   This is particularly useful during the execution of unit tests.
 
 The *Hypermodern Python Cookiecutter* uses
-both static type checkers and a runtime type checker:
+both a static type checker and a runtime type checker:
 
 - mypy_ is the pioneer and *de facto* reference implementation of
   static type checking in Python.
-- pytype_ is a static type checker developed at Google,
-  with a focus on type inference and stub generation.
 - Typeguard_ is a runtime type checker and pytest_ plugin.
   It can type-check function calls during test runs via an `import hook`__.
 
@@ -1463,40 +1460,6 @@ The following options are enabled for enhanced output:
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
 - :option:`show_error_context <mypy --show-error-context>`
-
-
-.. _`The pytype session`:
-
-The pytype session
-------------------
-
-Run pytype_ using Nox:
-
-.. code:: console
-
-   $ nox --session=pytype
-
-You can also run the type checker with a specific Python version.
-For example, the following command runs pytype using Python 3.7:
-
-.. code:: console
-
-   $ nox --session=pytype-3.7
-
-pytype `does not yet support`__ Python 3.8.
-
-__ https://github.com/google/pytype/issues/440
-
-Use the separator ``--`` to pass additional options and arguments to ``pytype``.
-For example, the following command type-checks only the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=pytype -- --disable=import-error src/<package>/__main__.py
-
-The command-line option ``--disable=import-error``
-avoids errors for third-party packages without typing information.
-This option is passed by default if the session is run without additional arguments.
 
 
 .. _`The typeguard session`:
