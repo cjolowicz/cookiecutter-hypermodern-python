@@ -27,7 +27,7 @@ class Poetry:
         self.session = session
 
     @contextlib.contextmanager
-    def export(self, *args: str) -> Iterator[str]:
+    def export(self, *args: str) -> Iterator[Path]:
         """Export the lock file to requirements format.
 
         Args:
@@ -36,16 +36,17 @@ class Poetry:
         Yields:
             The path to the requirements file.
         """
-        with tempfile.NamedTemporaryFile() as requirements:
+        with tempfile.TemporaryDirectory() as directory:
+            requirements = Path(directory) / "requirements.txt"
             self.session.run(
                 "poetry",
                 "export",
                 *args,
                 "--format=requirements.txt",
-                f"--output={requirements.name}",
+                f"--output={requirements}",
                 external=True,
             )
-            yield requirements.name
+            yield requirements
 
     def version(self) -> str:
         """Retrieve the package version.
