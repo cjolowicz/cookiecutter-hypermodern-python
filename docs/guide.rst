@@ -1821,7 +1821,8 @@ The Tests workflow executes the test suite using Nox.
 
 The workflow is triggered on every push to the GitHub repository.
 It consists of a job for each supported Python version,
-running on the latest supported `Ubuntu image`__.
+executed on the `latest supported runners`__ for
+Ubuntu, Windows, and macOS.
 
 __ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
@@ -1858,7 +1859,8 @@ The workflow uses the following GitHub Actions:
 
 .. _`codecov/codecov-action`: https://github.com/codecov/codecov-action
 
-The workflow runs on the current Python version and the latest supported Ubuntu image.
+The workflow runs with the current Python version,
+using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/coverage.yml``.
 
@@ -1881,7 +1883,8 @@ The workflow uses the following GitHub Actions:
 
 .. _`actions/cache`: https://github.com/actions/cache
 
-The workflow runs on the current Python version and the latest supported Ubuntu image.
+The workflow runs with the current Python version,
+using the latest Ubuntu, Windows, and macOS runners.
 
 It is defined in ``.github/workflows/pre-commit.yml``.
 
@@ -1903,7 +1906,8 @@ The workflow uses the following GitHub Actions:
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 
-The workflow runs on the current Python version and the latest supported Ubuntu image.
+The workflow runs with the current Python version,
+using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/docs.yml``.
 
