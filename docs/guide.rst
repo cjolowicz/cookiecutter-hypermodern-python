@@ -99,6 +99,24 @@ install additional packages using the following commands:
 The project template should also work natively on Windows.
 Pull requests to document Windows specifics are welcome!
 
+.. note::
+
+   When working with this template on Windows,
+   configure your text editor or IDE
+   to use only `UNIX-style line endings`__ (line feeds).
+
+   __ https://en.wikipedia.org/wiki/Newline
+
+   The project template contains a `.gitattributes`__ file
+   which enables end-of-line normalization for your entire working tree.
+   Additionally, the Prettier_ code formatter converts line endings to line feeds.
+   Windows-style line endings (`CRLF`) should therefore never make it into your Git repository.
+
+   __ https://git-scm.com/book/en/Customizing-Git-Git-Attributes
+
+   Nonetheless, configuring your editor for line feeds is recommended
+   to avoid complaints from the pre-commit_ hook for Prettier.
+
 
 Getting Python
 --------------
