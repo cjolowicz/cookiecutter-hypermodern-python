@@ -17,7 +17,7 @@ jobs:
       - name: Install tools using pip
         run: >-
           pip install
-          cookiecutter==1.7.0
+          cookiecutter==1.7.2
           nox==2019.11.9
           poetry==1.0.5
           pre-commit==2.2.0
