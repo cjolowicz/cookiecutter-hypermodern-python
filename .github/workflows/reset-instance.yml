@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.8"
       - name: Install cookiecutter
-        run: pip install cookiecutter==1.7.0
+        run: pip install cookiecutter==1.7.2
       - name: Remove working tree
         run: |
           mv cookiecutter-hypermodern-python-instance/.git tmp.git
