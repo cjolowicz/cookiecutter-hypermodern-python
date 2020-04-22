@@ -2,7 +2,11 @@ name: pre-commit
 on: push
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    name: {% raw %}${{ matrix.os }}{% endraw %}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
