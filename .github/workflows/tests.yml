@@ -2,11 +2,12 @@ name: Tests
 on: push
 jobs:
   tests:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
         python-version: ["3.6", "3.7", "3.8"]
-    name: Python ${{ matrix.python-version }}
+    name: Python ${{ matrix.python-version }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -24,11 +25,25 @@ jobs:
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-hypermodern-python
       - name: Create git repository
+        if: matrix.os != 'windows-latest'
         run: |
           git init
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git add .
+          git commit --message="Initial import"
+        working-directory: hypermodern-python
+      - name: Create git repository (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          git init
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          # https://github.com/cookiecutter/cookiecutter/issues/405
+          $ErrorActionPreference = "Continue"
+          git add .
+          $ErrorActionPreference = "Stop"
+          git add --renormalize .
           git commit --message="Initial import"
         working-directory: hypermodern-python
       - name: Run test suite using Nox
