@@ -55,21 +55,25 @@ jobs:
       - name: Install dependencies using Poetry
         run: poetry install --ansi
         working-directory: hypermodern-python
-      - name: Set cache key identifying the Python installation
+      - name: Compute cache key for pre-commit
+        id: cache_key
+        shell: python
         run: |
-          echo "::set-env name=PYTHON_VERSION_HASH::$(python -c '
           import hashlib
           import sys
 
+          python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
+          result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])
 
-          print(digest)
-          ')"
+          print("::set-output name=result::{}".format(result))
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pre-commit
-          key: pre-commit-${{ env.PYTHON_VERSION_HASH }}-${{ hashFiles('hypermodern-python/.pre-commit-config.yaml') }}
+          key: ${{ steps.cache_key.outputs.result }}-${{ hashFiles('hypermodern-python/.pre-commit-config.yaml') }}
+          restore-keys: |
+            ${{ steps.cache_key.outputs.result }}-
       - name: Run linter suite using pre-commit
         run: pre-commit run --all-files --show-diff-on-failure --color=always
         working-directory: hypermodern-python
