@@ -15,7 +15,7 @@ jobs:
       - run: >-
           pip install
           poetry==1.0.5
-          pre-commit==2.2.0
+          pre-commit==2.3.0
       - name: set ACTIONS_CACHE_KEY
         run: |
           echo "::set-env name=ACTIONS_CACHE_KEY::$(python -c '
