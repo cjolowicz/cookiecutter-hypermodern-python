@@ -10,3 +10,7 @@ jobs:
           python-version: "3.8"
       - run: pip install nox==2019.11.9
       - run: nox --force-color --session=docs
+      - uses: actions/upload-artifact@v1
+        with:
+          name: docs
+          path: docs/_build

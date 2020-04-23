@@ -1895,7 +1895,11 @@ The Docs workflow
 .................
 
 The Docs workflow builds the Sphinx_ documentation
-using the `docs <The docs session_>`__ Nox session.
+using the `docs <The docs session_>`__ Nox session,
+and uploads the generated files as a `workflow artifact`__.
+
+__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
+
 This is done solely to ensure that the build process is functional.
 The actual project documentation is built independently on `Read the Docs`_.
 
@@ -1905,6 +1909,9 @@ The workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
+- `actions/upload-artifact`_ to upload the generated documentation
+
+.. _`actions/upload-artifact`: https://github.com/actions/upload-artifact
 
 The workflow runs with the current Python version,
 using the latest supported Ubuntu runner.
