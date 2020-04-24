@@ -1557,9 +1557,9 @@ File                   Contents
 ====================== =======================================================
 ``conf.py``            Sphinx configuration file
 ``index.rst``          Master document
-``contributing.rst``   Contributor Guide (included from ``CONTRIBUTING.rst``)
-``codeofconduct.rst``  Code of Conduct (included from ``CODE_OF_CONDUCT.rst``)
-``license.rst``        License (included from ``LICENSE.rst``)
+``contributing.rst``   Contributor Guide (includes ``CONTRIBUTING.rst``)
+``codeofconduct.rst``  Code of Conduct (includes ``CODE_OF_CONDUCT.rst``)
+``license.rst``        License (includes ``LICENSE.rst``)
 ``reference.rst``      API documentation
 ``requirements.txt``   Build dependencies for `Read the Docs`_
 ====================== =======================================================
