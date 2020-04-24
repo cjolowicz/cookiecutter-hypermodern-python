@@ -1793,6 +1793,28 @@ You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
 
 
+Constraints file
+----------------
+
+Workflows install the following tools globally using pip_:
+
+- Poetry_
+- Nox_
+- pre-commit_
+
+These dependencies are pinned using a `constraints file`__
+located in ``.github/workflow/constraints.txt``.
+
+__ https://pip.pypa.io/en/stable/user_guide/#constraints-files
+
+Upgrade to newer versions of these tools by updating the constraints file.
+
+.. note::
+
+   Keep the constraints file up-to-date manually.
+   It is not yet managed by Dependabot_.
+
+
 Available workflows
 -------------------
 

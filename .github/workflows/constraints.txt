@@ -1,0 +1,4 @@
+cookiecutter==1.7.2
+nox==2019.11.9
+poetry==1.0.5
+pre-commit==2.3.0
