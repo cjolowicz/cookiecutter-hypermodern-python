@@ -8,7 +8,7 @@
    reference
    contributing
    Code of Conduct <codeofconduct>
-   license
+   License <license>
    Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
 
 .. include:: ../README.rst
