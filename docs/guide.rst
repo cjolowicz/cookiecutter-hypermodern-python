@@ -1531,7 +1531,7 @@ Stand-alone documents
 ---------------------
 
 The project repository contains several documentation files
-written in reStructuredText_ and plain text:
+written in reStructuredText_:
 
 ======================= ============================================
 File                    Contents
@@ -1539,7 +1539,7 @@ File                    Contents
 ``README.rst``          Project description for GitHub and PyPI
 ``CONTRIBUTING.rst``    Contributor Guide
 ``CODE_OF_CONDUCT.rst`` Code of Conduct
-``LICENSE``             License
+``LICENSE.rst``         License
 ======================= ============================================
 
 
@@ -1559,7 +1559,7 @@ File                   Contents
 ``index.rst``          Master document
 ``contributing.rst``   Contributor Guide (included from ``CONTRIBUTING.rst``)
 ``codeofconduct.rst``  Code of Conduct (included from ``CODE_OF_CONDUCT.rst``)
-``license.rst``        License (included from ``LICENSE``)
+``license.rst``        License (included from ``LICENSE.rst``)
 ``reference.rst``      API documentation
 ``requirements.txt``   Build dependencies for `Read the Docs`_
 ====================== =======================================================
