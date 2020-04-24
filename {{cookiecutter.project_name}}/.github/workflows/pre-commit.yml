@@ -13,9 +13,9 @@ jobs:
         with:
           python-version: "3.8"
       - run: >-
-          pip install
-          poetry==1.0.5
-          pre-commit==2.3.0
+          pip install --constraint=.github/workflows/constraints.txt
+          poetry
+          pre-commit
       - name: Compute cache key prefix
         id: cache_key_prefix
         shell: python
