@@ -9,7 +9,7 @@ Hypermodern Python Cookiecutter
    guide
    contributing
    Code of Conduct <codeofconduct>
-   license
+   License <license>
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
 .. include:: ../README.rst
