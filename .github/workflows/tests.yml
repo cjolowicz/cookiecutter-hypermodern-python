@@ -16,12 +16,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install tools using pip
+        working-directory: cookiecutter-hypermodern-python
         run: >-
           pip install
-          cookiecutter==1.7.2
-          nox==2019.11.9
-          poetry==1.0.5
-          pre-commit==2.3.0
+          --constraint=.github/workflows/constraints.txt
+          cookiecutter
+          nox
+          poetry
+          pre-commit
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-hypermodern-python
       - name: Create git repository
