@@ -43,7 +43,7 @@ FAQ
   *What is this project about?*
 
 The mission of this project is to
-enable current best practises
+enable current best practices
 through modern Python tooling.
 
   *What makes this project different from other Python templates?*
@@ -52,7 +52,7 @@ This is a general-purpose template for Python libraries and applications.
 
 Our goals are:
 
-- Keep a focus on simplicity and minimalism
+- Focus on simplicity and minimalism
 - Promote code quality through automation
 - Provide reliable and repeatable processes
 
@@ -64,12 +64,12 @@ The project template is centered around the following tools:
 
   *Why is this Python template called "hypermodern"?*
 
-Hypermodernism_ is a school of chess from a century ago.
+Hypermodernism_ is a school of chess that dates back to more than a century ago.
 If this setup ever goes out of fashion,
 I can pretend it was my secret plan from the start.
 All images on the
 `associated blog <Hypermodern Python_>`__ show
-`outdated visions <Retrofuturism_>`__ of the future.
+`past visions <Retrofuturism_>`__ of the future.
 
 .. _`Hypermodernism`: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
 .. _`Retrofuturism`: https://en.wikipedia.org/wiki/Retrofuturism

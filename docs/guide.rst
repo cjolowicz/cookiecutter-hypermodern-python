@@ -25,11 +25,11 @@ released under the `MIT license`_
 and hosted on `GitHub <Hypermodern Python Cookiecutter_>`__.
 
 The main objective of this project template is to
-enable current best practises
+enable current best practices
 through modern Python tooling.
 Our goals are to:
 
-- keep a focus on simplicity and minimalism,
+- focus on simplicity and minimalism,
 - promote code quality through automation, and
 - provide reliable and repeatable processes,
 
@@ -248,9 +248,9 @@ Project Variable   Description                     Example
 ``project_name``   Project name on PyPI and GitHub ``hypermodern-python``
 ``package_name``   Import name of the package      ``hypermodern_python``
 ``friendly_name``  Friendly project name           ``Hypermodern Python``
-``author``         Primary author                  Jane Doe
-``email``          E-mail address of the author    jane.doe@example.com
-``github_user``    GitHub username of the author   ``janedoe``
+``author``         Primary author                  Katherine Johnson
+``email``          E-mail address of the author    katherine@example.com
+``github_user``    GitHub username of the author   ``katherine``
 ``version``        Initial project version         ``0.1.0``
 ================== =============================== ======================
 
@@ -384,17 +384,17 @@ using the following Poetry commands:
    $ poetry build
    $ poetry publish
 
-Building the package is done with the `python build`_ command.
-This command generates *distribution packages*
+Building the package is done with the `python build`_ command,
+which generates *distribution packages*
 in the ``dist`` directory of your project.
-These are compressed archives which
+These are compressed archives that
 an end-user can download and install on their system.
 They come in two flavours:
 source (or *sdist*) archives, and 
 binary packages in the wheel_ format.
 
-Publishing the package is done with the `python publish`_ command.
-This command uploads the distribution packages
+Publishing the package is done with the `python publish`_ command,
+which uploads the distribution packages
 to your account on PyPI_,
 the official Python package registry.
 
@@ -406,7 +406,7 @@ the official Python package registry.
 Installing the package
 ----------------------
 
-With your package on PyPI,
+Once your package is on PyPI,
 others can install it with pip_, pipx_, or Poetry:
 
 .. code:: console
@@ -416,7 +416,7 @@ others can install it with pip_, pipx_, or Poetry:
    $ poetry add <project>
 
 While pip_ is the workhorse of the Python packaging ecosystem,
-you should normally use higher-level tools to install your package:
+you should use higher-level tools to install your package:
 
 - If the package is an application, install it with pipx_.
 - If the package is a library, install it with `poetry add`_ in other projects.
@@ -447,7 +447,8 @@ and they come in two types:
 
 - *Core dependencies* are required by users running your code,
   and typically consist of third-party libraries imported by your package.
-  These dependencies are also declared in distribution packages such as wheels,
+  When your package is distributed,
+  the package metainfo includes these dependencies,
   allowing tools like pip_ to automatically install them alongside your package.
 
 - *Development dependencies* are only required by developers working on your code.
@@ -520,10 +521,12 @@ Dependencies are kept in two TOML tables:
 - ``tool.poetry.dev-dependencies``---for development dependencies
 
 By default, version constraints require users to have at least
-the version of a dependency that was current when you added it to the project.
+the version that was current when the dependency was added to the project.
 Users can also upgrade to newer releases of dependencies,
 as long as the version number does not indicate a breaking change.
-(After 1.0.0, `Semantic Versioning`_ limits breaking changes to major releases.)
+(According to the `Semantic Versioning`_ standard,
+only major releases may contain breaking changes,
+once a project has reached version 1.0.0.)
 
 .. _`version constraint`: https://python-poetry.org/docs/versions/
 .. _`Semantic Versioning`: https://semver.org/
@@ -556,8 +559,7 @@ The Poetry environment
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Poetry manages a `virtual environment`_ for your project,
-containing your package together with its core dependencies,
-as well as the development dependencies.
+which contains your package, its core dependencies, and the development dependencies.
 All dependencies are kept at the versions specified by the lock file.
 
 A virtual environment gives your project
@@ -860,7 +862,7 @@ Run the test suite using the Nox session ``tests``:
 The tests session runs the test suite against the installed code.
 More specifically, the session builds a wheel from your project and
 installs it into the Nox environment,
-with dependencies pinned as specified in Poetry's lock file.
+with dependencies pinned as specified by Poetry's lock file.
 
 You can also run the test suite with a specific Python version.
 For example, the following command runs the test suite
