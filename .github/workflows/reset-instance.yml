@@ -23,10 +23,9 @@ jobs:
           python-version: "3.8"
       - name: Install cookiecutter
         working-directory: cookiecutter-hypermodern-python
-        run: >-
-          pip install
-          --constraint=.github/workflows/constraints.txt
-          cookiecutter
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install --constraint=.github/workflows/constraints.txt cookiecutter
       - name: Remove working tree
         run: |
           mv cookiecutter-hypermodern-python-instance/.git tmp.git

@@ -1796,8 +1796,9 @@ from your account settings on PyPI_ and TestPyPI_.
 Constraints file
 ----------------
 
-Workflows install the following tools globally using pip_:
+GitHub workflows install the following tools:
 
+- pip_
 - Poetry_
 - Nox_
 - pre-commit_

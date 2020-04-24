@@ -13,8 +13,7 @@ jobs:
       - uses: actions/setup-python@v1
         with:
           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
-      - run: >-
-          pip install --constraint=.github/workflows/constraints.txt
-          nox
-          poetry
+      - run: |
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install --constraint=.github/workflows/constraints.txt nox poetry
       - run: nox --force-color
