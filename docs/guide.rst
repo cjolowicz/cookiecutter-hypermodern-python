@@ -1,7 +1,7 @@
 User Guide
 ==========
 
-This is the user guide 
+This is the user guide
 for the `Hypermodern Python Cookiecutter`_,
 a Python template based on the `Hypermodern Python`_ article series.
 
@@ -300,7 +300,7 @@ under the ``src`` directory::
    (`PEP 561`_).
    This allows people using your package
    to type-check their Python code against it.
- 
+
 
 Uploading to GitHub
 -------------------
@@ -390,7 +390,7 @@ in the ``dist`` directory of your project.
 These are compressed archives that
 an end-user can download and install on their system.
 They come in two flavours:
-source (or *sdist*) archives, and 
+source (or *sdist*) archives, and
 binary packages in the wheel_ format.
 
 Publishing the package is done with the `python publish`_ command,
@@ -400,7 +400,7 @@ the official Python package registry.
 
 .. _`python build`: https://python-poetry.org/docs/cli/#build
 .. _`python publish`: https://python-poetry.org/docs/cli/#publish
-.. _`wheel`: https://www.python.org/dev/peps/pep-0427/ 
+.. _`wheel`: https://www.python.org/dev/peps/pep-0427/
 
 
 Installing the package
@@ -482,7 +482,7 @@ Use the command `poetry add`_ to add a dependency for your package:
 .. code:: console
 
    $ poetry add foobar        # for core dependencies
-   $ poetry add --dev foobar  # for development dependencies 
+   $ poetry add --dev foobar  # for development dependencies
 
 Use the command `poetry remove`_ to remove a dependency from your package:
 
@@ -594,7 +594,7 @@ without the need to reinstall your package.
 
 .. _`editable install`: https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
 
-Installing your package implicitly creates the virtual environment 
+Installing your package implicitly creates the virtual environment
 if it does not exist yet,
 using the currently active Python interpreter,
 or the first one found
@@ -958,7 +958,7 @@ the *Hypermodern Python Cookiecutter*,
 and links to their lists of error codes.
 
 ======================= ============================================================== =========
-Tool                    Description                                                    Code     
+Tool                    Description                                                    Code
 ======================= ============================================================== =========
 pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
 pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
@@ -1047,7 +1047,7 @@ and a configurable style convention.
 .. _`flake8-import-order codes`:
 __ https://github.com/PyCQA/flake8-import-order#warnings
 
-The *Hypermodern Python Cookiecutter* 
+The *Hypermodern Python Cookiecutter*
 selects the recommendations of the
 `Google styleguide <Google import style_>`__.
 Imports need to be arranged in three sorted groups, like this:
@@ -2077,7 +2077,7 @@ Invoke the command-line interface of your package:
 
    $ poetry run <project>
 
-  
+
 How to make code changes
 ------------------------
 
@@ -2282,7 +2282,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _`flake8-bugbear`: https://github.com/PyCQA/flake8-bugbear
 .. _`flake8-docstrings`: https://gitlab.com/pycqa/flake8-docstrings
 .. _`flake8-import-order`: https://github.com/PyCQA/flake8-import-order
-.. _`flake8-rst-docstrings`: https://github.com/peterjc/flake8-rst-docstrings 
+.. _`flake8-rst-docstrings`: https://github.com/peterjc/flake8-rst-docstrings
 .. _`git`: https://www.git-scm.com
 .. _`mccabe`: https://github.com/PyCQA/mccabe
 .. _`pep8-naming`: https://github.com/pycqa/pep8-naming
