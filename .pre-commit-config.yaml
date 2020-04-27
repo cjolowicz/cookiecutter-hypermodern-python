@@ -8,6 +8,6 @@ repos:
       - id: trailing-whitespace
       - id: check-added-large-files
   - repo: https://github.com/prettier/prettier
-    rev: 2.0.4
+    rev: 2.0.5
     hooks:
       - id: prettier
