@@ -3,7 +3,7 @@
 
 .. badges-begin
 
-|Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit|
+|Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit| |Dependabot|
 
 .. |Tests| image:: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/workflows/Tests/badge.svg
    :target: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/actions?workflow=Tests
@@ -29,5 +29,8 @@
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
+.. |Dependabot| image:: https://flat.badgen.net/dependabot/cjolowicz/cookiecutter-hypermodern-python-instance?icon=dependabot
+   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python-instance/pulls/app%2Fdependabot-preview
+   :alt: Dependabot
 
 .. badges-end
