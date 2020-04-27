@@ -9,7 +9,7 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Tests| |Read the Docs| |CalVer| |Codecov| |Python Version| |License| |Black|
+|Tests| |Read the Docs| |CalVer| |Codecov| |Python Version| |License| |Black| |pre-commit|
 
 .. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
@@ -25,6 +25,8 @@ cookiecutter-hypermodern-python
    :target: https://opensource.org/licenses/MIT
 .. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
+.. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+   :target: https://github.com/pre-commit/pre-commit
 
 .. badges-end
 
