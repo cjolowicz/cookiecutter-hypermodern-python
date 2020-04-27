@@ -9,7 +9,7 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Tests| |Read the Docs| |CalVer| |Codecov|
+|Tests| |Read the Docs| |CalVer| |Codecov| |Python Version|
 
 .. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
@@ -19,6 +19,8 @@ cookiecutter-hypermodern-python
    :target: http://calver.org/
 .. |Codecov| image:: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance
+.. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
+   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 
 .. badges-end
 
