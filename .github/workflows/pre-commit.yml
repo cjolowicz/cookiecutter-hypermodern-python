@@ -8,8 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-python@v1.2.0
         with:
           python-version: "3.8"
       - run: |
@@ -28,7 +28,7 @@ jobs:
           result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])
 
           print("::set-output name=result::{}".format(result))
-      - uses: actions/cache@v1
+      - uses: actions/cache@v1.1.2
         with:
           path: ~/.cache/pre-commit
           key: ${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}

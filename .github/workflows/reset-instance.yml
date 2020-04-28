@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out cookiecutter-hypermodern-python
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.1.0
         with:
           path: cookiecutter-hypermodern-python
       - name: Check out cookiecutter-hypermodern-python-instance
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.1.0
         with:
           repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
           path: cookiecutter-hypermodern-python-instance
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v1.2.0
         with:
           python-version: "3.8"
       - name: Install cookiecutter

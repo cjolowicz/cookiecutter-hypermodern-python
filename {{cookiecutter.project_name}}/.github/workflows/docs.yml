@@ -4,15 +4,15 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-python@v1.2.0
         with:
           python-version: "3.8"
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
       - run: nox --force-color --session=docs
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v1.0.0
         with:
           name: docs
           path: docs/_build
