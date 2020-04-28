@@ -1837,6 +1837,9 @@ Workflow                                            File                     Des
 `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
 =================================================== ======================== ==================================== ===============
 
+GitHub Actions used by these workflows are managed by Dependabot_.
+When a new version of a GitHub Action becomes available,
+Dependabot_ will update the workflow and submit a pull request.
 
 .. _`The Tests workflow`:
 
