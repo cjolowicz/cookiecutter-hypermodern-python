@@ -1572,14 +1572,18 @@ which links to the `GitHub Releases <GitHub Release_>`__ page.
 The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
 
-The ``requirements.txt`` is necessary
+The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
+This file is necessary
 because Read the Docs currently does not support
 installing development dependencies using Poetry's lock file.
-You need to update this file manually,
-whenever you upgrade Sphinx or its extensions.
 For the sake of brevity and maintainability,
-only direct dependencies are listed.
+only direct dependencies are included.
 
+When newer versions of the build dependencies become available,
+Dependabot_ will update the requirements file and
+submit a pull request.
+Ensure the requirements match Poetry's lock file,
+whenever you add, upgrade, or remove a Sphinx extension or Sphinx itself.
 
 .. _`The docs session`:
 
