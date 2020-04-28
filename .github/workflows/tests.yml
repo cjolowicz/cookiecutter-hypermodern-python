@@ -9,7 +9,7 @@ jobs:
     name: Python ${{ matrix.python-version }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.1.0
         with:
           path: cookiecutter-hypermodern-python
       - uses: actions/setup-python@v1
