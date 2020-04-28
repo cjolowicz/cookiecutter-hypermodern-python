@@ -25,7 +25,7 @@ jobs:
           python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
-          result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])
+          result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest)
 
           print("::set-output name=result::{}".format(result))
       - uses: actions/cache@v1.1.2
