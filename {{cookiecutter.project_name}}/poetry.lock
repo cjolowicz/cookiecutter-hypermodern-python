@@ -720,7 +720,7 @@ description = "Python documentation generator"
 name = "sphinx"
 optional = false
 python-versions = ">=3.5"
-version = "3.0.2"
+version = "3.0.3"
 
 [package.dependencies]
 Jinja2 = ">=2.3"
@@ -989,7 +989,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "80e41a16136437b43bac0626315a087c6bacc4c5d595a0c656d7460d96724d86"
+content-hash = "79fda4275f80d80fb611b9057a8e65dc87bfc40d22a974f17ded46ee5f1bca4b"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1348,8 +1348,8 @@ snowballstemmer = [
     {file = "snowballstemmer-2.0.0.tar.gz", hash = "sha256:df3bac3df4c2c01363f3dd2cfa78cce2840a79b9f1c2d2de9ce8d31683992f52"},
 ]
 sphinx = [
-    {file = "Sphinx-3.0.2-py3-none-any.whl", hash = "sha256:3145d87d0962366d4c5264c39094eae3f5788d01d4b1a12294051bfe4271d91b"},
-    {file = "Sphinx-3.0.2.tar.gz", hash = "sha256:d7c6e72c6aa229caf96af82f60a0d286a1521d42496c226fe37f5a75dcfe2941"},
+    {file = "Sphinx-3.0.3-py3-none-any.whl", hash = "sha256:f5505d74cf9592f3b997380f9bdb2d2d0320ed74dd69691e3ee0644b956b8d83"},
+    {file = "Sphinx-3.0.3.tar.gz", hash = "sha256:62edfd92d955b868d6c124c0942eba966d54b5f3dcb4ded39e65f74abac3f572"},
 ]
 sphinx-autobuild = [
     {file = "sphinx-autobuild-0.7.1.tar.gz", hash = "sha256:66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e"},
