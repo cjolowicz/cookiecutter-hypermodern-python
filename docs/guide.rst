@@ -1583,19 +1583,7 @@ The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
 
 The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
-This file is necessary
-because Read the Docs currently does not support
-installing development dependencies using Poetry's lock file.
-Ensure the requirements match Poetry's lock file,
-whenever you add, upgrade, or remove a Sphinx extension or Sphinx itself.
-For the sake of brevity and maintainability,
-only direct dependencies are included.
-
-.. note::
-
-   The requirements file is managed by `Dependabot <Dependabot integration_>`__.
-   When newer versions of the build dependencies become available,
-   Dependabot updates the requirements file and submits a pull request.
+This file is only used on `Read the Docs <Read the Docs integration_>`__.
 
 
 .. _`The docs session`:
@@ -2034,6 +2022,8 @@ This workflow uses the ``TEST_PYPI_TOKEN`` secret.
 The workflow is defined in ``.github/workflows/test-pypi.yml``.
 
 
+.. _`Read the Docs integration`:
+
 Read the Docs
 ~~~~~~~~~~~~~
 
@@ -2058,10 +2048,22 @@ using a so-called `PEP 517`_-build.
 
 Build dependencies for the documentation
 are installed using the file ``docs/requirements.txt``.
+This file is necessary
+because Read the Docs currently does not support
+installing development dependencies using Poetry's lock file.
+For the sake of brevity and maintainability,
+only direct dependencies are included.
+
 Note that this file partially duplicates Poetry's lock file.
-It needs to be kept up-to-date manually,
+Ensure the requirements match Poetry's lock file,
 whenever you upgrade Sphinx, and
 whenever you add, upgrade, or remove a Sphinx extension.
+
+.. note::
+
+   The requirements file is managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of the build dependencies become available,
+   Dependabot updates the requirements file and submits a pull request.
 
 
 .. _`Tutorials`:
