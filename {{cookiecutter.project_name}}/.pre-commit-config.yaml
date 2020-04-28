@@ -5,6 +5,7 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: check-added-large-files
   - repo: https://github.com/prettier/prettier
     rev: 2.0.5
     hooks:
