@@ -202,7 +202,6 @@ Dependabot
 
 1. Sign up at Dependabot_.
 2. Install their GitHub app.
-3. Add your repository to Dependabot.
 
 
 Read the Docs

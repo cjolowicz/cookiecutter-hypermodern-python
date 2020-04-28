@@ -1758,7 +1758,6 @@ Follow these steps to set up Dependabot for your repository:
 
 1. Sign up at Dependabot_.
 2. Install their GitHub app.
-3. Add your repository to Dependabot.
 
 The configuration is included in the repository, as ``.dependabot/config.yml``.
 
