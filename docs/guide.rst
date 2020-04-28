@@ -506,6 +506,13 @@ To upgrade to a new major release,
 you normally need to update the version constraint for the dependency,
 in the ``pyproject.toml`` file.
 
+.. note::
+
+   Dependencies in the *Hypermodern Python Cookiecutter* are managed by Dependabot_.
+   When a new version of a dependency becomes available,
+   Dependabot will update the ``pyproject.toml`` and ``poetry.lock`` files
+   and submit a pull request.
+
 
 Version constraints
 -------------------
