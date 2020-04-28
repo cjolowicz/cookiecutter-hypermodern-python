@@ -1336,12 +1336,14 @@ Hook                     Description
 `flake8 <Flake8_>`__     Run the Flake8_ linter
 `mypy <mypy_>`__         Run the mypy_ static type checker
 `prettier <Prettier_>`__ Run the Prettier_ code formatter
+check-added-large-files_ Prevent giant files from being committed.
 check-yaml_              Validate YAML_ files
 end-of-file-fixer_       Ensure files are terminated by a single newline
 trailing-whitespace_     Ensure lines do not contain trailing whitespace
 ======================== ===============================================
 
 .. _`check-yaml`: https://github.com/pre-commit/pre-commit-hooks#check-yaml
+.. _`check-added-large-files`: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 .. _`end-of-file-fixer`: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
 .. _`trailing-whitespace`: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
