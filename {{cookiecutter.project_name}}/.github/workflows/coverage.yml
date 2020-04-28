@@ -4,8 +4,8 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-python@v1.2.0
         with:
           python-version: "3.8"
       - run: |
@@ -13,4 +13,4 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt nox poetry
       - run: nox --force-color --session=tests-3.8 -- --cov --cov-report=xml
       - if: always()
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v1.0.6

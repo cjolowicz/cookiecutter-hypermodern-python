@@ -9,8 +9,8 @@ jobs:
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     name: {% raw %}Python ${{ matrix.python-version }} (${{ matrix.os }}){% endraw %}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
+      - uses: actions/checkout@v2.1.0
+      - uses: actions/setup-python@v1.2.0
         with:
           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
       - run: |
