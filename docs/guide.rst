@@ -508,7 +508,7 @@ in the ``pyproject.toml`` file.
 
 .. note::
 
-   Dependencies in the *Hypermodern Python Cookiecutter* are managed by Dependabot_.
+   Dependencies in the *Hypermodern Python Cookiecutter* are managed by `Dependabot <Dependabot integration_>`__.
    When a new version of a dependency becomes available,
    Dependabot will update the ``pyproject.toml`` and ``poetry.lock`` files
    and submit a pull request.
@@ -1591,7 +1591,7 @@ For the sake of brevity and maintainability,
 only direct dependencies are included.
 
 When newer versions of the build dependencies become available,
-Dependabot_ will update the requirements file and
+`Dependabot <Dependabot integration_>`__ will update the requirements file and
 submit a pull request.
 Ensure the requirements match Poetry's lock file,
 whenever you add, upgrade, or remove a Sphinx extension or Sphinx itself.
@@ -1759,6 +1759,8 @@ via its GitHub app.
 The `Coverage workflow <The Coverage workflow_>`__ uploads the coverage data.
 
 
+.. _`Dependabot integration`:
+
 Dependabot
 ..........
 
@@ -1832,8 +1834,9 @@ GitHub workflows install the following tools:
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
 
-As newer versions of the tools become available,
-Dependabot_ will update the constraints file and
+The constraints file is managed by `Dependabot <Dependabot integration_>`__.
+When newer versions of the tools become available,
+Dependabot will update the constraints file and
 submit a pull request.
 
 
@@ -1857,9 +1860,9 @@ Workflow                                            File                     Des
 `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
 =================================================== ======================== ==================================== ===============
 
-GitHub Actions used by these workflows are managed by Dependabot_.
+GitHub Actions used by these workflows are managed by `Dependabot <Dependabot integration_>`__.
 When a new version of a GitHub Action becomes available,
-Dependabot_ will update the workflow and submit a pull request.
+Dependabot will update the workflow and submit a pull request.
 
 .. _`The Tests workflow`:
 
