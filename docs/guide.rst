@@ -436,6 +436,8 @@ use whatever package manager the other project uses.
 You can always install your project into a virtual environment with plain pip_.
 
 
+.. _`Dependencies`:
+
 Dependencies
 ~~~~~~~~~~~~
 
@@ -1545,6 +1547,8 @@ File                    Contents
 ======================= ============================================
 
 
+.. _`Sphinx documentation`:
+
 Sphinx documentation
 --------------------
 
@@ -1763,6 +1767,13 @@ The configuration is included in the repository, as ``.dependabot/config.yml``.
 
 Dependabot integrates with your repository via its GitHub app.
 
+It manages the following dependencies:
+
+- Python dependencies in ``pyproject.toml`` and ``poetry.lock`` (see Dependencies_)
+- Python dependencies in ``docs/requirements.txt`` (see `Sphinx documentation`_)
+- Python dependencies in ``.github/workflows/constraints.txt`` (see `Workflow constraints`_)
+- GitHub Actions in workflow files under ``.github/workflows`` (see `Available workflows`_)
+
 
 Read the Docs
 .............
@@ -1799,6 +1810,8 @@ You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
 
 
+.. _`Workflow constraints`:
+
 Constraints file
 ----------------
 
@@ -1818,6 +1831,8 @@ As newer versions of the tools become available,
 Dependabot_ will update the constraints file and
 submit a pull request.
 
+
+.. _`Available workflows`:
 
 Available workflows
 -------------------
