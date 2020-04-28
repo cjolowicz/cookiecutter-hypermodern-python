@@ -436,8 +436,6 @@ use whatever package manager the other project uses.
 You can always install your project into a virtual environment with plain pip_.
 
 
-.. _`Dependencies`:
-
 Dependencies
 ~~~~~~~~~~~~
 
@@ -466,6 +464,8 @@ a library for creating command-line interfaces
 The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
 
+
+.. _`Managing dependencies`:
 
 Managing dependencies
 ---------------------
@@ -1553,8 +1553,6 @@ File                    Contents
 ======================= ============================================
 
 
-.. _`Sphinx documentation`:
-
 Sphinx documentation
 --------------------
 
@@ -1768,10 +1766,14 @@ Dependabot integrates with your repository via its GitHub app.
 
 It manages the following dependencies:
 
-- Python dependencies in ``pyproject.toml`` and ``poetry.lock`` (see Dependencies_)
-- Python dependencies in ``docs/requirements.txt`` (see `Sphinx documentation`_)
-- Python dependencies in ``.github/workflows/constraints.txt`` (see `Workflow constraints`_)
-- GitHub Actions in workflow files under ``.github/workflows`` (see `Available workflows`_)
+=================== ===================================== ==============================================
+Type of dependency  Managed files                         See also
+=================== ===================================== ==============================================
+Python              ``pyproject.toml``, ``poetry.lock``   `Managing Dependencies`_
+Python              ``docs/requirements.txt``             `Read the Docs <Read the Docs integration_>`__
+Python              ``.github/workflows/constraints.txt`` `Workflow constraints`_
+GitHub Action       ``.github/workflows/*.yml``           `Available workflows`_
+=================== ===================================== ==============================================
 
 
 Read the Docs
@@ -2047,23 +2049,19 @@ to build and install the package with Poetry,
 using a so-called `PEP 517`_-build.
 
 Build dependencies for the documentation
-are installed using the file ``docs/requirements.txt``.
-This file is necessary
-because Read the Docs currently does not support
+are installed using a `requirements file`_ located at ``docs/requirements.txt``.
+Read the Docs currently does not support
 installing development dependencies using Poetry's lock file.
 For the sake of brevity and maintainability,
 only direct dependencies are included.
-
-Note that this file partially duplicates Poetry's lock file.
-Ensure the requirements match Poetry's lock file,
-whenever you upgrade Sphinx, and
-whenever you add, upgrade, or remove a Sphinx extension.
 
 .. note::
 
    The requirements file is managed by `Dependabot <Dependabot integration_>`__.
    When newer versions of the build dependencies become available,
    Dependabot updates the requirements file and submits a pull request.
+   When adding or removing Sphinx extensions using Poetry,
+   don't forget to update the requirements file as well.
 
 
 .. _`Tutorials`:
