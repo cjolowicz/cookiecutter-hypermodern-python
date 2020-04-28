@@ -209,6 +209,11 @@ Read the Docs
 
 1. Sign up at `Read the Docs`_.
 2. Import your GitHub repository, using the button *Import a Project*.
+3. Install the GitHub webhook,
+   using the button *Add integration*
+   on the *Integrations* tab
+   in the *Admin* section of your project
+   on Read the Docs.
 
 
 Releasing

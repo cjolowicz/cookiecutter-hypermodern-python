@@ -1783,13 +1783,17 @@ Read the Docs
 Follow these steps to set up Read the Docs for your repository:
 
 1. Sign up at `Read the Docs`_.
-2. Import your GitHub repository, using the button *Import a Project*.
-
-The configuration is included in the repository, as ``.readthedocs.yml``.
-
-Read the Docs integrates with your repository via a webhook__.
+2. Import your GitHub repository,
+   using the button *Import a Project*.
+3. Install the GitHub webhook__,
+   using the button *Add integration*
+   on the *Integrations* tab
+   in the *Admin* section of your project
+   on Read the Docs.
 
 __ https://docs.readthedocs.io/en/stable/webhooks.html
+
+The configuration is included in the repository, as ``.readthedocs.yml``.
 
 
 Secrets
