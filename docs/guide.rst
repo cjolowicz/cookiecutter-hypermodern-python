@@ -509,9 +509,8 @@ in the ``pyproject.toml`` file.
 .. note::
 
    Dependencies in the *Hypermodern Python Cookiecutter* are managed by `Dependabot <Dependabot integration_>`__.
-   When a new version of a dependency becomes available,
-   Dependabot will update the ``pyproject.toml`` and ``poetry.lock`` files
-   and submit a pull request.
+   When newer versions of dependencies become available,
+   Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
 
 
 Version constraints
@@ -1587,14 +1586,17 @@ The ``requirements.txt`` pins the build dependencies for the Sphinx documentatio
 This file is necessary
 because Read the Docs currently does not support
 installing development dependencies using Poetry's lock file.
+Ensure the requirements match Poetry's lock file,
+whenever you add, upgrade, or remove a Sphinx extension or Sphinx itself.
 For the sake of brevity and maintainability,
 only direct dependencies are included.
 
-When newer versions of the build dependencies become available,
-`Dependabot <Dependabot integration_>`__ will update the requirements file and
-submit a pull request.
-Ensure the requirements match Poetry's lock file,
-whenever you add, upgrade, or remove a Sphinx extension or Sphinx itself.
+.. note::
+
+   The requirements file is managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of the build dependencies become available,
+   Dependabot updates the requirements file and submits a pull request.
+
 
 .. _`The docs session`:
 
@@ -1834,10 +1836,11 @@ GitHub workflows install the following tools:
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
 
-The constraints file is managed by `Dependabot <Dependabot integration_>`__.
-When newer versions of the tools become available,
-Dependabot will update the constraints file and
-submit a pull request.
+.. note::
+
+   The constraints file is managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of the tools become available,
+   Dependabot updates the constraints file and submits a pull request.
 
 
 .. _`Available workflows`:
@@ -1860,9 +1863,11 @@ Workflow                                            File                     Des
 `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
 =================================================== ======================== ==================================== ===============
 
-GitHub Actions used by these workflows are managed by `Dependabot <Dependabot integration_>`__.
-When a new version of a GitHub Action becomes available,
-Dependabot will update the workflow and submit a pull request.
+.. note::
+
+   GitHub Actions used by these workflows are managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of GitHub Actions become available,
+   Dependabot updates the workflows that use them and submits a pull request.
 
 .. _`The Tests workflow`:
 
