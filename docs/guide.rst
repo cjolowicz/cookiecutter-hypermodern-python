@@ -1822,10 +1822,8 @@ GitHub workflows install the following tools:
 - Nox_
 - pre-commit_
 
-These dependencies are pinned using a `constraints file`__
+These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
-
-__ https://pip.pypa.io/en/stable/user_guide/#constraints-files
 
 As newer versions of the tools become available,
 Dependabot_ will update the constraints file and
