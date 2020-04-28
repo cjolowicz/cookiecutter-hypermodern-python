@@ -1810,12 +1810,9 @@ located in ``.github/workflow/constraints.txt``.
 
 __ https://pip.pypa.io/en/stable/user_guide/#constraints-files
 
-Upgrade to newer versions of these tools by updating the constraints file.
-
-.. note::
-
-   Keep the constraints file up-to-date manually.
-   It is not yet managed by Dependabot_.
+As newer versions of the tools become available,
+Dependabot_ will update the constraints file and
+submit a pull request.
 
 
 Available workflows
