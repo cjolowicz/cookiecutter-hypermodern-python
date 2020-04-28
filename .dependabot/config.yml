@@ -1,12 +1,6 @@
 version: 1
 update_configs:
   - package_manager: "python"
-    directory: "/"
-    update_schedule: "daily"
-    allowed_updates:
-      - match:
-          update_type: "all"
-  - package_manager: "python"
     directory: "/docs"
     update_schedule: "daily"
     allowed_updates:

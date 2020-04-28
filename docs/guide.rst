@@ -465,6 +465,8 @@ The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
 
 
+.. _`Managing dependencies`:
+
 Managing dependencies
 ---------------------
 
@@ -503,6 +505,12 @@ Use the command `poetry update`_ to upgrade the dependency to a new release:
 To upgrade to a new major release,
 you normally need to update the version constraint for the dependency,
 in the ``pyproject.toml`` file.
+
+.. note::
+
+   Dependencies in the *Hypermodern Python Cookiecutter* are managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of dependencies become available,
+   Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
 
 
 Version constraints
@@ -1572,13 +1580,8 @@ which links to the `GitHub Releases <GitHub Release_>`__ page.
 The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
 
-The ``requirements.txt`` is necessary
-because Read the Docs currently does not support
-installing development dependencies using Poetry's lock file.
-You need to update this file manually,
-whenever you upgrade Sphinx or its extensions.
-For the sake of brevity and maintainability,
-only direct dependencies are listed.
+The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
+This file is only used on `Read the Docs <Read the Docs integration_>`__.
 
 
 .. _`The docs session`:
@@ -1744,6 +1747,8 @@ via its GitHub app.
 The `Coverage workflow <The Coverage workflow_>`__ uploads the coverage data.
 
 
+.. _`Dependabot integration`:
+
 Dependabot
 ..........
 
@@ -1753,11 +1758,21 @@ Follow these steps to set up Dependabot for your repository:
 
 1. Sign up at Dependabot_.
 2. Install their GitHub app.
-3. Add your repository to Dependabot.
 
 The configuration is included in the repository, as ``.dependabot/config.yml``.
 
 Dependabot integrates with your repository via its GitHub app.
+
+It manages the following dependencies:
+
+=================== ===================================== ==============================================
+Type of dependency  Managed files                         See also
+=================== ===================================== ==============================================
+Python              ``pyproject.toml``, ``poetry.lock``   `Managing Dependencies`_
+Python              ``docs/requirements.txt``             `Read the Docs <Read the Docs integration_>`__
+Python              ``.github/workflows/constraints.txt`` `Workflow constraints`_
+GitHub Action       ``.github/workflows/*.yml``           `Available workflows`_
+=================== ===================================== ==============================================
 
 
 Read the Docs
@@ -1795,6 +1810,8 @@ You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
 
 
+.. _`Workflow constraints`:
+
 Constraints file
 ----------------
 
@@ -1805,18 +1822,17 @@ GitHub workflows install the following tools:
 - Nox_
 - pre-commit_
 
-These dependencies are pinned using a `constraints file`__
+These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
-
-__ https://pip.pypa.io/en/stable/user_guide/#constraints-files
-
-Upgrade to newer versions of these tools by updating the constraints file.
 
 .. note::
 
-   Keep the constraints file up-to-date manually.
-   It is not yet managed by Dependabot_.
+   The constraints file is managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of the tools become available,
+   Dependabot updates the constraints file and submits a pull request.
 
+
+.. _`Available workflows`:
 
 Available workflows
 -------------------
@@ -1836,6 +1852,11 @@ Workflow                                            File                     Des
 `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
 =================================================== ======================== ==================================== ===============
 
+.. note::
+
+   GitHub Actions used by these workflows are managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of GitHub Actions become available,
+   Dependabot updates the workflows that use them and submits a pull request.
 
 .. _`The Tests workflow`:
 
@@ -2002,6 +2023,8 @@ This workflow uses the ``TEST_PYPI_TOKEN`` secret.
 The workflow is defined in ``.github/workflows/test-pypi.yml``.
 
 
+.. _`Read the Docs integration`:
+
 Read the Docs
 ~~~~~~~~~~~~~
 
@@ -2025,11 +2048,19 @@ to build and install the package with Poetry,
 using a so-called `PEP 517`_-build.
 
 Build dependencies for the documentation
-are installed using the file ``docs/requirements.txt``.
-Note that this file partially duplicates Poetry's lock file.
-It needs to be kept up-to-date manually,
-whenever you upgrade Sphinx, and
-whenever you add, upgrade, or remove a Sphinx extension.
+are installed using a `requirements file`_ located at ``docs/requirements.txt``.
+Read the Docs currently does not support
+installing development dependencies using Poetry's lock file.
+For the sake of brevity and maintainability,
+only direct dependencies are included.
+
+.. note::
+
+   The requirements file is managed by `Dependabot <Dependabot integration_>`__.
+   When newer versions of the build dependencies become available,
+   Dependabot updates the requirements file and submits a pull request.
+   When adding or removing Sphinx extensions using Poetry,
+   don't forget to update the requirements file as well.
 
 
 .. _`Tutorials`:
