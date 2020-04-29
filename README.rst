@@ -35,8 +35,8 @@ cookiecutter-hypermodern-python
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
-.. |Dependabot| image:: https://flat.badgen.net/dependabot/cjolowicz/cookiecutter-hypermodern-python-instance?icon=dependabot
-   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python-instance/pulls/app%2Fdependabot-preview
+.. |Dependabot| image:: https://api.dependabot.com/badges/status?host=github&repo=cjolowicz/cookiecutter-hypermodern-python-instance
+   :target: https://dependabot.com
    :alt: Dependabot
 
 .. badges-end
