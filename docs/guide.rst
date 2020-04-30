@@ -258,6 +258,15 @@ Here is a complete list of the project variables defined by this template:
    ``version``        Initial project version         ``0.1.0``
    ================== =============================== ======================
 
+Your choices are recorded in the file ``.cookiecutter.json`` in the generated project,
+together with the URL of this Cookiecutter template.
+Having this JSON_ file in the project makes it possible later on
+to update your project with changes from the Cookiecutter template,
+using tools such as `cupper`_.
+
+.. _`JSON`: https://www.json.org/
+.. _`cupper`: https://github.com/senseyeio/cupper
+
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
 to refer to the project and package names, respectively.
