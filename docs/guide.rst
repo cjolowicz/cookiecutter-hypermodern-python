@@ -1903,7 +1903,7 @@ Dependabot integrates with your repository via its GitHub app.
 
 It manages the following dependencies:
 
-.. table:: Dependencies managed by Dependabot
+.. table::
    :class: hypermodern-table
    :widths: auto
 
