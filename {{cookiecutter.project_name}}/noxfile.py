@@ -149,7 +149,6 @@ def safety(session: Session) -> None:
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or locations
-    install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
 
