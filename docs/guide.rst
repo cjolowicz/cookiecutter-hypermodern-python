@@ -463,7 +463,7 @@ and they come in two types:
   because users do not require them to run your code.
 
 This project template has a core dependency on Click_,
-a library for creating command-line interfaces
+a library for creating command-line interfaces.
 
 The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
