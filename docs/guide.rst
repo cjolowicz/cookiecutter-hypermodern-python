@@ -269,6 +269,112 @@ In the remainder of this guide,
 to refer to the project and package names, respectively.
 
 
+Project overview
+----------------
+
+This section provides an overview of the generated files in your project.
+The following tables contain a short description for every file in your project,
+along with a link to a section with more details.
+
+
+.. table:: Python package
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``src/<project>/py.typed``            Marker file for PEP 561
+   ``src/<project>/__init__.py``         Package initialization
+   ``src/<project>/__main__.py``         Command-line interface
+   ===================================== ===============================
+
+
+.. table:: Test suite
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``tests/__init__.py``                 Test package initialization
+   ``tests/test_main.py``                Test cases for ``__main__``
+   ===================================== ===============================
+
+
+.. table:: Configuration files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ========================================
+   File                                  Description
+   ===================================== ========================================
+   ``.cookiecutter.json``                Configuration for Cookiecutter
+   ``.darglint``                         Configuration for darglint
+   ``.dependabot/config.yml``            Configuration for Dependabot
+   ``.flake8``                           Configuration for Flake8
+   ``.gitattributes``                    Git attributes
+   ``.gitignore``                        Git ignore file
+   ``.github/release-drafter.yml``       Configuration for Release Drafter
+   ``.pre-commit-config.yaml``           Configuration for pre-commit
+   ``.readthedocs.yml``                  Configuration for Read the Docs
+   ``codecov.yml``                       Configuration for Codecov
+   ``docs/conf.py``                      Configuration for Sphinx
+   ``mypy.ini``                          Configuration for mypy
+   ``noxfile.py``                        Configuration for Nox
+   ``pyproject.toml``                    Configuration for Poetry and Coverage.py
+   ===================================== ========================================
+
+
+.. table:: Documentation files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``CODE_OF_CONDUCT.rst``               Code of Conduct
+   ``CONTRIBUTING.rst``                  Contributor Guide
+   ``LICENSE.rst``                       License
+   ``README.rst``                        Readme
+   ``docs/codeofconduct.rst``            Code of Conduct (included)
+   ``docs/contributing.rst``             Contributor Guide (included)
+   ``docs/index.rst``                    Main documentation page
+   ``docs/license.rst``                  License (included)
+   ``docs/reference.rst``                API reference
+   ===================================== ===============================
+
+
+.. table:: Dependency files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ================================
+   File                                  Description
+   ===================================== ================================
+   ``poetry.lock``                       Poetry lock file
+   ``docs/requirements.txt``             Read the Docs build dependencies
+   ``.github/workflows/constraints.txt`` Tools used in GitHub workflows
+   ===================================== ================================
+
+
+.. table:: GitHub Actions
+   :class: hypermodern-table
+   :widths: auto
+
+   ========================================= ===============================
+   File                                      Description
+   ========================================= ===============================
+   ``.github/workflows/coverage.yml``        Upload coverage data to Codecov
+   ``.github/workflows/docs.yml``            Build documentation
+   ``.github/workflows/pre-commit.yml``      Run linters using pre-commit
+   ``.github/workflows/release-drafter.yml`` Update the draft GitHub release
+   ``.github/workflows/release.yml``         Upload package to PyPI
+   ``.github/workflows/test-pypi.yml``       Upload package to TestPyPI
+   ``.github/workflows/tests.yml``           Run the test suite using Nox
+   ========================================= ===============================
+
+
 The initial package
 -------------------
 
