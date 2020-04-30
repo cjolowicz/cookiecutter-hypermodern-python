@@ -231,21 +231,25 @@ Use labels to group the pull requests into sections:
 
 .. table-release-drafter-sections-begin
 
-=================== ================================
-Label               Section
-=================== ================================
-``breaking``        💥 Breaking Changes
-``enhancement``     🚀 Features
-``removal``         🔥 Removals and Deprecations
-``bug``             🐞 Fixes
-``performance``     🐎 Performance
-``testing``         🚨 Testing
-``ci``              👷 Continuous Integration
-``documentation``   📚 Documentation
-``refactoring``     🔨 Refactoring
-``style``           💄 Style
-``dependencies``    📦 Dependencies
-=================== ================================
+.. table::
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ============================
+   Label               Section
+   =================== ============================
+   ``breaking``        💥 Breaking Changes
+   ``enhancement``     🚀 Features
+   ``removal``         🔥 Removals and Deprecations
+   ``bug``             🐞 Fixes
+   ``performance``     🐎 Performance
+   ``testing``         🚨 Testing
+   ``ci``              👷 Continuous Integration
+   ``documentation``   📚 Documentation
+   ``refactoring``     🔨 Refactoring
+   ``style``           💄 Style
+   ``dependencies``    📦 Dependencies
+   =================== ============================
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
