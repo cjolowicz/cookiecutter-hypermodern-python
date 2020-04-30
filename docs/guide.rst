@@ -253,6 +253,11 @@ Project Variable   Description                     Example
 ``github_user``    GitHub username of the author   ``katherine``
 ``version``        Initial project version         ``0.1.0``
 ================== =============================== ======================
+Your choices are recorded in the file ``.cookiecutter.json`` in the generated project.
+This allows you to update your project later with changes from the Cookiecutter,
+using tools such as `cupper`_.
+
+.. _`cupper`: https://github.com/senseyeio/cupper
 
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
