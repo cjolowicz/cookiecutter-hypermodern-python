@@ -142,8 +142,26 @@ and create a Git repository:
    $ git commit
 
 
-Local testing
--------------
+Running
+-------
+
+Run the command-line interface from the source tree:
+
+.. code:: console
+
+   $ poetry install
+   $ poetry run <project>
+
+Run an interactive Python session:
+
+.. code:: console
+
+   $ poetry install
+   $ poetry run python
+
+
+Testing
+-------
 
 Run the full test suite:
 
@@ -156,6 +174,19 @@ List the available Nox sessions:
 .. code:: console
 
    $ nox --list-sessions
+
+
+Installing
+----------
+
+First set up GitHub and PyPI, and release your project (see sections below).
+
+Install your project from PyPI, and run the command-line interface:
+
+.. code:: console
+
+   $ pipx install <project>
+   $ <project> --version
 
 
 Continuous Integration
