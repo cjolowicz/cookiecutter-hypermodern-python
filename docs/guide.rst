@@ -284,21 +284,27 @@ under the ``src`` directory::
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
 
 ``__main__.py``
-   This module defines the ``__main__.main`` entry point
-   for the command-line interface.
-   The command-line interface is implemented using Click_,
+   The `__main__`__ module defines the entry point for the command-line interface.
+   The command-line interface is implemented using the Click_ library,
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
    a script named ``<project>`` is placed
-   in the ``bin`` directory of the Python installation or virtual environment,
-   allowing you to invoke the command-line interface
-   like any other console application.
+   in the ``bin`` directory of the Python installation or virtual environment.
+   This allows you to invoke the command-line interface using only the project name:
+
+   .. code:: console
+
+      $ poetry run <project>  # during development
+      $ <project>             # after installation
+
    The command-line interface can also be invoked
    by specifying a Python interpreter and the package name:
 
    .. code:: console
 
       $ python -m <package> [<options>]
+
+   __ https://docs.python.org/3/library/__main__.html
 
 ``py.typed``
    This is an empty marker file,
