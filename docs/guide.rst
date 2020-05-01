@@ -1515,6 +1515,8 @@ in the project directory.
 Please refer to the `official documentation`__
 for details about the configuration file.
 
+__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
+
 
 Available hooks
 ---------------
@@ -1522,8 +1524,6 @@ Available hooks
 The *Hypermodern Python Cookiecutter* comes with
 a pre-commit configuration
 consisting of the following hooks:
-
-__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
 .. table:: pre-commit hooks
    :class: hypermodern-table
