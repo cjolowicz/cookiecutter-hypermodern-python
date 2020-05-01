@@ -2032,7 +2032,7 @@ from your account settings on PyPI_ and TestPyPI_.
 Constraints file
 ----------------
 
-GitHub workflows install the following tools:
+GitHub Actions workflows install the following tools:
 
 - pip_
 - Poetry_
