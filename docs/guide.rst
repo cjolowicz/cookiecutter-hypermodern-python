@@ -142,9 +142,9 @@ Add the following lines to your ``~/.bashrc``:
 
 Install the Python build dependencies for your platform,
 using one of the commands listed in the
-`official instructions <pyenv wiki_>`__.
+`official instructions`__.
 
-.. _`pyenv wiki`: https://github.com/pyenv/pyenv/wiki/Common-build-problems
+__ https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
 Install the latest point release of every supported Python version.
 This project template supports Python 3.6, 3.7, and 3.8.
@@ -768,13 +768,13 @@ using the command `poetry install`_.
 
 .. _poetry install: https://python-poetry.org/docs/cli/#install
 
-This command performs a so-called `editable install`_ of your package:
+This command performs a so-called `editable install`__ of your package:
 Instead of building and installing a distribution package,
 it creates a special ``.egg-link`` file that links to your local source code.
 This means that code edits are directly visible in the environment
 without the need to reinstall your package.
 
-.. _editable install: https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
+__ https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
 
 Installing your package implicitly creates the virtual environment
 if it does not exist yet,
@@ -1021,16 +1021,17 @@ The test suite is located in the ``tests`` directory::
    ├── __init__.py
    └── test_main.py
 
-The test suite is `declared as a package <tests-outside-application-code_>`__,
+The test suite is `declared as a package`__,
 and mirrors the source layout of the package under test.
 The file ``test_main.py`` contains tests for the ``__main__`` module.
+
+__ http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
 It also provides a `test fixture`_ using `click.testing.CliRunner`_,
 a helper class for invoking the program from within tests.
 
-.. _tests-outside-application-code: http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
 .. _test fixture: https://docs.pytest.org/en/latest/fixture.html
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
@@ -2495,19 +2496,19 @@ The Hypermodern Python blog
 
 The project setup is described in detail in the `Hypermodern Python`_ article series:
 
-- `Chapter 1: Setup`_
-- `Chapter 2: Testing`_
-- `Chapter 3: Linting`_
-- `Chapter 4: Typing`_
-- `Chapter 5: Documentation`_
-- `Chapter 6: CI/CD`_
+- `Chapter 1: Setup`__
+- `Chapter 2: Testing`__
+- `Chapter 3: Linting`__
+- `Chapter 4: Typing`__
+- `Chapter 5: Documentation`__
+- `Chapter 6: CI/CD`__
 
-.. _`Chapter 1: Setup`: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
-.. _`Chapter 2: Testing`: https://medium.com/@cjolowicz/hypermodern-python-2-testing-ae907a920260
-.. _`Chapter 3: Linting`: https://medium.com/@cjolowicz/hypermodern-python-3-linting-e2f15708da80
-.. _`Chapter 4: Typing`: https://medium.com/@cjolowicz/hypermodern-python-4-typing-31bcf12314ff
-.. _`Chapter 5: Documentation`: https://medium.com/@cjolowicz/hypermodern-python-5-documentation-13219991028c
-.. _`Chapter 6: CI/CD`: https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6
+__ https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+__ https://medium.com/@cjolowicz/hypermodern-python-2-testing-ae907a920260
+__ https://medium.com/@cjolowicz/hypermodern-python-3-linting-e2f15708da80
+__ https://medium.com/@cjolowicz/hypermodern-python-4-typing-31bcf12314ff
+__ https://medium.com/@cjolowicz/hypermodern-python-5-documentation-13219991028c
+__ https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6
 
 You can also read the articles on `this blog`__.
 
