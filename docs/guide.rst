@@ -502,6 +502,8 @@ for detailed instructions.
 Packaging
 ~~~~~~~~~
 
+.. _`The pyproject.toml file`:
+
 The pyproject.toml file
 -----------------------
 
@@ -705,6 +707,8 @@ once a project has reached version 1.0.0.)
 .. _`version constraint`: https://python-poetry.org/docs/versions/
 .. _`Semantic Versioning`: https://semver.org/
 
+
+.. _`The lock file`:
 
 The lock file
 -------------
@@ -1002,6 +1006,8 @@ Tests are written using the pytest_ testing framework,
 the *de facto* standard for testing in Python.
 
 
+.. _`The test suite`:
+
 The test suite
 --------------
 
@@ -1056,6 +1062,8 @@ For example, the following command runs only the test case ``test_main_succeeds`
 
    $ nox --session=tests -- -k test_main_succeeds
 
+
+.. `Test coverage`_:
 
 Test coverage
 -------------
@@ -1355,6 +1363,8 @@ limits code complexity to a value of 10.
 .. _`Cyclomatic complexity`: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
 
+.. _`darglint integration`:
+
 darglint
 ........
 
@@ -1633,6 +1643,8 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _`Configuring mypy`:
+
 Configuring mypy
 ----------------
 
@@ -1736,6 +1748,8 @@ written in reStructuredText_:
    ``LICENSE.rst``         License
    ======================= ============================================
 
+
+.. _`Sphinx documentation`:
 
 Sphinx documentation
 --------------------
@@ -1916,6 +1930,8 @@ Follow these steps to set up TestPyPI for your repository:
 TestPyPI is integrated with your repository
 via the `TestPyPI workflow <The TestPyPI workflow_>`__.
 
+
+.. _`Codecov integration`:
 
 Codecov
 .......
