@@ -690,7 +690,8 @@ in the ``pyproject.toml`` file.
 Version constraints
 -------------------
 
-`Version constraints`_ express which versions of dependencies are compatible with your project.
+`Version constraints <Versions and constraints_>`_ express
+which versions of dependencies are compatible with your project.
 In the case of core dependencies,
 they are also a part of distribution packages,
 and as such affect end-users of your package.
@@ -710,7 +711,7 @@ as long as the version number does not indicate a breaking change.
 only major releases may contain breaking changes,
 once a project has reached version 1.0.0.)
 
-.. _version constraint: https://python-poetry.org/docs/versions/
+.. _Versions and constraints: https://python-poetry.org/docs/versions/
 .. _Semantic Versioning: https://semver.org/
 
 
