@@ -279,7 +279,8 @@ under the ``src`` directory::
        └── py.typed
 
 ``__init__.py``
-   This file declares the directory as a `Python package`_.
+   This file declares the directory as a `Python package`_,
+   and contains any package initialization code.
 
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
 
