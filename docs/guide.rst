@@ -107,12 +107,12 @@ Pull requests to document Windows specifics are welcome!
 
    __ https://en.wikipedia.org/wiki/Newline
 
-   The project template contains a `.gitattributes`__ file
+   The project template contains a `.gitattributes`_ file
    which enables end-of-line normalization for your entire working tree.
    Additionally, the Prettier_ code formatter converts line endings to line feeds.
    Windows-style line endings (`CRLF`) should therefore never make it into your Git repository.
 
-   __ https://git-scm.com/book/en/Customizing-Git-Git-Attributes
+   .. _`.gitattributes`: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
 
    Nonetheless, configuring your editor for line feeds is recommended
    to avoid complaints from the pre-commit_ hook for Prettier.
