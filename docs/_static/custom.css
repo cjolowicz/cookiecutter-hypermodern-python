@@ -29,3 +29,22 @@ table.hypermodern-table tbody tr:nth-child(odd) {
 table.hypermodern-table code {
   background-color: inherit;
 }
+
+div.admonition {
+  border: none;
+  padding: 10px 20px;
+}
+
+div.admonition p.admonition-title {
+  background: #777;
+  color: white;
+  display: block;
+  font-family: "Lucida Grande", "Helvetica Neue", sans-serif;
+  font-size: inherit;
+  margin: -10px -20px 0px -20px;
+  padding: 5px 20px;
+}
+
+div.admonition p.admonition-title:after {
+  content: "";
+}
