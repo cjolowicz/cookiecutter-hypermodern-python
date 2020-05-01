@@ -269,11 +269,11 @@ The initial package
 You can find the initial Python package in your generated project
 under the ``src`` directory::
 
-  src
-  └── <package>
-      ├── __init__.py
-      ├── __main__.py
-      └── py.typed
+   src
+   └── <package>
+       ├── __init__.py
+       ├── __main__.py
+       └── py.typed
 
 ``__init__.py``
    This file declares the directory as a `Python package`_.
