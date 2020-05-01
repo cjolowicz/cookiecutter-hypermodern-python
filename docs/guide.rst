@@ -65,11 +65,11 @@ Releases happen on the 15th of every other month, starting in January.
 We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 Initial releases may occur more frequently.
 
-.. _`bimonthly`: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
+.. _bimonthly: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
 
 The current stable release is `2020.4.15.1`_.
 
-.. _`2020.4.15.1`: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.4.15.1
+.. _2020.4.15.1: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.4.15.1
 
 
 Installation
@@ -86,7 +86,7 @@ install the Ubuntu 18.04 LTS distribution.
 Open Ubuntu from the Start Menu, and
 install additional packages using the following commands:
 
-.. _`Windows Subsystem for Linux`: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+.. _Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 .. code:: console
 
@@ -112,7 +112,7 @@ Pull requests to document Windows specifics are welcome!
    Additionally, the Prettier_ code formatter converts line endings to line feeds.
    Windows-style line endings (`CRLF`) should therefore never make it into your Git repository.
 
-   .. _`.gitattributes`: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
+   .. _.gitattributes: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
 
    Nonetheless, configuring your editor for line feeds is recommended
    to avoid complaints from the pre-commit_ hook for Prettier.
@@ -197,7 +197,7 @@ Install Cookiecutter_ using pipx:
 
 Install Poetry_ by downloading and running get-poetry.py_:
 
-.. _`get-poetry.py`: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
+.. _get-poetry.py: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
 
 .. code:: console
 
@@ -219,7 +219,7 @@ Install pre-commit_ using pipx:
 Project creation
 ~~~~~~~~~~~~~~~~
 
-.. _`Creating a project`:
+.. _Creating a project:
 
 Creating a project
 ------------------
@@ -264,8 +264,8 @@ Having this JSON_ file in the project makes it possible later on
 to update your project with changes from the Cookiecutter template,
 using tools such as `cupper`_.
 
-.. _`JSON`: https://www.json.org/
-.. _`cupper`: https://github.com/senseyeio/cupper
+.. _JSON: https://www.json.org/
+.. _cupper: https://github.com/senseyeio/cupper
 
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
@@ -396,7 +396,7 @@ and links each file to a section with more details.
                                          and configuration for `Coverage.py <Test coverage_>`__
    ===================================== ========================================
 
-.. _`.gitignore`: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+.. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 
 `Dependencies <Managing dependencies_>`__ are managed by Poetry_
 and declared in the `pyproject.toml <The pyproject.toml file_>`__ file.
@@ -416,7 +416,7 @@ Follow the links for more details on these.
    ===================================== ================================
 
 
-.. _`The initial package`:
+.. _The initial package:
 
 The initial package
 -------------------
@@ -434,7 +434,7 @@ under the ``src`` directory::
    This file declares the directory as a `Python package`_,
    and contains any package initialization code.
 
-   .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
+   .. _Python package: https://docs.python.org/3/tutorial/modules.html#packages
 
 ``__main__.py``
    The `__main__`__ module defines the entry point for the command-line interface.
@@ -506,7 +506,7 @@ for detailed instructions.
 Packaging
 ~~~~~~~~~
 
-.. _`The pyproject.toml file`:
+.. _The pyproject.toml file:
 
 The pyproject.toml file
 -----------------------
@@ -533,7 +533,7 @@ as well as the list of dependencies for the package.
 Please refer to the `Poetry documentation <pyproject.toml_>`__
 for a detailed description of each configuration key.
 
-.. _`pyproject.toml`: https://python-poetry.org/docs/pyproject/
+.. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 
 Building and distributing the package
@@ -570,9 +570,9 @@ which uploads the distribution packages
 to your account on PyPI_,
 the official Python package registry.
 
-.. _`python build`: https://python-poetry.org/docs/cli/#build
-.. _`python publish`: https://python-poetry.org/docs/cli/#publish
-.. _`wheel`: https://www.python.org/dev/peps/pep-0427/
+.. _python build: https://python-poetry.org/docs/cli/#build
+.. _python publish: https://python-poetry.org/docs/cli/#publish
+.. _wheel: https://www.python.org/dev/peps/pep-0427/
 
 
 Installing the package
@@ -601,7 +601,7 @@ This way,
 applications can use specific versions of their direct and indirect dependencies,
 without getting in each other's way.
 
-.. _`poetry add`: https://python-poetry.org/docs/cli/#add
+.. _poetry add: https://python-poetry.org/docs/cli/#add
 
 If the other project is not managed by Poetry,
 use whatever package manager the other project uses.
@@ -637,7 +637,7 @@ The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
 
 
-.. _`Managing dependencies`:
+.. _Managing dependencies:
 
 Managing dependencies
 ---------------------
@@ -649,7 +649,7 @@ see the full list of direct and indirect dependencies of your package:
 
    $ poetry show
 
-.. _`poetry show`: https://python-poetry.org/docs/cli/#show
+.. _poetry show: https://python-poetry.org/docs/cli/#show
 
 Use the command `poetry add`_ to add a dependency for your package:
 
@@ -664,7 +664,7 @@ Use the command `poetry remove`_ to remove a dependency from your package:
 
    $ poetry remove foobar
 
-.. _`poetry remove`: https://python-poetry.org/docs/cli/#remove
+.. _poetry remove: https://python-poetry.org/docs/cli/#remove
 
 Use the command `poetry update`_ to upgrade the dependency to a new release:
 
@@ -672,7 +672,7 @@ Use the command `poetry update`_ to upgrade the dependency to a new release:
 
    $ poetry update foobar
 
-.. _`poetry update`: https://python-poetry.org/docs/cli/#update
+.. _poetry update: https://python-poetry.org/docs/cli/#update
 
 To upgrade to a new major release,
 you normally need to update the version constraint for the dependency,
@@ -708,11 +708,11 @@ as long as the version number does not indicate a breaking change.
 only major releases may contain breaking changes,
 once a project has reached version 1.0.0.)
 
-.. _`version constraint`: https://python-poetry.org/docs/versions/
-.. _`Semantic Versioning`: https://semver.org/
+.. _version constraint: https://python-poetry.org/docs/versions/
+.. _Semantic Versioning: https://semver.org/
 
 
-.. _`The lock file`:
+.. _The lock file:
 
 The lock file
 -------------
@@ -732,7 +732,7 @@ The lock file is useful for a number of reasons:
   keep production and development environments as similar as possible
   (`dev-prod parity`_).
 
-.. _`dev-prod parity`: https://12factor.net/dev-prod-parity
+.. _dev-prod parity: https://12factor.net/dev-prod-parity
 
 For these reasons, the lock file should be kept under source control.
 
@@ -752,7 +752,7 @@ This way, the dependencies of your current project
 do not interfere with the system-wide Python installation,
 or other projects you're working on.
 
-.. _`virtual environment`: https://docs.python.org/3/tutorial/venv.html
+.. _virtual environment: https://docs.python.org/3/tutorial/venv.html
 
 
 Installing the package for development
@@ -766,7 +766,7 @@ using the command `poetry install`_.
 
    $ poetry install
 
-.. _`poetry install`: https://python-poetry.org/docs/cli/#install
+.. _poetry install: https://python-poetry.org/docs/cli/#install
 
 This command performs a so-called `editable install`_ of your package:
 Instead of building and installing a distribution package,
@@ -774,7 +774,7 @@ it creates a special ``.egg-link`` file that links to your local source code.
 This means that code edits are directly visible in the environment
 without the need to reinstall your package.
 
-.. _`editable install`: https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
+.. _editable install: https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
 
 Installing your package implicitly creates the virtual environment
 if it does not exist yet,
@@ -793,7 +793,7 @@ This allows you to create an environment
 for every Python version supported by your project,
 and easily switch between them:
 
-.. _`poetry env`: https://python-poetry.org/docs/managing-environments/
+.. _poetry env: https://python-poetry.org/docs/managing-environments/
 
 .. code:: console
 
@@ -831,7 +831,7 @@ Running commands
 You can run an interactive Python session inside the active environment
 using the command `poetry run`_:
 
-.. _`poetry run`: https://python-poetry.org/docs/cli/#run
+.. _poetry run: https://python-poetry.org/docs/cli/#run
 
 .. code:: console
 
@@ -854,7 +854,7 @@ it is usually recommended to run these using Nox_,
 as described in the :ref:`next <Using Nox>` section.
 
 
-.. _`Using Nox`:
+.. _Using Nox:
 
 Using Nox
 ~~~~~~~~~
@@ -868,7 +868,7 @@ named ``noxfile.py`` and located in the project directory.
 They consist of a virtual environment
 and a set of commands to run in that environment.
 
-.. _`tox`: https://tox.readthedocs.io/
+.. _tox: https://tox.readthedocs.io/
 
 While Poetry environments allow you to
 interact with your package during development,
@@ -917,13 +917,13 @@ You can speed things up by passing the
 
    $ nox --reuse-existing-virtualenvs
 
-.. _`--reuse-existing-virtualenvs`: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
+.. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 
 
 Available sessions
 ------------------
 
-.. _`Table of Nox sessions`:
+.. _Table of Nox sessions:
 
 The following tables gives an overview of the available Nox sessions:
 
@@ -955,7 +955,7 @@ For this purpose, ``noxfile.py`` contains some glue code
 in the form of the ``install`` and ``install_package`` functions,
 and the ``Poetry`` helper class.
 
-.. _`nox.sessions.Session.run`: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
+.. _nox.sessions.Session.run: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
 
 ``noxfile.install(session, *args)``:
    Install dependencies into a Nox session using Poetry.
@@ -970,9 +970,9 @@ The first argument is the ``Session`` object,
 and the remaining arguments are command-line arguments for `pip install`_,
 typically just the package or packages to be installed.
 
-.. _`nox.sessions.Session.install`: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.install
-.. _`constraints file`: https://pip.pypa.io/en/stable/user_guide/#constraints-files
-.. _`pip install`: https://pip.pypa.io/en/stable/reference/pip_install/
+.. _nox.sessions.Session.install: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.install
+.. _constraints file: https://pip.pypa.io/en/stable/user_guide/#constraints-files
+.. _pip install: https://pip.pypa.io/en/stable/reference/pip_install/
 
 ``noxfile.install_package(session)``:
    Install the package into a Nox session using Poetry.
@@ -1010,7 +1010,7 @@ Tests are written using the pytest_ testing framework,
 the *de facto* standard for testing in Python.
 
 
-.. _`The test suite`:
+.. _The test suite:
 
 The test suite
 --------------
@@ -1030,12 +1030,12 @@ checking whether the program exits with a status code of zero.
 It also provides a `test fixture`_ using `click.testing.CliRunner`_,
 a helper class for invoking the program from within tests.
 
-.. _`tests-outside-application-code`: http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
-.. _`test fixture`: https://docs.pytest.org/en/latest/fixture.html
-.. _`click.testing.CliRunner`: https://click.palletsprojects.com/en/7.x/testing/
+.. _tests-outside-application-code: http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
+.. _test fixture: https://docs.pytest.org/en/latest/fixture.html
+.. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 
-.. _`The tests session`:
+.. _The tests session:
 
 The tests session
 -----------------
@@ -1067,7 +1067,7 @@ For example, the following command runs only the test case ``test_main_succeeds`
    $ nox --session=tests -- -k test_main_succeeds
 
 
-.. `Test coverage`_:
+.. _Test coverage:
 
 Test coverage
 -------------
@@ -1108,7 +1108,7 @@ The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
 
 
-.. _`The lint session`:
+.. _The lint session:
 
 The lint session
 ----------------
@@ -1135,7 +1135,7 @@ For example, the following command only lints the ``__main__`` module:
    $ nox --session=lint -- src/<project>/__main__.py
 
 
-.. _`Available linters`:
+.. _Available linters:
 
 Available linters
 -----------------
@@ -1188,7 +1188,7 @@ unused imports or variables,
 and more.
 The tool is included with Flake8_ by default.
 
-.. _`pyflakes codes`:
+.. _pyflakes codes:
 __ https://flake8.pycqa.org/en/latest/user/error-codes.html
 
 
@@ -1206,7 +1206,7 @@ bare excepts,
 and much more.
 The tool is included with Flake8_ by default.
 
-.. _`pycodestyle codes`:
+.. _pycodestyle codes:
 __ https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
 
 The *Hypermodern Python Cookiecutter* disables the following errors and warnings
@@ -1226,7 +1226,7 @@ Examples are the use of camel case for the names of classes,
 the use of lowercase for the names of functions, arguments and variables,
 or the convention to name the first argument of methods ``self``.
 
-.. _`pep8-naming codes`:
+.. _pep8-naming codes:
 __ https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
 
 
@@ -1238,7 +1238,7 @@ checks that import order adheres to `PEP 8`_
 and a configurable style convention.
 `Error codes`__ are prefixed by ``I`` for "import".
 
-.. _`flake8-import-order codes`:
+.. _flake8-import-order codes:
 __ https://github.com/PyCQA/flake8-import-order#warnings
 
 The *Hypermodern Python Cookiecutter*
@@ -1246,7 +1246,7 @@ selects the recommendations of the
 `Google styleguide <Google import style_>`__.
 Imports need to be arranged in three sorted groups, like this:
 
-.. _`Google import style`: https://google.github.io/styleguide/pyguide.html?showone=Imports_formatting#313-imports-formatting
+.. _Google import style: https://google.github.io/styleguide/pyguide.html?showone=Imports_formatting#313-imports-formatting
 
 .. code:: python
 
@@ -1274,7 +1274,7 @@ It is integrated via the flake8-docstrings_ extension.
 Warnings range from missing docstrings to
 issues with whitespace, quoting, and docstring content.
 
-.. _`pydocstyle codes`:
+.. _pydocstyle codes:
 __ http://www.pydocstyle.org/en/stable/error_codes.html
 
 The *Hypermodern Python Cookiecutter*
@@ -1295,7 +1295,7 @@ Here is an example of a function documented in Google style:
            The sum of the arguments.
        """
 
-.. _`Google docstring style`: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings.
+.. _Google docstring style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings.
 
 
 flake8-rst-docstrings
@@ -1308,7 +1308,7 @@ they are used to generate API documentation.
 `Error codes`__ are prefixed by ``RST`` for "reStructuredText",
 and group issues into numerical blocks, by their severity and origin.
 
-.. _`flake8-rst-docstrings codes`:
+.. _flake8-rst-docstrings codes:
 __ https://github.com/peterjc/flake8-rst-docstrings#flake8-validation-codes
 
 
@@ -1322,7 +1322,7 @@ It generates a warning if it detects that Black would reformat a source file.
 You can fix these issues automatically,
 as described below in the section `Code formatting with Black`_.
 
-.. _`flake8-black codes`:
+.. _flake8-black codes:
 __ https://github.com/peterjc/flake8-black#flake8-validation-codes
 
 
@@ -1345,7 +1345,7 @@ but with a tolerance margin of 10%.
 This soft limit is set to 80 characters,
 which is the value used by the Black code formatter.
 
-.. _`flake8-bugbear codes`:
+.. _flake8-bugbear codes:
 __ https://github.com/PyCQA/flake8-bugbear#list-of-warnings
 
 
@@ -1358,16 +1358,16 @@ of your Python package against a configured limit.
 `Error codes`__ are prefixed by ``C`` for "complexity".
 It is included with Flake8_.
 
-.. _`mccabe codes`:
+.. _mccabe codes:
 __ https://github.com/PyCQA/mccabe#plugin-for-flake8
 
 The *Hypermodern Python Cookiecutter*
 limits code complexity to a value of 10.
 
-.. _`Cyclomatic complexity`: https://en.wikipedia.org/wiki/Cyclomatic_complexity
+.. _Cyclomatic complexity: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
 
-.. _`darglint integration`:
+.. _darglint integration:
 
 darglint
 ........
@@ -1382,7 +1382,7 @@ Multi-line docstrings must
 specify the function signatures completely and correctly,
 using `Google docstring style`_.
 
-.. _`darglint codes`:
+.. _darglint codes:
 __ https://github.com/terrencepreilly/darglint#error-codes
 
 
@@ -1400,11 +1400,11 @@ The *Hypermodern Python Cookiecutter*
 disables ``S101`` (use of assert) for the test suite,
 as pytest_ uses assertions to verify expectations in tests.
 
-.. _`Bandit codes`:
+.. _Bandit codes:
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
 
 
-.. _`Code formatting with Black`:
+.. _Code formatting with Black:
 
 Code formatting with Black
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1417,7 +1417,7 @@ The *Hypermodern Python Cookiecutter*
 adheres to Black code style.
 
 
-.. _`The black session`:
+.. _The black session:
 
 The black session
 -----------------
@@ -1454,11 +1454,11 @@ The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
 to convert Poetry's lock file to a `requirements file`_,
 for consumption by Safety.
 
-.. _`poetry export`: https://python-poetry.org/docs/cli/#export
-.. _`requirements file`: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
+.. _poetry export: https://python-poetry.org/docs/cli/#export
+.. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
 
 
-.. _`The safety session`:
+.. _The safety session:
 
 The safety session
 ------------------
@@ -1472,7 +1472,7 @@ Run Safety_ using the ``safety`` session:
 This session always runs with the current version of Python.
 
 
-.. _`Linting with pre-commit`:
+.. _Linting with pre-commit:
 
 Linting with pre-commit
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1490,7 +1490,7 @@ This workflow allows you to review the changes
 before attempting the commit again.
 Many linters support fixing offending lines automatically.
 
-.. _`Git hook`: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+.. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
 
 Installation and configuration
@@ -1534,10 +1534,10 @@ __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
    trailing-whitespace_     Ensure lines do not contain trailing whitespace
    ======================== ===============================================
 
-.. _`check-yaml`: https://github.com/pre-commit/pre-commit-hooks#check-yaml
-.. _`check-added-large-files`: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
-.. _`end-of-file-fixer`: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
-.. _`trailing-whitespace`: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
+.. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
+.. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
+.. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
+.. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
 Black_, Flake8_, and mypy_ are run via Poetry using a `repository-local hook`_.
 This allows you to manage these tools as development dependencies in Poetry,
@@ -1545,7 +1545,7 @@ rather than having duplicate and potentially diverging version pins in the pre-c
 This does require you, however, to run `poetry install`_
 before you can use pre-commit with your project.
 
-.. _`repository-local hook`: https://pre-commit.com/#repository-local-hooks
+.. _repository-local hook: https://pre-commit.com/#repository-local-hooks
 
 These checks run somewhat faster than the corresponding Nox sessions,
 for several reasons:
@@ -1596,7 +1596,7 @@ that leverage type annotations at runtime.
 For example, you can use type annotations to generate serialization schemas
 or command-line parsers.
 
-.. _`Type annotations`: https://docs.python.org/3/library/typing.html
+.. _Type annotations: https://docs.python.org/3/library/typing.html
 
 *Type-checking* refers to the practice of
 verifying the type correctness of a program,
@@ -1620,7 +1620,7 @@ both a static type checker and a runtime type checker:
 __ https://docs.python.org/3/reference/import.html#import-hooks
 
 
-.. _`The mypy session`:
+.. _The mypy session:
 
 The mypy session
 ----------------
@@ -1647,7 +1647,7 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
-.. _`Configuring mypy`:
+.. _Configuring mypy:
 
 Configuring mypy
 ----------------
@@ -1686,7 +1686,7 @@ The following options are enabled for enhanced output:
 - :option:`show_error_context <mypy --show-error-context>`
 
 
-.. _`The typeguard session`:
+.. _The typeguard session:
 
 The typeguard session
 ---------------------
@@ -1753,7 +1753,7 @@ written in reStructuredText_:
    ======================= ============================================
 
 
-.. _`Sphinx documentation`:
+.. _Sphinx documentation:
 
 Sphinx documentation
 --------------------
@@ -1790,7 +1790,7 @@ The ``requirements.txt`` pins the build dependencies for the Sphinx documentatio
 This file is only used on `Read the Docs <Read the Docs integration_>`__.
 
 
-.. _`The docs session`:
+.. _The docs session:
 
 The docs session
 -----------------
@@ -1815,7 +1815,7 @@ __ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
 - It spins up a web server with live reloading.
 - It opens the location of the web server in your browser.
 
-.. _`sphinx-autobuild`: https://github.com/GaretJax/sphinx-autobuild
+.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
 
 Use the ``--`` separator to pass additional options to either tool.
 For example, to treat warnings as errors and run in nit-picky mode:
@@ -1827,7 +1827,7 @@ For example, to treat warnings as errors and run in nit-picky mode:
 This Nox session always runs with the current major release of Python.
 
 
-.. _`The xdoctest session`:
+.. _The xdoctest session:
 
 The xdoctest session
 --------------------
@@ -1935,7 +1935,7 @@ TestPyPI is integrated with your repository
 via the `TestPyPI workflow <The TestPyPI workflow_>`__.
 
 
-.. _`Codecov integration`:
+.. _Codecov integration:
 
 Codecov
 .......
@@ -1955,7 +1955,7 @@ via its GitHub app.
 The `Coverage workflow <The Coverage workflow_>`__ uploads the coverage data.
 
 
-.. _`Dependabot integration`:
+.. _Dependabot integration:
 
 Dependabot
 ..........
@@ -2031,7 +2031,7 @@ You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
 
 
-.. _`Workflow constraints`:
+.. _Workflow constraints:
 
 Constraints file
 ----------------
@@ -2053,7 +2053,7 @@ located in ``.github/workflow/constraints.txt``.
    Dependabot updates the constraints file and submits a pull request.
 
 
-.. _`Available workflows`:
+.. _Available workflows:
 
 Available workflows
 -------------------
@@ -2083,7 +2083,7 @@ the following workflows:
    When newer versions of GitHub Actions become available,
    Dependabot updates the workflows that use them and submits a pull request.
 
-.. _`The Tests workflow`:
+.. _The Tests workflow:
 
 The Tests workflow
 ..................
@@ -2102,13 +2102,13 @@ The workflow uses the following GitHub Actions:
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 
-.. _`actions/checkout`: https://github.com/actions/checkout
-.. _`actions/setup-python`: https://github.com/actions/setup-python
+.. _actions/checkout: https://github.com/actions/checkout
+.. _actions/setup-python: https://github.com/actions/setup-python
 
 The workflow is defined in ``.github/workflows/tests.yml``.
 
 
-.. _`The Coverage workflow`:
+.. _The Coverage workflow:
 
 The Coverage workflow
 .....................
@@ -2128,7 +2128,7 @@ The workflow uses the following GitHub Actions:
 - `actions/setup-python`_ for setting up the Python interpreter
 - `codecov/codecov-action`_ for uploading to Codecov_
 
-.. _`codecov/codecov-action`: https://github.com/codecov/codecov-action
+.. _codecov/codecov-action: https://github.com/codecov/codecov-action
 
 The workflow runs with the current Python version,
 using the latest supported Ubuntu runner.
@@ -2136,7 +2136,7 @@ using the latest supported Ubuntu runner.
 It is defined in ``.github/workflows/coverage.yml``.
 
 
-.. _`The pre-commit workflow`:
+.. _The pre-commit workflow:
 
 The pre-commit workflow
 .......................
@@ -2152,7 +2152,7 @@ The workflow uses the following GitHub Actions:
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/cache`_ for caching pre-commit environments
 
-.. _`actions/cache`: https://github.com/actions/cache
+.. _actions/cache: https://github.com/actions/cache
 
 The workflow runs with the current Python version,
 using the latest Ubuntu, Windows, and macOS runners.
@@ -2160,7 +2160,7 @@ using the latest Ubuntu, Windows, and macOS runners.
 It is defined in ``.github/workflows/pre-commit.yml``.
 
 
-.. _`The Docs workflow`:
+.. _The Docs workflow:
 
 The Docs workflow
 .................
@@ -2182,7 +2182,7 @@ The workflow uses the following GitHub Actions:
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/upload-artifact`_ to upload the generated documentation
 
-.. _`actions/upload-artifact`: https://github.com/actions/upload-artifact
+.. _actions/upload-artifact: https://github.com/actions/upload-artifact
 
 The workflow runs with the current Python version,
 using the latest supported Ubuntu runner.
@@ -2190,7 +2190,7 @@ using the latest supported Ubuntu runner.
 It is defined in ``.github/workflows/docs.yml``.
 
 
-.. _`The Release Drafter workflow`:
+.. _The Release Drafter workflow:
 
 The Release Drafter workflow
 ............................
@@ -2213,7 +2213,7 @@ The workflow is defined in ``.github/workflows/release-drafter.yml``.
 The configuration file is located in ``.github/release-drafter.yml``.
 
 
-.. _`The Release workflow`:
+.. _The Release workflow:
 
 The Release workflow
 ....................
@@ -2226,12 +2226,12 @@ builds the package using Poetry,
 and uploads it using the `pypa/gh-action-pypi-publish`_ action.
 This workflow uses the ``PYPI_TOKEN`` secret.
 
-.. _`pypa/gh-action-pypi-publish`: https://github.com/pypa/gh-action-pypi-publish
+.. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 
 The workflow is defined in ``.github/workflows/release.yml``.
 
 
-.. _`The TestPyPI workflow`:
+.. _The TestPyPI workflow:
 
 The TestPyPI workflow
 .....................
@@ -2248,7 +2248,7 @@ This workflow uses the ``TEST_PYPI_TOKEN`` secret.
 The workflow is defined in ``.github/workflows/test-pypi.yml``.
 
 
-.. _`Read the Docs integration`:
+.. _Read the Docs integration:
 
 Read the Docs
 ~~~~~~~~~~~~~
@@ -2288,7 +2288,7 @@ only direct dependencies are included.
    don't forget to update the requirements file as well.
 
 
-.. _`Tutorials`:
+.. _Tutorials:
 
 Tutorials
 ~~~~~~~~~
@@ -2445,7 +2445,7 @@ Making a release is a two-step process:
 1. Bump the version using `poetry version`_. (Commit and push.)
 2. Publish a GitHub Release.
 
-.. _`poetry version`: https://python-poetry.org/docs/cli/#version
+.. _poetry version: https://python-poetry.org/docs/cli/#version
 
 When bumping the version, adhere to `Semantic Versioning`_ and `PEP 440`_.
 The individual steps for bumping the version are:
@@ -2517,33 +2517,33 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
    :start-after: references-begin
    :end-before: references-end
 
-.. _`Calendar Versioning`: https://calver.org
-.. _`GitHub Release`: https://help.github.com/en/github/administering-a-repository/about-releases
-.. _`Hypermodern Python Cookiecutter`: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _`Jinja`: https://palletsprojects.com/p/jinja/
-.. _`MIT license`: https://opensource.org/licenses/MIT
-.. _`PEP 257`: http://www.python.org/dev/peps/pep-0257/
-.. _`PEP 440`: https://www.python.org/dev/peps/pep-0440/
-.. _`PEP 517`: https://www.python.org/dev/peps/pep-0517/
-.. _`PEP 518`: https://www.python.org/dev/peps/pep-0518/
-.. _`PEP 561`: https://www.python.org/dev/peps/pep-0561/
-.. _`PEP 8`: http://www.python.org/dev/peps/pep-0008/
-.. _`TOML`: https://github.com/toml-lang/toml
-.. _`YAML`: https://yaml.org/
-.. _`bash`: https://www.gnu.org/software/bash/
-.. _`curl`: https://curl.haxx.se
-.. _`darglint`: https://github.com/terrencepreilly/darglint
-.. _`flake8-bandit`: https://github.com/tylerwince/flake8-bandit
-.. _`flake8-black`: https://github.com/peterjc/flake8-black
-.. _`flake8-bugbear`: https://github.com/PyCQA/flake8-bugbear
-.. _`flake8-docstrings`: https://gitlab.com/pycqa/flake8-docstrings
-.. _`flake8-import-order`: https://github.com/PyCQA/flake8-import-order
-.. _`flake8-rst-docstrings`: https://github.com/peterjc/flake8-rst-docstrings
-.. _`git`: https://www.git-scm.com
-.. _`mccabe`: https://github.com/PyCQA/mccabe
-.. _`pep8-naming`: https://github.com/pycqa/pep8-naming
-.. _`pip`: https://pip.pypa.io/
-.. _`pycodestyle`: https://pycodestyle.pycqa.org/en/latest/
-.. _`pydocstyle`: http://www.pydocstyle.org/
-.. _`pyflakes`: https://github.com/PyCQA/pyflakes
-.. _`reStructuredText`: https://docutils.sourceforge.io/rst.html
+.. _Calendar Versioning: https://calver.org
+.. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
+.. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _Jinja: https://palletsprojects.com/p/jinja/
+.. _MIT license: https://opensource.org/licenses/MIT
+.. _PEP 257: http://www.python.org/dev/peps/pep-0257/
+.. _PEP 440: https://www.python.org/dev/peps/pep-0440/
+.. _PEP 517: https://www.python.org/dev/peps/pep-0517/
+.. _PEP 518: https://www.python.org/dev/peps/pep-0518/
+.. _PEP 561: https://www.python.org/dev/peps/pep-0561/
+.. _PEP 8: http://www.python.org/dev/peps/pep-0008/
+.. _TOML: https://github.com/toml-lang/toml
+.. _YAML: https://yaml.org/
+.. _bash: https://www.gnu.org/software/bash/
+.. _curl: https://curl.haxx.se
+.. _darglint: https://github.com/terrencepreilly/darglint
+.. _flake8-bandit: https://github.com/tylerwince/flake8-bandit
+.. _flake8-black: https://github.com/peterjc/flake8-black
+.. _flake8-bugbear: https://github.com/PyCQA/flake8-bugbear
+.. _flake8-docstrings: https://gitlab.com/pycqa/flake8-docstrings
+.. _flake8-import-order: https://github.com/PyCQA/flake8-import-order
+.. _flake8-rst-docstrings: https://github.com/peterjc/flake8-rst-docstrings
+.. _git: https://www.git-scm.com
+.. _mccabe: https://github.com/PyCQA/mccabe
+.. _pep8-naming: https://github.com/pycqa/pep8-naming
+.. _pip: https://pip.pypa.io/
+.. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
+.. _pydocstyle: http://www.pydocstyle.org/
+.. _pyflakes: https://github.com/PyCQA/pyflakes
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
