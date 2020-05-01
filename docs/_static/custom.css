@@ -61,3 +61,8 @@ code.xref,
 a code {
   font-weight: normal;
 }
+
+ul,
+ol {
+  margin: 10px 30px 10px 30px;
+}
