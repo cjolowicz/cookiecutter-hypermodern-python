@@ -71,8 +71,8 @@ All images on the
 `associated blog <Hypermodern Python_>`__ show
 `past visions <Retrofuturism_>`__ of the future.
 
-.. _`Hypermodernism`: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
-.. _`Retrofuturism`: https://en.wikipedia.org/wiki/Retrofuturism
+.. _Hypermodernism: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
+.. _Retrofuturism: https://en.wikipedia.org/wiki/Retrofuturism
 
 .. include:: ../README.rst
    :start-after: references-begin
