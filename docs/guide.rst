@@ -267,6 +267,9 @@ using tools such as `cupper`_.
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
 to refer to the project and package names, respectively.
+By default, their only difference is that
+the project name uses hyphens (*snake case*),
+whereas the package name uses underscores (*kebab case*).
 
 
 Project overview
