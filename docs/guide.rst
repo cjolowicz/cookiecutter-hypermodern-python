@@ -279,15 +279,15 @@ Overview of generated files
 ---------------------------
 
 This section provides an overview of all the files generated for your project.
-
+Let's start with the project layout.
 The project contains the following subdirectories:
 
-.. table:: Directories
+.. table:: Project layout
    :class: hypermodern-table
    :widths: auto
 
    ===================================== ===============================
-   Directory                             Description
+   Directory                             Contents
    ===================================== ===============================
    ``src/<package>``                     Python package
    ``tests``                             Test suite
@@ -324,6 +324,48 @@ For more details on these files, refer to the section `The test suite`_.
    ``tests/test_main.py``                Test cases for ``__main__``
    ===================================== ===============================
 
+The project documentation is written in `reStructuredText`_.
+The documentation files in the top-level directory are rendered on `GitHub`_.
+The files in the the ``docs`` directory are
+built using `Sphinx <Sphinx documentation_>`__ and
+hosted on `Read the Docs <Read the Docs integration_>`__.
+
+.. table:: Documentation files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``CODE_OF_CONDUCT.rst``               Code of Conduct
+   ``CONTRIBUTING.rst``                  Contributor Guide
+   ``LICENSE.rst``                       License
+   ``README.rst``                        Main page
+   ``docs/codeofconduct.rst``            Code of Conduct (included)
+   ``docs/contributing.rst``             Contributor Guide (included)
+   ``docs/index.rst``                    Main page
+   ``docs/license.rst``                  License (included)
+   ``docs/reference.rst``                API reference
+   ===================================== ===============================
+
+The ``.github/workflows`` directory contains the `GitHub Actions workflows <Available workflows_>`__:
+
+.. table:: GitHub Actions workflows
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================= ===============================
+   File                    Description
+   ======================= ===============================
+   ``coverage.yml``        `The Coverage workflow`_
+   ``docs.yml``            `The Docs workflow`_
+   ``pre-commit.yml``      `The pre-commit workflow`_
+   ``release-drafter.yml`` `The Release Drafter workflow`_
+   ``release.yml``         `The Release workflow`_
+   ``test-pypi.yml``       `The TestPyPI workflow`_
+   ``tests.yml``           `The Tests workflow`_
+   ======================= ===============================
+
 The project contains many configuration files for developer tools,
 most of which are located in the top-level directory
 and have names with a leading dot.
@@ -356,30 +398,6 @@ and links each file to a section with more details.
 
 .. _`.gitignore`: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 
-The project documentation is written in `reStructuredText`_.
-The documentation files in the top-level directory are rendered on `GitHub`_.
-The files in the the ``docs`` directory are
-built using `Sphinx <Sphinx documentation_>`__ and
-hosted on `Read the Docs <Read the Docs integration_>`__.
-
-.. table:: Documentation files
-   :class: hypermodern-table
-   :widths: auto
-
-   ===================================== ===============================
-   File                                  Description
-   ===================================== ===============================
-   ``CODE_OF_CONDUCT.rst``               Code of Conduct
-   ``CONTRIBUTING.rst``                  Contributor Guide
-   ``LICENSE.rst``                       License
-   ``README.rst``                        Main page
-   ``docs/codeofconduct.rst``            Code of Conduct (included)
-   ``docs/contributing.rst``             Contributor Guide (included)
-   ``docs/index.rst``                    Main page
-   ``docs/license.rst``                  License (included)
-   ``docs/reference.rst``                API reference
-   ===================================== ===============================
-
 `Dependencies <Managing dependencies_>`__ are managed by Poetry_
 and declared in the `pyproject.toml <The pyproject.toml file_>`__ file.
 The table below lists some additional files with pinned dependencies.
@@ -396,24 +414,6 @@ Follow the links for more details on these.
    ``docs/requirements.txt``             Requirements file for `Read the Docs <Read the Docs integration_>`__
    ``.github/workflows/constraints.txt`` Constraints file for `GitHub Actions workflows <Workflow constraints_>`__
    ===================================== ================================
-
-The ``.github/workflows`` directory contains the `GitHub Actions workflows <Available workflows_>`__:
-
-.. table:: GitHub Actions workflows
-   :class: hypermodern-table
-   :widths: auto
-
-   ======================= ===============================
-   File                    Description
-   ======================= ===============================
-   ``coverage.yml``        `The Coverage workflow`_
-   ``docs.yml``            `The Docs workflow`_
-   ``pre-commit.yml``      `The pre-commit workflow`_
-   ``release-drafter.yml`` `The Release Drafter workflow`_
-   ``release.yml``         `The Release workflow`_
-   ``test-pypi.yml``       `The TestPyPI workflow`_
-   ``tests.yml``           `The Tests workflow`_
-   ======================= ===============================
 
 
 .. _`The initial package`:
