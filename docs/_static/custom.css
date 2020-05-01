@@ -53,6 +53,10 @@ div.contents li {
   list-style-type: none;
 }
 
+code {
+  background: transparent;
+}
+
 code.xref,
 a code {
   font-weight: normal;
