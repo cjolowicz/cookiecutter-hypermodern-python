@@ -242,17 +242,21 @@ using a subdirectory with the same name as your project.
 
 Here is a complete list of the project variables defined by this template:
 
-================== =============================== ======================
-Project Variable   Description                     Example
-================== =============================== ======================
-``project_name``   Project name on PyPI and GitHub ``hypermodern-python``
-``package_name``   Import name of the package      ``hypermodern_python``
-``friendly_name``  Friendly project name           ``Hypermodern Python``
-``author``         Primary author                  Katherine Johnson
-``email``          E-mail address of the author    katherine@example.com
-``github_user``    GitHub username of the author   ``katherine``
-``version``        Initial project version         ``0.1.0``
-================== =============================== ======================
+.. table:: Project variables
+   :class: hypermodern-table
+   :widths: auto
+
+   ================== =============================== ======================
+   Variable           Description                     Example
+   ================== =============================== ======================
+   ``project_name``   Project name on PyPI and GitHub ``hypermodern-python``
+   ``package_name``   Import name of the package      ``hypermodern_python``
+   ``friendly_name``  Friendly project name           ``Hypermodern Python``
+   ``author``         Primary author                  Katherine Johnson
+   ``email``          E-mail address of the author    katherine@example.com
+   ``github_user``    GitHub username of the author   ``katherine``
+   ``version``        Initial project version         ``0.1.0``
+   ================== =============================== ======================
 
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
@@ -753,19 +757,22 @@ Available sessions
 
 The following tables gives an overview of the available Nox sessions:
 
-====================================== ============================== ================== =========
-Session                                Description                    Python              Default
-====================================== ============================== ================== =========
-`black <The black session_>`__         Format code with Black_        ``3.8``
-`docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
-`lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
-`mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-`safety <The safety session_>`__       Scan dependencies with Safety_ ``3.8``                ✓
-`tests <The tests session_>`__         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-`typeguard <The typeguard session_>`__ Type-check with Typeguard_     ``3.6`` … ``3.8``
-`xdoctest <The xdoctest session_>`__   Run examples with xdoctest_    ``3.6`` … ``3.8``
-====================================== ============================== ================== =========
+.. table:: Nox sessions
+   :class: hypermodern-table
+   :widths: auto
 
+   ====================================== ============================== ================== =========
+   Session                                Description                    Python              Default
+   ====================================== ============================== ================== =========
+   `black <The black session_>`__         Format code with Black_        ``3.8``
+   `docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
+   `lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
+   `mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
+   `safety <The safety session_>`__       Scan dependencies with Safety_ ``3.8``                ✓
+   `tests <The tests session_>`__         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
+   `typeguard <The typeguard session_>`__ Type-check with Typeguard_     ``3.6`` … ``3.8``
+   `xdoctest <The xdoctest session_>`__   Run examples with xdoctest_    ``3.6`` … ``3.8``
+   ====================================== ============================== ================== =========
 
 
 Using Poetry inside Nox sessions
@@ -965,21 +972,26 @@ The following table lists the linters used by
 the *Hypermodern Python Cookiecutter*,
 and links to their lists of error codes.
 
-======================= ============================================================== =========
-Tool                    Description                                                    Code
-======================= ============================================================== =========
-pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
-pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
-pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
-flake8-import-order_    Enforce import conventions from `PEP 8`_                       `I <flake8-import-order codes_>`__
-flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
-flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
-flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
-flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
-mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
-darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
-flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`__
-======================= ============================================================== =========
+.. table:: Flake8 plugins
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================= ============================================================== ======================================
+   Tool                    Description                                                    Code
+   ======================= ============================================================== ======================================
+   pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
+   pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
+   pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
+   flake8-import-order_    Enforce import conventions from `PEP 8`_                       `I <flake8-import-order codes_>`__
+   flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
+   flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
+   flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
+   flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
+   mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
+   darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
+   flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`__
+   ======================= ============================================================== ======================================
+
 
 The linters
 -----------
@@ -1329,18 +1341,22 @@ consisting of the following hooks:
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
-======================== ===============================================
-Hook                     Description
-======================== ===============================================
-`black <Black_>`__       Run the Black_ code formatter
-`flake8 <Flake8_>`__     Run the Flake8_ linter
-`mypy <mypy_>`__         Run the mypy_ static type checker
-`prettier <Prettier_>`__ Run the Prettier_ code formatter
-check-added-large-files_ Prevent giant files from being committed.
-check-yaml_              Validate YAML_ files
-end-of-file-fixer_       Ensure files are terminated by a single newline
-trailing-whitespace_     Ensure lines do not contain trailing whitespace
-======================== ===============================================
+.. table:: pre-commit hooks
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================== ===============================================
+   Hook                     Description
+   ======================== ===============================================
+   `black <Black_>`__       Run the Black_ code formatter
+   `flake8 <Flake8_>`__     Run the Flake8_ linter
+   `mypy <mypy_>`__         Run the mypy_ static type checker
+   `prettier <Prettier_>`__ Run the Prettier_ code formatter
+   check-added-large-files_ Prevent giant files from being committed.
+   check-yaml_              Validate YAML_ files
+   end-of-file-fixer_       Ensure files are terminated by a single newline
+   trailing-whitespace_     Ensure lines do not contain trailing whitespace
+   ======================== ===============================================
 
 .. _`check-yaml`: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _`check-added-large-files`: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
@@ -1545,14 +1561,18 @@ Stand-alone documents
 The project repository contains several documentation files
 written in reStructuredText_:
 
-======================= ============================================
-File                    Contents
-======================= ============================================
-``README.rst``          Project description for GitHub and PyPI
-``CONTRIBUTING.rst``    Contributor Guide
-``CODE_OF_CONDUCT.rst`` Code of Conduct
-``LICENSE.rst``         License
-======================= ============================================
+.. table:: Documentation files
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================= ============================================
+   File                    Contents
+   ======================= ============================================
+   ``README.rst``          Project description for GitHub and PyPI
+   ``CONTRIBUTING.rst``    Contributor Guide
+   ``CODE_OF_CONDUCT.rst`` Code of Conduct
+   ``LICENSE.rst``         License
+   ======================= ============================================
 
 
 Sphinx documentation
@@ -1564,17 +1584,21 @@ processed by Sphinx_,
 and accessible on `Read the Docs`_.
 It consists of the following files:
 
-====================== =======================================================
-File                   Contents
-====================== =======================================================
-``conf.py``            Sphinx configuration file
-``index.rst``          Master document
-``contributing.rst``   Contributor Guide (includes ``CONTRIBUTING.rst``)
-``codeofconduct.rst``  Code of Conduct (includes ``CODE_OF_CONDUCT.rst``)
-``license.rst``        License (includes ``LICENSE.rst``)
-``reference.rst``      API documentation
-``requirements.txt``   Build dependencies for `Read the Docs`_
-====================== =======================================================
+.. table:: Sphinx documentation files
+   :class: hypermodern-table
+   :widths: auto
+
+   ====================== =======================================================
+   File                   Contents
+   ====================== =======================================================
+   ``conf.py``            Sphinx configuration file
+   ``index.rst``          Master document
+   ``contributing.rst``   Contributor Guide (includes ``CONTRIBUTING.rst``)
+   ``codeofconduct.rst``  Code of Conduct (includes ``CODE_OF_CONDUCT.rst``)
+   ``license.rst``        License (includes ``LICENSE.rst``)
+   ``reference.rst``      API documentation
+   ``requirements.txt``   Build dependencies for `Read the Docs`_
+   ====================== =======================================================
 
 The documentation menu also has a *Changelog* entry,
 which links to the `GitHub Releases <GitHub Release_>`__ page.
@@ -1767,14 +1791,19 @@ Dependabot integrates with your repository via its GitHub app.
 
 It manages the following dependencies:
 
-=================== ===================================== ==============================================
-Type of dependency  Managed files                         See also
-=================== ===================================== ==============================================
-Python              ``pyproject.toml``, ``poetry.lock``   `Managing Dependencies`_
-Python              ``docs/requirements.txt``             `Read the Docs <Read the Docs integration_>`__
-Python              ``.github/workflows/constraints.txt`` `Workflow constraints`_
-GitHub Action       ``.github/workflows/*.yml``           `Available workflows`_
-=================== ===================================== ==============================================
+.. table::
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ===================================== ==============================================
+   Type of dependency  Managed files                         See also
+   =================== ===================================== ==============================================
+   Python              | ``pyproject.toml``                  `Managing Dependencies`_
+                       | ``poetry.lock``
+   Python              ``docs/requirements.txt``             `Read the Docs <Read the Docs integration_>`__
+   Python              ``.github/workflows/constraints.txt`` `Workflow constraints`_
+   GitHub Action       ``.github/workflows/*.yml``           `Available workflows`_
+   =================== ===================================== ==============================================
 
 
 Read the Docs
@@ -1805,12 +1834,16 @@ Some workflows use tokens to access external services.
 The following table lists the required tokens,
 which need to be stored as secrets in the repository settings on GitHub:
 
-=================== ===================
-Name                Description
-=================== ===================
-``PYPI_TOKEN``      PyPI_ API token
-``TEST_PYPI_TOKEN`` TestPyPI_ API token
-=================== ===================
+.. table:: Secrets
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ===================
+   Name                Description
+   =================== ===================
+   ``PYPI_TOKEN``      PyPI_ API token
+   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
+   =================== ===================
 
 You can generate these API tokens
 from your account settings on PyPI_ and TestPyPI_.
@@ -1846,17 +1879,21 @@ Available workflows
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
 
-=================================================== ======================== ==================================== ===============
-Workflow                                            File                     Description                          Trigger
-=================================================== ======================== ==================================== ===============
-`Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_         Push
-`Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_     Push
-`pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_         Push
-`Build documentation <The Docs workflow_>`__        ``docs.yml``             Build the documentation with Sphinx_ Push
-`Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
-`Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_          GitHub Release
-`TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
-=================================================== ======================== ==================================== ===============
+.. table:: GitHub Actions workflows
+   :class: hypermodern-table
+   :widths: auto
+
+   =================================================== ======================== ==================================== ===============
+   Workflow                                            File                     Description                          Trigger
+   =================================================== ======================== ==================================== ===============
+   `Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_         Push
+   `Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_     Push
+   `pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_         Push
+   `Build documentation <The Docs workflow_>`__        ``docs.yml``             Build the documentation with Sphinx_ Push
+   `Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
+   `Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_          GitHub Release
+   `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
+   =================================================== ======================== ==================================== ===============
 
 .. note::
 
