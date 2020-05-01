@@ -453,7 +453,7 @@ under the ``src`` directory::
 
       $ python -m <package> [<options>]
 
-   __ https://python.readthedocs.io/en/stable/library/__main__.html
+   __ https://docs.python.org/3/library/__main__.html
 
 ``py.typed``
    This is an empty marker file,
