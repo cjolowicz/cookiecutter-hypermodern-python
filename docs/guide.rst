@@ -275,6 +275,147 @@ the project name uses hyphens (*snake case*),
 whereas the package name uses underscores (*kebab case*).
 
 
+Overview of generated files
+---------------------------
+
+This section provides an overview of all the files generated for your project.
+Let's start with the project layout.
+The project contains the following subdirectories:
+
+.. table:: Project layout
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   Directory                             Contents
+   ===================================== ===============================
+   ``src/<package>``                     Python package
+   ``tests``                             Test suite
+   ``docs``                              Documentation
+   ``.github/workflows``                 GitHub Actions workflows
+   ===================================== ===============================
+
+The Python package is located in the ``src/<package>`` directory.
+For more details on these files, refer to the section `The initial package`_.
+
+.. table:: Python package
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``src/<project>/py.typed``            Marker file for `PEP 561`_
+   ``src/<project>/__init__.py``         Package initialization
+   ``src/<project>/__main__.py``         Command-line interface
+   ===================================== ===============================
+
+The test suite is located in the ``tests`` directory.
+For more details on these files, refer to the section `The test suite`_.
+
+.. table:: Test suite
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``tests/__init__.py``                 Test package initialization
+   ``tests/test_main.py``                Test cases for ``__main__``
+   ===================================== ===============================
+
+The project documentation is written in `reStructuredText`_.
+The documentation files in the top-level directory are rendered on `GitHub`_.
+The files in the the ``docs`` directory are
+built using `Sphinx <Sphinx documentation_>`__ and
+hosted on `Read the Docs <Read the Docs integration_>`__.
+
+.. table:: Documentation files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ===============================
+   File                                  Description
+   ===================================== ===============================
+   ``CODE_OF_CONDUCT.rst``               Code of Conduct
+   ``CONTRIBUTING.rst``                  Contributor Guide
+   ``LICENSE.rst``                       License
+   ``README.rst``                        Main page
+   ``docs/codeofconduct.rst``            Code of Conduct (included)
+   ``docs/contributing.rst``             Contributor Guide (included)
+   ``docs/index.rst``                    Main page
+   ``docs/license.rst``                  License (included)
+   ``docs/reference.rst``                API reference
+   ===================================== ===============================
+
+The ``.github/workflows`` directory contains the `GitHub Actions workflows <Available workflows_>`__:
+
+.. table:: GitHub Actions workflows
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================= ===============================
+   File                    Description
+   ======================= ===============================
+   ``coverage.yml``        `The Coverage workflow`_
+   ``docs.yml``            `The Docs workflow`_
+   ``pre-commit.yml``      `The pre-commit workflow`_
+   ``release-drafter.yml`` `The Release Drafter workflow`_
+   ``release.yml``         `The Release workflow`_
+   ``test-pypi.yml``       `The TestPyPI workflow`_
+   ``tests.yml``           `The Tests workflow`_
+   ======================= ===============================
+
+The project contains many configuration files for developer tools,
+most of which are located in the top-level directory
+and have names with a leading dot.
+The table below lists these files,
+and links each file to a section with more details.
+
+.. table:: Configuration files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ========================================
+   File                                  Description
+   ===================================== ========================================
+   ``.cookiecutter.json``                `Project variables <Creating a project_>`__
+   ``.darglint``                         Configuration for `darglint <darglint integration_>`__
+   ``.dependabot/config.yml``            Configuration for `Dependabot <Dependabot integration_>`__
+   ``.flake8``                           Configuration for `Flake8 <Linting with Flake8_>`__
+   ``.gitattributes``                    `Git attributes <.gitattributes_>`__
+   ``.gitignore``                        `Git ignore file <.gitignore_>`__
+   ``.github/release-drafter.yml``       Configuration for `Release Drafter <The Release Drafter workflow_>`__
+   ``.pre-commit-config.yaml``           Configuration for `pre-commit <Linting with pre-commit_>`__
+   ``.readthedocs.yml``                  Configuration for `Read the Docs <Read the Docs integration_>`__
+   ``codecov.yml``                       Configuration for `Codecov <Codecov integration_>`__
+   ``docs/conf.py``                      Configuration for `Sphinx <Sphinx documentation_>`__
+   ``mypy.ini``                          Configuration for `mypy <Configuring mypy_>`__
+   ``noxfile.py``                        Configuration for `Nox <Using Nox_>`__
+   ``pyproject.toml``                    `Python package <The pyproject.toml file_>`__ configuration,
+                                         and configuration for `Coverage.py <Test coverage_>`__
+   ===================================== ========================================
+
+.. _`.gitignore`: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+
+`Dependencies <Managing dependencies_>`__ are managed by Poetry_
+and declared in the `pyproject.toml <The pyproject.toml file_>`__ file.
+The table below lists some additional files with pinned dependencies.
+Follow the links for more details on these.
+
+.. table:: Dependency files
+   :class: hypermodern-table
+   :widths: auto
+
+   ===================================== ================================
+   File                                  Description
+   ===================================== ================================
+   ``poetry.lock``                       `Poetry lock file <The lock file_>`__
+   ``docs/requirements.txt``             Requirements file for `Read the Docs <Read the Docs integration_>`__
+   ``.github/workflows/constraints.txt`` Constraints file for `GitHub Actions workflows <Workflow constraints_>`__
+   ===================================== ================================
+
+
 .. _`The initial package`:
 
 The initial package
