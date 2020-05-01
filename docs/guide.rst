@@ -60,7 +60,7 @@ Here is a detailed list of features for this Python template:
 Release cadence
 ---------------
 
-The *Hypermodern Python Cookiecutter* has a `bimonthly`_ release cadence.
+The *Hypermodern Python Cookiecutter* has a bimonthly_ release cadence.
 Releases happen on the 15th of every other month, starting in January.
 We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 Initial releases may occur more frequently.
@@ -262,7 +262,7 @@ Your choices are recorded in the file ``.cookiecutter.json`` in the generated pr
 together with the URL of this Cookiecutter template.
 Having this JSON_ file in the project makes it possible later on
 to update your project with changes from the Cookiecutter template,
-using tools such as `cupper`_.
+using tools such as cupper_.
 
 .. _JSON: https://www.json.org/
 .. _cupper: https://github.com/senseyeio/cupper
@@ -1871,7 +1871,7 @@ The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
 to implement continuous integration and delivery.
 With GitHub Actions,
 you define so-called workflows
-using `YAML`_ files located in the ``.github/workflows`` directory.
+using YAML_ files located in the ``.github/workflows`` directory.
 
 A *workflow* is an automated process
 consisting of one or many jobs,
@@ -2117,7 +2117,7 @@ The Coverage workflow uploads coverage data to Codecov_.
 
 The workflow is triggered on every push to the GitHub repository.
 It executes the `tests session <the tests session_>`__
-to generate a coverage report in `cobertura`__ XML format.
+to generate a coverage report in cobertura__ XML format.
 This coverage report is then uploaded to Codecov_.
 
 __ https://cobertura.github.io/cobertura/
@@ -2437,7 +2437,7 @@ How to make a release
 Before making a release, go through the following checklist:
 
 - The master branch passes all checks.
-- The development release on `TestPyPI`_ looks good.
+- The development release on TestPyPI_ looks good.
 - All pull requests for the release have been merged.
 
 Making a release is a two-step process:
