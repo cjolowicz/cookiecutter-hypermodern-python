@@ -431,13 +431,14 @@ under the ``src`` directory::
        └── py.typed
 
 ``__init__.py``
-   This file declares the directory as a `Python package`_.
+   This file declares the directory as a `Python package`_,
+   and contains any package initialization code.
 
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
 
 ``__main__.py``
    The `__main__`__ module defines the entry point for the command-line interface.
-   The command-line interface is implemented using Click_,
+   The command-line interface is implemented using the Click_ library,
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
    a script named ``<project>`` is placed
