@@ -72,6 +72,8 @@ The current stable release is `2020.4.15.1`_.
 .. _2020.4.15.1: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.4.15.1
 
 
+.. _Installation:
+
 Installation
 ~~~~~~~~~~~~
 
@@ -1003,6 +1005,8 @@ The helper class has the following methods:
    Instances need a session object for running commands.
 
 
+.. _Testing:
+
 Testing
 ~~~~~~~
 
@@ -1089,6 +1093,8 @@ The configuration informs the tool about your package name and source tree layou
 It also enables branch analysis and the display of line numbers for missing coverage,
 and specifies the target coverage percentage.
 
+
+.. _Linting with Flake8:
 
 Linting with Flake8
 ~~~~~~~~~~~~~~~~~~~
@@ -1865,6 +1871,8 @@ or run specific examples:
    $ nox --session=xdoctest -- list
 
 
+.. _Continuous integration using GitHub Actions:
+
 Continuous integration using GitHub Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2296,6 +2304,8 @@ Tutorials
 
 First, make sure you have all the `requirements <Installation_>`__ installed.
 
+
+.. _How to test your project:
 
 How to test your project
 ------------------------
