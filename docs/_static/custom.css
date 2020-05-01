@@ -48,3 +48,7 @@ div.admonition p.admonition-title {
 div.admonition p.admonition-title:after {
   content: "";
 }
+
+div.contents li {
+  list-style-type: none;
+}
