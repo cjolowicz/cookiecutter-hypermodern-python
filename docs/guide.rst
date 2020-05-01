@@ -258,9 +258,21 @@ Here is a complete list of the project variables defined by this template:
    ``version``        Initial project version         ``0.1.0``
    ================== =============================== ======================
 
+Your choices are recorded in the file ``.cookiecutter.json`` in the generated project,
+together with the URL of this Cookiecutter template.
+Having this JSON_ file in the project makes it possible later on
+to update your project with changes from the Cookiecutter template,
+using tools such as `cupper`_.
+
+.. _`JSON`: https://www.json.org/
+.. _`cupper`: https://github.com/senseyeio/cupper
+
 In the remainder of this guide,
 ``<project>`` and ``<package>`` are used
 to refer to the project and package names, respectively.
+By default, their only difference is that
+the project name uses hyphens (*snake case*),
+whereas the package name uses underscores (*kebab case*).
 
 
 The initial package
@@ -269,33 +281,40 @@ The initial package
 You can find the initial Python package in your generated project
 under the ``src`` directory::
 
-  src
-  └── <package>
-      ├── __init__.py
-      ├── __main__.py
-      └── py.typed
+   src
+   └── <package>
+       ├── __init__.py
+       ├── __main__.py
+       └── py.typed
 
 ``__init__.py``
-   This file declares the directory as a `Python package`_.
+   This file declares the directory as a `Python package`_,
+   and contains any package initialization code.
 
    .. _`Python package`: https://docs.python.org/3/tutorial/modules.html#packages
 
 ``__main__.py``
-   This module defines the ``__main__.main`` entry point
-   for the command-line interface.
-   The command-line interface is implemented using Click_,
+   The `__main__`__ module defines the entry point for the command-line interface.
+   The command-line interface is implemented using the Click_ library,
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
    a script named ``<project>`` is placed
-   in the ``bin`` directory of the Python installation or virtual environment,
-   allowing you to invoke the command-line interface
-   like any other console application.
+   in the ``bin`` directory of the Python installation or virtual environment.
+   This allows you to invoke the command-line interface using only the project name:
+
+   .. code:: console
+
+      $ poetry run <project>  # during development
+      $ <project>             # after installation
+
    The command-line interface can also be invoked
    by specifying a Python interpreter and the package name:
 
    .. code:: console
 
       $ python -m <package> [<options>]
+
+   __ https://docs.python.org/3/library/__main__.html
 
 ``py.typed``
    This is an empty marker file,
@@ -335,6 +354,10 @@ and ``<repository>`` by the name of your GitHub repository.
 
    $ git remote add origin git@github.com:<username>/<repository>.git
    $ git push --set-upstream origin master
+
+Now may be a good time to set up Continuous Integration for your repository.
+Refer to the section `Continuous Integration using GitHub Actions`_
+for detailed instructions.
 
 
 Packaging
@@ -463,7 +486,7 @@ and they come in two types:
   because users do not require them to run your code.
 
 This project template has a core dependency on Click_,
-a library for creating command-line interfaces
+a library for creating command-line interfaces.
 
 The project template also comes with a large number of development dependencies.
 See :ref:`features` for an overview.
@@ -1854,7 +1877,7 @@ from your account settings on PyPI_ and TestPyPI_.
 Constraints file
 ----------------
 
-GitHub workflows install the following tools:
+GitHub Actions workflows install the following tools:
 
 - pip_
 - Poetry_
