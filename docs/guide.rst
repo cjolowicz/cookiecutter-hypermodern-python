@@ -355,6 +355,10 @@ and ``<repository>`` by the name of your GitHub repository.
    $ git remote add origin git@github.com:<username>/<repository>.git
    $ git push --set-upstream origin master
 
+Now may be a good time to set up Continuous Integration for your repository.
+Refer to the section `Continuous Integration using GitHub Actions`_
+for detailed instructions.
+
 
 Packaging
 ~~~~~~~~~
