@@ -105,7 +105,7 @@ Install Cookiecutter_:
 
 Install Poetry_ by downloading and running get-poetry.py_:
 
-.. _`get-poetry.py`: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
+.. _get-poetry.py: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
 
 .. code:: console
 
@@ -254,7 +254,7 @@ Releasing
 2. Publish a GitHub Release.
 3. GitHub Action triggers the PyPI upload.
 
-.. _`poetry version`: https://python-poetry.org/docs/cli/#version
+.. _poetry version: https://python-poetry.org/docs/cli/#version
 
 Release notes are pre-filled with titles and authors of merged pull requests.
 
@@ -293,34 +293,34 @@ when you need them.
 
 .. references-begin
 
-.. _`Bandit`: https://github.com/PyCQA/bandit
-.. _`Black`: https://github.com/psf/black
-.. _`Click`: https://click.palletsprojects.com/
-.. _`Codecov`: https://codecov.io/
-.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
-.. _`Coverage.py`: https://coverage.readthedocs.io/
-.. _`Dependabot`: https://dependabot.com/
-.. _`Flake8`: http://flake8.pycqa.org
-.. _`GitHub`: https://github.com/
-.. _`GitHub Actions`: https://github.com/features/actions
-.. _`Hypermodern Python`: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
-.. _`Nox`: https://nox.thea.codes/
-.. _`Poetry`: https://python-poetry.org/
-.. _`Prettier`: https://prettier.io/
-.. _`PyPI`: https://pypi.org/
-.. _`Read the Docs`: https://readthedocs.org/
-.. _`Release Drafter`: https://github.com/release-drafter/release-drafter
-.. _`Safety`: https://github.com/pyupio/safety
-.. _`Sphinx`: http://www.sphinx-doc.org/
-.. _`TestPyPI`: https://test.pypi.org/
-.. _`Typeguard`: https://github.com/agronholm/typeguard
-.. _`autodoc`: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
-.. _`mypy`: http://mypy-lang.org/
-.. _`napoleon`: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
-.. _`pipx`: https://pipxproject.github.io/pipx/
-.. _`pre-commit`: https://pre-commit.com/
-.. _`pyenv`: https://github.com/pyenv/pyenv
-.. _`pytest`: https://docs.pytest.org/en/latest/
-.. _`xdoctest`: https://github.com/Erotemic/xdoctest
+.. _Bandit: https://github.com/PyCQA/bandit
+.. _Black: https://github.com/psf/black
+.. _Click: https://click.palletsprojects.com/
+.. _Codecov: https://codecov.io/
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Coverage.py: https://coverage.readthedocs.io/
+.. _Dependabot: https://dependabot.com/
+.. _Flake8: http://flake8.pycqa.org
+.. _GitHub: https://github.com/
+.. _GitHub Actions: https://github.com/features/actions
+.. _Hypermodern Python: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+.. _Nox: https://nox.thea.codes/
+.. _Poetry: https://python-poetry.org/
+.. _Prettier: https://prettier.io/
+.. _PyPI: https://pypi.org/
+.. _Read the Docs: https://readthedocs.org/
+.. _Release Drafter: https://github.com/release-drafter/release-drafter
+.. _Safety: https://github.com/pyupio/safety
+.. _Sphinx: http://www.sphinx-doc.org/
+.. _TestPyPI: https://test.pypi.org/
+.. _Typeguard: https://github.com/agronholm/typeguard
+.. _autodoc: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
+.. _mypy: http://mypy-lang.org/
+.. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
+.. _pipx: https://pipxproject.github.io/pipx/
+.. _pre-commit: https://pre-commit.com/
+.. _pyenv: https://github.com/pyenv/pyenv
+.. _pytest: https://docs.pytest.org/en/latest/
+.. _xdoctest: https://github.com/Erotemic/xdoctest
 
 .. references-end
