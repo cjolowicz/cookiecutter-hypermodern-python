@@ -298,7 +298,7 @@ The project contains the following subdirectories:
    ===================================== ===============================
 
 The Python package is located in the ``src/<package>`` directory.
-For more details on these files, refer to the section `The initial package`_.
+For more details on these files, refer to the section :ref:`The initial package`.
 
 .. table:: Python package
    :class: hypermodern-table
@@ -313,7 +313,7 @@ For more details on these files, refer to the section `The initial package`_.
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
-For more details on these files, refer to the section `The test suite`_.
+For more details on these files, refer to the section :ref:`The test suite`.
 
 .. table:: Test suite
    :class: hypermodern-table
@@ -328,9 +328,9 @@ For more details on these files, refer to the section `The test suite`_.
 
 The project documentation is written in `reStructuredText`_.
 The documentation files in the top-level directory are rendered on `GitHub`_.
-The files in the the ``docs`` directory are
-built using `Sphinx <Sphinx documentation_>`__ and
-hosted on `Read the Docs <Read the Docs integration_>`__.
+The files in the ``docs`` directory are
+built using :ref:`Sphinx <Sphinx documentation>` and
+hosted on :ref:`Read the Docs <Read the Docs integration>`.
 
 .. table:: Documentation files
    :class: hypermodern-table
@@ -350,7 +350,7 @@ hosted on `Read the Docs <Read the Docs integration_>`__.
    ``docs/reference.rst``                API reference
    ===================================== ===============================
 
-The ``.github/workflows`` directory contains the `GitHub Actions workflows <Available workflows_>`__:
+The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <Available workflows>`:
 
 .. table:: GitHub Actions workflows
    :class: hypermodern-table
@@ -359,13 +359,13 @@ The ``.github/workflows`` directory contains the `GitHub Actions workflows <Avai
    ======================= ===============================
    File                    Description
    ======================= ===============================
-   ``coverage.yml``        `The Coverage workflow`_
-   ``docs.yml``            `The Docs workflow`_
-   ``pre-commit.yml``      `The pre-commit workflow`_
-   ``release-drafter.yml`` `The Release Drafter workflow`_
-   ``release.yml``         `The Release workflow`_
-   ``test-pypi.yml``       `The TestPyPI workflow`_
-   ``tests.yml``           `The Tests workflow`_
+   ``coverage.yml``        :ref:`The Coverage workflow`
+   ``docs.yml``            :ref:`The Docs workflow`
+   ``pre-commit.yml``      :ref:`The pre-commit workflow`
+   ``release-drafter.yml`` :ref:`The Release Drafter workflow`
+   ``release.yml``         :ref:`The Release workflow`
+   ``test-pypi.yml``       :ref:`The TestPyPI workflow`
+   ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
 
 The project contains many configuration files for developer tools,
@@ -381,27 +381,27 @@ and links each file to a section with more details.
    ===================================== ========================================
    File                                  Description
    ===================================== ========================================
-   ``.cookiecutter.json``                `Project variables <Creating a project_>`__
-   ``.darglint``                         Configuration for `darglint <darglint integration_>`__
-   ``.dependabot/config.yml``            Configuration for `Dependabot <Dependabot integration_>`__
-   ``.flake8``                           Configuration for `Flake8 <Linting with Flake8_>`__
+   ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
+   ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
+   ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
+   ``.flake8``                           Configuration for :ref:`Flake8 <Linting with Flake8>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
-   ``.github/release-drafter.yml``       Configuration for `Release Drafter <The Release Drafter workflow_>`__
-   ``.pre-commit-config.yaml``           Configuration for `pre-commit <Linting with pre-commit_>`__
-   ``.readthedocs.yml``                  Configuration for `Read the Docs <Read the Docs integration_>`__
-   ``codecov.yml``                       Configuration for `Codecov <Codecov integration_>`__
-   ``docs/conf.py``                      Configuration for `Sphinx <Sphinx documentation_>`__
-   ``mypy.ini``                          Configuration for `mypy <Configuring mypy_>`__
-   ``noxfile.py``                        Configuration for `Nox <Using Nox_>`__
-   ``pyproject.toml``                    `Python package <The pyproject.toml file_>`__ configuration,
-                                         and configuration for `Coverage.py <Test coverage_>`__
+   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release Drafter workflow>`
+   ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
+   ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
+   ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
+   ``docs/conf.py``                      Configuration for :ref:`Sphinx <Sphinx documentation>`
+   ``mypy.ini``                          Configuration for :ref:`mypy <Configuring mypy>`
+   ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
+   ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
+                                         and configuration for :ref:`Coverage.py <Test coverage>`
    ===================================== ========================================
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 
-`Dependencies <Managing dependencies_>`__ are managed by Poetry_
-and declared in the `pyproject.toml <The pyproject.toml file_>`__ file.
+:ref:`Dependencies <Managing dependencies>` are managed by Poetry_
+and declared in the :ref:`pyproject.toml <The pyproject.toml file>` file.
 The table below lists some additional files with pinned dependencies.
 Follow the links for more details on these.
 
@@ -412,9 +412,9 @@ Follow the links for more details on these.
    ===================================== ================================
    File                                  Description
    ===================================== ================================
-   ``poetry.lock``                       `Poetry lock file <The lock file_>`__
-   ``docs/requirements.txt``             Requirements file for `Read the Docs <Read the Docs integration_>`__
-   ``.github/workflows/constraints.txt`` Constraints file for `GitHub Actions workflows <Workflow constraints_>`__
+   ``poetry.lock``                       :ref:`Poetry lock file <The lock file>`
+   ``docs/requirements.txt``             Requirements file for :ref:`Read the Docs <Read the Docs integration>`
+   ``.github/workflows/constraints.txt`` Constraints file for :ref:`GitHub Actions workflows <Workflow constraints>`
    ===================================== ================================
 
 
@@ -501,7 +501,7 @@ and ``<repository>`` by the name of your GitHub repository.
    $ git push --set-upstream origin master
 
 Now may be a good time to set up Continuous Integration for your repository.
-Refer to the section `Continuous Integration using GitHub Actions`_
+Refer to the section :ref:`Continuous Integration using GitHub Actions`
 for detailed instructions.
 
 
@@ -682,7 +682,7 @@ in the ``pyproject.toml`` file.
 
 .. note::
 
-   Dependencies in the *Hypermodern Python Cookiecutter* are managed by `Dependabot <Dependabot integration_>`__.
+   Dependencies in the *Hypermodern Python Cookiecutter* are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of dependencies become available,
    Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
 
@@ -933,18 +933,18 @@ The following tables gives an overview of the available Nox sessions:
    :class: hypermodern-table
    :widths: auto
 
-   ====================================== ============================== ================== =========
-   Session                                Description                    Python              Default
-   ====================================== ============================== ================== =========
-   `black <The black session_>`__         Format code with Black_        ``3.8``
-   `docs <The docs session_>`__           Build Sphinx_ documentation    ``3.8``
-   `lint <The lint session_>`__           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
-   `mypy <The mypy session_>`__           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   `safety <The safety session_>`__       Scan dependencies with Safety_ ``3.8``                ✓
-   `tests <The tests session_>`__         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-   `typeguard <The typeguard session_>`__ Type-check with Typeguard_     ``3.6`` … ``3.8``
-   `xdoctest <The xdoctest session_>`__   Run examples with xdoctest_    ``3.6`` … ``3.8``
-   ====================================== ============================== ================== =========
+   ======================================== ============================== ================== =========
+   Session                                  Description                    Python              Default
+   ======================================== ============================== ================== =========
+   :ref:`black <The black session>`         Format code with Black_        ``3.8``
+   :ref:`docs <The docs session>`           Build Sphinx_ documentation    ``3.8``
+   :ref:`lint <The lint session>`           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
+   :ref:`mypy <The mypy session>`           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
+   :ref:`safety <The safety session>`       Scan dependencies with Safety_ ``3.8``                ✓
+   :ref:`tests <The tests session>`         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>` Type-check with Typeguard_     ``3.6`` … ``3.8``
+   :ref:`xdoctest <The xdoctest session>`   Run examples with xdoctest_    ``3.6`` … ``3.8``
+   ======================================== ============================== ================== =========
 
 
 Using Poetry inside Nox sessions
@@ -1327,7 +1327,7 @@ checks adherence to the Black_ code style.
 `Error codes`__ are prefixed by ``BLK`` for "black".
 It generates a warning if it detects that Black would reformat a source file.
 You can fix these issues automatically,
-as described below in the section `Code formatting with Black`_.
+as described below in the section :ref:`Code formatting with Black`.
 
 .. _flake8-black codes:
 __ https://github.com/peterjc/flake8-black#flake8-validation-codes
@@ -1705,7 +1705,7 @@ Run Typeguard_ using Nox:
    $ nox --session=typeguard
 
 The typeguard session runs the test suite with runtime type-checking enabled.
-It is similar to the `tests session <The tests session_>`__,
+It is similar to the :ref:`tests session <The tests session>`,
 with the difference that your package is instrumented by Typeguard.
 
 Typeguard_ checks that arguments passed to functions
@@ -1794,7 +1794,7 @@ The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
 
 The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
-This file is only used on `Read the Docs <Read the Docs integration_>`__.
+This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
 
 
 .. _The docs session:
@@ -1923,7 +1923,7 @@ Follow these steps to set up PyPI for your repository:
    add a secret named ``PYPI_TOKEN`` with the token you just copied.
 
 PyPI is integrated with your repository
-via the `Release workflow <The Release workflow_>`__.
+via the :ref:`Release workflow <The Release workflow>`.
 
 
 TestPyPI
@@ -1941,7 +1941,7 @@ Follow these steps to set up TestPyPI for your repository:
    add a secret named ``TEST_PYPI_TOKEN`` with the token you just copied.
 
 TestPyPI is integrated with your repository
-via the `TestPyPI workflow <The TestPyPI workflow_>`__.
+via the :ref:`TestPyPI workflow <The TestPyPI workflow>`.
 
 
 .. _Codecov integration:
@@ -1961,7 +1961,7 @@ The configuration is included in the repository, as ``codecov.yml``.
 
 Codecov integrates with your repository
 via its GitHub app.
-The `Coverage workflow <The Coverage workflow_>`__ uploads the coverage data.
+The :ref:`Coverage workflow <The Coverage workflow>` uploads the coverage data.
 
 
 .. _Dependabot integration:
@@ -1986,15 +1986,15 @@ It manages the following dependencies:
    :class: hypermodern-table
    :widths: auto
 
-   =================== ===================================== ==============================================
+   =================== ===================================== ================================================
    Type of dependency  Managed files                         See also
-   =================== ===================================== ==============================================
-   Python              | ``pyproject.toml``                  `Managing Dependencies`_
+   =================== ===================================== ================================================
+   Python              | ``pyproject.toml``                  :ref:`Managing Dependencies`
                        | ``poetry.lock``
-   Python              ``docs/requirements.txt``             `Read the Docs <Read the Docs integration_>`__
-   Python              ``.github/workflows/constraints.txt`` `Workflow constraints`_
-   GitHub Action       ``.github/workflows/*.yml``           `Available workflows`_
-   =================== ===================================== ==============================================
+   Python              ``docs/requirements.txt``             :ref:`Read the Docs <Read the Docs integration>`
+   Python              ``.github/workflows/constraints.txt`` :ref:`Workflow constraints`
+   GitHub Action       ``.github/workflows/*.yml``           :ref:`Available workflows`
+   =================== ===================================== ================================================
 
 
 Read the Docs
@@ -2057,7 +2057,7 @@ located in ``.github/workflow/constraints.txt``.
 
 .. note::
 
-   The constraints file is managed by `Dependabot <Dependabot integration_>`__.
+   The constraints file is managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of the tools become available,
    Dependabot updates the constraints file and submits a pull request.
 
@@ -2074,21 +2074,21 @@ the following workflows:
    :class: hypermodern-table
    :widths: auto
 
-   =================================================== ======================== ==================================== ===============
-   Workflow                                            File                     Description                          Trigger
-   =================================================== ======================== ==================================== ===============
-   `Tests <The Tests workflow_>`__                     ``tests.yml``            Run the test suite with Nox_         Push
-   `Coverage <The Coverage workflow_>`__               ``coverage.yml``         Upload coverage data to Codecov_     Push
-   `pre-commit <The pre-commit workflow_>`__           ``pre-commit.yml``       Run linters with pre-commit_         Push
-   `Build documentation <The Docs workflow_>`__        ``docs.yml``             Build the documentation with Sphinx_ Push
-   `Release Drafter <The Release Drafter workflow_>`__ ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
-   `Release <The Release workflow_>`__                 ``release.yml``          Upload the package to PyPI_          GitHub Release
-   `TestPyPI <The TestPyPI workflow_>`__               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
-   =================================================== ======================== ==================================== ===============
+   ===================================================== ======================== ==================================== ===============
+   Workflow                                              File                     Description                          Trigger
+   ===================================================== ======================== ==================================== ===============
+   :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push
+   :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push
+   :ref:`pre-commit <The pre-commit workflow>`           ``pre-commit.yml``       Run linters with pre-commit_         Push
+   :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push
+   :ref:`Release Drafter <The Release Drafter workflow>` ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
+   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          GitHub Release
+   :ref:`TestPyPI <The TestPyPI workflow>`               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
+   ===================================================== ======================== ==================================== ===============
 
 .. note::
 
-   GitHub Actions used by these workflows are managed by `Dependabot <Dependabot integration_>`__.
+   GitHub Actions used by these workflows are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of GitHub Actions become available,
    Dependabot updates the workflows that use them and submits a pull request.
 
@@ -2125,7 +2125,7 @@ The Coverage workflow
 The Coverage workflow uploads coverage data to Codecov_.
 
 The workflow is triggered on every push to the GitHub repository.
-It executes the `tests session <the tests session_>`__
+It executes the :ref:`tests session <the tests session>`
 to generate a coverage report in cobertura__ XML format.
 This coverage report is then uploaded to Codecov_.
 
@@ -2150,7 +2150,7 @@ It is defined in ``.github/workflows/coverage.yml``.
 The pre-commit workflow
 .......................
 
-The pre-commit workflow runs `pre-commit <Linting with pre-commit_>`__
+The pre-commit workflow runs :ref:`pre-commit <Linting with pre-commit>`
 on all files in the repository.
 
 The workflow is triggered on every push to the GitHub repository.
@@ -2175,7 +2175,7 @@ The Docs workflow
 .................
 
 The Docs workflow builds the Sphinx_ documentation
-using the `docs <The docs session_>`__ Nox session,
+using the :ref:`docs <The docs session>` Nox session,
 and uploads the generated files as a `workflow artifact`__.
 
 __ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
@@ -2290,7 +2290,7 @@ only direct dependencies are included.
 
 .. note::
 
-   The requirements file is managed by `Dependabot <Dependabot integration_>`__.
+   The requirements file is managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of the build dependencies become available,
    Dependabot updates the requirements file and submits a pull request.
    When adding or removing Sphinx extensions using Poetry,
@@ -2302,7 +2302,7 @@ only direct dependencies are included.
 Tutorials
 ~~~~~~~~~
 
-First, make sure you have all the `requirements <Installation_>`__ installed.
+First, make sure you have all the :ref:`requirements <Installation>` installed.
 
 
 .. _How to test your project:
@@ -2310,13 +2310,13 @@ First, make sure you have all the `requirements <Installation_>`__ installed.
 How to test your project
 ------------------------
 
-Run the test suite using `Nox <Using Nox_>`__:
+Run the test suite using :ref:`Nox <Using Nox>`:
 
 .. code:: console
 
    $ nox -r
 
-Additional checks are provided by `pre-commit <Linting with pre-commit_>`__:
+Additional checks are provided by :ref:`pre-commit <Linting with pre-commit>`:
 
 .. code:: console
 
@@ -2348,11 +2348,11 @@ Invoke the command-line interface of your package:
 How to make code changes
 ------------------------
 
-1. | Run the tests, `as explained above <How to test your project_>`__.
+1. | Run the tests, :ref:`as explained above <How to test your project>`.
    | All tests should pass.
-2. | Add a failing test `under the tests directory <Testing_>`__.
+2. | Add a failing test :ref:`under the tests directory <Testing>`.
    | Run the tests again to verify that your test fails.
-3. | Make your changes to the package, `under the src directory <The initial package_>`__.
+3. | Make your changes to the package, :ref:`under the src directory <The initial package>`.
    | Run the tests to verify that all tests pass again.
 
 
@@ -2380,10 +2380,10 @@ Push your branch to GitHub:
 
 The push triggers the following automated steps:
 
-- `The test suite runs against your branch <The Tests workflow_>`__.
-- `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
-- `The pre-commit linter suite runs against your branch <The pre-commit workflow_>`__.
-- `The documentation is built from your branch <The Docs workflow_>`__.
+- :ref:`The test suite runs against your branch <The Tests workflow>`.
+- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
+- :ref:`The pre-commit linter suite runs against your branch <The pre-commit workflow>`.
+- :ref:`The documentation is built from your branch <The Docs workflow>`.
 
 
 How to open a pull request
@@ -2395,7 +2395,7 @@ Open a pull request for your branch on GitHub:
 2. Click **New pull request**.
 3. Enter the title for the pull request.
 4. Enter a description for the pull request.
-5. Apply a `label identifying the type of change <The Release Drafter workflow_>`_.
+5. Apply a :ref:`label identifying the type of change <The Release Drafter workflow>`
 6. Click **Create pull request**.
 
 Release notes are pre-filled with the titles of merged pull requests.
@@ -2414,12 +2414,12 @@ merge the pull request using the squash-merge strategy (recommended):
 
 This triggers the following automated steps:
 
-- `The test suite runs against the master branch <The Tests workflow_>`__.
-- `Coverage data is uploaded to Codecov <The Coverage workflow_>`__.
-- `The pre-commit linter suite runs against the master branch <The pre-commit workflow_>`__.
-- `The documentation is built from the master branch <The Docs workflow_>`__.
-- `The draft GitHub Release is updated <The Release Drafter workflow_>`__.
-- `A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow_>`__.
+- :ref:`The test suite runs against the master branch <The Tests workflow>`.
+- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
+- :ref:`The pre-commit linter suite runs against the master branch <The pre-commit workflow>`.
+- :ref:`The documentation is built from the master branch <The Docs workflow>`.
+- :ref:`The draft GitHub Release is updated <The Release Drafter workflow>`.
+- :ref:`A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
 
 In your local repository,
@@ -2490,7 +2490,7 @@ After publishing the release,
 the following automated steps are triggered:
 
 - The Git tag is applied to the repository.
-- `The package is uploaded to PyPI <The Release workflow_>`__.
+- :ref:`The package is uploaded to PyPI <The Release workflow>`.
 - `Read the Docs`_ builds a new stable version of the documentation.
 
 Update your local repository:
