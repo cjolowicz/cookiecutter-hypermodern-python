@@ -7,6 +7,7 @@ author = "Claudio Jolowicz"
 copyright = f"{datetime.now().year}, {author}"
 extensions = ["sphinx.ext.intersphinx"]
 intersphinx_mapping = {"mypy": ("https://mypy.readthedocs.io/en/stable/", None)}
+language = "en"
 html_static_path = ["_static"]
 html_theme = "alabaster"
 html_theme_options = {
