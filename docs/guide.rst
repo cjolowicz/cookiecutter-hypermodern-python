@@ -1164,7 +1164,6 @@ and links to their lists of error codes.
    pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
    pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
    pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
-   flake8-import-order_    Enforce import conventions from `PEP 8`_                       `I <flake8-import-order codes_>`__
    flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
    flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
    flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
@@ -1236,39 +1235,6 @@ or the convention to name the first argument of methods ``self``.
 
 .. _pep8-naming codes:
 __ https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
-
-
-flake8-import-order
-...................
-
-The flake8-import-order_ plugin
-checks that import order adheres to `PEP 8`_
-and a configurable style convention.
-`Error codes`__ are prefixed by ``I`` for "import".
-
-.. _flake8-import-order codes:
-__ https://github.com/PyCQA/flake8-import-order#warnings
-
-The *Hypermodern Python Cookiecutter*
-selects the recommendations of the
-`Google styleguide <Google import style_>`__.
-Imports need to be arranged in three sorted groups, like this:
-
-.. _Google import style: https://google.github.io/styleguide/pyguide.html?showone=Imports_formatting#313-imports-formatting
-
-.. code:: python
-
-   # standard library
-   import time
-
-   # third-party packages
-   import click
-
-   # local packages
-   import <package>
-
-The configuration also ensures that
-the package name is recognized as local.
 
 
 pydocstyle and flake8-docstrings
@@ -2549,7 +2515,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _flake8-black: https://github.com/peterjc/flake8-black
 .. _flake8-bugbear: https://github.com/PyCQA/flake8-bugbear
 .. _flake8-docstrings: https://gitlab.com/pycqa/flake8-docstrings
-.. _flake8-import-order: https://github.com/PyCQA/flake8-import-order
 .. _flake8-rst-docstrings: https://github.com/peterjc/flake8-rst-docstrings
 .. _git: https://www.git-scm.com
 .. _mccabe: https://github.com/PyCQA/mccabe
