@@ -12,11 +12,11 @@ Here is a list of important resources for contributors:
 - `Issue Tracker`_
 - `Code of Conduct`_
 
-.. _`MIT license`: https://opensource.org/licenses/MIT
-.. _`Source Code`: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _`Documentation`: https://cookiecutter-hypermodern-python.readthedocs.io/
-.. _`Issue Tracker`: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
-.. _`Code of Conduct`: https://cookiecutter-hypermodern-python.readthedocs.io/codeofconduct.html
+.. _MIT license: https://opensource.org/licenses/MIT
+.. _Source Code: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _Documentation: https://cookiecutter-hypermodern-python.readthedocs.io/
+.. _Issue Tracker: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
+.. _Code of Conduct: https://cookiecutter-hypermodern-python.readthedocs.io/codeofconduct.html
 
 
 How to report a bug
@@ -62,11 +62,11 @@ from your development version:
 You may also want to push your generated project to GitHub,
 and set up `continuous integration`_.
 
-.. _`Cookiecutter`: https://cookiecutter.readthedocs.io/
-.. _`Poetry`: https://python-poetry.org/
-.. _`Nox`: https://nox.thea.codes/
-.. _`Github`: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _`continuous integration`: https://github.com/cjolowicz/cookiecutter-hypermodern-python/#continuous-integration
+.. _Cookiecutter: https://cookiecutter.readthedocs.io/
+.. _Poetry: https://python-poetry.org/
+.. _Nox: https://nox.thea.codes/
+.. _Github: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _continuous integration: https://github.com/cjolowicz/cookiecutter-hypermodern-python/#continuous-integration
 
 
 How to test the project
@@ -75,7 +75,7 @@ How to test the project
 Please refer to the `User Guide`_
 for instructions on how to run the test suite locally.
 
-.. _`User Guide`: https://cookiecutter-hypermodern-python.readthedocs.io/en/latest/guide.html#how-to-test-your-project
+.. _User Guide: https://cookiecutter-hypermodern-python.readthedocs.io/en/latest/guide.html#how-to-test-your-project
 
 
 How to submit changes
@@ -100,8 +100,8 @@ You can ensure that your changes adhere to the code style by reformatting with B
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-.. _`pull request`: https://github.com/cjolowicz/cookiecutter-hypermodern-python/pulls
-.. _`Black`: https://black.readthedocs.io/
+.. _pull request: https://github.com/cjolowicz/cookiecutter-hypermodern-python/pulls
+.. _Black: https://black.readthedocs.io/
 
 
 How to accept changes
@@ -168,5 +168,5 @@ After publishing the release, the following automated steps are triggered:
 - The Git tag is applied to the repository.
 - `Read the Docs`_ builds a new stable version of the documentation.
 
-.. _`Calendar Versioning`: https://calver.org/
-.. _`Read the Docs`: https://cookiecutter-hypermodern-python.readthedocs.io/
+.. _Calendar Versioning: https://calver.org/
+.. _Read the Docs: https://cookiecutter-hypermodern-python.readthedocs.io/
