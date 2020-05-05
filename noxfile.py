@@ -12,7 +12,7 @@ def docs(session: Session) -> None:
     args = session.posargs or ["-W", "-n", "docs", "docs/_build"]
 
     if session.interactive and not session.posargs:
-        args.append("--open-browser")
+        args = ["-a", "--watch=docs/_static", "--open-browser", *args]
 
     builddir = Path("docs", "_build")
     if builddir.exists():
