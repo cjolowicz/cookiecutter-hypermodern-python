@@ -136,6 +136,14 @@ def lint(session: Session) -> None:
     session.run("flake8", *args)
 
 
+@nox.session(name="pre-commit", python="3.8")
+def precommit(session: Session) -> None:
+    """Lint using pre-commit."""
+    args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
+    install(session, "pre-commit")
+    session.run("pre-commit", *args)
+
+
 @nox.session(python="3.8")
 def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
