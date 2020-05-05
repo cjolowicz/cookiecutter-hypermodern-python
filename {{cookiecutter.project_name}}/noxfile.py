@@ -1,9 +1,10 @@
 """Nox sessions."""
 import contextlib
-from pathlib import Path
 import shutil
 import tempfile
-from typing import cast, Iterator
+from pathlib import Path
+from typing import cast
+from typing import Iterator
 
 import nox
 from nox.sessions import Session
