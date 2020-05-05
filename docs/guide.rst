@@ -1505,12 +1505,14 @@ consisting of the following hooks:
    check-added-large-files_ Prevent giant files from being committed.
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
+   reorder-python-imports_  Rewrites source to reorder python imports
    trailing-whitespace_     Ensure lines do not contain trailing whitespace
    ======================== ===============================================
 
 .. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 .. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
+.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
 Black_, Flake8_, and mypy_ are run via Poetry using a `repository-local hook`_.
