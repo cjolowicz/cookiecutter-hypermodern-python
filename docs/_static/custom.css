@@ -10,8 +10,11 @@ table.hypermodern-table {
 }
 
 table.hypermodern-table caption {
-  font-weight: bold;
-  padding-bottom: 2rem;
+  background: #777;
+  color: white;
+  font-family: "Lucida Grande", "Helvetica Neue", sans-serif;
+  font-size: 95%;
+  padding: 0.2rem;
 }
 
 table.hypermodern-table th,
