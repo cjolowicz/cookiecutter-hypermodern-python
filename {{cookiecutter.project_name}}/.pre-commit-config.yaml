@@ -25,6 +25,11 @@ repos:
           - flake8-rst-docstrings==0.0.13
           - pep8-naming==0.10.0
           - darglint==1.2.3
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.3.0
+    hooks:
+      - id: reorder-python-imports
+        args: [--application-directories=src]
   - repo: local
     hooks:
       - id: mypy
@@ -33,8 +38,3 @@ repos:
         language: system
         types: [python]
         require_serial: true
-      - id: reorder-python-imports
-        name: reorder-python-imports
-        entry: poetry run reorder-python-imports --application-directories=src
-        language: system
-        types: [python]
