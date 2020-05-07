@@ -14,13 +14,12 @@ repos:
     rev: 19.10b0
     hooks:
       - id: black
-  - repo: local
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.9
     hooks:
       - id: flake8
-        name: flake8
-        entry: poetry run flake8
-        language: system
-        types: [python]
+  - repo: local
+    hooks:
       - id: mypy
         name: mypy
         entry: poetry run mypy
