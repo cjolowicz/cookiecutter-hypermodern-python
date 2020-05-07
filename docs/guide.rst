@@ -188,9 +188,6 @@ You only need three tools to use this template:
 - Poetry_ to manage packaging and dependencies
 - Nox_ to automate checks and other tasks
 
-As an optional requirement,
-pre-commit_ is recommended for additional checks and to manage Git hooks.
-
 Install Cookiecutter_ using pipx:
 
 .. code:: console
@@ -210,12 +207,6 @@ Install Nox_ using pipx:
 .. code:: console
 
    $ pipx install nox
-
-Install pre-commit_ using pipx:
-
-.. code:: console
-
-   $ pipx install pre-commit
 
 
 Project creation
