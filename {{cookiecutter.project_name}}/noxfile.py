@@ -110,14 +110,6 @@ def install(session: Session, *args: str) -> None:
         session.install(f"--constraint={requirements}", *args)
 
 
-@nox.session(python="3.8")
-def black(session: Session) -> None:
-    """Run black code formatter."""
-    args = session.posargs or locations
-    install(session, "black")
-    session.run("black", *args)
-
-
 @nox.session(python=python_versions)
 def lint(session: Session) -> None:
     """Lint using flake8."""
