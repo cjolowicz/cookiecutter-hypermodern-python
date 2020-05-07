@@ -24,17 +24,6 @@ version = "0.26.2"
 
 [[package]]
 category = "dev"
-description = "Utilities for refactoring imports in python-like syntax."
-name = "aspy.refactor-imports"
-optional = false
-python-versions = ">=3.6.1"
-version = "2.1.1"
-
-[package.dependencies]
-cached-property = "*"
-
-[[package]]
-category = "dev"
 description = "Atomic file writes."
 name = "atomicwrites"
 optional = false
@@ -1034,7 +1023,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "2bbff119fac705d50d5516f6f6a7cc4bcd12dd9d4c4cc4bd7262cc7527e6fd1d"
+content-hash = "71fdfa3292b6d8877b12bf42be34482a9a7a0908b94d0bee1cca975d67004071"
 python-versions = "^3.6.1"
 
 [metadata.files]
@@ -1049,10 +1038,6 @@ appdirs = [
 argh = [
     {file = "argh-0.26.2-py2.py3-none-any.whl", hash = "sha256:a9b3aaa1904eeb78e32394cd46c6f37ac0fb4af6dc488daa58971bdc7d7fcaf3"},
     {file = "argh-0.26.2.tar.gz", hash = "sha256:e9535b8c84dc9571a48999094fda7f33e63c3f1b74f3e5f3ac0105a58405bb65"},
-]
-"aspy.refactor-imports" = [
-    {file = "aspy.refactor_imports-2.1.1-py2.py3-none-any.whl", hash = "sha256:9df76bf19ef81620068b785a386740ab3c8939fcbdcebf20c4a4e0057230d782"},
-    {file = "aspy.refactor_imports-2.1.1.tar.gz", hash = "sha256:eec8d1a73bedf64ffb8b589ad919a030c1fb14acf7d1ce0ab192f6eedae895c5"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
