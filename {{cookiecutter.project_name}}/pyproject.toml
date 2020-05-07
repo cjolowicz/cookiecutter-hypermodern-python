@@ -13,7 +13,7 @@ documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.6.1"
 click = "^7.0"
 
 [tool.poetry.dev-dependencies]
@@ -35,6 +35,7 @@ sphinx = "^3.0.3"
 pep8-naming = "^0.10.0"
 flake8-rst-docstrings = "^0.0.13"
 sphinx-autobuild = "^0.7.1"
+reorder-python-imports = "^2.2.0"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"

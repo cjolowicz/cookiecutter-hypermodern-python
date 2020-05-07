@@ -28,3 +28,8 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: reorder-python-imports
+        name: reorder-python-imports
+        entry: poetry run reorder-python-imports --application-directories=src
+        language: system
+        types: [python]
