@@ -420,17 +420,6 @@ version = "0.1.2"
 
 [[package]]
 category = "dev"
-description = "Check PEP-8 naming conventions, plugin for flake8"
-name = "pep8-naming"
-optional = false
-python-versions = "*"
-version = "0.10.0"
-
-[package.dependencies]
-flake8-polyfill = ">=1.0.2,<2"
-
-[[package]]
-category = "dev"
 description = "plugin and hook calling mechanisms for python"
 name = "pluggy"
 optional = false
@@ -889,7 +878,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "22431676860b6285f4e5775fea2c863bb96bc02d91ccd0d23fd342820f021100"
+content-hash = "29c2d13a8d0e7e668e297be0de1b0c1414383dbdcd3335260ff915984462116a"
 python-versions = "^3.6.1"
 
 [metadata.files]
@@ -1115,10 +1104,6 @@ packaging = [
 ]
 pathtools = [
     {file = "pathtools-0.1.2.tar.gz", hash = "sha256:7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d4655f1c0"},
-]
-pep8-naming = [
-    {file = "pep8-naming-0.10.0.tar.gz", hash = "sha256:f3b4a5f9dd72b991bf7d8e2a341d2e1aa3a884a769b5aaac4f56825c1763bf3a"},
-    {file = "pep8_naming-0.10.0-py2.py3-none-any.whl", hash = "sha256:5d9f1056cb9427ce344e98d1a7f5665710e2f20f748438e308995852cfa24164"},
 ]
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
