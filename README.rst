@@ -64,6 +64,7 @@ Features
 
 - Packaging and dependency management with Poetry_
 - Test automation with Nox_
+- Linting with pre-commit_ and Flake8_
 - Continuous integration with `GitHub Actions`_
 - Documentation with Sphinx_ and `Read the Docs`_
 - Automated uploads to PyPI_ and TestPyPI_
@@ -74,17 +75,13 @@ Features
 - Code coverage with Coverage.py_
 - Coverage reporting with Codecov_
 - Command-line interface with Click_
-- Linting with Flake8_ and various `awesome plugins`__
 - Static type-checking with mypy_
 - Runtime type-checking with Typeguard_
 - Security audit with Bandit_ and Safety_
-- Git hook management with pre-commit_
 - Check documentation examples with xdoctest_
 - Generate API documentation with autodoc_ and napoleon_
 
 The template supports Python 3.6, 3.7, and 3.8.
-
-__ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#available-linters
 
 .. features-end
 
