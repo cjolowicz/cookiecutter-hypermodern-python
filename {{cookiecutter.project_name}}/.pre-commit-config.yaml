@@ -30,11 +30,3 @@ repos:
     hooks:
       - id: reorder-python-imports
         args: [--application-directories=src]
-  - repo: local
-    hooks:
-      - id: mypy
-        name: mypy
-        entry: poetry run mypy
-        language: system
-        types: [python]
-        require_serial: true
