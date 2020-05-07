@@ -123,14 +123,6 @@ toml = ["toml"]
 
 [[package]]
 category = "dev"
-description = "A utility for ensuring Google-style docstrings stay up to date with the source code."
-name = "darglint"
-optional = false
-python-versions = ">=3.5,<4.0"
-version = "1.2.3"
-
-[[package]]
-category = "dev"
 description = "Distribution utilities"
 name = "distlib"
 optional = false
@@ -878,7 +870,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "29c2d13a8d0e7e668e297be0de1b0c1414383dbdcd3335260ff915984462116a"
+content-hash = "638701426662d33227fc37c74357f49454780e1e71ad4cc92a6c1f7b0149399a"
 python-versions = "^3.6.1"
 
 [metadata.files]
@@ -962,10 +954,6 @@ coverage = [
     {file = "coverage-5.1-cp39-cp39-win32.whl", hash = "sha256:a82b92b04a23d3c8a581fc049228bafde988abacba397d57ce95fe95e0338ab4"},
     {file = "coverage-5.1-cp39-cp39-win_amd64.whl", hash = "sha256:bb28a7245de68bf29f6fb199545d072d1036a1917dca17a1e75bbb919e14ee8e"},
     {file = "coverage-5.1.tar.gz", hash = "sha256:f90bfc4ad18450c80b024036eaf91e4a246ae287701aaa88eaebebf150868052"},
-]
-darglint = [
-    {file = "darglint-1.2.3-py3-none-any.whl", hash = "sha256:cf56caa6cf059bd9cff798ee34cd6ac4b017d0c43760c15db42158fc31535de3"},
-    {file = "darglint-1.2.3.tar.gz", hash = "sha256:d1ab063da91987342c0e51b41028b4b5fc7fb72b04789e4534f7368a9146cd92"},
 ]
 distlib = [
     {file = "distlib-0.3.0.zip", hash = "sha256:2e166e231a26b36d6dfe35a48c4464346620f8645ed0ace01ee31822b288de21"},
