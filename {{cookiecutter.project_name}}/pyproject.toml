@@ -28,7 +28,6 @@ darglint = "^1.2.3"
 xdoctest = "^0.12.0"
 sphinx = "^3.0.3"
 pep8-naming = "^0.10.0"
-flake8-rst-docstrings = "^0.0.13"
 sphinx-autobuild = "^0.7.1"
 pre-commit = "^2.3.0"
 
