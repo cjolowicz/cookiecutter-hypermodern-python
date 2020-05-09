@@ -1428,7 +1428,6 @@ and links to their lists of error codes.
    pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
    flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
    flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
-   flake8-black_           Enforce the Black_ code style                                  `BLK <flake8-black codes_>`__
    flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
    mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
    darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
@@ -1546,18 +1545,6 @@ and group issues into numerical blocks, by their severity and origin.
 
 .. _flake8-rst-docstrings codes:
 __ https://github.com/peterjc/flake8-rst-docstrings#flake8-validation-codes
-
-
-flake8-black
-............
-
-The flake8-black_ plugin
-checks adherence to the Black_ code style.
-`Error codes`__ are prefixed by ``BLK`` for "black".
-It generates a warning if it detects that Black would reformat a source file.
-
-.. _flake8-black codes:
-__ https://github.com/peterjc/flake8-black#flake8-validation-codes
 
 
 flake8-bugbear
@@ -2429,7 +2416,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _curl: https://curl.haxx.se
 .. _darglint: https://github.com/terrencepreilly/darglint
 .. _flake8-bandit: https://github.com/tylerwince/flake8-bandit
-.. _flake8-black: https://github.com/peterjc/flake8-black
 .. _flake8-bugbear: https://github.com/PyCQA/flake8-bugbear
 .. _flake8-docstrings: https://gitlab.com/pycqa/flake8-docstrings
 .. _flake8-rst-docstrings: https://github.com/peterjc/flake8-rst-docstrings
