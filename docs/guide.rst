@@ -938,7 +938,6 @@ The following table gives an overview of the available Nox sessions:
    Session                                    Description                    Python              Default
    ========================================== ============================== ================== =========
    :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
-   :ref:`lint <The lint session>`             Lint with Flake8_              ``3.6`` … ``3.8``      ✓
    :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
    :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``
    :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
@@ -1114,33 +1113,6 @@ By default, the linter suite checks Python files in the following locations:
 
 The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
-
-
-.. _The lint session:
-
-The lint session
-----------------
-
-Run the linter suite using the ``lint`` session:
-
-.. code:: console
-
-   $ nox --session=lint
-
-You can also run the linter suite with a specific Python version.
-For example, the following command runs the linter suite
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=lint-3.8
-
-Use the separator ``--`` to pass additional options to ``flake8``.
-For example, the following command only lints the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=lint -- src/<project>/__main__.py
 
 
 .. _Available linters:

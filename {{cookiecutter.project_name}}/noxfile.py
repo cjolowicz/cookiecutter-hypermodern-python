@@ -12,7 +12,7 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "lint", "safety", "mypy", "tests"
+nox.options.sessions = "safety", "mypy", "tests"
 locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 
@@ -108,24 +108,6 @@ def install(session: Session, *args: str) -> None:
     poetry = Poetry(session)
     with poetry.export("--dev") as requirements:
         session.install(f"--constraint={requirements}", *args)
-
-
-@nox.session(python=python_versions)
-def lint(session: Session) -> None:
-    """Lint using flake8."""
-    args = session.posargs or locations
-    install(
-        session,
-        "flake8",
-        "flake8-bandit",
-        "flake8-black",
-        "flake8-bugbear",
-        "flake8-docstrings",
-        "flake8-rst-docstrings",
-        "pep8-naming",
-        "darglint",
-    )
-    session.run("flake8", *args)
 
 
 @nox.session(name="pre-commit", python="3.8")
