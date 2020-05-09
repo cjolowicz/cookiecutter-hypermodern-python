@@ -954,7 +954,7 @@ The following table gives an overview of the available Nox sessions:
 .. _The docs session:
 
 The docs session
------------------
+................
 
 Build the documentation using the Nox session ``docs``:
 
@@ -991,7 +991,7 @@ This Nox session always runs with the current major release of Python.
 .. _The mypy session:
 
 The mypy session
-----------------
+................
 
 Run mypy_ using Nox:
 
@@ -1018,7 +1018,7 @@ For example, the following command type-checks only the ``__main__`` module:
 .. _The pre-commit session:
 
 The pre-commit session
-----------------------
+......................
 
 Run pre-commit from Nox using the ``pre-commit`` session:
 
@@ -1041,7 +1041,7 @@ By default, pre-commit runs on all files in the repository.
 .. _The safety session:
 
 The safety session
-------------------
+..................
 
 Run Safety_ using the ``safety`` session:
 
@@ -1055,7 +1055,7 @@ This session always runs with the current version of Python.
 .. _The tests session:
 
 The tests session
------------------
+.................
 
 Run the test suite using the Nox session ``tests``:
 
@@ -1087,7 +1087,7 @@ For example, the following command runs only the test case ``test_main_succeeds`
 .. _The typeguard session:
 
 The typeguard session
----------------------
+.....................
 
 Run Typeguard_ using Nox:
 
@@ -1131,7 +1131,7 @@ not the resulting object as seen by the test suite.
 .. _The xdoctest session:
 
 The xdoctest session
---------------------
+....................
 
 The xdoctest_ tool
 runs examples in your docstrings and
