@@ -172,6 +172,12 @@ List the available Nox sessions:
 
    $ nox --list-sessions
 
+Install the pre-commit hooks:
+
+.. code:: console
+
+   $ nox -s pre-commit -- install
+
 
 Installing
 ----------
