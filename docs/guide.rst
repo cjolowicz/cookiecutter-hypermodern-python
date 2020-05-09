@@ -361,7 +361,6 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ======================= ===============================
    ``coverage.yml``        :ref:`The Coverage workflow`
    ``docs.yml``            :ref:`The Docs workflow`
-   ``pre-commit.yml``      :ref:`The pre-commit workflow`
    ``release-drafter.yml`` :ref:`The Release Drafter workflow`
    ``release.yml``         :ref:`The Release workflow`
    ``test-pypi.yml``       :ref:`The TestPyPI workflow`
@@ -1985,7 +1984,6 @@ the following workflows:
    ===================================================== ======================== ==================================== ===============
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push
    :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push
-   :ref:`pre-commit <The pre-commit workflow>`           ``pre-commit.yml``       Run linters with pre-commit_         Push
    :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push
    :ref:`Release Drafter <The Release Drafter workflow>` ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          GitHub Release
@@ -2051,28 +2049,6 @@ The workflow runs with the current Python version,
 using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/coverage.yml``.
-
-
-.. _The pre-commit workflow:
-
-The pre-commit workflow
-.......................
-
-The pre-commit workflow runs :ref:`pre-commit <Linting with pre-commit>`
-on all files in the repository.
-
-The workflow is triggered on every push to the GitHub repository.
-
-The workflow uses the following GitHub Actions:
-
-- `actions/checkout`_ for checking out the Git repository
-- `actions/setup-python`_ for setting up the Python interpreter
-- `actions/cache`_ for caching pre-commit environments
-
-The workflow runs with the current Python version,
-using the latest Ubuntu, Windows, and macOS runners.
-
-It is defined in ``.github/workflows/pre-commit.yml``.
 
 
 .. _The Docs workflow:
@@ -2288,7 +2264,6 @@ The push triggers the following automated steps:
 
 - :ref:`The test suite runs against your branch <The Tests workflow>`.
 - :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The pre-commit linter suite runs against your branch <The pre-commit workflow>`.
 - :ref:`The documentation is built from your branch <The Docs workflow>`.
 
 
@@ -2322,7 +2297,6 @@ This triggers the following automated steps:
 
 - :ref:`The test suite runs against the master branch <The Tests workflow>`.
 - :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The pre-commit linter suite runs against the master branch <The pre-commit workflow>`.
 - :ref:`The documentation is built from the master branch <The Docs workflow>`.
 - :ref:`The draft GitHub Release is updated <The Release Drafter workflow>`.
 - :ref:`A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow>`.
