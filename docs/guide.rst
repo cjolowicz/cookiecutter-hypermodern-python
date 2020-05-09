@@ -463,8 +463,9 @@ under the ``src`` directory::
 Uploading to GitHub
 -------------------
 
-This project template is designed for use with GitHub_,
-so your next steps are to create a Git repository and upload it to GitHub.
+This project template is designed for use with GitHub_.
+After generating the project,
+your next steps are to create a Git repository and upload it to GitHub.
 
 Change to the root directory of your new project,
 initialize a Git repository, and
@@ -478,8 +479,11 @@ create a commit for the initial project structure:
 
 Create an empty repository on GitHub_,
 using the project name you chose when you generated the project.
-Do not include a ``README.md``, ``LICENSE``, or ``.gitignore``.
-These files are provided by the project template.
+
+.. note::
+
+   Do not include a ``README.md``, ``LICENSE``, or ``.gitignore``.
+   These files are provided by the project template.
 
 Finally, upload your repository to GitHub.
 In the commands below, replace ``<username>`` by your GitHub username,
