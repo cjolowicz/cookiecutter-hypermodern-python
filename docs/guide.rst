@@ -868,17 +868,19 @@ Nox_ automates testing in multiple Python environments.
 Like its older sibling tox_,
 Nox makes it easy to run any kind of job in an isolated environment,
 with only those dependencies installed that the job needs.
+
+.. _tox: https://tox.readthedocs.io/
+
 Nox sessions are defined in a Python file
 named ``noxfile.py`` and located in the project directory.
 They consist of a virtual environment
 and a set of commands to run in that environment.
 
-.. _tox: https://tox.readthedocs.io/
-
 While Poetry environments allow you to
 interact with your package during development,
 Nox environments are used to run developer tools
 in a reliable and repeatable way across Python versions.
+
 Most sessions are run with every supported Python version.
 Other sessions are only run with the current stable Python version,
 for example the session used to build the documentation.
