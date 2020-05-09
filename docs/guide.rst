@@ -951,6 +951,43 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ============================== ================== =========
 
 
+.. _The docs session:
+
+The docs session
+-----------------
+
+Build the documentation using the Nox session ``docs``:
+
+.. code:: console
+
+   $ nox --session=docs
+
+The docs session runs the command ``sphinx-build``
+to generate the HTML documentation from the Sphinx directory.
+
+In `interactive mode`__---such
+as when invoking Nox from a terminal---sphinx-autobuild_ is used instead.
+This tool has several advantages
+when you are editing the documentation files:
+
+__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
+
+- It rebuilds the documentation whenever a change is detected.
+- It spins up a web server with live reloading.
+- It opens the location of the web server in your browser.
+
+.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
+
+Use the ``--`` separator to pass additional options to either tool.
+For example, to treat warnings as errors and run in nit-picky mode:
+
+.. code:: console
+
+   $ nox --session=docs -- -W -n docs docs/_build
+
+This Nox session always runs with the current major release of Python.
+
+
 .. _The mypy session:
 
 The mypy session
@@ -1706,43 +1743,6 @@ using the autodoc_ and napoleon_ extensions.
 
 The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
 This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
-
-
-.. _The docs session:
-
-The docs session
------------------
-
-Build the documentation using the Nox session ``docs``:
-
-.. code:: console
-
-   $ nox --session=docs
-
-The docs session runs the command ``sphinx-build``
-to generate the HTML documentation from the Sphinx directory.
-
-In `interactive mode`__---such
-as when invoking Nox from a terminal---sphinx-autobuild_ is used instead.
-This tool has several advantages
-when you are editing the documentation files:
-
-__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
-
-- It rebuilds the documentation whenever a change is detected.
-- It spins up a web server with live reloading.
-- It opens the location of the web server in your browser.
-
-.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
-
-Use the ``--`` separator to pass additional options to either tool.
-For example, to treat warnings as errors and run in nit-picky mode:
-
-.. code:: console
-
-   $ nox --session=docs -- -W -n docs docs/_build
-
-This Nox session always runs with the current major release of Python.
 
 
 .. _The xdoctest session:
