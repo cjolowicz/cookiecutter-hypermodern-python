@@ -892,7 +892,7 @@ If you invoke Nox by itself, it will run the full test suite:
    $ nox
 
 This includes unit tests, linters, and type checkers,
-but excludes sessions like those for building documentation or for reformatting code.
+but excludes sessions like that for building documentation.
 The list of sessions run by default can be configured
 by editing ``nox.options.sessions`` in ``noxfile.py``.
 
@@ -937,7 +937,6 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ============================== ================== =========
    Session                                    Description                    Python              Default
    ========================================== ============================== ================== =========
-   :ref:`black <The black session>`           Format code with Black_        ``3.8``
    :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
    :ref:`lint <The lint session>`             Lint with Flake8_              ``3.6`` … ``3.8``      ✓
    :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
@@ -1294,8 +1293,6 @@ The flake8-black_ plugin
 checks adherence to the Black_ code style.
 `Error codes`__ are prefixed by ``BLK`` for "black".
 It generates a warning if it detects that Black would reformat a source file.
-You can fix these issues automatically,
-as described below in the section :ref:`Code formatting with Black`.
 
 .. _flake8-black codes:
 __ https://github.com/peterjc/flake8-black#flake8-validation-codes
@@ -1377,47 +1374,6 @@ as pytest_ uses assertions to verify expectations in tests.
 
 .. _Bandit codes:
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
-
-
-.. _Code formatting with Black:
-
-Code formatting with Black
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Black_ is the uncompromising Python code formatter.
-One of its greatest features is its lack of configurability.
-Blackened code looks the same regardless of the project you're reading.
-
-The *Hypermodern Python Cookiecutter*
-adheres to Black code style.
-
-
-.. _The black session:
-
-The black session
------------------
-
-Run the code formatter using the ``black`` session:
-
-.. code:: console
-
-   $ nox --session=black
-
-This session always runs with the current version of Python.
-
-Use the separator ``--`` to pass additional options to ``black``.
-For example, the following command formats a specific file:
-
-.. code:: console
-
-   $ nox --session=black -- noxfile.py
-
-By default, the code formatter runs on Python files in the following locations:
-
-- ``src``
-- ``tests``
-- ``noxfile.py``
-- ``docs/conf.py``
 
 
 Scanning dependencies with Safety
