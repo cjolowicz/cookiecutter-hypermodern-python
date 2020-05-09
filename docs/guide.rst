@@ -1015,6 +1015,29 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _The pre-commit session:
+
+The pre-commit session
+----------------------
+
+Run pre-commit from Nox using the ``pre-commit`` session:
+
+.. code:: console
+
+   $ nox --session=pre-commit
+
+This session always runs with the current version of Python.
+
+Use the separator ``--`` to pass additional options to ``pre-commit``.
+For example, the following command checks a specific file:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
+
+By default, pre-commit runs on all files in the repository.
+
+
 .. _The safety session:
 
 The safety session
@@ -1300,29 +1323,6 @@ Please refer to the `official documentation`__
 for details about the configuration file.
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
-
-
-.. _The pre-commit session:
-
-The pre-commit session
-----------------------
-
-Run pre-commit from Nox using the ``pre-commit`` session:
-
-.. code:: console
-
-   $ nox --session=pre-commit
-
-This session always runs with the current version of Python.
-
-Use the separator ``--`` to pass additional options to ``pre-commit``.
-For example, the following command checks a specific file:
-
-.. code:: console
-
-   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
-
-By default, pre-commit runs on all files in the repository.
 
 
 Available hooks
