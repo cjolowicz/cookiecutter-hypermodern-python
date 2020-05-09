@@ -1096,6 +1096,120 @@ It also enables branch analysis and the display of line numbers for missing cove
 and specifies the target coverage percentage.
 
 
+.. _Linting with pre-commit:
+
+Linting with pre-commit
+~~~~~~~~~~~~~~~~~~~~~~~
+
+pre-commit_ is a multi-language linter framework and a Git hook manager.
+It allows you to
+integrate the best industry standard linters into your Git workflow,
+even when written in a language other than Python.
+Linters run in isolated environments managed by pre-commit.
+
+When installed as a *pre-commit* `Git hook`_,
+pre-commit runs automatically every time you invoke ``git commit``.
+The commit is aborted if any check fails.
+This workflow allows you to review the changes
+before attempting the commit again.
+Many linters support fixing offending lines automatically.
+
+.. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+
+
+Configuring pre-commit
+----------------------
+
+pre-commit is configured using the file ``.pre-commit-config.yaml``
+in the project directory.
+Please refer to the `official documentation`__
+for details about the configuration file.
+
+__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
+
+
+.. _The pre-commit session:
+
+The pre-commit session
+----------------------
+
+Run pre-commit from Nox using the ``pre-commit`` session:
+
+.. code:: console
+
+   $ nox --session=pre-commit
+
+This session always runs with the current version of Python.
+
+Use the separator ``--`` to pass additional options to ``pre-commit``.
+For example, the following command checks a specific file:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
+
+By default, pre-commit runs on all files in the repository.
+
+
+Available hooks
+---------------
+
+The *Hypermodern Python Cookiecutter* comes with
+a pre-commit configuration
+consisting of the following hooks:
+
+.. table:: pre-commit hooks
+   :class: hypermodern-table
+   :widths: auto
+
+   ======================== ===============================================
+   `black <Black_>`__       Run the Black_ code formatter
+   `flake8 <Flake8_>`__     Run the Flake8_ linter
+   `mypy <mypy_>`__         Run the mypy_ static type checker
+   `prettier <Prettier_>`__ Run the Prettier_ code formatter
+   check-added-large-files_ Prevent giant files from being committed
+   check-yaml_              Validate YAML_ files
+   end-of-file-fixer_       Ensure files are terminated by a single newline
+   reorder-python-imports_  Rewrites source to reorder python imports
+   trailing-whitespace_     Ensure lines do not contain trailing whitespace
+   ======================== ===============================================
+
+.. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
+.. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
+.. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
+.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
+.. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
+
+
+Command-line usage
+------------------
+
+Install the *pre-commit* Git hook by running the following command:
+
+.. code:: console
+
+   $ pre-commit install
+
+The default behaviour of pre-commit is to run on the staged contents of files,
+which is useful when it is triggered from a *pre-commit* Git hook:
+
+.. code:: console
+
+   $ pre-commit run
+
+You can run pre-commit on all files instead using the following command:
+
+.. code:: console
+
+   $ pre-commit run --all-files
+
+You can also run a specific pre-commit hook, such as the code formatter Prettier_:
+
+.. code:: console
+
+   $ pre-commit run --all-files prettier
+
+
 .. _Linting with Flake8:
 
 Linting with Flake8
@@ -1375,120 +1489,6 @@ Run Safety_ using the ``safety`` session:
    $ nox --session=safety
 
 This session always runs with the current version of Python.
-
-
-.. _Linting with pre-commit:
-
-Linting with pre-commit
-~~~~~~~~~~~~~~~~~~~~~~~
-
-pre-commit_ is a multi-language linter framework and a Git hook manager.
-It allows you to
-integrate the best industry standard linters into your Git workflow,
-even when written in a language other than Python.
-Linters run in isolated environments managed by pre-commit.
-
-When installed as a *pre-commit* `Git hook`_,
-pre-commit runs automatically every time you invoke ``git commit``.
-The commit is aborted if any check fails.
-This workflow allows you to review the changes
-before attempting the commit again.
-Many linters support fixing offending lines automatically.
-
-.. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
-
-
-Configuring pre-commit
-----------------------
-
-pre-commit is configured using the file ``.pre-commit-config.yaml``
-in the project directory.
-Please refer to the `official documentation`__
-for details about the configuration file.
-
-__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
-
-
-.. _The pre-commit session:
-
-The pre-commit session
-----------------------
-
-Run pre-commit from Nox using the ``pre-commit`` session:
-
-.. code:: console
-
-   $ nox --session=pre-commit
-
-This session always runs with the current version of Python.
-
-Use the separator ``--`` to pass additional options to ``pre-commit``.
-For example, the following command checks a specific file:
-
-.. code:: console
-
-   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
-
-By default, pre-commit runs on all files in the repository.
-
-
-Available hooks
----------------
-
-The *Hypermodern Python Cookiecutter* comes with
-a pre-commit configuration
-consisting of the following hooks:
-
-.. table:: pre-commit hooks
-   :class: hypermodern-table
-   :widths: auto
-
-   ======================== ===============================================
-   `black <Black_>`__       Run the Black_ code formatter
-   `flake8 <Flake8_>`__     Run the Flake8_ linter
-   `mypy <mypy_>`__         Run the mypy_ static type checker
-   `prettier <Prettier_>`__ Run the Prettier_ code formatter
-   check-added-large-files_ Prevent giant files from being committed
-   check-yaml_              Validate YAML_ files
-   end-of-file-fixer_       Ensure files are terminated by a single newline
-   reorder-python-imports_  Rewrites source to reorder python imports
-   trailing-whitespace_     Ensure lines do not contain trailing whitespace
-   ======================== ===============================================
-
-.. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
-.. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
-.. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
-.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
-.. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
-
-
-Command-line usage
-------------------
-
-Install the *pre-commit* Git hook by running the following command:
-
-.. code:: console
-
-   $ pre-commit install
-
-The default behaviour of pre-commit is to run on the staged contents of files,
-which is useful when it is triggered from a *pre-commit* Git hook:
-
-.. code:: console
-
-   $ pre-commit run
-
-You can run pre-commit on all files instead using the following command:
-
-.. code:: console
-
-   $ pre-commit run --all-files
-
-You can also run a specific pre-commit hook, such as the code formatter Prettier_:
-
-.. code:: console
-
-   $ pre-commit run --all-files prettier
 
 
 Type-checking
