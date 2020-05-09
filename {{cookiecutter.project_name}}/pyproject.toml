@@ -36,6 +36,7 @@ pep8-naming = "^0.10.0"
 flake8-rst-docstrings = "^0.0.13"
 sphinx-autobuild = "^0.7.1"
 reorder-python-imports = "^2.2.0"
+pre-commit = "^2.3.0"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"

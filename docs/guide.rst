@@ -928,24 +928,25 @@ Available sessions
 
 .. _Table of Nox sessions:
 
-The following tables gives an overview of the available Nox sessions:
+The following table gives an overview of the available Nox sessions:
 
 .. table:: Nox sessions
    :class: hypermodern-table
    :widths: auto
 
-   ======================================== ============================== ================== =========
-   Session                                  Description                    Python              Default
-   ======================================== ============================== ================== =========
-   :ref:`black <The black session>`         Format code with Black_        ``3.8``
-   :ref:`docs <The docs session>`           Build Sphinx_ documentation    ``3.8``
-   :ref:`lint <The lint session>`           Lint with Flake8_              ``3.6`` … ``3.8``      ✓
-   :ref:`mypy <The mypy session>`           Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   :ref:`safety <The safety session>`       Scan dependencies with Safety_ ``3.8``                ✓
-   :ref:`tests <The tests session>`         Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>` Type-check with Typeguard_     ``3.6`` … ``3.8``
-   :ref:`xdoctest <The xdoctest session>`   Run examples with xdoctest_    ``3.6`` … ``3.8``
-   ======================================== ============================== ================== =========
+   ========================================== ============================== ================== =========
+   Session                                    Description                    Python              Default
+   ========================================== ============================== ================== =========
+   :ref:`black <The black session>`           Format code with Black_        ``3.8``
+   :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
+   :ref:`lint <The lint session>`             Lint with Flake8_              ``3.6`` … ``3.8``      ✓
+   :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_    ``3.6`` … ``3.8``
+   ========================================== ============================== ================== =========
 
 
 Using Poetry inside Nox sessions
@@ -1482,6 +1483,29 @@ Please refer to the `official documentation`__
 for details about the configuration file.
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
+
+
+.. _The pre-commit session:
+
+The pre-commit session
+----------------------
+
+Run pre-commit from Nox using the ``pre-commit`` session:
+
+.. code:: console
+
+   $ nox --session=pre-commit
+
+This session always runs with the current version of Python.
+
+Use the separator ``--`` to pass additional options to ``pre-commit``.
+For example, the following command checks a specific file:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
+
+By default, pre-commit runs on all files in the repository.
 
 
 Available hooks
