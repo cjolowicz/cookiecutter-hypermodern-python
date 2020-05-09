@@ -928,7 +928,7 @@ Available sessions
 
 .. _Table of Nox sessions:
 
-The following tables gives an overview of the available Nox sessions:
+The following table gives an overview of the available Nox sessions:
 
 .. table:: Nox sessions
    :class: hypermodern-table
