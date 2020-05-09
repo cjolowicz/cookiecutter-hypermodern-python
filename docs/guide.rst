@@ -1007,10 +1007,10 @@ The helper class has the following methods:
    Instances need a session object for running commands.
 
 
-.. _Testing:
+.. _Testing with pytest:
 
-Testing
-~~~~~~~
+Testing with pytest
+~~~~~~~~~~~~~~~~~~~
 
 Tests are written using the pytest_ testing framework,
 the *de facto* standard for testing in Python.
@@ -2221,7 +2221,7 @@ How to make code changes
 
 1. | Run the tests, :ref:`as explained above <How to test your project>`.
    | All tests should pass.
-2. | Add a failing test :ref:`under the tests directory <Testing>`.
+2. | Add a failing test :ref:`under the tests directory <Testing with pytest>`.
    | Run the tests again to verify that your test fails.
 3. | Make your changes to the package, :ref:`under the src directory <The initial package>`.
    | Run the tests to verify that all tests pass again.
