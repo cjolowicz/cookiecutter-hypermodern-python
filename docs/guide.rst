@@ -1114,9 +1114,15 @@ pre-commit runs automatically every time you invoke ``git commit``.
 The commit is aborted if any check fails.
 This workflow allows you to review the changes
 before attempting the commit again.
-Many linters support fixing offending lines automatically.
 
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+
+Many linters support fixing offending lines automatically.
+When this happens,
+your original changes are in the staging area,
+while the linter fixes are in the work tree.
+You can accept the fixes by staging them with ``git add``
+before committing again.
 
 pre-commit is configured using the file ``.pre-commit-config.yaml``
 in the project directory.
