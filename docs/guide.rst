@@ -2016,9 +2016,11 @@ The workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
+- `actions/cache`_ for caching pre-commit environments
 
 .. _actions/checkout: https://github.com/actions/checkout
 .. _actions/setup-python: https://github.com/actions/setup-python
+.. _actions/cache: https://github.com/actions/cache
 
 The workflow is defined in ``.github/workflows/tests.yml``.
 
@@ -2066,8 +2068,6 @@ The workflow uses the following GitHub Actions:
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/cache`_ for caching pre-commit environments
-
-.. _actions/cache: https://github.com/actions/cache
 
 The workflow runs with the current Python version,
 using the latest Ubuntu, Windows, and macOS runners.
