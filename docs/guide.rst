@@ -964,31 +964,31 @@ and the ``Poetry`` helper class.
 ``noxfile.install(session, *args)``:
    Install dependencies into a Nox session using Poetry.
 
-The ``noxfile.install`` function
-installs development dependencies into a Nox session,
-using the versions specified in Poetry's lock file.
-This is done by exporting the lock file in ``requirements.txt`` format,
-and passing it as a `constraints file`_ to pip.
-The function arguments are the same as those for `nox.sessions.Session.install`_:
-The first argument is the ``Session`` object,
-and the remaining arguments are command-line arguments for `pip install`_,
-typically just the package or packages to be installed.
+   The ``noxfile.install`` function
+   installs development dependencies into a Nox session,
+   using the versions specified in Poetry's lock file.
+   This is done by exporting the lock file in ``requirements.txt`` format,
+   and passing it as a `constraints file`_ to pip.
+   The function arguments are the same as those for `nox.sessions.Session.install`_:
+   The first argument is the ``Session`` object,
+   and the remaining arguments are command-line arguments for `pip install`_,
+   typically just the package or packages to be installed.
 
-.. _nox.sessions.Session.install: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.install
-.. _constraints file: https://pip.pypa.io/en/stable/user_guide/#constraints-files
-.. _pip install: https://pip.pypa.io/en/stable/reference/pip_install/
+   .. _nox.sessions.Session.install: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.install
+   .. _constraints file: https://pip.pypa.io/en/stable/user_guide/#constraints-files
+   .. _pip install: https://pip.pypa.io/en/stable/reference/pip_install/
 
 ``noxfile.install_package(session)``:
    Install the package into a Nox session using Poetry.
 
-The ``noxfile.install_package`` function
-installs your package into a Nox session,
-including the core dependencies as specified in Poetry's lock file.
-This is done by building a wheel from the package,
-and installing it using pip_.
-Dependencies are installed in the same way as in the ``noxfile.install`` function,
-i.e. using a constraints file.
-Its only argument is the ``Session`` object from Nox.
+   The ``noxfile.install_package`` function
+   installs your package into a Nox session,
+   including the core dependencies as specified in Poetry's lock file.
+   This is done by building a wheel from the package,
+   and installing it using pip_.
+   Dependencies are installed in the same way as in the ``noxfile.install`` function,
+   i.e. using a constraints file.
+   Its only argument is the ``Session`` object from Nox.
 
 The functions are implemented using a ``Poetry`` helper class,
 encapsulating invocations of the Poetry command-line interface.
