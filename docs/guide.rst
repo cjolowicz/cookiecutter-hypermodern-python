@@ -1539,20 +1539,20 @@ consisting of the following hooks:
 .. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
-Black_, Flake8_, and mypy_ are run via Poetry using a `repository-local hook`_.
-This allows you to manage these tools as development dependencies in Poetry,
+mypy_ is run via Poetry using a `repository-local hook`_.
+This allows you to manage this tool as a development dependency in Poetry,
 rather than having duplicate and potentially diverging version pins in the pre-commit configuration.
 This does require you, however, to run `poetry install`_
 before you can use pre-commit with your project.
 
 .. _repository-local hook: https://pre-commit.com/#repository-local-hooks
 
-These checks run somewhat faster than the corresponding Nox sessions,
+This check runs somewhat faster than the corresponding Nox session,
 for several reasons:
 
-- They only run on files staged for a commit, by default.
-- They only run in the active Poetry environment.
-- They assume that the tools are already installed.
+- It only runs on files staged for a commit, by default.
+- It only runs in the active Poetry environment.
+- It assumes that the tool is already installed.
 
 
 Command-line usage
