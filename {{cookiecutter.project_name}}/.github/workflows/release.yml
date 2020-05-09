@@ -13,6 +13,25 @@ jobs:
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
+      - name: Compute cache key prefix
+        id: cache_key_prefix
+        shell: python
+        run: |
+          import hashlib
+          import sys
+
+          python = "py{}.{}".format(*sys.version_info[:2])
+          payload = sys.version.encode() + sys.executable.encode()
+          digest = hashlib.sha256(payload).hexdigest()
+          result = "{% raw %}${{ runner.os }}{% endraw %}-{}-{}-pre-commit".format(python, digest[:8])
+
+          print("::set-output name=result::{}".format(result))
+      - uses: actions/cache@v1.1.2
+        with:
+          path: ~/.cache/pre-commit
+          key: {% raw %}${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
+          restore-keys: |
+            {% raw %}${{ steps.cache_key_prefix.outputs.result }}{% endraw %}-
       - run: nox --force-color
       - run: poetry build --ansi
       - uses: pypa/gh-action-pypi-publish@v1.1.0
