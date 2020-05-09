@@ -956,8 +956,7 @@ Nox sessions can invoke Poetry like any other command,
 using the function `nox.sessions.Session.run`_.
 Integrating Nox and Poetry in a sane way requires additional work.
 For this purpose, ``noxfile.py`` contains some glue code
-in the form of the ``install`` and ``install_package`` functions,
-and the ``Poetry`` helper class.
+in the form of the ``install`` and ``install_package`` functions:
 
 .. _nox.sessions.Session.run: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
 
@@ -991,8 +990,12 @@ and the ``Poetry`` helper class.
    Its only argument is the ``Session`` object from Nox.
 
 The functions are implemented using a ``Poetry`` helper class,
-encapsulating invocations of the Poetry command-line interface.
+which encapsulates invocations of the Poetry command-line interface.
 The helper class has the following methods:
+
+``noxfile.Poetry.__init__(self, session)``
+   Initialize ``self``.
+   Instances need a session object for running commands.
 
 ``noxfile.Poetry.build(self, *args)``
    Build the package.
@@ -1002,9 +1005,6 @@ The helper class has the following methods:
 
 ``noxfile.Poetry.version(self)``
    Return the package version.
-
-``noxfile.Poetry.__init__(self, session)``
-   Instances need a session object for running commands.
 
 
 .. _Testing with pytest:
