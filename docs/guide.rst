@@ -280,8 +280,6 @@ The project contains the following subdirectories:
    :widths: auto
 
    ===================================== ===============================
-   Directory                             Contents
-   ===================================== ===============================
    ``src/<package>``                     Python package
    ``tests``                             Test suite
    ``docs``                              Documentation
@@ -296,8 +294,6 @@ For more details on these files, refer to the section :ref:`The initial package`
    :widths: auto
 
    ===================================== ===============================
-   File                                  Description
-   ===================================== ===============================
    ``src/<project>/py.typed``            Marker file for `PEP 561`_
    ``src/<project>/__init__.py``         Package initialization
    ``src/<project>/__main__.py``         Command-line interface
@@ -310,8 +306,6 @@ For more details on these files, refer to the section :ref:`The test suite`.
    :class: hypermodern-table
    :widths: auto
 
-   ===================================== ===============================
-   File                                  Description
    ===================================== ===============================
    ``tests/__init__.py``                 Test package initialization
    ``tests/test_main.py``                Test cases for ``__main__``
@@ -327,8 +321,6 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`.
    :class: hypermodern-table
    :widths: auto
 
-   ===================================== ===============================
-   File                                  Description
    ===================================== ===============================
    ``CODE_OF_CONDUCT.rst``               Code of Conduct
    ``CONTRIBUTING.rst``                  Contributor Guide
@@ -348,8 +340,6 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    :widths: auto
 
    ======================= ===============================
-   File                    Description
-   ======================= ===============================
    ``coverage.yml``        :ref:`The Coverage workflow`
    ``docs.yml``            :ref:`The Docs workflow`
    ``release-drafter.yml`` :ref:`The Release Drafter workflow`
@@ -368,8 +358,6 @@ and links each file to a section with more details.
    :class: hypermodern-table
    :widths: auto
 
-   ===================================== ========================================
-   File                                  Description
    ===================================== ========================================
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
@@ -399,8 +387,6 @@ Follow the links for more details on these.
    :class: hypermodern-table
    :widths: auto
 
-   ===================================== ================================
-   File                                  Description
    ===================================== ================================
    ``poetry.lock``                       :ref:`Poetry lock file <The lock file>`
    ``docs/requirements.txt``             Requirements file for :ref:`Read the Docs <Read the Docs integration>`
@@ -1458,8 +1444,6 @@ consisting of the following hooks:
    :widths: auto
 
    ======================== ===============================================
-   Hook                     Description
-   ======================== ===============================================
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
    `mypy <mypy_>`__         Run the mypy_ static type checker
@@ -1667,8 +1651,6 @@ written in reStructuredText_:
    :widths: auto
 
    ======================= ============================================
-   File                    Contents
-   ======================= ============================================
    ``README.rst``          Project description for GitHub and PyPI
    ``CONTRIBUTING.rst``    Contributor Guide
    ``CODE_OF_CONDUCT.rst`` Code of Conduct
@@ -1691,8 +1673,6 @@ It consists of the following files:
    :class: hypermodern-table
    :widths: auto
 
-   ====================== =======================================================
-   File                   Contents
    ====================== =======================================================
    ``conf.py``            Sphinx configuration file
    ``index.rst``          Master document
@@ -1945,8 +1925,6 @@ which need to be stored as secrets in the repository settings on GitHub:
    :class: hypermodern-table
    :widths: auto
 
-   =================== ===================
-   Name                Description
    =================== ===================
    ``PYPI_TOKEN``      PyPI_ API token
    ``TEST_PYPI_TOKEN`` TestPyPI_ API token
