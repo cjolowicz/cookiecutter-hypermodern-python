@@ -1015,6 +1015,50 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _The typeguard session:
+
+The typeguard session
+---------------------
+
+Run Typeguard_ using Nox:
+
+.. code:: console
+
+   $ nox --session=typeguard
+
+The typeguard session runs the test suite with runtime type-checking enabled.
+It is similar to the :ref:`tests session <The tests session>`,
+with the difference that your package is instrumented by Typeguard.
+
+Typeguard_ checks that arguments passed to functions
+match the type annotations of the function parameters,
+and that the return value provided by the function
+matches the return type annotation.
+In the case of generator functions,
+Typeguard checks the yields, sends and the return value
+against the ``Generator`` or ``AsyncGenerator`` annotation.
+
+You can run the session with a specific Python version.
+For example, the following command runs the session
+with the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=typeguard-3.8
+
+Use the separator ``--`` to pass additional options and arguments to pytest.
+For example, the following command runs only tests for the ``__main__`` module:
+
+.. code:: console
+
+   $ nox --session=typeguard -- tests/test_main.py
+
+Typeguard generates a warning about missing type annotations for a Click object.
+This is due to the fact that ``__main__.main`` is wrapped by a decorator,
+and its type annotations only apply to the inner function,
+not the resulting object as seen by the test suite.
+
+
 .. _The xdoctest session:
 
 The xdoctest session
@@ -1680,50 +1724,6 @@ The following options are enabled for enhanced output:
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
 - :option:`show_error_context <mypy --show-error-context>`
-
-
-.. _The typeguard session:
-
-The typeguard session
----------------------
-
-Run Typeguard_ using Nox:
-
-.. code:: console
-
-   $ nox --session=typeguard
-
-The typeguard session runs the test suite with runtime type-checking enabled.
-It is similar to the :ref:`tests session <The tests session>`,
-with the difference that your package is instrumented by Typeguard.
-
-Typeguard_ checks that arguments passed to functions
-match the type annotations of the function parameters,
-and that the return value provided by the function
-matches the return type annotation.
-In the case of generator functions,
-Typeguard checks the yields, sends and the return value
-against the ``Generator`` or ``AsyncGenerator`` annotation.
-
-You can run the session with a specific Python version.
-For example, the following command runs the session
-with the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=typeguard-3.8
-
-Use the separator ``--`` to pass additional options and arguments to pytest.
-For example, the following command runs only tests for the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=typeguard -- tests/test_main.py
-
-Typeguard generates a warning about missing type annotations for a Click object.
-This is due to the fact that ``__main__.main`` is wrapped by a decorator,
-and its type annotations only apply to the inner function,
-not the resulting object as seen by the test suite.
 
 
 Documentation
