@@ -1116,10 +1116,6 @@ Many linters support fixing offending lines automatically.
 
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
-
-Configuring pre-commit
-----------------------
-
 pre-commit is configured using the file ``.pre-commit-config.yaml``
 in the project directory.
 Please refer to the `official documentation`__
