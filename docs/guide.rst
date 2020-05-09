@@ -960,6 +960,11 @@ Using Poetry inside Nox sessions
    how this project template integrates Nox and Poetry.
    You can safely skip this section.
 
+**TL;DR** When writing Nox sessions for your project,
+
+- use ``install(session, "pkg")`` instead of ``session.install("pkg")``
+- use ``install_package(session)`` instead of ``session.install(".")``
+
 Nox sessions can invoke Poetry like any other command,
 using the function `nox.sessions.Session.run`_.
 Integrating Nox and Poetry in a sane way requires additional work.
