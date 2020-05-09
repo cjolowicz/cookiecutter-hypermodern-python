@@ -1386,14 +1386,8 @@ Many linters support fixing offending lines automatically.
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
 
-Installation and configuration
-------------------------------
-
-Install pre-commit via pipx_:
-
-.. code:: console
-
-   $ pipx install pre-commit
+Configuring pre-commit
+----------------------
 
 pre-commit is configured using the file ``.pre-commit-config.yaml``
 in the project directory.
