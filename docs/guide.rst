@@ -951,6 +951,33 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ============================== ================== =========
 
 
+.. _The mypy session:
+
+The mypy session
+----------------
+
+Run mypy_ using Nox:
+
+.. code:: console
+
+   $ nox --session=mypy
+
+You can also run the type checker with a specific Python version.
+For example, the following command runs mypy
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=mypy-3.8
+
+Use the separator ``--`` to pass additional options and arguments to ``mypy``.
+For example, the following command type-checks only the ``__main__`` module:
+
+.. code:: console
+
+   $ nox --session=mypy -- src/<package>/__main__.py
+
+
 Using Poetry inside Nox sessions
 --------------------------------
 
@@ -1540,33 +1567,6 @@ both a static type checker and a runtime type checker:
   It can type-check function calls during test runs via an `import hook`__.
 
 __ https://docs.python.org/3/reference/import.html#import-hooks
-
-
-.. _The mypy session:
-
-The mypy session
-----------------
-
-Run mypy_ using Nox:
-
-.. code:: console
-
-   $ nox --session=mypy
-
-You can also run the type checker with a specific Python version.
-For example, the following command runs mypy
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=mypy-3.8
-
-Use the separator ``--`` to pass additional options and arguments to ``mypy``.
-For example, the following command type-checks only the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=mypy -- src/<package>/__main__.py
 
 
 .. _Configuring mypy:
