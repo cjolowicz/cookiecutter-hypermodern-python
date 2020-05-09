@@ -1015,6 +1015,38 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _The tests session:
+
+The tests session
+-----------------
+
+Run the test suite using the Nox session ``tests``:
+
+.. code:: console
+
+   $ nox --session=tests
+
+The tests session runs the test suite against the installed code.
+More specifically, the session builds a wheel from your project and
+installs it into the Nox environment,
+with dependencies pinned as specified by Poetry's lock file.
+
+You can also run the test suite with a specific Python version.
+For example, the following command runs the test suite
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=tests-3.8
+
+Use the separator ``--`` to pass additional options to ``pytest``.
+For example, the following command runs only the test case ``test_main_succeeds``:
+
+.. code:: console
+
+   $ nox --session=tests -- -k test_main_succeeds
+
+
 .. _The typeguard session:
 
 The typeguard session
@@ -1198,38 +1230,6 @@ a helper class for invoking the program from within tests.
 
 .. _test fixture: https://docs.pytest.org/en/latest/fixture.html
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
-
-
-.. _The tests session:
-
-The tests session
------------------
-
-Run the test suite using the Nox session ``tests``:
-
-.. code:: console
-
-   $ nox --session=tests
-
-The tests session runs the test suite against the installed code.
-More specifically, the session builds a wheel from your project and
-installs it into the Nox environment,
-with dependencies pinned as specified by Poetry's lock file.
-
-You can also run the test suite with a specific Python version.
-For example, the following command runs the test suite
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=tests-3.8
-
-Use the separator ``--`` to pass additional options to ``pytest``.
-For example, the following command runs only the test case ``test_main_succeeds``:
-
-.. code:: console
-
-   $ nox --session=tests -- -k test_main_succeeds
 
 
 .. _Test coverage:
