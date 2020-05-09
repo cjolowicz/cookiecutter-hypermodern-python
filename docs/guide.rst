@@ -1015,6 +1015,43 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _The xdoctest session:
+
+The xdoctest session
+--------------------
+
+The xdoctest_ tool
+runs examples in your docstrings and
+compares the actual output to the expected output as per the docstring.
+This serves multiple purposes:
+
+- The example is checked for correctness.
+- You ensure that the documentation is up-to-date.
+- Your codebase gets additional test coverage for free.
+
+Run the tool using the Nox session ``xdoctest``:
+
+.. code:: console
+
+   $ nox --session=xdoctest
+
+You can also run the test suite with a specific Python version.
+For example, the following command runs the examples
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=xdoctest-3.8
+
+By default, the Nox session uses the ``all`` subcommand to run all examples.
+You can also list examples using the ``list`` subcommand,
+or run specific examples:
+
+.. code:: console
+
+   $ nox --session=xdoctest -- list
+
+
 Using Poetry inside Nox sessions
 --------------------------------
 
@@ -1743,43 +1780,6 @@ using the autodoc_ and napoleon_ extensions.
 
 The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
 This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
-
-
-.. _The xdoctest session:
-
-The xdoctest session
---------------------
-
-The xdoctest_ tool
-runs examples in your docstrings and
-compares the actual output to the expected output as per the docstring.
-This serves multiple purposes:
-
-- The example is checked for correctness.
-- You ensure that the documentation is up-to-date.
-- Your codebase gets additional test coverage for free.
-
-Run the tool using the Nox session ``xdoctest``:
-
-.. code:: console
-
-   $ nox --session=xdoctest
-
-You can also run the test suite with a specific Python version.
-For example, the following command runs the examples
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=xdoctest-3.8
-
-By default, the Nox session uses the ``all`` subcommand to run all examples.
-You can also list examples using the ``list`` subcommand,
-or run specific examples:
-
-.. code:: console
-
-   $ nox --session=xdoctest -- list
 
 
 .. _Continuous integration using GitHub Actions:
