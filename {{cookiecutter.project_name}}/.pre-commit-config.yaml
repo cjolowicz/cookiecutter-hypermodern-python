@@ -10,26 +10,31 @@ repos:
     rev: 2.0.5
     hooks:
       - id: prettier
-  - repo: local
+  - repo: https://github.com/psf/black
+    rev: 19.10b0
     hooks:
       - id: black
-        name: black
-        entry: poetry run black
-        language: system
-        types: [python]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.7.9
+    hooks:
       - id: flake8
-        name: flake8
-        entry: poetry run flake8
-        language: system
-        types: [python]
+        additional_dependencies:
+          - flake8-bandit==2.1.2
+          - flake8-bugbear==20.1.4
+          - flake8-docstrings==1.5.0
+          - flake8-rst-docstrings==0.0.13
+          - pep8-naming==0.10.0
+          - darglint==1.2.3
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.3.0
+    hooks:
+      - id: reorder-python-imports
+        args: [--application-directories=src]
+  - repo: local
+    hooks:
       - id: mypy
         name: mypy
         entry: poetry run mypy
         language: system
         types: [python]
         require_serial: true
-      - id: reorder-python-imports
-        name: reorder-python-imports
-        entry: poetry run reorder-python-imports --application-directories=src
-        language: system
-        types: [python]
