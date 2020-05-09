@@ -1015,6 +1015,20 @@ For example, the following command type-checks only the ``__main__`` module:
    $ nox --session=mypy -- src/<package>/__main__.py
 
 
+.. _The safety session:
+
+The safety session
+------------------
+
+Run Safety_ using the ``safety`` session:
+
+.. code:: console
+
+   $ nox --session=safety
+
+This session always runs with the current version of Python.
+
+
 .. _The tests session:
 
 The tests session
@@ -1635,20 +1649,6 @@ for consumption by Safety.
 
 .. _poetry export: https://python-poetry.org/docs/cli/#export
 .. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
-
-
-.. _The safety session:
-
-The safety session
-------------------
-
-Run Safety_ using the ``safety`` session:
-
-.. code:: console
-
-   $ nox --session=safety
-
-This session always runs with the current version of Python.
 
 
 Type-checking
