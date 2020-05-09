@@ -954,6 +954,12 @@ The following table gives an overview of the available Nox sessions:
 Using Poetry inside Nox sessions
 --------------------------------
 
+.. note::
+
+   This section provides some background information about
+   how this project template integrates Nox and Poetry.
+   You can safely skip this section.
+
 Nox sessions can invoke Poetry like any other command,
 using the function `nox.sessions.Session.run`_.
 Integrating Nox and Poetry in a sane way requires additional work.
