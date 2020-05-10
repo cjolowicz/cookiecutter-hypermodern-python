@@ -1636,27 +1636,29 @@ __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plug
 Type-checking
 ~~~~~~~~~~~~~
 
-`Type annotations`_, first introduced in Python 3.5,
-are a way to annotate functions and variables with types.
-With appropriate tooling,
-they can make your programs easier to understand, debug, and maintain.
-There is also an increasing number of libraries
-that leverage type annotations at runtime.
-For example, you can use type annotations to generate serialization schemas
-or command-line parsers.
+.. note::
 
-.. _Type annotations: https://docs.python.org/3/library/typing.html
+   `Type annotations`_, first introduced in Python 3.5,
+   are a way to annotate functions and variables with types.
+   With appropriate tooling,
+   they can make your programs easier to understand, debug, and maintain.
+   There is also an increasing number of libraries
+   that leverage type annotations at runtime.
+   For example, you can use type annotations to generate serialization schemas
+   or command-line parsers.
 
-*Type-checking* refers to the practice of
-verifying the type correctness of a program,
-using type annotations and type inference.
-There are two kinds of type checkers:
+   .. _Type annotations: https://docs.python.org/3/library/typing.html
 
-- *Static type checkers* verify the type correctness of your program
-  without executing it, using static analysis.
-- *Runtime type checkers* find type errors by instrumenting your code to
-  type-check arguments and return values in function calls.
-  This is particularly useful during the execution of unit tests.
+   *Type-checking* refers to the practice of
+   verifying the type correctness of a program,
+   using type annotations and type inference.
+   There are two kinds of type checkers:
+
+   - *Static type checkers* verify the type correctness of your program
+     without executing it, using static analysis.
+   - *Runtime type checkers* find type errors by instrumenting your code to
+     type-check arguments and return values in function calls.
+     This is particularly useful during the execution of unit tests.
 
 The *Hypermodern Python Cookiecutter* uses
 both a static type checker and a runtime type checker:
