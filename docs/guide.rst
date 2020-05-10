@@ -1328,28 +1328,20 @@ even when written in a language other than Python.
 Linters run in isolated environments managed by pre-commit.
 
 pre-commit runs in a Nox session every time you invoke ``nox``.
-You can run pre-commit manually using the following command:
+Run the pre-commit session explicitly like this:
 
 .. code:: console
 
    $ nox --session=pre-commit
 
-You can also run a specific pre-commit hook, such as the code formatter Prettier_:
-
-.. code:: console
-
-   $ nox -rs pre-commit -- run --all-files prettier
-
-When installed as a *pre-commit* `Git hook`_,
+When installed as a `Git hook`_,
 pre-commit runs automatically every time you invoke ``git commit``.
 The commit is aborted if any check fails.
-This workflow allows you to review the changes
-before attempting the commit again.
 When invoked in this mode, pre-commit only runs on files staged for the commit.
 
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
-Install the *pre-commit* Git hook by running the following command:
+Install the Git hook by running the following command:
 
 .. code:: console
 
