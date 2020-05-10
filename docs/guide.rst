@@ -914,15 +914,16 @@ using the ``--list-sessions`` option:
 
    $ nox --list-sessions
 
-Nox creates virtual environments from scratch on each invocation
-(a sensible default).
+Nox creates virtual environments from scratch on each invocation.
 You can speed things up by passing the
-`--reuse-existing-virtualenvs`_ option
-(or the equivalent short option ``-r``):
+`--reuse-existing-virtualenvs`_ option,
+or the equivalent short option ``-r``.
+For example, the following may be more practical during development
+(this will only run unit tests on the current Python release):
 
 .. code:: console
 
-   $ nox --reuse-existing-virtualenvs
+   $ nox -rs tests-3.8
 
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 
