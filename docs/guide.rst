@@ -927,268 +927,6 @@ For example, the following may be more practical during development
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 
 
-Available sessions
-------------------
-
-.. _Table of Nox sessions:
-
-The following table gives an overview of the available Nox sessions:
-
-.. table:: Nox sessions
-   :class: hypermodern-table
-   :widths: auto
-
-   ========================================== ============================== ================== =========
-   Session                                    Description                    Python              Default
-   ========================================== ============================== ================== =========
-   :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
-   :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``      ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_    ``3.6`` … ``3.8``
-   ========================================== ============================== ================== =========
-
-
-.. _The docs session:
-
-The docs session
-................
-
-Build the documentation using the Nox session ``docs``:
-
-.. code:: console
-
-   $ nox --session=docs
-
-The docs session runs the command ``sphinx-build``
-to generate the HTML documentation from the Sphinx directory.
-
-In `interactive mode`__---such
-as when invoking Nox from a terminal---sphinx-autobuild_ is used instead.
-This tool has several advantages
-when you are editing the documentation files:
-
-__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
-
-- It rebuilds the documentation whenever a change is detected.
-- It spins up a web server with live reloading.
-- It opens the location of the web server in your browser.
-
-.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
-
-Use the ``--`` separator to pass additional options to either tool.
-For example, to treat warnings as errors and run in nit-picky mode:
-
-.. code:: console
-
-   $ nox --session=docs -- -W -n docs docs/_build
-
-This Nox session always runs with the current major release of Python.
-
-
-.. _The mypy session:
-
-The mypy session
-................
-
-mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
-Learn more about it in the section :ref:`Type-checking with mypy`.
-
-Run mypy using Nox:
-
-.. code:: console
-
-   $ nox --session=mypy
-
-You can also run the type checker with a specific Python version.
-For example, the following command runs mypy
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=mypy-3.8
-
-Use the separator ``--`` to pass additional options and arguments to ``mypy``.
-For example, the following command type-checks only the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=mypy -- src/<package>/__main__.py
-
-
-.. _The pre-commit session:
-
-The pre-commit session
-......................
-
-pre-commit_ is a multi-language linter framework and a Git hook manager.
-Learn more about it in the section :ref:`Linting with pre-commit`.
-
-Run pre-commit from Nox using the ``pre-commit`` session:
-
-.. code:: console
-
-   $ nox --session=pre-commit
-
-This session always runs with the current stable release of Python.
-
-Use the separator ``--`` to pass additional options to ``pre-commit``.
-For example, the following command installs the pre-commit hooks,
-so they run automatically on every commit you make:
-
-.. code:: console
-
-   $ nox --session=pre-commit -- install
-
-
-.. _The safety session:
-
-The safety session
-..................
-
-Safety_ checks the dependencies of your project for known security vulnerabilities,
-using a curated database of insecure Python packages.
-The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
-to convert Poetry's lock file to a `requirements file`_,
-for consumption by Safety.
-
-.. _poetry export: https://python-poetry.org/docs/cli/#export
-.. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
-
-Run Safety_ using the ``safety`` session:
-
-.. code:: console
-
-   $ nox --session=safety
-
-This session always runs with the current stable release of Python.
-
-
-.. _The tests session:
-
-The tests session
-.................
-
-Tests are written using the pytest_ testing framework.
-Learn more about it in the section :ref:`Testing with pytest`.
-
-Run the test suite using the Nox session ``tests``:
-
-.. code:: console
-
-   $ nox --session=tests
-
-The tests session runs the test suite against the installed code.
-More specifically, the session builds a wheel from your project and
-installs it into the Nox environment,
-with dependencies pinned as specified by Poetry's lock file.
-
-You can also run the test suite with a specific Python version.
-For example, the following command runs the test suite
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=tests-3.8
-
-Use the separator ``--`` to pass additional options to ``pytest``.
-For example, the following command runs only the test case ``test_main_succeeds``:
-
-.. code:: console
-
-   $ nox --session=tests -- -k test_main_succeeds
-
-
-.. _The typeguard session:
-
-The typeguard session
-.....................
-
-Typeguard_ is a runtime type checker and pytest_ plugin.
-It can type-check function calls during test runs via an `import hook`__.
-
-__ https://docs.python.org/3/reference/import.html#import-hooks
-
-Typeguard checks that arguments passed to functions
-match the type annotations of the function parameters,
-and that the return value provided by the function
-matches the return type annotation.
-In the case of generator functions,
-Typeguard checks the yields, sends and the return value
-against the ``Generator`` annotation.
-
-Run Typeguard_ using Nox:
-
-.. code:: console
-
-   $ nox --session=typeguard
-
-The typeguard session runs the test suite with runtime type-checking enabled.
-It is similar to the :ref:`tests session <The tests session>`,
-with the difference that your package is instrumented by Typeguard.
-
-You can run the session with a specific Python version.
-For example, the following command runs the session
-with the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=typeguard-3.8
-
-Use the separator ``--`` to pass additional options and arguments to pytest.
-For example, the following command runs only tests for the ``__main__`` module:
-
-.. code:: console
-
-   $ nox --session=typeguard -- tests/test_main.py
-
-.. note::
-
-   Typeguard generates a warning about missing type annotations for a Click object.
-   This is due to the fact that ``__main__.main`` is wrapped by a decorator,
-   and its type annotations only apply to the inner function,
-   not the resulting object as seen by the test suite.
-
-
-.. _The xdoctest session:
-
-The xdoctest session
-....................
-
-The xdoctest_ tool
-runs examples in your docstrings and
-compares the actual output to the expected output as per the docstring.
-This serves multiple purposes:
-
-- The example is checked for correctness.
-- You ensure that the documentation is up-to-date.
-- Your codebase gets additional test coverage for free.
-
-Run the tool using the Nox session ``xdoctest``:
-
-.. code:: console
-
-   $ nox --session=xdoctest
-
-You can also run the test suite with a specific Python version.
-For example, the following command runs the examples
-using the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=xdoctest-3.8
-
-By default, the Nox session uses the ``all`` subcommand to run all examples.
-You can also list examples using the ``list`` subcommand,
-or run specific examples:
-
-.. code:: console
-
-   $ nox --session=xdoctest -- list
-
-
 Using Poetry inside Nox sessions
 --------------------------------
 
@@ -1256,6 +994,268 @@ The helper class has the following methods:
 
 ``noxfile.Poetry.version(self)``
    Return the package version.
+
+
+Nox sessions
+~~~~~~~~~~~~
+
+.. _Table of Nox sessions:
+
+The following table gives an overview of the available Nox sessions:
+
+.. table:: Nox sessions
+   :class: hypermodern-table
+   :widths: auto
+
+   ========================================== ============================== ================== =========
+   Session                                    Description                    Python              Default
+   ========================================== ============================== ================== =========
+   :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
+   :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``      ✓
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_    ``3.6`` … ``3.8``
+   ========================================== ============================== ================== =========
+
+
+.. _The docs session:
+
+The docs session
+----------------
+
+Build the documentation using the Nox session ``docs``:
+
+.. code:: console
+
+   $ nox --session=docs
+
+The docs session runs the command ``sphinx-build``
+to generate the HTML documentation from the Sphinx directory.
+
+In `interactive mode`__---such
+as when invoking Nox from a terminal---sphinx-autobuild_ is used instead.
+This tool has several advantages
+when you are editing the documentation files:
+
+__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
+
+- It rebuilds the documentation whenever a change is detected.
+- It spins up a web server with live reloading.
+- It opens the location of the web server in your browser.
+
+.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
+
+Use the ``--`` separator to pass additional options to either tool.
+For example, to treat warnings as errors and run in nit-picky mode:
+
+.. code:: console
+
+   $ nox --session=docs -- -W -n docs docs/_build
+
+This Nox session always runs with the current major release of Python.
+
+
+.. _The mypy session:
+
+The mypy session
+----------------
+
+mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
+Learn more about it in the section :ref:`Type-checking with mypy`.
+
+Run mypy using Nox:
+
+.. code:: console
+
+   $ nox --session=mypy
+
+You can also run the type checker with a specific Python version.
+For example, the following command runs mypy
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=mypy-3.8
+
+Use the separator ``--`` to pass additional options and arguments to ``mypy``.
+For example, the following command type-checks only the ``__main__`` module:
+
+.. code:: console
+
+   $ nox --session=mypy -- src/<package>/__main__.py
+
+
+.. _The pre-commit session:
+
+The pre-commit session
+----------------------
+
+pre-commit_ is a multi-language linter framework and a Git hook manager.
+Learn more about it in the section :ref:`Linting with pre-commit`.
+
+Run pre-commit from Nox using the ``pre-commit`` session:
+
+.. code:: console
+
+   $ nox --session=pre-commit
+
+This session always runs with the current stable release of Python.
+
+Use the separator ``--`` to pass additional options to ``pre-commit``.
+For example, the following command installs the pre-commit hooks,
+so they run automatically on every commit you make:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- install
+
+
+.. _The safety session:
+
+The safety session
+------------------
+
+Safety_ checks the dependencies of your project for known security vulnerabilities,
+using a curated database of insecure Python packages.
+The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
+to convert Poetry's lock file to a `requirements file`_,
+for consumption by Safety.
+
+.. _poetry export: https://python-poetry.org/docs/cli/#export
+.. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
+
+Run Safety_ using the ``safety`` session:
+
+.. code:: console
+
+   $ nox --session=safety
+
+This session always runs with the current stable release of Python.
+
+
+.. _The tests session:
+
+The tests session
+-----------------
+
+Tests are written using the pytest_ testing framework.
+Learn more about it in the section :ref:`Testing with pytest`.
+
+Run the test suite using the Nox session ``tests``:
+
+.. code:: console
+
+   $ nox --session=tests
+
+The tests session runs the test suite against the installed code.
+More specifically, the session builds a wheel from your project and
+installs it into the Nox environment,
+with dependencies pinned as specified by Poetry's lock file.
+
+You can also run the test suite with a specific Python version.
+For example, the following command runs the test suite
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=tests-3.8
+
+Use the separator ``--`` to pass additional options to ``pytest``.
+For example, the following command runs only the test case ``test_main_succeeds``:
+
+.. code:: console
+
+   $ nox --session=tests -- -k test_main_succeeds
+
+
+.. _The typeguard session:
+
+The typeguard session
+---------------------
+
+Typeguard_ is a runtime type checker and pytest_ plugin.
+It can type-check function calls during test runs via an `import hook`__.
+
+__ https://docs.python.org/3/reference/import.html#import-hooks
+
+Typeguard checks that arguments passed to functions
+match the type annotations of the function parameters,
+and that the return value provided by the function
+matches the return type annotation.
+In the case of generator functions,
+Typeguard checks the yields, sends and the return value
+against the ``Generator`` annotation.
+
+Run Typeguard_ using Nox:
+
+.. code:: console
+
+   $ nox --session=typeguard
+
+The typeguard session runs the test suite with runtime type-checking enabled.
+It is similar to the :ref:`tests session <The tests session>`,
+with the difference that your package is instrumented by Typeguard.
+
+You can run the session with a specific Python version.
+For example, the following command runs the session
+with the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=typeguard-3.8
+
+Use the separator ``--`` to pass additional options and arguments to pytest.
+For example, the following command runs only tests for the ``__main__`` module:
+
+.. code:: console
+
+   $ nox --session=typeguard -- tests/test_main.py
+
+.. note::
+
+   Typeguard generates a warning about missing type annotations for a Click object.
+   This is due to the fact that ``__main__.main`` is wrapped by a decorator,
+   and its type annotations only apply to the inner function,
+   not the resulting object as seen by the test suite.
+
+
+.. _The xdoctest session:
+
+The xdoctest session
+--------------------
+
+The xdoctest_ tool
+runs examples in your docstrings and
+compares the actual output to the expected output as per the docstring.
+This serves multiple purposes:
+
+- The example is checked for correctness.
+- You ensure that the documentation is up-to-date.
+- Your codebase gets additional test coverage for free.
+
+Run the tool using the Nox session ``xdoctest``:
+
+.. code:: console
+
+   $ nox --session=xdoctest
+
+You can also run the test suite with a specific Python version.
+For example, the following command runs the examples
+using the current stable release of Python:
+
+.. code:: console
+
+   $ nox --session=xdoctest-3.8
+
+By default, the Nox session uses the ``all`` subcommand to run all examples.
+You can also list examples using the ``list`` subcommand,
+or run specific examples:
+
+.. code:: console
+
+   $ nox --session=xdoctest -- list
 
 
 .. _Testing with pytest:
