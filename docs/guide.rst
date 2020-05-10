@@ -1109,7 +1109,7 @@ and that the return value provided by the function
 matches the return type annotation.
 In the case of generator functions,
 Typeguard checks the yields, sends and the return value
-against the ``Generator`` or ``AsyncGenerator`` annotation.
+against the ``Generator`` annotation.
 
 Run Typeguard_ using Nox:
 
