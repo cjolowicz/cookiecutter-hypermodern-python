@@ -1032,13 +1032,12 @@ Run pre-commit from Nox using the ``pre-commit`` session:
 This session always runs with the current version of Python.
 
 Use the separator ``--`` to pass additional options to ``pre-commit``.
-For example, the following command checks a specific file:
+For example, the following command installs the pre-commit hooks,
+so they run automatically on every commit you make:
 
 .. code:: console
 
-   $ nox --session=pre-commit -- run --files .pre-commit-config.yaml
-
-By default, pre-commit runs on all files in the repository.
+   $ nox --session=pre-commit -- install
 
 
 .. _The safety session:
