@@ -1339,7 +1339,6 @@ consisting of the following hooks:
    ======================== ===============================================
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
-   `mypy <mypy_>`__         Run the mypy_ static type checker
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
    check-added-large-files_ Prevent giant files from being committed
    check-yaml_              Validate YAML_ files
