@@ -1959,28 +1959,6 @@ __ https://docs.readthedocs.io/en/stable/config-file/v2.html
 Continuous integration using GitHub Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
-to implement continuous integration and delivery.
-With GitHub Actions,
-you define so-called workflows
-using YAML_ files located in the ``.github/workflows`` directory.
-
-A *workflow* is an automated process
-consisting of one or many jobs,
-each of which executes a series of steps.
-Workflows are triggered by events,
-for example when a commit is pushed
-or when a release is published.
-You can learn more about
-the workflow language and its supported keywords
-in the `official reference`__.
-
-__ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
-
-Real-time logs for workflow runs are available
-from the *Actions* tab in your GitHub repository.
-
-
 Secrets
 -------
 
@@ -2026,6 +2004,29 @@ located in ``.github/workflow/constraints.txt``.
 
 GitHub Actions workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
+to implement continuous integration and delivery.
+With GitHub Actions,
+you define so-called workflows
+using YAML_ files located in the ``.github/workflows`` directory.
+
+A *workflow* is an automated process
+consisting of one or many jobs,
+each of which executes a series of steps.
+Workflows are triggered by events,
+for example when a commit is pushed
+or when a release is published.
+You can learn more about
+the workflow language and its supported keywords
+in the `official reference`__.
+
+__ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+
+.. note::
+
+   Real-time logs for workflow runs are available
+   from the *Actions* tab in your GitHub repository.
 
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
