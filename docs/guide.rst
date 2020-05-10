@@ -1717,7 +1717,7 @@ Documentation
 Stand-alone documents
 ---------------------
 
-The project repository contains several documentation files
+The project repository contains several stand-alone documentation files
 written in reStructuredText_:
 
 .. table:: Documentation files
@@ -1741,7 +1741,7 @@ The project documentation itself lives under ``docs``.
 It is written in reStructuredText_,
 processed by Sphinx_,
 and accessible on `Read the Docs`_.
-It consists of the following files:
+It consists of the following files in the ``docs`` directory:
 
 .. table:: Sphinx documentation files
    :class: hypermodern-table
@@ -1779,11 +1779,11 @@ The ``docs`` directory contains two more files:
    ``requirements.txt``   Build dependencies for `Read the Docs`_
    ====================== =======================================================
 
-The Sphinx configuration is located in the file `docs/conf.py`__.
+The ``conf.py`` file contains the `Sphinx configuration`__.
 
 __ https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
+The ``requirements.txt`` file pins the build dependencies for the Sphinx documentation.
 This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
 
 
