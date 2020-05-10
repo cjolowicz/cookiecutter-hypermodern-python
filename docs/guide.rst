@@ -339,7 +339,7 @@ For more details on these files, refer to the section :ref:`The initial package`
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
-For more details on these files, refer to the section :ref:`Testing with pytest`.
+For more details on these files, refer to the section :ref:`The test suite`.
 
 .. table:: Test suite
    :class: hypermodern-table
@@ -483,6 +483,35 @@ under the ``src`` directory::
    (`PEP 561`_).
    This allows people using your package
    to type-check their Python code against it.
+
+
+.. _The test suite:
+
+The test suite
+--------------
+
+Tests are written using the pytest_ testing framework,
+the *de facto* standard for testing in Python.
+
+The test suite is located in the ``tests`` directory::
+
+   tests
+   ├── __init__.py
+   └── test_main.py
+
+The test suite is `declared as a package`__,
+and mirrors the source layout of the package under test.
+The file ``test_main.py`` contains tests for the ``__main__`` module.
+
+__ http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
+
+Initially, the test suite contains a single test case,
+checking whether the program exits with a status code of zero.
+It also provides a `test fixture`_ using `click.testing.CliRunner`_,
+a helper class for invoking the program from within tests.
+
+.. _test fixture: https://docs.pytest.org/en/latest/fixture.html
+.. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 
 Packaging
@@ -1141,7 +1170,7 @@ The tests session
 -----------------
 
 Tests are written using the pytest_ testing framework.
-Learn more about it in the section :ref:`Testing with pytest`.
+Learn more about it in the section :ref:`The test suite`.
 
 Run the test suite using the Nox session ``tests``:
 
@@ -1256,35 +1285,6 @@ or run specific examples:
 .. code:: console
 
    $ nox --session=xdoctest -- list
-
-
-.. _Testing with pytest:
-
-Testing with pytest
-~~~~~~~~~~~~~~~~~~~
-
-Tests are written using the pytest_ testing framework,
-the *de facto* standard for testing in Python.
-
-The test suite is located in the ``tests`` directory::
-
-   tests
-   ├── __init__.py
-   └── test_main.py
-
-The test suite is `declared as a package`__,
-and mirrors the source layout of the package under test.
-The file ``test_main.py`` contains tests for the ``__main__`` module.
-
-__ http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
-
-Initially, the test suite contains a single test case,
-checking whether the program exits with a status code of zero.
-It also provides a `test fixture`_ using `click.testing.CliRunner`_,
-a helper class for invoking the program from within tests.
-
-.. _test fixture: https://docs.pytest.org/en/latest/fixture.html
-.. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 
 .. _Code coverage with Coverage.py:
@@ -2243,7 +2243,7 @@ How to make code changes
 
 1. | Run the tests, :ref:`as explained above <How to test your project>`.
    | All tests should pass.
-2. | Add a failing test :ref:`under the tests directory <Testing with pytest>`.
+2. | Add a failing test :ref:`under the tests directory <The test suite>`.
    | Run the tests again to verify that your test fails.
 3. | Make your changes to the package, :ref:`under the src directory <The initial package>`.
    | Run the tests to verify that all tests pass again.
