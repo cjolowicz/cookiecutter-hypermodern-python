@@ -362,7 +362,7 @@ and links each file to a section with more details.
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
    ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
-   ``.flake8``                           Configuration for :ref:`Flake8 <Flake8 plugins>`
+   ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
    ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release Drafter workflow>`
@@ -1378,6 +1378,54 @@ consisting of the following hooks:
 .. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
 .. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
+
+
+The Black hook
+--------------
+
+Black_ is the uncompromising Python code formatter.
+One of its greatest features is its lack of configurability.
+Blackened code looks the same regardless of the project you're reading.
+
+
+The Prettier hook
+-----------------
+
+Prettier_ is an opinionated code formatter for many languages,
+including YAML, Markdown, and JavaScript.
+Like Black, it has few options,
+and the *Hypermodern Python Cookiecutter* uses none of them.
+
+
+.. _The Flake8 hook:
+
+The Flake8 hook
+---------------
+
+Flake8_ is a linter framework for Python.
+The configuration file for Flake8 and its extensions
+is named ``.flake8`` and located in the project directory.
+For more details, see the section :ref:`Flake8 plugins`.
+
+
+The reorder-python-imports hook
+-------------------------------
+
+reorder-python-imports_ sorts imports in your Python code.
+Imports are separated into three sections,
+as recommended by `PEP 8`_: standard library, third party, first party.
+The tool also splits ``from`` imports onto separate lines to avoid merge conflicts,
+and moves them after normal imports.
+Any duplicate imports are removed.
+
+
+Hooks from pre-commit-hooks
+---------------------------
+
+The pre-commit configuration also includes several smaller hooks
+from the pre-commit-hooks_ repository.
+
+.. _pre-commit-hooks: https://github.com/pre-commit/pre-commit-hooks
 
 
 .. _Flake8 plugins:
