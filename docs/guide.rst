@@ -547,6 +547,59 @@ for a detailed description of each configuration key.
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 
+Version constraints
+-------------------
+
+`Version constraints <Versions and constraints_>`_ express
+which versions of dependencies are compatible with your project.
+In the case of core dependencies,
+they are also a part of distribution packages,
+and as such affect end-users of your package.
+
+For every dependency added to your project,
+Poetry writes a version constraint to ``pyproject.toml``.
+Dependencies are kept in two TOML tables:
+
+- ``tool.poetry.dependencies``---for core dependencies
+- ``tool.poetry.dev-dependencies``---for development dependencies
+
+By default, version constraints require users to have at least
+the version that was current when the dependency was added to the project.
+Users can also upgrade to newer releases of dependencies,
+as long as the version number does not indicate a breaking change.
+(According to the `Semantic Versioning`_ standard,
+only major releases may contain breaking changes,
+once a project has reached version 1.0.0.)
+
+.. _Versions and constraints: https://python-poetry.org/docs/versions/
+.. _Semantic Versioning: https://semver.org/
+
+
+.. _The lock file:
+
+The lock file
+-------------
+
+Poetry records the exact version of each direct and indirect dependency
+in its lock file, named ``poetry.lock`` and located in the root directory of the project.
+The lock file does not affect users of the package,
+because its contents are not included in distribution packages.
+
+The lock file is useful for a number of reasons:
+
+- It ensures that local checks run in the same environment as on the CI server,
+  making the CI predictable and deterministic.
+- When collaborating with other developers,
+  it allows everybody to use the same development environment.
+- When deploying an application, the lock file helps you
+  keep production and development environments as similar as possible
+  (`dev-prod parity`_).
+
+.. _dev-prod parity: https://12factor.net/dev-prod-parity
+
+For these reasons, the lock file should be kept under source control.
+
+
 Dependencies
 ------------
 
@@ -820,59 +873,6 @@ You can always install your project into a virtual environment with plain pip_.
 
 Dependencies
 ~~~~~~~~~~~~
-
-Version constraints
--------------------
-
-`Version constraints <Versions and constraints_>`_ express
-which versions of dependencies are compatible with your project.
-In the case of core dependencies,
-they are also a part of distribution packages,
-and as such affect end-users of your package.
-
-For every dependency added to your project,
-Poetry writes a version constraint to ``pyproject.toml``.
-Dependencies are kept in two TOML tables:
-
-- ``tool.poetry.dependencies``---for core dependencies
-- ``tool.poetry.dev-dependencies``---for development dependencies
-
-By default, version constraints require users to have at least
-the version that was current when the dependency was added to the project.
-Users can also upgrade to newer releases of dependencies,
-as long as the version number does not indicate a breaking change.
-(According to the `Semantic Versioning`_ standard,
-only major releases may contain breaking changes,
-once a project has reached version 1.0.0.)
-
-.. _Versions and constraints: https://python-poetry.org/docs/versions/
-.. _Semantic Versioning: https://semver.org/
-
-
-.. _The lock file:
-
-The lock file
--------------
-
-Poetry records the exact version of each direct and indirect dependency
-in its lock file, named ``poetry.lock`` and located in the root directory of the project.
-The lock file does not affect users of the package,
-because its contents are not included in distribution packages.
-
-The lock file is useful for a number of reasons:
-
-- It ensures that local checks run in the same environment as on the CI server,
-  making the CI predictable and deterministic.
-- When collaborating with other developers,
-  it allows everybody to use the same development environment.
-- When deploying an application, the lock file helps you
-  keep production and development environments as similar as possible
-  (`dev-prod parity`_).
-
-.. _dev-prod parity: https://12factor.net/dev-prod-parity
-
-For these reasons, the lock file should be kept under source control.
-
 
 The Poetry environment
 ~~~~~~~~~~~~~~~~~~~~~~
