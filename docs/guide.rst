@@ -1917,7 +1917,10 @@ Follow these steps to set up Read the Docs for your repository:
 
 __ https://docs.readthedocs.io/en/stable/webhooks.html
 
-The configuration is included in the repository, as ``.readthedocs.yml``.
+The configuration is included in the repository,
+in the file `.readthedocs.yml`__.
+
+__ https://docs.readthedocs.io/en/stable/config-file/v2.html
 
 
 Secrets
