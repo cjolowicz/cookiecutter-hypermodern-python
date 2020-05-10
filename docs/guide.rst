@@ -887,10 +887,6 @@ use whatever package manager the other project uses.
 You can always install your project into a virtual environment with plain pip_.
 
 
-The Poetry environment
-~~~~~~~~~~~~~~~~~~~~~~
-
-
 .. _Using Nox:
 
 Using Nox
