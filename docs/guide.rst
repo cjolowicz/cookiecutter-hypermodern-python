@@ -517,6 +517,9 @@ a helper class for invoking the program from within tests.
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 
+Packaging
+~~~~~~~~~
+
 .. _The pyproject.toml file:
 
 The pyproject.toml file
