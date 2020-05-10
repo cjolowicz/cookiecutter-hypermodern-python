@@ -1757,6 +1757,10 @@ It consists of the following files:
    ``requirements.txt``   Build dependencies for `Read the Docs`_
    ====================== =======================================================
 
+The Sphinx configuration is located in the file `docs/conf.py`__.
+
+__ https://www.sphinx-doc.org/en/master/usage/configuration.html
+
 The documentation menu also has a *Changelog* entry,
 which links to the `GitHub Releases <GitHub Release_>`__ page.
 
