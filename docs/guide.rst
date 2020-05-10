@@ -1293,28 +1293,6 @@ or run specific examples:
    $ nox --session=xdoctest -- list
 
 
-.. _Code coverage with Coverage.py:
-
-Code coverage with Coverage.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Test coverage* is a measure of the degree to which
-the source code of your program is executed while running its test suite.
-This project template requires full test coverage.
-
-Code coverage is measured using `Coverage.py`_.
-When the test suite completes,
-a detailed coverage report is printed to the terminal.
-If the total coverage is below 100%,
-the test session fails.
-
-Coverage.py is configured using the ``pyproject.toml`` configuration file,
-in the ``tool.coverage`` table.
-The configuration informs the tool about your package name and source tree layout.
-It also enables branch analysis and the display of line numbers for missing coverage,
-and specifies the target coverage percentage.
-
-
 .. _Linting with pre-commit:
 
 Linting with pre-commit
@@ -1646,6 +1624,28 @@ as pytest_ uses assertions to verify expectations in tests.
 
 .. _Bandit codes:
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
+
+
+.. _Code coverage with Coverage.py:
+
+Code coverage with Coverage.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Test coverage* is a measure of the degree to which
+the source code of your program is executed while running its test suite.
+This project template requires full test coverage.
+
+Code coverage is measured using `Coverage.py`_.
+When the test suite completes,
+a detailed coverage report is printed to the terminal.
+If the total coverage is below 100%,
+the test session fails.
+
+Coverage.py is configured using the ``pyproject.toml`` configuration file,
+in the ``tool.coverage`` table.
+The configuration informs the tool about your package name and source tree layout.
+It also enables branch analysis and the display of line numbers for missing coverage,
+and specifies the target coverage percentage.
 
 
 .. _Type-checking with mypy:
