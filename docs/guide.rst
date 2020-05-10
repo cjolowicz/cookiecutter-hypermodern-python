@@ -1642,10 +1642,6 @@ Type-checking
    are a way to annotate functions and variables with types.
    With appropriate tooling,
    they can make your programs easier to understand, debug, and maintain.
-   There is also an increasing number of libraries
-   that leverage type annotations at runtime.
-   For example, you can use type annotations to generate serialization schemas
-   or command-line parsers.
 
    .. _Type annotations: https://docs.python.org/3/library/typing.html
 
@@ -1659,6 +1655,11 @@ Type-checking
    - *Runtime type checkers* find type errors by instrumenting your code to
      type-check arguments and return values in function calls.
      This is particularly useful during the execution of unit tests.
+
+   There is also an increasing number of libraries
+   that leverage type annotations at runtime.
+   For example, you can use type annotations to generate serialization schemas
+   or command-line parsers.
 
 The *Hypermodern Python Cookiecutter* uses
 both a static type checker and a runtime type checker:
