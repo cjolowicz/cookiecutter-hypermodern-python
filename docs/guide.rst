@@ -1828,33 +1828,8 @@ only direct dependencies are included.
    don't forget to update the requirements file as well.
 
 
-Continuous integration using GitHub Actions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
-to implement continuous integration and delivery.
-With GitHub Actions,
-you define so-called workflows
-using YAML_ files located in the ``.github/workflows`` directory.
-
-A *workflow* is an automated process
-consisting of one or many jobs,
-each of which executes a series of steps.
-Workflows are triggered by events,
-for example when a commit is pushed
-or when a release is published.
-You can learn more about
-the workflow language and its supported keywords
-in the `official reference`__.
-
-__ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
-
-Real-time logs for workflow runs are available
-from the *Actions* tab in your GitHub repository.
-
-
-External Services
------------------
+External services
+~~~~~~~~~~~~~~~~~
 
 Your repository can be integrated with several external services
 for continuous integration and delivery.
@@ -1863,7 +1838,7 @@ what they do, and how to set them up for your repository.
 
 
 PyPI
-....
+----
 
 PyPI_ is the official Python Package Index.
 Uploading your package to PyPI allows others to
@@ -1882,7 +1857,7 @@ via the :ref:`Release workflow <The Release workflow>`.
 
 
 TestPyPI
-........
+--------
 
 TestPyPI_ is a test instance of the Python package registry.
 It allows you to check your release before uploading it to the real index.
@@ -1902,7 +1877,7 @@ via the :ref:`TestPyPI workflow <The TestPyPI workflow>`.
 .. _Codecov integration:
 
 Codecov
-.......
+-------
 
 Codecov_ is a reporting service for code coverage.
 
@@ -1924,7 +1899,7 @@ The :ref:`Coverage workflow <The Coverage workflow>` uploads the coverage data.
 .. _Dependabot integration:
 
 Dependabot
-..........
+----------
 
 Dependabot_ creates pull requests with automated dependency updates.
 
@@ -1958,7 +1933,7 @@ It manages the following dependencies:
 
 
 Read the Docs
-.............
+-------------
 
 `Read the Docs`_ automates the building, versioning, and hosting of documentation.
 
@@ -1979,6 +1954,31 @@ The configuration is included in the repository,
 in the file `.readthedocs.yml`__.
 
 __ https://docs.readthedocs.io/en/stable/config-file/v2.html
+
+
+Continuous integration using GitHub Actions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
+to implement continuous integration and delivery.
+With GitHub Actions,
+you define so-called workflows
+using YAML_ files located in the ``.github/workflows`` directory.
+
+A *workflow* is an automated process
+consisting of one or many jobs,
+each of which executes a series of steps.
+Workflows are triggered by events,
+for example when a commit is pushed
+or when a release is published.
+You can learn more about
+the workflow language and its supported keywords
+in the `official reference`__.
+
+__ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+
+Real-time logs for workflow runs are available
+from the *Actions* tab in your GitHub repository.
 
 
 Secrets
