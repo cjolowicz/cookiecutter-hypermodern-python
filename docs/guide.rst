@@ -871,9 +871,6 @@ use whatever package manager the other project uses.
 You can always install your project into a virtual environment with plain pip_.
 
 
-Dependencies
-~~~~~~~~~~~~
-
 The Poetry environment
 ~~~~~~~~~~~~~~~~~~~~~~
 
