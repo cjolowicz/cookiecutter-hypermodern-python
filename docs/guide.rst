@@ -1045,6 +1045,15 @@ so they run automatically on every commit you make:
 The safety session
 ..................
 
+Safety_ checks the dependencies of your project for known security vulnerabilities,
+using a curated database of insecure Python packages.
+The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
+to convert Poetry's lock file to a `requirements file`_,
+for consumption by Safety.
+
+.. _poetry export: https://python-poetry.org/docs/cli/#export
+.. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
+
 Run Safety_ using the ``safety`` session:
 
 .. code:: console
@@ -1617,19 +1626,6 @@ as pytest_ uses assertions to verify expectations in tests.
 
 .. _Bandit codes:
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
-
-
-Scanning dependencies with Safety
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Safety_ checks the dependencies of your project for known security vulnerabilities,
-using a curated database of insecure Python packages.
-The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
-to convert Poetry's lock file to a `requirements file`_,
-for consumption by Safety.
-
-.. _poetry export: https://python-poetry.org/docs/cli/#export
-.. _requirements file: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
 
 
 Type-checking
