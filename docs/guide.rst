@@ -1029,7 +1029,7 @@ Run pre-commit from Nox using the ``pre-commit`` session:
 
    $ nox --session=pre-commit
 
-This session always runs with the current version of Python.
+This session always runs with the current stable release of Python.
 
 Use the separator ``--`` to pass additional options to ``pre-commit``.
 For example, the following command installs the pre-commit hooks,
@@ -1060,7 +1060,7 @@ Run Safety_ using the ``safety`` session:
 
    $ nox --session=safety
 
-This session always runs with the current version of Python.
+This session always runs with the current stable release of Python.
 
 
 .. _The tests session:
@@ -2029,7 +2029,7 @@ The workflow uses the following GitHub Actions:
 
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
 
-The workflow runs with the current Python version,
+The workflow runs with the current stable release of Python,
 using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/coverage.yml``.
@@ -2059,7 +2059,7 @@ The workflow uses the following GitHub Actions:
 
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
 
-The workflow runs with the current Python version,
+The workflow runs with the current stable release of Python,
 using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/docs.yml``.
