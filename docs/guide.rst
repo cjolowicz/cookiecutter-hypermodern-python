@@ -855,7 +855,7 @@ You can also run developer tools, such as pytest_:
    $ poetry run pytest
 
 While it is handy to have developer tools available in the Poetry environment,
-it is usually recommended to run these using Nox_,
+it is usually recommended to run these using Nox,
 as described in the next section.
 
 
