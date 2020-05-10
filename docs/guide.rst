@@ -1404,12 +1404,6 @@ using the Flake8_ linter framework.
 The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
 
-
-.. _Available linters:
-
-Available linters
------------------
-
 Flake8 comes with a rich ecosystem of extensions.
 The following table lists the Flake8 plugins used by
 the *Hypermodern Python Cookiecutter*,
@@ -1434,16 +1428,13 @@ and links to their lists of error codes.
    ======================= ============================================================== ======================================
 
 
-The linters
------------
-
-This section describes the linters in more detail.
+The following sections describe the linters in more detail.
 Each section also notes any configuration settings applied by
 the *Hypermodern Python Cookiecutter*.
 
 
 pyflakes
-........
+--------
 
 The pyflakes_ tool
 parses Python source files and finds invalid code.
@@ -1460,7 +1451,7 @@ __ https://flake8.pycqa.org/en/latest/user/error-codes.html
 
 
 pycodestyle
-...........
+-----------
 
 The pycodestyle_ tool
 checks your code against many recommendations from `PEP 8`_,
@@ -1485,7 +1476,7 @@ for compatibility with Black_ and flake8-bugbear_:
 
 
 pep8-naming
-...........
+-----------
 
 The pep8-naming_ tool enforces the naming conventions from `PEP 8`_.
 `Error codes`__ are prefixed by ``N`` for "naming".
@@ -1498,7 +1489,7 @@ __ https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
 
 
 pydocstyle and flake8-docstrings
-................................
+--------------------------------
 
 The pydocstyle_ tool is used to check that
 docstrings comply with the recommendations of `PEP 257`_
@@ -1533,7 +1524,7 @@ Here is an example of a function documented in Google style:
 
 
 flake8-rst-docstrings
-.....................
+---------------------
 
 The flake8-rst-docstrings_ plugin
 validates docstring markup as reStructuredText_ (reST).
@@ -1547,7 +1538,7 @@ __ https://github.com/peterjc/flake8-rst-docstrings#flake8-validation-codes
 
 
 flake8-bugbear
-..............
+--------------
 
 flake8-bugbear_ detects bugs and design problems.
 `Error codes`__ are prefixed by ``B`` for "bugbear".
@@ -1570,7 +1561,7 @@ __ https://github.com/PyCQA/flake8-bugbear#list-of-warnings
 
 
 mccabe
-......
+------
 
 The mccabe_ tool
 checks the `code complexity <Cyclomatic complexity_>`__
@@ -1590,7 +1581,7 @@ limits code complexity to a value of 10.
 .. _darglint integration:
 
 darglint
-........
+--------
 
 The darglint_ tool checks that docstring descriptions match function definitions.
 `Error codes`__ are prefixed by ``DAR`` for "darglint".
@@ -1607,7 +1598,7 @@ __ https://github.com/terrencepreilly/darglint#error-codes
 
 
 Bandit
-......
+------
 
 Bandit_ is a tool designed to
 find common security issues in Python code,
