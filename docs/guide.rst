@@ -1136,10 +1136,12 @@ For example, the following command runs only tests for the ``__main__`` module:
 
    $ nox --session=typeguard -- tests/test_main.py
 
-Typeguard generates a warning about missing type annotations for a Click object.
-This is due to the fact that ``__main__.main`` is wrapped by a decorator,
-and its type annotations only apply to the inner function,
-not the resulting object as seen by the test suite.
+.. note::
+
+   Typeguard generates a warning about missing type annotations for a Click object.
+   This is due to the fact that ``__main__.main`` is wrapped by a decorator,
+   and its type annotations only apply to the inner function,
+   not the resulting object as seen by the test suite.
 
 
 .. _The xdoctest session:
