@@ -1020,6 +1020,9 @@ For example, the following command type-checks only the ``__main__`` module:
 The pre-commit session
 ......................
 
+pre-commit_ is a multi-language linter framework and a Git hook manager.
+Learn more about it in the section :ref:`Linting with pre-commit`.
+
 Run pre-commit from Nox using the ``pre-commit`` session:
 
 .. code:: console
