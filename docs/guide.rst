@@ -310,6 +310,9 @@ for detailed instructions.
 Project overview
 ~~~~~~~~~~~~~~~~
 
+Files and directories
+---------------------
+
 This section provides an overview of all the files generated for your project.
 Let's start with the project layout.
 The project contains the following subdirectories:
