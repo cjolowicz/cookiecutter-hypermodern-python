@@ -1363,26 +1363,19 @@ Install the *pre-commit* Git hook by running the following command:
 
 .. code:: console
 
-   $ pre-commit install
+   $ nox --session=pre-commit -- install
 
-The default behaviour of pre-commit is to run on the staged contents of files,
-which is useful when it is triggered from a *pre-commit* Git hook:
-
-.. code:: console
-
-   $ pre-commit run
-
-You can run pre-commit on all files instead using the following command:
+You can run pre-commit manually using the following command:
 
 .. code:: console
 
-   $ pre-commit run --all-files
+   $ nox --session=pre-commit
 
 You can also run a specific pre-commit hook, such as the code formatter Prettier_:
 
 .. code:: console
 
-   $ pre-commit run --all-files prettier
+   $ nox -rs pre-commit -- run --all-files prettier
 
 
 .. _Linting with Flake8:
