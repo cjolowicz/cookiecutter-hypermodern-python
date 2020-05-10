@@ -550,6 +550,24 @@ for a detailed description of each configuration key.
 Dependencies
 ------------
 
+.. note::
+
+   Dependencies are Python packages used by your project,
+   and they come in two types:
+
+   - *Core dependencies* are required by users running your code,
+     and typically consist of third-party libraries imported by your package.
+     When your package is distributed,
+     the package metainfo includes these dependencies,
+     allowing tools like pip_ to automatically install them alongside your package.
+
+   - *Development dependencies* are only required by developers working on your code.
+     Examples are applications used to run tests,
+     check code for style and correctness,
+     or to build documentation.
+     These dependencies are not a part of distribution packages,
+     because users do not require them to run your code.
+
 This project template has a core dependency on Click_,
 a library for creating command-line interfaces.
 The template also comes with various development dependencies.
@@ -802,23 +820,6 @@ You can always install your project into a virtual environment with plain pip_.
 
 Dependencies
 ~~~~~~~~~~~~
-
-Dependencies are Python packages used by your project,
-and they come in two types:
-
-- *Core dependencies* are required by users running your code,
-  and typically consist of third-party libraries imported by your package.
-  When your package is distributed,
-  the package metainfo includes these dependencies,
-  allowing tools like pip_ to automatically install them alongside your package.
-
-- *Development dependencies* are only required by developers working on your code.
-  Examples are applications used to run tests,
-  check code for style and correctness,
-  or to build documentation.
-  These dependencies are not a part of distribution packages,
-  because users do not require them to run your code.
-
 
 Version constraints
 -------------------
