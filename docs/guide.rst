@@ -1761,6 +1761,9 @@ which links to the `GitHub Releases <GitHub Release_>`__ page.
 The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
 
+You can build the documentation locally using Nox,
+see :ref:`The docs session`.
+
 
 Configuring Sphinx
 ------------------
