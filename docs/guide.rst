@@ -268,8 +268,47 @@ the project name uses hyphens (*snake case*),
 whereas the package name uses underscores (*kebab case*).
 
 
-Overview of generated files
----------------------------
+Uploading to GitHub
+-------------------
+
+This project template is designed for use with GitHub_.
+After generating the project,
+your next steps are to create a Git repository and upload it to GitHub.
+
+Change to the root directory of your new project,
+initialize a Git repository, and
+create a commit for the initial project structure:
+
+.. code:: console
+
+   $ git init
+   $ git add .
+   $ git commit
+
+Create an empty repository on GitHub_,
+using the project name you chose when you generated the project.
+
+.. note::
+
+   Do not include a ``README.md``, ``LICENSE``, or ``.gitignore``.
+   These files are provided by the project template.
+
+Finally, upload your repository to GitHub.
+In the commands below, replace ``<username>`` by your GitHub username,
+and ``<repository>`` by the name of your GitHub repository.
+
+.. code:: console
+
+   $ git remote add origin git@github.com:<username>/<repository>.git
+   $ git push --set-upstream origin master
+
+Now may be a good time to set up Continuous Integration for your repository.
+Refer to the section :ref:`Continuous Integration using GitHub Actions`
+for detailed instructions.
+
+
+Project overview
+~~~~~~~~~~~~~~~~
 
 This section provides an overview of all the files generated for your project.
 Let's start with the project layout.
@@ -444,45 +483,6 @@ under the ``src`` directory::
    (`PEP 561`_).
    This allows people using your package
    to type-check their Python code against it.
-
-
-Uploading to GitHub
--------------------
-
-This project template is designed for use with GitHub_.
-After generating the project,
-your next steps are to create a Git repository and upload it to GitHub.
-
-Change to the root directory of your new project,
-initialize a Git repository, and
-create a commit for the initial project structure:
-
-.. code:: console
-
-   $ git init
-   $ git add .
-   $ git commit
-
-Create an empty repository on GitHub_,
-using the project name you chose when you generated the project.
-
-.. note::
-
-   Do not include a ``README.md``, ``LICENSE``, or ``.gitignore``.
-   These files are provided by the project template.
-
-Finally, upload your repository to GitHub.
-In the commands below, replace ``<username>`` by your GitHub username,
-and ``<repository>`` by the name of your GitHub repository.
-
-.. code:: console
-
-   $ git remote add origin git@github.com:<username>/<repository>.git
-   $ git push --set-upstream origin master
-
-Now may be a good time to set up Continuous Integration for your repository.
-Refer to the section :ref:`Continuous Integration using GitHub Actions`
-for detailed instructions.
 
 
 Packaging
