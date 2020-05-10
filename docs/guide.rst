@@ -303,7 +303,7 @@ and ``<repository>`` by the name of your GitHub repository.
    $ git push --set-upstream origin master
 
 Now may be a good time to set up Continuous Integration for your repository.
-Refer to the section :ref:`Continuous Integration using GitHub Actions`
+Refer to the section :ref:`External services`
 for detailed instructions.
 
 
@@ -1833,6 +1833,8 @@ only direct dependencies are included.
    When adding or removing Sphinx extensions using Poetry,
    don't forget to update the requirements file as well.
 
+
+.. _External services:
 
 External services
 ~~~~~~~~~~~~~~~~~
