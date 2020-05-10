@@ -1971,7 +1971,6 @@ GitHub Actions workflows install the following tools:
 - pip_
 - Poetry_
 - Nox_
-- pre-commit_
 
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
