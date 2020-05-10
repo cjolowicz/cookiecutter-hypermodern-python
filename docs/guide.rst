@@ -300,7 +300,7 @@ For more details on these files, refer to the section :ref:`The initial package`
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
-For more details on these files, refer to the section :ref:`The test suite`.
+For more details on these files, refer to the section :ref:`Testing with pytest`.
 
 .. table:: Test suite
    :class: hypermodern-table
@@ -1266,12 +1266,6 @@ Testing with pytest
 
 Tests are written using the pytest_ testing framework,
 the *de facto* standard for testing in Python.
-
-
-.. _The test suite:
-
-The test suite
---------------
 
 The test suite is located in the ``tests`` directory::
 
