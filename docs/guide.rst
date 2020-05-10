@@ -375,7 +375,7 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`.
    ``docs/reference.rst``                API reference
    ===================================== ===============================
 
-The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <Available workflows>`:
+The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <GitHub Actions workflows>`:
 
 .. table:: GitHub Actions workflows
    :class: hypermodern-table
@@ -1955,7 +1955,7 @@ It manages the following dependencies:
                        | ``poetry.lock``
    Python              ``docs/requirements.txt``             :ref:`Read the Docs <Read the Docs integration>`
    Python              ``.github/workflows/constraints.txt`` :ref:`Workflow constraints`
-   GitHub Action       ``.github/workflows/*.yml``           :ref:`Available workflows`
+   GitHub Action       ``.github/workflows/*.yml``           :ref:`GitHub Actions workflows`
    =================== ===================================== ================================================
 
 
@@ -2024,10 +2024,10 @@ located in ``.github/workflow/constraints.txt``.
    Dependabot updates the constraints file and submits a pull request.
 
 
-.. _Available workflows:
+.. _GitHub Actions workflows:
 
-Available workflows
--------------------
+GitHub Actions workflows
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
@@ -2056,7 +2056,7 @@ the following workflows:
 .. _The Tests workflow:
 
 The Tests workflow
-..................
+------------------
 
 The Tests workflow executes the test suite using Nox.
 
@@ -2083,7 +2083,7 @@ The workflow is defined in ``.github/workflows/tests.yml``.
 .. _The Coverage workflow:
 
 The Coverage workflow
-.....................
+---------------------
 
 The Coverage workflow uploads coverage data to Codecov_.
 
@@ -2111,7 +2111,7 @@ It is defined in ``.github/workflows/coverage.yml``.
 .. _The Docs workflow:
 
 The Docs workflow
-.................
+-----------------
 
 The Docs workflow builds the Sphinx_ documentation
 using the :ref:`docs <The docs session>` Nox session,
@@ -2141,7 +2141,7 @@ It is defined in ``.github/workflows/docs.yml``.
 .. _The Release Drafter workflow:
 
 The Release Drafter workflow
-............................
+----------------------------
 
 The Release Drafter workflow maintains a draft for the next GitHub Release.
 
@@ -2164,7 +2164,7 @@ The configuration file is located in ``.github/release-drafter.yml``.
 .. _The Release workflow:
 
 The Release workflow
-....................
+--------------------
 
 The Release workflow publishes your package on PyPI_, the Python Package Index.
 
@@ -2182,7 +2182,7 @@ The workflow is defined in ``.github/workflows/release.yml``.
 .. _The TestPyPI workflow:
 
 The TestPyPI workflow
-.....................
+---------------------
 
 The TestPyPI workflow publishes your package on TestPyPI_,
 a test instance of the Python Package Index.
