@@ -576,102 +576,8 @@ See the table below for an overview of the dependencies of generated projects:
 __ Coverage.py_
 
 
-Packaging
-~~~~~~~~~
-
-Building and distributing the package
--------------------------------------
-
-.. note::
-
-   With the *Hypermodern Python Cookiecutter*,
-   building and distributing your package
-   is taken care of by `GitHub Actions`_
-   when you publish a `GitHub Release`_.
-   For more information,
-   see the section :ref:`The Release workflow`.
-
-This section gives a short overview of
-how you can build and distribute your package
-from the command line,
-using the following Poetry commands:
-
-.. code:: console
-
-   $ poetry build
-   $ poetry publish
-
-Building the package is done with the `python build`_ command,
-which generates *distribution packages*
-in the ``dist`` directory of your project.
-These are compressed archives that
-an end-user can download and install on their system.
-They come in two flavours:
-source (or *sdist*) archives, and
-binary packages in the wheel_ format.
-
-Publishing the package is done with the `python publish`_ command,
-which uploads the distribution packages
-to your account on PyPI_,
-the official Python package registry.
-
-.. _python build: https://python-poetry.org/docs/cli/#build
-.. _python publish: https://python-poetry.org/docs/cli/#publish
-.. _wheel: https://www.python.org/dev/peps/pep-0427/
-
-
-Installing the package
-----------------------
-
-Once your package is on PyPI,
-others can install it with pip_, pipx_, or Poetry:
-
-.. code:: console
-
-   $ pip install <project>
-   $ pipx install <project>
-   $ poetry add <project>
-
-While pip_ is the workhorse of the Python packaging ecosystem,
-you should use higher-level tools to install your package:
-
-- If the package is an application, install it with pipx_.
-- If the package is a library, install it with `poetry add`_ in other projects.
-
-The primary benefit of these installation methods is that
-your package is installed into an isolated environment,
-without polluting the system environment,
-or the environments of other applications.
-This way,
-applications can use specific versions of their direct and indirect dependencies,
-without getting in each other's way.
-
-.. _poetry add: https://python-poetry.org/docs/cli/#add
-
-If the other project is not managed by Poetry,
-use whatever package manager the other project uses.
-You can always install your project into a virtual environment with plain pip_.
-
-
-Dependencies
+Using Poetry
 ~~~~~~~~~~~~
-
-Dependencies are Python packages used by your project,
-and they come in two types:
-
-- *Core dependencies* are required by users running your code,
-  and typically consist of third-party libraries imported by your package.
-  When your package is distributed,
-  the package metainfo includes these dependencies,
-  allowing tools like pip_ to automatically install them alongside your package.
-
-- *Development dependencies* are only required by developers working on your code.
-  Examples are applications used to run tests,
-  check code for style and correctness,
-  or to build documentation.
-  These dependencies are not a part of distribution packages,
-  because users do not require them to run your code.
-
 
 .. _Managing dependencies:
 
@@ -719,77 +625,6 @@ in the ``pyproject.toml`` file.
    Dependencies in the *Hypermodern Python Cookiecutter* are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of dependencies become available,
    Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
-
-
-Version constraints
--------------------
-
-`Version constraints <Versions and constraints_>`_ express
-which versions of dependencies are compatible with your project.
-In the case of core dependencies,
-they are also a part of distribution packages,
-and as such affect end-users of your package.
-
-For every dependency added to your project,
-Poetry writes a version constraint to ``pyproject.toml``.
-Dependencies are kept in two TOML tables:
-
-- ``tool.poetry.dependencies``---for core dependencies
-- ``tool.poetry.dev-dependencies``---for development dependencies
-
-By default, version constraints require users to have at least
-the version that was current when the dependency was added to the project.
-Users can also upgrade to newer releases of dependencies,
-as long as the version number does not indicate a breaking change.
-(According to the `Semantic Versioning`_ standard,
-only major releases may contain breaking changes,
-once a project has reached version 1.0.0.)
-
-.. _Versions and constraints: https://python-poetry.org/docs/versions/
-.. _Semantic Versioning: https://semver.org/
-
-
-.. _The lock file:
-
-The lock file
--------------
-
-Poetry records the exact version of each direct and indirect dependency
-in its lock file, named ``poetry.lock`` and located in the root directory of the project.
-The lock file does not affect users of the package,
-because its contents are not included in distribution packages.
-
-The lock file is useful for a number of reasons:
-
-- It ensures that local checks run in the same environment as on the CI server,
-  making the CI predictable and deterministic.
-- When collaborating with other developers,
-  it allows everybody to use the same development environment.
-- When deploying an application, the lock file helps you
-  keep production and development environments as similar as possible
-  (`dev-prod parity`_).
-
-.. _dev-prod parity: https://12factor.net/dev-prod-parity
-
-For these reasons, the lock file should be kept under source control.
-
-
-The Poetry environment
-~~~~~~~~~~~~~~~~~~~~~~
-
-Poetry manages a `virtual environment`_ for your project,
-which contains your package, its core dependencies, and the development dependencies.
-All dependencies are kept at the versions specified by the lock file.
-
-A virtual environment gives your project
-an isolated runtime environment,
-consisting of a specific Python version and
-an independent set of installed Python packages.
-This way, the dependencies of your current project
-do not interfere with the system-wide Python installation,
-or other projects you're working on.
-
-.. _virtual environment: https://docs.python.org/3/tutorial/venv.html
 
 
 Installing the package for development
@@ -889,6 +724,171 @@ You can also run developer tools, such as pytest_:
 While it is handy to have developer tools available in the Poetry environment,
 it is usually recommended to run these using Nox,
 as described in the next section.
+
+
+Building and distributing the package
+-------------------------------------
+
+.. note::
+
+   With the *Hypermodern Python Cookiecutter*,
+   building and distributing your package
+   is taken care of by `GitHub Actions`_
+   when you publish a `GitHub Release`_.
+   For more information,
+   see the section :ref:`The Release workflow`.
+
+This section gives a short overview of
+how you can build and distribute your package
+from the command line,
+using the following Poetry commands:
+
+.. code:: console
+
+   $ poetry build
+   $ poetry publish
+
+Building the package is done with the `python build`_ command,
+which generates *distribution packages*
+in the ``dist`` directory of your project.
+These are compressed archives that
+an end-user can download and install on their system.
+They come in two flavours:
+source (or *sdist*) archives, and
+binary packages in the wheel_ format.
+
+Publishing the package is done with the `python publish`_ command,
+which uploads the distribution packages
+to your account on PyPI_,
+the official Python package registry.
+
+.. _python build: https://python-poetry.org/docs/cli/#build
+.. _python publish: https://python-poetry.org/docs/cli/#publish
+.. _wheel: https://www.python.org/dev/peps/pep-0427/
+
+
+Installing the package
+----------------------
+
+Once your package is on PyPI,
+others can install it with pip_, pipx_, or Poetry:
+
+.. code:: console
+
+   $ pip install <project>
+   $ pipx install <project>
+   $ poetry add <project>
+
+While pip_ is the workhorse of the Python packaging ecosystem,
+you should use higher-level tools to install your package:
+
+- If the package is an application, install it with pipx_.
+- If the package is a library, install it with `poetry add`_ in other projects.
+
+The primary benefit of these installation methods is that
+your package is installed into an isolated environment,
+without polluting the system environment,
+or the environments of other applications.
+This way,
+applications can use specific versions of their direct and indirect dependencies,
+without getting in each other's way.
+
+.. _poetry add: https://python-poetry.org/docs/cli/#add
+
+If the other project is not managed by Poetry,
+use whatever package manager the other project uses.
+You can always install your project into a virtual environment with plain pip_.
+
+
+Dependencies
+~~~~~~~~~~~~
+
+Dependencies are Python packages used by your project,
+and they come in two types:
+
+- *Core dependencies* are required by users running your code,
+  and typically consist of third-party libraries imported by your package.
+  When your package is distributed,
+  the package metainfo includes these dependencies,
+  allowing tools like pip_ to automatically install them alongside your package.
+
+- *Development dependencies* are only required by developers working on your code.
+  Examples are applications used to run tests,
+  check code for style and correctness,
+  or to build documentation.
+  These dependencies are not a part of distribution packages,
+  because users do not require them to run your code.
+
+
+Version constraints
+-------------------
+
+`Version constraints <Versions and constraints_>`_ express
+which versions of dependencies are compatible with your project.
+In the case of core dependencies,
+they are also a part of distribution packages,
+and as such affect end-users of your package.
+
+For every dependency added to your project,
+Poetry writes a version constraint to ``pyproject.toml``.
+Dependencies are kept in two TOML tables:
+
+- ``tool.poetry.dependencies``---for core dependencies
+- ``tool.poetry.dev-dependencies``---for development dependencies
+
+By default, version constraints require users to have at least
+the version that was current when the dependency was added to the project.
+Users can also upgrade to newer releases of dependencies,
+as long as the version number does not indicate a breaking change.
+(According to the `Semantic Versioning`_ standard,
+only major releases may contain breaking changes,
+once a project has reached version 1.0.0.)
+
+.. _Versions and constraints: https://python-poetry.org/docs/versions/
+.. _Semantic Versioning: https://semver.org/
+
+
+.. _The lock file:
+
+The lock file
+-------------
+
+Poetry records the exact version of each direct and indirect dependency
+in its lock file, named ``poetry.lock`` and located in the root directory of the project.
+The lock file does not affect users of the package,
+because its contents are not included in distribution packages.
+
+The lock file is useful for a number of reasons:
+
+- It ensures that local checks run in the same environment as on the CI server,
+  making the CI predictable and deterministic.
+- When collaborating with other developers,
+  it allows everybody to use the same development environment.
+- When deploying an application, the lock file helps you
+  keep production and development environments as similar as possible
+  (`dev-prod parity`_).
+
+.. _dev-prod parity: https://12factor.net/dev-prod-parity
+
+For these reasons, the lock file should be kept under source control.
+
+
+The Poetry environment
+~~~~~~~~~~~~~~~~~~~~~~
+
+Poetry manages a `virtual environment`_ for your project,
+which contains your package, its core dependencies, and the development dependencies.
+All dependencies are kept at the versions specified by the lock file.
+
+A virtual environment gives your project
+an isolated runtime environment,
+consisting of a specific Python version and
+an independent set of installed Python packages.
+This way, the dependencies of your current project
+do not interfere with the system-wide Python installation,
+or other projects you're working on.
+
+.. _virtual environment: https://docs.python.org/3/tutorial/venv.html
 
 
 .. _Using Nox:
