@@ -650,6 +650,9 @@ For these reasons, the lock file should be kept under source control.
 Using Poetry
 ~~~~~~~~~~~~
 
+Poetry_ manages packaging and dependencies for Python projects.
+
+
 .. _Managing dependencies:
 
 Managing dependencies
