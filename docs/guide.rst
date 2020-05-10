@@ -1669,16 +1669,6 @@ Type-checking with mypy
    For example, you can use type annotations to generate serialization schemas
    or command-line parsers.
 
-The *Hypermodern Python Cookiecutter* uses
-both a static type checker and a runtime type checker:
-
-- mypy_ is the pioneer and *de facto* reference implementation of
-  static type checking in Python.
-- Typeguard_ is a runtime type checker and pytest_ plugin.
-  It can type-check function calls during test runs via an `import hook`__.
-
-__ https://docs.python.org/3/reference/import.html#import-hooks
-
 
 .. _Configuring mypy:
 
