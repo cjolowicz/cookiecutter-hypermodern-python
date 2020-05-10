@@ -1400,19 +1400,17 @@ and links to their lists of error codes.
    :class: hypermodern-table
    :widths: auto
 
-   ======================= ============================================================== ======================================
-   Tool                    Description                                                    Code
-   ======================= ============================================================== ======================================
-   pyflakes_               Find invalid Python code                                       `F <pyflakes codes_>`__
-   pycodestyle_            Enforce style conventions from `PEP 8`_                        `E,W <pycodestyle codes_>`__
-   pep8-naming_            Enforce naming conventions from `PEP 8`_                       `N <pep8-naming codes_>`__
-   flake8-docstrings_      Enforce docstring conventions from `PEP 257`_, via pydocstyle_ `D <pydocstyle codes_>`__
-   flake8-rst-docstrings_  Find invalid reStructuredText_ in docstrings                   `RST <flake8-rst-docstrings codes_>`__
-   flake8-bugbear_         Detect bugs and design problems                                `B <flake8-bugbear codes_>`__
-   mccabe_                 Limit the code complexity                                      `C <mccabe codes_>`__
-   darglint_               Detect inaccurate docstrings                                   `DAR <darglint codes_>`__
-   flake8-bandit_          Detect common security issues, via Bandit_                     `S <Bandit codes_>`__
-   ======================= ============================================================== ======================================
+   ================================ ============================================= ======================================
+   pyflakes_                        Find invalid Python code                      `F <pyflakes codes_>`__
+   pycodestyle_                     Enforce style conventions from `PEP 8`_       `E,W <pycodestyle codes_>`__
+   pep8-naming_                     Enforce naming conventions from `PEP 8`_      `N <pep8-naming codes_>`__
+   pydocstyle_ / flake8-docstrings_ Enforce docstring conventions from `PEP 257`_ `D <pydocstyle codes_>`__
+   flake8-rst-docstrings_           Find invalid reStructuredText_ in docstrings  `RST <flake8-rst-docstrings codes_>`__
+   flake8-bugbear_                  Detect bugs and design problems               `B <flake8-bugbear codes_>`__
+   mccabe_                          Limit the code complexity                     `C <mccabe codes_>`__
+   darglint_                        Detect inaccurate docstrings                  `DAR <darglint codes_>`__
+   Bandit_ / flake8-bandit_         Detect common security issues                 `S <Bandit codes_>`__
+   ================================ ============================================= ======================================
 
 
 The following sections describe the linters in more detail.
