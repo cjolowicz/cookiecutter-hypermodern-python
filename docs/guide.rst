@@ -373,7 +373,7 @@ and links each file to a section with more details.
    ``mypy.ini``                          Configuration for :ref:`mypy <Configuring mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
-                                         and configuration for :ref:`Coverage.py <Test coverage>`
+                                         and configuration for :ref:`Coverage.py <Code coverage with Coverage.py>`
    ===================================== ========================================
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
@@ -1288,10 +1288,10 @@ a helper class for invoking the program from within tests.
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 
-.. _Test coverage:
+.. _Code coverage with Coverage.py:
 
-Test coverage
--------------
+Code coverage with Coverage.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Test coverage* is a measure of the degree to which
 the source code of your program is executed while running its test suite.
