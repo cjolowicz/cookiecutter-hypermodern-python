@@ -362,7 +362,7 @@ and links each file to a section with more details.
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
    ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
-   ``.flake8``                           Configuration for :ref:`Flake8 <Linting with Flake8>`
+   ``.flake8``                           Configuration for :ref:`Flake8 <Flake8 plugins>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
    ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release Drafter workflow>`
@@ -1380,18 +1380,12 @@ consisting of the following hooks:
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
 
-.. _Linting with Flake8:
+.. _Flake8 plugins:
 
-Linting with Flake8
-~~~~~~~~~~~~~~~~~~~
+Flake8 plugins
+~~~~~~~~~~~~~~
 
-This project template comes with an extensive suite of linters,
-using the Flake8_ linter framework.
-
-The configuration file for Flake8 and its extensions
-is named ``.flake8`` and located in the project directory.
-
-Flake8 comes with a rich ecosystem of extensions.
+Flake8_ comes with a rich ecosystem of plugins.
 The following table lists the Flake8 plugins used by
 the *Hypermodern Python Cookiecutter*,
 and links to their lists of error codes.
