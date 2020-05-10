@@ -1316,8 +1316,6 @@ Linting with pre-commit
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 pre-commit_ is a multi-language linter framework and a Git hook manager.
-Linters analyze source code to flag
-programming errors, bugs, stylistic errors, and suspicious constructs.
 pre-commit allows you to
 integrate the best industry standard linters into your Git workflow,
 even when written in a language other than Python.
