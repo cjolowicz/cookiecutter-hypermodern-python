@@ -1106,7 +1106,12 @@ For example, the following command runs only the test case ``test_main_succeeds`
 The typeguard session
 .....................
 
-Typeguard_ checks that arguments passed to functions
+Typeguard_ is a runtime type checker and pytest_ plugin.
+It can type-check function calls during test runs via an `import hook`__.
+
+__ https://docs.python.org/3/reference/import.html#import-hooks
+
+Typeguard checks that arguments passed to functions
 match the type annotations of the function parameters,
 and that the return value provided by the function
 matches the return type annotation.
