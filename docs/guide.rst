@@ -1870,7 +1870,6 @@ Follow these steps to set up Codecov for your repository:
 
 1. Sign up at Codecov_.
 2. Install their GitHub app.
-3. Add your repository to Codecov.
 
 The configuration is included in the repository,
 in the file `codecov.yml`__.
