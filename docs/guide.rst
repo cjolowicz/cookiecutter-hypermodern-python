@@ -993,6 +993,9 @@ This Nox session always runs with the current major release of Python.
 The mypy session
 ................
 
+mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
+Learn more about it in the section :ref:`Type-checking with mypy`.
+
 Run mypy_ using Nox:
 
 .. code:: console
