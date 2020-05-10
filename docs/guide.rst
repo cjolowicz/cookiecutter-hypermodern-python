@@ -1188,7 +1188,7 @@ in the form of the ``install`` and ``install_package`` functions:
 .. _nox.sessions.Session.run: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
 
 ``noxfile.install(session, *args)``:
-   Install dependencies into a Nox session using Poetry.
+   Install development dependencies into a Nox session using Poetry.
 
    The ``noxfile.install`` function
    installs development dependencies into a Nox session,
