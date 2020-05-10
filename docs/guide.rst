@@ -1641,8 +1641,8 @@ as pytest_ uses assertions to verify expectations in tests.
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
 
 
-Type-checking
-~~~~~~~~~~~~~
+Type-checking with mypy
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
