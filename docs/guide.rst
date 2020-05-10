@@ -547,6 +547,35 @@ for a detailed description of each configuration key.
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 
+Dependencies
+------------
+
+This project template has a core dependency on Click_,
+a library for creating command-line interfaces.
+The template also comes with various development dependencies.
+See the table below for an overview of the dependencies of generated projects:
+
+.. table:: Dependencies
+   :class: hypermodern-table
+   :widths: auto
+
+   ================= =====================================================
+   click_            Composable command line interface toolkit
+   coverage__        Code coverage measurement for Python
+   mypy_             Optional static typing for Python
+   pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
+   pytest_           Simple powerful testing with Python
+   pytest-cov_       Pytest plugin for measuring coverage
+   safety_           Checks installed dependencies for known vulnerabilities
+   sphinx_           Python documentation generator
+   sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
+   typeguard_        Run-time type checker for Python
+   xdoctest_         A rewrite of the builtin doctest module
+   ================= =====================================================
+
+__ Coverage.py_
+
+
 Packaging
 ~~~~~~~~~
 
@@ -643,34 +672,6 @@ and they come in two types:
   These dependencies are not a part of distribution packages,
   because users do not require them to run your code.
 
-
-Dependencies of generated projects
-----------------------------------
-
-This project template has a core dependency on Click_,
-a library for creating command-line interfaces.
-The template also comes with various development dependencies.
-See the table below for an overview of the dependencies of generated projects:
-
-.. table:: Dependencies
-   :class: hypermodern-table
-   :widths: auto
-
-   ================= =====================================================
-   click_            Composable command line interface toolkit
-   coverage__        Code coverage measurement for Python
-   mypy_             Optional static typing for Python
-   pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
-   pytest_           Simple powerful testing with Python
-   pytest-cov_       Pytest plugin for measuring coverage
-   safety_           Checks installed dependencies for known vulnerabilities
-   sphinx_           Python documentation generator
-   sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
-   typeguard_        Run-time type checker for Python
-   xdoctest_         A rewrite of the builtin doctest module
-   ================= =====================================================
-
-__ Coverage.py_
 
 .. _Managing dependencies:
 
