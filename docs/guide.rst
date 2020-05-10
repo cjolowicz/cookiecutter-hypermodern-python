@@ -1748,24 +1748,37 @@ It consists of the following files:
    :widths: auto
 
    ====================== =======================================================
-   ``conf.py``            Sphinx configuration file
    ``index.rst``          Master document
    ``contributing.rst``   Contributor Guide (includes ``CONTRIBUTING.rst``)
    ``codeofconduct.rst``  Code of Conduct (includes ``CODE_OF_CONDUCT.rst``)
    ``license.rst``        License (includes ``LICENSE.rst``)
    ``reference.rst``      API documentation
-   ``requirements.txt``   Build dependencies for `Read the Docs`_
    ====================== =======================================================
-
-The Sphinx configuration is located in the file `docs/conf.py`__.
-
-__ https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 The documentation menu also has a *Changelog* entry,
 which links to the `GitHub Releases <GitHub Release_>`__ page.
 
 The API documentation is generated from docstrings and type annotations
 using the autodoc_ and napoleon_ extensions.
+
+
+Configuring Sphinx
+------------------
+
+The ``docs`` directory contains two more files:
+
+.. table:: Sphinx configuration files
+   :class: hypermodern-table
+   :widths: auto
+
+   ====================== =======================================================
+   ``conf.py``            Sphinx configuration file
+   ``requirements.txt``   Build dependencies for `Read the Docs`_
+   ====================== =======================================================
+
+The Sphinx configuration is located in the file `docs/conf.py`__.
+
+__ https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 The ``requirements.txt`` pins the build dependencies for the Sphinx documentation.
 This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
