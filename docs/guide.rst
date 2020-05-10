@@ -2185,12 +2185,6 @@ Run the test suite using :ref:`Nox <Using Nox>`:
 
    $ nox -r
 
-Additional checks are provided by :ref:`pre-commit <Linting with pre-commit>`:
-
-.. code:: console
-
-   $ pre-commit run --all-files
-
 
 How to run your code
 --------------------
