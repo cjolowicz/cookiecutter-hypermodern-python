@@ -1828,8 +1828,6 @@ only direct dependencies are included.
    don't forget to update the requirements file as well.
 
 
-.. _Continuous integration using GitHub Actions:
-
 Continuous integration using GitHub Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
