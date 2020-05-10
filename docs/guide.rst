@@ -1711,8 +1711,8 @@ The following options are enabled for enhanced output:
 - :option:`show_error_context <mypy --show-error-context>`
 
 
-Documentation
-~~~~~~~~~~~~~
+Documentation with Sphinx and Read the Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Stand-alone documents
 ---------------------
