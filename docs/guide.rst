@@ -593,9 +593,6 @@ You can always install your project into a virtual environment with plain pip_.
 Dependencies
 ~~~~~~~~~~~~
 
-Types of dependencies
----------------------
-
 Dependencies are Python packages used by your project,
 and they come in two types:
 
