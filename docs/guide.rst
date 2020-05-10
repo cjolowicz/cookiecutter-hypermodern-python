@@ -1068,6 +1068,9 @@ This session always runs with the current version of Python.
 The tests session
 .................
 
+Tests are written using the pytest_ testing framework.
+Learn more about it in the section :ref:`Testing with pytest`.
+
 Run the test suite using the Nox session ``tests``:
 
 .. code:: console
