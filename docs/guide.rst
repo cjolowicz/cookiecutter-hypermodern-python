@@ -1103,6 +1103,14 @@ For example, the following command runs only the test case ``test_main_succeeds`
 The typeguard session
 .....................
 
+Typeguard_ checks that arguments passed to functions
+match the type annotations of the function parameters,
+and that the return value provided by the function
+matches the return type annotation.
+In the case of generator functions,
+Typeguard checks the yields, sends and the return value
+against the ``Generator`` or ``AsyncGenerator`` annotation.
+
 Run Typeguard_ using Nox:
 
 .. code:: console
@@ -1112,14 +1120,6 @@ Run Typeguard_ using Nox:
 The typeguard session runs the test suite with runtime type-checking enabled.
 It is similar to the :ref:`tests session <The tests session>`,
 with the difference that your package is instrumented by Typeguard.
-
-Typeguard_ checks that arguments passed to functions
-match the type annotations of the function parameters,
-and that the return value provided by the function
-matches the return type annotation.
-In the case of generator functions,
-Typeguard checks the yields, sends and the return value
-against the ``Generator`` or ``AsyncGenerator`` annotation.
 
 You can run the session with a specific Python version.
 For example, the following command runs the session
