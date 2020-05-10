@@ -1322,7 +1322,9 @@ Linting with pre-commit
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 pre-commit_ is a multi-language linter framework and a Git hook manager.
-It allows you to
+Linters analyze source code to flag
+programming errors, bugs, stylistic errors, and suspicious constructs.
+pre-commit allows you to
 integrate the best industry standard linters into your Git workflow,
 even when written in a language other than Python.
 Linters run in isolated environments managed by pre-commit.
@@ -1398,8 +1400,6 @@ Linting with Flake8
 
 This project template comes with an extensive suite of linters,
 using the Flake8_ linter framework.
-Linters analyze source code to flag
-programming errors, bugs, stylistic errors, and suspicious constructs.
 
 The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
