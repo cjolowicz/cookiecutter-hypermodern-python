@@ -1410,9 +1410,8 @@ is named ``.flake8`` and located in the project directory.
 Available linters
 -----------------
 
-Flake8_ glues together several tools,
-and comes with a rich ecosystem of extensions.
-The following table lists the linters used by
+Flake8 comes with a rich ecosystem of extensions.
+The following table lists the Flake8 plugins used by
 the *Hypermodern Python Cookiecutter*,
 and links to their lists of error codes.
 
