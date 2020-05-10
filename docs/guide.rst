@@ -1401,13 +1401,6 @@ using the Flake8_ linter framework.
 Linters analyze source code to flag
 programming errors, bugs, stylistic errors, and suspicious constructs.
 
-By default, the linter suite checks Python files in the following locations:
-
-- ``src``
-- ``tests``
-- ``noxfile.py``
-- ``docs/conf.py``
-
 The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
 
