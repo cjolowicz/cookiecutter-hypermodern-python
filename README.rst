@@ -228,7 +228,6 @@ Codecov
 
 1. Sign up at Codecov_.
 2. Install their GitHub app.
-3. Add your repository to Codecov.
 
 
 Dependabot
