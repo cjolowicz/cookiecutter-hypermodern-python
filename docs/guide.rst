@@ -1357,10 +1357,6 @@ for details about the configuration file.
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
-
-Available hooks
----------------
-
 The *Hypermodern Python Cookiecutter* comes with
 a pre-commit configuration
 consisting of the following hooks:
