@@ -1787,6 +1787,46 @@ The ``requirements.txt`` file pins the build dependencies for the Sphinx documen
 This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
 
 
+.. _Read the Docs integration:
+
+Read the Docs
+-------------
+
+`Read the Docs`_ hosts documentation for countless open-source Python projects.
+The hosting service also takes care of rebuilding the documentation
+when you update your project.
+Users can browse documentation
+for every published version, as well as the latest development version.
+
+Sign up at Read the Docs,
+and import your GitHub repository, using the button *Import a Project*.
+Read the Docs automatically starts building your
+documentation. When the build has completed, your documentation will have a
+public URL like this:
+
+   *https://<project>.readthedocs.io/*
+
+The configuration file is named ``.readthedocs.yml`` in the project directory.
+The *Hypermodern Python Cookiecutter* configures Read the Docs
+to build and install the package with Poetry,
+using a so-called `PEP 517`_-build.
+
+Build dependencies for the documentation
+are installed using a `requirements file`_ located at ``docs/requirements.txt``.
+Read the Docs currently does not support
+installing development dependencies using Poetry's lock file.
+For the sake of brevity and maintainability,
+only direct dependencies are included.
+
+.. note::
+
+   The requirements file is managed by :ref:`Dependabot <Dependabot integration>`.
+   When newer versions of the build dependencies become available,
+   Dependabot updates the requirements file and submits a pull request.
+   When adding or removing Sphinx extensions using Poetry,
+   don't forget to update the requirements file as well.
+
+
 .. _Continuous integration using GitHub Actions:
 
 Continuous integration using GitHub Actions
@@ -2155,46 +2195,6 @@ and uploads it using the `pypa/gh-action-pypi-publish`_ action.
 This workflow uses the ``TEST_PYPI_TOKEN`` secret.
 
 The workflow is defined in ``.github/workflows/test-pypi.yml``.
-
-
-.. _Read the Docs integration:
-
-Read the Docs
-~~~~~~~~~~~~~
-
-`Read the Docs`_ hosts documentation for countless open-source Python projects.
-The hosting service also takes care of rebuilding the documentation
-when you update your project.
-Users can browse documentation
-for every published version, as well as the latest development version.
-
-Sign up at Read the Docs,
-and import your GitHub repository, using the button *Import a Project*.
-Read the Docs automatically starts building your
-documentation. When the build has completed, your documentation will have a
-public URL like this:
-
-   *https://<project>.readthedocs.io/*
-
-The configuration file is named ``.readthedocs.yml`` in the project directory.
-The *Hypermodern Python Cookiecutter* configures Read the Docs
-to build and install the package with Poetry,
-using a so-called `PEP 517`_-build.
-
-Build dependencies for the documentation
-are installed using a `requirements file`_ located at ``docs/requirements.txt``.
-Read the Docs currently does not support
-installing development dependencies using Poetry's lock file.
-For the sake of brevity and maintainability,
-only direct dependencies are included.
-
-.. note::
-
-   The requirements file is managed by :ref:`Dependabot <Dependabot integration>`.
-   When newer versions of the build dependencies become available,
-   Dependabot updates the requirements file and submits a pull request.
-   When adding or removing Sphinx extensions using Poetry,
-   don't forget to update the requirements file as well.
 
 
 .. _Tutorials:
