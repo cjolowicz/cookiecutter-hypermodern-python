@@ -622,6 +622,7 @@ specified in `PEP 517`_ and `518 <PEP 518_>`__:
 - The ``tool`` table contains sub-tables
   where tools can store configuration under their PyPI_ name.
   Poetry stores its configuration in the ``tool.poetry`` table.
+  Coverage.py_ stores its configuration in the ``tool.coverage`` table.
 
 The ``tool.poetry`` table
 contains the metadata for your package,
