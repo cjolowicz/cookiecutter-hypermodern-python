@@ -462,7 +462,7 @@ under the ``src`` directory::
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
    a script named ``<project>`` is placed
-   in the ``bin`` directory of the Python installation or virtual environment.
+   in the Python installation or virtual environment.
    This allows you to invoke the command-line interface using only the project name:
 
    .. code:: console
