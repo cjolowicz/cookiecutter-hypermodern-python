@@ -353,27 +353,35 @@ For more details on these files, refer to the section :ref:`The test suite`.
    ``tests/test_main.py``                Test cases for ``__main__``
    ===================================== ===============================
 
-The project documentation is written in `reStructuredText`_.
-The documentation files in the top-level directory are rendered on `GitHub`_.
-The files in the ``docs`` directory are
-built using :ref:`Sphinx <Sphinx documentation>` and
-hosted on :ref:`Read the Docs <Read the Docs integration>`.
+The project documentation is written in reStructuredText_.
+The documentation files in the top-level directory are rendered on GitHub_:
 
-.. table:: Documentation files
+.. table:: Documentation files (top-level)
    :class: hypermodern-table
    :widths: auto
 
-   ===================================== ===============================
-   ``CODE_OF_CONDUCT.rst``               Code of Conduct
-   ``CONTRIBUTING.rst``                  Contributor Guide
-   ``LICENSE.rst``                       License
-   ``README.rst``                        Main page
-   ``docs/codeofconduct.rst``            Code of Conduct (included)
-   ``docs/contributing.rst``             Contributor Guide (included)
-   ``docs/index.rst``                    Main page
-   ``docs/license.rst``                  License (included)
-   ``docs/reference.rst``                API reference
-   ===================================== ===============================
+   ======================= ============================================
+   ``README.rst``          Project description for GitHub and PyPI
+   ``CONTRIBUTING.rst``    Contributor Guide
+   ``CODE_OF_CONDUCT.rst`` Code of Conduct
+   ``LICENSE.rst``         License
+   ======================= ============================================
+
+The files in the ``docs`` directory are
+built using :ref:`Sphinx <Documentation>` and
+hosted on :ref:`Read the Docs <Read the Docs integration>`:
+
+.. table:: Documentation files (Sphinx)
+   :class: hypermodern-table
+   :widths: auto
+
+   ====================== =======================================================
+   ``index.rst``          Master document
+   ``contributing.rst``   Contributor Guide (via include)
+   ``codeofconduct.rst``  Code of Conduct (via include)
+   ``license.rst``        License (via include)
+   ``reference.rst``      API reference
+   ====================== =======================================================
 
 The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <GitHub Actions workflows>`:
 
@@ -390,9 +398,8 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
 
-The project contains many configuration files for developer tools,
-most of which are located in the top-level directory
-and have names with a leading dot.
+The project contains many configuration files for developer tools.
+Most of these are located in the top-level directory.
 The table below lists these files,
 and links each file to a section with more details.
 
@@ -411,7 +418,7 @@ and links each file to a section with more details.
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
-   ``docs/conf.py``                      Configuration for :ref:`Sphinx <Sphinx documentation>`
+   ``docs/conf.py``                      Configuration for :ref:`Sphinx <Documentation>`
    ``mypy.ini``                          Configuration for :ref:`mypy <Configuring mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
@@ -515,6 +522,82 @@ a helper class for invoking the program from within tests.
 
 .. _test fixture: https://docs.pytest.org/en/latest/fixture.html
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
+
+For details on how to run the test suite,
+refer to the section :ref:`The tests session`.
+
+
+.. _Documentation:
+
+Documentation
+-------------
+
+The project documentation is written in reStructuredText_
+and processed by the Sphinx_ documentation engine.
+
+The top-level directory contains several stand-alone documentation files:
+
+``README.rst``
+   This file is your main project page and displayed on GitHub and PyPI.
+
+``CONTRIBUTING.rst``
+   The Contributor Guide explains how other people can contribute to your project.
+
+``CODE_OF_CONDUCT.rst``
+   The Code of Conduct outlines the behavior
+   expected from participants of your project.
+   It is adapted from the `Contributor Covenant`_, version 2.0.
+
+.. _Contributor Covenant: https://www.contributor-covenant.org
+
+``LICENSE.rst``
+   This file contains the text of the `MIT license`_, a simple permissive license.
+
+.. note::
+
+   The files above are also rendered on GitHub and PyPI.
+   Keep them in plain reStructuredText, without Sphinx extensions.
+
+The documentation files in the ``docs`` directory are built using Sphinx_:
+
+``index.rst``
+   This is the master document,
+   and serves as the main documentation page.
+   This file also defines the navigation menu,
+   with links to other documentation pages.
+   The *Changelog* menu entry
+   links to the `GitHub Releases <GitHub Release_>`__ page of your project.
+
+``contributing.rst``
+   This file includes the Contributor Guide from ``CONTRIBUTING.rst``.
+
+``codeofconduct.rst``
+   This file includes the Code of Conduct from ``CODE_OF_CONDUCT.rst``.
+
+``license.rst``
+   This file includes the license from ``LICENSE.rst``.
+
+``reference.rst``
+   The API reference for your project.
+   It is generated from docstrings and type annotations in the source code,
+   using the autodoc_ and napoleon_ extensions.
+
+The ``docs`` directory contains two more files:
+
+``conf.py``
+   This Python file contains the `Sphinx configuration`__.
+
+__ https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+``requirements.txt``
+   The requirements file pins the build dependencies for the Sphinx documentation.
+   This file is only used on Read the Docs.
+
+The project documentation is built and hosted on
+:ref:`Read the Docs <Read the Docs integration>`.
+
+You can also build the documentation locally using Nox,
+see :ref:`The docs session`.
 
 
 Packaging
@@ -1716,82 +1799,6 @@ The following options are enabled for enhanced output:
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
 - :option:`show_error_context <mypy --show-error-context>`
-
-
-Documentation with Sphinx and Read the Docs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Stand-alone documents
----------------------
-
-The project repository contains several stand-alone documentation files
-written in reStructuredText_:
-
-.. table:: Documentation files
-   :class: hypermodern-table
-   :widths: auto
-
-   ======================= ============================================
-   ``README.rst``          Project description for GitHub and PyPI
-   ``CONTRIBUTING.rst``    Contributor Guide
-   ``CODE_OF_CONDUCT.rst`` Code of Conduct
-   ``LICENSE.rst``         License
-   ======================= ============================================
-
-
-.. _Sphinx documentation:
-
-Sphinx documentation
---------------------
-
-The project documentation itself lives under ``docs``.
-It is written in reStructuredText_,
-processed by Sphinx_,
-and accessible on `Read the Docs`_.
-It consists of the following files in the ``docs`` directory:
-
-.. table:: Sphinx documentation files
-   :class: hypermodern-table
-   :widths: auto
-
-   ====================== =======================================================
-   ``index.rst``          Master document
-   ``contributing.rst``   Contributor Guide (includes ``CONTRIBUTING.rst``)
-   ``codeofconduct.rst``  Code of Conduct (includes ``CODE_OF_CONDUCT.rst``)
-   ``license.rst``        License (includes ``LICENSE.rst``)
-   ``reference.rst``      API documentation
-   ====================== =======================================================
-
-The documentation menu also has a *Changelog* entry,
-which links to the `GitHub Releases <GitHub Release_>`__ page.
-
-The API documentation is generated from docstrings and type annotations
-using the autodoc_ and napoleon_ extensions.
-
-You can build the documentation locally using Nox,
-see :ref:`The docs session`.
-
-
-Configuring Sphinx
-------------------
-
-The ``docs`` directory contains two more files:
-
-.. table:: Sphinx configuration files
-   :class: hypermodern-table
-   :widths: auto
-
-   ====================== =======================================================
-   ``conf.py``            Sphinx configuration file
-   ``requirements.txt``   Build dependencies for `Read the Docs`_
-   ====================== =======================================================
-
-The ``conf.py`` file contains the `Sphinx configuration`__.
-
-__ https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-The ``requirements.txt`` file pins the build dependencies for the Sphinx documentation.
-This file is only used on :ref:`Read the Docs <Read the Docs integration>`.
 
 
 .. _External services:
