@@ -791,21 +791,21 @@ in the ``pyproject.toml`` file.
 Installing the package for development
 --------------------------------------
 
+Poetry manages a virtual environment for your project,
+which contains your package, its core dependencies, and the development dependencies.
+All dependencies are kept at the versions specified by the lock file.
+
 .. note::
 
-   Poetry manages a `virtual environment`_ for your project,
-   which contains your package, its core dependencies, and the development dependencies.
-   All dependencies are kept at the versions specified by the lock file.
-
-   .. _virtual environment: https://docs.python.org/3/tutorial/venv.html
-
-   A virtual environment gives your project
+   A `virtual environment`_ gives your project
    an isolated runtime environment,
    consisting of a specific Python version and
    an independent set of installed Python packages.
    This way, the dependencies of your current project
    do not interfere with the system-wide Python installation,
    or other projects you're working on.
+
+   .. _virtual environment: https://docs.python.org/3/tutorial/venv.html
 
 You can install your package and its dependencies
 into Poetry's virtual environment
