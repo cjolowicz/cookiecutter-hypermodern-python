@@ -633,53 +633,6 @@ for a detailed description of each configuration key.
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 
-Dependencies
-------------
-
-This project template has a core dependency on Click_,
-a library for creating command-line interfaces.
-The template also comes with various development dependencies.
-See the table below for an overview of the dependencies of generated projects:
-
-.. table:: Dependencies
-   :class: hypermodern-table
-   :widths: auto
-
-   ================= =====================================================
-   click_            Composable command line interface toolkit
-   coverage__        Code coverage measurement for Python
-   mypy_             Optional static typing for Python
-   pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
-   pytest_           Simple powerful testing with Python
-   pytest-cov_       Pytest plugin for measuring coverage
-   safety_           Checks installed dependencies for known vulnerabilities
-   sphinx_           Python documentation generator
-   sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
-   typeguard_        Run-time type checker for Python
-   xdoctest_         A rewrite of the builtin doctest module
-   ================= =====================================================
-
-__ Coverage.py_
-
-.. note::
-
-   Dependencies are Python packages used by your project,
-   and they come in two types:
-
-   - *Core dependencies* are required by users running your code,
-     and typically consist of third-party libraries imported by your package.
-     When your package is distributed,
-     the package metainfo includes these dependencies,
-     allowing tools like pip_ to automatically install them alongside your package.
-
-   - *Development dependencies* are only required by developers working on your code.
-     Examples are applications used to run tests,
-     check code for style and correctness,
-     or to build documentation.
-     These dependencies are not a part of distribution packages,
-     because users do not require them to run your code.
-
-
 Version constraints
 -------------------
 
@@ -707,6 +660,24 @@ once a project has reached version 1.0.0.)
 .. _Versions and constraints: https://python-poetry.org/docs/versions/
 .. _Semantic Versioning: https://semver.org/
 
+.. note::
+
+   Dependencies are Python packages used by your project,
+   and they come in two types:
+
+   - *Core dependencies* are required by users running your code,
+     and typically consist of third-party libraries imported by your package.
+     When your package is distributed,
+     the package metainfo includes these dependencies,
+     allowing tools like pip_ to automatically install them alongside your package.
+
+   - *Development dependencies* are only required by developers working on your code.
+     Examples are applications used to run tests,
+     check code for style and correctness,
+     or to build documentation.
+     These dependencies are not a part of distribution packages,
+     because users do not require them to run your code.
+
 
 .. _The lock file:
 
@@ -731,6 +702,35 @@ The lock file is useful for a number of reasons:
 .. _dev-prod parity: https://12factor.net/dev-prod-parity
 
 For these reasons, the lock file should be kept under source control.
+
+
+Dependencies
+------------
+
+This project template has a core dependency on Click_,
+a library for creating command-line interfaces.
+The template also comes with various development dependencies.
+See the table below for an overview of the dependencies of generated projects:
+
+.. table:: Dependencies
+   :class: hypermodern-table
+   :widths: auto
+
+   ================= =====================================================
+   click_            Composable command line interface toolkit
+   coverage__        Code coverage measurement for Python
+   mypy_             Optional static typing for Python
+   pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
+   pytest_           Simple powerful testing with Python
+   pytest-cov_       Pytest plugin for measuring coverage
+   safety_           Checks installed dependencies for known vulnerabilities
+   sphinx_           Python documentation generator
+   sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
+   typeguard_        Run-time type checker for Python
+   xdoctest_         A rewrite of the builtin doctest module
+   ================= =====================================================
+
+__ Coverage.py_
 
 
 Using Poetry
