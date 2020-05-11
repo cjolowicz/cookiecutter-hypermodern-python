@@ -314,10 +314,10 @@ Files and directories
 ---------------------
 
 This section provides an overview of all the files generated for your project.
-Let's start with the project layout.
-The project contains the following subdirectories:
 
-.. table:: Project layout
+Let's start with the directory layout:
+
+.. table:: Directories
    :class: hypermodern-table
    :widths: auto
 
