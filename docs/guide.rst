@@ -1725,7 +1725,7 @@ Code coverage with Coverage.py
 
 *Test coverage* is a measure of the degree to which
 the source code of your program is executed while running its test suite.
-This project template requires full test coverage.
+The *Hypermodern Python Cookiecutter* requires full test coverage.
 
 Code coverage is measured using `Coverage.py`_.
 When the test suite completes,
