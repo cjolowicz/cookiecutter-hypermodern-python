@@ -1524,8 +1524,8 @@ The sections below describe the linters in more detail.
 Each section also notes any configuration settings applied by the |HPC|.
 
 
-Plugin overview
----------------
+Overview of available plugins
+-----------------------------
 
 Flake8 comes with a rich ecosystem of plugins.
 The following table lists the Flake8 plugins used by the |HPC|,
