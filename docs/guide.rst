@@ -19,8 +19,7 @@ Introduction
 About this project
 ------------------
 
-The *Hypermodern Python Cookiecutter* is
-a general-purpose template for Python libraries and applications,
+The |HPC| is a general-purpose template for Python libraries and applications,
 released under the `MIT license`_
 and hosted on `GitHub <Hypermodern Python Cookiecutter_>`__.
 
@@ -60,7 +59,7 @@ Here is a detailed list of features for this Python template:
 Release cadence
 ---------------
 
-The *Hypermodern Python Cookiecutter* has a bimonthly_ release cadence.
+The |HPC| has a bimonthly_ release cadence.
 Releases happen on the 15th of every other month, starting in January.
 We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 Initial releases may occur more frequently.
@@ -783,7 +782,7 @@ in the ``pyproject.toml`` file.
 
 .. note::
 
-   Dependencies in the *Hypermodern Python Cookiecutter* are managed by :ref:`Dependabot <Dependabot integration>`.
+   Dependencies in the |HPC| are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of dependencies become available,
    Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
 
@@ -908,7 +907,7 @@ Building and distributing the package
 
 .. note::
 
-   With the *Hypermodern Python Cookiecutter*,
+   With the |HPC|,
    building and distributing your package
    is taken care of by `GitHub Actions`_
    when you publish a `GitHub Release`_.
@@ -1169,7 +1168,7 @@ The safety session
 
 Safety_ checks the dependencies of your project for known security vulnerabilities,
 using a curated database of insecure Python packages.
-The *Hypermodern Python Cookiecutter* uses the `poetry export`_ command
+The |HPC| uses the `poetry export`_ command
 to convert Poetry's lock file to a `requirements file`_,
 for consumption by Safety.
 
@@ -1430,9 +1429,7 @@ for details about the configuration file.
 
 __ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
-The *Hypermodern Python Cookiecutter* comes with
-a pre-commit configuration
-consisting of the following hooks:
+The |HPC| comes with a pre-commit configuration consisting of the following hooks:
 
 .. table:: pre-commit hooks
    :class: hypermodern-table
@@ -1470,7 +1467,7 @@ The Prettier hook
 Prettier_ is an opinionated code formatter for many languages,
 including YAML, Markdown, and JavaScript.
 Like Black, it has few options,
-and the *Hypermodern Python Cookiecutter* uses none of them.
+and the |HPC| uses none of them.
 
 
 .. _The Flake8 hook:
@@ -1517,16 +1514,14 @@ For details about the configuration file, see the `official reference`__.
 __ https://flake8.pycqa.org/en/latest/user/configuration.html
 
 The sections below describe the linters in more detail.
-Each section also notes any configuration settings applied by
-the *Hypermodern Python Cookiecutter*.
+Each section also notes any configuration settings applied by the |HPC|.
 
 
 Plugin overview
 ---------------
 
 Flake8 comes with a rich ecosystem of plugins.
-The following table lists the Flake8 plugins used by
-the *Hypermodern Python Cookiecutter*,
+The following table lists the Flake8 plugins used by the |HPC|,
 and links to their lists of error codes.
 
 .. table:: Flake8 plugins
@@ -1580,7 +1575,7 @@ The tool is included with Flake8_ by default.
 .. _pycodestyle codes:
 __ https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
 
-The *Hypermodern Python Cookiecutter* disables the following errors and warnings
+The |HPC| disables the following errors and warnings
 for compatibility with Black_ and flake8-bugbear_:
 
 - ``E203`` (whitespace before ``:``)
@@ -1615,8 +1610,7 @@ issues with whitespace, quoting, and docstring content.
 .. _pydocstyle codes:
 __ http://www.pydocstyle.org/en/stable/error_codes.html
 
-The *Hypermodern Python Cookiecutter*
-selects the recommendations of the
+The |HPC| selects the recommendations of the
 `Google styleguide <Google docstring style_>`__.
 Here is an example of a function documented in Google style:
 
@@ -1660,8 +1654,7 @@ For example,
 the plugin detects Python 2 constructs which have been removed in Python 3,
 and likely bugs such as function arguments defaulting to empty lists or dictionaries.
 
-The *Hypermodern Python Cookiecutter*
-also enables Bugbear's ``B9`` warnings,
+The |HPC| also enables Bugbear's ``B9`` warnings,
 which are disabled by default.
 In particular, ``B950`` checks the maximum line length
 like pycodestyle_'s ``E501``,
@@ -1685,8 +1678,7 @@ It is included with Flake8_.
 .. _mccabe codes:
 __ https://github.com/PyCQA/mccabe#plugin-for-flake8
 
-The *Hypermodern Python Cookiecutter*
-limits code complexity to a value of 10.
+The |HPC| limits code complexity to a value of 10.
 
 .. _Cyclomatic complexity: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
@@ -1700,8 +1692,7 @@ The darglint_ tool checks that docstring descriptions match function definitions
 `Error codes`__ are prefixed by ``DAR`` for "darglint".
 The tool has its own configuration file, named ``.darglint``.
 
-The *Hypermodern Python Cookiecutter*
-allows one-line docstrings without function signatures.
+The |HPC| allows one-line docstrings without function signatures.
 Multi-line docstrings must
 specify the function signatures completely and correctly,
 using `Google docstring style`_.
@@ -1720,8 +1711,7 @@ and integrated via the flake8-bandit_ extension.
 (The prefix ``B`` for "bandit" is used
 when Bandit is run as a stand-alone tool.)
 
-The *Hypermodern Python Cookiecutter*
-disables ``S101`` (use of assert) for the test suite,
+The |HPC| disables ``S101`` (use of assert) for the test suite,
 as pytest_ uses assertions to verify expectations in tests.
 
 .. _Bandit codes:
@@ -1735,7 +1725,7 @@ Code coverage with Coverage.py
 
 *Test coverage* is a measure of the degree to which
 the source code of your program is executed while running its test suite.
-The *Hypermodern Python Cookiecutter* requires full test coverage.
+The |HPC| requires full test coverage.
 
 Code coverage is measured using `Coverage.py`_.
 When the test suite completes,
@@ -1790,7 +1780,7 @@ Configure mypy using the `mypy.ini`__ configuration file.
 
 __ https://mypy.readthedocs.io/en/stable/config_file.html
 
-The *Hypermodern Python Cookiecutter* enables the strictness options
+The |HPC| enables the strictness options
 (the options enabled by the :option:`--strict <mypy --strict>` flag):
 
 - :option:`check_untyped_defs <mypy --check-untyped-defs>`
@@ -1954,7 +1944,7 @@ Your documentation now has a public URL like this:
 
 The configuration for Read the Docs is included in the repository,
 in the file `.readthedocs.yml`__.
-The *Hypermodern Python Cookiecutter* configures Read the Docs
+The |HPC| configures Read the Docs
 to build and install the package with Poetry,
 using a so-called `PEP 517`_-build.
 
@@ -1981,7 +1971,7 @@ only direct dependencies are included.
 GitHub Actions workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The *Hypermodern Python Cookiecutter* uses `GitHub Actions`_
+The |HPC| uses `GitHub Actions`_
 to implement continuous integration and delivery.
 With GitHub Actions,
 you define so-called workflows
@@ -2008,8 +1998,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
 Overview of workflows
 ---------------------
 
-The *Hypermodern Python Cookiecutter* defines
-the following workflows:
+The |HPC| defines the following workflows:
 
 .. table:: GitHub Actions workflows
    :class: hypermodern-table
@@ -2170,7 +2159,7 @@ The workflow is triggered on every push to the master branch.
 It includes details from every pull request merged into master since the last release.
 The workflow uses the `Release Drafter`_ GitHub Action.
 
-The *Hypermodern Python Cookiecutter* groups pull requests by type,
+The |HPC| groups pull requests by type,
 using GitHub labels.
 The following table shows the section headings and corresponding labels:
 
@@ -2435,6 +2424,8 @@ __ https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6
 You can also read the articles on `this blog`__.
 
 __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
+
+.. |HPC| replace:: *Hypermodern Python Cookiecutter*
 
 .. include:: ../README.rst
    :start-after: references-begin
