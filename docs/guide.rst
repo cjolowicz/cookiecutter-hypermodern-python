@@ -336,7 +336,7 @@ For more details on these files, refer to the section :ref:`The initial package`
    :widths: auto
 
    ===================================== ===============================
-   ``src/<project>/py.typed``            Marker file for `PEP 561`_
+   ``src/<project>/py.typed``            Marker file for `PEP 561`_
    ``src/<project>/__init__.py``         Package initialization
    ``src/<project>/__main__.py``         Command-line interface
    ===================================== ===============================
@@ -490,7 +490,7 @@ under the ``src`` directory::
    This is an empty marker file,
    which declares that your package supports typing
    and is distributed with its own type information
-   (`PEP 561`_).
+   (`PEP 561`_).
    This allows people using your package
    to type-check their Python code against it.
 
@@ -613,7 +613,7 @@ in the root directory of the project,
 and named ``pyproject.toml``.
 It uses the TOML_ configuration file format,
 and contains two sections---*tables* in TOML parlance---,
-specified in `PEP 517`_ and `518 <PEP 518_>`__:
+specified in `PEP 517`_ and `518 <PEP 518_>`__:
 
 - The ``build-system`` table
   declares the requirements and the entry point
@@ -1489,7 +1489,7 @@ The reorder-python-imports hook
 
 reorder-python-imports_ sorts imports in your Python code.
 Imports are separated into three sections,
-as recommended by `PEP 8`_: standard library, third party, first party.
+as recommended by `PEP 8`_: standard library, third party, first party.
 The tool also splits ``from`` imports onto separate lines to avoid merge conflicts,
 and moves them after normal imports.
 Any duplicate imports are removed.
@@ -1520,9 +1520,9 @@ and links to their lists of error codes.
 
    ================================ ============================================= ======================================
    pyflakes_                        Find invalid Python code                      `F <pyflakes codes_>`__
-   pycodestyle_                     Enforce style conventions from `PEP 8`_       `E,W <pycodestyle codes_>`__
-   pep8-naming_                     Enforce naming conventions from `PEP 8`_      `N <pep8-naming codes_>`__
-   pydocstyle_ / flake8-docstrings_ Enforce docstring conventions from `PEP 257`_ `D <pydocstyle codes_>`__
+   pycodestyle_                     Enforce style conventions from `PEP 8`_       `E,W <pycodestyle codes_>`__
+   pep8-naming_                     Enforce naming conventions from `PEP 8`_      `N <pep8-naming codes_>`__
+   pydocstyle_ / flake8-docstrings_ Enforce docstring conventions from `PEP 257`_ `D <pydocstyle codes_>`__
    flake8-rst-docstrings_           Find invalid reStructuredText_ in docstrings  `RST <flake8-rst-docstrings codes_>`__
    flake8-bugbear_                  Detect bugs and design problems               `B <flake8-bugbear codes_>`__
    mccabe_                          Limit the code complexity                     `C <mccabe codes_>`__
@@ -1557,7 +1557,7 @@ pycodestyle
 -----------
 
 The pycodestyle_ tool
-checks your code against many recommendations from `PEP 8`_,
+checks your code against many recommendations from `PEP 8`_,
 the official Python style guide.
 `Error codes`__ are prefixed by ``W`` for warnings and ``E`` for errors.
 The tool detects
@@ -1581,7 +1581,7 @@ for compatibility with Black_ and flake8-bugbear_:
 pep8-naming
 -----------
 
-The pep8-naming_ tool enforces the naming conventions from `PEP 8`_.
+The pep8-naming_ tool enforces the naming conventions from `PEP 8`_.
 `Error codes`__ are prefixed by ``N`` for "naming".
 Examples are the use of camel case for the names of classes,
 the use of lowercase for the names of functions, arguments and variables,
@@ -1595,7 +1595,7 @@ pydocstyle and flake8-docstrings
 --------------------------------
 
 The pydocstyle_ tool is used to check that
-docstrings comply with the recommendations of `PEP 257`_
+docstrings comply with the recommendations of `PEP 257`_
 and a configurable style convention.
 It is integrated via the flake8-docstrings_ extension.
 `Error codes`__ are prefixed by ``D`` for "docstring".
@@ -1946,7 +1946,7 @@ The configuration for Read the Docs is included in the repository,
 in the file `.readthedocs.yml`__.
 The *Hypermodern Python Cookiecutter* configures Read the Docs
 to build and install the package with Poetry,
-using a so-called `PEP 517`_-build.
+using a so-called `PEP 517`_-build.
 
 __ https://docs.readthedocs.io/en/stable/config-file/v2.html
 
@@ -2360,7 +2360,7 @@ Making a release is a two-step process:
 
 .. _poetry version: https://python-poetry.org/docs/cli/#version
 
-When bumping the version, adhere to `Semantic Versioning`_ and `PEP 440`_.
+When bumping the version, adhere to `Semantic Versioning`_ and `PEP 440`_.
 The individual steps for bumping the version are:
 
 .. code:: console
@@ -2435,12 +2435,12 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _Jinja: https://palletsprojects.com/p/jinja/
 .. _MIT license: https://opensource.org/licenses/MIT
-.. _PEP 257: http://www.python.org/dev/peps/pep-0257/
-.. _PEP 440: https://www.python.org/dev/peps/pep-0440/
-.. _PEP 517: https://www.python.org/dev/peps/pep-0517/
-.. _PEP 518: https://www.python.org/dev/peps/pep-0518/
-.. _PEP 561: https://www.python.org/dev/peps/pep-0561/
-.. _PEP 8: http://www.python.org/dev/peps/pep-0008/
+.. _PEP 257: http://www.python.org/dev/peps/pep-0257/
+.. _PEP 440: https://www.python.org/dev/peps/pep-0440/
+.. _PEP 517: https://www.python.org/dev/peps/pep-0517/
+.. _PEP 518: https://www.python.org/dev/peps/pep-0518/
+.. _PEP 561: https://www.python.org/dev/peps/pep-0561/
+.. _PEP 8: http://www.python.org/dev/peps/pep-0008/
 .. _TOML: https://github.com/toml-lang/toml
 .. _YAML: https://yaml.org/
 .. _bash: https://www.gnu.org/software/bash/
