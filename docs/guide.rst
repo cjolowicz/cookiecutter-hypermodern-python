@@ -1830,7 +1830,7 @@ The following options are enabled for enhanced output:
 External services
 ~~~~~~~~~~~~~~~~~
 
-Your repository can be integrated with several external services
+Your GitHub repository can be integrated with several external services
 for continuous integration and delivery.
 This section describes these external services,
 what they do, and how to set them up for your repository.
