@@ -1549,15 +1549,15 @@ and links to their lists of error codes.
 pyflakes
 --------
 
-The pyflakes_ tool
-parses Python source files and finds invalid code.
-`Error codes`__ are prefixed by ``F`` for "flake".
+pyflakes_ parses Python source files and finds invalid code.
 Warnings reported by this tool include
 syntax errors,
 undefined names,
 unused imports or variables,
 and more.
-The tool is included with Flake8_ by default.
+It is included with Flake8_ by default.
+
+`Error codes`__ are prefixed by ``F`` for "flake".
 
 .. _pyflakes codes:
 __ https://flake8.pycqa.org/en/latest/user/error-codes.html
@@ -1566,16 +1566,16 @@ __ https://flake8.pycqa.org/en/latest/user/error-codes.html
 pycodestyle
 -----------
 
-The pycodestyle_ tool
-checks your code against many recommendations from `PEP 8`_,
+pycodestyle_ checks your code against the style recommendations of `PEP 8`_,
 the official Python style guide.
-`Error codes`__ are prefixed by ``W`` for warnings and ``E`` for errors.
 The tool detects
 whitespace and indentation issues,
 deprecated features,
 bare excepts,
 and much more.
-The tool is included with Flake8_ by default.
+It is included with Flake8_ by default.
+
+`Error codes`__ are prefixed by ``W`` for warnings and ``E`` for errors.
 
 .. _pycodestyle codes:
 __ https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
@@ -1591,11 +1591,12 @@ for compatibility with Black_ and flake8-bugbear_:
 pep8-naming
 -----------
 
-The pep8-naming_ tool enforces the naming conventions from `PEP 8`_.
-`Error codes`__ are prefixed by ``N`` for "naming".
+pep8-naming_ enforces the naming conventions from `PEP 8`_.
 Examples are the use of camel case for the names of classes,
 the use of lowercase for the names of functions, arguments and variables,
 or the convention to name the first argument of methods ``self``.
+
+`Error codes`__ are prefixed by ``N`` for "naming".
 
 .. _pep8-naming codes:
 __ https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
@@ -1604,13 +1605,13 @@ __ https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
 pydocstyle and flake8-docstrings
 --------------------------------
 
-The pydocstyle_ tool is used to check that
-docstrings comply with the recommendations of `PEP 257`_
+pydocstyle_ checks that docstrings comply with the recommendations of `PEP 257`_
 and a configurable style convention.
-It is integrated via the flake8-docstrings_ extension.
-`Error codes`__ are prefixed by ``D`` for "docstring".
+It is integrated with Flake8 via the flake8-docstrings_ extension.
 Warnings range from missing docstrings to
 issues with whitespace, quoting, and docstring content.
+
+`Error codes`__ are prefixed by ``D`` for "docstring".
 
 .. _pydocstyle codes:
 __ http://www.pydocstyle.org/en/stable/error_codes.html
@@ -1638,10 +1639,10 @@ Here is an example of a function documented in Google style:
 flake8-rst-docstrings
 ---------------------
 
-The flake8-rst-docstrings_ plugin
-validates docstring markup as reStructuredText_ (reST).
-Docstrings must be valid reST---which includes most plain text---because
-they are used to generate API documentation.
+flake8-rst-docstrings_ validates docstring markup as reStructuredText_.
+Docstrings must be valid reStructuredText
+because they are used by Sphinx to generate the API reference.
+
 `Error codes`__ are prefixed by ``RST`` for "reStructuredText",
 and group issues into numerical blocks, by their severity and origin.
 
@@ -1653,11 +1654,15 @@ flake8-bugbear
 --------------
 
 flake8-bugbear_ detects bugs and design problems.
-`Error codes`__ are prefixed by ``B`` for "bugbear".
 The warnings are more opinionated than those of pyflakes or pycodestyle.
 For example,
 the plugin detects Python 2 constructs which have been removed in Python 3,
 and likely bugs such as function arguments defaulting to empty lists or dictionaries.
+
+`Error codes`__ are prefixed by ``B`` for "bugbear".
+
+.. _flake8-bugbear codes:
+__ https://github.com/PyCQA/flake8-bugbear#list-of-warnings
 
 The |HPC| also enables Bugbear's ``B9`` warnings,
 which are disabled by default.
@@ -1667,18 +1672,15 @@ but with a tolerance margin of 10%.
 This soft limit is set to 80 characters,
 which is the value used by the Black code formatter.
 
-.. _flake8-bugbear codes:
-__ https://github.com/PyCQA/flake8-bugbear#list-of-warnings
-
 
 mccabe
 ------
 
-The mccabe_ tool
-checks the `code complexity <Cyclomatic complexity_>`__
+mccabe_ checks the `code complexity <Cyclomatic complexity_>`__
 of your Python package against a configured limit.
+The tool is included with Flake8_.
+
 `Error codes`__ are prefixed by ``C`` for "complexity".
-It is included with Flake8_.
 
 .. _mccabe codes:
 __ https://github.com/PyCQA/mccabe#plugin-for-flake8
@@ -1693,17 +1695,18 @@ The |HPC| limits code complexity to a value of 10.
 darglint
 --------
 
-The darglint_ tool checks that docstring descriptions match function definitions.
-`Error codes`__ are prefixed by ``DAR`` for "darglint".
+darglint_ checks that docstring descriptions match function definitions.
 The tool has its own configuration file, named ``.darglint``.
+
+`Error codes`__ are prefixed by ``DAR`` for "darglint".
+
+.. _darglint codes:
+__ https://github.com/terrencepreilly/darglint#error-codes
 
 The |HPC| allows one-line docstrings without function signatures.
 Multi-line docstrings must
 specify the function signatures completely and correctly,
 using `Google docstring style`_.
-
-.. _darglint codes:
-__ https://github.com/terrencepreilly/darglint#error-codes
 
 
 Bandit
@@ -1712,15 +1715,16 @@ Bandit
 Bandit_ is a tool designed to
 find common security issues in Python code,
 and integrated via the flake8-bandit_ extension.
+
 `Error codes`__ are prefixed by ``S`` for "security".
 (The prefix ``B`` for "bandit" is used
 when Bandit is run as a stand-alone tool.)
 
-The |HPC| disables ``S101`` (use of assert) for the test suite,
-as pytest_ uses assertions to verify expectations in tests.
-
 .. _Bandit codes:
 __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
+
+The |HPC| disables ``S101`` (use of assert) for the test suite,
+as pytest_ uses assertions to verify expectations in tests.
 
 
 .. _Code coverage with Coverage.py:
