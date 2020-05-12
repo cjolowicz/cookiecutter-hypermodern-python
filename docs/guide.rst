@@ -1966,50 +1966,6 @@ only direct dependencies are included.
    don't forget to update the requirements file as well.
 
 
-Continuous integration using GitHub Actions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Secrets
--------
-
-Some workflows use tokens to access external services.
-The following table lists the required tokens,
-which need to be stored as secrets in the repository settings on GitHub:
-
-.. table:: Secrets
-   :class: hypermodern-table
-   :widths: auto
-
-   =================== ===================
-   ``PYPI_TOKEN``      PyPI_ API token
-   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
-   =================== ===================
-
-You can generate these API tokens
-from your account settings on PyPI_ and TestPyPI_.
-
-
-.. _Workflow constraints:
-
-Constraints file
-----------------
-
-GitHub Actions workflows install the following tools:
-
-- pip_
-- Poetry_
-- Nox_
-
-These dependencies are pinned using a `constraints file`_
-located in ``.github/workflow/constraints.txt``.
-
-.. note::
-
-   The constraints file is managed by :ref:`Dependabot <Dependabot integration>`.
-   When newer versions of the tools become available,
-   Dependabot updates the constraints file and submits a pull request.
-
-
 .. _GitHub Actions workflows:
 
 GitHub Actions workflows
@@ -2065,6 +2021,48 @@ the following workflows:
    GitHub Actions used by these workflows are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of GitHub Actions become available,
    Dependabot updates the workflows that use them and submits a pull request.
+
+
+Secrets
+-------
+
+Some workflows use tokens to access external services.
+The following table lists the required tokens,
+which need to be stored as secrets in the repository settings on GitHub:
+
+.. table:: Secrets
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ===================
+   ``PYPI_TOKEN``      PyPI_ API token
+   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
+   =================== ===================
+
+You can generate these API tokens
+from your account settings on PyPI_ and TestPyPI_.
+
+
+.. _Workflow constraints:
+
+Constraints file
+----------------
+
+GitHub Actions workflows install the following tools:
+
+- pip_
+- Poetry_
+- Nox_
+
+These dependencies are pinned using a `constraints file`_
+located in ``.github/workflow/constraints.txt``.
+
+.. note::
+
+   The constraints file is managed by :ref:`Dependabot <Dependabot integration>`.
+   When newer versions of the tools become available,
+   Dependabot updates the constraints file and submits a pull request.
+
 
 .. _The Tests workflow:
 
