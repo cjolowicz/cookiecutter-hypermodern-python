@@ -1478,10 +1478,8 @@ and the *Hypermodern Python Cookiecutter* uses none of them.
 The Flake8 hook
 ---------------
 
-Flake8_ is a linter framework for Python.
-The configuration file for Flake8 and its extensions
-is named ``.flake8`` and located in the project directory.
-For more details, see the section :ref:`Flake8 plugins`.
+Flake8_ is an extensible linter framework for Python.
+For more details, see the section :ref:`Linting with Flake8`.
 
 
 The reorder-python-imports hook
@@ -1504,12 +1502,29 @@ from the pre-commit-hooks_ repository.
 .. _pre-commit-hooks: https://github.com/pre-commit/pre-commit-hooks
 
 
-.. _Flake8 plugins:
+.. _Linting with Flake8:
 
-Flake8 plugins
-~~~~~~~~~~~~~~
+Linting with Flake8
+~~~~~~~~~~~~~~~~~~~
 
-Flake8_ comes with a rich ecosystem of plugins.
+Flake8_ is an extensible linter framework for Python,
+and a command-line utility to run the linters on your source code.
+
+The configuration file for Flake8 and its extensions
+is named ``.flake8`` and located in the project directory.
+For details about the configuration file, see the `official reference`__.
+
+__ https://flake8.pycqa.org/en/latest/user/configuration.html
+
+The sections below describe the linters in more detail.
+Each section also notes any configuration settings applied by
+the *Hypermodern Python Cookiecutter*.
+
+
+Plugin overview
+---------------
+
+Flake8 comes with a rich ecosystem of plugins.
 The following table lists the Flake8 plugins used by
 the *Hypermodern Python Cookiecutter*,
 and links to their lists of error codes.
@@ -1529,11 +1544,6 @@ and links to their lists of error codes.
    darglint_                        Detect inaccurate docstrings                  `DAR <darglint codes_>`__
    Bandit_ / flake8-bandit_         Detect common security issues                 `S <Bandit codes_>`__
    ================================ ============================================= ======================================
-
-
-The following sections describe the linters in more detail.
-Each section also notes any configuration settings applied by
-the *Hypermodern Python Cookiecutter*.
 
 
 pyflakes
