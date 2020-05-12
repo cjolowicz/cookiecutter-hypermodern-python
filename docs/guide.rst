@@ -2038,6 +2038,10 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    Real-time logs for workflow runs are available
    from the *Actions* tab in your GitHub repository.
 
+
+Overview of workflows
+---------------------
+
 The *Hypermodern Python Cookiecutter* defines
 the following workflows:
 
