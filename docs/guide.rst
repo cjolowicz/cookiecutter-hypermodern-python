@@ -418,7 +418,7 @@ and links each file to a section with more details.
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
    ``docs/conf.py``                      Configuration for :ref:`Sphinx <Documentation>`
-   ``mypy.ini``                          Configuration for :ref:`mypy <Configuring mypy>`
+   ``mypy.ini``                          Configuration for :ref:`mypy <Type-checking with mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
                                          and configuration for :ref:`Coverage.py <Code coverage with Coverage.py>`
@@ -1788,19 +1788,7 @@ Type-checking with mypy
    or command-line parsers.
 
 mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
-
-
-Running mypy
-------------
-
-Run mypy via its Nox session.
-For details, see the section :ref:`The mypy session`.
-
-
-.. _Configuring mypy:
-
-Configuring mypy
-----------------
+Invoke mypy via Nox, as explained in the section :ref:`The mypy session`.
 
 Configure mypy using the ``mypy.ini`` configuration file in the project directory.
 For details about supported configuration options, see the `official reference`__.
