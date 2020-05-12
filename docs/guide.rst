@@ -1781,18 +1781,28 @@ Type-checking with mypy
    For example, you can use type annotations to generate serialization schemas
    or command-line parsers.
 
+mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
+
+
+Running mypy
+------------
+
+Run mypy via its Nox session.
+For details, see the section :ref:`The mypy session`.
+
 
 .. _Configuring mypy:
 
 Configuring mypy
 ----------------
 
-Configure mypy using the `mypy.ini`__ configuration file.
+Configure mypy using the ``mypy.ini`` configuration file in the project directory.
+For details about supported configuration options, see the `official reference`__.
 
 __ https://mypy.readthedocs.io/en/stable/config_file.html
 
-The |HPC| enables the strictness options
-(the options enabled by the :option:`--strict <mypy --strict>` flag):
+The |HPC| enables several configuration options which are off by default.
+The following options are enabled for strictness:
 
 - :option:`check_untyped_defs <mypy --check-untyped-defs>`
 - :option:`disallow_any_generics <mypy --disallow-any-generics>`
