@@ -179,19 +179,6 @@ Install the pre-commit hooks:
    $ nox -s pre-commit -- install
 
 
-Installing
-----------
-
-First set up GitHub and PyPI, and release your project (see sections below).
-
-Install your project from PyPI, and run the command-line interface:
-
-.. code:: console
-
-   $ pipx install <project>
-   $ <project> --version
-
-
 Continuous Integration
 ----------------------
 
