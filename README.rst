@@ -256,7 +256,7 @@ Use labels to group the pull requests into sections:
    :widths: auto
 
    =================== ============================
-   Label               Section
+   Pull Request Label  Section in Release Notes
    =================== ============================
    ``breaking``        💥 Breaking Changes
    ``enhancement``     🚀 Features
