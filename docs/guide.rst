@@ -1738,7 +1738,8 @@ Code coverage with Coverage.py
 the source code of your program is executed while running its test suite.
 The |HPC| requires full test coverage.
 
-Code coverage is measured using `Coverage.py`_.
+Code coverage is measured using `Coverage.py`_
+during the :ref:`tests session <The tests session>`.
 When the test suite completes,
 a detailed coverage report is printed to the terminal.
 If the total coverage is below 100%,
@@ -1749,6 +1750,11 @@ in the ``tool.coverage`` table.
 The configuration informs the tool about your package name and source tree layout.
 It also enables branch analysis and the display of line numbers for missing coverage,
 and specifies the target coverage percentage.
+
+During continuous integration, coverage data is uploaded to the Codecov_ reporting service.
+For details, see the sections about
+:ref:`Codecov <Codecov integration>` and
+:ref:`The Coverage workflow`.
 
 
 .. _Type-checking with mypy:
