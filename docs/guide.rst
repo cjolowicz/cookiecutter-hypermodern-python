@@ -1045,8 +1045,8 @@ For example, the following may be more practical during development
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 
 
-Nox sessions
-------------
+Overview of Nox sessions
+------------------------
 
 .. _Table of Nox sessions:
 
@@ -1072,7 +1072,7 @@ The following table gives an overview of the available Nox sessions:
 .. _The docs session:
 
 The docs session
-................
+----------------
 
 Build the documentation using the Nox session ``docs``:
 
@@ -1109,7 +1109,7 @@ This Nox session always runs with the current major release of Python.
 .. _The mypy session:
 
 The mypy session
-................
+----------------
 
 mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
 Learn more about it in the section :ref:`Type-checking with mypy`.
@@ -1139,7 +1139,7 @@ For example, the following command type-checks only the ``__main__`` module:
 .. _The pre-commit session:
 
 The pre-commit session
-......................
+----------------------
 
 pre-commit_ is a multi-language linter framework and a Git hook manager.
 Learn more about it in the section :ref:`Linting with pre-commit`.
@@ -1164,7 +1164,7 @@ so they run automatically on every commit you make:
 .. _The safety session:
 
 The safety session
-..................
+------------------
 
 Safety_ checks the dependencies of your project for known security vulnerabilities,
 using a curated database of insecure Python packages.
@@ -1187,7 +1187,7 @@ This session always runs with the current stable release of Python.
 .. _The tests session:
 
 The tests session
-.................
+-----------------
 
 Tests are written using the pytest_ testing framework.
 Learn more about it in the section :ref:`The test suite`.
@@ -1222,7 +1222,7 @@ For example, the following command runs only the test case ``test_main_succeeds`
 .. _The typeguard session:
 
 The typeguard session
-.....................
+---------------------
 
 Typeguard_ is a runtime type checker and pytest_ plugin.
 It can type-check function calls during test runs via an `import hook`__.
@@ -1273,7 +1273,7 @@ For example, the following command runs only tests for the ``__main__`` module:
 .. _The xdoctest session:
 
 The xdoctest session
-....................
+--------------------
 
 The xdoctest_ tool
 runs examples in your docstrings and
