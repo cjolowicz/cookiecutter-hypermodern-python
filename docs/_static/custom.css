@@ -22,7 +22,6 @@ table.hypermodern-table td {
   border: 1px solid #ccc;
   padding: 0.5rem;
   text-align: left;
-  width: 50%;
 }
 
 table.hypermodern-table tbody tr:nth-child(odd) {
