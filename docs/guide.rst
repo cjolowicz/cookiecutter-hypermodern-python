@@ -1511,6 +1511,8 @@ Linting with Flake8
 
 Flake8_ is an extensible linter framework for Python,
 and a command-line utility to run the linters on your source code.
+The |HPC| integrates Flake8 via a pre-commit_ hook,
+see the section :ref:`The Flake8 hook`.
 
 The configuration file for Flake8 and its extensions
 is named ``.flake8`` and located in the project directory.
