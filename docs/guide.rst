@@ -1391,12 +1391,23 @@ Linters run in isolated environments managed by pre-commit.
 Using pre-commit
 ----------------
 
-pre-commit runs in a Nox session every time you invoke ``nox``.
+pre-commit runs in a Nox session every time you invoke ``nox``:
+
+.. code:: console
+
+   $ nox
+
 Run the pre-commit session explicitly like this:
 
 .. code:: console
 
    $ nox --session=pre-commit
+
+Install pre-commit as a Git hook by running the following command:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- install
 
 When installed as a `Git hook`_,
 pre-commit runs automatically every time you invoke ``git commit``.
@@ -1404,12 +1415,6 @@ The commit is aborted if any check fails.
 When invoked in this mode, pre-commit only runs on files staged for the commit.
 
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
-
-Install the Git hook by running the following command:
-
-.. code:: console
-
-   $ nox --session=pre-commit -- install
 
 Many linters support fixing offending lines automatically.
 When this happens,
