@@ -1388,6 +1388,10 @@ integrate the best industry standard linters into your Git workflow,
 even when written in a language other than Python.
 Linters run in isolated environments managed by pre-commit.
 
+
+Using pre-commit
+----------------
+
 pre-commit runs in a Nox session every time you invoke ``nox``.
 Run the pre-commit session explicitly like this:
 
@@ -1414,6 +1418,10 @@ your original changes are in the staging area,
 while the linter fixes are in the work tree.
 You can accept the fixes by staging them with ``git add``
 before committing again.
+
+
+Overview of pre-commit hooks
+----------------------------
 
 pre-commit is configured using the file ``.pre-commit-config.yaml``
 in the project directory.
