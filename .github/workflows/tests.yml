@@ -74,6 +74,3 @@ jobs:
       - name: Install dependencies using Poetry
         run: poetry install --ansi
         working-directory: hypermodern-python
-      - name: Run linter suite using pre-commit
-        run: pre-commit run --all-files --show-diff-on-failure --color=always
-        working-directory: hypermodern-python
