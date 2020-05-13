@@ -7,6 +7,12 @@ update_configs:
       - match:
           update_type: "all"
   - package_manager: "python"
+    directory: "/{{cookiecutter.project_name}}/docs"
+    update_schedule: "daily"
+    allowed_updates:
+      - match:
+          update_type: "all"
+  - package_manager: "python"
     directory: "/docs"
     update_schedule: "daily"
     allowed_updates:
