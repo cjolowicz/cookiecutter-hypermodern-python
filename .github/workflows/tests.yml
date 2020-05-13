@@ -19,7 +19,7 @@ jobs:
         working-directory: cookiecutter-hypermodern-python
         run: |
           pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox poetry pre-commit
+          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox poetry
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-hypermodern-python
       - name: Create git repository
@@ -44,15 +44,6 @@ jobs:
           git add --renormalize .
           git commit --message="Initial import"
         working-directory: hypermodern-python
-      - name: Run test suite using Nox
-        run: nox --force-color
-        working-directory: hypermodern-python
-      - name: Build project documentation
-        run: nox --force-color --session=docs
-        working-directory: hypermodern-python
-      - name: Install dependencies using Poetry
-        run: poetry install --ansi
-        working-directory: hypermodern-python
       - name: Compute cache key for pre-commit
         if: matrix.os != 'windows-latest'
         id: cache_key
@@ -74,6 +65,12 @@ jobs:
           key: ${{ steps.cache_key.outputs.result }}-${{ hashFiles('hypermodern-python/.pre-commit-config.yaml') }}
           restore-keys: |
             ${{ steps.cache_key.outputs.result }}-
-      - name: Run linter suite using pre-commit
-        run: pre-commit run --all-files --show-diff-on-failure --color=always
+      - name: Run test suite using Nox
+        run: nox --force-color
+        working-directory: hypermodern-python
+      - name: Build project documentation
+        run: nox --force-color --session=docs
+        working-directory: hypermodern-python
+      - name: Install dependencies using Poetry
+        run: poetry install --ansi
         working-directory: hypermodern-python
