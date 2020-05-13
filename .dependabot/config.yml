@@ -18,6 +18,12 @@ update_configs:
     allowed_updates:
       - match:
           update_type: "all"
+  - package_manager: "github_actions"
+    directory: "/{{cookiecutter.project_name}}"
+    update_schedule: "daily"
+    allowed_updates:
+      - match:
+          update_type: "all"
   - package_manager: "python"
     directory: "/docs"
     update_schedule: "daily"
