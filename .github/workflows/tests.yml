@@ -54,6 +54,7 @@ jobs:
         run: poetry install --ansi
         working-directory: hypermodern-python
       - name: Compute cache key for pre-commit
+        if: matrix.os != 'windows-latest'
         id: cache_key
         shell: python
         run: |
@@ -67,6 +68,7 @@ jobs:
 
           print("::set-output name=result::{}".format(result))
       - uses: actions/cache@v1.1.2
+        if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
           key: ${{ steps.cache_key.outputs.result }}-${{ hashFiles('hypermodern-python/.pre-commit-config.yaml') }}
