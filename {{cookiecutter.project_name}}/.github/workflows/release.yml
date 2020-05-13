@@ -14,6 +14,7 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
       - name: Compute cache key prefix
+        if: matrix.os != 'windows-latest'
         id: cache_key_prefix
         shell: python
         run: |
@@ -27,6 +28,7 @@ jobs:
 
           print("::set-output name=result::{}".format(result))
       - uses: actions/cache@v1.1.2
+        if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
           key: {% raw %}${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
