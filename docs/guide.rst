@@ -1445,12 +1445,14 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    `flake8 <Flake8_>`__     Run the Flake8_ linter
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
    check-added-large-files_ Prevent giant files from being committed
+   check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
    reorder-python-imports_  Rewrites source to reorder python imports
    trailing-whitespace_     Ensure lines do not contain trailing whitespace
    ======================== ===============================================
 
+.. _check-toml: https://github.com/pre-commit/pre-commit-hooks#check-toml
 .. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 .. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
