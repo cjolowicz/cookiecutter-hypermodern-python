@@ -16,7 +16,6 @@ Here is a list of important resources for contributors:
 .. _`Source Code`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
 .. _`Documentation`: https://{{cookiecutter.project_name}}.readthedocs.io/
 .. _`Issue Tracker`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
-.. _`Code of Conduct`: https://{{cookiecutter.project_name}}.readthedocs.io/codeofconduct.html
 
 How to report a bug
 -------------------
@@ -119,3 +118,5 @@ This will allow a chance to talk it over with the owners and validate your appro
 
 .. _`pull request`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
 .. _`Black`: https://black.readthedocs.io/
+.. github-only
+.. _`Code of Conduct`: CODE_OF_CONDUCT.rst
