@@ -1,5 +1,8 @@
-{{cookiecutter.friendly_name}}
-========================================
+{%- macro heading(text) -%}
+{{text}}
+{% for _ in text %}={% endfor %}
+{%- endmacro %}
+{{ heading(cookiecutter.friendly_name) }}
 
 |Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit| |Dependabot|
 
