@@ -35,7 +35,7 @@ jobs:
       - name: Invoke cookiecutter
         run: >-
           cookiecutter
-          cookiecutter-hypermodern-python
+          https://github.com/${GITHUB_REPOSITORY}
           --overwrite-if-exists
           --no-input
           project_name=cookiecutter-hypermodern-python-instance
