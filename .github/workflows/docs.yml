@@ -1,5 +1,5 @@
 name: Build documentation
-on: push
+on: [push, pull_request]
 jobs:
   docs:
     runs-on: ubuntu-latest
