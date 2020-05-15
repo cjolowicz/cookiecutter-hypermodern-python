@@ -1,8 +1,6 @@
 {{cookiecutter.friendly_name}}
 ========================================
 
-.. badges-begin
-
 |Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit| |Dependabot|
 
 .. |Tests| image:: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/workflows/Tests/badge.svg
@@ -33,7 +31,6 @@
    :target: https://dependabot.com
    :alt: Dependabot
 
-.. badges-end
 
 Features
 --------
@@ -97,4 +94,5 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 .. _pip: https://pip.pypa.io/
+.. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
