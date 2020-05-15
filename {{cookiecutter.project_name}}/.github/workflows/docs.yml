@@ -12,7 +12,7 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
       - run: nox --force-color --session=docs
-      - uses: actions/upload-artifact@v1.0.0
+      - uses: actions/upload-artifact@v2
         with:
           name: docs
           path: docs/_build
