@@ -2022,9 +2022,9 @@ The |HPC| defines the following workflows:
    ===================================================== ======================== ==================================== ===============
    Workflow                                              File                     Description                          Trigger
    ===================================================== ======================== ==================================== ===============
-   :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push
-   :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push
-   :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push
+   :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
+   :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push, PR
+   :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push, PR
    :ref:`Release Drafter <The Release Drafter workflow>` ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          GitHub Release
    :ref:`TestPyPI <The TestPyPI workflow>`               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
@@ -2085,7 +2085,8 @@ The Tests workflow
 
 The Tests workflow executes the test suite using Nox.
 
-The workflow is triggered on every push to the GitHub repository.
+The workflow is triggered on every push to the GitHub repository,
+and when a pull request is opened or receives new commits.
 It consists of a job for each supported Python version,
 executed on the `latest supported runners`__ for
 Ubuntu, Windows, and macOS.
@@ -2112,7 +2113,8 @@ The Coverage workflow
 
 The Coverage workflow uploads coverage data to Codecov_.
 
-The workflow is triggered on every push to the GitHub repository.
+The workflow is triggered on every push to the GitHub repository,
+and when a pull request is opened or receives new commits.
 It executes the :ref:`tests session <the tests session>`
 to generate a coverage report in cobertura__ XML format.
 This coverage report is then uploaded to Codecov_.
@@ -2147,7 +2149,8 @@ __ https://help.github.com/en/actions/configuring-and-managing-workflows/persist
 This is done solely to ensure that the build process is functional.
 The actual project documentation is built independently on `Read the Docs`_.
 
-The workflow is triggered on every push to the GitHub repository.
+The workflow is triggered on every push to the GitHub repository,
+and when a pull request is opened or receives new commits.
 
 The workflow uses the following GitHub Actions:
 
