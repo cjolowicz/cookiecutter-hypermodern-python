@@ -1,9 +1,10 @@
 """Nox sessions."""
 import contextlib
-from pathlib import Path
 import shutil
 import tempfile
-from typing import cast, Iterator
+from pathlib import Path
+from typing import cast
+from typing import Iterator
 
 import nox
 from nox.sessions import Session
@@ -11,7 +12,7 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "lint", "safety", "mypy", "tests"
+nox.options.sessions = "pre-commit", "safety", "mypy", "tests"
 locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 
@@ -109,31 +110,12 @@ def install(session: Session, *args: str) -> None:
         session.install(f"--constraint={requirements}", *args)
 
 
-@nox.session(python="3.8")
-def black(session: Session) -> None:
-    """Run black code formatter."""
-    args = session.posargs or locations
-    install(session, "black")
-    session.run("black", *args)
-
-
-@nox.session(python=python_versions)
-def lint(session: Session) -> None:
-    """Lint using flake8."""
-    args = session.posargs or locations
-    install(
-        session,
-        "flake8",
-        "flake8-bandit",
-        "flake8-black",
-        "flake8-bugbear",
-        "flake8-docstrings",
-        "flake8-import-order",
-        "flake8-rst-docstrings",
-        "pep8-naming",
-        "darglint",
-    )
-    session.run("flake8", *args)
+@nox.session(name="pre-commit", python="3.8")
+def precommit(session: Session) -> None:
+    """Lint using pre-commit."""
+    args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
+    install(session, "pre-commit")
+    session.run("pre-commit", *args)
 
 
 @nox.session(python="3.8")
@@ -149,6 +131,7 @@ def safety(session: Session) -> None:
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or locations
+    install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
 

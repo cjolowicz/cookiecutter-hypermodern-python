@@ -3,16 +3,42 @@ on: push
 jobs:
   tests:
     strategy:
+      fail-fast: false
       matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        python-version: ["3.6", "3.7", "3.8"]
+        include:
+          - { python-version: 3.8, os: ubuntu-latest }
+          - { python-version: 3.8, os: windows-latest }
+          - { python-version: 3.8, os: macos-latest }
+          - { python-version: 3.7, os: ubuntu-latest }
+          - { python-version: 3.6, os: ubuntu-latest }
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     name: {% raw %}Python ${{ matrix.python-version }} (${{ matrix.os }}){% endraw %}
     steps:
       - uses: actions/checkout@v2.1.0
-      - uses: actions/setup-python@v1.2.0
+      - uses: actions/setup-python@v2
         with:
           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+      - name: Compute cache key prefix
+        if: matrix.os != 'windows-latest'
+        id: cache_key_prefix
+        shell: python
+        run: |
+          import hashlib
+          import sys
+
+          python = "py{}.{}".format(*sys.version_info[:2])
+          payload = sys.version.encode() + sys.executable.encode()
+          digest = hashlib.sha256(payload).hexdigest()
+          result = "{% raw %}${{ runner.os }}{% endraw %}-{}-{}-pre-commit".format(python, digest[:8])
+
+          print("::set-output name=result::{}".format(result))
+      - uses: actions/cache@v1.2.0
+        if: matrix.os != 'windows-latest'
+        with:
+          path: ~/.cache/pre-commit
+          key: {% raw %}${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
+          restore-keys: |
+            {% raw %}${{ steps.cache_key_prefix.outputs.result }}{% endraw %}-
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry

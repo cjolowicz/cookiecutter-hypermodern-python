@@ -64,6 +64,7 @@ Features
 
 - Packaging and dependency management with Poetry_
 - Test automation with Nox_
+- Linting with pre-commit_ and Flake8_
 - Continuous integration with `GitHub Actions`_
 - Documentation with Sphinx_ and `Read the Docs`_
 - Automated uploads to PyPI_ and TestPyPI_
@@ -74,17 +75,13 @@ Features
 - Code coverage with Coverage.py_
 - Coverage reporting with Codecov_
 - Command-line interface with Click_
-- Linting with Flake8_ and various `awesome plugins`__
 - Static type-checking with mypy_
 - Runtime type-checking with Typeguard_
 - Security audit with Bandit_ and Safety_
-- Git hook management with pre-commit_
 - Check documentation examples with xdoctest_
 - Generate API documentation with autodoc_ and napoleon_
 
 The template supports Python 3.6, 3.7, and 3.8.
-
-__ https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/guide.html#available-linters
 
 .. features-end
 
@@ -175,18 +172,11 @@ List the available Nox sessions:
 
    $ nox --list-sessions
 
-
-Installing
-----------
-
-First set up GitHub and PyPI, and release your project (see sections below).
-
-Install your project from PyPI, and run the command-line interface:
+Install the pre-commit hooks:
 
 .. code:: console
 
-   $ pipx install <project>
-   $ <project> --version
+   $ nox -s pre-commit -- install
 
 
 Continuous Integration
@@ -225,7 +215,6 @@ Codecov
 
 1. Sign up at Codecov_.
 2. Install their GitHub app.
-3. Add your repository to Codecov.
 
 
 Dependabot
@@ -267,7 +256,7 @@ Use labels to group the pull requests into sections:
    :widths: auto
 
    =================== ============================
-   Label               Section
+   Pull Request Label  Section in Release Notes
    =================== ============================
    ``breaking``        💥 Breaking Changes
    ``enhancement``     🚀 Features
@@ -284,7 +273,7 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
-Create the remaining labels on the Issues tab of your GitHub repository,
+Create the remaining labels on the *Issues* tab of your GitHub repository,
 when you need them.
 
 .. table-release-drafter-sections-end

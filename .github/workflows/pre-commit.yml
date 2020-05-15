@@ -2,20 +2,18 @@ name: pre-commit
 on: push
 jobs:
   pre-commit:
-    strategy:
-      matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-    runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    name: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.1.0
-      - uses: actions/setup-python@v1.2.0
+      - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt pre-commit
       - name: Compute cache key prefix
+        if: matrix.os != 'windows-latest'
         id: cache_key_prefix
         shell: python
         run: |
@@ -28,7 +26,8 @@ jobs:
           result = "${{ runner.os }}-{}-{}-pre-commit".format(python, digest)
 
           print("::set-output name=result::{}".format(result))
-      - uses: actions/cache@v1.1.2
+      - uses: actions/cache@v1.2.0
+        if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
           key: ${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}
