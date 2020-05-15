@@ -1,7 +1,5 @@
-{{cookiecutter.project_name}}
+{{cookiecutter.friendly_name}}
 ========================================
-
-.. badges-begin
 
 |Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit| |Dependabot|
 
@@ -33,4 +31,68 @@
    :target: https://dependabot.com
    :alt: Dependabot
 
-.. badges-end
+
+Features
+--------
+
+* TODO
+
+
+Requirements
+------------
+
+* TODO
+
+
+Installation
+------------
+
+You can install *{{cookiecutter.friendly_name}}* via pip_ from PyPI_:
+
+.. code:: console
+
+   $ pip install {{cookiecutter.project_name}}
+
+
+Usage
+-----
+
+* TODO
+
+
+Contributing
+------------
+
+Contributions are very welcome.
+To learn more, see the `Contributor Guide`_.
+
+
+License
+-------
+
+Distributed under the terms of the MIT_ license,
+*{{cookiecutter.friendly_name}}* is free and open source software.
+
+
+Issues
+------
+
+If you encounter any problems,
+please `file an issue`_ along with a detailed description.
+
+
+Credits
+-------
+
+This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
+
+
+.. _@cjolowicz: https://github.com/cjolowicz
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _MIT: http://opensource.org/licenses/MIT
+.. _PyPI: https://pypi.org/
+.. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
+.. _pip: https://pip.pypa.io/
+.. github-only
+.. _Contributor Guide: CONTRIBUTING.rst

@@ -12,11 +12,10 @@ Here is a list of important resources for contributors:
 - `Issue Tracker`_
 - `Code of Conduct`_
 
-.. _`MIT license`: https://opensource.org/licenses/MIT
-.. _`Source Code`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-.. _`Documentation`: https://{{cookiecutter.project_name}}.readthedocs.io/
-.. _`Issue Tracker`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
-.. _`Code of Conduct`: https://{{cookiecutter.project_name}}.readthedocs.io/codeofconduct.html
+.. _MIT license: https://opensource.org/licenses/MIT
+.. _Source Code: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
+.. _Documentation: https://{{cookiecutter.project_name}}.readthedocs.io/
+.. _Issue Tracker: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 
 How to report a bug
 -------------------
@@ -63,8 +62,8 @@ or the command-line interface:
    $ poetry run python
    $ poetry run {{cookiecutter.project_name}}
 
-.. _`Poetry`: https://python-poetry.org/
-.. _`Nox`: https://nox.thea.codes/
+.. _Poetry: https://python-poetry.org/
+.. _Nox: https://nox.thea.codes/
 
 
 How to test the project
@@ -92,7 +91,7 @@ For example, invoke the unit test suite like this:
 Unit tests are located in the ``tests`` directory,
 and are written using the pytest_ testing framework.
 
-.. _`pytest`: https://pytest.readthedocs.io/
+.. _pytest: https://pytest.readthedocs.io/
 
 
 How to submit changes
@@ -117,5 +116,7 @@ You can ensure that your changes adhere to the code style by reformatting with B
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-.. _`pull request`: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
-.. _`Black`: https://black.readthedocs.io/
+.. _pull request: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
+.. _Black: https://black.readthedocs.io/
+.. github-only
+.. _Code of Conduct: CODE_OF_CONDUCT.rst

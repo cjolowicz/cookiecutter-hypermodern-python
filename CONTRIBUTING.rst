@@ -16,7 +16,6 @@ Here is a list of important resources for contributors:
 .. _Source Code: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _Documentation: https://cookiecutter-hypermodern-python.readthedocs.io/
 .. _Issue Tracker: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
-.. _Code of Conduct: https://cookiecutter-hypermodern-python.readthedocs.io/codeofconduct.html
 
 
 How to report a bug
@@ -170,3 +169,5 @@ After publishing the release, the following automated steps are triggered:
 
 .. _Calendar Versioning: https://calver.org/
 .. _Read the Docs: https://cookiecutter-hypermodern-python.readthedocs.io/
+.. github-only
+.. _Code of Conduct: CODE_OF_CONDUCT.rst
