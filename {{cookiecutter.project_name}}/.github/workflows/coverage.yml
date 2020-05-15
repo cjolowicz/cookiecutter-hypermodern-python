@@ -13,4 +13,4 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt nox poetry
       - run: nox --force-color --session=tests-3.8 -- --cov --cov-report=xml
       - if: always()
-        uses: codecov/codecov-action@v1.0.6
+        uses: codecov/codecov-action@v1.0.7
