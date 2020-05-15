@@ -54,7 +54,7 @@ Usage
 
 .. code:: console
 
-   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15.1
+   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.5.15
 
 
 Features
@@ -127,7 +127,7 @@ Generate a Python project:
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.4.15.1"
+     --checkout="2020.5.15"
 
 Change to the root directory of your new project,
 and create a Git repository:
