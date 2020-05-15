@@ -3,6 +3,7 @@ on: push
 jobs:
   tests:
     strategy:
+      fail-fast: false
       matrix:
         include:
           - { python-version: 3.8, os: ubuntu-latest }
