@@ -68,3 +68,8 @@ ul,
 ol {
   margin: 10px 30px 10px 30px;
 }
+
+/* Do not underline badges */
+.body p:first-of-type a.reference {
+  border-bottom: 0px;
+}
