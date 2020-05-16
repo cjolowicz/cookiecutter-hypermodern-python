@@ -11,13 +11,13 @@ jobs:
           - { python-version: 3.8, os: macos-latest }
           - { python-version: 3.7, os: ubuntu-latest }
           - { python-version: 3.6, os: ubuntu-latest }
-    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
-    name: {% raw %}Python ${{ matrix.python-version }} (${{ matrix.os }}){% endraw %}
+    runs-on: {{ "${{ matrix.os }}" }}
+    name: {{ "Python ${{ matrix.python-version }} (${{ matrix.os }})" }}
     steps:
       - uses: actions/checkout@v2.1.0
       - uses: actions/setup-python@v2
         with:
-          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+          python-version: {{ "${{ matrix.python-version }}" }}
       - name: Compute cache key prefix
         if: matrix.os != 'windows-latest'
         id: cache_key_prefix
@@ -29,16 +29,16 @@ jobs:
           python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
-          result = "{% raw %}${{ runner.os }}{% endraw %}-{}-{}-pre-commit".format(python, digest[:8])
+          result = {{ '"${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])' }}
 
           print("::set-output name=result::{}".format(result))
       - uses: actions/cache@v1.2.0
         if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
-          key: {% raw %}${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
+          key: {{ "${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}" }}
           restore-keys: |
-            {% raw %}${{ steps.cache_key_prefix.outputs.result }}{% endraw %}-
+            {{ "${{ steps.cache_key_prefix.outputs.result }}" }}-
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
