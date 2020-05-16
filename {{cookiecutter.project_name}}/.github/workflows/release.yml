@@ -1,42 +1,72 @@
 name: Release
+
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: actions/setup-python@v2
+      - name: Check out the repository
+        uses: actions/checkout@v2.1.0
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
           python-version: "3.8"
-      - run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt nox poetry
-      - name: Compute cache key prefix
-        if: matrix.os != 'windows-latest'
-        id: cache_key_prefix
-        shell: python
+
+      - name: Upgrade pip
         run: |
-          import hashlib
-          import sys
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip --version
 
-          python = "py{}.{}".format(*sys.version_info[:2])
-          payload = sys.version.encode() + sys.executable.encode()
-          digest = hashlib.sha256(payload).hexdigest()
-          result = "{% raw %}${{ runner.os }}{% endraw %}-{}-{}-pre-commit".format(python, digest[:8])
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
 
-          print("::set-output name=result::{}".format(result))
-      - uses: actions/cache@v1.2.0
-        if: matrix.os != 'windows-latest'
+      - name: Detect and tag new version
+        id: check-version
+        uses: salsify/action-detect-and-tag-new-version@v1.0.3
         with:
-          path: ~/.cache/pre-commit
-          key: {% raw %}${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
-          restore-keys: |
-            {% raw %}${{ steps.cache_key_prefix.outputs.result }}{% endraw %}-
-      - run: nox --force-color
-      - run: poetry build --ansi
-      - uses: pypa/gh-action-pypi-publish@v1.1.0
+          version-command: |
+            poetry version | awk '{ print $2 }'
+
+      - name: Bump version for developmental release
+        if: "! steps.check-version.outputs.tag"
+        run: |
+          poetry version patch &&
+          version=$(poetry version | awk '{ print $2 }') &&
+          poetry version $version.dev.$(date +%s)
+
+      - name: Build package
+        run: |
+          poetry build --ansi
+
+      - name: Publish package on PyPI
+        if: steps.check-version.outputs.tag
+        uses: pypa/gh-action-pypi-publish@v1.1.0
         with:
           user: __token__
-          password: {% raw %}${{ secrets.PYPI_TOKEN }}{% endraw %}
+          password: {{ "${{ secrets.PYPI_TOKEN }}" }}
+
+      - name: Publish package on TestPyPI
+        if: "! steps.check-version.outputs.tag"
+        uses: pypa/gh-action-pypi-publish@v1.1.0
+        with:
+          user: __token__
+          password: {{ "${{ secrets.TEST_PYPI_TOKEN }}" }}
+          repository_url: https://test.pypi.org/legacy/
+
+      - name: Publish the release notes
+        uses: release-drafter/release-drafter@v5.8.0
+        with:
+          publish: {{ "${{ steps.check-version.outputs.tag != '' }}" }}
+          tag: {{ "${{ steps.check-version.outputs.tag }}" }}
+        env:
+          GITHUB_TOKEN: {{ "${{ secrets.GITHUB_TOKEN }}" }}
