@@ -391,9 +391,7 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ======================= ===============================
    ``coverage.yml``        :ref:`The Coverage workflow`
    ``docs.yml``            :ref:`The Docs workflow`
-   ``release-drafter.yml`` :ref:`The Release Drafter workflow`
    ``release.yml``         :ref:`The Release workflow`
-   ``test-pypi.yml``       :ref:`The TestPyPI workflow`
    ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
 
@@ -413,7 +411,7 @@ and links each file to a section with more details.
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
-   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release Drafter workflow>`
+   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
@@ -1872,7 +1870,7 @@ Follow these steps to set up TestPyPI for your repository:
    add a secret named ``TEST_PYPI_TOKEN`` with the token you just copied.
 
 TestPyPI is integrated with your repository
-via the :ref:`TestPyPI workflow <The TestPyPI workflow>`.
+via the :ref:`Release workflow <The Release workflow>`.
 
 
 .. _Codecov integration:
@@ -2027,9 +2025,7 @@ The |HPC| defines the following workflows:
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
    :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push, PR
    :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push, PR
-   :ref:`Release Drafter <The Release Drafter workflow>` ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
-   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          GitHub Release
-   :ref:`TestPyPI <The TestPyPI workflow>`               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
+   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
    ===================================================== ======================== ==================================== ===============
 
 .. note::
@@ -2037,26 +2033,6 @@ The |HPC| defines the following workflows:
    GitHub Actions used by these workflows are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of GitHub Actions become available,
    Dependabot updates the workflows that use them and submits a pull request.
-
-
-Secrets
--------
-
-Some workflows use tokens to access external services.
-The following table lists the required tokens,
-which need to be stored as secrets in the repository settings on GitHub:
-
-.. table:: Secrets
-   :class: hypermodern-table
-   :widths: auto
-
-   =================== ===================
-   ``PYPI_TOKEN``      PyPI_ API token
-   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
-   =================== ===================
-
-You can generate these API tokens
-from your account settings on PyPI_ and TestPyPI_.
 
 
 .. _Workflow constraints:
@@ -2168,62 +2144,57 @@ using the latest supported Ubuntu runner.
 It is defined in ``.github/workflows/docs.yml``.
 
 
-.. _The Release Drafter workflow:
-
-The Release Drafter workflow
-----------------------------
-
-The Release Drafter workflow maintains a draft for the next GitHub Release.
-
-The workflow is triggered on every push to the master branch.
-It includes details from every pull request merged into master since the last release.
-The workflow uses the `Release Drafter`_ GitHub Action.
-
-The |HPC| groups pull requests by type,
-using GitHub labels.
-The following table shows the section headings and corresponding labels:
-
-.. include:: ../README.rst
-   :start-after: table-release-drafter-sections-begin
-   :end-before: table-release-drafter-sections-end
-
-The workflow is defined in ``.github/workflows/release-drafter.yml``.
-The configuration file is located in ``.github/release-drafter.yml``.
-
-
 .. _The Release workflow:
 
 The Release workflow
 --------------------
 
 The Release workflow publishes your package on PyPI_, the Python Package Index.
+The workflow also creates a version tag in the GitHub repository,
+and publishes a GitHub Release using `Release Drafter`_.
+The workflow is triggered on every push to the master branch.
 
-The workflow is triggered when a GitHub Release is published.
-It checks that the test suite passes,
-builds the package using Poetry,
-and uploads it using the `pypa/gh-action-pypi-publish`_ action.
-This workflow uses the ``PYPI_TOKEN`` secret.
+Release steps only run if the package version was bumped.
+If the package version did not change,
+the package is instead uploaded to TestPyPI_ as a prerelease,
+and only a draft GitHub Release is created.
+TestPyPI is a test instance of the Python Package Index.
 
+The Release workflow uses API tokens to access PyPI_ and TestPyPI_.
+You can generate these tokens from your account settings on these services.
+The tokens need to be stored as secrets in the repository settings on GitHub:
+
+.. table:: Secrets
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ===================
+   ``PYPI_TOKEN``      PyPI_ API token
+   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
+   =================== ===================
+
+The Release workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+- `salsify/action-detect-and-tag-new-version`_ for tagging on version bumps
+- `pypa/gh-action-pypi-publish`_ for uploading the package to PyPI or TestPyPI
+- `release-drafter/release-drafter`_ for publishing the GitHub Release
+
+.. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
+.. _release-drafter/release-drafter: <Release Drafter>
 .. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 
+Release notes are populated with the titles and authors of merged pull requests.
+You can group the pull requests into separate sections
+by applying labels to them, like this:
+
+.. include:: ../README.rst
+   :start-after: table-release-drafter-sections-begin
+   :end-before: table-release-drafter-sections-end
+
 The workflow is defined in ``.github/workflows/release.yml``.
-
-
-.. _The TestPyPI workflow:
-
-The TestPyPI workflow
----------------------
-
-The TestPyPI workflow publishes your package on TestPyPI_,
-a test instance of the Python Package Index.
-
-The workflow is triggered on every push to the master branch.
-It bumps the version number to a developmental pre-release,
-builds the package using Poetry,
-and uploads it using the `pypa/gh-action-pypi-publish`_ action.
-This workflow uses the ``TEST_PYPI_TOKEN`` secret.
-
-The workflow is defined in ``.github/workflows/test-pypi.yml``.
+The Release Drafter configuration is located in ``.github/release-drafter.yml``.
 
 
 .. _Tutorials:
@@ -2317,7 +2288,7 @@ Open a pull request for your branch on GitHub:
 2. Click **New pull request**.
 3. Enter the title for the pull request.
 4. Enter a description for the pull request.
-5. Apply a :ref:`label identifying the type of change <The Release Drafter workflow>`
+5. Apply a :ref:`label identifying the type of change <The Release workflow>`
 6. Click **Create pull request**.
 
 Release notes are pre-filled with the titles of merged pull requests.
@@ -2339,8 +2310,8 @@ This triggers the following automated steps:
 - :ref:`The test suite runs against the master branch <The Tests workflow>`.
 - :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
 - :ref:`The documentation is built from the master branch <The Docs workflow>`.
-- :ref:`The draft GitHub Release is updated <The Release Drafter workflow>`.
-- :ref:`A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow>`.
+- :ref:`The draft GitHub Release is updated <The Release workflow>`.
+- :ref:`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
 
 In your local repository,
@@ -2366,60 +2337,46 @@ The original commits remain accessible from the pull request
 How to make a release
 ---------------------
 
-Before making a release, go through the following checklist:
+Releases are triggered by a version bump on the master branch.
+It is recommended to do this in a separate pull request:
 
-- The master branch passes all checks.
-- The development release on TestPyPI_ looks good.
-- All pull requests for the release have been merged.
-
-Making a release is a two-step process:
-
-1. Bump the version using `poetry version`_. (Commit and push.)
-2. Publish a GitHub Release.
+1. Switch to a branch.
+2. Bump the version using `poetry version`_.
+3. Commit and push to GitHub.
+4. Open a pull request.
+5. Merge the pull request.
 
 .. _poetry version: https://python-poetry.org/docs/cli/#version
 
-When bumping the version, adhere to `Semantic Versioning`_ and `PEP 440`_.
 The individual steps for bumping the version are:
 
 .. code:: console
 
-   $ git switch master
+   $ git switch --create release master
    $ poetry version <version>
    $ git commit --message="<project> <version>" pyproject.toml
-   $ git push origin master
+   $ git push origin release
 
-If you want the Git tag to be annotated or signed,
-add the following optional steps:
+If you're not sure which version number to choose,
+read about `Semantic Versioning`_.
+Versioning rules for Python packages are laid down in `PEP 440`_.
 
-.. code:: console
+Before merging the pull request for the release,
+go through the following checklist:
 
-   $ git tag --message="<project> <version>" v<version>
-   $ git push origin v<version>
+- The pull request passes all checks.
+- The development release on TestPyPI_ looks good.
+- All pull requests for the release have been merged.
 
-To publish the release,
-locate the draft release on the *Releases* tab of the GitHub repository,
-and follow these steps:
+Merging the pull request triggers the
+:ref:`Release workflow <The Release workflow>`.
+This workflow performs the following automated steps:
 
-1. Click **Edit** next to the draft release.
-2. Enter a tag of the form ``v<version>``, using the new project version.
-3. Enter the release title, e.g. ``<version>``.
-4. Edit the release description, if required.
-5. Click **Publish Release**.
+- Publish the package on PyPI.
+- Publish a GitHub Release.
+- Apply a Git tag to the repository.
 
-After publishing the release,
-the following automated steps are triggered:
-
-- The Git tag is applied to the repository.
-- :ref:`The package is uploaded to PyPI <The Release workflow>`.
-- `Read the Docs`_ builds a new stable version of the documentation.
-
-Update your local repository:
-
-.. code:: console
-
-   $ git switch master
-   $ git pull origin master v<version>
+`Read the Docs`_ automatically builds a new stable version of the documentation.
 
 
 The Hypermodern Python blog
