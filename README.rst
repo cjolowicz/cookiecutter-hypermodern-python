@@ -239,15 +239,26 @@ Read the Docs
 Releasing
 ---------
 
-1. Bump the version using `poetry version`_. Push to GitHub.
-2. Publish a GitHub Release.
-3. GitHub Action triggers the PyPI upload.
+Releases are triggered by a version bump on the master branch.
+It is recommended to do this in a separate pull request:
+
+1. Switch to a branch.
+2. Bump the version using `poetry version`_.
+3. Commit and push to GitHub.
+4. Open a pull request.
+5. Merge the pull request.
 
 .. _poetry version: https://python-poetry.org/docs/cli/#version
 
-Release notes are pre-filled with titles and authors of merged pull requests.
+The Release workflow performs the following automated steps:
 
-Use labels to group the pull requests into sections:
+- Build and upload the package to PyPI.
+- Apply a version tag to the repository.
+- Publish a GitHub Release.
+
+Release notes are populated with the titles and authors of merged pull requests.
+You can group the pull requests into separate sections
+by applying labels to them, like this:
 
 .. table-release-drafter-sections-begin
 
@@ -273,8 +284,8 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
-Create the remaining labels on the *Issues* tab of your GitHub repository,
-when you need them.
+Create the remaining labels when you need them,
+on the *Issues* tab of your GitHub repository,
 
 .. table-release-drafter-sections-end
 
