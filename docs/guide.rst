@@ -2061,17 +2061,35 @@ located in ``.github/workflow/constraints.txt``.
 The Tests workflow
 ------------------
 
-The Tests workflow executes the test suite using Nox.
-
-The workflow is triggered on every push to the GitHub repository,
+The Tests workflow runs checks using Nox.
+It is triggered on every push to the repository,
 and when a pull request is opened or receives new commits.
-It consists of a job for each supported Python version,
-executed on the `latest supported runners`__ for
-Ubuntu, Windows, and macOS.
+
+Each Nox session runs in a separate job,
+using the current release of Python
+and the `latest Ubuntu runner`__.
+Selected Nox sessions also run on Windows and macOS,
+and with older Python versions,
+as shown in the table below:
 
 __ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
-The workflow uses the following GitHub Actions:
+.. table:: Jobs in the Tests workflow
+   :class: hypermodern-table
+   :widths: auto
+
+   ========================================== ====================== ===============
+   Nox session                                Platform               Python versions
+   ========================================== ====================== ===============
+   :ref:`pre-commit <The pre-commit session>` Ubuntu                 3.8
+   :ref:`safety <The safety session>`         Ubuntu                 3.8
+   :ref:`mypy <The mypy session>`             Ubuntu                 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Windows                3.8
+   :ref:`tests <The tests session>`           macOS                  3.8
+   ========================================== ====================== ===============
+
+The Tests workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
@@ -2081,7 +2099,7 @@ The workflow uses the following GitHub Actions:
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/cache: https://github.com/actions/cache
 
-The workflow is defined in ``.github/workflows/tests.yml``.
+The Tests workflow is defined in ``.github/workflows/tests.yml``.
 
 
 .. _The Coverage workflow:
