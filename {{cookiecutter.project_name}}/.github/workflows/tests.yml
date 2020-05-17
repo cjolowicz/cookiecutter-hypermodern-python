@@ -85,3 +85,12 @@ jobs:
         with:
           name: docs
           path: docs/_build
+
+      - name: Create coverage report
+        if: always() && matrix.session == 'tests'
+        run: |
+          nox --force-color --session=coverage -- xml
+
+      - name: Upload coverage report
+        if: always() && matrix.session == 'tests'
+        uses: codecov/codecov-action@v1.0.7
