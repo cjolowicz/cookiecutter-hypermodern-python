@@ -22,6 +22,7 @@ jobs:
           - { python-version: 3.6, os: ubuntu-latest, session: "tests" }
           - { python-version: 3.8, os: windows-latest, session: "tests" }
           - { python-version: 3.8, os: macos-latest, session: "tests" }
+          - { python-version: 3.8, os: ubuntu-latest, session: "docs" }
 
     env:
       NOXSESSION: {{ "${{ matrix.session }}" }}
@@ -77,3 +78,10 @@ jobs:
       - name: Run Nox
         run: |
           nox --force-color
+
+      - name: Upload documentation
+        if: matrix.session == 'docs'
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs
+          path: docs/_build
