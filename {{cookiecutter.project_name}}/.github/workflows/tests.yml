@@ -1,7 +1,13 @@
 name: Tests
-on: [push, pull_request]
+
+on:
+  - push
+  - pull_request
+
 jobs:
   tests:
+    name: {{ "Tests (${{ matrix.python-version }}, ${{ matrix.os }})" }}
+    runs-on: {{ "${{ matrix.os }}" }}
     strategy:
       fail-fast: false
       matrix:
@@ -11,16 +17,34 @@ jobs:
           - { python-version: 3.8, os: macos-latest }
           - { python-version: 3.7, os: ubuntu-latest }
           - { python-version: 3.6, os: ubuntu-latest }
-    runs-on: {{ "${{ matrix.os }}" }}
-    name: {{ "Python ${{ matrix.python-version }} (${{ matrix.os }})" }}
+
     steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: actions/setup-python@v2
+      - name: Check out the repository
+        uses: actions/checkout@v2.1.0
+
+      - name: Set up Python {{ "${{ matrix.python-version }}" }}
+        uses: actions/setup-python@v2
         with:
           python-version: {{ "${{ matrix.python-version }}" }}
-      - name: Compute cache key prefix
+
+      - name: Upgrade pip
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip --version
+
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+
+      - name: Install Nox
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt nox
+          nox --version
+
+      - name: Compute pre-commit cache key
         if: matrix.os != 'windows-latest'
-        id: cache_key_prefix
+        id: pre-commit-cache
         shell: python
         run: |
           import hashlib
@@ -32,14 +56,16 @@ jobs:
           result = {{ '"${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])' }}
 
           print("::set-output name=result::{}".format(result))
-      - uses: actions/cache@v1.2.0
+
+      - name: Restore pre-commit cache
+        uses: actions/cache@v1.2.0
         if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
-          key: {{ "${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}" }}
+          key: {{ "${{ steps.pre-commit-cache.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}" }}
           restore-keys: |
-            {{ "${{ steps.cache_key_prefix.outputs.result }}" }}-
-      - run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt nox poetry
-      - run: nox --force-color
+            {{ "${{ steps.pre-commit-cache.outputs.result }}-" }}
+
+      - name: Run Nox
+        run: |
+          nox --force-color
