@@ -390,7 +390,6 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
 
    ======================= ===============================
    ``coverage.yml``        :ref:`The Coverage workflow`
-   ``docs.yml``            :ref:`The Docs workflow`
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
@@ -2024,7 +2023,6 @@ The |HPC| defines the following workflows:
    ===================================================== ======================== ==================================== ===============
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
    :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push, PR
-   :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push, PR
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
    ===================================================== ======================== ==================================== ===============
 
@@ -2087,17 +2085,26 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
    :ref:`tests <The tests session>`           Windows                3.8
    :ref:`tests <The tests session>`           macOS                  3.8
+   :ref:`docs <The docs session>`             Ubuntu                 3.8
    ========================================== ====================== ===============
+
+The workflow uploads the generated documentation as a `workflow artifact`__.
+Building the documentation only serves the purpose of catching issues in pull requests.
+Builds on `Read the Docs`_ happen independently.
+
+__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
 
 The Tests workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/cache`_ for caching pre-commit environments
+- `actions/upload-artifact`_ to upload the generated documentation
 
 .. _actions/checkout: https://github.com/actions/checkout
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/cache: https://github.com/actions/cache
+.. _actions/upload-artifact: https://github.com/actions/upload-artifact
 
 The Tests workflow is defined in ``.github/workflows/tests.yml``.
 
@@ -2129,37 +2136,6 @@ The workflow runs with the current stable release of Python,
 using the latest supported Ubuntu runner.
 
 It is defined in ``.github/workflows/coverage.yml``.
-
-
-.. _The Docs workflow:
-
-The Docs workflow
------------------
-
-The Docs workflow builds the Sphinx_ documentation
-using the :ref:`docs <The docs session>` Nox session,
-and uploads the generated files as a `workflow artifact`__.
-
-__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
-
-This is done solely to ensure that the build process is functional.
-The actual project documentation is built independently on `Read the Docs`_.
-
-The workflow is triggered on every push to the GitHub repository,
-and when a pull request is opened or receives new commits.
-
-The workflow uses the following GitHub Actions:
-
-- `actions/checkout`_ for checking out the Git repository
-- `actions/setup-python`_ for setting up the Python interpreter
-- `actions/upload-artifact`_ to upload the generated documentation
-
-.. _actions/upload-artifact: https://github.com/actions/upload-artifact
-
-The workflow runs with the current stable release of Python,
-using the latest supported Ubuntu runner.
-
-It is defined in ``.github/workflows/docs.yml``.
 
 
 .. _The Release workflow:
@@ -2294,7 +2270,6 @@ The push triggers the following automated steps:
 
 - :ref:`The test suite runs against your branch <The Tests workflow>`.
 - :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The documentation is built from your branch <The Docs workflow>`.
 
 
 How to open a pull request
@@ -2327,7 +2302,6 @@ This triggers the following automated steps:
 
 - :ref:`The test suite runs against the master branch <The Tests workflow>`.
 - :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The documentation is built from the master branch <The Docs workflow>`.
 - :ref:`The draft GitHub Release is updated <The Release workflow>`.
 - :ref:`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
