@@ -6,17 +6,25 @@ on:
 
 jobs:
   tests:
-    name: {{ "Tests (${{ matrix.python-version }}, ${{ matrix.os }})" }}
+    name: {{ "${{ matrix.session }} ${{ matrix.python-version }} / ${{ matrix.os }}" }}
     runs-on: {{ "${{ matrix.os }}" }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - { python-version: 3.8, os: ubuntu-latest }
-          - { python-version: 3.8, os: windows-latest }
-          - { python-version: 3.8, os: macos-latest }
-          - { python-version: 3.7, os: ubuntu-latest }
-          - { python-version: 3.6, os: ubuntu-latest }
+          - { python-version: 3.8, os: ubuntu-latest, session: "pre-commit" }
+          - { python-version: 3.8, os: ubuntu-latest, session: "safety" }
+          - { python-version: 3.8, os: ubuntu-latest, session: "mypy" }
+          - { python-version: 3.7, os: ubuntu-latest, session: "mypy" }
+          - { python-version: 3.6, os: ubuntu-latest, session: "mypy" }
+          - { python-version: 3.8, os: ubuntu-latest, session: "tests" }
+          - { python-version: 3.7, os: ubuntu-latest, session: "tests" }
+          - { python-version: 3.6, os: ubuntu-latest, session: "tests" }
+          - { python-version: 3.8, os: windows-latest, session: "tests" }
+          - { python-version: 3.8, os: macos-latest, session: "tests" }
+
+    env:
+      NOXSESSION: {{ "${{ matrix.session }}" }}
 
     steps:
       - name: Check out the repository
