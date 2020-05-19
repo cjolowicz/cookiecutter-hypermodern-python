@@ -70,6 +70,6 @@ ol {
 }
 
 /* Do not underline badges */
-.body p:first-of-type a.reference {
+.badges a.reference {
   border-bottom: 0px;
 }
