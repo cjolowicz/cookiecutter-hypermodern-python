@@ -9,20 +9,8 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Tests| |Read the Docs| |CalVer| |Codecov| |Python Version| |License| |Black| |pre-commit| |Dependabot|
+|Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
 
-.. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
-   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
-   :alt: Tests
-.. |Read the Docs| image:: https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/
-   :target: https://cookiecutter-hypermodern-python.readthedocs.io/
-   :alt: Read the Docs
-.. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
-   :target: http://calver.org/
-   :alt: CalVer
-.. |Codecov| image:: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance
-   :alt: Codecov
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
    :alt: Python Version
@@ -38,6 +26,18 @@ cookiecutter-hypermodern-python
 .. |Dependabot| image:: https://api.dependabot.com/badges/status?host=github&repo=cjolowicz/cookiecutter-hypermodern-python-instance
    :target: https://dependabot.com
    :alt: Dependabot
+.. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
+   :target: http://calver.org/
+   :alt: CalVer
+.. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
+   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
+   :alt: Tests
+.. |Read the Docs| image:: https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/
+   :target: https://cookiecutter-hypermodern-python.readthedocs.io/
+   :alt: Read the Docs
+.. |Codecov| image:: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance
+   :alt: Codecov
 
 .. badges-end
 
