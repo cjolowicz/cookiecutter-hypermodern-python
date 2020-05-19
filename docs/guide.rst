@@ -719,7 +719,6 @@ See the table below for an overview of the dependencies of generated projects:
    mypy_             Optional static typing for Python
    pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
    pytest_           Simple powerful testing with Python
-   pytest-cov_       Pytest plugin for measuring coverage
    safety_           Checks installed dependencies for known vulnerabilities
    sphinx_           Python documentation generator
    sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
@@ -2427,5 +2426,4 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
-.. _pytest-cov: https://pytest-cov.readthedocs.io/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
