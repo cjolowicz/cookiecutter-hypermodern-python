@@ -110,7 +110,7 @@ def install(session: Session, *args: str) -> None:
         session.install(f"--constraint={requirements}", *args)
 
 
-@nox.session(name="pre-commit", python="3.8")
+@nox.session(name="pre-commit")
 def precommit(session: Session) -> None:
     """Lint using pre-commit."""
     args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
@@ -118,7 +118,7 @@ def precommit(session: Session) -> None:
     session.run("pre-commit", *args)
 
 
-@nox.session(python="3.8")
+@nox.session
 def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
     poetry = Poetry(session)
@@ -163,7 +163,7 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
-@nox.session(python="3.8")
+@nox.session
 def docs(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
