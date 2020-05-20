@@ -418,7 +418,7 @@ and links each file to a section with more details.
    ``mypy.ini``                          Configuration for :ref:`mypy <Type-checking with mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
-                                         and configuration for :ref:`Coverage.py <Code coverage with Coverage.py>`
+                                         and configuration for :ref:`Coverage.py <The coverage session>`
    ===================================== ========================================
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
@@ -1052,17 +1052,18 @@ The following table gives an overview of the available Nox sessions:
    :class: hypermodern-table
    :widths: auto
 
-   ========================================== ============================== ================== =========
-   Session                                    Description                    Python              Default
-   ========================================== ============================== ================== =========
-   :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
-   :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.8``                ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_    ``3.6`` … ``3.8``
-   ========================================== ============================== ================== =========
+   ========================================== ================================= ================== =========
+   Session                                    Description                       Python              Default
+   ========================================== ================================= ================== =========
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_ ``3.8``
+   :ref:`docs <The docs session>`             Build Sphinx_ documentation       ``3.8``
+   :ref:`mypy <The mypy session>`             Type-check with mypy_             ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_             ``3.8``                ✓
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_    ``3.8``                ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_            ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_       ``3.6`` … ``3.8``
+   ========================================== ================================= ================== =========
 
 
 .. _The docs session:
@@ -1213,6 +1214,47 @@ For example, the following command runs only the test case ``test_main_succeeds`
 .. code:: console
 
    $ nox --session=tests -- -k test_main_succeeds
+
+
+.. _The coverage session:
+
+The coverage session
+--------------------
+
+.. note::
+
+   *Test coverage* is a measure of the degree to which
+   the source code of your program is executed
+   while running its test suite.
+
+The coverage session prints a detailed coverage report to the terminal,
+combining the coverage data collected
+during the :ref:`tests session <The tests session>`.
+If the total coverage is below 100%,
+the coverage session fails.
+Code coverage is measured using `Coverage.py`_.
+
+The coverage session is triggered by the tests session,
+and runs after all other sessions have completed.
+This allows it to combine the coverage data for different Python versions.
+
+You can also run the session manually:
+
+.. code:: console
+
+   $ nox --session=coverage
+
+Coverage.py_ is configured in the ``pyproject.toml`` file,
+using the ``tool.coverage`` table.
+The configuration informs the tool about your package name and source tree layout.
+It also enables branch analysis and the display of line numbers for missing coverage,
+and specifies the target coverage percentage.
+
+During continuous integration,
+coverage data is uploaded to the Codecov_ reporting service.
+For details, see the sections about
+:ref:`Codecov <Codecov integration>` and
+:ref:`The Coverage workflow`.
 
 
 .. _The typeguard session:
@@ -1725,34 +1767,6 @@ __ https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plug
 
 The |HPC| disables ``S101`` (use of assert) for the test suite,
 as pytest_ uses assertions to verify expectations in tests.
-
-
-.. _Code coverage with Coverage.py:
-
-Code coverage with Coverage.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Test coverage* is a measure of the degree to which
-the source code of your program is executed while running its test suite.
-The |HPC| requires full test coverage.
-
-Code coverage is measured using `Coverage.py`_
-during the :ref:`tests session <The tests session>`.
-When the test suite completes,
-a detailed coverage report is printed to the terminal.
-If the total coverage is below 100%,
-the test session fails.
-
-Coverage.py is configured using the ``pyproject.toml`` configuration file,
-in the ``tool.coverage`` table.
-The configuration informs the tool about your package name and source tree layout.
-It also enables branch analysis and the display of line numbers for missing coverage,
-and specifies the target coverage percentage.
-
-During continuous integration, coverage data is uploaded to the Codecov_ reporting service.
-For details, see the sections about
-:ref:`Codecov <Codecov integration>` and
-:ref:`The Coverage workflow`.
 
 
 .. _Type-checking with mypy:
