@@ -52,7 +52,7 @@ jobs:
           nox --version
 
       - name: Compute pre-commit cache key
-        if: matrix.os != 'windows-latest'
+        if: matrix.session == 'pre-commit'
         id: pre-commit-cache
         shell: python
         run: |
@@ -68,7 +68,7 @@ jobs:
 
       - name: Restore pre-commit cache
         uses: actions/cache@v1.2.0
-        if: matrix.os != 'windows-latest'
+        if: matrix.session == 'pre-commit'
         with:
           path: ~/.cache/pre-commit
           key: {{ "${{ steps.pre-commit-cache.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}" }}
