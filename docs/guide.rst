@@ -1057,7 +1057,7 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ============================== ================== =========
    :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
    :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.8``                ✓
    :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
    :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
    :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
