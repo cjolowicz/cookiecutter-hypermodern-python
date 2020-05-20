@@ -148,9 +148,10 @@ def tests(session: Session) -> None:
 @nox.session
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
+    args = session.posargs or ["report"]
     install(session, "coverage[toml]")
     session.run("coverage", "combine")
-    session.run("coverage", "report")
+    session.run("coverage", *args)
 
 
 @nox.session(python=python_versions)
