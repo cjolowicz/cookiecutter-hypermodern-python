@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
+      - uses: actions/checkout@v2.1.1
       - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
