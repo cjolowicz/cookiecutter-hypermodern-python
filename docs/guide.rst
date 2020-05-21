@@ -2139,7 +2139,7 @@ The Coverage workflow uploads coverage data to Codecov_.
 
 The workflow is triggered on every push to the GitHub repository,
 and when a pull request is opened or receives new commits.
-It executes the :ref:`tests session <the tests session>`
+It executes the :ref:`coverage session <The coverage session>`
 to generate a coverage report in cobertura__ XML format.
 This coverage report is then uploaded to Codecov_.
 
