@@ -2045,9 +2045,39 @@ The |HPC| defines the following workflows:
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
    ===================================================== ======================== ==================================== ===============
 
+
+Overview of GitHub Actions
+--------------------------
+
+Workflows use the following GitHub Actions:
+
+.. table:: GitHub Actions
+   :class: hypermodern-table
+   :widths: auto
+
+   ============================================ =========================================================
+   `actions/cache`_                             Cache dependencies and build outputs
+   `actions/checkout`_                          Check out the Git repository
+   `actions/setup-python`_                      Set up workflows with a specific Python version
+   `actions/upload-artifact`_                   Upload artifacts from workflows
+   `codecov/codecov-action`_                    Upload coverage to Codecov
+   `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
+   `release-drafter/release-drafter`_           Draft and publish GitHub Releases
+   `salsify/action-detect-and-tag-new-version`_ Detect and tag new versions in a repository
+   ============================================ =========================================================
+
+.. _actions/cache: https://github.com/actions/cache
+.. _actions/checkout: https://github.com/actions/checkout
+.. _actions/setup-python: https://github.com/actions/setup-python
+.. _actions/upload-artifact: https://github.com/actions/upload-artifact
+.. _codecov/codecov-action: https://github.com/codecov/codecov-action
+.. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
+.. _release-drafter/release-drafter: https://github.com/release-drafter/release-drafter
+.. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
+
 .. note::
 
-   GitHub Actions used by these workflows are managed by :ref:`Dependabot <Dependabot integration>`.
+   GitHub Actions used by the workflows are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of GitHub Actions become available,
    Dependabot updates the workflows that use them and submits a pull request.
 
@@ -2117,7 +2147,7 @@ Builds on `Read the Docs`_ happen independently.
 __ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
 
 The workflow also uploads coverage data to Codecov_ after running tests.
-It generates a coverage report in cobertura__ XML format,
+It generates a coverage report in Cobertura__ XML format,
 using the :ref:`coverage session <The coverage session>`.
 The report is uploaded
 using the official `Codecov GitHub Action <codecov/codecov-action_>`__.
@@ -2131,12 +2161,6 @@ The Tests workflow uses the following GitHub Actions:
 - `actions/cache`_ for caching pre-commit environments
 - `actions/upload-artifact`_ to upload the generated documentation
 - `codecov/codecov-action`_ for uploading to Codecov_
-
-.. _actions/checkout: https://github.com/actions/checkout
-.. _actions/setup-python: https://github.com/actions/setup-python
-.. _actions/cache: https://github.com/actions/cache
-.. _actions/upload-artifact: https://github.com/actions/upload-artifact
-.. _codecov/codecov-action: https://github.com/codecov/codecov-action
 
 The Tests workflow is defined in ``.github/workflows/tests.yml``.
 
@@ -2177,10 +2201,6 @@ The Release workflow uses the following GitHub Actions:
 - `salsify/action-detect-and-tag-new-version`_ for tagging on version bumps
 - `pypa/gh-action-pypi-publish`_ for uploading the package to PyPI or TestPyPI
 - `release-drafter/release-drafter`_ for publishing the GitHub Release
-
-.. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
-.. _release-drafter/release-drafter: <Release Drafter>
-.. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 
 Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
