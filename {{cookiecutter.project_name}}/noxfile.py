@@ -142,6 +142,13 @@ def tests(session: Session) -> None:
     install_package(session)
     install(session, "coverage[toml]", "pytest")
     session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+    session.notify("coverage")
+
+
+@nox.session
+def coverage(session: Session) -> None:
+    """Produce the coverage report."""
+    install(session, "coverage[toml]")
     session.run("coverage", "combine")
     session.run("coverage", "report")
 
