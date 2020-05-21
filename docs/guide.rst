@@ -2060,8 +2060,11 @@ Constraints file
 GitHub Actions workflows install the following tools:
 
 - pip_
+- virtualenv_
 - Poetry_
 - Nox_
+
+.. _virtualenv: https://virtualenv.pypa.io/
 
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
