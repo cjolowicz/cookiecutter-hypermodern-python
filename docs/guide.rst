@@ -389,7 +389,6 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    :widths: auto
 
    ======================= ===============================
-   ``coverage.yml``        :ref:`The Coverage workflow`
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
@@ -1262,7 +1261,7 @@ During continuous integration,
 coverage data is uploaded to the Codecov_ reporting service.
 For details, see the sections about
 :ref:`Codecov <Codecov integration>` and
-:ref:`The Coverage workflow`.
+:ref:`The Tests workflow`.
 
 
 .. _The typeguard session:
@@ -1912,7 +1911,7 @@ __ https://docs.codecov.io/docs/codecov-yaml
 
 Codecov integrates with your repository
 via its GitHub app.
-The :ref:`Coverage workflow <The Coverage workflow>` uploads the coverage data.
+The :ref:`Tests workflow <The Tests workflow>` uploads the coverage data.
 
 
 .. _Dependabot integration:
@@ -2043,7 +2042,6 @@ The |HPC| defines the following workflows:
    Workflow                                              File                     Description                          Trigger
    ===================================================== ======================== ==================================== ===============
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
-   :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push, PR
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
    ===================================================== ======================== ==================================== ===============
 
@@ -2115,48 +2113,29 @@ Builds on `Read the Docs`_ happen independently.
 
 __ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
 
+The workflow also uploads coverage data to Codecov_ after running tests.
+It generates a coverage report in cobertura__ XML format,
+using the :ref:`coverage session <The coverage session>`.
+The report is uploaded
+using the official `Codecov GitHub Action <codecov/codecov-action_>`__.
+
+__ https://cobertura.github.io/cobertura/
+
 The Tests workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/cache`_ for caching pre-commit environments
 - `actions/upload-artifact`_ to upload the generated documentation
+- `codecov/codecov-action`_ for uploading to Codecov_
 
 .. _actions/checkout: https://github.com/actions/checkout
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/cache: https://github.com/actions/cache
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
-
-The Tests workflow is defined in ``.github/workflows/tests.yml``.
-
-
-.. _The Coverage workflow:
-
-The Coverage workflow
----------------------
-
-The Coverage workflow uploads coverage data to Codecov_.
-
-The workflow is triggered on every push to the GitHub repository,
-and when a pull request is opened or receives new commits.
-It executes the :ref:`coverage session <The coverage session>`
-to generate a coverage report in cobertura__ XML format.
-This coverage report is then uploaded to Codecov_.
-
-__ https://cobertura.github.io/cobertura/
-
-The workflow uses the following GitHub Actions:
-
-- `actions/checkout`_ for checking out the Git repository
-- `actions/setup-python`_ for setting up the Python interpreter
-- `codecov/codecov-action`_ for uploading to Codecov_
-
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
 
-The workflow runs with the current stable release of Python,
-using the latest supported Ubuntu runner.
-
-It is defined in ``.github/workflows/coverage.yml``.
+The Tests workflow is defined in ``.github/workflows/tests.yml``.
 
 
 .. _The Release workflow:
@@ -2290,7 +2269,6 @@ Push your branch to GitHub:
 The push triggers the following automated steps:
 
 - :ref:`The test suite runs against your branch <The Tests workflow>`.
-- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
 
 
 How to open a pull request
@@ -2322,7 +2300,6 @@ merge the pull request using the squash-merge strategy (recommended):
 This triggers the following automated steps:
 
 - :ref:`The test suite runs against the master branch <The Tests workflow>`.
-- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
 - :ref:`The draft GitHub Release is updated <The Release workflow>`.
 - :ref:`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
