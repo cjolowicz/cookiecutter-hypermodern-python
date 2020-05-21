@@ -1244,6 +1244,14 @@ You can also run the session manually:
 
    $ nox --session=coverage
 
+Use the ``--`` separator to pass arguments to the ``coverage`` command.
+For example, here's how you would generate an HTML report
+in the ``htmlcov`` directory:
+
+.. code:: console
+
+   $ nox -rs coverage -- html
+
 Coverage.py_ is configured in the ``pyproject.toml`` file,
 using the ``tool.coverage`` table.
 The configuration informs the tool about your package name and source tree layout.
