@@ -66,9 +66,9 @@ Initial releases may occur more frequently.
 
 .. _bimonthly: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
 
-The current stable release is `2020.4.15.1`_.
+The current stable release is `2020.5.15`_.
 
-.. _2020.4.15.1: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.4.15.1
+.. _2020.5.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.5.15
 
 
 .. _Installation:
@@ -218,12 +218,12 @@ Creating a project
 
 Create a project from this template
 by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
-Use the ``--checkout`` option with the `current stable release <2020.4.15.1_>`__:
+Use the ``--checkout`` option with the `current stable release <2020.5.15_>`__:
 
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.4.15.1"
+     --checkout="2020.5.15"
 
 Cookiecutter downloads the template,
 and asks you a series of questions about project variables,
@@ -389,11 +389,7 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    :widths: auto
 
    ======================= ===============================
-   ``coverage.yml``        :ref:`The Coverage workflow`
-   ``docs.yml``            :ref:`The Docs workflow`
-   ``release-drafter.yml`` :ref:`The Release Drafter workflow`
    ``release.yml``         :ref:`The Release workflow`
-   ``test-pypi.yml``       :ref:`The TestPyPI workflow`
    ``tests.yml``           :ref:`The Tests workflow`
    ======================= ===============================
 
@@ -413,7 +409,7 @@ and links each file to a section with more details.
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
-   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release Drafter workflow>`
+   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
@@ -421,7 +417,7 @@ and links each file to a section with more details.
    ``mypy.ini``                          Configuration for :ref:`mypy <Type-checking with mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
-                                         and configuration for :ref:`Coverage.py <Code coverage with Coverage.py>`
+                                         and configuration for :ref:`Coverage.py <The coverage session>`
    ===================================== ========================================
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
@@ -722,7 +718,6 @@ See the table below for an overview of the dependencies of generated projects:
    mypy_             Optional static typing for Python
    pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
    pytest_           Simple powerful testing with Python
-   pytest-cov_       Pytest plugin for measuring coverage
    safety_           Checks installed dependencies for known vulnerabilities
    sphinx_           Python documentation generator
    sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
@@ -1056,17 +1051,18 @@ The following table gives an overview of the available Nox sessions:
    :class: hypermodern-table
    :widths: auto
 
-   ========================================== ============================== ================== =========
-   Session                                    Description                    Python              Default
-   ========================================== ============================== ================== =========
-   :ref:`docs <The docs session>`             Build Sphinx_ documentation    ``3.8``
-   :ref:`mypy <The mypy session>`             Type-check with mypy_          ``3.6`` … ``3.8``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_          ``3.6`` … ``3.8``      ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_ ``3.8``                ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_         ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_     ``3.6`` … ``3.8``
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_    ``3.6`` … ``3.8``
-   ========================================== ============================== ================== =========
+   ========================================== ================================= ================== =========
+   Session                                    Description                       Python              Default
+   ========================================== ================================= ================== =========
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_ ``3.8``
+   :ref:`docs <The docs session>`             Build Sphinx_ documentation       ``3.8``
+   :ref:`mypy <The mypy session>`             Type-check with mypy_             ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_             ``3.8``                ✓
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_    ``3.8``                ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_            ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_       ``3.6`` … ``3.8``
+   ========================================== ================================= ================== =========
 
 
 .. _The docs session:
@@ -1217,6 +1213,55 @@ For example, the following command runs only the test case ``test_main_succeeds`
 .. code:: console
 
    $ nox --session=tests -- -k test_main_succeeds
+
+
+.. _The coverage session:
+
+The coverage session
+--------------------
+
+.. note::
+
+   *Test coverage* is a measure of the degree to which
+   the source code of your program is executed
+   while running its test suite.
+
+The coverage session prints a detailed coverage report to the terminal,
+combining the coverage data collected
+during the :ref:`tests session <The tests session>`.
+If the total coverage is below 100%,
+the coverage session fails.
+Code coverage is measured using `Coverage.py`_.
+
+The coverage session is triggered by the tests session,
+and runs after all other sessions have completed.
+This allows it to combine the coverage data for different Python versions.
+
+You can also run the session manually:
+
+.. code:: console
+
+   $ nox --session=coverage
+
+Use the ``--`` separator to pass arguments to the ``coverage`` command.
+For example, here's how you would generate an HTML report
+in the ``htmlcov`` directory:
+
+.. code:: console
+
+   $ nox -rs coverage -- html
+
+Coverage.py_ is configured in the ``pyproject.toml`` file,
+using the ``tool.coverage`` table.
+The configuration informs the tool about your package name and source tree layout.
+It also enables branch analysis and the display of line numbers for missing coverage,
+and specifies the target coverage percentage.
+
+During continuous integration,
+coverage data is uploaded to the Codecov_ reporting service.
+For details, see the sections about
+:ref:`Codecov <Codecov integration>` and
+:ref:`The Tests workflow`.
 
 
 .. _The typeguard session:
@@ -1731,34 +1776,6 @@ The |HPC| disables ``S101`` (use of assert) for the test suite,
 as pytest_ uses assertions to verify expectations in tests.
 
 
-.. _Code coverage with Coverage.py:
-
-Code coverage with Coverage.py
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Test coverage* is a measure of the degree to which
-the source code of your program is executed while running its test suite.
-The |HPC| requires full test coverage.
-
-Code coverage is measured using `Coverage.py`_
-during the :ref:`tests session <The tests session>`.
-When the test suite completes,
-a detailed coverage report is printed to the terminal.
-If the total coverage is below 100%,
-the test session fails.
-
-Coverage.py is configured using the ``pyproject.toml`` configuration file,
-in the ``tool.coverage`` table.
-The configuration informs the tool about your package name and source tree layout.
-It also enables branch analysis and the display of line numbers for missing coverage,
-and specifies the target coverage percentage.
-
-During continuous integration, coverage data is uploaded to the Codecov_ reporting service.
-For details, see the sections about
-:ref:`Codecov <Codecov integration>` and
-:ref:`The Coverage workflow`.
-
-
 .. _Type-checking with mypy:
 
 Type-checking with mypy
@@ -1872,7 +1889,7 @@ Follow these steps to set up TestPyPI for your repository:
    add a secret named ``TEST_PYPI_TOKEN`` with the token you just copied.
 
 TestPyPI is integrated with your repository
-via the :ref:`TestPyPI workflow <The TestPyPI workflow>`.
+via the :ref:`Release workflow <The Release workflow>`.
 
 
 .. _Codecov integration:
@@ -1894,7 +1911,7 @@ __ https://docs.codecov.io/docs/codecov-yaml
 
 Codecov integrates with your repository
 via its GitHub app.
-The :ref:`Coverage workflow <The Coverage workflow>` uploads the coverage data.
+The :ref:`Tests workflow <The Tests workflow>` uploads the coverage data.
 
 
 .. _Dependabot integration:
@@ -2025,38 +2042,44 @@ The |HPC| defines the following workflows:
    Workflow                                              File                     Description                          Trigger
    ===================================================== ======================== ==================================== ===============
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
-   :ref:`Coverage <The Coverage workflow>`               ``coverage.yml``         Upload coverage data to Codecov_     Push, PR
-   :ref:`Build documentation <The Docs workflow>`        ``docs.yml``             Build the documentation with Sphinx_ Push, PR
-   :ref:`Release Drafter <The Release Drafter workflow>` ``release-drafter.yml``  Update the draft GitHub Release      Push (master)
-   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          GitHub Release
-   :ref:`TestPyPI <The TestPyPI workflow>`               ``test-pypi.yml``        Upload the package to TestPyPI_      Push (master)
+   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
    ===================================================== ======================== ==================================== ===============
 
-.. note::
 
-   GitHub Actions used by these workflows are managed by :ref:`Dependabot <Dependabot integration>`.
-   When newer versions of GitHub Actions become available,
-   Dependabot updates the workflows that use them and submits a pull request.
+Overview of GitHub Actions
+--------------------------
 
+Workflows use the following GitHub Actions:
 
-Secrets
--------
-
-Some workflows use tokens to access external services.
-The following table lists the required tokens,
-which need to be stored as secrets in the repository settings on GitHub:
-
-.. table:: Secrets
+.. table:: GitHub Actions
    :class: hypermodern-table
    :widths: auto
 
-   =================== ===================
-   ``PYPI_TOKEN``      PyPI_ API token
-   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
-   =================== ===================
+   ============================================ =========================================================
+   `actions/cache`_                             Cache dependencies and build outputs
+   `actions/checkout`_                          Check out the Git repository
+   `actions/setup-python`_                      Set up workflows with a specific Python version
+   `actions/upload-artifact`_                   Upload artifacts from workflows
+   `codecov/codecov-action`_                    Upload coverage to Codecov
+   `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
+   `release-drafter/release-drafter`_           Draft and publish GitHub Releases
+   `salsify/action-detect-and-tag-new-version`_ Detect and tag new versions in a repository
+   ============================================ =========================================================
 
-You can generate these API tokens
-from your account settings on PyPI_ and TestPyPI_.
+.. _actions/cache: https://github.com/actions/cache
+.. _actions/checkout: https://github.com/actions/checkout
+.. _actions/setup-python: https://github.com/actions/setup-python
+.. _actions/upload-artifact: https://github.com/actions/upload-artifact
+.. _codecov/codecov-action: https://github.com/codecov/codecov-action
+.. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
+.. _release-drafter/release-drafter: https://github.com/release-drafter/release-drafter
+.. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
+
+.. note::
+
+   GitHub Actions used by the workflows are managed by :ref:`Dependabot <Dependabot integration>`.
+   When newer versions of GitHub Actions become available,
+   Dependabot updates the workflows that use them and submits a pull request.
 
 
 .. _Workflow constraints:
@@ -2067,8 +2090,11 @@ Constraints file
 GitHub Actions workflows install the following tools:
 
 - pip_
+- virtualenv_
 - Poetry_
 - Nox_
+
+.. _virtualenv: https://virtualenv.pypa.io/
 
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
@@ -2085,110 +2111,58 @@ located in ``.github/workflow/constraints.txt``.
 The Tests workflow
 ------------------
 
-The Tests workflow executes the test suite using Nox.
-
-The workflow is triggered on every push to the GitHub repository,
+The Tests workflow runs checks using Nox.
+It is triggered on every push to the repository,
 and when a pull request is opened or receives new commits.
-It consists of a job for each supported Python version,
-executed on the `latest supported runners`__ for
-Ubuntu, Windows, and macOS.
+
+Each Nox session runs in a separate job,
+using the current release of Python
+and the `latest Ubuntu runner`__.
+Selected Nox sessions also run on Windows and macOS,
+and with older Python versions,
+as shown in the table below:
 
 __ https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
-The workflow uses the following GitHub Actions:
+.. table:: Jobs in the Tests workflow
+   :class: hypermodern-table
+   :widths: auto
+
+   ========================================== ====================== ===============
+   Nox session                                Platform               Python versions
+   ========================================== ====================== ===============
+   :ref:`pre-commit <The pre-commit session>` Ubuntu                 3.8
+   :ref:`safety <The safety session>`         Ubuntu                 3.8
+   :ref:`mypy <The mypy session>`             Ubuntu                 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Windows                3.8
+   :ref:`tests <The tests session>`           macOS                  3.8
+   :ref:`docs <The docs session>`             Ubuntu                 3.8
+   ========================================== ====================== ===============
+
+The workflow uploads the generated documentation as a `workflow artifact`__.
+Building the documentation only serves the purpose of catching issues in pull requests.
+Builds on `Read the Docs`_ happen independently.
+
+__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
+
+The workflow also uploads coverage data to Codecov_ after running tests.
+It generates a coverage report in Cobertura__ XML format,
+using the :ref:`coverage session <The coverage session>`.
+The report is uploaded
+using the official `Codecov GitHub Action <codecov/codecov-action_>`__.
+
+__ https://cobertura.github.io/cobertura/
+
+The Tests workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/cache`_ for caching pre-commit environments
-
-.. _actions/checkout: https://github.com/actions/checkout
-.. _actions/setup-python: https://github.com/actions/setup-python
-.. _actions/cache: https://github.com/actions/cache
-
-The workflow is defined in ``.github/workflows/tests.yml``.
-
-
-.. _The Coverage workflow:
-
-The Coverage workflow
----------------------
-
-The Coverage workflow uploads coverage data to Codecov_.
-
-The workflow is triggered on every push to the GitHub repository,
-and when a pull request is opened or receives new commits.
-It executes the :ref:`tests session <the tests session>`
-to generate a coverage report in cobertura__ XML format.
-This coverage report is then uploaded to Codecov_.
-
-__ https://cobertura.github.io/cobertura/
-
-The workflow uses the following GitHub Actions:
-
-- `actions/checkout`_ for checking out the Git repository
-- `actions/setup-python`_ for setting up the Python interpreter
+- `actions/upload-artifact`_ to upload the generated documentation
 - `codecov/codecov-action`_ for uploading to Codecov_
 
-.. _codecov/codecov-action: https://github.com/codecov/codecov-action
-
-The workflow runs with the current stable release of Python,
-using the latest supported Ubuntu runner.
-
-It is defined in ``.github/workflows/coverage.yml``.
-
-
-.. _The Docs workflow:
-
-The Docs workflow
------------------
-
-The Docs workflow builds the Sphinx_ documentation
-using the :ref:`docs <The docs session>` Nox session,
-and uploads the generated files as a `workflow artifact`__.
-
-__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
-
-This is done solely to ensure that the build process is functional.
-The actual project documentation is built independently on `Read the Docs`_.
-
-The workflow is triggered on every push to the GitHub repository,
-and when a pull request is opened or receives new commits.
-
-The workflow uses the following GitHub Actions:
-
-- `actions/checkout`_ for checking out the Git repository
-- `actions/setup-python`_ for setting up the Python interpreter
-- `actions/upload-artifact`_ to upload the generated documentation
-
-.. _actions/upload-artifact: https://github.com/actions/upload-artifact
-
-The workflow runs with the current stable release of Python,
-using the latest supported Ubuntu runner.
-
-It is defined in ``.github/workflows/docs.yml``.
-
-
-.. _The Release Drafter workflow:
-
-The Release Drafter workflow
-----------------------------
-
-The Release Drafter workflow maintains a draft for the next GitHub Release.
-
-The workflow is triggered on every push to the master branch.
-It includes details from every pull request merged into master since the last release.
-The workflow uses the `Release Drafter`_ GitHub Action.
-
-The |HPC| groups pull requests by type,
-using GitHub labels.
-The following table shows the section headings and corresponding labels:
-
-.. include:: ../README.rst
-   :start-after: table-release-drafter-sections-begin
-   :end-before: table-release-drafter-sections-end
-
-The workflow is defined in ``.github/workflows/release-drafter.yml``.
-The configuration file is located in ``.github/release-drafter.yml``.
+The Tests workflow is defined in ``.github/workflows/tests.yml``.
 
 
 .. _The Release workflow:
@@ -2197,33 +2171,47 @@ The Release workflow
 --------------------
 
 The Release workflow publishes your package on PyPI_, the Python Package Index.
+The workflow also creates a version tag in the GitHub repository,
+and publishes a GitHub Release using `Release Drafter`_.
+The workflow is triggered on every push to the master branch.
 
-The workflow is triggered when a GitHub Release is published.
-It checks that the test suite passes,
-builds the package using Poetry,
-and uploads it using the `pypa/gh-action-pypi-publish`_ action.
-This workflow uses the ``PYPI_TOKEN`` secret.
+Release steps only run if the package version was bumped.
+If the package version did not change,
+the package is instead uploaded to TestPyPI_ as a prerelease,
+and only a draft GitHub Release is created.
+TestPyPI is a test instance of the Python Package Index.
 
-.. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
+The Release workflow uses API tokens to access PyPI_ and TestPyPI_.
+You can generate these tokens from your account settings on these services.
+The tokens need to be stored as secrets in the repository settings on GitHub:
+
+.. table:: Secrets
+   :class: hypermodern-table
+   :widths: auto
+
+   =================== ===================
+   ``PYPI_TOKEN``      PyPI_ API token
+   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
+   =================== ===================
+
+The Release workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+- `salsify/action-detect-and-tag-new-version`_ for tagging on version bumps
+- `pypa/gh-action-pypi-publish`_ for uploading the package to PyPI or TestPyPI
+- `release-drafter/release-drafter`_ for publishing the GitHub Release
+
+Release notes are populated with the titles and authors of merged pull requests.
+You can group the pull requests into separate sections
+by applying labels to them, like this:
+
+.. include:: ../README.rst
+   :start-after: table-release-drafter-sections-begin
+   :end-before: table-release-drafter-sections-end
 
 The workflow is defined in ``.github/workflows/release.yml``.
-
-
-.. _The TestPyPI workflow:
-
-The TestPyPI workflow
----------------------
-
-The TestPyPI workflow publishes your package on TestPyPI_,
-a test instance of the Python Package Index.
-
-The workflow is triggered on every push to the master branch.
-It bumps the version number to a developmental pre-release,
-builds the package using Poetry,
-and uploads it using the `pypa/gh-action-pypi-publish`_ action.
-This workflow uses the ``TEST_PYPI_TOKEN`` secret.
-
-The workflow is defined in ``.github/workflows/test-pypi.yml``.
+The Release Drafter configuration is located in ``.github/release-drafter.yml``.
 
 
 .. _Tutorials:
@@ -2304,8 +2292,6 @@ Push your branch to GitHub:
 The push triggers the following automated steps:
 
 - :ref:`The test suite runs against your branch <The Tests workflow>`.
-- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The documentation is built from your branch <The Docs workflow>`.
 
 
 How to open a pull request
@@ -2317,7 +2303,7 @@ Open a pull request for your branch on GitHub:
 2. Click **New pull request**.
 3. Enter the title for the pull request.
 4. Enter a description for the pull request.
-5. Apply a :ref:`label identifying the type of change <The Release Drafter workflow>`
+5. Apply a :ref:`label identifying the type of change <The Release workflow>`
 6. Click **Create pull request**.
 
 Release notes are pre-filled with the titles of merged pull requests.
@@ -2337,10 +2323,8 @@ merge the pull request using the squash-merge strategy (recommended):
 This triggers the following automated steps:
 
 - :ref:`The test suite runs against the master branch <The Tests workflow>`.
-- :ref:`Coverage data is uploaded to Codecov <The Coverage workflow>`.
-- :ref:`The documentation is built from the master branch <The Docs workflow>`.
-- :ref:`The draft GitHub Release is updated <The Release Drafter workflow>`.
-- :ref:`A pre-release of the package is uploaded to TestPyPI <The TestPyPI workflow>`.
+- :ref:`The draft GitHub Release is updated <The Release workflow>`.
+- :ref:`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
 
 In your local repository,
@@ -2366,60 +2350,46 @@ The original commits remain accessible from the pull request
 How to make a release
 ---------------------
 
-Before making a release, go through the following checklist:
+Releases are triggered by a version bump on the master branch.
+It is recommended to do this in a separate pull request:
 
-- The master branch passes all checks.
-- The development release on TestPyPI_ looks good.
-- All pull requests for the release have been merged.
-
-Making a release is a two-step process:
-
-1. Bump the version using `poetry version`_. (Commit and push.)
-2. Publish a GitHub Release.
+1. Switch to a branch.
+2. Bump the version using `poetry version`_.
+3. Commit and push to GitHub.
+4. Open a pull request.
+5. Merge the pull request.
 
 .. _poetry version: https://python-poetry.org/docs/cli/#version
 
-When bumping the version, adhere to `Semantic Versioning`_ and `PEP 440`_.
 The individual steps for bumping the version are:
 
 .. code:: console
 
-   $ git switch master
+   $ git switch --create release master
    $ poetry version <version>
    $ git commit --message="<project> <version>" pyproject.toml
-   $ git push origin master
+   $ git push origin release
 
-If you want the Git tag to be annotated or signed,
-add the following optional steps:
+If you're not sure which version number to choose,
+read about `Semantic Versioning`_.
+Versioning rules for Python packages are laid down in `PEP 440`_.
 
-.. code:: console
+Before merging the pull request for the release,
+go through the following checklist:
 
-   $ git tag --message="<project> <version>" v<version>
-   $ git push origin v<version>
+- The pull request passes all checks.
+- The development release on TestPyPI_ looks good.
+- All pull requests for the release have been merged.
 
-To publish the release,
-locate the draft release on the *Releases* tab of the GitHub repository,
-and follow these steps:
+Merging the pull request triggers the
+:ref:`Release workflow <The Release workflow>`.
+This workflow performs the following automated steps:
 
-1. Click **Edit** next to the draft release.
-2. Enter a tag of the form ``v<version>``, using the new project version.
-3. Enter the release title, e.g. ``<version>``.
-4. Edit the release description, if required.
-5. Click **Publish Release**.
+- Publish the package on PyPI.
+- Publish a GitHub Release.
+- Apply a Git tag to the repository.
 
-After publishing the release,
-the following automated steps are triggered:
-
-- The Git tag is applied to the repository.
-- :ref:`The package is uploaded to PyPI <The Release workflow>`.
-- `Read the Docs`_ builds a new stable version of the documentation.
-
-Update your local repository:
-
-.. code:: console
-
-   $ git switch master
-   $ git pull origin master v<version>
+`Read the Docs`_ automatically builds a new stable version of the documentation.
 
 
 The Hypermodern Python blog
@@ -2478,5 +2448,4 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
-.. _pytest-cov: https://pytest-cov.readthedocs.io/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html

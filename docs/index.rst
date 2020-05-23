@@ -13,6 +13,8 @@ Hypermodern Python Cookiecutter
    License <license>
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
+.. rst-class:: badges
+
 .. include:: ../README.rst
    :start-after: badges-begin
    :end-before: badges-end
@@ -27,7 +29,7 @@ Usage
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.4.15.1"
+     --checkout="2020.5.15"
 
 
 Features

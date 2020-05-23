@@ -139,10 +139,20 @@ def mypy(session: Session) -> None:
 @nox.session(python=python_versions)
 def tests(session: Session) -> None:
     """Run the test suite."""
-    args = session.posargs or ["--cov"]
     install_package(session)
-    install(session, "coverage[toml]", "pytest", "pytest-cov")
-    session.run("pytest", *args)
+    install(session, "coverage[toml]", "pytest")
+    session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+    session.notify("coverage")
+
+
+@nox.session
+def coverage(session: Session) -> None:
+    """Produce the coverage report."""
+    args = session.posargs or ["report"]
+    install(session, "coverage[toml]")
+    if not session.posargs and any(Path().glob(".coverage.*")):
+        session.run("coverage", "combine")
+    session.run("coverage", *args)
 
 
 @nox.session(python=python_versions)

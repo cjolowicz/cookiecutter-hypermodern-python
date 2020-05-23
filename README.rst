@@ -9,20 +9,8 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Tests| |Read the Docs| |CalVer| |Codecov| |Python Version| |License| |Black| |pre-commit| |Dependabot|
+|Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
 
-.. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
-   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
-   :alt: Tests
-.. |Read the Docs| image:: https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/
-   :target: https://cookiecutter-hypermodern-python.readthedocs.io/
-   :alt: Read the Docs
-.. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
-   :target: http://calver.org/
-   :alt: CalVer
-.. |Codecov| image:: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance
-   :alt: Codecov
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
    :alt: Python Version
@@ -38,6 +26,18 @@ cookiecutter-hypermodern-python
 .. |Dependabot| image:: https://api.dependabot.com/badges/status?host=github&repo=cjolowicz/cookiecutter-hypermodern-python-instance
    :target: https://dependabot.com
    :alt: Dependabot
+.. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
+   :target: http://calver.org/
+   :alt: CalVer
+.. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
+   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
+   :alt: Tests
+.. |Read the Docs| image:: https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/
+   :target: https://cookiecutter-hypermodern-python.readthedocs.io/
+   :alt: Read the Docs
+.. |Codecov| image:: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/cjolowicz/cookiecutter-hypermodern-python-instance
+   :alt: Codecov
 
 .. badges-end
 
@@ -54,7 +54,7 @@ Usage
 
 .. code:: console
 
-   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.4.15.1
+   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.5.15
 
 
 Features
@@ -127,7 +127,7 @@ Generate a Python project:
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.4.15.1"
+     --checkout="2020.5.15"
 
 Change to the root directory of your new project,
 and create a Git repository:
@@ -239,15 +239,26 @@ Read the Docs
 Releasing
 ---------
 
-1. Bump the version using `poetry version`_. Push to GitHub.
-2. Publish a GitHub Release.
-3. GitHub Action triggers the PyPI upload.
+Releases are triggered by a version bump on the master branch.
+It is recommended to do this in a separate pull request:
+
+1. Switch to a branch.
+2. Bump the version using `poetry version`_.
+3. Commit and push to GitHub.
+4. Open a pull request.
+5. Merge the pull request.
 
 .. _poetry version: https://python-poetry.org/docs/cli/#version
 
-Release notes are pre-filled with titles and authors of merged pull requests.
+The Release workflow performs the following automated steps:
 
-Use labels to group the pull requests into sections:
+- Build and upload the package to PyPI.
+- Apply a version tag to the repository.
+- Publish a GitHub Release.
+
+Release notes are populated with the titles and authors of merged pull requests.
+You can group the pull requests into separate sections
+by applying labels to them, like this:
 
 .. table-release-drafter-sections-begin
 
@@ -273,8 +284,8 @@ Use labels to group the pull requests into sections:
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
-Create the remaining labels on the *Issues* tab of your GitHub repository,
-when you need them.
+Create the remaining labels when you need them,
+on the *Issues* tab of your GitHub repository,
 
 .. table-release-drafter-sections-end
 
