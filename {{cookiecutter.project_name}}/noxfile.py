@@ -141,8 +141,10 @@ def tests(session: Session) -> None:
     """Run the test suite."""
     install_package(session)
     install(session, "coverage[toml]", "pytest")
-    session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
-    session.notify("coverage")
+    try:
+        session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+    finally:
+        session.notify("coverage")
 
 
 @nox.session
