@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.base_ref == 'master' && (github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')
     steps:
-      - uses: actions/github-script@0.9.0
+      - uses: actions/github-script@v1.1
         with:
           github-token: ${{github.token}}
           script: |
