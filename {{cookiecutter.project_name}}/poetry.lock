@@ -623,12 +623,12 @@ category = "dev"
 description = "Run-time type checker for Python"
 name = "typeguard"
 optional = false
-python-versions = ">=3.5.2"
-version = "2.8.0"
+python-versions = ">=3.5.3"
+version = "2.9.0"
 
 [package.extras]
 doc = ["sphinx-rtd-theme", "sphinx-autodoc-typehints (>=1.2.0)"]
-test = ["pytest", "pytest-cov", "typing-extensions"]
+test = ["pytest", "typing-extensions"]
 
 [[package]]
 category = "dev"
@@ -729,7 +729,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "b51ff78fd36d656754c4a340c2b57fe130039fc0276fec56097f0ed9d609f034"
+content-hash = "8a0d64fe5a0da6706f080272c079df7cc05919f74338d248cf8a84a864024291"
 python-versions = "^3.6.1"
 
 [metadata.files]
@@ -1053,8 +1053,8 @@ typed-ast = [
     {file = "typed_ast-1.4.1.tar.gz", hash = "sha256:8c8aaad94455178e3187ab22c8b01a3837f8ee50e09cf31f1ba129eb293ec30b"},
 ]
 typeguard = [
-    {file = "typeguard-2.8.0-py3-none-any.whl", hash = "sha256:9d77078393507d733d13ceff9eb75ff298f968d73eb73fb812f748fdc6c55c1d"},
-    {file = "typeguard-2.8.0.tar.gz", hash = "sha256:e718f493d805d596cba238a61aa83b874530a333783ca9d597fe5bf27143f042"},
+    {file = "typeguard-2.9.0-py3-none-any.whl", hash = "sha256:c24f58f3ef0bfc3c226fc830996fe5fcfb2f8e1866da063c31c0c38f86dfb40c"},
+    {file = "typeguard-2.9.0.tar.gz", hash = "sha256:e2b74600517730dac2ddcb6884f217a434345f825ad27967d603b79230368772"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.7.4.2-py2-none-any.whl", hash = "sha256:f8d2bd89d25bc39dabe7d23df520442fa1d8969b82544370e03d88b5a591c392"},
