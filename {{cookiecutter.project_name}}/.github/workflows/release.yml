@@ -35,7 +35,7 @@ jobs:
         uses: salsify/action-detect-and-tag-new-version@v1.0.3
         with:
           version-command: |
-            poetry version | awk '{ print $2 }'
+            bash -o pipefail -c "poetry version | awk '{ print \$2 }'"
 
       - name: Bump version for developmental release
         if: "! steps.check-version.outputs.tag"
