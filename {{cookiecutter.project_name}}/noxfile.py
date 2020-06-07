@@ -150,6 +150,7 @@ def tests(session: Session) -> None:
 @nox.session
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
+    # Do not use session.posargs unless this is the only session.
     has_args = session.posargs and len(session._runner.manifest) == 1
     args = session.posargs if has_args else ["report"]
 
