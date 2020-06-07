@@ -405,7 +405,7 @@ and links each file to a section with more details.
    ===================================== ========================================
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
-   ``.github/dependabot.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
+   ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
@@ -1489,7 +1489,7 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
-   check-added-large-files_ Prevent giant files from being committed.
+   check-added-large-files_ Prevent giant files from being committed
    check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
