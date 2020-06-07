@@ -1489,7 +1489,7 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
-   check-added-large-files_ Prevent giant files from being committed.
+   check-added-large-files_ Prevent giant files from being committed
    check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
