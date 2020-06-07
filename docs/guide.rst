@@ -405,7 +405,7 @@ and links each file to a section with more details.
    ===================================== ========================================
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
-   ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
+   ``.github/dependabot.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
