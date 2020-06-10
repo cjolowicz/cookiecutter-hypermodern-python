@@ -150,10 +150,15 @@ def tests(session: Session) -> None:
 @nox.session
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
-    args = session.posargs or ["report"]
+    # Do not use session.posargs unless this is the only session.
+    has_args = session.posargs and len(session._runner.manifest) == 1
+    args = session.posargs if has_args else ["report"]
+
     install(session, "coverage[toml]")
-    if not session.posargs and any(Path().glob(".coverage.*")):
+
+    if not has_args and any(Path().glob(".coverage.*")):
         session.run("coverage", "combine")
+
     session.run("coverage", *args)
 
 
