@@ -1,6 +1,7 @@
 """Nox sessions."""
 import contextlib
 import shutil
+import sys
 import tempfile
 from pathlib import Path
 from typing import cast
@@ -13,7 +14,6 @@ from nox.sessions import Session
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
 nox.options.sessions = "pre-commit", "safety", "mypy", "tests"
-locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 
 class Poetry:
@@ -130,10 +130,12 @@ def safety(session: Session) -> None:
 @nox.session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
-    args = session.posargs or locations
+    args = session.posargs or ["src", "tests", "docs/conf.py"]
     install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
+    if not session.posargs:
+        session.run("mypy", f"--python-executable={sys.executable}", "noxfile.py")
 
 
 @nox.session(python=python_versions)
