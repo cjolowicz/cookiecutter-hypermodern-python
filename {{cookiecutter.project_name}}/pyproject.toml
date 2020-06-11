@@ -30,7 +30,7 @@ typeguard = "^2.9.1"
 xdoctest = "^0.12.0"
 sphinx = "^3.1.0"
 sphinx-autobuild = "^0.7.1"
-pre-commit = "^2.4.0"
+pre-commit = "^2.5.1"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
