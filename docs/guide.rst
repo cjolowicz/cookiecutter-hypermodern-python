@@ -154,7 +154,7 @@ This project template supports Python 3.6, 3.7, and 3.8.
 
    $ pyenv install 3.6.10
    $ pyenv install 3.7.7
-   $ pyenv install 3.8.2
+   $ pyenv install 3.8.3
 
 After creating your project (see :ref:`below <Creating a project>`),
 you can make these Python versions accessible in the project directory,
@@ -162,7 +162,7 @@ using the following command:
 
 .. code:: console
 
-   $ pyenv local 3.8.2 3.7.7 3.6.10
+   $ pyenv local 3.8.3 3.7.7 3.6.10
 
 The first version listed is the one used when you type plain ``python``.
 Every version can be used by invoking ``python<major.minor>``.
