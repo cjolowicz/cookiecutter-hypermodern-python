@@ -1060,7 +1060,7 @@ The following table gives an overview of the available Nox sessions:
    :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_             ``3.8``                ✓
    :ref:`safety <The safety session>`         Scan dependencies with Safety_    ``3.8``                ✓
    :ref:`tests <The tests session>`           Run tests with pytest_            ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``      ✓
    :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_       ``3.6`` … ``3.8``
    ========================================== ================================= ================== =========
 
