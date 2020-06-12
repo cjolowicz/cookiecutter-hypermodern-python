@@ -1,7 +1,7 @@
 {%- macro heading(text) -%}
 {{text}}
 {% for _ in text %}-{% endfor %}
-{%- endmacro %}
+{%- endmacro -%}
 Reference
 =========
 
