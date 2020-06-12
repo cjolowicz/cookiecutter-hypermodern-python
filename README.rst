@@ -9,8 +9,11 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
+|Status| |Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
 
+.. |Status| image:: https://badgen.net/badge/status/alpha/d8624d
+   :target: https://badgen.net/badge/status/alpha/d8624d
+   :alt: Project Status
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
    :alt: Python Version
