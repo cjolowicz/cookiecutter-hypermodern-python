@@ -34,6 +34,7 @@ pre-commit = "^2.6.0"
 flake8 = "^3.8.3"
 black = "^19.10b0"
 flake8-bandit = "^2.1.2"
+flake8-bugbear = "^20.1.4"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
