@@ -13,6 +13,12 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: reorder-python-imports
+        name: Reorder python imports
+        entry: reorder-python-imports
+        language: system
+        types: [python]
+        args: [--application-directories=src]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.1.0
     hooks:
@@ -25,8 +31,3 @@ repos:
     rev: 2.0.5
     hooks:
       - id: prettier
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.3.0
-    hooks:
-      - id: reorder-python-imports
-        args: [--application-directories=src]
