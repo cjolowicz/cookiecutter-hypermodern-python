@@ -40,6 +40,7 @@ flake8-rst-docstrings = "^0.0.13"
 pep8-naming = "^0.10.0"
 darglint = "^1.4.1"
 reorder-python-imports = "^2.3.1"
+pre-commit-hooks = "^3.1.0"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
