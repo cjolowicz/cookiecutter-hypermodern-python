@@ -24,17 +24,6 @@ version = "0.26.2"
 
 [[package]]
 category = "dev"
-description = "Better dates & times for Python"
-name = "arrow"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "0.15.6"
-
-[package.dependencies]
-python-dateutil = "*"
-
-[[package]]
-category = "dev"
 description = "Utilities for refactoring imports in python-like syntax."
 name = "aspy.refactor-imports"
 optional = false
@@ -95,17 +84,6 @@ stevedore = ">=1.20.0"
 
 [[package]]
 category = "dev"
-description = "Ultra-lightweight pure Python package to check if a file is binary or text."
-name = "binaryornot"
-optional = false
-python-versions = "*"
-version = "0.4.4"
-
-[package.dependencies]
-chardet = ">=3.0.2"
-
-[[package]]
-category = "dev"
 description = "The uncompromising code formatter."
 name = "black"
 optional = false
@@ -125,7 +103,7 @@ typed-ast = ">=1.4.0"
 d = ["aiohttp (>=3.3.2)", "aiohttp-cors"]
 
 [[package]]
-category = "main"
+category = "dev"
 description = "A decorator for caching properties in classes."
 name = "cached-property"
 optional = false
@@ -314,14 +292,6 @@ version = "0.0.13"
 [package.dependencies]
 flake8 = ">=3.0.0"
 restructuredtext_lint = "*"
-
-[[package]]
-category = "main"
-description = "Quickly rewrite git repository history"
-name = "git-filter-repo"
-optional = false
-python-versions = ">=3.5"
-version = "2.27.0"
 
 [[package]]
 category = "dev"
@@ -614,14 +584,6 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.6.0"
 
 [[package]]
-category = "main"
-description = "C parser in Python"
-name = "pycparser"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.20"
-
-[[package]]
 category = "dev"
 description = "Python docstring style checker"
 name = "pydocstyle"
@@ -639,18 +601,6 @@ name = "pyflakes"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.2.0"
-
-[[package]]
-category = "main"
-description = "Python bindings for libgit2."
-name = "pygit2"
-optional = false
-python-versions = "*"
-version = "1.2.1"
-
-[package.dependencies]
-cached-property = "*"
-cffi = ">=1.4.0"
 
 [[package]]
 category = "dev"
@@ -956,14 +906,6 @@ pbr = ">=2.0.0,<2.1.0 || >2.1.0"
 
 [[package]]
 category = "dev"
-description = "The most basic Text::Unidecode port"
-name = "text-unidecode"
-optional = false
-python-versions = "*"
-version = "1.3"
-
-[[package]]
-category = "dev"
 description = "Python Library for Tom's Obvious, Minimal Language"
 name = "toml"
 optional = false
@@ -1113,10 +1055,6 @@ argh = [
     {file = "argh-0.26.2-py2.py3-none-any.whl", hash = "sha256:a9b3aaa1904eeb78e32394cd46c6f37ac0fb4af6dc488daa58971bdc7d7fcaf3"},
     {file = "argh-0.26.2.tar.gz", hash = "sha256:e9535b8c84dc9571a48999094fda7f33e63c3f1b74f3e5f3ac0105a58405bb65"},
 ]
-arrow = [
-    {file = "arrow-0.15.6-py2.py3-none-any.whl", hash = "sha256:a24c1de90850f6fb2033fd6bf8a11f281e84cb54825e5eabdda219e673b52aac"},
-    {file = "arrow-0.15.6.tar.gz", hash = "sha256:eb5d339f00072cc297d7de252a2e75f272085d1231a3723f1026d1fa91367118"},
-]
 "aspy.refactor-imports" = [
     {file = "aspy.refactor_imports-2.1.1-py2.py3-none-any.whl", hash = "sha256:9df76bf19ef81620068b785a386740ab3c8939fcbdcebf20c4a4e0057230d782"},
     {file = "aspy.refactor_imports-2.1.1.tar.gz", hash = "sha256:eec8d1a73bedf64ffb8b589ad919a030c1fb14acf7d1ce0ab192f6eedae895c5"},
@@ -1136,10 +1074,6 @@ babel = [
 bandit = [
     {file = "bandit-1.6.2-py2.py3-none-any.whl", hash = "sha256:336620e220cf2d3115877685e264477ff9d9abaeb0afe3dc7264f55fa17a3952"},
     {file = "bandit-1.6.2.tar.gz", hash = "sha256:41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065"},
-]
-binaryornot = [
-    {file = "binaryornot-0.4.4-py2.py3-none-any.whl", hash = "sha256:b8b71173c917bddcd2c16070412e369c3ed7f0528926f70cac18a6c97fd563e4"},
-    {file = "binaryornot-0.4.4.tar.gz", hash = "sha256:359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"},
 ]
 black = [
     {file = "black-19.10b0-py36-none-any.whl", hash = "sha256:1b30e59be925fafc1ee4565e5e08abef6b03fe455102883820fe5ee2e4734e0b"},
@@ -1247,10 +1181,6 @@ flake8-polyfill = [
 flake8-rst-docstrings = [
     {file = "flake8-rst-docstrings-0.0.13.tar.gz", hash = "sha256:b1b619d81d879b874533973ac04ee5d823fdbe8c9f3701bfe802bb41813997b4"},
 ]
-git-filter-repo = [
-    {file = "git-filter-repo-2.27.0.tar.gz", hash = "sha256:66f19dedc10a5d44e09437b2beebc277dd5224e549d0d2f33bb3767410b29ed3"},
-    {file = "git_filter_repo-2.27.0-py2.py3-none-any.whl", hash = "sha256:0ad8736e5b3428392f4fb4074d7da74e92fe956fcac65c5eebe39682010c9ec9"},
-]
 gitdb = [
     {file = "gitdb-4.0.5-py3-none-any.whl", hash = "sha256:91f36bfb1ab7949b3b40e23736db18231bf7593edada2ba5c3a174a7b23657ac"},
     {file = "gitdb-4.0.5.tar.gz", hash = "sha256:c9e1f2d0db7ddb9a704c2a0217be31214e91a4fe1dea1efad19ae42ba0c285c9"},
@@ -1314,11 +1244,6 @@ markupsafe = [
     {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:ba59edeaa2fc6114428f1637ffff42da1e311e29382d81b339c1817d37ec93c6"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win32.whl", hash = "sha256:b00c1de48212e4cc9603895652c5c410df699856a2853135b3967591e4beebc2"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:9bf40443012702a1d2070043cb6291650a0841ece432556f784f004937f0f32c"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:6788b695d50a51edb699cb55e35487e430fa21f1ed838122d722e0ff0ac5ba15"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:cdb132fc825c38e1aeec2c8aa9338310d29d337bebbd7baa06889d09a60a1fa2"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:13d3144e1e340870b25e7b10b98d779608c02016d5184cfb9927a9f10c689f42"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-win32.whl", hash = "sha256:596510de112c685489095da617b5bcbbac7dd6384aeebeda4df6025d0256a81b"},
-    {file = "MarkupSafe-1.1.1-cp38-cp38-win_amd64.whl", hash = "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"},
     {file = "MarkupSafe-1.1.1.tar.gz", hash = "sha256:29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"},
 ]
 mccabe = [
@@ -1394,10 +1319,6 @@ pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
     {file = "pycodestyle-2.6.0.tar.gz", hash = "sha256:c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"},
 ]
-pycparser = [
-    {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
-    {file = "pycparser-2.20.tar.gz", hash = "sha256:2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"},
-]
 pydocstyle = [
     {file = "pydocstyle-5.0.2-py3-none-any.whl", hash = "sha256:da7831660b7355307b32778c4a0dbfb137d89254ef31a2b2978f50fc0b4d7586"},
     {file = "pydocstyle-5.0.2.tar.gz", hash = "sha256:f4f5d210610c2d153fae39093d44224c17429e2ad7da12a8b419aba5c2f614b5"},
@@ -1406,23 +1327,8 @@ pyflakes = [
     {file = "pyflakes-2.2.0-py2.py3-none-any.whl", hash = "sha256:0d94e0e05a19e57a99444b6ddcf9a6eb2e5c68d3ca1e98e90707af8152c90a92"},
     {file = "pyflakes-2.2.0.tar.gz", hash = "sha256:35b2d75ee967ea93b55750aa9edbbf72813e06a66ba54438df2cfac9e3c27fc8"},
 ]
-pygit2 = [
-    {file = "pygit2-1.2.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:ea756028a8a3e94ee814054e61ad1680abecc51de7281b5184ee2a3b38db836c"},
-    {file = "pygit2-1.2.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:9252ee6f728e8d5b3b0b22545b7a7119d1f4a8e5b2fbe4d074c1913875152392"},
-    {file = "pygit2-1.2.1-cp36-cp36m-win32.whl", hash = "sha256:efa6aabfcfada75add98374dc36238069239127f7e1865409047f5ef3f7bee58"},
-    {file = "pygit2-1.2.1-cp36-cp36m-win_amd64.whl", hash = "sha256:cbd2ae41df7ce4ae911d2c51762f651b78e8b6fc00048ff6065e04448afde147"},
-    {file = "pygit2-1.2.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:d42ff6839e756e83ac65c7a4c3eb063e55967450bc9a4ccc8154269a2d59fb9e"},
-    {file = "pygit2-1.2.1-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:bbe671ace219bc02ad0a4d83d7611949d7bf4d8f44e91cedc6f03958cff71cc4"},
-    {file = "pygit2-1.2.1-cp37-cp37m-win32.whl", hash = "sha256:97a8313cdb8e33dc47c6beef78b0222c23653186377520dc6811d6d276c19d1f"},
-    {file = "pygit2-1.2.1-cp37-cp37m-win_amd64.whl", hash = "sha256:a159e2a9ecb397ff85b62199956d932ef4b72375bcaa21090a359ea530a187e5"},
-    {file = "pygit2-1.2.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:6bf0409149a5cb0863203508d060feea51c32f618e8d9d9d4b910ed3b4edd7bd"},
-    {file = "pygit2-1.2.1-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:db98476484d40d3372d3626947f66ada85caf6f44837350db180083fdf43551a"},
-    {file = "pygit2-1.2.1-cp38-cp38-win32.whl", hash = "sha256:efe14d916a75ea50c122bf12478d67b52c2e0c8e3f59d7b64e3b5b560eb60bc0"},
-    {file = "pygit2-1.2.1-cp38-cp38-win_amd64.whl", hash = "sha256:44f55b92ca386ff4823be302354de6627634f7a916d590cae4543376b190cafb"},
-    {file = "pygit2-1.2.1.tar.gz", hash = "sha256:de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387"},
-]
 pygments = [
-    {file = "Pygments-2.6.1-py3-none-any.whl", hash = "sha256:ff7a40b4860b727ab48fad6360eb351cc1b33cbf9b15a0f689ca5353e9463324"},
+    {file = "Pygments-2.6.1-py2.py3-none-any.whl", hash = "sha256:aa931c0bd5daa25c475afadb2147115134cfe501f0656828cbe7cb566c7123bc"},
     {file = "Pygments-2.6.1.tar.gz", hash = "sha256:647344a061c249a3b74e230c739f434d7ea4d8b1d5f3721bc0f3558049b38f44"},
 ]
 pyparsing = [
@@ -1560,10 +1466,6 @@ sphinxcontrib-serializinghtml = [
 stevedore = [
     {file = "stevedore-2.0.0-py3-none-any.whl", hash = "sha256:471c920412265cc809540ae6fb01f3f02aba89c79bbc7091372f4745a50f9691"},
     {file = "stevedore-2.0.0.tar.gz", hash = "sha256:001e90cd704be6470d46cc9076434e2d0d566c1379187e7013eb296d3a6032d9"},
-]
-text-unidecode = [
-    {file = "text-unidecode-1.3.tar.gz", hash = "sha256:bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"},
-    {file = "text_unidecode-1.3-py2.py3-none-any.whl", hash = "sha256:1311f10e8b895935241623731c2ba64f4c455287888b18189350b67134a822e8"},
 ]
 toml = [
     {file = "toml-0.10.1-py2.py3-none-any.whl", hash = "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"},
