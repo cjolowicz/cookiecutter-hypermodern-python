@@ -7,6 +7,12 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: black
+        name: black
+        entry: black
+        language: system
+        types: [python]
+        require_serial: true
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.1.0
     hooks:
@@ -19,10 +25,6 @@ repos:
     rev: 2.0.5
     hooks:
       - id: prettier
-  - repo: https://github.com/psf/black
-    rev: 19.10b0
-    hooks:
-      - id: black
   - repo: https://github.com/asottile/reorder_python_imports
     rev: v2.3.0
     hooks:
