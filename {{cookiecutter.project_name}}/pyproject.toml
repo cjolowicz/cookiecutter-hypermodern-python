@@ -33,6 +33,7 @@ sphinx-autobuild = "^0.7.1"
 pre-commit = "^2.6.0"
 flake8 = "^3.8.3"
 black = "^19.10b0"
+flake8-bandit = "^2.1.2"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
