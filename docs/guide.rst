@@ -2044,6 +2044,7 @@ The |HPC| defines the following workflows:
    ===================================================== ======================== ==================================== ===============
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
+   :ref:`Automerge <The Automerge workflow>`             ``automerge.yml``        Merge PR from Dependabot_            PR (master)
    ===================================================== ======================== ==================================== ===============
 
 
