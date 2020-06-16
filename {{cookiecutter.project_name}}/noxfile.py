@@ -1,6 +1,7 @@
 """Nox sessions."""
 import contextlib
 import shutil
+import sys
 import tempfile
 from pathlib import Path
 from typing import cast
@@ -12,8 +13,7 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "pre-commit", "safety", "mypy", "tests"
-locations = "src", "tests", "noxfile.py", "docs/conf.py"
+nox.options.sessions = "pre-commit", "safety", "mypy", "tests", "typeguard"
 
 
 class Poetry:
@@ -130,10 +130,12 @@ def safety(session: Session) -> None:
 @nox.session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
-    args = session.posargs or locations
+    args = session.posargs or ["src", "tests", "docs/conf.py"]
     install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
+    if not session.posargs:
+        session.run("mypy", f"--python-executable={sys.executable}", "noxfile.py")
 
 
 @nox.session(python=python_versions)
@@ -150,10 +152,15 @@ def tests(session: Session) -> None:
 @nox.session
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
-    args = session.posargs or ["report"]
+    # Do not use session.posargs unless this is the only session.
+    has_args = session.posargs and len(session._runner.manifest) == 1
+    args = session.posargs if has_args else ["report"]
+
     install(session, "coverage[toml]")
-    if not session.posargs and any(Path().glob(".coverage.*")):
+
+    if not has_args and any(Path().glob(".coverage.*")):
         session.run("coverage", "combine")
+
     session.run("coverage", *args)
 
 

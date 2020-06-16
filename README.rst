@@ -9,8 +9,11 @@ cookiecutter-hypermodern-python
 
 .. badges-begin
 
-|Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
+|Status| |Python Version| |License| |Black| |pre-commit| |Dependabot| |CalVer| |Tests| |Read the Docs| |Codecov|
 
+.. |Status| image:: https://badgen.net/badge/status/alpha/d8624d
+   :target: https://badgen.net/badge/status/alpha/d8624d
+   :alt: Project Status
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
    :alt: Python Version
@@ -54,7 +57,7 @@ Usage
 
 .. code:: console
 
-   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.5.15
+   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2020.6.15
 
 
 Features
@@ -127,7 +130,7 @@ Generate a Python project:
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.5.15"
+     --checkout="2020.6.15"
 
 Change to the root directory of your new project,
 and create a Git repository:

@@ -66,9 +66,9 @@ Initial releases may occur more frequently.
 
 .. _bimonthly: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
 
-The current stable release is `2020.5.15`_.
+The current stable release is `2020.6.15`_.
 
-.. _2020.5.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.5.15
+.. _2020.6.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.6.15
 
 
 .. _Installation:
@@ -154,7 +154,7 @@ This project template supports Python 3.6, 3.7, and 3.8.
 
    $ pyenv install 3.6.10
    $ pyenv install 3.7.7
-   $ pyenv install 3.8.2
+   $ pyenv install 3.8.3
 
 After creating your project (see :ref:`below <Creating a project>`),
 you can make these Python versions accessible in the project directory,
@@ -162,7 +162,7 @@ using the following command:
 
 .. code:: console
 
-   $ pyenv local 3.8.2 3.7.7 3.6.10
+   $ pyenv local 3.8.3 3.7.7 3.6.10
 
 The first version listed is the one used when you type plain ``python``.
 Every version can be used by invoking ``python<major.minor>``.
@@ -218,12 +218,12 @@ Creating a project
 
 Create a project from this template
 by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
-Use the ``--checkout`` option with the `current stable release <2020.5.15_>`__:
+Use the ``--checkout`` option with the `current stable release <2020.6.15_>`__:
 
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.5.15"
+     --checkout="2020.6.15"
 
 Cookiecutter downloads the template,
 and asks you a series of questions about project variables,
@@ -1060,7 +1060,7 @@ The following table gives an overview of the available Nox sessions:
    :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_             ``3.8``                ✓
    :ref:`safety <The safety session>`         Scan dependencies with Safety_    ``3.8``                ✓
    :ref:`tests <The tests session>`           Run tests with pytest_            ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``      ✓
    :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_       ``3.6`` … ``3.8``
    ========================================== ================================= ================== =========
 
