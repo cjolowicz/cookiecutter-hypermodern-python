@@ -391,6 +391,7 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ======================= ===============================
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
+   ``automerge.yml``       :ref:`The Automerge workflow`
    ======================= ===============================
 
 The project contains many configuration files for developer tools.
@@ -2105,7 +2106,6 @@ located in ``.github/workflow/constraints.txt``.
    When newer versions of the tools become available,
    Dependabot updates the constraints file and submits a pull request.
 
-
 .. _The Tests workflow:
 
 The Tests workflow
@@ -2212,6 +2212,28 @@ by applying labels to them, like this:
 
 The workflow is defined in ``.github/workflows/release.yml``.
 The Release Drafter configuration is located in ``.github/release-drafter.yml``.
+
+
+.. _The Automerge workflow:
+
+The Automerge workflow
+----------------------
+
+The Automerge workflow checks for any pull requests from Dependabot_ and merges them to master.
+Pull Requests are only merged automatically if all checks from tests pass.
+
+Automerge steps only run if the pull request was created with the user dependabot[bot].
+If for some reason your Dependabot_ PRs are being created by dependabot-preview[bot] you should `upgrade dependabot-preview`_.
+
+The Automerge workflow uses builtin GITHUB_TOKEN, so no secrets need to be configured.
+
+The Automerge workflow uses the following GitHub Actions:
+
+- `actions/github-script`_ for executing merge command.
+
+After the PR is merged, the branch created is also deleted.
+
+The workflow is defined in ``.github/workflows/automerge.yml``.
 
 
 .. _Tutorials:
@@ -2449,3 +2471,4 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _upgrade dependabot-preview: https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/#moving-forward-from-dependabot-com-and-dependabot-preview
