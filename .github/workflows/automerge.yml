@@ -1,0 +1,22 @@
+name: Dependabot
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  automerge:
+    name: Merge Dependabot pull request
+    runs-on: ubuntu-latest
+    if: github.base_ref == 'master' && github.actor == 'dependabot[bot]'
+    steps:
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            })
