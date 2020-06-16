@@ -2061,6 +2061,7 @@ Workflows use the following GitHub Actions:
    `actions/checkout`_                          Check out the Git repository
    `actions/setup-python`_                      Set up workflows with a specific Python version
    `actions/upload-artifact`_                   Upload artifacts from workflows
+   `actions/github-script`_                     Execute scripts using GitHub API
    `codecov/codecov-action`_                    Upload coverage to Codecov
    `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
    `release-drafter/release-drafter`_           Draft and publish GitHub Releases
@@ -2071,6 +2072,7 @@ Workflows use the following GitHub Actions:
 .. _actions/checkout: https://github.com/actions/checkout
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
+.. _actions/github-script: https://github.com/actions/github-script
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
 .. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 .. _release-drafter/release-drafter: https://github.com/release-drafter/release-drafter
