@@ -8,7 +8,7 @@
 
 |Read the Docs|
 
-|Tests| |Codecov| 
+|Tests| |Codecov|
 
 |pre-commit| |Dependabot| |Black|
 
