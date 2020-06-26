@@ -25,9 +25,9 @@ cookiecutter-hypermodern-python
 .. |License| image:: https://img.shields.io/github/license/cjolowicz/cookiecutter-hypermodern-python
    :target: https://opensource.org/licenses/MIT
    :alt: License
-.. |Read the Docs| image:: https://readthedocs.org/projects/cookiecutter-hypermodern-python/badge/
+.. |Read the Docs| image:: https://img.shields.io/readthedocs/cookiecutter-hypermodern-python/latest.svg?label=Read%20the%20Docs
    :target: https://cookiecutter-hypermodern-python.readthedocs.io/
-   :alt: Read the Docs
+   :alt: Read the documentation at https://cookiecutter-hypermodern-python.readthedocs.io/
 .. |Tests| image:: https://github.com/cjolowicz/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
    :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python/actions?workflow=Tests
    :alt: Tests
