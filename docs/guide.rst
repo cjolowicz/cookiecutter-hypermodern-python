@@ -1428,13 +1428,19 @@ Linting with pre-commit
 
 pre-commit_ is a multi-language linter framework and a Git hook manager.
 It allows you to
-integrate the best industry standard linters into your Git workflow,
+integrate linters and formatters into your Git workflow,
 even when written in a language other than Python.
-Linters run in isolated environments managed by pre-commit.
+
+pre-commit is configured using the file ``.pre-commit-config.yaml``
+in the project directory.
+Please refer to the `official documentation`__
+for details about the configuration file.
+
+__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
 
-Using pre-commit
-----------------
+Running pre-commit from Nox
+---------------------------
 
 pre-commit runs in a Nox session every time you invoke ``nox``:
 
@@ -1448,11 +1454,11 @@ Run the pre-commit session explicitly like this:
 
    $ nox --session=pre-commit
 
-Install pre-commit as a Git hook by running the following command:
+The session is described in more detail in the section :ref:`The pre-commit session`.
 
-.. code:: console
 
-   $ nox --session=pre-commit -- install
+Running pre-commit from git
+---------------------------
 
 When installed as a `Git hook`_,
 pre-commit runs automatically every time you invoke ``git commit``.
@@ -1461,23 +1467,159 @@ When invoked in this mode, pre-commit only runs on files staged for the commit.
 
 .. _Git hook: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 
-Many linters support fixing offending lines automatically.
+Install pre-commit as a Git hook by running the following command:
+
+.. code:: console
+
+   $ nox --session=pre-commit -- install
+
+
+Managing hooks with pre-commit
+------------------------------
+
+Hooks in languages other than Python, such as ``prettier``,
+run in isolated environments managed by pre-commit.
+To upgrade these hooks, use the autoupdate__ command:
+
+__ https://pre-commit.com/#pre-commit-autoupdate
+
+.. code:: console
+
+   $ nox --session=pre-commit -- autoupdate
+
+
+Python-language hooks
+---------------------
+
+Python-language hooks in the |HPC| are not managed by pre-commit.
+Instead, they are tracked as development dependencies in Poetry,
+and installed into the Nox session alongside pre-commit itself.
+As development dependencies, they are also present in the Poetry environment.
+
+This approach has some advantages:
+
+- All project dependencies are managed by Poetry.
+- Hooks receive automatic upgrades from Dependabot.
+- Nox can serve as a single entry point for all checks.
+- Additional hook dependencies can be upgraded by a dependency manager.
+  An example for this are Flake8 extensions.
+  By contrast, ``pre-commit autoupdate`` does not include additional dependencies.
+- Dependencies of dependencies (*subdependencies*) can be locked automatically,
+  making checks more repeatable and deterministic.
+- Linters and formatters are available in the Poetry environment,
+  which is useful for editor integration.
+
+There are also some drawbacks to this technique:
+
+- This is not the officially supported way to integrate pre-commit hooks.
+- The hook scripts installed by pre-commit do not activate the virtual environment
+  in which pre-commit and the hooks are installed.
+  To work around this limitation,
+  the Nox session patches hook scripts on installation.
+- Adding a hook is more work,
+  including updating ``pyproject.toml`` and ``noxfile.py``, and
+  adding the hook definition to ``pre-commit-config.yaml``.
+
+You can always opt out of this integration method,
+by removing the ``repo: local`` section from the configuration file,
+and adding the official pre-commit hooks instead.
+Don't forget to remove the hooks from Poetry's dependencies and from the Nox session.
+
+.. note::
+
+   Python-language hooks in the |HPC| are defined as `system hooks`__.
+   System hooks don't have their environments managed by pre-commit;
+   instead, pre-commit assumes that hook dependencies have already been installed
+   and are available in its environment.
+   The Nox session for pre-commit takes care of
+   installing the Python hooks alongside pre-commit.
+
+   __ https://pre-commit.com/#system
+
+   Furthermore, the |HPC| defines Python-language hooks as `repository-local hooks`__.
+   As such, hook definitions are not supplied by the hook repositories,
+   but by the project itself.
+   This makes it possible to override the hook language to ``system``, as explained above.
+
+   __ https://pre-commit.com/#repository-local-hooks
+
+
+Adding an official pre-commit hook
+----------------------------------
+
+Adding the official pre-commit hook for a linter is straightforward.
+Often you can simply copy a configuration snippet from the repository's ``README``.
+Otherwise, note the hook identifier from the ``pre-commit-hooks.yaml`` file,
+and the git tag for the latest version.
+Add the following section to your ``pre-commit-config.yaml``, under ``repos``:
+
+.. code:: yaml
+
+   - repo: <hook repository>
+     rev: <version tag>
+     hooks:
+       - id: <hook identifier>
+
+While this technique also works for Python-language hooks,
+it is recommended to integrate Python hooks with Nox and Poetry,
+as shown in the next section.
+
+
+Adding a Python-language hook
+-----------------------------
+
+To add a Python-language hook, you need to:
+
+- Add the hook as a Poetry development dependency.
+- Install the hook in the Nox session for pre-commit.
+- Update ``pre-commit-config.yaml`` as described below.
+
+Add a Python-language hook to ``pre-commit-config.yaml`` as follows:
+
+- Locate the hook definition in the ``pre-commit-hooks.yaml`` file
+  in the linter repository.
+- Copy the entire entry for the hook, rather than just the hook identifier.
+- Add the hook definition to the ``repo: local`` section.
+- Change the ``language`` from ``python`` to ``system``.
+
+For example, here is the hook definition for Flake8_
+from the ``repo: local`` section:
+
+.. code:: yaml
+
+   - id: flake8
+     name: flake8
+     entry: flake8
+     language: system
+     types: [python]
+     require_serial: true
+
+
+Running checks on modified files
+--------------------------------
+
+pre-commit runs checks on the *staged* contents of files.
+Any local modifications are stashed for the duration of the checks.
+This is motivated by pre-commit's primary use case,
+validating changes staged for a commit.
+
+Requiring changes to be staged allows for a nice property:
+Many pre-commit hooks support fixing offending lines automatically,
+for example ``black``, ``prettier``, and ``reorder-python-imports``.
 When this happens,
 your original changes are in the staging area,
-while the linter fixes are in the work tree.
+while the fixes are in the work tree.
 You can accept the fixes by staging them with ``git add``
 before committing again.
+
+If you want to run linters or formatters on modified files,
+and you do not want to stage the modifications just yet,
+you can also invoke the tools via Poetry instead.
+For example, use ``poetry run flake8 <file>`` to lint a modified file with Flake8.
 
 
 Overview of pre-commit hooks
 ----------------------------
-
-pre-commit is configured using the file ``.pre-commit-config.yaml``
-in the project directory.
-Please refer to the `official documentation`__
-for details about the configuration file.
-
-__ https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
 
 The |HPC| comes with a pre-commit configuration consisting of the following hooks:
 
