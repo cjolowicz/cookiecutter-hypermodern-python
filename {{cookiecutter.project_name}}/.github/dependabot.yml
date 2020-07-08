@@ -4,23 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-      time: "09:00"
-    open-pull-requests-limit: 10
   - package-ecosystem: pip
     directory: "/.github/workflows"
     schedule:
       interval: daily
-      time: "09:00"
-    open-pull-requests-limit: 10
   - package-ecosystem: pip
     directory: "/docs"
     schedule:
       interval: daily
-      time: "09:00"
-    open-pull-requests-limit: 10
   - package-ecosystem: pip
     directory: "/"
     schedule:
       interval: daily
-      time: "09:00"
-    open-pull-requests-limit: 10
