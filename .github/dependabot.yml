@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/docs"
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
+    labels:
+      - "cookiecutter"
+      - "dependencies"
+      - "python"
+    open-pull-requests-limit: 99
+  - package-ecosystem: pip
+    directory: "/.github/workflows"
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
+    labels:
+      - "cookiecutter"
+      - "dependencies"
+      - "python"
+    open-pull-requests-limit: 99
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
+    labels:
+      - "cookiecutter"
+      - "dependencies"
+      - "github_actions"
+    open-pull-requests-limit: 99
