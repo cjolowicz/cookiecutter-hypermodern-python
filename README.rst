@@ -222,13 +222,6 @@ Codecov
 2. Install their GitHub app.
 
 
-Dependabot
-~~~~~~~~~~
-
-1. Sign up at Dependabot_.
-2. Install their GitHub app.
-3. Enable `Security Updates` from the `Security` tab on the repository under `Dependabot alerts` > `Dependabot Security Updates`.
-
 Read the Docs
 ~~~~~~~~~~~~~
 
