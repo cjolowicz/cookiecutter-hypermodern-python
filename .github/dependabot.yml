@@ -2,18 +2,24 @@ version: 2
 updates:
   - package-ecosystem: github-actions
     directory: "/"
+    schedule:
+      interval: daily
     labels:
       - "cookiecutter"
       - "dependencies"
       - "python"
   - package-ecosystem: pip
     directory: "/.github/workflows"
+    schedule:
+      interval: daily
     labels:
       - "cookiecutter"
       - "dependencies"
       - "python"
   - package-ecosystem: pip
     directory: "/docs"
+    schedule:
+      interval: daily
     labels:
       - "cookiecutter"
       - "dependencies"
