@@ -5,16 +5,19 @@ updates:
     schedule:
       interval: daily
       time: "04:00"
+      timezone: "Europe/Berlin"
     open-pull-requests-limit: 99
   - package-ecosystem: pip
     directory: "/.github/workflows"
     schedule:
       interval: daily
       time: "04:00"
+      timezone: "Europe/Berlin"
     open-pull-requests-limit: 99
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: daily
       time: "04:00"
+      timezone: "Europe/Berlin"
     open-pull-requests-limit: 99
