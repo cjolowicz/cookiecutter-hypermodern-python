@@ -1921,16 +1921,16 @@ Dependabot
 
 Dependabot_ creates pull requests with automated dependency updates.
 
-Enable `Security Updates` from the `Security` tab on the repository under `Dependabot alerts` > `Dependabot Security Updates`.
 
-More on `official documentation`_ for GitHub Dependabot.
+Please refer to the `official documentation`__ for more details.
+
+__ https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
 
 The configuration is included in the repository,
 in the file `.github/dependabot.yml`__.
 
-__ https://help.github.com/en/github/administering-a-repository/customizing-dependency-updates
+__ https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 
-Dependabot integrates with your repository via its GitHub app.
 
 It manages the following dependencies:
 
@@ -1948,8 +1948,6 @@ It manages the following dependencies:
    GitHub Action       ``.github/workflows/*.yml``           :ref:`GitHub Actions workflows`
    =================== ===================================== ================================================
 
-
-.. _official documentation: https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
 
 .. _Read the Docs integration:
 
