@@ -405,7 +405,7 @@ and links each file to a section with more details.
    ===================================== ========================================
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
    ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
-   ``.dependabot/config.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
+   ``.github/dependabot.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
@@ -1921,17 +1921,16 @@ Dependabot
 
 Dependabot_ creates pull requests with automated dependency updates.
 
-Follow these steps to set up Dependabot for your repository:
 
-1. Sign up at Dependabot_.
-2. Install their GitHub app.
+Please refer to the `official documentation`__ for more details.
+
+__ https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
 
 The configuration is included in the repository,
-in the file `.dependabot/config.yml`__.
+in the file `.github/dependabot.yml`__.
 
-__ https://dependabot.com/docs/config-file/
+__ https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 
-Dependabot integrates with your repository via its GitHub app.
 
 It manages the following dependencies:
 

@@ -222,13 +222,6 @@ Codecov
 2. Install their GitHub app.
 
 
-Dependabot
-~~~~~~~~~~
-
-1. Sign up at Dependabot_.
-2. Install their GitHub app.
-
-
 Read the Docs
 ~~~~~~~~~~~~~
 
