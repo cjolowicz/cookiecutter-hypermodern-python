@@ -1,33 +1,51 @@
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.1.0
+  - repo: local
     hooks:
-      - id: check-toml
-      - id: check-yaml
-      - id: end-of-file-fixer
-      - id: trailing-whitespace
+      - id: black
+        name: black
+        entry: black
+        language: system
+        types: [python]
+        require_serial: true
       - id: check-added-large-files
+        name: Check for added large files
+        entry: check-added-large-files
+        language: system
+      - id: check-toml
+        name: Check Toml
+        entry: check-toml
+        language: system
+        types: [toml]
+      - id: check-yaml
+        name: Check Yaml
+        entry: check-yaml
+        language: system
+        types: [yaml]
+      - id: end-of-file-fixer
+        name: Fix End of Files
+        entry: end-of-file-fixer
+        language: system
+        types: [text]
+        stages: [commit, push, manual]
+      - id: flake8
+        name: flake8
+        entry: flake8
+        language: system
+        types: [python]
+        require_serial: true
+      - id: reorder-python-imports
+        name: Reorder python imports
+        entry: reorder-python-imports
+        language: system
+        types: [python]
+        args: [--application-directories=src]
+      - id: trailing-whitespace
+        name: Trim Trailing Whitespace
+        entry: trailing-whitespace-fixer
+        language: system
+        types: [text]
+        stages: [commit, push, manual]
   - repo: https://github.com/prettier/prettier
     rev: 2.0.5
     hooks:
       - id: prettier
-  - repo: https://github.com/psf/black
-    rev: 19.10b0
-    hooks:
-      - id: black
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.3
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-bandit==2.1.2
-          - flake8-bugbear==20.1.4
-          - flake8-docstrings==1.5.0
-          - flake8-rst-docstrings==0.0.13
-          - pep8-naming==0.10.0
-          - darglint==1.4.1
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.3.0
-    hooks:
-      - id: reorder-python-imports
-        args: [--application-directories=src]
