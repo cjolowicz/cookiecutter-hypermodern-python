@@ -8,7 +8,7 @@
 
 |Read the Docs| |Tests| |Codecov|
 
-|pre-commit| |Dependabot| |Black|
+|pre-commit| |Black|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg
    :target: https://pypi.org/project/{{cookiecutter.project_name}}/
@@ -31,9 +31,6 @@
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
-.. |Dependabot| image:: https://api.dependabot.com/badges/status?host=github&repo={{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-   :target: https://dependabot.com
-   :alt: Dependabot
 .. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
    :alt: Black
