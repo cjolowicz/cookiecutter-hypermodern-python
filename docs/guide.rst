@@ -66,9 +66,9 @@ Initial releases may occur more frequently.
 
 .. _bimonthly: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
 
-The current stable release is `2020.6.15`_.
+The current stable release is `2020.7.15`_.
 
-.. _2020.6.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.6.15
+.. _2020.7.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.7.15
 
 
 .. _Installation:
@@ -218,12 +218,12 @@ Creating a project
 
 Create a project from this template
 by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
-Use the ``--checkout`` option with the `current stable release <2020.6.15_>`__:
+Use the ``--checkout`` option with the `current stable release <2020.7.15_>`__:
 
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.6.15"
+     --checkout="2020.7.15"
 
 Cookiecutter downloads the template,
 and asks you a series of questions about project variables,
