@@ -59,12 +59,9 @@ Here is a detailed list of features for this Python template:
 Release cadence
 ---------------
 
-The |HPC| has a bimonthly_ release cadence.
-Releases happen on the 15th of every other month, starting in January.
+The |HPC| has a monthly release cadence while in alpha status.
+Releases happen on the 15th of every month.
 We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
-Initial releases may occur more frequently.
-
-.. _bimonthly: https://www.merriam-webster.com/words-at-play/on-biweekly-and-bimonthly
 
 The current stable release is `2020.7.15`_.
 
