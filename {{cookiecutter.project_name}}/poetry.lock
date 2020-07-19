@@ -983,7 +983,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "51bdcc98cf71977e9cb84dd94a4a67532fbd8764a02ebc088568642305a76302"
+content-hash = "a37655ed246612c4bd6a5a0e06ca979ea06c778ff852fd85aea90eca6d2f23fb"
 
 [metadata.files]
 alabaster = [
