@@ -39,7 +39,7 @@ flake8-docstrings = "^1.5.0"
 flake8-rst-docstrings = "^0.0.13"
 pep8-naming = "^0.11.1"
 darglint = "^1.5.1"
-reorder-python-imports = "^2.3.1"
+reorder-python-imports = "^2.3.2"
 pre-commit-hooks = "^3.1.0"
 
 [tool.poetry.scripts]
