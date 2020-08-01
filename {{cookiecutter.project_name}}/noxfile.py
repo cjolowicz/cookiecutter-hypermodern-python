@@ -61,13 +61,20 @@ class Poetry:
         )
         return cast(str, output).split()[1]
 
-    def build(self, *args: str) -> None:
+    def build(self, *args: str) -> str:
         """Build the package.
 
         Args:
             args: Command-line arguments for ``poetry build``.
+
+        Returns:
+            The basename of the wheel built by Poetry.
         """
-        self.session.run("poetry", "build", *args, external=True)
+        output = self.session.run(
+            "poetry", "build", *args, external=True, silent=True, stderr=None
+        )
+        assert isinstance(output, str)  # noqa: S101
+        return output.split()[-1]
 
 
 def install_package(session: Session) -> None:
