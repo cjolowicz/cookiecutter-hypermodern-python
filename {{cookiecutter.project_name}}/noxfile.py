@@ -5,7 +5,6 @@ import sys
 import tempfile
 from pathlib import Path
 from textwrap import dedent
-from typing import cast
 from typing import Iterator
 
 import nox
@@ -49,17 +48,6 @@ class Poetry:
                 external=True,
             )
             yield requirements
-
-    def version(self) -> str:
-        """Retrieve the package version.
-
-        Returns:
-            The package version.
-        """
-        output = self.session.run(
-            "poetry", "version", external=True, silent=True, stderr=None
-        )
-        return cast(str, output).split()[1]
 
     def build(self, *args: str) -> str:
         """Build the package.
