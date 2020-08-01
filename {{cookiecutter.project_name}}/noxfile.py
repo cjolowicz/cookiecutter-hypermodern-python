@@ -94,12 +94,8 @@ def install_package(session: Session) -> None:
     with poetry.export() as requirements:
         session.install(f"--requirement={requirements}")
 
-    poetry.build("--format=wheel")
-
-    version = poetry.version()
-    session.install(
-        "--no-deps", "--force-reinstall", f"dist/{package}-{version}-py3-none-any.whl"
-    )
+    wheel = poetry.build("--format=wheel")
+    session.install("--no-deps", "--force-reinstall", f"dist/{wheel}")
 
 
 def install(session: Session, *args: str) -> None:
