@@ -5,7 +5,6 @@ import sys
 import tempfile
 from pathlib import Path
 from textwrap import dedent
-from typing import cast
 from typing import Iterator
 
 import nox
@@ -50,24 +49,20 @@ class Poetry:
             )
             yield requirements
 
-    def version(self) -> str:
-        """Retrieve the package version.
-
-        Returns:
-            The package version.
-        """
-        output = self.session.run(
-            "poetry", "version", external=True, silent=True, stderr=None
-        )
-        return cast(str, output).split()[1]
-
-    def build(self, *args: str) -> None:
+    def build(self, *args: str) -> str:
         """Build the package.
 
         Args:
             args: Command-line arguments for ``poetry build``.
+
+        Returns:
+            The basename of the wheel built by Poetry.
         """
-        self.session.run("poetry", "build", *args, external=True)
+        output = self.session.run(
+            "poetry", "build", *args, external=True, silent=True, stderr=None
+        )
+        assert isinstance(output, str)  # noqa: S101
+        return output.split()[-1]
 
 
 def install_package(session: Session) -> None:
@@ -87,12 +82,8 @@ def install_package(session: Session) -> None:
     with poetry.export() as requirements:
         session.install(f"--requirement={requirements}")
 
-    poetry.build("--format=wheel")
-
-    version = poetry.version()
-    session.install(
-        "--no-deps", "--force-reinstall", f"dist/{package}-{version}-py3-none-any.whl"
-    )
+    wheel = poetry.build("--format=wheel")
+    session.install("--no-deps", "--force-reinstall", f"dist/{wheel}")
 
 
 def install(session: Session, *args: str) -> None:
