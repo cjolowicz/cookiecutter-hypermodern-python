@@ -90,17 +90,11 @@ Your pull request needs to meet the following guidelines for acceptance:
 
 Feel free to submit early, though—we can always iterate on this.
 
-You can ensure that your changes adhere to the code style by reformatting with Black_:
-
-.. code:: console
-
-   $ nox --session=black
 
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
 .. _pull request: https://github.com/cjolowicz/cookiecutter-hypermodern-python/pulls
-.. _Black: https://black.readthedocs.io/
 
 
 How to accept changes
