@@ -27,6 +27,10 @@ class Poetry:
         """Constructor."""
         self.session = session
 
+    def install(self, *args: str) -> None:
+        """Install the dependencies."""
+        self.session.run("poetry", "install", *args, external=True)
+
     @contextlib.contextmanager
     def export(self, *args: str) -> Iterator[Path]:
         """Export the lock file to requirements format.
@@ -79,10 +83,9 @@ def install_package(session: Session) -> None:
     """
     poetry = Poetry(session)
 
-    with poetry.export() as requirements:
-        session.install(f"--requirement={requirements}")
-
+    poetry.install("--no-root")
     wheel = poetry.build("--format=wheel")
+
     session.install("--no-deps", "--force-reinstall", f"dist/{wheel}")
 
 
