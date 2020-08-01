@@ -10,7 +10,8 @@ Development Lead
 Pull Requests and Patches
 -------------------------
 
-- Paulo S. Costa (`@pscosta5`_)
+- Oncleben31 (`@oncleben31`_)
+- Paulo S. Costa (`@paw-lu`_)
 - Thiago C. D'Ávila (`@staticdev`_)
 
 
@@ -18,5 +19,6 @@ Bug Reports and Suggestions
 ---------------------------
 
 .. _@cjolowicz: https://github.com/cjolowicz
-.. _@pscosta5: https://github.com/pscosta5
+.. _@oncleben31: https://github.com/oncleben31
+.. _@paw-lu: https://github.com/paw-lu
 .. _@staticdev: https://github.com/staticdev
