@@ -25,22 +25,20 @@ class Poetry:
         """Constructor."""
         self.session = session
 
-    def install(self, *args: str) -> None:
-        """Install the dependencies."""
-        self.session.run("poetry", "install", *args, external=True)
-
-    def export(self, path: Path) -> None:
+    def export(self, path: Path, *, dev: bool) -> None:
         """Export the lock file to requirements format.
 
         Args:
             path: The destination path.
+            dev: If True, include development dependencies.
         """
+        options = ["--dev"] if dev else []
         self.session.run(
             "poetry",
             "export",
-            "--dev",
             "--format=requirements.txt",
             f"--output={path}",
+            *options,
             external=True,
         )
 
@@ -60,24 +58,26 @@ class Poetry:
         return output.split()[-1]
 
 
-def export_requirements(session: Session) -> Path:
+def export_requirements(session: Session, *, dev: bool) -> Path:
     """Export the lock file to requirements format.
 
     Args:
         session: The Session object.
+        dev: If True, include development dependencies.
 
     Returns:
         The path to the requirements file.
     """
     tmpdir = Path(session.create_tmp())
-    path = tmpdir / "requirements.txt"
-    hashfile = tmpdir / "requirements.txt.hash"
+    name = "dev-requirements.txt" if dev else "requirements.txt"
+    path = tmpdir / name
+    hashfile = tmpdir / f"{name}.hash"
 
     lockdata = Path("poetry.lock").read_bytes()
     digest = hashlib.blake2b(lockdata).hexdigest()
 
     if not hashfile.is_file() or hashfile.read_text() != digest:
-        Poetry(session).export(path)
+        Poetry(session).export(path, dev=dev)
         hashfile.write_text(digest)
 
     return path
@@ -96,10 +96,10 @@ def install_package(session: Session) -> None:
         session: The Session object.
     """
     poetry = Poetry(session)
-
-    poetry.install("--no-root")
     wheel = poetry.build("--format=wheel")
+    requirements = export_requirements(session, dev=False)
 
+    session.install(f"--requirement={requirements}")
     session.install("--no-deps", "--force-reinstall", f"dist/{wheel}")
 
 
@@ -114,7 +114,7 @@ def install(session: Session, *args: str) -> None:
         session: The Session object.
         args: Command-line arguments for ``pip install``.
     """
-    requirements = export_requirements(session)
+    requirements = export_requirements(session, dev=True)
     session.install(f"--constraint={requirements}", *args)
 
 
@@ -196,7 +196,7 @@ def precommit(session: Session) -> None:
 def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
     install(session, "safety")
-    requirements = export_requirements(session)
+    requirements = export_requirements(session, dev=True)
     session.run("safety", "check", f"--file={requirements}", "--bare")
 
 
