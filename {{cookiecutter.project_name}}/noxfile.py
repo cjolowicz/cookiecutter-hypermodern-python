@@ -1,11 +1,9 @@
 """Nox sessions."""
-import contextlib
+import hashlib
 import shutil
 import sys
-import tempfile
 from pathlib import Path
 from textwrap import dedent
-from typing import Iterator
 
 import nox
 from nox.sessions import Session
@@ -31,27 +29,20 @@ class Poetry:
         """Install the dependencies."""
         self.session.run("poetry", "install", *args, external=True)
 
-    @contextlib.contextmanager
-    def export(self, *args: str) -> Iterator[Path]:
+    def export(self, path: Path) -> None:
         """Export the lock file to requirements format.
 
         Args:
-            args: Command-line arguments for ``poetry export``.
-
-        Yields:
-            The path to the requirements file.
+            path: The destination path.
         """
-        with tempfile.TemporaryDirectory() as directory:
-            requirements = Path(directory) / "requirements.txt"
-            self.session.run(
-                "poetry",
-                "export",
-                *args,
-                "--format=requirements.txt",
-                f"--output={requirements}",
-                external=True,
-            )
-            yield requirements
+        self.session.run(
+            "poetry",
+            "export",
+            "--dev",
+            "--format=requirements.txt",
+            f"--output={path}",
+            external=True,
+        )
 
     def build(self, *args: str) -> str:
         """Build the package.
@@ -67,6 +58,29 @@ class Poetry:
         )
         assert isinstance(output, str)  # noqa: S101
         return output.split()[-1]
+
+
+def export_requirements(session: Session) -> Path:
+    """Export the lock file to requirements format.
+
+    Args:
+        session: The Session object.
+
+    Returns:
+        The path to the requirements file.
+    """
+    tmpdir = Path(session.create_tmp())
+    path = tmpdir / "requirements.txt"
+    hashfile = tmpdir / "requirements.txt.hash"
+
+    lockdata = Path("poetry.lock").read_bytes()
+    digest = hashlib.blake2b(lockdata).hexdigest()
+
+    if not hashfile.is_file() or hashfile.read_text() != digest:
+        Poetry(session).export(path)
+        hashfile.write_text(digest)
+
+    return path
 
 
 def install_package(session: Session) -> None:
@@ -100,9 +114,8 @@ def install(session: Session, *args: str) -> None:
         session: The Session object.
         args: Command-line arguments for ``pip install``.
     """
-    poetry = Poetry(session)
-    with poetry.export("--dev") as requirements:
-        session.install(f"--constraint={requirements}", *args)
+    requirements = export_requirements(session)
+    session.install(f"--constraint={requirements}", *args)
 
 
 def activate_virtualenv_in_precommit_hooks(session: Session) -> None:
@@ -182,10 +195,9 @@ def precommit(session: Session) -> None:
 @nox.session(python="3.8")
 def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
-    poetry = Poetry(session)
-    with poetry.export("--dev", "--without-hashes") as requirements:
-        install(session, "safety")
-        session.run("safety", "check", f"--file={requirements}", "--bare")
+    install(session, "safety")
+    requirements = export_requirements(session)
+    session.run("safety", "check", f"--file={requirements}", "--bare")
 
 
 @nox.session(python=python_versions)
