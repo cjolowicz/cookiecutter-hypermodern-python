@@ -1,8 +1,3 @@
-.. raw:: html
-
-   <p align="center"><img alt="Logo" src="Logo.png" width="50%" /></p>
-
-
 ===============================
 cookiecutter-hypermodern-python
 ===============================
@@ -42,6 +37,13 @@ cookiecutter-hypermodern-python
    :alt: Black
 
 .. badges-end
+
+|
+
+.. raw:: html
+
+   <p align="center"><img alt="Logo" src="Logo.png" width="50%" /></p>
+
 
 Cookiecutter_ template for a Python package based on the
 `Hypermodern Python`_ article series.
