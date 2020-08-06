@@ -11,7 +11,14 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "pre-commit", "safety", "mypy", "tests", "typeguard"
+nox.options.sessions = (
+    "pre-commit",
+    "safety",
+    "mypy",
+    "tests",
+    "typeguard",
+    "docs-build",
+)
 
 
 class Poetry:
@@ -254,9 +261,21 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
+@nox.session(name="docs-build", python="3.8")
+def docs_build(session: Session) -> None:
+    """Build the documentation."""
+    args = session.posargs or ["docs", "docs/_build"]
+
+    builddir = Path("docs", "_build")
+    if builddir.exists():
+        shutil.rmtree(builddir)
+
+    session.run("sphinx-build", *args)
+
+
 @nox.session(python="3.8")
 def docs(session: Session) -> None:
-    """Build the documentation."""
+    """Interactive build for documentation."""
     args = session.posargs or ["docs", "docs/_build"]
 
     if session.interactive and not session.posargs:
