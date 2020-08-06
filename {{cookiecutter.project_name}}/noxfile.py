@@ -261,7 +261,7 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
-def clean_build_path():
+def clean_build_path() -> None:
     """Clean build path."""
     build_dir = Path("docs", "_build")
     if build_dir.exists():
