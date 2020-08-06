@@ -265,6 +265,7 @@ def xdoctest(session: Session) -> None:
 def docs_build(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
+    install(session, "sphinx")
 
     builddir = Path("docs", "_build")
     if builddir.exists():
