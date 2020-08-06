@@ -12,12 +12,12 @@ from nox.sessions import Session
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
 nox.options.sessions = (
+    "docs-build",
+    "mypy",
     "pre-commit",
     "safety",
-    "mypy",
     "tests",
     "typeguard",
-    "docs-build",
 )
 
 
@@ -261,35 +261,30 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
+def clean_build_path():
+    """Clean build path."""
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
+
+
 @nox.session(name="docs-build", python="3.8")
 def docs_build(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
+    install_package(session)
     install(session, "sphinx")
-
-    builddir = Path("docs", "_build")
-    if builddir.exists():
-        shutil.rmtree(builddir)
+    clean_build_path()
 
     session.run("sphinx-build", *args)
 
 
 @nox.session(python="3.8")
 def docs(session: Session) -> None:
-    """Interactive build for documentation."""
-    args = session.posargs or ["docs", "docs/_build"]
-
-    if session.interactive and not session.posargs:
-        args.insert(0, "--open-browser")
-
-    builddir = Path("docs", "_build")
-    if builddir.exists():
-        shutil.rmtree(builddir)
-
+    """Build and serve the documentation, with live reloading on file changes."""
+    args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     install_package(session)
     install(session, "sphinx", "sphinx-autobuild")
+    clean_build_path()
 
-    if session.interactive:
-        session.run("sphinx-autobuild", *args)
-    else:
-        session.run("sphinx-build", *args)
+    session.run("sphinx-autobuild", *args)
