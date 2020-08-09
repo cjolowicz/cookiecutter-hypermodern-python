@@ -281,7 +281,7 @@ def docs_build(session: Session) -> None:
 
 @nox.session(python="3.8")
 def docs(session: Session) -> None:
-    """Build and serve the documentation, with live reloading on file changes."""
+    """Build and serve the documentation with live reloading on file changes."""
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     install_package(session)
     install(session, "sphinx", "sphinx-autobuild")
