@@ -12,12 +12,12 @@ from nox.sessions import Session
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
 nox.options.sessions = (
-    "docs-build",
-    "mypy",
     "pre-commit",
     "safety",
+    "mypy",
     "tests",
     "typeguard",
+    "docs-build",
 )
 
 
@@ -261,20 +261,16 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
-def clean_build_path() -> None:
-    """Clean build path."""
-    build_dir = Path("docs", "_build")
-    if build_dir.exists():
-        shutil.rmtree(build_dir)
-
-
 @nox.session(name="docs-build", python="3.8")
 def docs_build(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
     install_package(session)
     install(session, "sphinx")
-    clean_build_path()
+
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
 
     session.run("sphinx-build", *args)
 
@@ -285,6 +281,9 @@ def docs(session: Session) -> None:
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     install_package(session)
     install(session, "sphinx", "sphinx-autobuild")
-    clean_build_path()
+
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
 
     session.run("sphinx-autobuild", *args)
