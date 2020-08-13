@@ -1068,17 +1068,14 @@ The following table gives an overview of the available Nox sessions:
 The docs session
 ----------------
 
-Build and serve the documentation in `interactive mode`__ using the Nox session ``docs``:
+Build the documentation using the Nox session ``docs``:
 
 .. code:: console
 
    $ nox --session=docs
 
 The docs session runs the command ``sphinx-autobuild`` to generate the HTML documentation from the Sphinx directory.
-
-This tool has several advantages when you are editing the documentation files:
-
-__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
+This tool has several advantages over ``sphinx-build`` when you are editing the documentation files:
 
 - It rebuilds the documentation whenever a change is detected.
 - It spins up a web server with live reloading.
@@ -1086,7 +1083,7 @@ __ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
 
 .. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
 
-Use the ``--`` separator to pass additional options to either tool.
+Use the ``--`` separator to pass additional options.
 For example, to treat warnings as errors and run in nit-picky mode:
 
 .. code:: console
@@ -1101,21 +1098,10 @@ This Nox session always runs with the current major release of Python.
 The docs-build session
 ----------------------
 
-Build the documentation using the Nox session ``docs-build``:
+The ``docs-build`` session runs the command ``sphinx-build`` to generate the HTML documentation from the Sphinx directory.
 
-.. code:: console
-
-   $ nox --session=docs-build
-
-The docs session runs the command ``sphinx-build``
-to generate the HTML documentation from the Sphinx directory.
-
-Use the ``--`` separator to pass additional options to either tool.
-For example, to treat warnings as errors and run in nit-picky mode:
-
-.. code:: console
-
-   $ nox --session=docs-build -- -W -n docs docs/_build
+This session is meant to be run as a part of automated checks.
+Use the interactive ``docs`` session instead while you're editing the documentation.
 
 This Nox session always runs with the current major release of Python.
 
