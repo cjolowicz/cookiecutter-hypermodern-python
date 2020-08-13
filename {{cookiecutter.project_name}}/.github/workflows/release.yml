@@ -55,14 +55,14 @@ jobs:
           poetry build --ansi
 
       - name: Publish package on PyPI
-        if: steps.check-version.outputs.tag
+        if: "steps.check-version.outputs.tag && secrets.PYPI_TOKEN"
         uses: pypa/gh-action-pypi-publish@v1.3.1
         with:
           user: __token__
           password: {{ "${{ secrets.PYPI_TOKEN }}" }}
 
       - name: Publish package on TestPyPI
-        if: "! steps.check-version.outputs.tag"
+        if: "! steps.check-version.outputs.tag && secrets.TEST_PYPI_TOKEN"
         uses: pypa/gh-action-pypi-publish@v1.3.1
         with:
           user: __token__
