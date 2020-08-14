@@ -23,7 +23,7 @@ jobs:
           - { python-version: 3.8, os: windows-latest, session: "tests" }
           - { python-version: 3.8, os: macos-latest, session: "tests" }
           - { python-version: 3.8, os: ubuntu-latest, session: "typeguard" }
-          - { python-version: 3.8, os: ubuntu-latest, session: "docs" }
+          - { python-version: 3.8, os: ubuntu-latest, session: "docs-build" }
 
     env:
       NOXSESSION: {{ "${{ matrix.session }}" }}
@@ -81,7 +81,7 @@ jobs:
           nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
 
       - name: Upload documentation
-        if: matrix.session == 'docs'
+        if: matrix.session == 'docs-build'
         uses: actions/upload-artifact@v2
         with:
           name: docs

@@ -1048,18 +1048,19 @@ The following table gives an overview of the available Nox sessions:
    :class: hypermodern-table
    :widths: auto
 
-   ========================================== ================================= ================== =========
-   Session                                    Description                       Python              Default
-   ========================================== ================================= ================== =========
-   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_ ``3.8``
-   :ref:`docs <The docs session>`             Build Sphinx_ documentation       ``3.8``
-   :ref:`mypy <The mypy session>`             Type-check with mypy_             ``3.6`` … ``3.8``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_             ``3.8``                ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_    ``3.8``                ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_            ``3.6`` … ``3.8``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_        ``3.6`` … ``3.8``      ✓
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_       ``3.6`` … ``3.8``
-   ========================================== ================================= ================== =========
+   ========================================== ===================================== ================== =========
+   Session                                    Description                           Python              Default
+   ========================================== ===================================== ================== =========
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.8``
+   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.8``
+   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.8``                ✓
+   :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.8``      ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.8``                ✓
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.8``                ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_                ``3.6`` … ``3.8``      ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.6`` … ``3.8``      ✓
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.6`` … ``3.8``
+   ========================================== ===================================== ================== =========
 
 
 .. _The docs session:
@@ -1073,15 +1074,8 @@ Build the documentation using the Nox session ``docs``:
 
    $ nox --session=docs
 
-The docs session runs the command ``sphinx-build``
-to generate the HTML documentation from the Sphinx directory.
-
-In `interactive mode`__---such
-as when invoking Nox from a terminal---sphinx-autobuild_ is used instead.
-This tool has several advantages
-when you are editing the documentation files:
-
-__ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
+The docs session runs the command ``sphinx-autobuild`` to generate the HTML documentation from the Sphinx directory.
+This tool has several advantages over ``sphinx-build`` when you are editing the documentation files:
 
 - It rebuilds the documentation whenever a change is detected.
 - It spins up a web server with live reloading.
@@ -1089,12 +1083,25 @@ __ https://nox.thea.codes/en/stable/usage.html#forcing-non-interactive-behavior
 
 .. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
 
-Use the ``--`` separator to pass additional options to either tool.
+Use the ``--`` separator to pass additional options.
 For example, to treat warnings as errors and run in nit-picky mode:
 
 .. code:: console
 
    $ nox --session=docs -- -W -n docs docs/_build
+
+This Nox session always runs with the current major release of Python.
+
+
+.. _The docs-build session:
+
+The docs-build session
+----------------------
+
+The ``docs-build`` session runs the command ``sphinx-build`` to generate the HTML documentation from the Sphinx directory.
+
+This session is meant to be run as a part of automated checks.
+Use the interactive ``docs`` session instead while you're editing the documentation.
 
 This Nox session always runs with the current major release of Python.
 
@@ -2275,7 +2282,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
    :ref:`tests <The tests session>`           Windows                3.8
    :ref:`tests <The tests session>`           macOS                  3.8
-   :ref:`docs <The docs session>`             Ubuntu                 3.8
+   :ref:`docs-build <The docs-build session>` Ubuntu                 3.8
    ========================================== ====================== ===============
 
 The workflow uploads the generated documentation as a `workflow artifact`__.

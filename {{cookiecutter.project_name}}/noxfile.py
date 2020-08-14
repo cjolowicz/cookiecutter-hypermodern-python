@@ -11,7 +11,14 @@ from nox.sessions import Session
 
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.8", "3.7", "3.6"]
-nox.options.sessions = "pre-commit", "safety", "mypy", "tests", "typeguard"
+nox.options.sessions = (
+    "pre-commit",
+    "safety",
+    "mypy",
+    "tests",
+    "typeguard",
+    "docs-build",
+)
 
 
 class Poetry:
@@ -254,22 +261,29 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
-@nox.session(python="3.8")
-def docs(session: Session) -> None:
+@nox.session(name="docs-build", python="3.8")
+def docs_build(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
+    install_package(session)
+    install(session, "sphinx")
 
-    if session.interactive and not session.posargs:
-        args.insert(0, "--open-browser")
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
 
-    builddir = Path("docs", "_build")
-    if builddir.exists():
-        shutil.rmtree(builddir)
+    session.run("sphinx-build", *args)
 
+
+@nox.session(python="3.8")
+def docs(session: Session) -> None:
+    """Build and serve the documentation with live reloading on file changes."""
+    args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     install_package(session)
     install(session, "sphinx", "sphinx-autobuild")
 
-    if session.interactive:
-        session.run("sphinx-autobuild", *args)
-    else:
-        session.run("sphinx-build", *args)
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
+
+    session.run("sphinx-autobuild", *args)
