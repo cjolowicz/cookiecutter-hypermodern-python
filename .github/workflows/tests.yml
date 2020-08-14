@@ -73,9 +73,6 @@ jobs:
       - name: Run test suite using Nox
         run: nox --force-color
         working-directory: hypermodern-python
-      - name: Build project documentation
-        run: nox --force-color --session=docs
-        working-directory: hypermodern-python
       - name: Install dependencies using Poetry
         run: poetry install --ansi
         working-directory: hypermodern-python
