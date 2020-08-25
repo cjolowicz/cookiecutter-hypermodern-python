@@ -401,7 +401,6 @@ and links each file to a section with more details.
 
    ===================================== ========================================
    ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
-   ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
    ``.github/dependabot.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
    ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
@@ -1891,7 +1890,6 @@ darglint
 --------
 
 darglint_ checks that docstring descriptions match function definitions.
-The tool has its own configuration file, named ``.darglint``.
 
 `Error codes`__ are prefixed by ``DAR`` for "darglint".
 
