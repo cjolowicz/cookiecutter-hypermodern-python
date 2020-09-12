@@ -1,7 +1,7 @@
 exclude: "^{{cookiecutter\\.project_name}}/"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.1.0
+    rev: v3.2.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
