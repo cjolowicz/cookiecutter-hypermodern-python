@@ -266,7 +266,7 @@ def docs_build(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["docs", "docs/_build"]
     install_package(session)
-    install(session, "sphinx")
+    install(session, "sphinx", "sphinx-click")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
@@ -280,7 +280,7 @@ def docs(session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     install_package(session)
-    install(session, "sphinx", "sphinx-autobuild")
+    install(session, "sphinx", "sphinx-autobuild", "sphinx-click")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
