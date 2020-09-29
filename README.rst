@@ -112,11 +112,12 @@ Install Poetry_ by downloading and running get-poetry.py_:
 
    $ python get-poetry.py
 
-Install Nox_:
+Install Nox_ and nox-poetry_:
 
 .. code:: console
 
    $ pipx install nox
+   $ pipx inject nox nox-poetry
 
 pipx_ is preferred, but you can also install with ``pip install --user``.
 
@@ -314,6 +315,7 @@ on the *Issues* tab of your GitHub repository,
 .. _autodoc: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
 .. _mypy: http://mypy-lang.org/
 .. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
+.. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _pipx: https://pipxproject.github.io/pipx/
 .. _pre-commit: https://pre-commit.com/
 .. _pyenv: https://github.com/pyenv/pyenv

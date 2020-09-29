@@ -178,11 +178,14 @@ Requirements
    If you decide to skip ``pipx`` installation,
    use `pip install`_ with the ``--user`` option instead.
 
-You only need three tools to use this template:
+.. _pip install: https://pip.pypa.io/en/stable/reference/pip_install/
+
+You need four tools to use this template:
 
 - Cookiecutter_ to create projects from the template,
 - Poetry_ to manage packaging and dependencies
 - Nox_ to automate checks and other tasks
+- nox-poetry_ for using Poetry in Nox sessions
 
 Install Cookiecutter_ using pipx:
 
@@ -198,11 +201,12 @@ Install Poetry_ by downloading and running get-poetry.py_:
 
    $ python get-poetry.py
 
-Install Nox_ using pipx:
+Install Nox_ and nox-poetry_ using pipx:
 
 .. code:: console
 
    $ pipx install nox
+   $ pipx inject nox nox-poetry
 
 
 Project creation
@@ -1356,75 +1360,6 @@ or run specific examples:
    $ nox --session=xdoctest -- list
 
 
-Using Poetry inside Nox sessions
---------------------------------
-
-.. note::
-
-   This section provides some background information about
-   how this project template integrates Nox and Poetry.
-   You can safely skip this section.
-
-**TL;DR** When writing Nox sessions for your project,
-
-- use ``install(session, "pkg")`` instead of ``session.install("pkg")``
-- use ``install_package(session)`` instead of ``session.install(".")``
-
-Nox sessions can invoke Poetry like any other command,
-using the function `nox.sessions.Session.run`_.
-Integrating Nox and Poetry in a sane way requires additional work.
-For this purpose, ``noxfile.py`` contains some glue code
-in the form of the ``install`` and ``install_package`` functions:
-
-.. _nox.sessions.Session.run: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.run
-
-``noxfile.install(session, *args)``:
-   Install development dependencies into a Nox session using Poetry.
-
-   The ``noxfile.install`` function
-   installs development dependencies into a Nox session,
-   using the versions specified in Poetry's lock file.
-   This is done by exporting the lock file in ``requirements.txt`` format,
-   and passing it as a `constraints file`_ to pip.
-   The function arguments are the same as those for `nox.sessions.Session.install`_:
-   The first argument is the ``Session`` object,
-   and the remaining arguments are command-line arguments for `pip install`_,
-   typically just the package or packages to be installed.
-
-   .. _nox.sessions.Session.install: https://nox.thea.codes/en/stable/config.html#nox.sessions.Session.install
-   .. _constraints file: https://pip.pypa.io/en/stable/user_guide/#constraints-files
-   .. _pip install: https://pip.pypa.io/en/stable/reference/pip_install/
-
-``noxfile.install_package(session)``:
-   Install the package into a Nox session using Poetry.
-
-   The ``noxfile.install_package`` function
-   installs your package into a Nox session,
-   including the core dependencies as specified in Poetry's lock file.
-   This is done by building a wheel from the package,
-   and installing it using pip_.
-   Dependencies are installed in the same way as in the ``noxfile.install`` function,
-   i.e. using a constraints file.
-   Its only argument is the ``Session`` object from Nox.
-
-The functions are implemented using a ``Poetry`` helper class,
-which encapsulates invocations of the Poetry command-line interface.
-The helper class has the following methods:
-
-``noxfile.Poetry.__init__(self, session)``
-   Initialize ``self``.
-   Instances need a session object for running commands.
-
-``noxfile.Poetry.build(self, *args)``
-   Build the package.
-
-``noxfile.Poetry.export(self, *args)``
-   Export the lock file to requirements format.
-
-``noxfile.Poetry.version(self)``
-   Return the package version.
-
-
 .. _Linting with pre-commit:
 
 Linting with pre-commit
@@ -2243,6 +2178,8 @@ GitHub Actions workflows install the following tools:
 
 These dependencies are pinned using a `constraints file`_
 located in ``.github/workflow/constraints.txt``.
+
+.. _constraints file: https://pip.pypa.io/en/stable/user_guide/#constraints-files
 
 .. note::
 

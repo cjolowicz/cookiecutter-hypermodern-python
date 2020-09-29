@@ -49,6 +49,7 @@ You need Python 3.6+ and the following tools:
 - Cookiecutter_
 - Poetry_
 - Nox_
+- nox-poetry_
 
 Fork the repository on GitHub_,
 and clone the fork to your local machine. You can now generate a project
@@ -64,6 +65,7 @@ and set up `continuous integration`_.
 .. _Cookiecutter: https://cookiecutter.readthedocs.io/
 .. _Poetry: https://python-poetry.org/
 .. _Nox: https://nox.thea.codes/
+.. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _Github: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _continuous integration: https://github.com/cjolowicz/cookiecutter-hypermodern-python/#continuous-integration
 

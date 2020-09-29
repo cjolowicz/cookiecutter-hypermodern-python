@@ -49,7 +49,7 @@ jobs:
 
       - name: Install Nox
         run: |
-          pip install --constraint=.github/workflows/constraints.txt nox
+          pip install --constraint=.github/workflows/constraints.txt nox nox-poetry
           nox --version
 
       - name: Compute pre-commit cache key
