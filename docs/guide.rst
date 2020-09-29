@@ -178,11 +178,12 @@ Requirements
    If you decide to skip ``pipx`` installation,
    use `pip install`_ with the ``--user`` option instead.
 
-You only need three tools to use this template:
+You need four tools to use this template:
 
 - Cookiecutter_ to create projects from the template,
 - Poetry_ to manage packaging and dependencies
 - Nox_ to automate checks and other tasks
+- nox-poetry_ for using Poetry in Nox sessions
 
 Install Cookiecutter_ using pipx:
 
@@ -198,11 +199,12 @@ Install Poetry_ by downloading and running get-poetry.py_:
 
    $ python get-poetry.py
 
-Install Nox_ using pipx:
+Install Nox_ and nox-poetry_ using pipx:
 
 .. code:: console
 
    $ pipx install nox
+   $ pipx inject nox nox-poetry
 
 
 Project creation
