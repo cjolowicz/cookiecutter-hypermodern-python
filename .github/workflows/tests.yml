@@ -24,7 +24,7 @@ jobs:
         working-directory: cookiecutter-hypermodern-python
         run: |
           pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox poetry
+          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox nox-poetry poetry
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-hypermodern-python
       - name: Create git repository
