@@ -81,6 +81,7 @@ jobs:
           nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
 
       - name: Upload coverage data
+        if: always() && matrix.session == 'tests'
         uses: "actions/upload-artifact@v2"
         with:
           name: coverage-data
