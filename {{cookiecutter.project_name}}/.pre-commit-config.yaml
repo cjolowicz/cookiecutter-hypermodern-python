@@ -46,6 +46,6 @@ repos:
         types: [text]
         stages: [commit, push, manual]
   - repo: https://github.com/prettier/prettier
-    rev: 2.1.1
+    rev: 2.1.2
     hooks:
       - id: prettier
