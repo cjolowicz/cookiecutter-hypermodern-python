@@ -2284,6 +2284,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
    :ref:`tests <The tests session>`           Windows                3.8
    :ref:`tests <The tests session>`           macOS                  3.8
+   :ref:`coverage <The coverage session>`     Ubuntu                 3.8
    :ref:`docs-build <The docs-build session>` Ubuntu                 3.8
    ========================================== ====================== ===============
 
