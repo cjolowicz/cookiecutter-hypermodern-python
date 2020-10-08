@@ -121,7 +121,8 @@ def tests(session: Session) -> None:
     try:
         session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
     finally:
-        session.notify("coverage")
+        if session.interactive:
+            session.notify("coverage")
 
 
 @nox.session

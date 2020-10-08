@@ -2138,6 +2138,7 @@ Workflows use the following GitHub Actions:
    ============================================ =========================================================
    `actions/cache`_                             Cache dependencies and build outputs
    `actions/checkout`_                          Check out the Git repository
+   `actions/download-artifact`_                 Download artifacts from workflows
    `actions/setup-python`_                      Set up workflows with a specific Python version
    `actions/upload-artifact`_                   Upload artifacts from workflows
    `codecov/codecov-action`_                    Upload coverage to Codecov
@@ -2148,6 +2149,7 @@ Workflows use the following GitHub Actions:
 
 .. _actions/cache: https://github.com/actions/cache
 .. _actions/checkout: https://github.com/actions/checkout
+.. _actions/download-artifact: https://github.com/actions/download-artifact
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
@@ -2219,6 +2221,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`tests <The tests session>`           Ubuntu                 3.8, 3.7, 3.6
    :ref:`tests <The tests session>`           Windows                3.8
    :ref:`tests <The tests session>`           macOS                  3.8
+   :ref:`coverage <The coverage session>`     Ubuntu                 3.8
    :ref:`docs-build <The docs-build session>` Ubuntu                 3.8
    ========================================== ====================== ===============
 
@@ -2240,8 +2243,9 @@ The Tests workflow uses the following GitHub Actions:
 
 - `actions/checkout`_ for checking out the Git repository
 - `actions/setup-python`_ for setting up the Python interpreter
+- `actions/download-artifact`_ to download the coverage data of each tests session
 - `actions/cache`_ for caching pre-commit environments
-- `actions/upload-artifact`_ to upload the generated documentation
+- `actions/upload-artifact`_ to upload the generated documentation and the coverage data of each tests session
 - `codecov/codecov-action`_ for uploading to Codecov_
 
 The Tests workflow is defined in ``.github/workflows/tests.yml``.

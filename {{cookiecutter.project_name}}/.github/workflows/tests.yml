@@ -80,6 +80,13 @@ jobs:
         run: |
           nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
 
+      - name: Upload coverage data
+        if: always() && matrix.session == 'tests'
+        uses: "actions/upload-artifact@v2.2.0"
+        with:
+          name: coverage-data
+          path: ".coverage.*"
+
       - name: Upload documentation
         if: matrix.session == 'docs-build'
         uses: actions/upload-artifact@v2.2.0
@@ -87,11 +94,45 @@ jobs:
           name: docs
           path: docs/_build
 
+  coverage:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2.3.2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2.1.2
+        with:
+          python-version: 3.8
+
+      - name: Upgrade pip
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt pip
+          pip --version
+
+      - name: Install Poetry
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt poetry
+          poetry --version
+
+      - name: Install Nox
+        run: |
+          pip install --constraint=.github/workflows/constraints.txt nox
+          nox --version
+
+      - name: Download coverage data
+        uses: actions/download-artifact@v2.0.5
+        with:
+          name: coverage-data
+
+      - name: Combine coverage data and display human readable report
+        run: |
+          nox --force-color --session=coverage
+
       - name: Create coverage report
-        if: always() && matrix.session == 'tests'
         run: |
           nox --force-color --session=coverage -- xml
 
       - name: Upload coverage report
-        if: always() && matrix.session == 'tests'
         uses: codecov/codecov-action@v1.0.13
