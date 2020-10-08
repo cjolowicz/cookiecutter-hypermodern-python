@@ -121,7 +121,7 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt nox
           nox --version
 
-      - name: "Download coverage data"
+      - name: Download coverage data
         uses: actions/download-artifact@v2
         with:
           name: coverage-data
