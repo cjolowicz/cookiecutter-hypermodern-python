@@ -1066,7 +1066,7 @@ The following table gives an overview of the available Nox sessions:
    :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.9``                ✓
    :ref:`tests <The tests session>`           Run tests with pytest_                ``3.6`` … ``3.9``      ✓
    :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.6`` … ``3.9``      ✓
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.6`` … ``3.9``
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.6`` … ``3.9``      ✓
    ========================================== ===================================== ================== =========
 
 
