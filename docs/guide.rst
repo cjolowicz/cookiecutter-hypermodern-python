@@ -590,7 +590,8 @@ __ https://www.sphinx-doc.org/en/master/usage/configuration.html
    This file is only used on Read the Docs.
 
 The project documentation is built and hosted on
-:ref:`Read the Docs <Read the Docs integration>`.
+:ref:`Read the Docs <Read the Docs integration>`,
+and uses their official theme sphinx-rtd-theme_.
 
 You can also build the documentation locally using Nox,
 see :ref:`The docs session`.
@@ -2535,3 +2536,4 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io
