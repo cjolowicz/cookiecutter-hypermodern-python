@@ -17,10 +17,10 @@ jobs:
           repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
           path: cookiecutter-hypermodern-python-instance
           token: ${{ secrets.X_GITHUB_TOKEN }}
-      - name: Set up Python 3.8
+      - name: Set up Python 3.9
         uses: actions/setup-python@v2.1.3
         with:
-          python-version: "3.8"
+          python-version: "3.9"
       - name: Install cookiecutter
         working-directory: cookiecutter-hypermodern-python
         run: |
