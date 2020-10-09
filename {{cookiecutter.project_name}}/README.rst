@@ -58,10 +58,16 @@ You can install *{{cookiecutter.friendly_name}}* via pip_ from PyPI_:
    $ pip install {{cookiecutter.project_name}}
 
 
-Usage
------
+.. basic-usage
+
+Basic usage
+-----------
 
 * TODO
+
+.. end-basic-usage
+
+Complete instructions can be found at `{{cookiecutter.project_name}}.readthedocs.io`_.
 
 
 Contributing
@@ -98,5 +104,6 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 .. _pip: https://pip.pypa.io/
+.. _{{cookiecutter.project_name}}.readthedocs.io: https://{{cookiecutter.project_name}}.readthedocs.io
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
