@@ -10,7 +10,7 @@ from nox.sessions import Session
 
 
 package = "{{cookiecutter.package_name}}"
-python_versions = ["3.8", "3.7", "3.6"]
+python_versions = ["3.9", "3.8", "3.7", "3.6"]
 nox.options.sessions = (
     "pre-commit",
     "safety",
@@ -72,7 +72,7 @@ def activate_virtualenv_in_precommit_hooks(session: Session) -> None:
         hook.write_text("\n".join(lines))
 
 
-@nox.session(name="pre-commit", python="3.8")
+@nox.session(name="pre-commit", python="3.9")
 def precommit(session: Session) -> None:
     """Lint using pre-commit."""
     args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
@@ -94,7 +94,7 @@ def precommit(session: Session) -> None:
         activate_virtualenv_in_precommit_hooks(session)
 
 
-@nox.session(python="3.8")
+@nox.session(python="3.9")
 def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
     requirements = nox_poetry.export_requirements(session)
