@@ -28,7 +28,7 @@ coverage = {extras = ["toml"], version = "^5.3"}
 safety = "^1.9.0"
 mypy = "^0.782"
 typeguard = "^2.9.1"
-xdoctest = "^0.15.0"
+xdoctest = {extras = ["colors"], version = "^0.15.0"}
 sphinx = "^3.2.1"
 sphinx-autobuild = "^2020.9.1"
 pre-commit = "^2.7.1"
@@ -43,6 +43,7 @@ darglint = "^1.5.5"
 reorder-python-imports = "^2.3.5"
 pre-commit-hooks = "^3.2.0"
 sphinx-rtd-theme = "^0.5.0"
+Pygments = "^2.7.1"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"

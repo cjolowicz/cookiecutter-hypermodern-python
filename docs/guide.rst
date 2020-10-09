@@ -1225,6 +1225,10 @@ For example, the following command runs only the test case ``test_main_succeeds`
 
    $ nox --session=tests -- -k test_main_succeeds
 
+The tests session also installs pygments_, a Python syntax highlighter.
+It is used by pytest to highlight code in tracebacks,
+improving the readability of test failures.
+
 
 .. _The coverage session:
 
@@ -2537,5 +2541,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
+.. _pygments: https://pygments.org/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io
