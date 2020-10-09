@@ -715,18 +715,29 @@ See the table below for an overview of the dependencies of generated projects:
    :class: hypermodern-table
    :widths: auto
 
-   ================= =====================================================
-   click_            Composable command line interface toolkit
-   coverage__        Code coverage measurement for Python
-   mypy_             Optional static typing for Python
-   pre-commit_       A framework for managing and maintaining multi-language pre-commit hooks
-   pytest_           Simple powerful testing with Python
-   safety_           Checks installed dependencies for known vulnerabilities
-   sphinx_           Python documentation generator
-   sphinx-autobuild_ Watch a Sphinx directory and rebuild the documentation when a change is detected
-   typeguard_        Run-time type checker for Python
-   xdoctest_         A rewrite of the builtin doctest module
-   ================= =====================================================
+   ======================= ====================================================================================
+   black_                  The uncompromising code formatter.
+   click_                  Composable command line interface toolkit
+   coverage__              Code coverage measurement for Python
+   darglint_               A utility for ensuring Google-style docstrings stay up to date with the source code.
+   flake8_                 The modular source code checker: pep8 pyflakes and co
+   flake8-bandit_          Automated security testing with bandit and flake8.
+   flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
+   flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
+   flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
+   mypy_                   Optional static typing for Python
+   pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
+   pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks
+   pre-commit-hooks_       Some out-of-the-box hooks for pre-commit.
+   pytest_                 Simple powerful testing with Python
+   reorder-python-imports_ Tool for reordering python imports
+   safety_                 Checks installed dependencies for known vulnerabilities
+   sphinx_                 Python documentation generator
+   sphinx-autobuild_       Watch a Sphinx directory and rebuild the documentation when a change is detected
+   sphinx-rtd-theme_       Read the Docs theme for Sphinx
+   typeguard_              Run-time type checker for Python
+   xdoctest_               A rewrite of the builtin doctest module
+   ======================= ====================================================================================
 
 __ Coverage.py_
 
@@ -1087,8 +1098,6 @@ This tool has several advantages over ``sphinx-build`` when you are editing the 
 - It rebuilds the documentation whenever a change is detected.
 - It spins up a web server with live reloading.
 - It opens the location of the web server in your browser.
-
-.. _sphinx-autobuild: https://github.com/GaretJax/sphinx-autobuild
 
 Use the ``--`` separator to pass additional options.
 For example, to treat warnings as errors and run in nit-picky mode:
@@ -1589,7 +1598,6 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
 .. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 .. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
-.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
 
@@ -1635,8 +1643,6 @@ Hooks from pre-commit-hooks
 
 The pre-commit configuration also includes several smaller hooks
 from the pre-commit-hooks_ repository.
-
-.. _pre-commit-hooks: https://github.com/pre-commit/pre-commit-hooks
 
 
 .. _Linting with Flake8:
@@ -2538,9 +2544,12 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _mccabe: https://github.com/PyCQA/mccabe
 .. _pep8-naming: https://github.com/pycqa/pep8-naming
 .. _pip: https://pip.pypa.io/
+.. _pre-commit-hooks: https://github.com/pre-commit/pre-commit-hooks
 .. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
 .. _pygments: https://pygments.org/
+.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _sphinx-autobuild: https://github.com/executablebooks/sphinx-autobuild
 .. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io
