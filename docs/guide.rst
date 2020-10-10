@@ -734,6 +734,7 @@ See the table below for an overview of the dependencies of generated projects:
    safety_                 Checks installed dependencies for known vulnerabilities
    sphinx_                 Python documentation generator
    sphinx-autobuild_       Watch a Sphinx directory and rebuild the documentation when a change is detected
+   sphinx-click_           Sphinx extension that automatically documents click applications
    sphinx-rtd-theme_       Read the Docs theme for Sphinx
    typeguard_              Run-time type checker for Python
    xdoctest_               A rewrite of the builtin doctest module
