@@ -1546,31 +1546,54 @@ as shown in the next section.
 Adding a Python-language hook
 -----------------------------
 
-To add a Python-language hook, you need to:
+Adding a Python-language hook to your project takes three steps:
 
 - Add the hook as a Poetry development dependency.
 - Install the hook in the Nox session for pre-commit.
-- Update ``pre-commit-config.yaml`` as described below.
+- Add the hook to ``pre-commit-config.yaml``.
 
-Add a Python-language hook to ``pre-commit-config.yaml`` as follows:
+For example, consider a linter named ``awesome-linter``.
 
-- Locate the hook definition in the ``pre-commit-hooks.yaml`` file
-  in the linter repository.
-- Copy the entire entry for the hook, rather than just the hook identifier.
+First, use Poetry to add the linter to your development dependencies:
+
+.. code:: console
+
+   $ poetry add --dev awesome-linter
+
+Next, update ``noxfile.py`` to add the linter to the pre-commit session:
+
+.. code:: python
+
+   @nox.session(name="pre-commit", ...)
+   def precommit(session: Session) -> None:
+       ...
+       session.install(
+           "awesome-linter",  # Install awesome-linter
+           "black",
+           "darglint",
+           ...
+       )
+
+Finally, add the hook to ``pre-commit-config.yaml`` as follows:
+
+- Locate the ``pre-commit-hooks.yaml`` file in the ``awesome-linter`` repository.
+- Copy the entry for the hook (not just the hook identifier).
+- Change ``language:`` from ``python`` to ``system``.
 - Add the hook definition to the ``repo: local`` section.
-- Change the ``language`` from ``python`` to ``system``.
 
-For example, here is the hook definition for Flake8_
-from the ``repo: local`` section:
+Depending on the linter, the hook definition might look somewhat like the following:
 
 .. code:: yaml
 
-   - id: flake8
-     name: flake8
-     entry: flake8
-     language: system
-     types: [python]
-     require_serial: true
+   repos:
+     - repo: local
+       hooks:
+         # ...
+         - id: awesome-linter
+           name: Awesome Linter
+           entry: awesome-linter
+           language: system  # was: python
+           types: [python]
 
 
 Running checks on modified files
