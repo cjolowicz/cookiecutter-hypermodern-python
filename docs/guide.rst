@@ -296,11 +296,13 @@ replace ``<project>`` by the name of your project.
    $ git commit
 
 Use the following command to ensure your default branch is called ``main``,
-the `new default for GitHub repositories`__:
-
-   $ git branch -M main
+which is the `default branch name for GitHub repositories`__.
 
 __ https://github.com/github/renaming
+
+.. code:: console
+
+   $ git branch --move --force main
 
 Create an empty repository on GitHub_,
 using the project name you chose when you generated the project.
@@ -312,11 +314,11 @@ using the project name you chose when you generated the project.
 
 Finally, upload your repository to GitHub.
 In the commands below, replace ``<username>`` by your GitHub username,
-and ``<repository>`` by the name of your GitHub repository.
+and ``<project>`` by the name of your project.
 
 .. code:: console
 
-   $ git remote add origin git@github.com:<username>/<repository>.git
+   $ git remote add origin git@github.com:<username>/<project>.git
    $ git push --set-upstream origin main
 
 Now may be a good time to set up Continuous Integration for your repository.
