@@ -249,8 +249,14 @@ Here is a complete list of the project variables defined by this template:
    ``author``         Primary author                  Katherine Johnson
    ``email``          E-mail address of the author    katherine@example.com
    ``github_user``    GitHub username of the author   ``katherine``
-   ``version``        Initial project version         ``0.1.0``
+   ``version``        Initial project version         ``0.0.0``
    ================== =============================== ======================
+
+.. note::
+
+   The initial project version should be the latest release on PyPI_,
+   or ``0.0.0`` for an unreleased package.
+   See `The Release workflow`_ for details.
 
 Your choices are recorded in the file ``.cookiecutter.json`` in the generated project,
 together with the URL of this Cookiecutter template.
@@ -919,8 +925,7 @@ Building and distributing the package
 
    With the |HPC|,
    building and distributing your package
-   is taken care of by `GitHub Actions`_
-   when you publish a `GitHub Release`_.
+   is taken care of by `GitHub Actions`_.
    For more information,
    see the section :ref:`The Release workflow`.
 
@@ -1022,10 +1027,15 @@ If you invoke Nox by itself, it will run the full test suite:
 
    $ nox
 
-This includes unit tests, linters, and type checkers,
-but excludes sessions like that for building documentation.
+This includes tests, linters, type checks, and more.
+For the full list, please refer to the table `below <Table of Nox sessions_>`_.
+
 The list of sessions run by default can be configured
 by editing ``nox.options.sessions`` in ``noxfile.py``.
+Currently the list only excludes the `docs session <The docs session_>`_
+(which spawns an HTTP server)
+and the `coverage session <The coverage session_>`_
+(which is triggered by the `tests session <The tests session_>`_).
 
 You can also run a specific Nox session, using the ``--session`` option.
 For example, build the documentation like this:
@@ -1046,13 +1056,20 @@ You can speed things up by passing the
 `--reuse-existing-virtualenvs`_ option,
 or the equivalent short option ``-r``.
 For example, the following may be more practical during development
-(this will only run unit tests on the current Python release):
+(this will only run tests and type checks, on the current Python release):
 
 .. code:: console
 
-   $ nox -rs tests -p 3.9
+   $ nox -p 3.9 -rs tests mypy
 
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
+
+Many sessions accept additional options after ``--`` separator.
+For example, the following command runs a specific test module:
+
+.. code:: console
+
+   $ nox --session=tests -- tests/test_main.py
 
 
 Overview of Nox sessions
@@ -1069,7 +1086,7 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ===================================== ================== =========
    Session                                    Description                           Python              Default
    ========================================== ===================================== ================== =========
-   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``               (✓)
    :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.8``
    :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.8``                ✓
    :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.9``      ✓
@@ -1446,6 +1463,12 @@ __ https://pre-commit.com/#pre-commit-autoupdate
 Python-language hooks
 ---------------------
 
+.. note::
+
+   This section provides some background information about
+   how this project template integrates pre-commit with Poetry and Nox.
+   You can safely skip this section.
+
 Python-language hooks in the |HPC| are not managed by pre-commit.
 Instead, they are tracked as development dependencies in Poetry,
 and installed into the Nox session alongside pre-commit itself.
@@ -1523,31 +1546,54 @@ as shown in the next section.
 Adding a Python-language hook
 -----------------------------
 
-To add a Python-language hook, you need to:
+Adding a Python-language hook to your project takes three steps:
 
 - Add the hook as a Poetry development dependency.
 - Install the hook in the Nox session for pre-commit.
-- Update ``pre-commit-config.yaml`` as described below.
+- Add the hook to ``pre-commit-config.yaml``.
 
-Add a Python-language hook to ``pre-commit-config.yaml`` as follows:
+For example, consider a linter named ``awesome-linter``.
 
-- Locate the hook definition in the ``pre-commit-hooks.yaml`` file
-  in the linter repository.
-- Copy the entire entry for the hook, rather than just the hook identifier.
+First, use Poetry to add the linter to your development dependencies:
+
+.. code:: console
+
+   $ poetry add --dev awesome-linter
+
+Next, update ``noxfile.py`` to add the linter to the pre-commit session:
+
+.. code:: python
+
+   @nox.session(name="pre-commit", ...)
+   def precommit(session: Session) -> None:
+       ...
+       session.install(
+           "awesome-linter",  # Install awesome-linter
+           "black",
+           "darglint",
+           ...
+       )
+
+Finally, add the hook to ``pre-commit-config.yaml`` as follows:
+
+- Locate the ``pre-commit-hooks.yaml`` file in the ``awesome-linter`` repository.
+- Copy the entry for the hook (not just the hook identifier).
+- Change ``language:`` from ``python`` to ``system``.
 - Add the hook definition to the ``repo: local`` section.
-- Change the ``language`` from ``python`` to ``system``.
 
-For example, here is the hook definition for Flake8_
-from the ``repo: local`` section:
+Depending on the linter, the hook definition might look somewhat like the following:
 
 .. code:: yaml
 
-   - id: flake8
-     name: flake8
-     entry: flake8
-     language: system
-     types: [python]
-     require_serial: true
+   repos:
+     - repo: local
+       hooks:
+         # ...
+         - id: awesome-linter
+           name: Awesome Linter
+           entry: awesome-linter
+           language: system  # was: python
+           types: [python]
 
 
 Running checks on modified files
