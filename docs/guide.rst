@@ -1027,8 +1027,9 @@ If you invoke Nox by itself, it will run the full test suite:
 
    $ nox
 
-This includes unit tests, linters, and type checkers,
-but excludes sessions like that for building documentation.
+This includes tests, linters, type checks, and more.
+For the full list, please refer to the table `below <Table of Nox sessions_>`_.
+
 The list of sessions run by default can be configured
 by editing ``nox.options.sessions`` in ``noxfile.py``.
 Currently the list only excludes the `docs session <The docs session_>`_
@@ -1055,13 +1056,20 @@ You can speed things up by passing the
 `--reuse-existing-virtualenvs`_ option,
 or the equivalent short option ``-r``.
 For example, the following may be more practical during development
-(this will only run unit tests on the current Python release):
+(this will only run tests and type checks, on the current Python release):
 
 .. code:: console
 
-   $ nox -rs tests -p 3.9
+   $ nox -p 3.9 -rs tests mypy
 
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
+
+Many sessions accept additional options after ``--`` separator.
+For example, the following command runs a specific test module:
+
+.. code:: console
+
+   $ nox --session=tests -- tests/test_main.py
 
 
 Overview of Nox sessions
