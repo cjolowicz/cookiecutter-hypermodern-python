@@ -58,14 +58,8 @@ You can install *{{cookiecutter.friendly_name}}* via pip_ from PyPI_:
    $ pip install {{cookiecutter.project_name}}
 
 
-.. basic-usage
-
-Basic usage
------------
-
-* TODO
-
-.. end-basic-usage
+Usage
+-----
 
 Complete instructions can be found at `{{cookiecutter.project_name}}.readthedocs.io`_.
 
