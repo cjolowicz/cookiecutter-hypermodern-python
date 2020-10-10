@@ -1031,6 +1031,10 @@ This includes unit tests, linters, and type checkers,
 but excludes sessions like that for building documentation.
 The list of sessions run by default can be configured
 by editing ``nox.options.sessions`` in ``noxfile.py``.
+Currently the list only excludes the `docs session <The docs session_>`_
+(which spawns an HTTP server)
+and the `coverage session <The coverage session_>`_
+(which is triggered by the `tests session <The tests session_>`_).
 
 You can also run a specific Nox session, using the ``--session`` option.
 For example, build the documentation like this:
@@ -1074,7 +1078,7 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ===================================== ================== =========
    Session                                    Description                           Python              Default
    ========================================== ===================================== ================== =========
-   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``               (✓)
    :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.8``
    :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.8``                ✓
    :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.9``      ✓
