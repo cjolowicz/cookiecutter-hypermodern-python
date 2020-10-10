@@ -8,10 +8,6 @@ a Python template based on the `Hypermodern Python`_ article series.
 If you're in a hurry, check out the :doc:`quickstart guide <quickstart>`
 and the :ref:`tutorials <Tutorials>`.
 
-.. contents::
-    :local:
-    :backlinks: none
-
 
 Introduction
 ~~~~~~~~~~~~
