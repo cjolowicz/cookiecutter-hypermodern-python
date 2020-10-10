@@ -252,6 +252,12 @@ Here is a complete list of the project variables defined by this template:
    ``version``        Initial project version         ``0.0.0``
    ================== =============================== ======================
 
+.. note::
+
+   The initial project version should be the latest release on PyPI_,
+   or ``0.0.0`` for an unreleased package.
+   See `The Release workflow`_ for details.
+
 Your choices are recorded in the file ``.cookiecutter.json`` in the generated project,
 together with the URL of this Cookiecutter template.
 Having this JSON_ file in the project makes it possible later on
