@@ -925,8 +925,7 @@ Building and distributing the package
 
    With the |HPC|,
    building and distributing your package
-   is taken care of by `GitHub Actions`_
-   when you publish a `GitHub Release`_.
+   is taken care of by `GitHub Actions`_.
    For more information,
    see the section :ref:`The Release workflow`.
 
