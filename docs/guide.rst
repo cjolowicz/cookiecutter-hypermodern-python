@@ -1463,6 +1463,12 @@ __ https://pre-commit.com/#pre-commit-autoupdate
 Python-language hooks
 ---------------------
 
+.. note::
+
+   This section provides some background information about
+   how this project template integrates pre-commit with Poetry and Nox.
+   You can safely skip this section.
+
 Python-language hooks in the |HPC| are not managed by pre-commit.
 Instead, they are tracked as development dependencies in Poetry,
 and installed into the Nox session alongside pre-commit itself.
