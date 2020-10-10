@@ -143,7 +143,7 @@ How to make a release
 Before making a release, go through the following checklist:
 
 -  All pull requests for the release have been merged.
--  The master branch passes all checks.
+-  The default branch passes all checks.
 
 Releases are made by publishing a GitHub Release.
 A draft release is being maintained based on merged pull requests.
