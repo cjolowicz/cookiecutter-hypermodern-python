@@ -284,13 +284,23 @@ your next steps are to create a Git repository and upload it to GitHub.
 
 Change to the root directory of your new project,
 initialize a Git repository, and
-create a commit for the initial project structure:
+create a commit for the initial project structure.
+In the commands below,
+replace ``<project>`` by the name of your project.
 
 .. code:: console
 
+   $ cd <project>
    $ git init
    $ git add .
    $ git commit
+
+Use the following command to ensure your default branch is called ``main``,
+the `new default for GitHub repositories`__:
+
+   $ git branch -M main
+
+__ https://github.com/github/renaming
 
 Create an empty repository on GitHub_,
 using the project name you chose when you generated the project.
@@ -307,7 +317,7 @@ and ``<repository>`` by the name of your GitHub repository.
 .. code:: console
 
    $ git remote add origin git@github.com:<username>/<repository>.git
-   $ git push --set-upstream origin master
+   $ git push --set-upstream origin main
 
 Now may be a good time to set up Continuous Integration for your repository.
 Refer to the section :ref:`External services`
@@ -383,7 +393,7 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`:
    :widths: auto
 
    ====================== =======================================================
-   ``index.rst``          Master document
+   ``index.rst``          Main document
    ``contributing.rst``   Contributor Guide (via include)
    ``codeofconduct.rst``  Code of Conduct (via include)
    ``license.rst``        License (via include)
@@ -564,8 +574,7 @@ The top-level directory contains several stand-alone documentation files:
 The documentation files in the ``docs`` directory are built using Sphinx_:
 
 ``index.rst``
-   This is the master document,
-   and serves as the main documentation page.
+   This is the main documentation page.
    This file also defines the navigation menu,
    with links to other documentation pages.
    The *Changelog* menu entry
@@ -2110,7 +2119,7 @@ Follow these steps to set up Read the Docs for your repository:
 __ https://docs.readthedocs.io/en/stable/webhooks.html
 
 Read the Docs automatically starts building your documentation,
-and will continue to do so when you push to master or make a release.
+and will continue to do so when you push to the default branch or make a release.
 Your documentation now has a public URL like this:
 
    *https://<project>.readthedocs.io/*
@@ -2177,12 +2186,12 @@ The |HPC| defines the following workflows:
    :class: hypermodern-table
    :widths: auto
 
-   ===================================================== ======================== ==================================== ===============
+   ===================================================== ======================== ==================================== =====================
    Workflow                                              File                     Description                          Trigger
-   ===================================================== ======================== ==================================== ===============
+   ===================================================== ======================== ==================================== =====================
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
-   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (master)
-   ===================================================== ======================== ==================================== ===============
+   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
+   ===================================================== ======================== ==================================== =====================
 
 
 Overview of GitHub Actions
@@ -2318,7 +2327,7 @@ The Release workflow
 The Release workflow publishes your package on PyPI_, the Python Package Index.
 The workflow also creates a version tag in the GitHub repository,
 and publishes a GitHub Release using `Release Drafter`_.
-The workflow is triggered on every push to the master branch.
+The workflow is triggered on every push to the default branch.
 
 Release steps only run if the package version was bumped.
 If the package version did not change,
@@ -2419,7 +2428,7 @@ Create a branch for your changes:
 
 .. code:: console
 
-   $ git switch --create my-topic-branch master
+   $ git switch --create my-topic-branch main
 
 Create a series of small, single-purpose commits:
 
@@ -2467,18 +2476,18 @@ merge the pull request using the squash-merge strategy (recommended):
 
 This triggers the following automated steps:
 
-- :ref:`The test suite runs against the master branch <The Tests workflow>`.
+- :ref:`The test suite runs against the main branch <The Tests workflow>`.
 - :ref:`The draft GitHub Release is updated <The Release workflow>`.
 - :ref:`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
 - `Read the Docs`_ rebuilds the *latest* version of the documentation.
 
 In your local repository,
-update the master branch:
+update the main branch:
 
 .. code:: console
 
-   $ git switch master
-   $ git pull origin master
+   $ git switch main
+   $ git pull origin main
 
 Optionally, remove the merged topic branch
 from the local repository as well:
@@ -2495,7 +2504,7 @@ The original commits remain accessible from the pull request
 How to make a release
 ---------------------
 
-Releases are triggered by a version bump on the master branch.
+Releases are triggered by a version bump on the default branch.
 It is recommended to do this in a separate pull request:
 
 1. Switch to a branch.
@@ -2510,7 +2519,7 @@ The individual steps for bumping the version are:
 
 .. code:: console
 
-   $ git switch --create release master
+   $ git switch --create release main
    $ poetry version <version>
    $ git commit --message="<project> <version>" pyproject.toml
    $ git push origin release

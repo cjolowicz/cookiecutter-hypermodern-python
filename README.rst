@@ -237,7 +237,7 @@ Read the Docs
 Releasing
 ---------
 
-Releases are triggered by a version bump on the master branch.
+Releases are triggered by a version bump on the default branch.
 It is recommended to do this in a separate pull request:
 
 1. Switch to a branch.
