@@ -17,7 +17,7 @@ html_theme_options = {
     "github_user": "cjolowicz",
     "github_repo": "cookiecutter-hypermodern-python",
     "github_type": "star",
-    "logo": "Logo.png",
+    "logo": "logo.png",
     "logo_name": "true",
     "fixed_sidebar": "true",
     "sidebar_width": "250px",
