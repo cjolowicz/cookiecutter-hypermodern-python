@@ -84,6 +84,7 @@ Features
 - Security audit with Bandit_ and Safety_
 - Check documentation examples with xdoctest_
 - Generate API documentation with autodoc_ and napoleon_
+- Generate command-line reference with sphinx-click_
 
 The template supports Python 3.6, 3.7, 3.8, and 3.9.
 
@@ -320,6 +321,7 @@ on the *Issues* tab of your GitHub repository,
 .. _pre-commit: https://pre-commit.com/
 .. _pyenv: https://github.com/pyenv/pyenv
 .. _pytest: https://docs.pytest.org/en/latest/
+.. _sphinx-click: https://sphinx-click.readthedocs.io/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
 
 .. references-end
