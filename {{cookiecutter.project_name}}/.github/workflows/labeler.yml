@@ -1,6 +1,10 @@
 name: Labeler
 
-on: push
+on:
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
   labeler:
@@ -13,9 +17,9 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-labeler@v3.1.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: {{ "${{ secrets.GITHUB_TOKEN }}" }}
           yaml-file: .github/labels.yml
-          skip-delete: false
-          dry-run: true
+          skip-delete: true
+          dry-run: false
           exclude: |
             hacktoberfest*
