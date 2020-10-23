@@ -1,0 +1,38 @@
+---
+# Labels names are important as they are used by Release Drafter to decide
+# regarding where to record them in changelog or if to skip them.
+#
+# The repository label will be autoaticalluu configured using this file and
+# the GitHub Action https://github.com/marketplace/actions/github-labeler.
+- name: invalid
+  description: This doesn't seem right
+  color: e4e669
+- name: performance
+  description: A code change that improves performance
+  color: f3ffb2
+- name: python
+  description: Pull requests that update Python code
+  color: 2b67c6
+- name: question
+  description: Further information is requested
+  color: d876e3
+- name: refactoring
+  description: A code change that neither fixes a bug nor adds a feature
+  color: d4c5f9
+- name: removal
+  description: Removals and Deprecations
+  color: f00000
+- name: style
+  description:
+    Changes that do not affect the meaning of the code (white-space, formatting,
+    etc)
+  color: ffc6df
+- name: task
+  description:
+  color: d88c70
+- name: testing
+  description: Adding missing tests or correcting existing tests
+  color: 79e57f
+- name: wontfix
+  description: This will not be worked on
+  color: ffffff
