@@ -30,7 +30,7 @@
   color: a2eeef
 - name: github_actions
   description: Pull requests that update Github_actions code
-  color: '000000'
+  color: "000000"
 - name: good first issue
   description: Good for newcomers
   color: 7057ff
@@ -42,7 +42,7 @@
   color: e4e669
 - name: performance
   description: Performance
-  color: '016175'
+  color: "016175"
 - name: python
   description: Pull requests that update Python code
   color: 2b67c6
