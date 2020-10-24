@@ -85,6 +85,7 @@ Features
 - Check documentation examples with xdoctest_
 - Generate API documentation with autodoc_ and napoleon_
 - Generate command-line reference with sphinx-click_
+- Manage project labels with `GitHub Labeler`_
 
 The template supports Python 3.6, 3.7, 3.8, and 3.9.
 
@@ -283,8 +284,12 @@ by applying labels to them, like this:
 
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
-Create the remaining labels when you need them,
-on the *Issues* tab of your GitHub repository,
+
+Project labels are managed automatically by `GitHub Labeler`_ each time you push to your
+main branch. The labels are defined in ``.github/labels.yml`` file.
+
+You can still manage labels manually on the *Issues* tab of your GitHub repository as GithHub Labeler
+is set by default to not delete the labels not defined in the YAML file.
 
 .. table-release-drafter-sections-end
 
@@ -323,5 +328,6 @@ on the *Issues* tab of your GitHub repository,
 .. _pytest: https://docs.pytest.org/en/latest/
 .. _sphinx-click: https://sphinx-click.readthedocs.io/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
+.. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
 
 .. references-end
