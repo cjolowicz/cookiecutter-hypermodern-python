@@ -2,4 +2,4 @@ pip==20.2.3
 nox==2020.8.22
 nox-poetry==0.5.0
 poetry==1.1.2
-virtualenv==20.0.35
+virtualenv==20.1.0
