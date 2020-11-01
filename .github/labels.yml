@@ -4,6 +4,42 @@
 #
 # The repository label will be autoaticalluu configured using this file and
 # the GitHub Action https://github.com/marketplace/actions/github-labeler.
+- name: breaking
+  description: Breaking Changes
+  color: 7c3ea5
+- name: bug
+  description: Something isn't working
+  color: d73a4a
+- name: build
+  description: Changes that affect the build system or external dependencies
+  color: fc964e
+- name: ci
+  description: Changes to CI configuration files and scripts
+  color: 00485e
+- name: cookiecutter
+  description: Changes outside of the template directory
+  color: f9ffb2
+- name: dependencies
+  description: Dependencies
+  color: 00ce44
+- name: documentation
+  description: Improvements or additions to documentation
+  color: 0075ca
+- name: duplicate
+  description: This issue or pull request already exists
+  color: cfd3d7
+- name: enhancement
+  description: New feature or request
+  color: a2eeef
+- name: github_actions
+  description: Pull requests that update Github_actions code
+  color: "000000"
+- name: good first issue
+  description: Good for newcomers
+  color: 7057ff
+- name: help wanted
+  description: Extra attention is needed
+  color: 008672
 - name: invalid
   description: This doesn't seem right
   color: e4e669
