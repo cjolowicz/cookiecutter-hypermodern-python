@@ -80,7 +80,7 @@ You need a recent Linux, Unix, or Mac system with
 bash_, curl_, and git_.
 
 On Windows 10, enable the `Windows Subsystem for Linux`_ (WSL) and
-install the Ubuntu 18.04 LTS distribution.
+install the Ubuntu 20.04 LTS distribution.
 Open Ubuntu from the Start Menu, and
 install additional packages using the following commands:
 
