@@ -2,7 +2,7 @@
 # Labels names are important as they are used by Release Drafter to decide
 # regarding where to record them in changelog or if to skip them.
 #
-# The repository label will be autoaticalluu configured using this file and
+# The repository labels will be automatically configured using this file and
 # the GitHub Action https://github.com/marketplace/actions/github-labeler.
 - name: breaking
   description: Breaking Changes
