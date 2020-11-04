@@ -2385,17 +2385,21 @@ The Release Drafter configuration is located in ``.github/release-drafter.yml``.
 The Labeler workflow
 --------------------
 
-The Labeler workflow manages the labels used in GitHub issues and pull requests
-based on a description file ``./github/labels.yaml``. In this file each label is
-described with a ``name``, a ``description`` and a ``color``.
+The Labeler workflow manages the labels used in GitHub issues
+and pull requests based on a description file ``./github/labels.yaml``.
+In this file each label is described with
+a ``name``,
+a ``description``
+and a ``color``.
 The workflow is triggered on every push to the default branch.
 
-The workflow creates or updates project labels if they are missing or different
-compared to the ``labels.yml`` file content.
+The workflow creates or updates project labels if they are missing
+or different compared to the ``labels.yml`` file content.
 
-The workflow does not delete labels already configured in the GitHub UI and not
-in the ``labels.yml`` file. You can change this behavior and add ignore patterns in
-the settings of the workflow (see `GitHub Labeler`_ documentation).
+The workflow does not delete labels already configured in the GitHub UI
+and not in the ``labels.yml`` file.
+You can change this behavior and add ignore patterns
+in the settings of the workflow (see `GitHub Labeler`_ documentation).
 
 The Labeler workflow uses the following GitHub Actions:
 
