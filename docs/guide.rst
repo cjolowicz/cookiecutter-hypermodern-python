@@ -430,7 +430,7 @@ and links each file to a section with more details.
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
    ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
-   ``.github/labels.yml``                Configuration for :ref:`GitHub Laber <The Labeler workflow>`
+   ``.github/labels.yml``                Configuration for :ref:`GitHub Labeler <The Labeler workflow>`
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
@@ -2386,16 +2386,16 @@ The Labeler workflow
 --------------------
 
 The Labeler workflow manages the labels used in GitHub issues and pull requests
-based on a descritpion file ``./github/labels.yaml``. In this file each label is
-described with a ``name``, a ``decription`` and a ``color``.
+based on a description file ``./github/labels.yaml``. In this file each label is
+described with a ``name``, a ``description`` and a ``color``.
 The workflow is triggered on every push to the default branch.
 
 The workflow creates or updates project labels if they are missing or different
 compared to the ``labels.yml`` file content.
 
-The workflow don't delete labels already configured in GitHub UI and not
+The workflow does not delete labels already configured in the GitHub UI and not
 in the ``labels.yml`` file. You can change this behavior and add ignore patterns in
-the settings of the worflow (see `GitHub Labeler`_ documentation).
+the settings of the workflow (see `GitHub Labeler`_ documentation).
 
 The Labeler workflow uses the following GitHub Actions:
 
