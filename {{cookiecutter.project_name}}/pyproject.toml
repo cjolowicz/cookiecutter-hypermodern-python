@@ -12,7 +12,7 @@ documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
 packages = [
     { include = "{{cookiecutter.package_name}}", from = "src" },
 ]
-{%- endif %}
+{% endif -%}
 classifiers = [
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
