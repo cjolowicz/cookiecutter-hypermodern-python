@@ -8,6 +8,11 @@ readme = "README.rst"
 homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 repository = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
 documentation = "https://{{cookiecutter.project_name}}.readthedocs.io"
+{% if cookiecutter.package_name != cookiecutter.project_name.replace('-', '_') -%}
+packages = [
+    { include = "{{cookiecutter.package_name}}", from = "src" },
+]
+{% endif -%}
 classifiers = [
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
