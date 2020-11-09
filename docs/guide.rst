@@ -2386,7 +2386,7 @@ The Labeler workflow
 --------------------
 
 The Labeler workflow manages the labels used in GitHub issues
-and pull requests based on a description file ``./github/labels.yaml``.
+and pull requests based on a description file ``.github/labels.yaml``.
 In this file each label is described with
 a ``name``,
 a ``description``
