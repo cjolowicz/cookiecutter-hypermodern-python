@@ -285,13 +285,6 @@ by applying labels to them, like this:
 GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
 Dependabot creates the ``dependencies`` label.
 
-Project labels are managed automatically by `GitHub Labeler`_
-each time you push to your main branch.
-The labels are defined in ``.github/labels.yml`` file.
-
-You can still manage labels manually on the *Issues* tab of your GitHub repository.
-GithHub Labeler is set by default to keep the labels not defined in the YAML file.
-
 .. table-release-drafter-sections-end
 
 .. quickstart-end
