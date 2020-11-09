@@ -282,8 +282,6 @@ by applying labels to them, like this:
    ``dependencies``    📦 Dependencies
    =================== ============================
 
-GitHub creates the ``bug``, ``enhancement``, and ``documentation`` labels for you.
-Dependabot creates the ``dependencies`` label.
 
 .. table-release-drafter-sections-end
 
