@@ -430,6 +430,7 @@ and links each file to a section with more details.
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
    ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
+   ``.github/labels.yml``                Configuration for :ref:`GitHub Labeler <The Labeler workflow>`
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
@@ -2199,6 +2200,7 @@ The |HPC| defines the following workflows:
    ===================================================== ======================== ==================================== =====================
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
+   :ref:`Labeler <The Labeler workflow>`                 ``labeler.yml``          Manage GitHub project labels         Push (default branch)
    ===================================================== ======================== ==================================== =====================
 
 
@@ -2218,6 +2220,7 @@ Workflows use the following GitHub Actions:
    `actions/setup-python`_                      Set up workflows with a specific Python version
    `actions/upload-artifact`_                   Upload artifacts from workflows
    `codecov/codecov-action`_                    Upload coverage to Codecov
+   `crazy-max/ghaction-github-labeler`_         Manage labels on GitHub as code
    `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
    `release-drafter/release-drafter`_           Draft and publish GitHub Releases
    `salsify/action-detect-and-tag-new-version`_ Detect and tag new versions in a repository
@@ -2229,6 +2232,7 @@ Workflows use the following GitHub Actions:
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
+.. _crazy-max/ghaction-github-labeler: https://github.com/crazy-max/ghaction-github-labeler
 .. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 .. _release-drafter/release-drafter: https://github.com/release-drafter/release-drafter
 .. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
@@ -2374,6 +2378,36 @@ by applying labels to them, like this:
 
 The workflow is defined in ``.github/workflows/release.yml``.
 The Release Drafter configuration is located in ``.github/release-drafter.yml``.
+
+
+.. _The Labeler workflow:
+
+The Labeler workflow
+--------------------
+
+The Labeler workflow manages the labels used in GitHub issues
+and pull requests based on a description file ``.github/labels.yaml``.
+In this file each label is described with
+a ``name``,
+a ``description``
+and a ``color``.
+The workflow is triggered on every push to the default branch.
+
+The workflow creates or updates project labels if they are missing
+or different compared to the ``labels.yml`` file content.
+
+The workflow does not delete labels already configured in the GitHub UI
+and not in the ``labels.yml`` file.
+You can change this behavior and add ignore patterns
+in the settings of the workflow (see `GitHub Labeler`_ documentation).
+
+The Labeler workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `crazy-max/ghaction-github-labeler`_ for updating the GitHub project labels
+
+The workflow is defined in ``.github/workflows/labeler.yml``.
+The GitHub Labeler configuration is located in ``.github/labels.yml``.
 
 
 .. _Tutorials:
