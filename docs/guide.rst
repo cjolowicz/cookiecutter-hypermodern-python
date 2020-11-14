@@ -2372,7 +2372,7 @@ Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
 by applying labels to them, like this:
 
-.. include:: ../README.rst
+.. include:: quickstart.rst
    :start-after: table-release-drafter-sections-begin
    :end-before: table-release-drafter-sections-end
 
@@ -2616,6 +2616,10 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. include:: ../README.rst
    :start-after: references-begin
    :end-before: references-end
+
+.. include:: ./quickstart.rst
+   :start-after: quickstart-references-begin
+   :end-before: quickstart-references-end
 
 .. _Calendar Versioning: https://calver.org
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
