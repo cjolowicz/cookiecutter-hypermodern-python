@@ -6,7 +6,7 @@ authors = ["Claudio Jolowicz <mail@claudiojolowicz.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 Sphinx = "^3.3.1"
