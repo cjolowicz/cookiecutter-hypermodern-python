@@ -309,8 +309,8 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "a496149490a7af96e228aa8b367a5fe9911f9d77bcf2a1a0718a0788f6e51673"
+python-versions = "^3.8"
+content-hash = "e1d88b5424681f2309c21addd4abd6abfa39efaec93110dcd27233b975d1a498"
 
 [metadata.files]
 alabaster = [
