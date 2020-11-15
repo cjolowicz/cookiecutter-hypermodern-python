@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 
 import nox
+import nox_poetry.patch
 from nox.sessions import Session
 
 
@@ -18,9 +19,9 @@ def docs(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("-r", "docs/requirements.txt")
-
     if session.interactive:
+        session.install("sphinx-autobuild")
         session.run("sphinx-autobuild", *args)
     else:
+        session.install("sphinx")
         session.run("sphinx-build", *args)
