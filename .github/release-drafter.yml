@@ -23,6 +23,8 @@ categories:
     labels:
       - "dependencies"
       - "build"
+exclude-labels:
+  - "skip-changelog"
 template: |
   ## Changes
 
