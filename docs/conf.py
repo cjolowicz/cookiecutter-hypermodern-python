@@ -22,3 +22,4 @@ html_theme_options = {
     "fixed_sidebar": "true",
     "sidebar_width": "250px",
 }
+linkcheck_ignore = ["codeofconduct.html"]
