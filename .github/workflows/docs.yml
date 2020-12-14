@@ -1,7 +1,8 @@
-name: Build documentation
+name: Check documentation
 on: [push, pull_request]
 jobs:
   docs:
+    name: Build documentation & check links
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
@@ -11,8 +12,11 @@ jobs:
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox
-      - run: nox --force-color --session=docs
+      - name: Build documentation
+        run: nox --force-color --session=docs
       - uses: actions/upload-artifact@v2
         with:
           name: docs
           path: docs/_build
+      - name: Check links
+        run: nox --force-color --session=linkcheck
