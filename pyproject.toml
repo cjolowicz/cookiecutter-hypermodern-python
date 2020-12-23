@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cookiecutter-hypermodern-python"
+version = "2020.11.15"
+description = "Hypermodern Python Cookiecutter"
+authors = ["Claudio Jolowicz <mail@claudiojolowicz.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "^3.3.1"
+sphinx-autobuild = "^2020.9.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
