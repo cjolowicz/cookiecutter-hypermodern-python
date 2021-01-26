@@ -125,7 +125,7 @@ jobs:
           nox --version
 
       - name: Download coverage data
-        uses: actions/download-artifact@v2.0.6
+        uses: actions/download-artifact@v2.0.8
         with:
           name: coverage-data
 
