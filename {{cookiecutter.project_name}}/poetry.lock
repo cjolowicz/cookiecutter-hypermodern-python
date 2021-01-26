@@ -793,7 +793,7 @@ sphinx = ">=1.5,<4.0"
 
 [[package]]
 name = "sphinx-rtd-theme"
-version = "0.5.0"
+version = "0.5.1"
 description = "Read the Docs theme for Sphinx"
 category = "dev"
 optional = false
@@ -999,7 +999,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "d9a86ea9ec7f2202284789ec785fb1a0714b6004386216a4d199aa42e3ad7334"
+content-hash = "4ba8d1e363808b14feb3202ae9d2661f8f5f960c774dc880a2a5b05bab19e5d9"
 
 [metadata.files]
 alabaster = [
@@ -1441,8 +1441,8 @@ sphinx-click = [
     {file = "sphinx_click-2.5.0-py2.py3-none-any.whl", hash = "sha256:6848ba2d084ef2feebae0ce3603c1c02a2ba5ded54fb6c0cf24fd01204a945f3"},
 ]
 sphinx-rtd-theme = [
-    {file = "sphinx_rtd_theme-0.5.0-py2.py3-none-any.whl", hash = "sha256:373413d0f82425aaa28fb288009bf0d0964711d347763af2f1b65cafcb028c82"},
-    {file = "sphinx_rtd_theme-0.5.0.tar.gz", hash = "sha256:22c795ba2832a169ca301cd0a083f7a434e09c538c70beb42782c073651b707d"},
+    {file = "sphinx_rtd_theme-0.5.1-py2.py3-none-any.whl", hash = "sha256:fa6bebd5ab9a73da8e102509a86f3fcc36dec04a0b52ea80e5a033b2aba00113"},
+    {file = "sphinx_rtd_theme-0.5.1.tar.gz", hash = "sha256:eda689eda0c7301a80cf122dad28b1861e5605cbf455558f3775e1e8200e83a5"},
 ]
 sphinxcontrib-applehelp = [
     {file = "sphinxcontrib-applehelp-1.0.2.tar.gz", hash = "sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58"},
