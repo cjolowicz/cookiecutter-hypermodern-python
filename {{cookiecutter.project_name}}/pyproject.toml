@@ -49,7 +49,7 @@ reorder-python-imports = "^2.3.6"
 pre-commit-hooks = "^3.3.0"
 sphinx-rtd-theme = "^0.5.0"
 sphinx-click = "^2.5.0"
-Pygments = "^2.7.2"
+Pygments = "^2.7.4"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
