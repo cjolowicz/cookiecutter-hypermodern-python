@@ -31,7 +31,7 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
     except ValueError:
         raise RuntimeError("there should be exactly one draft release")
 
-    if commit.status.state != "success":
+    if commit.status().state != "success":
         raise RuntimeError(f"checks for #{pull_request.number} have failed")
 
     if pull_request.is_merged():
