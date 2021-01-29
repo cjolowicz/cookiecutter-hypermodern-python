@@ -12,7 +12,7 @@ import github3
 
 
 def git(*args: str, **kwargs: Any) -> str:
-    process = subprocess.call(
+    process = subprocess.run(
         ["git", *args], check=True, capture_output=True, text=True
     )
     return process.stdout
