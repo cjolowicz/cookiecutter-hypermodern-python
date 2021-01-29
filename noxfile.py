@@ -22,7 +22,7 @@ def prepare_release(session: Session) -> None:
         *session.posargs,
     ]
     session.install("click", "github3.py")
-    session.run("tools/prepare-github-release.py", *args, external=True)
+    session.run("python", "tools/prepare-github-release.py", *args, external=True)
 
 
 @nox.session(name="publish-release")
@@ -30,7 +30,7 @@ def publish_release(session: Session) -> None:
     """Publish a GitHub release."""
     args = [f"--owner={owner}", f"--repository={repository}", *session.posargs]
     session.install("click", "github3.py")
-    session.run("tools/publish-github-release.py", *args, external=True)
+    session.run("python", "tools/publish-github-release.py", *args, external=True)
 
 
 @nox.session
