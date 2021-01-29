@@ -966,7 +966,7 @@ testing = ["pytest (>=4)", "coverage (>=5)", "coverage-enable-subprocess (>=1)",
 
 [[package]]
 name = "xdoctest"
-version = "0.15.2"
+version = "0.15.3"
 description = "A rewrite of the builtin doctest module"
 category = "dev"
 optional = false
@@ -999,7 +999,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "91cafba66d53fc7b3248a05745eed74aa79666c600b18a1c0feb36e445ee9675"
+content-hash = "d5b9b00b6d8a862831fd8247c3f273e52865e6c109f063847575283cf242cb6a"
 
 [metadata.files]
 alabaster = [
@@ -1545,9 +1545,9 @@ virtualenv = [
     {file = "virtualenv-20.0.26.tar.gz", hash = "sha256:e10cc66f40cbda459720dfe1d334c4dc15add0d80f09108224f171006a97a172"},
 ]
 xdoctest = [
-    {file = "xdoctest-0.15.2-py2.py3-none-any.whl", hash = "sha256:88f149f8fac0d4705396b639a8a3b7b12115e76a1c5a4e6e748ac73953a2d0cb"},
-    {file = "xdoctest-0.15.2-py3-none-any.whl", hash = "sha256:299cb9637fdd93ab05d13b3505a5f6f6b2b73f6590d02a0a576f42265041a280"},
-    {file = "xdoctest-0.15.2.tar.gz", hash = "sha256:042b9529d8b54a8d413ad1d65daa5a9200dbc6c4b96ac42a63b31446e54d2c6b"},
+    {file = "xdoctest-0.15.3-py2.py3-none-any.whl", hash = "sha256:3250d982e45611a238ca57f45d3efd22d65e21e378d508f2ebd98991e161d7e1"},
+    {file = "xdoctest-0.15.3-py3-none-any.whl", hash = "sha256:a857e1a6c069ae30cc080cc8f29a98edbb8b6e90da29fbe3898c2d454e32364a"},
+    {file = "xdoctest-0.15.3.tar.gz", hash = "sha256:342f69575490ffdcd0f26cd11a9f4f9d76fdc32d492f22eac79e87b0faa689b1"},
 ]
 zipp = [
     {file = "zipp-3.1.0-py3-none-any.whl", hash = "sha256:aa36550ff0c0b7ef7fa639055d797116ee891440eac1a56f378e2d3179e0320b"},
