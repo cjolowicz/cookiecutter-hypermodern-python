@@ -12,10 +12,15 @@ import github3
 
 
 def git(*args: str, **kwargs: Any) -> str:
-    process = subprocess.run(
-        ["git", *args], check=True, capture_output=True, text=True
-    )
-    return process.stdout
+    try:
+        process = subprocess.run(
+            ["git", *args], check=True, capture_output=True, text=True
+        )
+        return process.stdout
+    except subprocess.CalledProcessError as error:
+        print(error.stdout, end="")
+        print(error.stderr, end="", file=sys.stderr)
+        raise
 
 
 def replace_text(path: Path, old: str, new: str):
