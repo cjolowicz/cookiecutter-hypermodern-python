@@ -91,7 +91,7 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
     envvar="GITHUB_TOKEN",
     help="GitHub API token",
 )
-@click.argument("tag")
+@click.argument("tag", required=False)
 def main(owner: str, repository: str, token: str, tag: Optional[str]) -> None:
     """Publish a GitHub release for this project.
 

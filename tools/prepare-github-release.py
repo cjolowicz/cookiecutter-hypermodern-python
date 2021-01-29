@@ -124,7 +124,7 @@ def prepare_release(
     multiple=True,
     help="labels for the pull request (may be specified multiple times)",
 )
-@click.argument("tag")
+@click.argument("tag", required=False)
 def main(
     owner: str,
     repository: str,
