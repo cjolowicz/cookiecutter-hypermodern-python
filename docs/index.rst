@@ -29,7 +29,7 @@ Usage
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.11.15"
+     --checkout="2021.1.29"
 
 
 Features
