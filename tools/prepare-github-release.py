@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import datetime
 import subprocess
 import sys
@@ -13,15 +12,20 @@ import github3
 
 
 def git(*args: str, **kwargs: Any) -> str:
-    process = subprocess.call(
-        ["git", *args], check=True, capture_output=True, text=True
-    )
-    return process.stdout
+    try:
+        process = subprocess.run(
+            ["git", *args], check=True, capture_output=True, text=True
+        )
+        return process.stdout
+    except subprocess.CalledProcessError as error:
+        print(error.stdout, end="")
+        print(error.stderr, end="", file=sys.stderr)
+        raise
 
 
 def replace_text(path: Path, old: str, new: str):
     text = path.read_text()
-    text.replace(old, new)
+    text = text.replace(old, new)
     path.write_text(text)
 
 
@@ -125,7 +129,7 @@ def prepare_release(
     multiple=True,
     help="labels for the pull request (may be specified multiple times)",
 )
-@click.argument("tag")
+@click.argument("tag", required=False)
 def main(
     owner: str,
     repository: str,

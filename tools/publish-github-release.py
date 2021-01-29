@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import datetime
 import sys
 from typing import Optional
@@ -32,7 +31,7 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
     except ValueError:
         raise RuntimeError("there should be exactly one draft release")
 
-    if commit.status.state != "success":
+    if commit.status().state != "success":
         raise RuntimeError(f"checks for #{pull_request.number} have failed")
 
     if pull_request.is_merged():
@@ -45,6 +44,8 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
 
     if not pull_request.merge(commit_title=title, merge_method="squash"):
         raise RuntimeError(f"cannot merge #{pull_request.number}")
+
+    pull_request.refresh()
 
     if not pull_request.is_merged():
         raise RuntimeError(f"#{pull_request.number} was not merged")
@@ -92,7 +93,7 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
     envvar="GITHUB_TOKEN",
     help="GitHub API token",
 )
-@click.argument("tag")
+@click.argument("tag", required=False)
 def main(owner: str, repository: str, token: str, tag: Optional[str]) -> None:
     """Publish a GitHub release for this project.
 
