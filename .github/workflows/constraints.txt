@@ -1,5 +1,6 @@
 pip==21.0
 cookiecutter==1.7.2
+cruft==2.6.0
 nox==2020.12.31
 nox-poetry==0.7.1
 poetry==1.1.4
