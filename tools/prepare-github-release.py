@@ -25,7 +25,7 @@ def git(*args: str, **kwargs: Any) -> str:
 
 def replace_text(path: Path, old: str, new: str):
     text = path.read_text()
-    text.replace(old, new)
+    text = text.replace(old, new)
     path.write_text(text)
 
 
