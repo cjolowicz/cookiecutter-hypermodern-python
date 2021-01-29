@@ -45,6 +45,8 @@ def publish_release(*, owner: str, repository_name: str, token: str, tag: str) -
     if not pull_request.merge(commit_title=title, merge_method="squash"):
         raise RuntimeError(f"cannot merge #{pull_request.number}")
 
+    pull_request.refresh()
+
     if not pull_request.is_merged():
         raise RuntimeError(f"#{pull_request.number} was not merged")
 
