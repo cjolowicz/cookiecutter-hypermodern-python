@@ -32,7 +32,6 @@ jobs:
       - name: Update cookiecutter-hypermodern-python-instance
         working-directory: cookiecutter-hypermodern-python-instance
         run: |
-          echo cruft update -y --checkout=$GITHUB_SHA
           cruft update -y --checkout=$GITHUB_SHA
       - name: Check that no changes were rejected
         working-directory: cookiecutter-hypermodern-python-instance
