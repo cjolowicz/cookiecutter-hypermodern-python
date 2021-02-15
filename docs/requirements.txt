@@ -1,2 +1,2 @@
-sphinx==3.4.3
+sphinx==3.5.0
 sphinx-autobuild==2020.9.1
