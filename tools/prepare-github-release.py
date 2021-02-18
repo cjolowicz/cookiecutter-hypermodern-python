@@ -113,7 +113,7 @@ def prepare_release(
 @click.option(
     "--base",
     metavar="BRANCH",
-    default="master",
+    default="main",
     help="default branch of the GitHub repository",
 )
 @click.option(
