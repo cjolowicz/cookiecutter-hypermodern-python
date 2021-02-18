@@ -71,7 +71,7 @@ jobs:
           print("::set-output name=result::{}".format(result))
 
       - name: Restore pre-commit cache
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v2.1.4
         if: matrix.session == 'pre-commit'
         with:
           path: ~/.cache/pre-commit
