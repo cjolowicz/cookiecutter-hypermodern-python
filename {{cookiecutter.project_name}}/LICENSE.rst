@@ -2,7 +2,7 @@
 MIT License
 ===========
 
-Copyright © {{cookiecutter.year}} {{cookiecutter.author}}
+Copyright © {% now 'utc', '%Y' %} {{cookiecutter.author}}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -212,7 +212,7 @@ APPENDIX: How to apply the Apache License to your work.
     same "printed page" as the copyright notice for easier
     identification within third-party archives.
 
-Copyright {{cookiecutter.year}} {{cookiecutter.author}}
+Copyright {% now 'utc', '%Y' %} {{cookiecutter.author}}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -907,7 +907,7 @@ like this when it starts in an interactive mode:
 
 ::
 
-        {{cookiecutter.friendly_name}}  Copyright (C) {{cookiecutter.year}}  {{cookiecutter.author}}
+        {{cookiecutter.friendly_name}}  Copyright (C) {% now 'utc', '%Y' %}  {{cookiecutter.author}}
         This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
         This is free software, and you are welcome to redistribute it
         under certain conditions; type `show c' for details.
