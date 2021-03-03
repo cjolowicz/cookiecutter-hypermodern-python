@@ -100,9 +100,7 @@ def safety(session: Session) -> None:
     """Scan dependencies for insecure packages."""
     requirements = session.poetry.export_requirements()
     session.install("safety")
-    # Ignore CVE-2020-28476 affecting all versions of tornado
-    # https://github.com/tornadoweb/tornado/issues/2981
-    session.run("safety", "check", f"--file={requirements}", "--bare", "--ignore=39462")
+    session.run("safety", "check", f"--file={requirements}", "--bare")
 
 
 @session(python=python_versions)
