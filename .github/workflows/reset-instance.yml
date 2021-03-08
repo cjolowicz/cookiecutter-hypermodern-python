@@ -2,7 +2,7 @@ name: Reset instance
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   instance:
     runs-on: ubuntu-latest
