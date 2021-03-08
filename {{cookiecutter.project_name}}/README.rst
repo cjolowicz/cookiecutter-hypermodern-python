@@ -17,7 +17,7 @@
    :target: https://pypi.org/project/{{cookiecutter.project_name}}
    :alt: Python Version
 .. |License| image:: https://img.shields.io/pypi/l/{{cookiecutter.project_name}}
-   :target: https://opensource.org/licenses/MIT
+   :target: https://opensource.org/licenses/{{cookiecutter.license}}
    :alt: License
 .. |Read the Docs| image:: https://img.shields.io/readthedocs/{{cookiecutter.project_name}}/latest.svg?label=Read%20the%20Docs
    :target: https://{{cookiecutter.project_name}}.readthedocs.io/
@@ -74,7 +74,7 @@ To learn more, see the `Contributor Guide`_.
 License
 -------
 
-Distributed under the terms of the MIT_ license,
+Distributed under the terms of the `{{cookiecutter.license.replace("-", " ")}} license`_,
 *{{cookiecutter.friendly_name}}* is free and open source software.
 
 
@@ -90,10 +90,9 @@ Credits
 
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
-
 .. _@cjolowicz: https://github.com/cjolowicz
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _MIT: http://opensource.org/licenses/MIT
+.. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _PyPI: https://pypi.org/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues

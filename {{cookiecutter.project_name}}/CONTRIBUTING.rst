@@ -2,7 +2,7 @@ Contributor Guide
 =================
 
 Thank you for your interest in improving this project.
-This project is open-source under the `MIT license`_ and
+This project is open-source under the `{{cookiecutter.license.replace("-", " ")}} license`_ and
 welcomes contributions in the form of bug reports, feature requests, and pull requests.
 
 Here is a list of important resources for contributors:
@@ -12,7 +12,7 @@ Here is a list of important resources for contributors:
 - `Issue Tracker`_
 - `Code of Conduct`_
 
-.. _MIT license: https://opensource.org/licenses/MIT
+.. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _Source Code: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
 .. _Documentation: https://{{cookiecutter.project_name}}.readthedocs.io/
 .. _Issue Tracker: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues

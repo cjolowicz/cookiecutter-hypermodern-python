@@ -250,6 +250,7 @@ Here is a complete list of the project variables defined by this template:
    ``email``          E-mail address of the author    katherine@example.com
    ``github_user``    GitHub username of the author   ``katherine``
    ``version``        Initial project version         ``0.0.0``
+   ``license``        The project license             ``MIT``
    ================== =============================== ======================
 
 .. note::
@@ -567,7 +568,7 @@ The top-level directory contains several stand-alone documentation files:
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
 ``LICENSE.rst``
-   This file contains the text of the `MIT license`_, a simple permissive license.
+   This file contains the text of your project's license.
 
 .. note::
 
