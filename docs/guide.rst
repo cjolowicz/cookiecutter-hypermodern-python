@@ -568,7 +568,7 @@ The top-level directory contains several stand-alone documentation files:
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
 ``LICENSE.rst``
-   This file contains the text of the `MIT license`_, a simple permissive license.
+   This file contains the text of your project's license.
 
 .. note::
 
