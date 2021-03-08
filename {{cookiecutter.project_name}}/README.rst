@@ -74,7 +74,7 @@ To learn more, see the `Contributor Guide`_.
 License
 -------
 
-Distributed under the terms of the `{{cookiecutter.license.replace("-", " ")}} license <{{cookiecutter.license}}>`_,
+Distributed under the terms of the `{{cookiecutter.license.replace("-", " ")}} license`_,
 *{{cookiecutter.friendly_name}}* is free and open source software.
 
 
@@ -90,10 +90,9 @@ Credits
 
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
-
 .. _@cjolowicz: https://github.com/cjolowicz
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _{{cookiecutter.license}}: https://opensource.org/licenses/{{cookiecutter.license}}
+.. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _PyPI: https://pypi.org/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
