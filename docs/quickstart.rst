@@ -38,7 +38,7 @@ Generate a Python project:
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2021.1.29"
+     --checkout="2021.3.14"
 
 Change to the root directory of your new project,
 and create a Git repository:
