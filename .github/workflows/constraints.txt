@@ -1,7 +1,7 @@
 pip==21.0.1
 cookiecutter==1.7.2
 nox==2020.12.31
-nox-poetry==0.8.1
+nox-poetry==0.8.2
 poetry==1.1.5
 pre-commit==2.11.1
 virtualenv==20.4.2
