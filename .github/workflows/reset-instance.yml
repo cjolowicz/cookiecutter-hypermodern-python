@@ -18,7 +18,7 @@ jobs:
           path: cookiecutter-hypermodern-python-instance
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.9
-        uses: actions/setup-python@v2.2.1
+        uses: actions/setup-python@v2.2.2
         with:
           python-version: "3.9"
       - name: Install cookiecutter
