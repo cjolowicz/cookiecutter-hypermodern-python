@@ -59,6 +59,7 @@ source = ["src", "*/site-packages"]
 
 [tool.coverage.run]
 branch = true
+relative_files = true
 source = ["{{cookiecutter.package_name}}", "tests"]
 
 [tool.coverage.report]
