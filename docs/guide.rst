@@ -529,14 +529,14 @@ The test suite is `declared as a package`__,
 and mirrors the source layout of the package under test.
 The file ``test_main.py`` contains tests for the ``__main__`` module.
 
-__ http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
+__ https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
 It also provides a `test fixture`_ using `click.testing.CliRunner`_,
 a helper class for invoking the program from within tests.
 
-.. _test fixture: https://docs.pytest.org/en/latest/fixture.html
+.. _test fixture: https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 For details on how to run the test suite,
