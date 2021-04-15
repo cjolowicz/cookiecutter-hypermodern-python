@@ -1974,33 +1974,17 @@ For details about supported configuration options, see the `official reference`_
 __ https://mypy.readthedocs.io/en/stable/config_file.html
 
 The |HPC| enables several configuration options which are off by default.
-The following options are enabled for strictness:
+The following options are enabled for strictness and enhanced output:
 
-- :option:`check_untyped_defs <mypy --check-untyped-defs>`
-- :option:`disallow_any_generics <mypy --disallow-any-generics>`
-- :option:`disallow_incomplete_defs <mypy --disallow-incomplete-defs>`
-- :option:`disallow_subclassing_any <mypy --disallow-subclassing-any>`
-- :option:`disallow_untyped_calls <mypy --disallow-untyped-calls>`
-- :option:`disallow_untyped_decorators <mypy --disallow-untyped-decorators>`
-- :option:`disallow_untyped_defs <mypy --disallow-untyped-defs>`
-- :option:`no_implicit_optional <mypy --no-implicit-optional>`
-- :option:`no_implicit_reexport <mypy --no-implicit-reexport>`
-- :option:`strict_equality <mypy --strict-equality>`
-- :option:`warn_redundant_casts <mypy --warn-redundant-casts>`
-- :option:`warn_return_any <mypy --warn-return-any>`
-- :option:`warn_unused_configs <mypy --warn-unused-configs>`
-- :option:`warn_unused_ignores <mypy --warn-unused-ignores>`
-
-The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
-is used to disable import errors for selected packages
-where type information is not yet available.
-
-The following options are enabled for enhanced output:
-
+- :option:`strict <mypy --strict>`
 - :option:`pretty <mypy --pretty>`
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
 - :option:`show_error_context <mypy --show-error-context>`
+
+The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
+is used to disable import errors for selected packages
+where type information is not yet available.
 
 
 .. _External services:
