@@ -30,4 +30,5 @@ linkcheck_ignore = [
     "https://github.com/pycqa/pep8-naming#",
     "https://github.com/terrencepreilly/darglint#",
     "https://github.com/PyCQA/mccabe#",
+    "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
 ]
