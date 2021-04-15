@@ -412,6 +412,7 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ======================= ===============================
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
+   ``labeler.yml``         :ref:`The Labeler workflow`
    ======================= ===============================
 
 The project contains many configuration files for developer tools.
