@@ -5,9 +5,9 @@ import shutil
 import nox
 from nox.sessions import Session
 
-nox.options.sessions = (
-    "linkcheck",
-)
+
+nox.options.sessions = ["linkcheck"]
+
 
 @nox.session
 def docs(session: Session) -> None:
@@ -27,6 +27,7 @@ def docs(session: Session) -> None:
         session.run("sphinx-autobuild", *args)
     else:
         session.run("sphinx-build", *args)
+
 
 @nox.session
 def linkcheck(session: Session) -> None:
