@@ -1840,7 +1840,7 @@ Here is an example of a function documented in Google style:
            The sum of the arguments.
        """
 
-.. _Google docstring style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings.
+.. _Google docstring style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
 
 
 flake8-rst-docstrings
