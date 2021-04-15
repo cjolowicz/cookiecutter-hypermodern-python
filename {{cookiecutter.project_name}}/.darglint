@@ -1,2 +1,2 @@
 [darglint]
-strictness = short
+strictness = long
