@@ -1983,10 +1983,6 @@ The following options are enabled for strictness and enhanced output:
 - :option:`show_error_codes <mypy --show-error-codes>`
 - :option:`show_error_context <mypy --show-error-context>`
 
-The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
-is used to disable import errors for selected packages
-where type information is not yet available.
-
 
 .. _External services:
 
