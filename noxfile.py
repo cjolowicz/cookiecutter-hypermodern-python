@@ -33,6 +33,9 @@ def publish_release(session: Session) -> None:
     session.run("python", "tools/publish-github-release.py", *args, external=True)
 
 
+nox.options.sessions = ["linkcheck"]
+
+
 @nox.session
 def docs(session: Session) -> None:
     """Build the documentation."""
@@ -51,3 +54,17 @@ def docs(session: Session) -> None:
         session.run("sphinx-autobuild", *args)
     else:
         session.run("sphinx-build", *args)
+
+
+@nox.session
+def linkcheck(session: Session) -> None:
+    """Build the documentation."""
+    args = session.posargs or ["-b", "linkcheck", "-W", "--keep-going", "docs", "docs/_build"]
+
+    builddir = Path("docs", "_build")
+    if builddir.exists():
+        shutil.rmtree(builddir)
+
+    session.install("-r", "docs/requirements.txt")
+
+    session.run("sphinx-build", *args)
