@@ -59,4 +59,4 @@ jobs:
           -C cookiecutter-hypermodern-python-instance
           push
           https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/cookiecutter-hypermodern-python-instance.git
-          HEAD:master
+          HEAD:main
