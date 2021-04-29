@@ -857,7 +857,7 @@ it creates a special ``.egg-link`` file that links to your local source code.
 This means that code edits are directly visible in the environment
 without the need to reinstall your package.
 
-__ https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
+__ https://pip.pypa.io/en/stable/cli/pip_install/#install-editable
 
 Installing your package implicitly creates the virtual environment
 if it does not exist yet,
