@@ -1107,8 +1107,8 @@ The following table gives an overview of the available Nox sessions:
    Session                                    Description                           Python              Default
    ========================================== ===================================== ================== =========
    :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``               (✓)
-   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.8``
-   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.8``                ✓
+   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.9``
+   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.9``                ✓
    :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.9``      ✓
    :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.9``                ✓
    :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.9``                ✓
