@@ -681,7 +681,7 @@ as long as the version number does not indicate a breaking change.
 only major releases may contain breaking changes,
 once a project has reached version 1.0.0.)
 
-.. _Versions and constraints: https://python-poetry.org/docs/versions/
+.. _Versions and constraints: https://python-poetry.org/docs/dependency-specification/
 .. _Semantic Versioning: https://semver.org/
 
 .. note::
