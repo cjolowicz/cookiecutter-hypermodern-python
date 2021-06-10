@@ -1,5 +1,6 @@
 .mypy_cache/
 /.coverage
+/.coverage.*
 /.nox/
 /.python-version
 /.pytype/

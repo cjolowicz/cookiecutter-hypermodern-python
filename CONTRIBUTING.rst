@@ -67,7 +67,7 @@ and set up `continuous integration`_.
 .. _Nox: https://nox.thea.codes/
 .. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _Github: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _continuous integration: https://github.com/cjolowicz/cookiecutter-hypermodern-python/#continuous-integration
+.. _continuous integration: https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/quickstart.html#continuous-integration
 
 
 How to test the project

@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v2.3.4
         with:
           fetch-depth: 2
 
       - name: Set up Python
-        uses: actions/setup-python@v2.1.4
+        uses: actions/setup-python@v2.2.2
         with:
           python-version: "3.9"
 
@@ -57,21 +57,21 @@ jobs:
 
       - name: Publish package on PyPI
         if: steps.check-version.outputs.tag
-        uses: pypa/gh-action-pypi-publish@v1.4.1
+        uses: pypa/gh-action-pypi-publish@v1.4.2
         with:
           user: __token__
           password: {{ "${{ secrets.PYPI_TOKEN }}" }}
 
       - name: Publish package on TestPyPI
         if: "! steps.check-version.outputs.tag"
-        uses: pypa/gh-action-pypi-publish@v1.4.1
+        uses: pypa/gh-action-pypi-publish@v1.4.2
         with:
           user: __token__
           password: {{ "${{ secrets.TEST_PYPI_TOKEN }}" }}
           repository_url: https://test.pypi.org/legacy/
 
       - name: Publish the release notes
-        uses: release-drafter/release-drafter@v5.11.0
+        uses: release-drafter/release-drafter@v5.15.0
         with:
           publish: {{ "${{ steps.check-version.outputs.tag != '' }}" }}
           tag: {{ "${{ steps.check-version.outputs.tag }}" }}

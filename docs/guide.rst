@@ -63,9 +63,9 @@ The |HPC| has a monthly release cadence while in alpha status.
 Releases happen on the 15th of every month.
 We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 
-The current stable release is `2020.10.15`_.
+The current stable release is `2021.4.15`_.
 
-.. _2020.10.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2020.10.15
+.. _2021.4.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.4.15
 
 
 .. _Installation:
@@ -80,7 +80,7 @@ You need a recent Linux, Unix, or Mac system with
 bash_, curl_, and git_.
 
 On Windows 10, enable the `Windows Subsystem for Linux`_ (WSL) and
-install the Ubuntu 18.04 LTS distribution.
+install the Ubuntu 20.04 LTS distribution.
 Open Ubuntu from the Start Menu, and
 install additional packages using the following commands:
 
@@ -220,12 +220,12 @@ Creating a project
 
 Create a project from this template
 by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
-Use the ``--checkout`` option with the `current stable release <2020.10.15_>`__:
+Use the ``--checkout`` option with the `current stable release <2021.4.15_>`__:
 
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2020.10.15"
+     --checkout="2021.4.15"
 
 Cookiecutter downloads the template,
 and asks you a series of questions about project variables,
@@ -250,6 +250,7 @@ Here is a complete list of the project variables defined by this template:
    ``email``          E-mail address of the author    katherine@example.com
    ``github_user``    GitHub username of the author   ``katherine``
    ``version``        Initial project version         ``0.0.0``
+   ``license``        The project license             ``MIT``
    ================== =============================== ======================
 
 .. note::
@@ -411,6 +412,7 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
    ======================= ===============================
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
+   ``labeler.yml``         :ref:`The Labeler workflow`
    ======================= ===============================
 
 The project contains many configuration files for developer tools.
@@ -430,6 +432,7 @@ and links each file to a section with more details.
    ``.gitattributes``                    `Git attributes <.gitattributes_>`__
    ``.gitignore``                        `Git ignore file <.gitignore_>`__
    ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
+   ``.github/labels.yml``                Configuration for :ref:`GitHub Labeler <The Labeler workflow>`
    ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
@@ -528,14 +531,14 @@ The test suite is `declared as a package`__,
 and mirrors the source layout of the package under test.
 The file ``test_main.py`` contains tests for the ``__main__`` module.
 
-__ http://doc.pytest.org/en/latest/goodpractices.html#tests-outside-application-code
+__ https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
 It also provides a `test fixture`_ using `click.testing.CliRunner`_,
 a helper class for invoking the program from within tests.
 
-.. _test fixture: https://docs.pytest.org/en/latest/fixture.html
+.. _test fixture: https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures
 .. _click.testing.CliRunner: https://click.palletsprojects.com/en/7.x/testing/
 
 For details on how to run the test suite,
@@ -566,7 +569,7 @@ The top-level directory contains several stand-alone documentation files:
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
 ``LICENSE.rst``
-   This file contains the text of the `MIT license`_, a simple permissive license.
+   This file contains the text of your project's license.
 
 .. note::
 
@@ -854,7 +857,7 @@ it creates a special ``.egg-link`` file that links to your local source code.
 This means that code edits are directly visible in the environment
 without the need to reinstall your package.
 
-__ https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs
+__ https://pip.pypa.io/en/stable/cli/pip_install/#install-editable
 
 Installing your package implicitly creates the virtual environment
 if it does not exist yet,
@@ -1839,7 +1842,7 @@ Here is an example of a function documented in Google style:
            The sum of the arguments.
        """
 
-.. _Google docstring style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings.
+.. _Google docstring style: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
 
 
 flake8-rst-docstrings
@@ -1972,29 +1975,9 @@ For details about supported configuration options, see the `official reference`_
 __ https://mypy.readthedocs.io/en/stable/config_file.html
 
 The |HPC| enables several configuration options which are off by default.
-The following options are enabled for strictness:
+The following options are enabled for strictness and enhanced output:
 
-- :option:`check_untyped_defs <mypy --check-untyped-defs>`
-- :option:`disallow_any_generics <mypy --disallow-any-generics>`
-- :option:`disallow_incomplete_defs <mypy --disallow-incomplete-defs>`
-- :option:`disallow_subclassing_any <mypy --disallow-subclassing-any>`
-- :option:`disallow_untyped_calls <mypy --disallow-untyped-calls>`
-- :option:`disallow_untyped_decorators <mypy --disallow-untyped-decorators>`
-- :option:`disallow_untyped_defs <mypy --disallow-untyped-defs>`
-- :option:`no_implicit_optional <mypy --no-implicit-optional>`
-- :option:`no_implicit_reexport <mypy --no-implicit-reexport>`
-- :option:`strict_equality <mypy --strict-equality>`
-- :option:`warn_redundant_casts <mypy --warn-redundant-casts>`
-- :option:`warn_return_any <mypy --warn-return-any>`
-- :option:`warn_unused_configs <mypy --warn-unused-configs>`
-- :option:`warn_unused_ignores <mypy --warn-unused-ignores>`
-
-The :option:`ignore_missing_imports <mypy --ignore-missing-imports>` option
-is used to disable import errors for selected packages
-where type information is not yet available.
-
-The following options are enabled for enhanced output:
-
+- :option:`strict <mypy --strict>`
 - :option:`pretty <mypy --pretty>`
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
@@ -2199,6 +2182,7 @@ The |HPC| defines the following workflows:
    ===================================================== ======================== ==================================== =====================
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
+   :ref:`Labeler <The Labeler workflow>`                 ``labeler.yml``          Manage GitHub project labels         Push (default branch)
    ===================================================== ======================== ==================================== =====================
 
 
@@ -2218,6 +2202,7 @@ Workflows use the following GitHub Actions:
    `actions/setup-python`_                      Set up workflows with a specific Python version
    `actions/upload-artifact`_                   Upload artifacts from workflows
    `codecov/codecov-action`_                    Upload coverage to Codecov
+   `crazy-max/ghaction-github-labeler`_         Manage labels on GitHub as code
    `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
    `release-drafter/release-drafter`_           Draft and publish GitHub Releases
    `salsify/action-detect-and-tag-new-version`_ Detect and tag new versions in a repository
@@ -2229,6 +2214,7 @@ Workflows use the following GitHub Actions:
 .. _actions/setup-python: https://github.com/actions/setup-python
 .. _actions/upload-artifact: https://github.com/actions/upload-artifact
 .. _codecov/codecov-action: https://github.com/codecov/codecov-action
+.. _crazy-max/ghaction-github-labeler: https://github.com/crazy-max/ghaction-github-labeler
 .. _pypa/gh-action-pypi-publish: https://github.com/pypa/gh-action-pypi-publish
 .. _release-drafter/release-drafter: https://github.com/release-drafter/release-drafter
 .. _salsify/action-detect-and-tag-new-version: https://github.com/salsify/action-detect-and-tag-new-version
@@ -2368,12 +2354,42 @@ Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
 by applying labels to them, like this:
 
-.. include:: ../README.rst
+.. include:: quickstart.rst
    :start-after: table-release-drafter-sections-begin
    :end-before: table-release-drafter-sections-end
 
 The workflow is defined in ``.github/workflows/release.yml``.
 The Release Drafter configuration is located in ``.github/release-drafter.yml``.
+
+
+.. _The Labeler workflow:
+
+The Labeler workflow
+--------------------
+
+The Labeler workflow manages the labels used in GitHub issues
+and pull requests based on a description file ``.github/labels.yaml``.
+In this file each label is described with
+a ``name``,
+a ``description``
+and a ``color``.
+The workflow is triggered on every push to the default branch.
+
+The workflow creates or updates project labels if they are missing
+or different compared to the ``labels.yml`` file content.
+
+The workflow does not delete labels already configured in the GitHub UI
+and not in the ``labels.yml`` file.
+You can change this behavior and add ignore patterns
+in the settings of the workflow (see `GitHub Labeler`_ documentation).
+
+The Labeler workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `crazy-max/ghaction-github-labeler`_ for updating the GitHub project labels
+
+The workflow is defined in ``.github/workflows/labeler.yml``.
+The GitHub Labeler configuration is located in ``.github/labels.yml``.
 
 
 .. _Tutorials:
@@ -2582,6 +2598,10 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. include:: ../README.rst
    :start-after: references-begin
    :end-before: references-end
+
+.. include:: ./quickstart.rst
+   :start-after: quickstart-references-begin
+   :end-before: quickstart-references-end
 
 .. _Calendar Versioning: https://calver.org
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases

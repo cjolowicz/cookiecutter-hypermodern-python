@@ -2,23 +2,23 @@ name: Reset instance
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   instance:
     runs-on: ubuntu-latest
     steps:
       - name: Check out cookiecutter-hypermodern-python
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v2.3.4
         with:
           path: cookiecutter-hypermodern-python
       - name: Check out cookiecutter-hypermodern-python-instance
-        uses: actions/checkout@v2.3.3
+        uses: actions/checkout@v2.3.4
         with:
           repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
           path: cookiecutter-hypermodern-python-instance
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.9
-        uses: actions/setup-python@v2.1.4
+        uses: actions/setup-python@v2.2.2
         with:
           python-version: "3.9"
       - name: Install cookiecutter
@@ -59,4 +59,4 @@ jobs:
           -C cookiecutter-hypermodern-python-instance
           push
           https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/cookiecutter-hypermodern-python-instance.git
-          HEAD:master
+          HEAD:main
