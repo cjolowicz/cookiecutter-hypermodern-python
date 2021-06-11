@@ -133,20 +133,17 @@ def tests(session: Session) -> None:
         session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
     finally:
         if session.interactive:
-            session.notify("coverage")
+            session.notify("coverage", posargs=[])
 
 
 @session
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
-    # Do not use session.posargs unless this is the only session.
-    nsessions = len(session._runner.manifest)
-    has_args = session.posargs and nsessions == 1
-    args = session.posargs if has_args else ["report"]
+    args = session.posargs or ["report"]
 
     session.install("coverage[toml]")
 
-    if not has_args and any(Path().glob(".coverage.*")):
+    if not session.posargs and any(Path().glob(".coverage.*")):
         session.run("coverage", "combine")
 
     session.run("coverage", *args)
