@@ -25,7 +25,7 @@ Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.proj
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-click = ">=7,<9"
+click = "^8.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
