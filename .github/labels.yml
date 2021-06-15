@@ -72,3 +72,6 @@
 - name: wontfix
   description: This will not be worked on
   color: ffffff
+- name: "skip-changelog"
+  description: Changes that should be omitted from the release notes
+  color: ededed

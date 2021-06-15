@@ -25,19 +25,19 @@ Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.proj
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-click = "^7.0"
+click = ">=7,<9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
 coverage = {extras = ["toml"], version = "^5.4"}
 safety = "^1.10.3"
-mypy = "^0.900"
-typeguard = "^2.12.0"
+mypy = "^0.902"
+typeguard = "^2.12.1"
 xdoctest = {extras = ["colors"], version = "^0.15.4"}
-sphinx = "^3.5.4"
+sphinx = "^4.0.2"
 sphinx-autobuild = "^2021.3.14"
-pre-commit = "^2.12.1"
-flake8 = "^3.9.1"
+pre-commit = "^2.13.0"
+flake8 = "^3.9.2"
 black = "^20.8b1"
 flake8-bandit = "^2.1.2"
 flake8-bugbear = "^21.4.3"
@@ -46,9 +46,9 @@ flake8-rst-docstrings = "^0.2.3"
 pep8-naming = "^0.11.1"
 darglint = "^1.8.0"
 reorder-python-imports = "^2.5.0"
-pre-commit-hooks = "^3.4.0"
+pre-commit-hooks = "^4.0.1"
 sphinx-rtd-theme = "^0.5.2"
-sphinx-click = "^2.7.1"
+sphinx-click = "^3.0.1"
 Pygments = "^2.9.0"
 
 [tool.poetry.scripts]
