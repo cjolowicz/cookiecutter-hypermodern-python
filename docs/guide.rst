@@ -437,10 +437,10 @@ and links each file to a section with more details.
    ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
    ``docs/conf.py``                      Configuration for :ref:`Sphinx <Documentation>`
-   ``mypy.ini``                          Configuration for :ref:`mypy <Type-checking with mypy>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
    ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
                                          and configuration for :ref:`Coverage.py <The coverage session>`
+                                         and :ref:`mypy <Type-checking with mypy>`
    ===================================== ========================================
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
