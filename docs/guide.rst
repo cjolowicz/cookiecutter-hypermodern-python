@@ -1969,8 +1969,9 @@ Type-checking with mypy
 mypy_ is the pioneer and *de facto* reference implementation of static type checking in Python.
 Invoke mypy via Nox, as explained in the section :ref:`The mypy session`.
 
-Configure mypy using the ``mypy.ini`` configuration file in the project directory.
-For details about supported configuration options, see the `official reference`__.
+mypy is configured in the ``pyproject.toml`` file,
+using the ``tool.mypy`` table. For details about supported configuration
+options, see the `official reference`__.
 
 __ https://mypy.readthedocs.io/en/stable/config_file.html
 
