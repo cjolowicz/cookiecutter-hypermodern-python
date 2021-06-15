@@ -25,7 +25,7 @@ Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.proj
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-click = ">=7,<9"
+click = "^8.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
@@ -49,6 +49,7 @@ reorder-python-imports = "^2.5.0"
 pre-commit-hooks = "^3.4.0"
 sphinx-rtd-theme = "^0.5.2"
 sphinx-click = "^3.0.1"
+
 Pygments = "^2.9.0"
 
 [tool.poetry.scripts]
