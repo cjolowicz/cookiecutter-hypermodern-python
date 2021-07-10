@@ -10,13 +10,13 @@ Install Cookiecutter_:
 
    $ pipx install cookiecutter
 
-Install Poetry_ by downloading and running get-poetry.py_:
+Install Poetry_ by downloading and running install-poetry.py_:
 
-.. _get-poetry.py: https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
+.. _install-poetry.py: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
 
 .. code:: console
 
-   $ python get-poetry.py
+   $ python install-poetry.py
 
 Install Nox_ and nox-poetry_:
 
