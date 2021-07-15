@@ -240,18 +240,19 @@ Here is a complete list of the project variables defined by this template:
    :class: hypermodern-table
    :widths: auto
 
-   ================== =============================== ======================
-   Variable           Description                     Example
-   ================== =============================== ======================
-   ``project_name``   Project name on PyPI and GitHub ``hypermodern-python``
-   ``package_name``   Import name of the package      ``hypermodern_python``
-   ``friendly_name``  Friendly project name           ``Hypermodern Python``
-   ``author``         Primary author                  Katherine Johnson
-   ``email``          E-mail address of the author    katherine@example.com
-   ``github_user``    GitHub username of the author   ``katherine``
-   ``version``        Initial project version         ``0.0.0``
-   ``license``        The project license             ``MIT``
-   ================== =============================== ======================
+   ====================== ================================= ===================================
+   Variable               Description                       Example
+   ====================== ================================= ===================================
+   ``project_name``       Project name on PyPI and GitHub   ``hypermodern-python``
+   ``package_name``       Import name of the package        ``hypermodern_python``
+   ``friendly_name``      Friendly project name             ``Hypermodern Python``
+   ``author``             Primary author                    Katherine Johnson
+   ``email``              E-mail address of the author      katherine@example.com
+   ``github_user``        GitHub username of the author     ``katherine``
+   ``version``            Initial project version           ``0.0.0``
+   ``license``            The project license               ``MIT``
+   ``development_status`` Development status of the project ``Development Status :: 3 - Alpha``
+   ====================== ================================= ===================================
 
 .. note::
 
