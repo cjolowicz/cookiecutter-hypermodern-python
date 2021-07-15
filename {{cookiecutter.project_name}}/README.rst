@@ -4,7 +4,7 @@
 {%- endmacro -%}
 {{ heading(cookiecutter.friendly_name) }}
 
-|PyPI| |Python Version| |License|
+|PyPI| |Status| |Python Version| |License|
 
 |Read the Docs| |Tests| |Codecov|
 
@@ -13,6 +13,9 @@
 .. |PyPI| image:: https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg
    :target: https://pypi.org/project/{{cookiecutter.project_name}}/
    :alt: PyPI
+.. |Status| image:: https://img.shields.io/pypi/status/{{cookiecutter.project_name}}.svg
+   :target: https://pypi.org/project/{{cookiecutter.project_name}}/
+   :alt: Status
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/{{cookiecutter.project_name}}
    :target: https://pypi.org/project/{{cookiecutter.project_name}}
    :alt: Python Version
