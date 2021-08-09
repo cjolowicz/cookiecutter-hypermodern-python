@@ -3,5 +3,5 @@ cookiecutter==1.7.3
 nox==2021.6.12
 nox-poetry==0.8.6
 poetry==1.1.7
-pre-commit==2.13.0
+pre-commit==2.14.0
 virtualenv==20.6.0
