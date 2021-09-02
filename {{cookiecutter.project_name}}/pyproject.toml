@@ -77,3 +77,8 @@ show_error_context = true
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.interrogate]
+verbose = 2
+fail-under = 100
+color = true
