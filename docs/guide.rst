@@ -751,6 +751,7 @@ See the table below for an overview of the dependencies of generated projects:
    flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
    flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
    flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
+   interrogate_            Measures docstring coverage of the codebase
    mypy_                   Optional static typing for Python
    pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
    pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks
@@ -1657,6 +1658,7 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
+   interrogate_             Measures docstring coverage of the codebase
    reorder-python-imports_  Rewrites source to reorder python imports
    trailing-whitespace_     Ensure lines do not contain trailing whitespace
    ======================== ===============================================
@@ -1665,6 +1667,7 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
 .. _check-yaml: https://github.com/pre-commit/pre-commit-hooks#check-yaml
 .. _check-added-large-files: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 .. _end-of-file-fixer: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
+.. _interrogate: https://github.com/econchick/interrogate
 .. _trailing-whitespace: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 
 
@@ -1692,6 +1695,13 @@ The Flake8 hook
 
 Flake8_ is an extensible linter framework for Python.
 For more details, see the section :ref:`Linting with Flake8`.
+
+The Interrogate hook
+--------------------
+
+Interrogate_ checks your code for missing docstrings.
+If the total coverage is below 100%,
+the hook fails.
 
 
 The reorder-python-imports hook
