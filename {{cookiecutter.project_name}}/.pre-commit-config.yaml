@@ -33,6 +33,11 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: interrogate
+        name: interrogate
+        entry: interrogate
+        language: system
+        types: [python]
       - id: reorder-python-imports
         name: Reorder python imports
         entry: reorder-python-imports
