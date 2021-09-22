@@ -109,7 +109,7 @@ Your pull request needs to meet the following guidelines for acceptance:
 
 Feel free to submit early, though—we can always iterate on this.
 
-To run linting and code formatting checks before commiting your change, you can install pre-commit as a Git hook by running the following command:
+To run linting and code formatting checks before committing your change, you can install pre-commit as a Git hook by running the following command:
 
 .. code:: console
 
