@@ -1980,6 +1980,7 @@ The |HPC| enables several configuration options which are off by default.
 The following options are enabled for strictness and enhanced output:
 
 - :option:`strict <mypy --strict>`
+- :option:`warn_unreachable <mypy --warn-unreachable>`
 - :option:`pretty <mypy --pretty>`
 - :option:`show_column_numbers <mypy --show-column-numbers>`
 - :option:`show_error_codes <mypy --show-error-codes>`
