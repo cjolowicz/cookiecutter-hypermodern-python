@@ -145,14 +145,15 @@ using one of the commands listed in the
 __ https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
 Install the latest point release of every supported Python version.
-This project template supports Python 3.6, 3.7, 3.8, and 3.9.
+This project template supports Python 3.6, 3.7, 3.8, 3.9, and 3.10.
 
 .. code:: console
 
-   $ pyenv install 3.6.12
-   $ pyenv install 3.7.9
-   $ pyenv install 3.8.6
-   $ pyenv install 3.9.0
+   $ pyenv install 3.6.15
+   $ pyenv install 3.7.12
+   $ pyenv install 3.8.12
+   $ pyenv install 3.9.8
+   $ pyenv install 3.10.0
 
 After creating your project (see :ref:`below <Creating a project>`),
 you can make these Python versions accessible in the project directory,
@@ -160,7 +161,7 @@ using the following command:
 
 .. code:: console
 
-   $ pyenv local 3.9.0 3.8.6 3.7.9 3.6.12
+   $ pyenv local 3.10.0 3.9.8 3.8.12 3.7.12 3.6.15
 
 The first version listed is the one used when you type plain ``python``.
 Every version can be used by invoking ``python<major.minor>``.
@@ -885,9 +886,10 @@ and easily switch between them:
    $ poetry env use 3.7
    $ poetry env use 3.8
    $ poetry env use 3.9
+   $ poetry env use 3.10
 
 Only one Poetry environment can be active at any time.
-Note that ``3.9`` comes last,
+Note that ``3.10`` comes last,
 to ensure that the current Python release is the active environment.
 Install your package with ``poetry install`` into each environment after creating it.
 
@@ -1081,7 +1083,7 @@ For example, the following may be more practical during development
 
 .. code:: console
 
-   $ nox -p 3.9 -rs tests mypy
+   $ nox -p 3.10 -rs tests mypy
 
 .. _--reuse-existing-virtualenvs: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 
@@ -1107,15 +1109,15 @@ The following table gives an overview of the available Nox sessions:
    ========================================== ===================================== ================== =========
    Session                                    Description                           Python              Default
    ========================================== ===================================== ================== =========
-   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.9``               (✓)
-   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.9``
-   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.9``                ✓
-   :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.9``      ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.9``                ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.9``                ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_                ``3.6`` … ``3.9``      ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.6`` … ``3.9``      ✓
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.6`` … ``3.9``      ✓
+   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.10``              (✓)
+   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.10``
+   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.10``               ✓
+   :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.6`` … ``3.10``     ✓
+   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.10``               ✓
+   :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.10``               ✓
+   :ref:`tests <The tests session>`           Run tests with pytest_                ``3.6`` … ``3.10``     ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.6`` … ``3.10``     ✓
+   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.6`` … ``3.10``     ✓
    ========================================== ===================================== ================== =========
 
 
@@ -1180,7 +1182,7 @@ using the current stable release of Python:
 
 .. code:: console
 
-   $ nox --session=mypy --python=3.9
+   $ nox --session=mypy --python=3.10
 
 Use the separator ``--`` to pass additional options and arguments to ``mypy``.
 For example, the following command type-checks only the ``__main__`` module:
@@ -1263,7 +1265,7 @@ using the current stable release of Python:
 
 .. code:: console
 
-   $ nox --session=tests --python=3.9
+   $ nox --session=tests --python=3.10
 
 Use the separator ``--`` to pass additional options to ``pytest``.
 For example, the following command runs only the test case ``test_main_succeeds``:
@@ -1360,7 +1362,7 @@ with the current stable release of Python:
 
 .. code:: console
 
-   $ nox --session=typeguard --python=3.9
+   $ nox --session=typeguard --python=3.10
 
 Use the separator ``--`` to pass additional options and arguments to pytest.
 For example, the following command runs only tests for the ``__main__`` module:
@@ -1403,7 +1405,7 @@ using the current stable release of Python:
 
 .. code:: console
 
-   $ nox --session=xdoctest --python=3.9
+   $ nox --session=xdoctest --python=3.10
 
 By default, the Nox session uses the ``all`` subcommand to run all examples.
 You can also list examples using the ``list`` subcommand,
@@ -2280,14 +2282,14 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    ========================================== ====================== ==================
    Nox session                                Platform               Python versions
    ========================================== ====================== ==================
-   :ref:`pre-commit <The pre-commit session>` Ubuntu                 3.9
-   :ref:`safety <The safety session>`         Ubuntu                 3.9
-   :ref:`mypy <The mypy session>`             Ubuntu                 3.9, 3.8, 3.7, 3.6
-   :ref:`tests <The tests session>`           Ubuntu                 3.9, 3.8, 3.7, 3.6
-   :ref:`tests <The tests session>`           Windows                3.9
-   :ref:`tests <The tests session>`           macOS                  3.9
-   :ref:`coverage <The coverage session>`     Ubuntu                 3.9
-   :ref:`docs-build <The docs-build session>` Ubuntu                 3.8
+   :ref:`pre-commit <The pre-commit session>` Ubuntu                 3.10
+   :ref:`safety <The safety session>`         Ubuntu                 3.10
+   :ref:`mypy <The mypy session>`             Ubuntu                 3.10, 3.9, 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Ubuntu                 3.10, 3.9, 3.8, 3.7, 3.6
+   :ref:`tests <The tests session>`           Windows                3.10
+   :ref:`tests <The tests session>`           macOS                  3.10
+   :ref:`coverage <The coverage session>`     Ubuntu                 3.10
+   :ref:`docs-build <The docs-build session>` Ubuntu                 3.10
    ========================================== ====================== ==================
 
 The workflow uploads the generated documentation as a `workflow artifact`__.
