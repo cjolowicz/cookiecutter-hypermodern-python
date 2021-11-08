@@ -56,12 +56,10 @@ Here is a detailed list of features for this Python template:
    :end-before: features-end
 
 
-Release cadence
----------------
+Version policy
+--------------
 
-The |HPC| has a monthly release cadence while in alpha status.
-Releases happen on the 15th of every month.
-We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
+The |HPC| uses `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 
 The current stable release is `2021.7.15`_.
 
