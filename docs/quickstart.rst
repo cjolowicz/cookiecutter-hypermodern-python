@@ -27,7 +27,7 @@ Install Nox_ and nox-poetry_:
 
 pipx_ is preferred, but you can also install with ``pip install --user``.
 
-It is recommended to set up Python 3.6, 3.7, 3.8, 3.9, 3.10 using pyenv_.
+It is recommended to set up Python 3.7, 3.8, 3.9, 3.10 using pyenv_.
 
 
 Creating a project
