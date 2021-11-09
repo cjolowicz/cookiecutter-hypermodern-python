@@ -28,7 +28,7 @@ jobs:
       - name: Install cutty
         working-directory: ${{ env.TEMPLATE }}
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt cutty
+          pip install --constraint=.github/workflows/constraints.txt cutty
           cutty --version
       - name: Import commit into ${{ env.PROJECT }}
         run: |
