@@ -1,4 +1,4 @@
-name: Reset instance
+name: Update instance
 on:
   push:
     branches:
