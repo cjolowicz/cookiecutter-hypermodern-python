@@ -37,9 +37,8 @@ jobs:
           GIT_AUTHOR_NAME: "GitHub Action"
           GIT_AUTHOR_EMAIL: "action@github.com"
       - name: Push to cjolowicz/${{ env.PROJECT }}
-        run: >-
-          git
-          -C $PROJECT
-          push
-          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/$PROJECT.git
-          HEAD:main
+        run: |
+          if ! git -C ${TEMPLATE} show --no-patch --format=%B ${GITHUB_SHA} | grep -q ^Retrocookie-Original-Commit:
+          then
+            git -C $PROJECT push https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/$PROJECT.git HEAD:main
+          fi
