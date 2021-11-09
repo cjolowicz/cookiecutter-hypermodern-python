@@ -3,60 +3,42 @@ on:
   push:
     branches:
       - main
+env:
+  TEMPLATE: cookiecutter-hypermodern-python
+  PROJECT: cookiecutter-hypermodern-python-instance
 jobs:
   instance:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out cookiecutter-hypermodern-python
+      - name: Check out ${{ env.TEMPLATE }}
         uses: actions/checkout@v2.4.0
         with:
-          path: cookiecutter-hypermodern-python
-      - name: Check out cookiecutter-hypermodern-python-instance
+          path: ${{ env.TEMPLATE }}
+      - name: Check out ${{ env.PROJECT }}
         uses: actions/checkout@v2.4.0
         with:
-          repository: "cjolowicz/cookiecutter-hypermodern-python-instance"
-          path: cookiecutter-hypermodern-python-instance
+          repository: "cjolowicz/${{ env.PROJECT }}"
+          path: ${{ env.PROJECT }}
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.10
         uses: actions/setup-python@v2.2.2
         with:
           python-version: "3.10"
-      - name: Install cookiecutter
-        working-directory: cookiecutter-hypermodern-python
+      - name: Install cutty
+        working-directory: ${{ env.TEMPLATE }}
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt cookiecutter
-      - name: Remove working tree
+          pipx install --pip-args=--constraint=.github/workflows/constraints.txt cutty
+          cutty --version
+      - name: Import commit into ${{ env.PROJECT }}
         run: |
-          mv cookiecutter-hypermodern-python-instance/.git tmp.git
-          rm -rf cookiecutter-hypermodern-python-instance
-          mkdir cookiecutter-hypermodern-python-instance
-          mv tmp.git cookiecutter-hypermodern-python-instance/.git
-      - name: Invoke cookiecutter
-        run: >-
-          cookiecutter
-          https://github.com/${GITHUB_REPOSITORY}
-          --overwrite-if-exists
-          --no-input
-          project_name=cookiecutter-hypermodern-python-instance
-      - name: Create commit
-        run: |
-          cd cookiecutter-hypermodern-python
-          author="$(git show --no-patch --format='%an <%ae>')"
-          date="$(git show --no-patch --format=%ad)"
-          message="$(git show --no-patch --format=%B | sed 's/ *(#[0-9]\+)//g')
-
-          Original-Commit: ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
-
-          cd ../cookiecutter-hypermodern-python-instance
-          git config --local user.name "GitHub Action"
-          git config --local user.email "action@github.com"
-          git add .
-          git commit --allow-empty --author="$author" --date="$date" --message="$message"
-      - name: Push to instance
+          cutty import --non-interactive --cwd=${PROJECT} --revision=${GITHUB_SHA}
+        env:
+          GIT_AUTHOR_NAME: "GitHub Action"
+          GIT_AUTHOR_EMAIL: "action@github.com"
+      - name: Push to cjolowicz/${{ env.PROJECT }}
         run: >-
           git
-          -C cookiecutter-hypermodern-python-instance
+          -C $PROJECT
           push
-          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/cookiecutter-hypermodern-python-instance.git
+          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/$PROJECT.git
           HEAD:main
