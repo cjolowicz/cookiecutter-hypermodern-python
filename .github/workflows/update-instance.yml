@@ -1,0 +1,45 @@
+name: Update instance
+on:
+  push:
+    branches:
+      - main
+concurrency: serialize
+env:
+  TEMPLATE: cookiecutter-hypermodern-python
+  PROJECT: cookiecutter-hypermodern-python-instance
+jobs:
+  instance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ${{ env.TEMPLATE }}
+        uses: actions/checkout@v2.4.0
+        with:
+          path: ${{ env.TEMPLATE }}
+      - name: Check out ${{ env.PROJECT }}
+        uses: actions/checkout@v2.4.0
+        with:
+          repository: "cjolowicz/${{ env.PROJECT }}"
+          path: ${{ env.PROJECT }}
+          token: ${{ secrets.X_GITHUB_TOKEN }}
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: "3.10"
+      - name: Install cutty
+        working-directory: ${{ env.TEMPLATE }}
+        run: |
+          pipx install --pip-args=--constraint=.github/workflows/constraints.txt cutty
+          cutty --version
+      - name: Import commit into ${{ env.PROJECT }}
+        run: |
+          cutty import --non-interactive --cwd=${PROJECT} --revision=${GITHUB_SHA}
+        env:
+          GIT_AUTHOR_NAME: "GitHub Action"
+          GIT_AUTHOR_EMAIL: "action@github.com"
+      - name: Push to cjolowicz/${{ env.PROJECT }}
+        run: >-
+          git
+          -C $PROJECT
+          push
+          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/$PROJECT.git
+          HEAD:main

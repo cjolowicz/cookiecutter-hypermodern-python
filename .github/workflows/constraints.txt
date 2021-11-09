@@ -1,5 +1,6 @@
 pip==21.3.1
 cookiecutter==1.7.3
+cutty==0.16.0
 nox==2021.10.1
 nox-poetry==0.8.6
 poetry==1.1.11
