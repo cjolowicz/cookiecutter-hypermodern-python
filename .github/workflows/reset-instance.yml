@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+concurrency: serialize
 env:
   TEMPLATE: cookiecutter-hypermodern-python
   PROJECT: cookiecutter-hypermodern-python-instance
