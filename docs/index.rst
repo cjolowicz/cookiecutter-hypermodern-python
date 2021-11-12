@@ -43,13 +43,16 @@ Features
 FAQ
 ---
 
-  *What is this project about?*
+What is this project about?
+...........................
 
 The mission of this project is to
 enable current best practices
 through modern Python tooling.
 
-  *What makes this project different from other Python templates?*
+
+What makes this project different from other Python templates?
+..............................................................
 
 This is a general-purpose template for Python libraries and applications.
 
@@ -65,7 +68,9 @@ The project template is centered around the following tools:
 - Nox_ for automation of checks and other development tasks
 - `GitHub Actions`_ for continuous integration and delivery
 
-  *Why is this Python template called "hypermodern"?*
+
+Why is this Python template called "hypermodern"?
+.................................................
 
 Hypermodernism_ is a school of chess that dates back to more than a century ago.
 If this setup ever goes out of fashion,
