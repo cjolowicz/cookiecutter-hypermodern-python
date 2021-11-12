@@ -5,12 +5,8 @@
 Reference
 =========
 
-.. contents::
-    :local:
-    :backlinks: none
 
+{{ heading(cookiecutter.package_name) }}
 
-{{ heading(cookiecutter.package_name + ".__main__") }}
-
-.. automodule:: {{cookiecutter.package_name}}.__main__
+.. automodule:: {{cookiecutter.package_name}}
    :members:
