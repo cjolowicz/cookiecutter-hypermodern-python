@@ -70,7 +70,7 @@ Features
 - Test automation with Nox_
 - Linting with pre-commit_ and Flake8_
 - Continuous integration with `GitHub Actions`_
-- Documentation with Sphinx_ and `Read the Docs`_
+- Documentation with Sphinx_ and `Read the Docs`_ using the furo_ theme
 - Automated uploads to PyPI_ and TestPyPI_
 - Automated release notes with `Release Drafter`_
 - Automated dependency updates with Dependabot_
@@ -115,6 +115,7 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 .. _TestPyPI: https://test.pypi.org/
 .. _Typeguard: https://github.com/agronholm/typeguard
 .. _autodoc: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
+.. _furo: https://pradyunsg.me/furo/
 .. _mypy: http://mypy-lang.org/
 .. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 .. _pre-commit: https://pre-commit.com/
