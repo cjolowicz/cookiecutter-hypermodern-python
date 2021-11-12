@@ -98,6 +98,7 @@ def precommit(session: Session) -> None:
         "pep8-naming",
         "pre-commit",
         "pre-commit-hooks",
+        "pyupgrade",
         "reorder-python-imports",
     )
     session.run("pre-commit", *args)

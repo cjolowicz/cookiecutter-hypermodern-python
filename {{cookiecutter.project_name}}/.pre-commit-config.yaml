@@ -33,6 +33,13 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: pyupgrade
+        name: pyupgrade
+        description: Automatically upgrade syntax for newer versions.
+        entry: pyupgrade
+        language: system
+        types: [python]
+        args: [--py37-plus]
       - id: reorder-python-imports
         name: Reorder python imports
         entry: reorder-python-imports

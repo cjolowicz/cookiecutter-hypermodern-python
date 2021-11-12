@@ -47,6 +47,7 @@ pre-commit-hooks = "^4.0.1"
 sphinx-rtd-theme = "^1.0.0"
 sphinx-click = "^3.0.2"
 Pygments = "^2.10.0"
+pyupgrade = "^2.29.0"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
