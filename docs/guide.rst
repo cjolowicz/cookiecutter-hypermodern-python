@@ -730,20 +730,22 @@ See the table below for an overview of the dependencies of generated projects:
    click_                  Composable command line interface toolkit
    coverage__              Code coverage measurement for Python
    darglint_               A utility for ensuring Google-style docstrings stay up to date with the source code.
-   flake8_                 The modular source code checker: pep8 pyflakes and co
+   flake8_                 the modular source code checker: pep8 pyflakes and co
    flake8-bandit_          Automated security testing with bandit and flake8.
    flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
    flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
    flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
    mypy_                   Optional static typing for Python
    pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
-   pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks
+   pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks.
    pre-commit-hooks_       Some out-of-the-box hooks for pre-commit.
-   pytest_                 Simple powerful testing with Python
+   pygments_               Pygments is a syntax highlighting package written in Python.
+   pytest_                 pytest: simple powerful testing with Python
+   pyupgrade_              A tool to automatically upgrade syntax for newer versions.
    reorder-python-imports_ Tool for reordering python imports
-   safety_                 Checks installed dependencies for known vulnerabilities
+   safety_                 Checks installed dependencies for known vulnerabilities.
    sphinx_                 Python documentation generator
-   sphinx-autobuild_       Watch a Sphinx directory and rebuild the documentation when a change is detected
+   sphinx-autobuild_       Rebuild Sphinx documentation on changes, with live-reload in the browser.
    sphinx-click_           Sphinx extension that automatically documents click applications
    sphinx-rtd-theme_       Read the Docs theme for Sphinx
    typeguard_              Run-time type checker for Python
@@ -1635,6 +1637,7 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
+   pyupgrade_               Upgrade syntax to newer versions of Python
    check-added-large-files_ Prevent giant files from being committed
    check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
@@ -1685,6 +1688,20 @@ as recommended by `PEP 8`_: standard library, third party, first party.
 The tool also splits ``from`` imports onto separate lines to avoid merge conflicts,
 and moves them after normal imports.
 Any duplicate imports are removed.
+
+
+The pyupgrade hook
+------------------
+
+pyupgrade_ upgrades your source code
+to newer versions of the Python language and standard library.
+The tool analyzes the `abstract syntax tree`__ of the modules in your project,
+replacing deprecated or legacy usages with modern idioms.
+
+The minimum supported Python version is declared in the relevant section of ``.pre-commit-config.yaml``.
+You should change this setting whenever you drop support for an old version of Python.
+
+__ https://docs.python.org/3/library/ast.html
 
 
 Hooks from pre-commit-hooks

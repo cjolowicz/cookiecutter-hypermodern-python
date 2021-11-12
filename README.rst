@@ -81,6 +81,7 @@ Features
 - Command-line interface with Click_
 - Static type-checking with mypy_
 - Runtime type-checking with Typeguard_
+- Automated Python syntax upgrades with pyupgrade_
 - Security audit with Bandit_ and Safety_
 - Check documentation examples with xdoctest_
 - Generate API documentation with autodoc_ and napoleon_
@@ -118,6 +119,7 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 .. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 .. _pre-commit: https://pre-commit.com/
 .. _pytest: https://docs.pytest.org/en/latest/
+.. _pyupgrade: https://github.com/asottile/pyupgrade
 .. _sphinx-click: https://sphinx-click.readthedocs.io/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
 .. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
