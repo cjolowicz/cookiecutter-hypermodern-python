@@ -1706,6 +1706,20 @@ and moves them after normal imports.
 Any duplicate imports are removed.
 
 
+The pyupgrade hook
+------------------
+
+pyupgrade_ upgrades your source code
+to newer versions of the Python language and standard library.
+The tool analyzes the `abstract syntax tree`__ of the modules in your project,
+replacing deprecated or legacy usages with more modern idioms.
+
+The minimum supported Python version is declared in the relevant section of ``.pre-commit-config.yaml``.
+You should change this setting whenever you drop support for an old version of Python.
+
+__ https://docs.python.org/3/library/ast.html
+
+
 Hooks from pre-commit-hooks
 ---------------------------
 
