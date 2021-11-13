@@ -603,7 +603,7 @@ __ https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 The project documentation is built and hosted on
 :ref:`Read the Docs <Read the Docs integration>`,
-and uses their official theme sphinx-rtd-theme_.
+and uses the furo_ Sphinx theme.
 
 You can also build the documentation locally using Nox,
 see :ref:`The docs session`.
@@ -735,6 +735,7 @@ See the table below for an overview of the dependencies of generated projects:
    flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
    flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
    flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
+   furo_                   A clean customisable Sphinx documentation theme.
    mypy_                   Optional static typing for Python
    pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
    pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks.
@@ -747,7 +748,6 @@ See the table below for an overview of the dependencies of generated projects:
    sphinx_                 Python documentation generator
    sphinx-autobuild_       Rebuild Sphinx documentation on changes, with live-reload in the browser.
    sphinx-click_           Sphinx extension that automatically documents click applications
-   sphinx-rtd-theme_       Read the Docs theme for Sphinx
    typeguard_              Run-time type checker for Python
    xdoctest_               A rewrite of the builtin doctest module
    ======================= ====================================================================================
@@ -2631,4 +2631,3 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _sphinx-autobuild: https://github.com/executablebooks/sphinx-autobuild
-.. _sphinx-rtd-theme: https://sphinx-rtd-theme.readthedocs.io
