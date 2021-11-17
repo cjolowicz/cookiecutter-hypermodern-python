@@ -46,7 +46,7 @@ reorder-python-imports = "^2.6.0"
 pre-commit-hooks = "^4.0.1"
 sphinx-click = "^3.0.2"
 Pygments = "^2.10.0"
-pyupgrade = "^2.29.0"
+pyupgrade = "^2.29.1"
 furo = ">=2021.11.12"
 
 [tool.poetry.scripts]
