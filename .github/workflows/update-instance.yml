@@ -22,7 +22,7 @@ jobs:
           path: ${{ env.PROJECT }}
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.10
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v2.3.0
         with:
           python-version: "3.10"
       - name: Install cutty
