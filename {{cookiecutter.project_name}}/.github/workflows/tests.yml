@@ -6,39 +6,27 @@ on:
 
 jobs:
   tests:
-    name: {{ "${{ matrix.session }} ${{ matrix.python-version }} / ${{ matrix.os }}" }}
-    runs-on: {{ "${{ matrix.os }}" }}
+    name: ${{"{{"}} matrix.session {{"}}"}} ${{"{{"}} matrix.python {{"}}"}} / ${{"{{"}} matrix.os {{"}}"}}
+    runs-on: ${{"{{"}} matrix.os {{"}}"}}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - {
-              python-version: "3.10",
-              os: "ubuntu-latest",
-              session: "pre-commit",
-            }
-          - { python-version: "3.10", os: "ubuntu-latest", session: "safety" }
-          - { python-version: "3.10", os: "ubuntu-latest", session: "mypy" }
-          - { python-version: "3.9", os: "ubuntu-latest", session: "mypy" }
-          - { python-version: "3.8", os: "ubuntu-latest", session: "mypy" }
-          - { python-version: "3.7", os: "ubuntu-latest", session: "mypy" }
-          - { python-version: "3.10", os: "ubuntu-latest", session: "tests" }
-          - { python-version: "3.9", os: "ubuntu-latest", session: "tests" }
-          - { python-version: "3.8", os: "ubuntu-latest", session: "tests" }
-          - { python-version: "3.7", os: "ubuntu-latest", session: "tests" }
-          - { python-version: "3.10", os: "windows-latest", session: "tests" }
-          - { python-version: "3.10", os: "macos-latest", session: "tests" }
-          - {
-              python-version: "3.10",
-              os: "ubuntu-latest",
-              session: "typeguard",
-            }
-          - { python-version: "3.10", os: "ubuntu-latest", session: "xdoctest" }
-          - {
-              python-version: "3.10",
-              os: "ubuntu-latest",
-              session: "docs-build",
-            }
+          - { python: "3.10", os: "ubuntu-latest", session: "pre-commit" }
+          - { python: "3.10", os: "ubuntu-latest", session: "safety" }
+          - { python: "3.10", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.9", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.8", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.7", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.10", os: "ubuntu-latest", session: "tests" }
+          - { python: "3.9", os: "ubuntu-latest", session: "tests" }
+          - { python: "3.8", os: "ubuntu-latest", session: "tests" }
+          - { python: "3.7", os: "ubuntu-latest", session: "tests" }
+          - { python: "3.10", os: "windows-latest", session: "tests" }
+          - { python: "3.10", os: "macos-latest", session: "tests" }
+          - { python: "3.10", os: "ubuntu-latest", session: "typeguard" }
+          - { python: "3.10", os: "ubuntu-latest", session: "xdoctest" }
+          - { python: "3.10", os: "ubuntu-latest", session: "docs-build" }
 
     env:
       NOXSESSION: {{ "${{ matrix.session }}" }}
@@ -47,10 +35,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2.4.0
 
-      - name: Set up Python ${{"{{"}} matrix.python-version {{"}}"}}
+      - name: Set up Python ${{"{{"}} matrix.python {{"}}"}}
         uses: actions/setup-python@v2.3.0
         with:
-          python-version: {{ "${{ matrix.python-version }}" }}
+          python-version: ${{"{{"}} matrix.python {{"}}"}}
 
       - name: Upgrade pip
         run: |
@@ -94,7 +82,7 @@ jobs:
 
       - name: Run Nox
         run: |
-          nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
+          nox --force-color --python=${{"{{"}} matrix.python {{"}}"}}
 
       - name: Upload coverage data
         if: always() && matrix.session == 'tests'
