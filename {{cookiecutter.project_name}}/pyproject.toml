@@ -54,10 +54,11 @@ furo = ">=2021.11.12"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
+tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["{{cookiecutter.package_name}}"]
+source = ["{{cookiecutter.package_name}}", "tests"]
 
 [tool.coverage.report]
 show_missing = true
