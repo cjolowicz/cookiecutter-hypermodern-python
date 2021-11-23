@@ -1303,6 +1303,9 @@ using the ``tool.coverage`` table.
 The configuration informs the tool about your package name and source tree layout.
 It also enables branch analysis and the display of line numbers for missing coverage,
 and specifies the target coverage percentage.
+Coverage is measured for the package as well as `the test suite itself`__.
+
+__ https://nedbatchelder.com/blog/202008/you_should_include_your_tests_in_coverage.html
 
 During continuous integration,
 coverage data is uploaded to the Codecov_ reporting service.
