@@ -203,6 +203,14 @@ Install Nox_ and nox-poetry_ using pipx:
    $ pipx install nox
    $ pipx inject nox nox-poetry
 
+Remember to upgrade these tools regularly:
+
+.. code:: console
+
+   $ pipx upgrade cookiecutter
+   $ pipx upgrade --include-injected nox
+   $ poetry self update
+
 
 Project creation
 ~~~~~~~~~~~~~~~~
