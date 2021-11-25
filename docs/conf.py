@@ -19,4 +19,5 @@ linkcheck_ignore = [
     "https://github.com/terrencepreilly/darglint#",
     "https://github.com/PyCQA/mccabe#",
     "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
+    "https://cookiecutter-hypermodern-python.readthedocs.io",
 ]
