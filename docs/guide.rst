@@ -57,9 +57,9 @@ Version policy
 
 The |HPC| uses `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 
-The current stable release is `2021.11.10`_.
+The current stable release is `2021.11.26`_.
 
-.. _2021.11.10: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.11.10
+.. _2021.11.26: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.11.26
 
 
 .. _Installation:
@@ -222,12 +222,12 @@ Creating a project
 
 Create a project from this template
 by pointing Cookiecutter to its `GitHub repository <Hypermodern Python Cookiecutter_>`__.
-Use the ``--checkout`` option with the `current stable release <2021.11.10_>`__:
+Use the ``--checkout`` option with the `current stable release <2021.11.26_>`__:
 
 .. code:: console
 
    $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2021.11.10"
+     --checkout="2021.11.26"
 
 Cookiecutter downloads the template,
 and asks you a series of questions about project variables,
