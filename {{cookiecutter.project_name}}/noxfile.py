@@ -138,7 +138,7 @@ def tests(session: Session) -> None:
             session.notify("coverage", posargs=[])
 
 
-@session
+@session(python=python_versions[0])
 def coverage(session: Session) -> None:
     """Produce the coverage report."""
     args = session.posargs or ["report"]
