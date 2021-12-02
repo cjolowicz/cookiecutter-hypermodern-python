@@ -72,7 +72,7 @@ def activate_virtualenv_in_precommit_hooks(session: Session) -> None:
         # pre-commit >= 2.16.0
         "bash": f"""\
             VIRTUAL_ENV={shlex.quote(virtualenv)}
-            PATH={shlex.quote(session.bin)}{os.pathsep}"$PATH"
+            PATH={shlex.quote(session.bin)}"{os.pathsep}$PATH"
             """,
     }
 
