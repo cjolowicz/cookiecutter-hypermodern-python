@@ -70,26 +70,7 @@ Installation
 System requirements
 -------------------
 
-You need a recent Linux, Unix, or Mac system with
-bash_, curl_, and git_.
-
-On Windows 10, enable the `Windows Subsystem for Linux`_ (WSL) and
-install the Ubuntu 20.04 LTS distribution.
-Open Ubuntu from the Start Menu, and
-install additional packages using the following commands:
-
-.. _Windows Subsystem for Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10
-
-.. code:: console
-
-   $ sudo apt update
-   $ sudo apt install -y build-essential curl git libbz2-dev \
-     libffi-dev liblzma-dev libncurses5-dev libncursesw5-dev \
-     libreadline-dev libsqlite3-dev libssl-dev llvm make \
-     python-openssl tk-dev wget xz-utils zlib1g-dev
-
-The project template should also work natively on Windows.
-Pull requests to document Windows specifics are welcome!
+You need a recent Windows, Linux, Unix, or Mac system with git_ installed.
 
 .. note::
 
@@ -102,7 +83,7 @@ Pull requests to document Windows specifics are welcome!
    The project template contains a `.gitattributes`_ file
    which enables end-of-line normalization for your entire working tree.
    Additionally, the Prettier_ code formatter converts line endings to line feeds.
-   Windows-style line endings (`CRLF`) should therefore never make it into your Git repository.
+   Windows-style line endings (``CRLF``) should therefore never make it into your Git repository.
 
    .. _.gitattributes: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
 
@@ -110,13 +91,44 @@ Pull requests to document Windows specifics are welcome!
    to avoid complaints from the pre-commit_ hook for Prettier.
 
 
-Getting Python
---------------
+Getting Python (Windows)
+------------------------
 
-It is recommended to use pyenv_ for
-installing and managing Python versions.
+If you're on Windows,
+download the recommended installer for the latest stable release of Python
+from the official `Python website`__.
+Before clicking **Install now**,
+enable the option to add Python to your ``PATH`` environment variable.
+
+Verify your installation by checking the output of the following commands in a new terminal window::
+
+   python -VV
+   py -VV
+
+Both of these commands should display the latest Python version, 3.10.
+
+For local testing with multiple Python versions,
+repeat these steps for the latest bugfix releases of Python 3.7+,
+with the following changes:
+
+- Do *not* enable the option to add Python to the ``PATH`` environment variable.
+- ``py -VV`` and ``python -VV`` should still display the version of the latest stable release.
+- ``py -X.Y -VV`` (e.g. ``py -3.7 -VV``) should display the exact version you just installed.
+
+Note that binary installers are not provided for security releases.
+
+__ https://www.python.org/
+
+
+Getting Python (Mac, Linux, Unix)
+---------------------------------
+
+If you're on a Mac, Linux, or Unix system,
+use pyenv_ for installing and managing Python versions.
 Please refer to the documentation of this project
 for detailed installation and usage instructions.
+(The following instructions assume that
+your system already has bash_ and curl_ installed.)
 
 Install pyenv_ like this:
 
@@ -145,7 +157,7 @@ This project template supports Python 3.7, 3.8, 3.9, and 3.10.
 
    $ pyenv install 3.7.12
    $ pyenv install 3.8.12
-   $ pyenv install 3.9.8
+   $ pyenv install 3.9.9
    $ pyenv install 3.10.0
 
 After creating your project (see :ref:`below <Creating a project>`),
@@ -154,7 +166,7 @@ using the following command:
 
 .. code:: console
 
-   $ pyenv local 3.10.0 3.9.8 3.8.12 3.7.12
+   $ pyenv local 3.10.0 3.9.9 3.8.12 3.7.12
 
 The first version listed is the one used when you type plain ``python``.
 Every version can be used by invoking ``python<major.minor>``.
