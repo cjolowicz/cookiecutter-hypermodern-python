@@ -101,5 +101,5 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 .. _pip: https://pip.pypa.io/
 .. github-only
-.. _Contributor Guide: CONTRIBUTING.rst
+.. _Contributor Guide: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/contributing.html
 .. _Usage: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
