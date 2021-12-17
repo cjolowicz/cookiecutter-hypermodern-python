@@ -72,6 +72,9 @@ show_column_numbers = true
 show_error_codes = true
 show_error_context = true
 
+[tool.isort]
+profile = "black"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
