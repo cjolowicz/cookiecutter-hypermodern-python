@@ -28,7 +28,7 @@ click = "^8.0.1"
 pytest = "^6.2.5"
 coverage = {extras = ["toml"], version = "^6.2"}
 safety = "^1.10.3"
-mypy = "^0.921"
+mypy = "^0.930"
 typeguard = "^2.13.3"
 xdoctest = {extras = ["colors"], version = "^0.15.10"}
 sphinx = "^4.3.2"
