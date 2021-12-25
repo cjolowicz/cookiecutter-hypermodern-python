@@ -745,32 +745,32 @@ See the table below for an overview of the dependencies of generated projects:
 .. table:: Dependencies
    :widths: auto
 
-   ======================= ====================================================================================
-   black_                  The uncompromising code formatter.
-   click_                  Composable command line interface toolkit
-   coverage__              Code coverage measurement for Python
-   darglint_               A utility for ensuring Google-style docstrings stay up to date with the source code.
-   flake8_                 the modular source code checker: pep8 pyflakes and co
-   flake8-bandit_          Automated security testing with bandit and flake8.
-   flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
-   flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
-   flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
-   furo_                   A clean customisable Sphinx documentation theme.
-   mypy_                   Optional static typing for Python
-   pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
-   pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks.
-   pre-commit-hooks_       Some out-of-the-box hooks for pre-commit.
-   pygments_               Pygments is a syntax highlighting package written in Python.
-   pytest_                 pytest: simple powerful testing with Python
-   pyupgrade_              A tool to automatically upgrade syntax for newer versions.
-   reorder-python-imports_ Tool for reordering python imports
-   safety_                 Checks installed dependencies for known vulnerabilities.
-   sphinx_                 Python documentation generator
-   sphinx-autobuild_       Rebuild Sphinx documentation on changes, with live-reload in the browser.
-   sphinx-click_           Sphinx extension that automatically documents click applications
-   typeguard_              Run-time type checker for Python
-   xdoctest_               A rewrite of the builtin doctest module
-   ======================= ====================================================================================
+   ====================== ====================================================================================
+   black_                 The uncompromising code formatter.
+   click_                 Composable command line interface toolkit
+   coverage__             Code coverage measurement for Python
+   darglint_              A utility for ensuring Google-style docstrings stay up to date with the source code.
+   flake8_                the modular source code checker: pep8 pyflakes and co
+   flake8-bandit_         Automated security testing with bandit and flake8.
+   flake8-bugbear_        A plugin for flake8 finding likely bugs and design problems in your program.
+   flake8-docstrings_     Extension for flake8 which uses pydocstyle to check docstrings
+   flake8-rst-docstrings_ Python docstring reStructuredText (RST) validator
+   furo_                  A clean customisable Sphinx documentation theme.
+   isort_                 A Python utility / library to sort Python imports.
+   mypy_                  Optional static typing for Python
+   pep8-naming_           Check PEP-8 naming conventions, plugin for flake8
+   pre-commit_            A framework for managing and maintaining multi-language pre-commit hooks.
+   pre-commit-hooks_      Some out-of-the-box hooks for pre-commit.
+   pygments_              Pygments is a syntax highlighting package written in Python.
+   pytest_                pytest: simple powerful testing with Python
+   pyupgrade_             A tool to automatically upgrade syntax for newer versions.
+   safety_                Checks installed dependencies for known vulnerabilities.
+   sphinx_                Python documentation generator
+   sphinx-autobuild_      Rebuild Sphinx documentation on changes, with live-reload in the browser.
+   sphinx-click_          Sphinx extension that automatically documents click applications
+   typeguard_             Run-time type checker for Python
+   xdoctest_              A rewrite of the builtin doctest module
+   ====================== ====================================================================================
 
 __ Coverage.py_
 
