@@ -745,32 +745,32 @@ See the table below for an overview of the dependencies of generated projects:
 .. table:: Dependencies
    :widths: auto
 
-   ======================= ====================================================================================
-   black_                  The uncompromising code formatter.
-   click_                  Composable command line interface toolkit
-   coverage__              Code coverage measurement for Python
-   darglint_               A utility for ensuring Google-style docstrings stay up to date with the source code.
-   flake8_                 the modular source code checker: pep8 pyflakes and co
-   flake8-bandit_          Automated security testing with bandit and flake8.
-   flake8-bugbear_         A plugin for flake8 finding likely bugs and design problems in your program.
-   flake8-docstrings_      Extension for flake8 which uses pydocstyle to check docstrings
-   flake8-rst-docstrings_  Python docstring reStructuredText (RST) validator
-   furo_                   A clean customisable Sphinx documentation theme.
-   mypy_                   Optional static typing for Python
-   pep8-naming_            Check PEP-8 naming conventions, plugin for flake8
-   pre-commit_             A framework for managing and maintaining multi-language pre-commit hooks.
-   pre-commit-hooks_       Some out-of-the-box hooks for pre-commit.
-   pygments_               Pygments is a syntax highlighting package written in Python.
-   pytest_                 pytest: simple powerful testing with Python
-   pyupgrade_              A tool to automatically upgrade syntax for newer versions.
-   reorder-python-imports_ Tool for reordering python imports
-   safety_                 Checks installed dependencies for known vulnerabilities.
-   sphinx_                 Python documentation generator
-   sphinx-autobuild_       Rebuild Sphinx documentation on changes, with live-reload in the browser.
-   sphinx-click_           Sphinx extension that automatically documents click applications
-   typeguard_              Run-time type checker for Python
-   xdoctest_               A rewrite of the builtin doctest module
-   ======================= ====================================================================================
+   ====================== ====================================================================================
+   black_                 The uncompromising code formatter.
+   click_                 Composable command line interface toolkit
+   coverage__             Code coverage measurement for Python
+   darglint_              A utility for ensuring Google-style docstrings stay up to date with the source code.
+   flake8_                the modular source code checker: pep8 pyflakes and co
+   flake8-bandit_         Automated security testing with bandit and flake8.
+   flake8-bugbear_        A plugin for flake8 finding likely bugs and design problems in your program.
+   flake8-docstrings_     Extension for flake8 which uses pydocstyle to check docstrings
+   flake8-rst-docstrings_ Python docstring reStructuredText (RST) validator
+   furo_                  A clean customisable Sphinx documentation theme.
+   isort_                 A Python utility / library to sort Python imports.
+   mypy_                  Optional static typing for Python
+   pep8-naming_           Check PEP-8 naming conventions, plugin for flake8
+   pre-commit_            A framework for managing and maintaining multi-language pre-commit hooks.
+   pre-commit-hooks_      Some out-of-the-box hooks for pre-commit.
+   pygments_              Pygments is a syntax highlighting package written in Python.
+   pytest_                pytest: simple powerful testing with Python
+   pyupgrade_             A tool to automatically upgrade syntax for newer versions.
+   safety_                Checks installed dependencies for known vulnerabilities.
+   sphinx_                Python documentation generator
+   sphinx-autobuild_      Rebuild Sphinx documentation on changes, with live-reload in the browser.
+   sphinx-click_          Sphinx extension that automatically documents click applications
+   typeguard_             Run-time type checker for Python
+   xdoctest_              A rewrite of the builtin doctest module
+   ====================== ====================================================================================
 
 __ Coverage.py_
 
@@ -1635,7 +1635,7 @@ validating changes staged for a commit.
 
 Requiring changes to be staged allows for a nice property:
 Many pre-commit hooks support fixing offending lines automatically,
-for example ``black``, ``prettier``, and ``reorder-python-imports``.
+for example ``black``, ``prettier``, and ``isort``.
 When this happens,
 your original changes are in the staging area,
 while the fixes are in the work tree.
@@ -1659,13 +1659,13 @@ The |HPC| comes with a pre-commit configuration consisting of the following hook
    ======================== ===============================================
    `black <Black_>`__       Run the Black_ code formatter
    `flake8 <Flake8_>`__     Run the Flake8_ linter
+   isort_                   Rewrite source code to sort Python imports
    `prettier <Prettier_>`__ Run the Prettier_ code formatter
    pyupgrade_               Upgrade syntax to newer versions of Python
    check-added-large-files_ Prevent giant files from being committed
    check-toml_              Validate TOML_ files
    check-yaml_              Validate YAML_ files
    end-of-file-fixer_       Ensure files are terminated by a single newline
-   reorder-python-imports_  Rewrites source to reorder python imports
    trailing-whitespace_     Ensure lines do not contain trailing whitespace
    ======================== ===============================================
 
@@ -1702,15 +1702,23 @@ Flake8_ is an extensible linter framework for Python.
 For more details, see the section :ref:`Linting with Flake8`.
 
 
-The reorder-python-imports hook
--------------------------------
+The isort hook
+--------------
 
-reorder-python-imports_ sorts imports in your Python code.
+isort_ reorders imports in your Python code.
 Imports are separated into three sections,
 as recommended by `PEP 8`_: standard library, third party, first party.
-The tool also splits ``from`` imports onto separate lines to avoid merge conflicts,
-and moves them after normal imports.
-Any duplicate imports are removed.
+There are two additional sections,
+one at the top for `future imports <https://docs.python.org/3/library/__future__.html>`__,
+the other at the bottom for `relative imports <https://docs.python.org/3/reference/import.html#package-relative-imports>`__.
+Within each section, ``from`` imports follow normal imports.
+Imports are then sorted alphabetically.
+
+The |HPC| activates the `Black profile <https://pycqa.github.io/isort/docs/configuration/black_compatibility.html>`__ for compatibility with the Black code formatter.
+Furthermore, the `force_single_line <https://pycqa.github.io/isort/docs/configuration/options.html#force-single-line>`__ setting is enabled.
+This splits imports onto separate lines to avoid merge conflicts.
+Finally, two blank lines are enforced after imports for consistency,
+via the `lines_after_imports <https://pycqa.github.io/isort/docs/configuration/options.html#lines-after-imports>`__ setting.
 
 
 The pyupgrade hook
@@ -2651,6 +2659,5 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _pydocstyle: http://www.pydocstyle.org/
 .. _pyflakes: https://github.com/PyCQA/pyflakes
 .. _pygments: https://pygments.org/
-.. _reorder-python-imports: https://github.com/asottile/reorder_python_imports
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _sphinx-autobuild: https://github.com/executablebooks/sphinx-autobuild

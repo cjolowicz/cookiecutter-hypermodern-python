@@ -75,6 +75,7 @@ Features
 - Automated release notes with `Release Drafter`_
 - Automated dependency updates with Dependabot_
 - Code formatting with Black_ and Prettier_
+- Import sorting with isort_
 - Testing with pytest_
 - Code coverage with Coverage.py_
 - Coverage reporting with Codecov_
@@ -104,6 +105,7 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 .. _Flake8: http://flake8.pycqa.org
 .. _GitHub Actions: https://github.com/features/actions
 .. _Hypermodern Python: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+.. _isort: https://pycqa.github.io/isort/
 .. _Nox: https://nox.thea.codes/
 .. _Poetry: https://python-poetry.org/
 .. _Prettier: https://prettier.io/
