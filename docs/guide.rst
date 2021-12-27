@@ -2186,8 +2186,7 @@ It manages the following dependencies:
    =================== ===================================== ================================================
    Type of dependency  Managed files                         See also
    =================== ===================================== ================================================
-   Python              | ``pyproject.toml``                  :ref:`Managing Dependencies`
-                       | ``poetry.lock``
+   Python              ``poetry.lock``                       :ref:`Managing Dependencies`
    Python              ``docs/requirements.txt``             :ref:`Read the Docs <Read the Docs integration>`
    Python              ``.github/workflows/constraints.txt`` :ref:`Workflow constraints`
    GitHub Action       ``.github/workflows/*.yml``           :ref:`GitHub Actions workflows`
