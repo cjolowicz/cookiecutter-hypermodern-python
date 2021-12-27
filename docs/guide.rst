@@ -674,32 +674,26 @@ for a detailed description of each configuration key.
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 
+.. _Version constraints:
+
 Version constraints
 -------------------
+
+.. admonition:: TL;DR
+
+   This project template omits upper bounds from all version constraints.
+
+   You are encouraged to manually remove upper bounds
+   for dependencies you add to your project using Poetry:
+
+   1. Replace ``^1.2.3`` with ``>=1.2.3`` in ``pyproject.toml``
+   2. Run ``poetry lock --no-update`` to update ``poetry.lock``
 
 `Version constraints <Versions and constraints_>`_ express
 which versions of dependencies are compatible with your project.
 In the case of core dependencies,
 they are also a part of distribution packages,
 and as such affect end-users of your package.
-
-For every dependency added to your project,
-Poetry writes a version constraint to ``pyproject.toml``.
-Dependencies are kept in two TOML tables:
-
-- ``tool.poetry.dependencies``---for core dependencies
-- ``tool.poetry.dev-dependencies``---for development dependencies
-
-By default, version constraints require users to have at least
-the version that was current when the dependency was added to the project.
-Users can also upgrade to newer releases of dependencies,
-as long as the version number does not indicate a breaking change.
-(According to the `Semantic Versioning`_ standard,
-only major releases may contain breaking changes,
-once a project has reached version 1.0.0.)
-
-.. _Versions and constraints: https://python-poetry.org/docs/dependency-specification/
-.. _Semantic Versioning: https://semver.org/
 
 .. note::
 
@@ -709,7 +703,7 @@ once a project has reached version 1.0.0.)
    - *Core dependencies* are required by users running your code,
      and typically consist of third-party libraries imported by your package.
      When your package is distributed,
-     the package metainfo includes these dependencies,
+     the `package metadata`_ includes these dependencies,
      allowing tools like pip_ to automatically install them alongside your package.
 
    - *Development dependencies* are only required by developers working on your code.
@@ -718,6 +712,66 @@ once a project has reached version 1.0.0.)
      or to build documentation.
      These dependencies are not a part of distribution packages,
      because users do not require them to run your code.
+
+For every dependency added to your project,
+Poetry writes a version constraint to ``pyproject.toml``.
+Dependencies are kept in two TOML tables:
+
+- ``tool.poetry.dependencies``---for core dependencies
+- ``tool.poetry.dev-dependencies``---for development dependencies
+
+By default, version constraints added by Poetry have both a lower and an upper bound:
+
+- The lower bound requires users of your package to have at least the version
+  that was current when you added the dependency.
+- The upper bound allows users to upgrade to newer releases of dependencies,
+  as long as the version number does not indicate a breaking change.
+
+According to the `Semantic Versioning`_ standard,
+only major releases may contain breaking changes,
+once a project has reached version 1.0.0.
+A major release is one that increments the major version
+(the first component of the version identifier).
+An example for such a version constraint would be ``^1.2.3``,
+which is a Poetry-specific shorthand equivalent to ``>= 1.2.3, < 2``.
+
+This project template omits upper bounds from all version constraints,
+in a conscious departure from Poetry's defaults.
+There are two separate reasons for removing version caps,
+one principled, the other pragmatic:
+
+1. Version caps lead to problems in the Python ecosystem due to its flat dependency management.
+2. Version caps lead to frequent merge conflicts between dependency updates.
+
+The first point is treated in detail in the following articles:
+
+- `Should You Use Upper Bound Version Constraints? <https://iscinumpy.dev/post/bound-version-constraints/>`__ and `Poetry Versions <https://iscinumpy.dev/post/poetry-versions/>`__ by Henry Schreiner
+- `Semantic Versioning Will Not Save You <https://hynek.me/articles/semver-will-not-save-you/>`__ by Hynek Schlawack
+- `Version numbers: how to use them? <https://bernat.tech/posts/version-numbers/>`__ by Bernát Gábor
+- `Why I don't like SemVer anymore <https://snarky.ca/why-i-dont-like-semver/>`__ by Brett Cannon
+
+The second point is ultimately due to the fact that
+every updated version constraint changes a hashsum in the ``poetry.lock`` file.
+This means that PRs updating version constraints will *always* conflict with each other.
+
+.. note::
+
+   The problem with merge conflicts is greatly exacerbated by a `Dependabot issue <Dependabot issue 4435_>`_:
+   Dependabot updates version constraints in ``pyproject.toml``
+   even when the version constraint already covered the new version.
+   This can be avoided using a configuration setting
+   where only the lock file is ever updated, not the version constraints.
+   Omitting version caps makes the lockfile-only strategy a viable alternative.
+
+Poetry will still add ``^1.2.3``-style version constraints whenever you add a dependency.
+You should edit the version constraint in ``pyproject.toml``,
+replacing ``^1.2.3`` with ``>=1.2.3`` to remove the upper bound.
+Then update the lock file by invoking ``poetry lock --no-update``.
+
+.. _package metadata: https://packaging.python.org/en/latest/specifications/core-metadata/
+.. _Versions and constraints: https://python-poetry.org/docs/dependency-specification/
+.. _Semantic Versioning: https://semver.org/
+.. _Dependabot issue 4435: https://github.com/dependabot/dependabot-core/issues/4435
 
 
 .. _The lock file:
@@ -815,6 +869,15 @@ Use the command `poetry add`_ to add a dependency for your package:
    $ poetry add foobar        # for core dependencies
    $ poetry add --dev foobar  # for development dependencies
 
+.. important::
+
+   It is recommended to remove the upper bound from the version constraint added by Poetry:
+
+   1. Edit ``pyproject.toml`` to replace ``^1.2.3`` with ``>=1.2.3`` in the dependency entry
+   2. Update ``poetry.lock`` using the command ``poetry lock --no-update``
+
+   See `Version constraints`_ for more details.
+
 Use the command `poetry remove`_ to remove a dependency from your package:
 
 .. code:: console
@@ -831,15 +894,11 @@ Use the command `poetry update`_ to upgrade the dependency to a new release:
 
 .. _poetry update: https://python-poetry.org/docs/cli/#update
 
-To upgrade to a new major release,
-you normally need to update the version constraint for the dependency,
-in the ``pyproject.toml`` file.
-
 .. note::
 
    Dependencies in the |HPC| are managed by :ref:`Dependabot <Dependabot integration>`.
    When newer versions of dependencies become available,
-   Dependabot updates the ``pyproject.toml`` and ``poetry.lock`` files and submits a pull request.
+   Dependabot updates the ``poetry.lock`` file and submits a pull request.
 
 
 Installing the package for development
