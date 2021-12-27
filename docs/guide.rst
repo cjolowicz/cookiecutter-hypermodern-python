@@ -445,10 +445,13 @@ and links each file to a section with more details.
    ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
    ``docs/conf.py``                      Configuration for :ref:`Sphinx <Documentation>`
    ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
-   ``pyproject.toml``                    :ref:`Python package <The pyproject.toml file>` configuration,
-                                         and configuration for :ref:`Coverage.py <The coverage session>`
+   ``pyproject.toml``                    Configuration for :ref:`Poetry <Using Poetry>`,
+                                         :ref:`Coverage.py <The coverage session>`,
+                                         :ref:`isort <The isort hook>`,
                                          and :ref:`mypy <Type-checking with mypy>`
    ===================================== ========================================
+
+The ``pyproject.toml`` file is described in more detail :ref:`below <The pyproject.toml file>`.
 
 .. _.gitignore: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 
@@ -650,8 +653,16 @@ specified in `PEP 517`_ and `518 <PEP 518_>`__:
   This template uses Poetry_ as the build system.
 - The ``tool`` table contains sub-tables
   where tools can store configuration under their PyPI_ name.
-  Poetry stores its configuration in the ``tool.poetry`` table.
-  Coverage.py_ stores its configuration in the ``tool.coverage`` table.
+
+.. table:: Tool configurations in pyproject.toml
+   :widths: auto
+
+   ======================= ===============================
+   ``tool.coverage``       Configuration for Coverage.py_
+   ``tool.isort``          Configuration for isort_
+   ``tool.mypy``           Configuration for mypy_
+   ``tool.poetry``         Configuration for Poetry_
+   ======================= ===============================
 
 The ``tool.poetry`` table
 contains the metadata for your package,
@@ -774,6 +785,8 @@ See the table below for an overview of the dependencies of generated projects:
 
 __ Coverage.py_
 
+
+.. _Using Poetry:
 
 Using Poetry
 ~~~~~~~~~~~~
@@ -1701,6 +1714,8 @@ The Flake8 hook
 Flake8_ is an extensible linter framework for Python.
 For more details, see the section :ref:`Linting with Flake8`.
 
+
+.. _The isort hook:
 
 The isort hook
 --------------
