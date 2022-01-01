@@ -1,5 +1,4 @@
 """Sphinx configuration."""
-from datetime import datetime
 
 
 project = "{{cookiecutter.friendly_name}}"
