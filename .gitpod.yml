@@ -1,7 +1,0 @@
-image:
-  file: .gitpod.Dockerfile
-
-
-vscode:
-  extensions:
-    - vtrois.gitmoji-vscode
