@@ -263,6 +263,7 @@ Here is a complete list of the project variables defined by this template:
    ``email``              E-mail address of the author      katherine@example.com
    ``github_user``        GitHub username of the author     ``katherine``
    ``version``            Initial project version           ``0.0.0``
+   ``copyright_year``     The project copyright year        ``2022``
    ``license``            The project license               ``MIT``
    ``development_status`` Development status of the project ``Development Status :: 3 - Alpha``
    ====================== ================================= ===================================
