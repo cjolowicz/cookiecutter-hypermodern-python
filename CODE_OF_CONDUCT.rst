@@ -48,7 +48,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 Enforcement
 -----------
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at mail@claudiojolowicz.com. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at info@dvc.org. All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
@@ -95,9 +95,9 @@ Attribution
 -----------
 
 This Code of Conduct is adapted from the `Contributor Covenant <homepage_>`__, version 2.0,
-available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+available at https://www.contributor-covenant.org/version/2/0/code_of_conduct/.
 
-Community Impact Guidelines were inspired by `Mozilla’s code of conduct enforcement ladder <https://github.com/mozilla/diversity>`__.
+Community Impact Guidelines were inspired by `Mozilla’s code of conduct enforcement ladder <https://github.com/mozilla/inclusion>`__.
 
 .. _homepage: https://www.contributor-covenant.org
 

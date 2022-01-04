@@ -64,8 +64,6 @@ You can install *{{cookiecutter.friendly_name}}* via pip_ from PyPI_:
 Usage
 -----
 
-Please see the `Command-line Reference <Usage_>`_ for details.
-
 
 Contributing
 ------------
@@ -88,18 +86,9 @@ If you encounter any problems,
 please `file an issue`_ along with a detailed description.
 
 
-Credits
--------
-
-This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
-
-.. _@cjolowicz: https://github.com/cjolowicz
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _PyPI: https://pypi.org/
-.. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 .. _pip: https://pip.pypa.io/
 .. github-only
-.. _Contributor Guide: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/contributing.html
-.. _Usage: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
+.. _Contributor Guide: CONTRIBUTING.rst

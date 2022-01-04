@@ -1,21 +1,16 @@
 version: 2
+
 updates:
-  - package-ecosystem: github-actions
-    directory: "/"
+  - directory: "/"
+    package-ecosystem: "pip"
     schedule:
-      interval: daily
-  - package-ecosystem: pip
-    directory: "/.github/workflows"
+      interval: "weekly"
+    labels:
+      - "maintenance"
+
+  - directory: "/"
+    package-ecosystem: "github-actions"
     schedule:
-      interval: daily
-  - package-ecosystem: pip
-    directory: "/docs"
-    schedule:
-      interval: daily
-  - package-ecosystem: pip
-    directory: "/"
-    schedule:
-      interval: daily
-    versioning-strategy: lockfile-only
-    allow:
-      - dependency-type: "all"
+      interval: "weekly"
+    labels:
+      - "maintenance"
