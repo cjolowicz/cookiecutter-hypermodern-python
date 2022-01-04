@@ -14,9 +14,10 @@ Hypermodern Python Cookiecutter
 
 .. rst-class:: badges
 
-.. include:: ../README.rst
-   :start-after: badges-begin
-   :end-before: badges-end
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- badges-begin -->
+   :end-before: <!-- badges-end -->
 
 Cookiecutter_ template for a Python package
 based on the `Hypermodern Python`_ article series.
@@ -34,9 +35,10 @@ Usage
 Features
 --------
 
-.. include:: ../README.rst
-   :start-after: features-begin
-   :end-before: features-end
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- features-begin -->
+   :end-before: <!-- features-end -->
 
 
 FAQ
