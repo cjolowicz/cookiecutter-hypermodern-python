@@ -1192,7 +1192,7 @@ The following table gives an overview of the available Nox sessions:
    :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.10``               ✓
    :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.10``               ✓
    :ref:`tests <The tests session>`           Run tests with pytest_                ``3.7`` … ``3.10``     ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.7`` … ``3.10``     ✓
+   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.10``               ✓
    :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.7`` … ``3.10``     ✓
    ========================================== ===================================== ================== =========
 
@@ -1435,13 +1435,7 @@ The typeguard session runs the test suite with runtime type-checking enabled.
 It is similar to the :ref:`tests session <The tests session>`,
 with the difference that your package is instrumented by Typeguard.
 
-You can run the session with a specific Python version.
-For example, the following command runs the session
-with the current stable release of Python:
-
-.. code:: console
-
-   $ nox --session=typeguard --python=3.10
+This session always runs with the current stable release of Python.
 
 Use the separator ``--`` to pass additional options and arguments to pytest.
 For example, the following command runs only tests for the ``__main__`` module:
