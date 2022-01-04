@@ -47,9 +47,10 @@ Features
 
 Here is a detailed list of features for this Python template:
 
-.. include:: ../README.rst
-   :start-after: features-begin
-   :end-before: features-end
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- features-begin -->
+   :end-before: <!-- features-end -->
 
 
 Version policy
