@@ -1,26 +1,24 @@
-Contributor Guide
-=================
+# Contributor Guide
 
 Thank you for your interest in improving this project.
-This project is open-source under the `{{cookiecutter.license.replace("-", " ")}} license`_ and
+This project is open-source under the [{{cookiecutter.license.replace("-", " ")}} license][] and
 welcomes contributions in the form of bug reports, feature requests, and pull requests.
 
 Here is a list of important resources for contributors:
 
-- `Source Code`_
-- `Documentation`_
-- `Issue Tracker`_
-- `Code of Conduct`_
+- [Source Code][]
+- [Documentation][]
+- [Issue Tracker][]
+- [Code of Conduct][]
 
-.. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
-.. _Source Code: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-.. _Documentation: https://{{cookiecutter.project_name}}.readthedocs.io/
-.. _Issue Tracker: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
+[{{cookiecutter.license.replace("-", " ")}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
+[Source Code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
+[Documentation]: https://{{cookiecutter.project_name}}.readthedocs.io/
+[Issue Tracker]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 
-How to report a bug
--------------------
+# How to report a bug
 
-Report bugs on the `Issue Tracker`_.
+Report bugs on the [Issue Tracker][].
 
 When filing an issue, make sure to answer these questions:
 
@@ -34,72 +32,69 @@ The best way to get your bug fixed is to provide a test case,
 and/or steps to reproduce the issue.
 
 
-How to request a feature
-------------------------
+# How to request a feature
 
-Request features on the `Issue Tracker`_.
+Request features on the [Issue Tracker][].
 
 
-How to set up your development environment
-------------------------------------------
+# How to set up your development environment
+
 
 You need Python 3.7+ and the following tools:
 
-- Poetry_
-- Nox_
-- nox-poetry_
+- [Poetry][]
+- [Nox][]
+- [nox-poetry][]
 
 Install the package with development requirements:
 
-.. code:: console
-
+```bash
    $ poetry install
+```
 
 You can now run an interactive Python session,
 or the command-line interface:
 
-.. code:: console
-
+```bash
    $ poetry run python
    $ poetry run {{cookiecutter.project_name}}
+```
 
-.. _Poetry: https://python-poetry.org/
-.. _Nox: https://nox.thea.codes/
-.. _nox-poetry: https://nox-poetry.readthedocs.io/
+[Poetry]: https://python-poetry.org/
+[Nox]: https://nox.thea.codes/
+[nox-poetry]: https://nox-poetry.readthedocs.io/
 
 
-How to test the project
------------------------
+# How to test the project
 
 Run the full test suite:
 
-.. code:: console
-
+```bash
    $ nox
+```
 
 List the available Nox sessions:
 
-.. code:: console
-
+```bash
    $ nox --list-sessions
+```
 
 You can also run a specific Nox session.
 For example, invoke the unit test suite like this:
 
-.. code:: console
-
+```bash
    $ nox --session=tests
+```
 
-Unit tests are located in the ``tests`` directory,
-and are written using the pytest_ testing framework.
+Unit tests are located in the *tests* directory,
+and are written using the [pytest][] testing framework.
 
-.. _pytest: https://pytest.readthedocs.io/
+[pytest]: https://pytest.readthedocs.io/
 
 
-How to submit changes
----------------------
+# How to submit changes
 
-Open a `pull request`_ to submit changes to this project.
+Open a [pull request] to submit changes to this project.
 
 Your pull request needs to meet the following guidelines for acceptance:
 
@@ -111,13 +106,16 @@ Feel free to submit early, though—we can always iterate on this.
 
 To run linting and code formatting checks before committing your change, you can install pre-commit as a Git hook by running the following command:
 
-.. code:: console
-
+```bash
    $ nox --session=pre-commit -- install
+```
 
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-.. _pull request: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
-.. github-only
-.. _Code of Conduct: CODE_OF_CONDUCT.rst
+[pull request][]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
+
+```github-only
+```
+
+[Code of Conduct]: CODE_OF_CONDUCT.md

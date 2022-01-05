@@ -1,5 +1,4 @@
-MIT License
-===========
+# MIT License
 
 Copyright © {% now 'utc', '%Y' %} {{ cookiecutter.author }}
 

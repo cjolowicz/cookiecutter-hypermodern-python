@@ -1,3 +1,6 @@
 /.nox/
 /docs/_build/
 __pycache__/
+
+# temp
+.idea/

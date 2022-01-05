@@ -1,12 +1,12 @@
 {%- macro heading(text) -%}
-{{text}}
-{% for _ in text %}-{% endfor %}
+## {{text}}
 {%- endmacro -%}
-Reference
-=========
+# Reference
 
 
 {{ heading(cookiecutter.package_name) }}
 
+```{eval-rst} 
 .. automodule:: {{cookiecutter.package_name}}
    :members:
+```
