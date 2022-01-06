@@ -1,20 +1,24 @@
 {
-  "project_name": "hypermodern-python",
-  "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
-  "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
-  "author": "Claudio Jolowicz",
-  "email": "mail@claudiojolowicz.com",
-  "github_user": "cjolowicz",
-  "version": "0.0.0",
-  "copyright_year": "{% now 'utc', '%Y' %}",
-  "license": ["MIT", "Apache-2.0", "GPL-3.0"],
-  "development_status": [
-    "Development Status :: 1 - Planning",
-    "Development Status :: 2 - Pre-Alpha",
-    "Development Status :: 3 - Alpha",
-    "Development Status :: 4 - Beta",
-    "Development Status :: 5 - Production/Stable",
-    "Development Status :: 6 - Mature",
-    "Development Status :: 7 - Inactive"
-  ]
+    "project_name": "py-template",
+    "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
+    "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
+    "author": "Iterative",
+    "email": "support@dvc.org",
+    "github_user": "iterative",
+    "version": "0.0.0",
+    "copyright_year": "{% now 'utc', '%Y' %}",
+    "license": [
+        "Apache-2.0",
+        "MIT"
+    ],
+    "short_description": "",
+    "development_status": [
+        "Development Status :: 1 - Planning",
+        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 6 - Mature",
+        "Development Status :: 7 - Inactive"
+    ]
 }
