@@ -6,9 +6,7 @@
 
 |PyPI| |Status| |Python Version| |License|
 
-|Read the Docs| |Tests| |Codecov|
-
-|pre-commit| |Black|
+|Tests| |Codecov| |pre-commit| |Black|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg
    :target: https://pypi.org/project/{{cookiecutter.project_name}}/
@@ -22,9 +20,6 @@
 .. |License| image:: https://img.shields.io/pypi/l/{{cookiecutter.project_name}}
    :target: https://opensource.org/licenses/{{cookiecutter.license}}
    :alt: License
-.. |Read the Docs| image:: https://img.shields.io/readthedocs/{{cookiecutter.project_name}}/latest.svg?label=Read%20the%20Docs
-   :target: https://{{cookiecutter.project_name}}.readthedocs.io/
-   :alt: Read the documentation at https://{{cookiecutter.project_name}}.readthedocs.io/
 .. |Tests| image:: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/workflows/Tests/badge.svg
    :target: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/actions?workflow=Tests
    :alt: Tests
