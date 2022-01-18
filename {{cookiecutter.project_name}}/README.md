@@ -1,4 +1,4 @@
-# <center> {{ cookiecutter.friendly_name }}
+# {{ cookiecutter.friendly_name }}
 
 <div align="center">
 
@@ -33,39 +33,39 @@
 
 ## Installation
 
-You can install *{{cookiecutter.friendly_name}}* via [pip][] from [PyPI][]:
+You can install *{{cookiecutter.friendly_name}}* via [pip] from [PyPI]:
 
-```bash
-   $ pip install {{cookiecutter.project_name}}
+```console
+$ pip install {{cookiecutter.project_name}}
 ```
 
 
 ## Usage
 
-Please see the [Command-line Reference][] for details.
+Please see the [Command-line Reference] for details.
 
 
 ## Contributing
 
 Contributions are very welcome.
-To learn more, see the [Contributor Guide][].
+To learn more, see the [Contributor Guide].
 
 
 ## License
 
-Distributed under the terms of the [{{cookiecutter.license.replace("-", " ")}} license][],
+Distributed under the terms of the [{{cookiecutter.license.replace("-", " ")}} license],
 *{{cookiecutter.friendly_name}}* is free and open source software.
 
 
 ## Issues
 
 If you encounter any problems,
-please [file an issue][] along with a detailed description.
+please [file an issue] along with a detailed description.
 
 
 ## Credits
 
-This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutter][] template.
+This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
 [//]: # "link"
 [@cjolowicz]: https://github.com/cjolowicz
@@ -76,8 +76,7 @@ This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutte
 [file an issue]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 [pip]: https://pip.pypa.io/
 
-```github-only
-```
+% github-only
 
 [Contributor Guide]: CONTRIBUTING.md
 [Command-line Reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html

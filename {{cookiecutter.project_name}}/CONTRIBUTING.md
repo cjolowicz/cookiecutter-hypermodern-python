@@ -1,15 +1,15 @@
 # Contributor Guide
 
 Thank you for your interest in improving this project.
-This project is open-source under the [{{cookiecutter.license.replace("-", " ")}} license][] and
+This project is open-source under the [{{cookiecutter.license.replace("-", " ")}} license] and
 welcomes contributions in the form of bug reports, feature requests, and pull requests.
 
 Here is a list of important resources for contributors:
 
-- [Source Code][]
-- [Documentation][]
-- [Issue Tracker][]
-- [Code of Conduct][]
+- [Source Code]
+- [Documentation]
+- [Issue Tracker]
+- [Code of Conduct]
 
 [{{cookiecutter.license.replace("-", " ")}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
 [Source Code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
@@ -18,7 +18,7 @@ Here is a list of important resources for contributors:
 
 # How to report a bug
 
-Report bugs on the [Issue Tracker][].
+Report bugs on the [Issue Tracker].
 
 When filing an issue, make sure to answer these questions:
 
@@ -34,7 +34,7 @@ and/or steps to reproduce the issue.
 
 # How to request a feature
 
-Request features on the [Issue Tracker][].
+Request features on the [Issue Tracker].
 
 
 # How to set up your development environment
@@ -42,22 +42,22 @@ Request features on the [Issue Tracker][].
 
 You need Python 3.7+ and the following tools:
 
-- [Poetry][]
-- [Nox][]
-- [nox-poetry][]
+- [Poetry]
+- [Nox]
+- [nox-poetry]
 
 Install the package with development requirements:
 
-```bash
-   $ poetry install
+```console
+$ poetry install
 ```
 
 You can now run an interactive Python session,
 or the command-line interface:
 
-```bash
-   $ poetry run python
-   $ poetry run {{cookiecutter.project_name}}
+```console
+$ poetry run python
+$ poetry run {{cookiecutter.project_name}}
 ```
 
 [Poetry]: https://python-poetry.org/
@@ -69,25 +69,25 @@ or the command-line interface:
 
 Run the full test suite:
 
-```bash
-   $ nox
+```console
+$ nox
 ```
 
 List the available Nox sessions:
 
-```bash
-   $ nox --list-sessions
+```console
+$ nox --list-sessions
 ```
 
 You can also run a specific Nox session.
 For example, invoke the unit test suite like this:
 
-```bash
-   $ nox --session=tests
+```console
+$ nox --session=tests
 ```
 
 Unit tests are located in the *tests* directory,
-and are written using the [pytest][] testing framework.
+and are written using the [pytest] testing framework.
 
 [pytest]: https://pytest.readthedocs.io/
 
@@ -106,16 +106,15 @@ Feel free to submit early, though—we can always iterate on this.
 
 To run linting and code formatting checks before committing your change, you can install pre-commit as a Git hook by running the following command:
 
-```bash
-   $ nox --session=pre-commit -- install
+```console
+$ nox --session=pre-commit -- install
 ```
 
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-[pull request][]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
+[pull request]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
 
-```github-only
-```
+% github-only
 
 [Code of Conduct]: CODE_OF_CONDUCT.md
