@@ -1,6 +1,5 @@
 # {{ cookiecutter.friendly_name }}
 
-<div align="center">
 
 [![pypi](https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg)](https://pypi.org/project/{{cookiecutter.project_name}}/)
 [![status](https://img.shields.io/pypi/status/{{cookiecutter.project_name}}.svg)](https://pypi.org/project/{{cookiecutter.project_name}}/)
@@ -18,7 +17,6 @@
 )](https://github.com/pre-commit/pre-commit)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-</div>
 
 
 ## Features
@@ -67,7 +65,6 @@ please [file an issue] along with a detailed description.
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
-[//]: # "link"
 [@cjolowicz]: https://github.com/cjolowicz
 [Cookiecutter]: https://github.com/audreyr/cookiecutter
 [{{cookiecutter.license.replace("-", " ")}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
