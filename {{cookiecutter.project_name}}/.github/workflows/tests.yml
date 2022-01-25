@@ -93,18 +93,18 @@ jobs:
 
       - name: Run Nox
         run: |
-          nox --force-color --python=${{"{{"}} matrix.python {{"}}"}}
+          nox --python=${{"{{"}} matrix.python {{"}}"}}
 
       - name: Upload coverage data
         if: always() && matrix.session == 'tests'
-        uses: "actions/upload-artifact@v2.2.4"
+        uses: "actions/upload-artifact@v2.3.1"
         with:
           name: coverage-data
           path: ".coverage.*"
 
       - name: Upload documentation
         if: matrix.session == 'docs-build'
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: docs
           path: docs/_build
@@ -138,17 +138,17 @@ jobs:
           nox --version
 
       - name: Download coverage data
-        uses: actions/download-artifact@v2.0.10
+        uses: actions/download-artifact@v2.1.0
         with:
           name: coverage-data
 
       - name: Combine coverage data and display human readable report
         run: |
-          nox --force-color --session=coverage
+          nox --session=coverage
 
       - name: Create coverage report
         run: |
-          nox --force-color --session=coverage -- xml
+          nox --session=coverage -- xml
 
       - name: Upload coverage report
         uses: codecov/codecov-action@v2.1.0

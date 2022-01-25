@@ -33,6 +33,13 @@ repos:
         language: system
         types: [python]
         require_serial: true
+      - id: isort
+        name: isort
+        entry: isort
+        require_serial: true
+        language: system
+        types_or: [cython, pyi, python]
+        args: ["--filter-files"]
       - id: pyupgrade
         name: pyupgrade
         description: Automatically upgrade syntax for newer versions.
@@ -40,12 +47,6 @@ repos:
         language: system
         types: [python]
         args: [--py37-plus]
-      - id: reorder-python-imports
-        name: Reorder python imports
-        entry: reorder-python-imports
-        language: system
-        types: [python]
-        args: [--application-directories=src]
       - id: trailing-whitespace
         name: Trim Trailing Whitespace
         entry: trailing-whitespace-fixer
