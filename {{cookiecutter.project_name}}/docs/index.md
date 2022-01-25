@@ -4,9 +4,8 @@ end-before: github-only
 ---
 ```
 
-[Contributor Guide]: contributing
-[Command-line Reference]: usage
-
+[contributor guide]: contributing
+[command-line reference]: usage
 
 ```{toctree}
 ---
