@@ -22,7 +22,7 @@
 
 ## Installation
 
-You can install *{{cookiecutter.friendly_name}}* via [pip] from [PyPI]:
+You can install _{{cookiecutter.friendly_name}}_ via [pip] from [PyPI]:
 
 ```console
 $ pip install {{cookiecutter.project_name}}
@@ -40,8 +40,7 @@ To learn more, see the [Contributor Guide].
 ## License
 
 Distributed under the terms of the [{{cookiecutter.license.replace("-", " ")}} license],
-*{{cookiecutter.friendly_name}}* is free and open source software.
-
+_{{cookiecutter.friendly_name}}_ is free and open source software.
 
 ## Issues
 
@@ -53,14 +52,14 @@ please [file an issue] along with a detailed description.
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
 [@cjolowicz]: https://github.com/cjolowicz
-[Cookiecutter]: https://github.com/audreyr/cookiecutter
-[{{cookiecutter.license.replace("-", " ")}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
-[PyPI]: https://pypi.org/
-[Hypermodern Python Cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+[cookiecutter]: https://github.com/audreyr/cookiecutter
+[{{cookiecutter.license.replace("-", " ").lower()}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
+[pypi]: https://pypi.org/
+[hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [file an issue]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 [pip]: https://pip.pypa.io/
 
 % github-only
 
-[Contributor Guide]: CONTRIBUTING.md
-[Command-line Reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
+[contributor guide]: CONTRIBUTING.md
+[command-line reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
