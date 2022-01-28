@@ -110,6 +110,6 @@ This will allow a chance to talk it over with the owners and validate your appro
 
 [pull request]: https://github.com/cjolowicz/hypermodern-python/pulls
 
-% github-only
+<!-- github-only -->
 
 [code of conduct]: CODE_OF_CONDUCT.md

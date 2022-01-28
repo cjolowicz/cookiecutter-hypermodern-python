@@ -59,7 +59,7 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 [file an issue]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 [pip]: https://pip.pypa.io/
 
-% github-only
+<!-- github-only -->
 
 [contributor guide]: CONTRIBUTING.md
 [command-line reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
