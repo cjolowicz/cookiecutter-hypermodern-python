@@ -76,7 +76,7 @@ def activate_virtualenv_in_precommit_hooks(session: Session) -> None:
             PATH={shlex.quote(session.bin)}"{os.pathsep}$PATH"
             """,
         # pre-commit >= 2.17.0 on Windows forces sh shebang
-        "sh": f"""\
+        "/bin/sh": f"""\
             VIRTUAL_ENV={shlex.quote(virtualenv)}
             PATH={shlex.quote(session.bin)}"{os.pathsep}$PATH"
             """,
