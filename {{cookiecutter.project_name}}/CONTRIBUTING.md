@@ -16,7 +16,7 @@ Here is a list of important resources for contributors:
 [documentation]: https://hypermodern-python.readthedocs.io/
 [issue tracker]: https://github.com/cjolowicz/hypermodern-python/issues
 
-# How to report a bug
+## How to report a bug
 
 Report bugs on the [Issue Tracker].
 
@@ -31,11 +31,11 @@ When filing an issue, make sure to answer these questions:
 The best way to get your bug fixed is to provide a test case,
 and/or steps to reproduce the issue.
 
-# How to request a feature
+## How to request a feature
 
 Request features on the [Issue Tracker].
 
-# How to set up your development environment
+## How to set up your development environment
 
 You need Python 3.7+ and the following tools:
 
@@ -61,7 +61,7 @@ $ poetry run hypermodern-python
 [nox]: https://nox.thea.codes/
 [nox-poetry]: https://nox-poetry.readthedocs.io/
 
-# How to test the project
+## How to test the project
 
 Run the full test suite:
 
@@ -87,7 +87,7 @@ and are written using the [pytest] testing framework.
 
 [pytest]: https://pytest.readthedocs.io/
 
-# How to submit changes
+## How to submit changes
 
 Open a [pull request] to submit changes to this project.
 
