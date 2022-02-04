@@ -1,16 +1,26 @@
 # {{ cookiecutter.friendly_name }}
 
-[![pypi](https://img.shields.io/pypi/v/hypermodern-python.svg)](https://pypi.org/project/hypermodern-python/)
-[![status](https://img.shields.io/pypi/status/hypermodern-python.svg)](https://pypi.org/project/hypermodern-python/)
-[![python version](https://img.shields.io/pypi/pyversions/hypermodern-python)](https://pypi.org/project/hypermodern-python)
-[![license](https://img.shields.io/pypi/l/hypermodern-python)](https://opensource.org/licenses/MIT)
+[![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_name}}.svg)][pypi_]
+[![Status](https://img.shields.io/pypi/status/{{cookiecutter.project_name}}.svg)][status]
+[![Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_name}})][python version]
+[![License](https://img.shields.io/pypi/l/{{cookiecutter.project_name}})][license]
 
-[![read the docs](https://img.shields.io/readthedocs/hypermodern-python/latest.svg?label=Read%20the%20Docs)](https://hypermodern-python.readthedocs.io/)
-[![test](https://github.com/cjolowicz/hypermodern-python/workflows/Tests/badge.svg)](https://github.com/cjolowicz/hypermodern-python/actions?workflow=Tests)
-[![codecov](https://codecov.io/gh/cjolowicz/hypermodern-python/branch/main/graph/badge.svg)](https://codecov.io/gh/cjolowicz/hypermodern-python)
+[![Read the documentation at https://{{cookiecutter.project_name}}.readthedocs.io/](https://img.shields.io/readthedocs/{{cookiecutter.project_name}}/latest.svg?label=Read%20the%20Docs)][read the docs]
+[![Tests](https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/workflows/Tests/badge.svg)][tests]
+[![Codecov](https://codecov.io/gh/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/branch/main/graph/badge.svg)][codecov]
 
-[![precommit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
+[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
+
+[pypi_]: https://pypi.org/project/{{cookiecutter.project_name}}/
+[status]: https://pypi.org/project/{{cookiecutter.project_name}}/
+[python version]: https://pypi.org/project/{{cookiecutter.project_name}}
+[license]: https://opensource.org/licenses/{{cookiecutter.license}}
+[read the docs]: https://{{cookiecutter.project_name}}.readthedocs.io/
+[tests]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/actions?workflow=Tests
+[codecov]: https://app.codecov.io/gh/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
+[pre-commit]: https://github.com/pre-commit/pre-commit
+[black]: https://github.com/psf/black
 
 ## Features
 

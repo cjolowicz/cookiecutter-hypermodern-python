@@ -1,7 +1,7 @@
 # Contributor Guide
 
 Thank you for your interest in improving this project.
-This project is open-source under the [MIT license] and
+This project is open-source under the [{{cookiecutter.license.replace("-", " ")}} license] and
 welcomes contributions in the form of bug reports, feature requests, and pull requests.
 
 Here is a list of important resources for contributors:
@@ -11,10 +11,10 @@ Here is a list of important resources for contributors:
 - [Issue Tracker]
 - [Code of Conduct]
 
-[mit license]: https://opensource.org/licenses/MIT
-[source code]: https://github.com/cjolowicz/hypermodern-python
-[documentation]: https://hypermodern-python.readthedocs.io/
-[issue tracker]: https://github.com/cjolowicz/hypermodern-python/issues
+[{{cookiecutter.license.replace("-", " ").lower()}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
+[source code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
+[documentation]: https://{{cookiecutter.project_name}}.readthedocs.io/
+[issue tracker]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 
 ## How to report a bug
 
@@ -54,7 +54,7 @@ or the command-line interface:
 
 ```console
 $ poetry run python
-$ poetry run hypermodern-python
+$ poetry run {{cookiecutter.project_name}}
 ```
 
 [poetry]: https://python-poetry.org/
@@ -108,7 +108,7 @@ $ nox --session=pre-commit -- install
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-[pull request]: https://github.com/cjolowicz/hypermodern-python/pulls
+[pull request]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
 
 <!-- github-only -->
 
