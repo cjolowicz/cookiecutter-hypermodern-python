@@ -6,7 +6,7 @@ jobs:
     name: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-python@v2.3.1
+      - uses: actions/setup-python@v2.3.2
         with:
           python-version: "3.9"
       - run: |
