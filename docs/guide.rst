@@ -2411,7 +2411,7 @@ The Documentation workflow
 
 The Documentation workflow runs build and link checks using Nox.
 It is triggered periodically in a CRON_ fashion job (by default "0 0 * * 0" # every week at midnight).
-Is it also triggered on every push to the repository and 
+Is it also triggered on every push to the repository and
 when a pull request is opened or receives new commits with changes on MyST_ files or `docs` folder.
 
 The workflow uploads the generated documentation as a `workflow artifact`__.
@@ -2470,7 +2470,7 @@ Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
 by applying labels to them, like this:
 
-.. include:: quickstartmd
+.. include:: quickstart.rst
    :start-after: table-release-drafter-sections-begin
    :end-before: table-release-drafter-sections-end
 
