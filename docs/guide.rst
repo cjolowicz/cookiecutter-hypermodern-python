@@ -157,8 +157,8 @@ This project template supports Python 3.7, 3.8, 3.9, and 3.10.
 
    $ pyenv install 3.7.12
    $ pyenv install 3.8.12
-   $ pyenv install 3.9.9
-   $ pyenv install 3.10.0
+   $ pyenv install 3.9.10
+   $ pyenv install 3.10.2
 
 After creating your project (see :ref:`below <Creating a project>`),
 you can make these Python versions accessible in the project directory,
@@ -166,7 +166,7 @@ using the following command:
 
 .. code:: console
 
-   $ pyenv local 3.10.0 3.9.9 3.8.12 3.7.12
+   $ pyenv local 3.10.2 3.9.10 3.8.12 3.7.12
 
 The first version listed is the one used when you type plain ``python``.
 Every version can be used by invoking ``python<major.minor>``.
@@ -385,17 +385,17 @@ For more details on these files, refer to the section :ref:`The test suite`.
    ``tests/test_main.py``                Test cases for ``__main__``
    ===================================== ===============================
 
-The project documentation is written in reStructuredText_.
+The project documentation is written in MyST_.
 The documentation files in the top-level directory are rendered on GitHub_:
 
 .. table:: Documentation files (top-level)
    :widths: auto
 
    ======================= ============================================
-   ``README.rst``          Project description for GitHub and PyPI
-   ``CONTRIBUTING.rst``    Contributor Guide
-   ``CODE_OF_CONDUCT.rst`` Code of Conduct
-   ``LICENSE.rst``         License
+   ``README.md``           Project description for GitHub and PyPI
+   ``CONTRIBUTING.md``     Contributor Guide
+   ``CODE_OF_CONDUCT.md``  Code of Conduct
+   ``LICENSE.md``          License
    ======================= ============================================
 
 The files in the ``docs`` directory are
@@ -406,11 +406,11 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`:
    :widths: auto
 
    ====================== =======================================================
-   ``index.rst``          Main document
-   ``contributing.rst``   Contributor Guide (via include)
-   ``codeofconduct.rst``  Code of Conduct (via include)
-   ``license.rst``        License (via include)
-   ``reference.rst``      API reference
+   ``index.md``           Main document
+   ``contributing.md``    Contributor Guide (via include)
+   ``codeofconduct.md``   Code of Conduct (via include)
+   ``license.md``         License (via include)
+   ``reference.md``       API reference
    ====================== =======================================================
 
 The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <GitHub Actions workflows>`:
@@ -418,11 +418,12 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
 .. table:: GitHub Actions workflows
    :widths: auto
 
-   ======================= ===============================
+   ======================= ==================================
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
+   ``documentation.yml``   :ref:`The Documentation workflow`
    ``labeler.yml``         :ref:`The Labeler workflow`
-   ======================= ===============================
+   ======================= ==================================
 
 The project contains many configuration files for developer tools.
 Most of these are located in the top-level directory.
@@ -560,56 +561,55 @@ refer to the section :ref:`The tests session`.
 Documentation
 -------------
 
-The project documentation is written in reStructuredText_
+The project documentation is written in MyST_
 and processed by the Sphinx_ documentation engine.
 
 The top-level directory contains several stand-alone documentation files:
 
-``README.rst``
+``README.md``
    This file is your main project page and displayed on GitHub and PyPI.
 
-``CONTRIBUTING.rst``
+``CONTRIBUTING.md``
    The Contributor Guide explains how other people can contribute to your project.
 
-``CODE_OF_CONDUCT.rst``
+``CODE_OF_CONDUCT.md``
    The Code of Conduct outlines the behavior
    expected from participants of your project.
    It is adapted from the `Contributor Covenant`_, version 2.0.
 
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
-``LICENSE.rst``
+``LICENSE.md``
    This file contains the text of your project's license.
 
 .. note::
 
    The files above are also rendered on GitHub and PyPI.
-   Keep them in plain reStructuredText, without Sphinx extensions.
 
 The documentation files in the ``docs`` directory are built using Sphinx_:
 
-``index.rst``
+``index.md``
    This is the main documentation page.
    This file also defines the navigation menu,
    with links to other documentation pages.
    The *Changelog* menu entry
    links to the `GitHub Releases <GitHub Release_>`__ page of your project.
 
-``contributing.rst``
-   This file includes the Contributor Guide from ``CONTRIBUTING.rst``.
+``contributing.md``
+   This file includes the Contributor Guide from ``CONTRIBUTING.md``.
 
-``codeofconduct.rst``
-   This file includes the Code of Conduct from ``CODE_OF_CONDUCT.rst``.
+``codeofconduct.md``
+   This file includes the Code of Conduct from ``CODE_OF_CONDUCT.md``.
 
-``license.rst``
-   This file includes the license from ``LICENSE.rst``.
+``license.md``
+   This file includes the license from ``LICENSE.md``.
 
-``reference.rst``
+``reference.md``
    The API reference for your project.
    It is generated from docstrings and type annotations in the source code,
    using the autodoc_ and napoleon_ extensions.
 
-``usage.rst``
+``usage.md``
    The command-line reference for your project.
    It is generated by inspecting the click_ entry-point in your package,
    using the sphinx-click_ extension.
@@ -2275,13 +2275,14 @@ The |HPC| defines the following workflows:
 .. table:: GitHub Actions workflows
    :widths: auto
 
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
    Workflow                                              File                     Description                          Trigger
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
+   :ref:`Documentation <The Documentation workflow>`     ``documentation.yml``    Build documentation with Sphinx_     Schedule, Push and PR on docs
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
    :ref:`Labeler <The Labeler workflow>`                 ``labeler.yml``          Manage GitHub project labels         Push (default branch)
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
 
 
 Overview of GitHub Actions
@@ -2383,13 +2384,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`docs-build <The docs-build session>` Ubuntu                 3.10
    ========================================== ====================== ==================
 
-The workflow uploads the generated documentation as a `workflow artifact`__.
-Building the documentation only serves the purpose of catching issues in pull requests.
-Builds on `Read the Docs`_ happen independently.
-
-__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
-
-The workflow also uploads coverage data to Codecov_ after running tests.
+The workflow uploads coverage data to Codecov_ after running tests.
 It generates a coverage report in Cobertura__ XML format,
 using the :ref:`coverage session <The coverage session>`.
 The report is uploaded
@@ -2403,10 +2398,36 @@ The Tests workflow uses the following GitHub Actions:
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/download-artifact`_ to download the coverage data of each tests session
 - `actions/cache`_ for caching pre-commit environments
-- `actions/upload-artifact`_ to upload the generated documentation and the coverage data of each tests session
+- `actions/upload-artifact`_ to upload the coverage data of each tests session
 - `codecov/codecov-action`_ for uploading to Codecov_
 
 The Tests workflow is defined in ``.github/workflows/tests.yml``.
+
+
+.. _The Documentation workflow:
+
+The Documentation workflow
+--------------------------
+
+The Documentation workflow runs build and link checks using Nox.
+It is triggered periodically in a CRON_ fashion job (by default "0 0 * * 0" # every week at midnight).
+Is it also triggered on every push to the repository and 
+when a pull request is opened or receives new commits with changes on MyST_ files or `docs` folder.
+
+The workflow uploads the generated documentation as a `workflow artifact`__.
+Building the documentation only serves the purpose of catching issues in pull requests.
+Builds on `Read the Docs`_ happen independently.
+
+__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
+
+
+The Documentation workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+- `actions/upload-artifact`_ to upload the generated documentation and the coverage data of each tests session
+
+The Documentation workflow is defined in ``.github/workflows/documentation.yml``.
 
 
 .. _The Release workflow:
@@ -2449,7 +2470,7 @@ Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
 by applying labels to them, like this:
 
-.. include:: quickstart.rst
+.. include:: quickstartmd
    :start-after: table-release-drafter-sections-begin
    :end-before: table-release-drafter-sections-end
 
@@ -2699,10 +2720,12 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
    :end-before: quickstart-references-end
 
 .. _Calendar Versioning: https://calver.org
+.. _CRON: https://en.wikipedia.org/wiki/Cron
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _Jinja: https://palletsprojects.com/p/jinja/
 .. _MIT license: https://opensource.org/licenses/MIT
+.. _MyST: https://myst-parser.readthedocs.io
 .. _PEP 257: http://www.python.org/dev/peps/pep-0257/
 .. _PEP 440: https://www.python.org/dev/peps/pep-0440/
 .. _PEP 517: https://www.python.org/dev/peps/pep-0517/
