@@ -2729,7 +2729,6 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _Jinja: https://palletsprojects.com/p/jinja/
 .. _Markdown: https://spec.commonmark.org/current/
 .. _MIT license: https://opensource.org/licenses/MIT
-.. _MyST: https://myst-parser.readthedocs.io
 .. _PEP 257: http://www.python.org/dev/peps/pep-0257/
 .. _PEP 440: https://www.python.org/dev/peps/pep-0440/
 .. _PEP 517: https://www.python.org/dev/peps/pep-0517/
