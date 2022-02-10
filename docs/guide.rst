@@ -385,33 +385,34 @@ For more details on these files, refer to the section :ref:`The test suite`.
    ``tests/test_main.py``                Test cases for ``__main__``
    ===================================== ===============================
 
-The project documentation is written in MyST_.
+The project documentation is written in Markdown_.
 The documentation files in the top-level directory are rendered on GitHub_:
 
 .. table:: Documentation files (top-level)
    :widths: auto
 
-   ======================= ============================================
-   ``README.md``           Project description for GitHub and PyPI
-   ``CONTRIBUTING.md``     Contributor Guide
-   ``CODE_OF_CONDUCT.md``  Code of Conduct
-   ``LICENSE.md``          License
-   ======================= ============================================
+   ====================== ============================================
+   ``README.md``          Project description for GitHub and PyPI
+   ``CONTRIBUTING.md``    Contributor Guide
+   ``CODE_OF_CONDUCT.md`` Code of Conduct
+   ``LICENSE``            License
+   ====================== ============================================
 
 The files in the ``docs`` directory are
-built using :ref:`Sphinx <Documentation>` and
-hosted on :ref:`Read the Docs <Read the Docs integration>`:
+built using :ref:`Sphinx <Documentation>` and MyST_.
+The Sphinx documentation is hosted on :ref:`Read the Docs <Read the Docs integration>`:
 
 .. table:: Documentation files (Sphinx)
    :widths: auto
 
-   ====================== =======================================================
-   ``index.md``           Main document
-   ``contributing.md``    Contributor Guide (via include)
-   ``codeofconduct.md``   Code of Conduct (via include)
-   ``license.md``         License (via include)
-   ``reference.md``       API reference
-   ====================== =======================================================
+   ===================== =======================================================
+   ``index.md``          Main document
+   ``contributing.md``   Contributor Guide (via include)
+   ``codeofconduct.md``  Code of Conduct (via include)
+   ``license.md``        License (via include)
+   ``reference.md``      API reference
+   ``usage.md``          Command-line reference
+   ===================== =======================================================
 
 The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <GitHub Actions workflows>`:
 
@@ -561,8 +562,8 @@ refer to the section :ref:`The tests session`.
 Documentation
 -------------
 
-The project documentation is written in MyST_
-and processed by the Sphinx_ documentation engine.
+The project documentation is written in Markdown_
+and processed by the Sphinx_ documentation engine using the MyST_ extension.
 
 The top-level directory contains several stand-alone documentation files:
 
@@ -585,11 +586,13 @@ The top-level directory contains several stand-alone documentation files:
 .. note::
 
    The files above are also rendered on GitHub and PyPI.
+   Keep them in plain Markdown, without MyST_ syntax extensions.
 
-The documentation files in the ``docs`` directory are built using Sphinx_:
+The documentation files in the ``docs`` directory are built using Sphinx_ and MyST_:
 
 ``index.md``
    This is the main documentation page.
+   It includes the project description from ``README.md``.
    This file also defines the navigation menu,
    with links to other documentation pages.
    The *Changelog* menu entry
@@ -2724,6 +2727,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _Jinja: https://palletsprojects.com/p/jinja/
+.. _Markdown: https://spec.commonmark.org/current/
 .. _MIT license: https://opensource.org/licenses/MIT
 .. _MyST: https://myst-parser.readthedocs.io
 .. _PEP 257: http://www.python.org/dev/peps/pep-0257/
