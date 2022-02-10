@@ -4,6 +4,7 @@ end-before: <!-- github-only -->
 ---
 ```
 
+[{{cookiecutter.license.replace("-", " ").lower()}} license]: license
 [contributor guide]: contributing
 [command-line reference]: usage
 
