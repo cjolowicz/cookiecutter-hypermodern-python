@@ -113,7 +113,12 @@ def activate_virtualenv_in_precommit_hooks(session: Session) -> None:
 @session(name="pre-commit", python=python_versions[0])
 def precommit(session: Session) -> None:
     """Lint using pre-commit."""
-    args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
+    args = session.posargs or [
+        "run",
+        "--all-files",
+        "--hook-stage=manual",
+        "--show-diff-on-failure",
+    ]
     session.install(
         "black",
         "darglint",

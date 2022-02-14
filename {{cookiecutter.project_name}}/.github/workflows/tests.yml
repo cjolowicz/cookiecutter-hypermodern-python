@@ -31,7 +31,7 @@ jobs:
     env:
       NOXSESSION: ${{"{{"}} matrix.session {{"}}"}}
       FORCE_COLOR: "1"
-      PRE_COM{{cookiecutter.license}}_COLOR: "always"
+      PRE_COMMIT_COLOR: "always"
 
     steps:
       - name: Check out the repository
