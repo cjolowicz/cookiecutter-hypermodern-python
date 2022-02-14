@@ -15,7 +15,6 @@
 [pypi_]: https://pypi.org/project/{{cookiecutter.project_name}}/
 [status]: https://pypi.org/project/{{cookiecutter.project_name}}/
 [python version]: https://pypi.org/project/{{cookiecutter.project_name}}
-[license]: https://opensource.org/licenses/{{cookiecutter.license}}
 [read the docs]: https://{{cookiecutter.project_name}}.readthedocs.io/
 [tests]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/actions?workflow=Tests
 [codecov]: https://app.codecov.io/gh/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
@@ -49,7 +48,7 @@ To learn more, see the [Contributor Guide].
 
 ## License
 
-Distributed under the terms of the [{{cookiecutter.license.replace("-", " ")}} license],
+Distributed under the terms of the [{{cookiecutter.license.replace("-", " ")}} license][license],
 _{{cookiecutter.friendly_name}}_ is free and open source software.
 
 ## Issues
@@ -69,6 +68,6 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 
 <!-- github-only -->
 
-[{{cookiecutter.license.replace("-", " ").lower()}} license]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/LICENSE
+[license]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/LICENSE
 [contributor guide]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/CONTRIBUTING.md
 [command-line reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
