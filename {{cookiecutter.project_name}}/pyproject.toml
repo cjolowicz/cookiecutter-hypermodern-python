@@ -28,14 +28,14 @@ click = ">=8.0.1"
 Pygments = ">=2.10.0"
 black = ">=21.10b0"
 coverage = {extras = ["toml"], version = ">=6.2"}
-darglint = ">=1.8.1"
+darglint = {version = ">=1.8.1", python = "<4"}
 flake8 = ">=4.0.1"
 flake8-bandit = ">=2.1.2"
 flake8-bugbear = ">=21.9.2"
 flake8-docstrings = ">=1.6.0"
 flake8-rst-docstrings = ">=0.2.5"
 furo = ">=2021.11.12"
-isort = ">=5.10.1"
+isort = {version = ">=5.10.1", python = "<4"}
 mypy = ">=0.930"
 pep8-naming = ">=0.12.1"
 pre-commit = ">=2.16.0"
