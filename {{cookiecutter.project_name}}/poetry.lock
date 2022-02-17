@@ -88,7 +88,7 @@ pathspec = ">=0.9.0"
 platformdirs = ">=2"
 tomli = ">=1.1.0"
 typed-ast = {version = ">=1.4.2", markers = "python_version < \"3.8\" and implementation_name == \"cpython\""}
-typing-extensions = {version = ">=3.1{{cookiecutter.version}}", markers = "python_version < \"3.10\""}
+typing-extensions = {version = ">=3.10.0.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 colorama = ["colorama (>=0.4.3)"]
