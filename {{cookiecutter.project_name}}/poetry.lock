@@ -290,7 +290,7 @@ restructuredtext-lint = "*"
 
 [[package]]
 name = "furo"
-version = "2022.2.14.1"
+version = "2022.2.23"
 description = "A clean customisable Sphinx documentation theme."
 category = "dev"
 optional = false
@@ -300,10 +300,6 @@ python-versions = ">=3.6"
 beautifulsoup4 = "*"
 pygments = ">=2.7,<3.0"
 sphinx = ">=4.0,<5.0"
-
-[package.extras]
-test = ["pytest", "pytest-cov", "pytest-xdist"]
-doc = ["myst-parser", "sphinx-copybutton", "sphinx-design", "sphinx-inline-tabs"]
 
 [[package]]
 name = "gitdb"
@@ -1266,8 +1262,8 @@ flake8-rst-docstrings = [
     {file = "flake8_rst_docstrings-0.2.5-py3-none-any.whl", hash = "sha256:b99d9041b769b857efe45a448dc8c71b1bb311f9cacbdac5de82f96498105082"},
 ]
 furo = [
-    {file = "furo-2022.2.14.1-py3-none-any.whl", hash = "sha256:d7cb8126034637212332350ec8490cb95732d36506b024318a58cee2e7de0fda"},
-    {file = "furo-2022.2.14.1.tar.gz", hash = "sha256:1af3a3053e594666e27eefd347b84beae5d74d6d20f6294cc47777d46f5761a7"},
+    {file = "furo-2022.2.23-py3-none-any.whl", hash = "sha256:bfed4e6a0511ab7baf211b3195b851914bf11a72e5907e073b1de9296de391f6"},
+    {file = "furo-2022.2.23.tar.gz", hash = "sha256:005823b67f6ba00dde03e68dc78d437c72df7bcf816bcc6c111019c8faa7aa3d"},
 ]
 gitdb = [
     {file = "gitdb-4.0.9-py3-none-any.whl", hash = "sha256:8033ad4e853066ba6ca92050b9df2f89301b8fc8bf7e9324d412a63f8bf1a8fd"},
