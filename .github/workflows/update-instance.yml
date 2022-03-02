@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out ${{ env.TEMPLATE }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           path: ${{ env.TEMPLATE }}
       - name: Check out ${{ env.PROJECT }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           repository: "cjolowicz/${{ env.PROJECT }}"
           path: ${{ env.PROJECT }}
