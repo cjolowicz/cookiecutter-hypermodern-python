@@ -12,17 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out ${{ env.TEMPLATE }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           path: ${{ env.TEMPLATE }}
       - name: Check out ${{ env.PROJECT }}
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           repository: "cjolowicz/${{ env.PROJECT }}"
           path: ${{ env.PROJECT }}
           token: ${{ secrets.X_GITHUB_TOKEN }}
       - name: Set up Python 3.10
-        uses: actions/setup-python@v2.3.2
+        uses: actions/setup-python@v3
         with:
           python-version: "3.10"
       - name: Install cutty
