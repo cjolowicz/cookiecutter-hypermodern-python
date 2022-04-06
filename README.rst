@@ -11,7 +11,7 @@ Usage
 
 .. code:: console
 
-   $ cookiecutter gh:iterative/py-template
+   $ cruft create https://github.com/iterative/py-template
 
 
 Features
