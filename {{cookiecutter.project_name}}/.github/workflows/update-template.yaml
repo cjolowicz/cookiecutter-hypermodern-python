@@ -1,0 +1,27 @@
+
+name: Update template
+
+on:
+  schedule:
+    - cron: '5 1 * * *'  # every day at 01:05
+
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install deps
+      run: pip install cruft
+    - name: Update template
+      id: update
+      run: |
+        cruft update -y
+        echo "::set-output name=changes::$(git diff)"
+    - name: Create PR
+      if: ${{ steps.update.outputs.changes != '' }}
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: update template
+        title: update template
