@@ -15,7 +15,7 @@ repo_name: iterative/{{cookiecutter.project_name}}
 
 extra:
   social:
-    - icon: fontawesome/brands/github 
+    - icon: fontawesome/brands/github
       link: https://github.com/iterative/
 
 plugins:
