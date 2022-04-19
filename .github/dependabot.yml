@@ -1,14 +1,14 @@
 version: 2
 
 updates:
-  - directory: "/"
+  - directory: "/{{cookiecutter.project_name}}"
     package-ecosystem: "pip"
     schedule:
       interval: "weekly"
     labels:
       - "maintenance"
 
-  - directory: "/"
+  - directory: "/{{cookiecutter.project_name}}"
     package-ecosystem: "github-actions"
     schedule:
       interval: "weekly"
