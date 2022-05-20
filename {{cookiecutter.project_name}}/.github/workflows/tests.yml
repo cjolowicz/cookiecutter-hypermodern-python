@@ -5,6 +5,10 @@ on: [push, pull_request]
 env:
   FORCE_COLOR: "1"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
 jobs:
   tests:
     timeout-minutes: 10
