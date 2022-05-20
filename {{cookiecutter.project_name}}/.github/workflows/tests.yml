@@ -2,6 +2,13 @@ name: Tests
 
 on: [push, pull_request]
 
+env:
+  FORCE_COLOR: "1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
 jobs:
   tests:
     timeout-minutes: 10
@@ -15,6 +22,8 @@ jobs:
     steps:
     - name: Check out the repository
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Set up Python ${{"{{"}} matrix.pyv {{"}}"}}
       uses: actions/setup-python@v2
