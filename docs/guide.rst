@@ -419,11 +419,12 @@ The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows 
 .. table:: GitHub Actions workflows
    :widths: auto
 
-   ======================= ===============================
+   ======================= ==================================
    ``release.yml``         :ref:`The Release workflow`
    ``tests.yml``           :ref:`The Tests workflow`
+   ``documentation.yml``   :ref:`The Documentation workflow`
    ``labeler.yml``         :ref:`The Labeler workflow`
-   ======================= ===============================
+   ======================= ==================================
 
 The project contains many configuration files for developer tools.
 Most of these are located in the top-level directory.
@@ -2277,13 +2278,14 @@ The |HPC| defines the following workflows:
 .. table:: GitHub Actions workflows
    :widths: auto
 
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
    Workflow                                              File                     Description                          Trigger
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
    :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
+   :ref:`Documentation <The Documentation workflow>`     ``documentation.yml``    Build documentation with Sphinx_     Schedule, Push and PR on docs
    :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
    :ref:`Labeler <The Labeler workflow>`                 ``labeler.yml``          Manage GitHub project labels         Push (default branch)
-   ===================================================== ======================== ==================================== =====================
+   ===================================================== ======================== ==================================== =============================
 
 
 Overview of GitHub Actions
@@ -2385,13 +2387,7 @@ __ https://help.github.com/en/actions/automating-your-workflow-with-github-actio
    :ref:`docs-build <The docs-build session>` Ubuntu                 3.10
    ========================================== ====================== ==================
 
-The workflow uploads the generated documentation as a `workflow artifact`__.
-Building the documentation only serves the purpose of catching issues in pull requests.
-Builds on `Read the Docs`_ happen independently.
-
-__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
-
-The workflow also uploads coverage data to Codecov_ after running tests.
+The workflow uploads coverage data to Codecov_ after running tests.
 It generates a coverage report in Cobertura__ XML format,
 using the :ref:`coverage session <The coverage session>`.
 The report is uploaded
@@ -2405,10 +2401,36 @@ The Tests workflow uses the following GitHub Actions:
 - `actions/setup-python`_ for setting up the Python interpreter
 - `actions/download-artifact`_ to download the coverage data of each tests session
 - `actions/cache`_ for caching pre-commit environments
-- `actions/upload-artifact`_ to upload the generated documentation and the coverage data of each tests session
+- `actions/upload-artifact`_ to upload the coverage data of each tests session
 - `codecov/codecov-action`_ for uploading to Codecov_
 
 The Tests workflow is defined in ``.github/workflows/tests.yml``.
+
+
+.. _The Documentation workflow:
+
+The Documentation workflow
+--------------------------
+
+The Documentation workflow runs build and link checks using Nox.
+It is triggered periodically in a CRON_ fashion job (by default "0 0 * * 0" # every week at midnight).
+Is it also triggered on every push to the repository and
+when a pull request is opened or receives new commits with changes on MyST_ files or `docs` folder.
+
+The workflow uploads the generated documentation as a `workflow artifact`__.
+Building the documentation only serves the purpose of catching issues in pull requests.
+Builds on `Read the Docs`_ happen independently.
+
+__ https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
+
+
+The Documentation workflow uses the following GitHub Actions:
+
+- `actions/checkout`_ for checking out the Git repository
+- `actions/setup-python`_ for setting up the Python interpreter
+- `actions/upload-artifact`_ to upload the generated documentation and the coverage data of each tests session
+
+The Documentation workflow is defined in ``.github/workflows/documentation.yml``.
 
 
 .. _The Release workflow:
@@ -2701,6 +2723,7 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
    :end-before: quickstart-references-end
 
 .. _Calendar Versioning: https://calver.org
+.. _CRON: https://en.wikipedia.org/wiki/Cron
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _Jinja: https://palletsprojects.com/p/jinja/
