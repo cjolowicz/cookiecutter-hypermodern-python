@@ -196,11 +196,7 @@ by applying labels to them, like this:
 .. _Read the Docs: https://readthedocs.org/
 .. _TestPyPI: https://test.pypi.org/
 
-.. quickstart-references-begin
-
 .. _GitHub: https://github.com/
 .. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _pipx: https://pipxproject.github.io/pipx/
 .. _pyenv: https://github.com/pyenv/pyenv
-
-.. quickstart-references-end

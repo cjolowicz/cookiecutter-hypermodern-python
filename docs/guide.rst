@@ -2725,9 +2725,10 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
 .. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
 
-.. include:: ./quickstart.rst
-   :start-after: quickstart-references-begin
-   :end-before: quickstart-references-end
+.. _GitHub: https://github.com/
+.. _nox-poetry: https://nox-poetry.readthedocs.io/
+.. _pipx: https://pipxproject.github.io/pipx/
+.. _pyenv: https://github.com/pyenv/pyenv
 
 .. _Calendar Versioning: https://calver.org
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
