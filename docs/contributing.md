@@ -1,7 +1,5 @@
-```{eval-rst}
-.. include:: ../CONTRIBUTING.md
-   :parser: myst_parser.sphinx_
+```{include} ../CONTRIBUTING.md
    :end-before: <!-- github-only -->
 ```
 
-[code of conduct]: codeofconduct.html
+[code of conduct]: codeofconduct
