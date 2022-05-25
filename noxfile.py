@@ -8,7 +8,7 @@ from nox.sessions import Session
 nox.options.sessions = ["docs"]
 owner, repository = "cjolowicz", "cookiecutter-hypermodern-python"
 labels = "cookiecutter", "documentation"
-bump_paths = "README.rst", "docs/guide.rst", "docs/index.rst", "docs/quickstart.rst"
+bump_paths = "README.md", "docs/guide.rst", "docs/index.rst", "docs/quickstart.rst"
 
 
 @nox.session(name="prepare-release")
