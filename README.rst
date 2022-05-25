@@ -96,8 +96,6 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 
 .. features-end
 
-.. references-begin
-
 .. _Bandit: https://github.com/PyCQA/bandit
 .. _Black: https://github.com/psf/black
 .. _Click: https://click.palletsprojects.com/
@@ -130,5 +128,3 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 .. _sphinx-click: https://sphinx-click.readthedocs.io/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
 .. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
-
-.. references-end
