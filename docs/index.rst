@@ -78,9 +78,6 @@ All images on the
 `associated blog <Hypermodern Python_>`__ show
 `past visions <Retrofuturism_>`__ of the future.
 
-.. _Hypermodernism: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
-.. _Retrofuturism: https://en.wikipedia.org/wiki/Retrofuturism
-
 .. _Bandit: https://github.com/PyCQA/bandit
 .. _Black: https://github.com/psf/black
 .. _Click: https://click.palletsprojects.com/
@@ -90,8 +87,9 @@ All images on the
 .. _Dependabot: https://dependabot.com/
 .. _Flake8: http://flake8.pycqa.org
 .. _GitHub Actions: https://github.com/features/actions
+.. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
 .. _Hypermodern Python: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
-.. _isort: https://pycqa.github.io/isort/
+.. _Hypermodernism: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
 .. _MyST: https://myst-parser.readthedocs.io/
 .. _Nox: https://nox.thea.codes/
 .. _Poetry: https://python-poetry.org/
@@ -99,12 +97,14 @@ All images on the
 .. _PyPI: https://pypi.org/
 .. _Read the Docs: https://readthedocs.org/
 .. _Release Drafter: https://github.com/release-drafter/release-drafter
+.. _Retrofuturism: https://en.wikipedia.org/wiki/Retrofuturism
 .. _Safety: https://github.com/pyupio/safety
 .. _Sphinx: http://www.sphinx-doc.org/
 .. _TestPyPI: https://test.pypi.org/
 .. _Typeguard: https://github.com/agronholm/typeguard
 .. _autodoc: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
 .. _furo: https://pradyunsg.me/furo/
+.. _isort: https://pycqa.github.io/isort/
 .. _mypy: http://mypy-lang.org/
 .. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 .. _pre-commit: https://pre-commit.com/
@@ -112,4 +112,3 @@ All images on the
 .. _pyupgrade: https://github.com/asottile/pyupgrade
 .. _sphinx-click: https://sphinx-click.readthedocs.io/
 .. _xdoctest: https://github.com/Erotemic/xdoctest
-.. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
