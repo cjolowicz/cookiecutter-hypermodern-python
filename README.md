@@ -5,10 +5,10 @@
 [![Status][status badge]][status badge]
 [![Python Version][python version badge]][github page]
 [![CalVer][calver badge]][calver]
-[![License][license badge]][license]
+[![License][license badge]][license]<br>
 [![Read the documentation][readthedocs badge]][readthedocs page]
 [![Tests][github actions badge]][github actions page]
-[![Codecov][codecov badge]][codecov page]
+[![Codecov][codecov badge]][codecov page]<br>
 [![pre-commit enabled][pre-commit badge]][pre-commit]
 [![Black codestyle][black badge]][black]
 [![Contributor Covenant][contributor covenant badge]][code of conduct]
