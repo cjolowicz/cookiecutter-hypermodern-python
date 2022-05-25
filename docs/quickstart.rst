@@ -190,13 +190,12 @@ by applying labels to them, like this:
 
 .. _Codecov: https://codecov.io/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _GitHub: https://github.com/
 .. _Nox: https://nox.thea.codes/
 .. _Poetry: https://python-poetry.org/
 .. _PyPI: https://pypi.org/
 .. _Read the Docs: https://readthedocs.org/
 .. _TestPyPI: https://test.pypi.org/
-
-.. _GitHub: https://github.com/
 .. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _pipx: https://pipxproject.github.io/pipx/
 .. _pyenv: https://github.com/pyenv/pyenv
