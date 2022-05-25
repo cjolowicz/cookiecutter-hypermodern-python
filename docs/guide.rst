@@ -47,9 +47,10 @@ Features
 
 Here is a detailed list of features for this Python template:
 
-.. include:: ../README.rst
-   :start-after: features-begin
-   :end-before: features-end
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- features-begin -->
+   :end-before: <!-- features-end -->
 
 
 Version policy
@@ -2692,28 +2693,44 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 
 .. |HPC| replace:: *Hypermodern Python Cookiecutter*
 
-.. include:: ../README.rst
-   :start-after: references-begin
-   :end-before: references-end
-
-.. include:: ./quickstart.rst
-   :start-after: quickstart-references-begin
-   :end-before: quickstart-references-end
-
+.. _Bandit: https://github.com/PyCQA/bandit
+.. _Black: https://github.com/psf/black
 .. _Calendar Versioning: https://calver.org
+.. _Click: https://click.palletsprojects.com/
+.. _Codecov: https://codecov.io/
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Coverage.py: https://coverage.readthedocs.io/
+.. _Dependabot: https://dependabot.com/
+.. _Flake8: http://flake8.pycqa.org
+.. _GitHub Actions: https://github.com/features/actions
+.. _GitHub Labeler: https://github.com/marketplace/actions/github-labeler
 .. _GitHub Release: https://help.github.com/en/github/administering-a-repository/about-releases
+.. _GitHub: https://github.com/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _Hypermodern Python: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 .. _Jinja: https://palletsprojects.com/p/jinja/
-.. _Markdown: https://spec.commonmark.org/current/
 .. _MIT license: https://opensource.org/licenses/MIT
+.. _Markdown: https://spec.commonmark.org/current/
+.. _MyST: https://myst-parser.readthedocs.io/
+.. _Nox: https://nox.thea.codes/
 .. _PEP 257: http://www.python.org/dev/peps/pep-0257/
 .. _PEP 440: https://www.python.org/dev/peps/pep-0440/
 .. _PEP 517: https://www.python.org/dev/peps/pep-0517/
 .. _PEP 518: https://www.python.org/dev/peps/pep-0518/
 .. _PEP 561: https://www.python.org/dev/peps/pep-0561/
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008/
+.. _Poetry: https://python-poetry.org/
+.. _Prettier: https://prettier.io/
+.. _PyPI: https://pypi.org/
+.. _Read the Docs: https://readthedocs.org/
+.. _Release Drafter: https://github.com/release-drafter/release-drafter
+.. _Safety: https://github.com/pyupio/safety
+.. _Sphinx: http://www.sphinx-doc.org/
 .. _TOML: https://github.com/toml-lang/toml
+.. _TestPyPI: https://test.pypi.org/
+.. _Typeguard: https://github.com/agronholm/typeguard
 .. _YAML: https://yaml.org/
+.. _autodoc: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
 .. _bash: https://www.gnu.org/software/bash/
 .. _curl: https://curl.haxx.se
 .. _darglint: https://github.com/terrencepreilly/darglint
@@ -2721,14 +2738,26 @@ __ https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
 .. _flake8-bugbear: https://github.com/PyCQA/flake8-bugbear
 .. _flake8-docstrings: https://gitlab.com/pycqa/flake8-docstrings
 .. _flake8-rst-docstrings: https://github.com/peterjc/flake8-rst-docstrings
+.. _furo: https://pradyunsg.me/furo/
 .. _git: https://www.git-scm.com
+.. _isort: https://pycqa.github.io/isort/
 .. _mccabe: https://github.com/PyCQA/mccabe
+.. _mypy: http://mypy-lang.org/
+.. _napoleon: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
+.. _nox-poetry: https://nox-poetry.readthedocs.io/
 .. _pep8-naming: https://github.com/pycqa/pep8-naming
 .. _pip: https://pip.pypa.io/
+.. _pipx: https://pipxproject.github.io/pipx/
 .. _pre-commit-hooks: https://github.com/pre-commit/pre-commit-hooks
+.. _pre-commit: https://pre-commit.com/
 .. _pycodestyle: https://pycodestyle.pycqa.org/en/latest/
 .. _pydocstyle: http://www.pydocstyle.org/
+.. _pyenv: https://github.com/pyenv/pyenv
 .. _pyflakes: https://github.com/PyCQA/pyflakes
 .. _pygments: https://pygments.org/
+.. _pytest: https://docs.pytest.org/en/latest/
+.. _pyupgrade: https://github.com/asottile/pyupgrade
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _sphinx-autobuild: https://github.com/executablebooks/sphinx-autobuild
+.. _sphinx-click: https://sphinx-click.readthedocs.io/
+.. _xdoctest: https://github.com/Erotemic/xdoctest
