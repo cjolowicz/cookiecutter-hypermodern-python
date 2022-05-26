@@ -9,7 +9,7 @@ Hypermodern Python Cookiecutter
    guide
    contributing
    Code of Conduct <codeofconduct>
-   License <license>
+   license
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
 .. rst-class:: badges
