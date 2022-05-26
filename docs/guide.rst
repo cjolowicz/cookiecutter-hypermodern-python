@@ -2452,9 +2452,10 @@ Release notes are populated with the titles and authors of merged pull requests.
 You can group the pull requests into separate sections
 by applying labels to them, like this:
 
-.. include:: quickstart.rst
-   :start-after: table-release-drafter-sections-begin
-   :end-before: table-release-drafter-sections-end
+.. include:: quickstart.md
+   :parser: myst_parser.sphinx_
+   :start-after: <!-- table-release-drafter-sections-begin -->
+   :end-before: <!-- table-release-drafter-sections-end -->
 
 The workflow is defined in ``.github/workflows/release.yml``.
 The Release Drafter configuration is located in ``.github/release-drafter.yml``.
