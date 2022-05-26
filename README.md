@@ -9,12 +9,12 @@
 [![Read the documentation][readthedocs badge]][readthedocs page]
 [![Tests][github actions badge]][github actions page]
 [![Codecov][codecov badge]][codecov page]<br>
-[![pre-commit enabled][pre-commit badge]][pre-commit]
-[![Black codestyle][black badge]][black]
+[![pre-commit enabled][pre-commit badge]][pre-commit project]
+[![Black codestyle][black badge]][black project]
 [![Contributor Covenant][contributor covenant badge]][code of conduct]
 
-[black]: https://github.com/psf/black
 [black badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+[black project]: https://github.com/psf/black
 [calver badge]: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
 [calver]: http://calver.org/
 [code of conduct]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/blob/main/CODE_OF_CONDUCT.md
@@ -26,8 +26,8 @@
 [github page]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [license badge]: https://img.shields.io/github/license/cjolowicz/cookiecutter-hypermodern-python
 [license]: https://opensource.org/licenses/MIT
-[pre-commit]: https://pre-commit.com/
 [pre-commit badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[pre-commit project]: https://pre-commit.com/
 [python version badge]: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
 [readthedocs badge]: https://img.shields.io/readthedocs/cookiecutter-hypermodern-python/latest.svg?label=Read%20the%20Docs
 [readthedocs page]: https://cookiecutter-hypermodern-python.readthedocs.io/
