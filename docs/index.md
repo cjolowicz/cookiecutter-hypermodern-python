@@ -1,8 +1,10 @@
 # Hypermodern Python Cookiecutter
 
 ```{toctree}
-:hidden: true
-:maxdepth: 1
+---
+hidden: true
+maxdepth: 1
+---
 
 Quickstart <quickstart>
 guide
