@@ -1,6 +1,6 @@
 ---
 substitutions:
-  HPC: '*Hypermodern Python Cookiecutter*'
+  HPC: "*Hypermodern Python Cookiecutter*"
 ---
 
 <!--
@@ -113,7 +113,7 @@ For local testing with multiple Python versions,
 repeat these steps for the latest bugfix releases of Python 3.7+,
 with the following changes:
 
-- Do *not* enable the option to add Python to the `PATH` environment variable.
+- Do _not_ enable the option to add Python to the `PATH` environment variable.
 - `py -VV` and `python -VV` should still display the version of the latest stable release.
 - `py -X.Y -VV` (e.g. `py -3.7 -VV`) should display the exact version you just installed.
 
@@ -273,8 +273,8 @@ In the remainder of this guide,
 `<project>` and `<package>` are used
 to refer to the project and package names, respectively.
 By default, their only difference is that
-the project name uses hyphens (*kebab case*),
-whereas the package name uses underscores (*snake case*).
+the project name uses hyphens (_kebab case_),
+whereas the package name uses underscores (_snake case_).
 
 ### Uploading to GitHub
 
@@ -521,7 +521,7 @@ src
 ### The test suite
 
 Tests are written using the [pytest] testing framework,
-the *de facto* standard for testing in Python.
+the _de facto_ standard for testing in Python.
 
 The test suite is located in the `tests` directory:
 
@@ -638,7 +638,7 @@ The configuration file for the Python package is located
 in the root directory of the project,
 and named `pyproject.toml`.
 It uses the [TOML] configuration file format,
-and contains two sections---*tables* in TOML parlance---,
+and contains two sections---_tables_ in TOML parlance---,
 specified in [PEP 517][pep 517] and [518][pep 518]:
 
 - The `build-system` table
@@ -691,12 +691,12 @@ and as such affect end-users of your package.
 Dependencies are Python packages used by your project,
 and they come in two types:
 
-- *Core dependencies* are required by users running your code,
+- _Core dependencies_ are required by users running your code,
   and typically consist of third-party libraries imported by your package.
   When your package is distributed,
   the [package metadata] includes these dependencies,
   allowing tools like [pip] to automatically install them alongside your package.
-- *Development dependencies* are only required by developers working on your code.
+- _Development dependencies_ are only required by developers working on your code.
   Examples are applications used to run tests,
   check code for style and correctness,
   or to build documentation.
@@ -743,7 +743,7 @@ The first point is treated in detail in the following articles:
 
 The second point is ultimately due to the fact that
 every updated version constraint changes a hashsum in the `poetry.lock` file.
-This means that PRs updating version constraints will *always* conflict with each other.
+This means that PRs updating version constraints will _always_ conflict with each other.
 
 :::{note}
 The problem with merge conflicts is greatly exacerbated by a [Dependabot issue][dependabot issue 4435]:
@@ -993,12 +993,12 @@ $ poetry publish
 ```
 
 Building the package is done with the [python build] command,
-which generates *distribution packages*
+which generates _distribution packages_
 in the `dist` directory of your project.
 These are compressed archives that
 an end-user can download and install on their system.
 They come in two flavours:
-source (or *sdist*) archives, and
+source (or _sdist_) archives, and
 binary packages in the [wheel] format.
 
 Publishing the package is done with the [python publish] command,
@@ -1175,7 +1175,7 @@ This Nox session always runs with the current major release of Python.
 
 ### The mypy session
 
-[mypy] is the pioneer and *de facto* reference implementation of static type checking in Python.
+[mypy] is the pioneer and _de facto_ reference implementation of static type checking in Python.
 Learn more about it in the section {ref}`Type-checking with mypy`.
 
 Run mypy using Nox:
@@ -1282,7 +1282,7 @@ improving the readability of test failures.
 ### The coverage session
 
 :::{note}
-*Test coverage* is a measure of the degree to which
+_Test coverage_ is a measure of the degree to which
 the source code of your program is executed
 while running its test suite.
 :::
@@ -1475,7 +1475,7 @@ This approach has some advantages:
 - Additional hook dependencies can be upgraded by a dependency manager.
   An example for this are Flake8 extensions.
   By contrast, `pre-commit autoupdate` does not include additional dependencies.
-- Dependencies of dependencies (*subdependencies*) can be locked automatically,
+- Dependencies of dependencies (_subdependencies_) can be locked automatically,
   making checks more repeatable and deterministic.
 - Linters and formatters are available in the Poetry environment,
   which is useful for editor integration.
@@ -1576,13 +1576,13 @@ repos:
       - id: awesome-linter
         name: Awesome Linter
         entry: awesome-linter
-        language: system  # was: python
+        language: system # was: python
         types: [python]
 ```
 
 ### Running checks on modified files
 
-pre-commit runs checks on the *staged* contents of files.
+pre-commit runs checks on the _staged_ contents of files.
 Any local modifications are stashed for the duration of the checks.
 This is motivated by pre-commit's primary use case,
 validating changes staged for a commit.
@@ -1859,14 +1859,14 @@ are a way to annotate functions and variables with types.
 With appropriate tooling,
 they can make your programs easier to understand, debug, and maintain.
 
-*Type-checking* refers to the practice of
+_Type-checking_ refers to the practice of
 verifying the type correctness of a program,
 using type annotations and type inference.
 There are two kinds of type checkers:
 
-- *Static type checkers* verify the type correctness of your program
+- _Static type checkers_ verify the type correctness of your program
   without executing it, using static analysis.
-- *Runtime type checkers* find type errors by instrumenting your code to
+- _Runtime type checkers_ find type errors by instrumenting your code to
   type-check arguments and return values in function calls.
   This is particularly useful during the execution of unit tests.
 
@@ -1876,7 +1876,7 @@ For example, you can use type annotations to generate serialization schemas
 or command-line parsers.
 :::
 
-[mypy] is the pioneer and *de facto* reference implementation of static type checking in Python.
+[mypy] is the pioneer and _de facto_ reference implementation of static type checking in Python.
 Invoke mypy via Nox, as explained in the section {ref}`The mypy session`.
 
 mypy is configured in the `pyproject.toml` file,
@@ -1991,18 +1991,18 @@ Follow these steps to set up Read the Docs for your repository:
 
 1. Sign up at [Read the Docs].
 2. Import your GitHub repository,
-   using the button *Import a Project*.
+   using the button _Import a Project_.
 3. Install the GitHub [webhook](https://docs.readthedocs.io/en/stable/webhooks.html),
-   using the button *Add integration*
-   on the *Integrations* tab
-   in the *Admin* section of your project
+   using the button _Add integration_
+   on the _Integrations_ tab
+   in the _Admin_ section of your project
    on Read the Docs.
 
 Read the Docs automatically starts building your documentation,
 and will continue to do so when you push to the default branch or make a release.
 Your documentation now has a public URL like this:
 
-> *https://\<project>.readthedocs.io/*
+> _https://\<project>.readthedocs.io/_
 
 The configuration for Read the Docs is included in the repository,
 in the file [.readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/v2.html).
@@ -2035,7 +2035,7 @@ With GitHub Actions,
 you define so-called workflows
 using [YAML] files located in the `.github/workflows` directory.
 
-A *workflow* is an automated process
+A _workflow_ is an automated process
 consisting of one or many jobs,
 each of which executes a series of steps.
 Workflows are triggered by events,
@@ -2047,7 +2047,7 @@ in the [official reference](https://help.github.com/en/actions/automating-your-w
 
 :::{note}
 Real-time logs for workflow runs are available
-from the *Actions* tab in your GitHub repository.
+from the _Actions_ tab in your GitHub repository.
 :::
 
 ### Overview of workflows
@@ -2287,13 +2287,13 @@ $ poetry run <project>
 
 ### How to make code changes
 
-1. Run the tests, 
+1. Run the tests,
    {ref}`as explained above <How to test your project>`.<br>
    All tests should pass.
-2. Add a failing test 
+2. Add a failing test
    {ref}`under the tests directory <The test suite>`.<br>
    Run the tests again to verify that your test fails.
-3. Make your changes to the package, 
+3. Make your changes to the package,
    {ref}`under the src directory <The initial package>`.<br>
    Run the tests to verify that all tests pass again.
 
@@ -2326,7 +2326,7 @@ The push triggers the following automated steps:
 
 Open a pull request for your branch on GitHub:
 
-1. Select your branch from the *Branch* menu.
+1. Select your branch from the _Branch_ menu.
 2. Click **New pull request**.
 3. Enter the title for the pull request.
 4. Enter a description for the pull request.
@@ -2350,7 +2350,7 @@ This triggers the following automated steps:
 - {ref}`The test suite runs against the main branch <The Tests workflow>`.
 - {ref}`The draft GitHub Release is updated <The Release workflow>`.
 - {ref}`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
-- [Read the Docs] rebuilds the *latest* version of the documentation.
+- [Read the Docs] rebuilds the _latest_ version of the documentation.
 
 In your local repository,
 update the main branch:
@@ -2369,7 +2369,7 @@ $ git branch --delete --force my-topic-branch
 ```
 
 The original commits remain accessible from the pull request
-(*Commits* tab).
+(_Commits_ tab).
 
 ### How to make a release
 
