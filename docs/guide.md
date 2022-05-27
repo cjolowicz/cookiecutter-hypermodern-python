@@ -6,9 +6,8 @@ substitutions:
 <!--
 TODO
 
-- turn inline links into reference links
-- fix section references
 - convert tables to native Markdown
+- fix section references (look for underscore or angular brackets)
 - check that {{ HPC }} works inside admonitions
 
 -->
@@ -81,7 +80,7 @@ You need a recent Windows, Linux, Unix, or Mac system with [git] installed.
 :::{note}
 When working with this template on Windows,
 configure your text editor or IDE
-to use only [UNIX-style line endings](https://en.wikipedia.org/wiki/Newline) (line feeds).
+to use only [UNIX-style line endings] (line feeds).
 
 The project template contains a [.gitattributes] file
 which enables end-of-line normalization for your entire working tree.
@@ -96,7 +95,7 @@ to avoid complaints from the [pre-commit] hook for Prettier.
 
 If you're on Windows,
 download the recommended installer for the latest stable release of Python
-from the official [Python website](https://www.python.org/).
+from the official [Python website].
 Before clicking **Install now**,
 enable the option to add Python to your `PATH` environment variable.
 
@@ -143,8 +142,7 @@ eval "$(pyenv virtualenv-init -)"
 ```
 
 Install the Python build dependencies for your platform,
-using one of the commands listed in the
-[official instructions](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
+using one of the commands listed in the [official instructions][pyenv wiki].
 
 Install the latest point release of every supported Python version.
 This project template supports Python 3.7, 3.8, 3.9, and 3.10.
@@ -296,7 +294,7 @@ $ git commit
 ```
 
 Use the following command to ensure your default branch is called `main`,
-which is the [default branch name for GitHub repositories](https://github.com/github/renaming).
+which is the [default branch name for GitHub repositories][github renaming].
 
 ```console
 $ git branch --move --force main
@@ -487,7 +485,7 @@ src
 
 `__main__.py`
 
-: The [__main__](https://docs.python.org/3/library/__main__.html) module defines the entry point for the command-line interface.
+: The [__main__] module defines the entry point for the command-line interface.
   The command-line interface is implemented using the [Click] library,
   and supports `--help` and `--version` options.
   When the package is installed,
@@ -531,7 +529,7 @@ tests
 └── test_main.py
 ```
 
-The test suite is [declared as a package](https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules),
+The test suite is [declared as a package][pytest layout],
 and mirrors the source layout of the package under test.
 The file `test_main.py` contains tests for the `__main__` module.
 
@@ -614,7 +612,7 @@ The `docs` directory contains two more files:
 
 `conf.py`
 
-: This Python file contains the [Sphinx configuration](https://www.sphinx-doc.org/en/master/usage/configuration.html).
+: This Python file contains the [Sphinx configuration].
 
 `requirements.txt`
 
@@ -736,10 +734,10 @@ one principled, the other pragmatic:
 
 The first point is treated in detail in the following articles:
 
-- [Should You Use Upper Bound Version Constraints?](https://iscinumpy.dev/post/bound-version-constraints/) and [Poetry Versions](https://iscinumpy.dev/post/poetry-versions/) by Henry Schreiner
-- [Semantic Versioning Will Not Save You](https://hynek.me/articles/semver-will-not-save-you/) by Hynek Schlawack
-- [Version numbers: how to use them?](https://bernat.tech/posts/version-numbers/) by Bernát Gábor
-- [Why I don't like SemVer anymore](https://snarky.ca/why-i-dont-like-semver/) by Brett Cannon
+- [Should You Use Upper Bound Version Constraints?][schreiner constraints] and [Poetry Versions][schreiner versions] by Henry Schreiner
+- [Semantic Versioning Will Not Save You][schlawack semantic] by Hynek Schlawack
+- [Version numbers: how to use them?][gabor version] by Bernát Gábor
+- [Why I don't like SemVer anymore][cannon semver] by Brett Cannon
 
 The second point is ultimately due to the fact that
 every updated version constraint changes a hashsum in the `poetry.lock` file.
@@ -896,7 +894,7 @@ using the command [poetry install].
 $ poetry install
 ```
 
-This command performs a so-called [editable install](https://pip.pypa.io/en/stable/cli/pip_install/#install-editable) of your package:
+This command performs a so-called [editable install] of your package:
 Instead of building and installing a distribution package,
 it creates a special `.egg-link` file that links to your local source code.
 This means that code edits are directly visible in the environment
@@ -1317,7 +1315,7 @@ using the `tool.coverage` table.
 The configuration informs the tool about your package name and source tree layout.
 It also enables branch analysis and the display of line numbers for missing coverage,
 and specifies the target coverage percentage.
-Coverage is measured for the package as well as [the test suite itself](https://nedbatchelder.com/blog/202008/you_should_include_your_tests_in_coverage.html).
+Coverage is measured for the package as well as [the test suite itself][batchelder include].
 
 During continuous integration,
 coverage data is uploaded to the [Codecov] reporting service.
@@ -1330,7 +1328,7 @@ For details, see the sections about
 ### The typeguard session
 
 [Typeguard] is a runtime type checker and [pytest] plugin.
-It can type-check function calls during test runs via an [import hook](https://docs.python.org/3/reference/import.html#import-hooks).
+It can type-check function calls during test runs via an [import hook].
 
 Typeguard checks that arguments passed to functions
 match the type annotations of the function parameters,
@@ -1412,7 +1410,7 @@ even when written in a language other than Python.
 
 pre-commit is configured using the file `.pre-commit-config.yaml`
 in the project directory.
-Please refer to the [official documentation](https://pre-commit.com/#adding-pre-commit-plugins-to-your-project)
+Please refer to the [official documentation][pre-commit configuration]
 for details about the configuration file.
 
 ### Running pre-commit from Nox
@@ -1448,7 +1446,7 @@ $ nox --session=pre-commit -- install
 
 Hooks in languages other than Python, such as `prettier`,
 run in isolated environments managed by pre-commit.
-To upgrade these hooks, use the [autoupdate](https://pre-commit.com/#pre-commit-autoupdate) command:
+To upgrade these hooks, use the [autoupdate][pre-commit autoupdate] command:
 
 ```console
 $ nox --session=pre-commit -- autoupdate
@@ -1497,14 +1495,14 @@ and adding the official pre-commit hooks instead.
 Don't forget to remove the hooks from Poetry's dependencies and from the Nox session.
 
 :::{note}
-Python-language hooks in the {{ HPC }} are defined as [system hooks](https://pre-commit.com/#system).
+Python-language hooks in the {{ HPC }} are defined as [system hooks][pre-commit system hooks].
 System hooks don't have their environments managed by pre-commit;
 instead, pre-commit assumes that hook dependencies have already been installed
 and are available in its environment.
 The Nox session for pre-commit takes care of
 installing the Python hooks alongside pre-commit.
 
-Furthermore, the {{ HPC }} defines Python-language hooks as [repository-local hooks](https://pre-commit.com/#repository-local-hooks).
+Furthermore, the {{ HPC }} defines Python-language hooks as [repository-local hooks][pre-commit repository-local hooks].
 As such, hook definitions are not supplied by the hook repositories,
 but by the project itself.
 This makes it possible to override the hook language to `system`, as explained above.
@@ -1651,22 +1649,22 @@ For more details, see the section {ref}`Linting with Flake8`.
 Imports are separated into three sections,
 as recommended by [PEP 8][pep 8]: standard library, third party, first party.
 There are two additional sections,
-one at the top for [future imports](https://docs.python.org/3/library/__future__.html),
-the other at the bottom for [relative imports](https://docs.python.org/3/reference/import.html#package-relative-imports).
+one at the top for [future imports],
+the other at the bottom for [relative imports].
 Within each section, `from` imports follow normal imports.
 Imports are then sorted alphabetically.
 
-The {{ HPC }} activates the [Black profile](https://pycqa.github.io/isort/docs/configuration/black_compatibility.html) for compatibility with the Black code formatter.
-Furthermore, the [force_single_line](https://pycqa.github.io/isort/docs/configuration/options.html#force-single-line) setting is enabled.
+The {{ HPC }} activates the [Black profile][isort black profile] for compatibility with the Black code formatter.
+Furthermore, the [force_single_line][isort force_single_line] setting is enabled.
 This splits imports onto separate lines to avoid merge conflicts.
 Finally, two blank lines are enforced after imports for consistency,
-via the [lines_after_imports](https://pycqa.github.io/isort/docs/configuration/options.html#lines-after-imports) setting.
+via the [lines_after_imports][isort lines_after_imports] setting.
 
 ### The pyupgrade hook
 
 [pyupgrade] upgrades your source code
 to newer versions of the Python language and standard library.
-The tool analyzes the [abstract syntax tree](https://docs.python.org/3/library/ast.html) of the modules in your project,
+The tool analyzes the [abstract syntax tree] of the modules in your project,
 replacing deprecated or legacy usages with modern idioms.
 
 The minimum supported Python version is declared in the relevant section of `.pre-commit-config.yaml`.
@@ -1688,7 +1686,7 @@ see the section {ref}`The Flake8 hook`.
 
 The configuration file for Flake8 and its extensions
 is named `.flake8` and located in the project directory.
-For details about the configuration file, see the [official reference](https://flake8.pycqa.org/en/latest/user/configuration.html).
+For details about the configuration file, see the [official reference][flake8 configuration].
 
 The sections below describe the linters in more detail.
 Each section also notes any configuration settings applied by the {{ HPC }}.
@@ -1959,10 +1957,9 @@ The {ref}`Tests workflow <The Tests workflow>` uploads the coverage data.
 
 [Dependabot] creates pull requests with automated dependency updates.
 
-Please refer to the [official documentation](https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically) for more details.
+Please refer to the [official documentation][dependabot docs] for more details.
 
-The configuration is included in the repository,
-in the file [.github/dependabot.yml](https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates).
+The configuration is included in the repository, in the file [.github/dependabot.yml].
 
 It manages the following dependencies:
 
@@ -1992,7 +1989,7 @@ Follow these steps to set up Read the Docs for your repository:
 1. Sign up at [Read the Docs].
 2. Import your GitHub repository,
    using the button _Import a Project_.
-3. Install the GitHub [webhook](https://docs.readthedocs.io/en/stable/webhooks.html),
+3. Install the GitHub [webhook][readthedocs webhooks],
    using the button _Add integration_
    on the _Integrations_ tab
    in the _Admin_ section of your project
@@ -2005,7 +2002,7 @@ Your documentation now has a public URL like this:
 > _https://\<project>.readthedocs.io/_
 
 The configuration for Read the Docs is included in the repository,
-in the file [.readthedocs.yml](https://docs.readthedocs.io/en/stable/config-file/v2.html).
+in the file [.readthedocs.yml].
 The {{ HPC }} configures Read the Docs
 to build and install the package with Poetry,
 using a so-called [PEP 517][pep 517]-build.
@@ -2043,7 +2040,7 @@ for example when a commit is pushed
 or when a release is published.
 You can learn more about
 the workflow language and its supported keywords
-in the [official reference](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions).
+in the [official reference][github actions syntax].
 
 :::{note}
 Real-time logs for workflow runs are available
@@ -2126,7 +2123,7 @@ and when a pull request is opened or receives new commits.
 
 Each Nox session runs in a separate job,
 using the current release of Python
-and the [latest Ubuntu runner](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources).
+and the [latest Ubuntu runner][github actions runners].
 Selected Nox sessions also run on Windows and macOS,
 and with older Python versions,
 as shown in the table below:
@@ -2149,12 +2146,12 @@ as shown in the table below:
    ========================================== ====================== ==================
 ```
 
-The workflow uploads the generated documentation as a [workflow artifact](https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts).
+The workflow uploads the generated documentation as a [workflow artifact][github actions artifacts].
 Building the documentation only serves the purpose of catching issues in pull requests.
 Builds on [Read the Docs] happen independently.
 
 The workflow also uploads coverage data to [Codecov] after running tests.
-It generates a coverage report in [Cobertura](https://cobertura.github.io/cobertura/) XML format,
+It generates a coverage report in [Cobertura] XML format,
 using the {ref}`coverage session <The coverage session>`.
 The report is uploaded
 using the official [Codecov GitHub Action][codecov/codecov-action].
@@ -2416,37 +2413,44 @@ This workflow performs the following automated steps:
 
 The project setup is described in detail in the [Hypermodern Python] article series:
 
-- [Chapter 1: Setup](https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769)
-- [Chapter 2: Testing](https://medium.com/@cjolowicz/hypermodern-python-2-testing-ae907a920260)
-- [Chapter 3: Linting](https://medium.com/@cjolowicz/hypermodern-python-3-linting-e2f15708da80)
-- [Chapter 4: Typing](https://medium.com/@cjolowicz/hypermodern-python-4-typing-31bcf12314ff)
-- [Chapter 5: Documentation](https://medium.com/@cjolowicz/hypermodern-python-5-documentation-13219991028c)
-- [Chapter 6: CI/CD](https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6)
+- [Chapter 1: Setup][hypermodern python chapter 1]
+- [Chapter 2: Testing][hypermodern python chapter 2]
+- [Chapter 3: Linting][hypermodern python chapter 3]
+- [Chapter 4: Typing][hypermodern python chapter 4]
+- [Chapter 5: Documentation][hypermodern python chapter 5]
+- [Chapter 6: CI/CD][hypermodern python chapter 6]
 
-You can also read the articles on [this blog](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/).
+You can also read the articles on [this blog][hypermodern python blog].
 
 [--reuse-existing-virtualenvs]: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 [.gitattributes]: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
+[.github/dependabot.yml]: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 [.gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+[.readthedocs.yml]: https://docs.readthedocs.io/en/stable/config-file/v2.html
 [2021.11.26]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.11.26
+[__main__]: https://docs.python.org/3/library/__main__.html
+[abstract syntax tree]: https://docs.python.org/3/library/ast.html
 [actions/cache]: https://github.com/actions/cache
 [actions/checkout]: https://github.com/actions/checkout
 [actions/download-artifact]: https://github.com/actions/download-artifact
 [actions/setup-python]: https://github.com/actions/setup-python
 [actions/upload-artifact]: https://github.com/actions/upload-artifact
 [autodoc]: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
-[bandit]: https://github.com/PyCQA/bandit
 [bandit codes]: https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
+[bandit]: https://github.com/PyCQA/bandit
 [bash]: https://www.gnu.org/software/bash/
+[batchelder include]: https://nedbatchelder.com/blog/202008/you_should_include_your_tests_in_coverage.html
 [black]: https://github.com/psf/black
 [calendar versioning]: https://calver.org
+[cannon semver]: https://snarky.ca/why-i-dont-like-semver/
 [check-added-large-files]: https://github.com/pre-commit/pre-commit-hooks#check-added-large-files
 [check-toml]: https://github.com/pre-commit/pre-commit-hooks#check-toml
 [check-yaml]: https://github.com/pre-commit/pre-commit-hooks#check-yaml
-[click]: https://click.palletsprojects.com/
 [click.testing.clirunner]: https://click.palletsprojects.com/en/7.x/testing/
-[codecov]: https://codecov.io/
+[click]: https://click.palletsprojects.com/
+[cobertura]: https://cobertura.github.io/cobertura/
 [codecov/codecov-action]: https://github.com/codecov/codecov-action
+[codecov]: https://codecov.io/
 [constraints file]: https://pip.pypa.io/en/stable/user_guide/#constraints-files
 [contributor covenant]: https://www.contributor-covenant.org
 [cookiecutter]: https://github.com/audreyr/cookiecutter
@@ -2455,42 +2459,62 @@ You can also read the articles on [this blog](https://cjolowicz.github.io/posts/
 [cupper]: https://github.com/senseyeio/cupper
 [curl]: https://curl.haxx.se
 [cyclomatic complexity]: https://en.wikipedia.org/wiki/Cyclomatic_complexity
-[darglint]: https://github.com/terrencepreilly/darglint
 [darglint codes]: https://github.com/terrencepreilly/darglint#error-codes
-[dependabot]: https://dependabot.com/
+[darglint]: https://github.com/terrencepreilly/darglint
+[dependabot docs]: https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
 [dependabot issue 4435]: https://github.com/dependabot/dependabot-core/issues/4435
+[dependabot]: https://dependabot.com/
 [dev-prod parity]: https://12factor.net/dev-prod-parity
+[editable install]: https://pip.pypa.io/en/stable/cli/pip_install/#install-editable
 [end-of-file-fixer]: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
-[flake8]: http://flake8.pycqa.org
+[flake8 configuration]: https://flake8.pycqa.org/en/latest/user/configuration.html
 [flake8-bandit]: https://github.com/tylerwince/flake8-bandit
-[flake8-bugbear]: https://github.com/PyCQA/flake8-bugbear
 [flake8-bugbear codes]: https://github.com/PyCQA/flake8-bugbear#list-of-warnings
+[flake8-bugbear]: https://github.com/PyCQA/flake8-bugbear
 [flake8-docstrings]: https://gitlab.com/pycqa/flake8-docstrings
-[flake8-rst-docstrings]: https://github.com/peterjc/flake8-rst-docstrings
 [flake8-rst-docstrings codes]: https://github.com/peterjc/flake8-rst-docstrings#flake8-validation-codes
+[flake8-rst-docstrings]: https://github.com/peterjc/flake8-rst-docstrings
+[flake8]: http://flake8.pycqa.org
 [furo]: https://pradyunsg.me/furo/
-[git]: https://www.git-scm.com
+[future imports]: https://docs.python.org/3/library/__future__.html
+[gabor version]: https://bernat.tech/posts/version-numbers/
 [git hook]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
-[github]: https://github.com/
+[git]: https://www.git-scm.com
+[github actions artifacts]: https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
+[github actions runners]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
+[github actions syntax]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 [github actions]: https://github.com/features/actions
 [github labeler]: https://github.com/marketplace/actions/github-labeler
 [github release]: https://help.github.com/en/github/administering-a-repository/about-releases
+[github renaming]: https://github.com/github/renaming
+[github]: https://github.com/
 [google docstring style]: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
-[hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+[hypermodern python blog]: https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
+[hypermodern python chapter 1]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+[hypermodern python chapter 2]: https://medium.com/@cjolowicz/hypermodern-python-2-testing-ae907a920260
+[hypermodern python chapter 3]: https://medium.com/@cjolowicz/hypermodern-python-3-linting-e2f15708da80
+[hypermodern python chapter 4]: https://medium.com/@cjolowicz/hypermodern-python-4-typing-31bcf12314ff
+[hypermodern python chapter 5]: https://medium.com/@cjolowicz/hypermodern-python-5-documentation-13219991028c
+[hypermodern python chapter 6]: https://medium.com/@cjolowicz/hypermodern-python-6-ci-cd-b233accfa2f6
 [hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+[hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
+[import hook]: https://docs.python.org/3/reference/import.html#import-hooks
 [install-poetry.py]: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
+[isort black profile]: https://pycqa.github.io/isort/docs/configuration/black_compatibility.html
+[isort force_single_line]: https://pycqa.github.io/isort/docs/configuration/options.html#force-single-line
+[isort lines_after_imports]: https://pycqa.github.io/isort/docs/configuration/options.html#lines-after-imports
 [isort]: https://pycqa.github.io/isort/
 [jinja]: https://palletsprojects.com/p/jinja/
 [json]: https://www.json.org/
 [markdown]: https://spec.commonmark.org/current/
-[mccabe]: https://github.com/PyCQA/mccabe
 [mccabe codes]: https://github.com/PyCQA/mccabe#plugin-for-flake8
+[mccabe]: https://github.com/PyCQA/mccabe
 [mit license]: https://opensource.org/licenses/MIT
 [mypy]: http://mypy-lang.org/
 [myst]: https://myst-parser.readthedocs.io/
 [napoleon]: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
-[nox]: https://nox.thea.codes/
 [nox-poetry]: https://nox-poetry.readthedocs.io/
+[nox]: https://nox.thea.codes/
 [package metadata]: https://packaging.python.org/en/latest/specifications/core-metadata/
 [pep 257]: http://www.python.org/dev/peps/pep-0257/
 [pep 440]: https://www.python.org/dev/peps/pep-0440/
@@ -2498,12 +2522,11 @@ You can also read the articles on [this blog](https://cjolowicz.github.io/posts/
 [pep 518]: https://www.python.org/dev/peps/pep-0518/
 [pep 561]: https://www.python.org/dev/peps/pep-0561/
 [pep 8]: http://www.python.org/dev/peps/pep-0008/
-[pep8-naming]: https://github.com/pycqa/pep8-naming
 [pep8-naming codes]: https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
-[pip]: https://pip.pypa.io/
+[pep8-naming]: https://github.com/pycqa/pep8-naming
 [pip install]: https://pip.pypa.io/en/stable/reference/pip_install/
+[pip]: https://pip.pypa.io/
 [pipx]: https://pipxproject.github.io/pipx/
-[poetry]: https://python-poetry.org/
 [poetry add]: https://python-poetry.org/docs/cli/#add
 [poetry env]: https://python-poetry.org/docs/managing-environments/
 [poetry export]: https://python-poetry.org/docs/cli/#export
@@ -2513,36 +2536,50 @@ You can also read the articles on [this blog](https://cjolowicz.github.io/posts/
 [poetry show]: https://python-poetry.org/docs/cli/#show
 [poetry update]: https://python-poetry.org/docs/cli/#update
 [poetry version]: https://python-poetry.org/docs/cli/#version
-[pre-commit]: https://pre-commit.com/
+[poetry]: https://python-poetry.org/
+[pre-commit autoupdate]: https://pre-commit.com/#pre-commit-autoupdate
+[pre-commit configuration]: https://pre-commit.com/#adding-pre-commit-plugins-to-your-project
+[pre-commit repository-local hooks]: https://pre-commit.com/#repository-local-hooks
+[pre-commit system hooks]: https://pre-commit.com/#system
 [pre-commit-hooks]: https://github.com/pre-commit/pre-commit-hooks
+[pre-commit]: https://pre-commit.com/
 [prettier]: https://prettier.io/
-[pycodestyle]: https://pycodestyle.pycqa.org/en/latest/
 [pycodestyle codes]: https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
-[pydocstyle]: http://www.pydocstyle.org/
+[pycodestyle]: https://pycodestyle.pycqa.org/en/latest/
 [pydocstyle codes]: http://www.pydocstyle.org/en/stable/error_codes.html
+[pydocstyle]: http://www.pydocstyle.org/
+[pyenv wiki]: https://github.com/pyenv/pyenv/wiki/Common-build-problems
 [pyenv]: https://github.com/pyenv/pyenv
-[pyflakes]: https://github.com/PyCQA/pyflakes
 [pyflakes codes]: https://flake8.pycqa.org/en/latest/user/error-codes.html
+[pyflakes]: https://github.com/PyCQA/pyflakes
 [pygments]: https://pygments.org/
 [pypa/gh-action-pypi-publish]: https://github.com/pypa/gh-action-pypi-publish
 [pypi]: https://pypi.org/
 [pyproject.toml]: https://python-poetry.org/docs/pyproject/
+[pytest layout]: https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
 [pytest]: https://docs.pytest.org/en/latest/
 [python build]: https://python-poetry.org/docs/cli/#build
 [python package]: https://docs.python.org/3/tutorial/modules.html#packages
 [python publish]: https://python-poetry.org/docs/cli/#publish
+[python website]: https://www.python.org/
 [pyupgrade]: https://github.com/asottile/pyupgrade
 [read the docs]: https://readthedocs.org/
+[readthedocs webhooks]: https://docs.readthedocs.io/en/stable/webhooks.html
+[relative imports]: https://docs.python.org/3/reference/import.html#package-relative-imports
 [release drafter]: https://github.com/release-drafter/release-drafter
 [release-drafter/release-drafter]: https://github.com/release-drafter/release-drafter
 [requirements file]: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
 [restructuredtext]: https://docutils.sourceforge.io/rst.html
 [safety]: https://github.com/pyupio/safety
 [salsify/action-detect-and-tag-new-version]: https://github.com/salsify/action-detect-and-tag-new-version
+[schlawack semantic]: https://hynek.me/articles/semver-will-not-save-you/
+[schreiner constraints]: https://iscinumpy.dev/post/bound-version-constraints/
+[schreiner poetry]: https://iscinumpy.dev/post/poetry-versions/
 [semantic versioning]: https://semver.org/
-[sphinx]: http://www.sphinx-doc.org/
+[sphinx configuration]: https://www.sphinx-doc.org/en/master/usage/configuration.html
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 [sphinx-click]: https://sphinx-click.readthedocs.io/
+[sphinx]: http://www.sphinx-doc.org/
 [test fixture]: https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures
 [testpypi]: https://test.pypi.org/
 [toml]: https://github.com/toml-lang/toml
@@ -2550,6 +2587,7 @@ You can also read the articles on [this blog](https://cjolowicz.github.io/posts/
 [trailing-whitespace]: https://github.com/pre-commit/pre-commit-hooks#trailing-whitespace
 [type annotations]: https://docs.python.org/3/library/typing.html
 [typeguard]: https://github.com/agronholm/typeguard
+[unix-style line endings]: https://en.wikipedia.org/wiki/Newline
 [versions and constraints]: https://python-poetry.org/docs/dependency-specification/
 [virtual environment]: https://docs.python.org/3/tutorial/venv.html
 [virtualenv]: https://virtualenv.pypa.io/
