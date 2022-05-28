@@ -269,7 +269,7 @@ Here is a complete list of the project variables defined by this template:
 :::{note}
 The initial project version should be the latest release on [PyPI],
 or `0.0.0` for an unreleased package.
-See [The Release workflow] for details.
+See [The Release workflow](the-release-workflow) for details.
 :::
 
 Your choices are recorded in the file `.cookiecutter.json` in the generated project,
@@ -520,7 +520,7 @@ src
 
 `__main__.py`
 
-: The [__main__] module defines the entry point for the command-line interface.
+: The [`__main__`][__main__] module defines the entry point for the command-line interface.
   The command-line interface is implemented using the [Click] library,
   and supports `--help` and `--version` options.
   When the package is installed,
@@ -779,7 +779,7 @@ one principled, the other pragmatic:
 
 The first point is treated in detail in the following articles:
 
-- [Should You Use Upper Bound Version Constraints?][schreiner constraints] and [Poetry Versions][schreiner versions] by Henry Schreiner
+- [Should You Use Upper Bound Version Constraints?][schreiner constraints] and [Poetry Versions][schreiner poetry] by Henry Schreiner
 - [Semantic Versioning Will Not Save You][schlawack semantic] by Hynek Schlawack
 - [Version numbers: how to use them?][gabor version] by Bernát Gábor
 - [Why I don't like SemVer anymore][cannon semver] by Brett Cannon
@@ -1739,7 +1739,7 @@ and the {{ HPC }} uses none of them.
 ### The Flake8 hook
 
 [Flake8] is an extensible linter framework for Python.
-For more details, see the section [Linting with Flake8].
+For more details, see the section [Linting with Flake8](linting-with-flake8).
 
 (the-isort-hook)=
 
@@ -1804,16 +1804,16 @@ and links to their lists of error codes.
   - Find invalid Python code
   - [F][pyflakes codes]
 - - [pycodestyle]
-  - Enforce style conventions from `PEP 8`\_
+  - Enforce style conventions from [PEP 8]
   - [E,W][pycodestyle codes]
 - - [pep8-naming]
-  - Enforce naming conventions from `PEP 8`\_
+  - Enforce naming conventions from [PEP 8]
   - [N][pep8-naming codes]
 - - [pydocstyle] / [flake8-docstrings]
-  - Enforce docstring conventions from `PEP 257`\_
+  - Enforce docstring conventions from [PEP 257]
   - [D][pydocstyle codes]
 - - [flake8-rst-docstrings]
-  - Find invalid reStructuredText\_ in docstrings
+  - Find invalid [reStructuredText] in docstrings
   - [RST][flake8-rst-docstrings codes]
 - - [flake8-bugbear]
   - Detect bugs and design problems
@@ -1915,7 +1915,7 @@ For example,
 the plugin detects Python 2 constructs which have been removed in Python 3,
 and likely bugs such as function arguments defaulting to empty lists or dictionaries.
 
-[Error codes][flake8-bugbear-codes] are prefixed by `B` for "bugbear".
+[Error codes][flake8-bugbear codes] are prefixed by `B` for "bugbear".
 
 The {{ HPC }} also enables Bugbear's `B9` warnings,
 which are disabled by default.
@@ -2087,13 +2087,13 @@ It manages the following dependencies:
   - See also
 - - Python
   - `poetry.lock`
-  - [Managing Dependencies](managing-dependencies)
+  - [Managing dependencies](managing-dependencies)
 - - Python
   - `docs/requirements.txt`
   - [Read the Docs](read-the-docs-integration)
 - - Python
   - `.github/workflows/constraints.txt`
-  - [Workflow constraints](workflow-constraints)
+  - [Constraints file](workflow-constraints)
 - - GitHub Action
   - `.github/workflows/*.yml`
   - [GitHub Actions workflows](github-actions-workflows)
