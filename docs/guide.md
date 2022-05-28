@@ -509,6 +509,8 @@ src
     └── py.typed
 ```
 
+<!-- prettier-ignore-start -->
+
 `__init__.py`
 
 : This file declares the directory as a [Python package],
@@ -545,6 +547,8 @@ src
   This allows people using your package
   to type-check their Python code against it.
 
+<!-- prettier-ignore-end -->
+
 (the-test-suite)=
 
 ### The test suite
@@ -580,6 +584,8 @@ The project documentation is written in [Markdown]
 and processed by the [Sphinx] documentation engine using the [MyST] extension.
 
 The top-level directory contains several stand-alone documentation files:
+
+<!-- prettier-ignore-start -->
 
 `README.md`
 
@@ -650,6 +656,8 @@ The `docs` directory contains two more files:
 : The requirements file pins the build dependencies for the Sphinx documentation.
   This file is only used on Read the Docs.
 
+<!-- prettier-ignore-end -->
+
 The project documentation is built and hosted on
 [Read the Docs](read-the-docs-integration),
 and uses the [furo] Sphinx theme.
@@ -710,6 +718,7 @@ for dependencies you add to your project using Poetry:
 
 1. Replace `^1.2.3` with `>=1.2.3` in `pyproject.toml`
 2. Run `poetry lock --no-update` to update `poetry.lock`
+
 :::
 
 [Version constraints][versions and constraints] express
@@ -733,6 +742,7 @@ and they come in two types:
   or to build documentation.
   These dependencies are not a part of distribution packages,
   because users do not require them to run your code.
+
 :::
 
 For every dependency added to your project,
