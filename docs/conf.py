@@ -21,3 +21,8 @@ linkcheck_ignore = [
     "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
     "https://cookiecutter-hypermodern-python.readthedocs.io",
 ]
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    "substitution",
+]
