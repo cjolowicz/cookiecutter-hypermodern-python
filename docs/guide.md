@@ -364,11 +364,11 @@ For more details on these files, refer to the section [The initial package](the-
 :::{list-table} Python package
 :widths: auto
 
-* - `src/<project>/py.typed`
+- - `src/<project>/py.typed`
   - Marker file for [PEP 561][pep 561]
-* - `src/<project>/__init__.py`
+- - `src/<project>/__init__.py`
   - Package initialization
-* - `src/<project>/__main__.py`
+- - `src/<project>/__main__.py`
   - Command-line interface
 
 :::
@@ -424,11 +424,11 @@ The `.github/workflows` directory contains the [GitHub Actions workflows](github
 :::{list-table} GitHub Actions workflows
 :widths: auto
 
-* - `release.yml`
+- - `release.yml`
   - [The Release workflow](the-release-workflow)
-* - `tests.yml`
+- - `tests.yml`
   - [The Tests workflow](the-tests-workflow)
-* - `labeler.yml`
+- - `labeler.yml`
   - [The Labeler workflow](the-labeler-workflow)
 
 :::
@@ -441,33 +441,33 @@ and links each file to a section with more details.
 :::{list-table} Configuration files
 :widths: auto
 
-* - `.cookiecutter.json`
+- - `.cookiecutter.json`
   - [Project variables](creating-a-project)
-* - `.darglint`
+- - `.darglint`
   - Configuration for [darglint](darglint-integration)
-* - `.github/dependabot.yml`
+- - `.github/dependabot.yml`
   - Configuration for [Dependabot](dependabot-integration)
-* - `.flake8`
+- - `.flake8`
   - Configuration for [Flake8](the-flake8-hook)
-* - `.gitattributes`
+- - `.gitattributes`
   - [Git attributes][.gitattributes]
-* - `.gitignore`
+- - `.gitignore`
   - [Git ignore file][.gitignore]
-* - `.github/release-drafter.yml`
+- - `.github/release-drafter.yml`
   - Configuration for [Release Drafter](the-release-workflow)
-* - `.github/labels.yml`
+- - `.github/labels.yml`
   - Configuration for [GitHub Labeler](the-labeler-workflow)
-* - `.pre-commit-config.yaml`
+- - `.pre-commit-config.yaml`
   - Configuration for [pre-commit](linting-with-pre-commit)
-* - `.readthedocs.yml`
+- - `.readthedocs.yml`
   - Configuration for [Read the Docs](read-the-docs-integration)
-* - `codecov.yml`
+- - `codecov.yml`
   - Configuration for [Codecov](codecov-integration)
-* - `docs/conf.py`
+- - `docs/conf.py`
   - Configuration for [Sphinx](documentation)
-* - `noxfile.py`
+- - `noxfile.py`
   - Configuration for [Nox](using-nox)
-* - `pyproject.toml`
+- - `pyproject.toml`
   - Configuration for [Poetry](using-poetry),
     [Coverage.py](the-coverage-session),
     [isort](the-isort-hook),
@@ -485,11 +485,11 @@ Follow the links for more details on these.
 :::{list-table} Dependency files
 :widths: auto
 
-* - `poetry.lock`
+- - `poetry.lock`
   - [Poetry lock file](the-lock-file)
-* - `docs/requirements.txt`
+- - `docs/requirements.txt`
   - Requirements file for [Read the Docs](read-the-docs-integration)
-* - `.github/workflows/constraints.txt`
+- - `.github/workflows/constraints.txt`
   - Constraints file for [GitHub Actions workflows](workflow-constraints)
 
 :::
@@ -680,13 +680,13 @@ specified in [PEP 517][pep 517] and [518][pep 518]:
 :::{list-table} Tool configurations in pyproject.toml
 :widths: auto
 
-* - `tool.coverage`
+- - `tool.coverage`
   - Configuration for [Coverage.py]
-* - `tool.isort`
+- - `tool.isort`
   - Configuration for [isort]
-* - `tool.mypy`
+- - `tool.mypy`
   - Configuration for [mypy]
-* - `tool.poetry`
+- - `tool.poetry`
   - Configuration for [Poetry]
 
 :::
@@ -821,53 +821,53 @@ See the table below for an overview of the dependencies of generated projects:
 :::{list-table} Dependencies
 :widths: auto
 
-* - [black]
+- - [black]
   - The uncompromising code formatter.
-* - [click]
+- - [click]
   - Composable command line interface toolkit
-* - [coverage][Coverage.py]
+- - [coverage][coverage.py]
   - Code coverage measurement for Python
-* - [darglint]
+- - [darglint]
   - A utility for ensuring Google-style docstrings stay up to date with the source code.
-* - [flake8]
+- - [flake8]
   - the modular source code checker: pep8 pyflakes and co
-* - [flake8-bandit]
+- - [flake8-bandit]
   - Automated security testing with bandit and flake8.
-* - [flake8-bugbear]
+- - [flake8-bugbear]
   - A plugin for flake8 finding likely bugs and design problems in your program.
-* - [flake8-docstrings]
+- - [flake8-docstrings]
   - Extension for flake8 which uses pydocstyle to check docstrings
-* - [flake8-rst-docstrings]
+- - [flake8-rst-docstrings]
   - Python docstring reStructuredText (RST) validator
-* - [furo]
+- - [furo]
   - A clean customisable Sphinx documentation theme.
-* - [isort]
+- - [isort]
   - A Python utility / library to sort Python imports.
-* - [mypy]
+- - [mypy]
   - Optional static typing for Python
-* - [pep8-naming]
+- - [pep8-naming]
   - Check PEP-8 naming conventions, plugin for flake8
-* - [pre-commit]
+- - [pre-commit]
   - A framework for managing and maintaining multi-language pre-commit hooks.
-* - [pre-commit-hooks]
+- - [pre-commit-hooks]
   - Some out-of-the-box hooks for pre-commit.
-* - [pygments]
+- - [pygments]
   - Pygments is a syntax highlighting package written in Python.
-* - [pytest]
+- - [pytest]
   - pytest: simple powerful testing with Python
-* - [pyupgrade]
+- - [pyupgrade]
   - A tool to automatically upgrade syntax for newer versions.
-* - [safety]
+- - [safety]
   - Checks installed dependencies for known vulnerabilities.
-* - [sphinx]
+- - [sphinx]
   - Python documentation generator
-* - [sphinx-autobuild]
+- - [sphinx-autobuild]
   - Rebuild Sphinx documentation on changes, with live-reload in the browser.
-* - [sphinx-click]
+- - [sphinx-click]
   - Sphinx extension that automatically documents click applications
-* - [typeguard]
+- - [typeguard]
   - Run-time type checker for Python
-* - [xdoctest]
+- - [xdoctest]
   - A rewrite of the builtin doctest module
 
 :::
@@ -1169,43 +1169,43 @@ The following table gives an overview of the available Nox sessions:
 :header-rows: 1
 :widths: auto
 
-* - Session
+- - Session
   - Description
   - Python
   - Default
-* - [coverage](the-coverage-session)
+- - [coverage](the-coverage-session)
   - Report coverage with [Coverage.py]
   - `3.10`
   - (✓)
-* - [docs](the-docs-session)
-  - Build and serve [Sphinx] documentation 
+- - [docs](the-docs-session)
+  - Build and serve [Sphinx] documentation
   - `3.10`
   -
-* - [docs-build](the-docs-build-session)
+- - [docs-build](the-docs-build-session)
   - Build [Sphinx] documentation
   - `3.10`
   - ✓
-* - [mypy](the-mypy-session)
+- - [mypy](the-mypy-session)
   - Type-check with [mypy]
   - `3.7` … `3.10`
   - ✓
-* - [pre-commit](the-pre-commit-session)
+- - [pre-commit](the-pre-commit-session)
   - Lint with [pre-commit]
   - `3.10`
   - ✓
-* - [safety](the-safety-session)
+- - [safety](the-safety-session)
   - Scan dependencies with [Safety]
   - `3.10`
   - ✓
-* - [tests](the-tests-session)
+- - [tests](the-tests-session)
   - Run tests with [pytest]
   - `3.7` … `3.10`
   - ✓
-* - [typeguard](the-typeguard-session)
+- - [typeguard](the-typeguard-session)
   - Type-check with [Typeguard]
   - `3.10`
   - ✓
-* - [xdoctest](the-xdoctest-session)
+- - [xdoctest](the-xdoctest-session)
   - Run examples with [xdoctest]
   - `3.7` … `3.10`
   - ✓
@@ -1686,25 +1686,25 @@ The {{ HPC }} comes with a pre-commit configuration consisting of the following 
 :::{list-table} pre-commit hooks
 :widths: auto
 
-* - [black]
+- - [black]
   - Run the [Black] code formatter
-* - [flake8]
+- - [flake8]
   - Run the [Flake8] linter
-* - [isort]
+- - [isort]
   - Rewrite source code to sort Python imports
-* - [prettier]
+- - [prettier]
   - Run the [Prettier] code formatter
-* - [pyupgrade]
+- - [pyupgrade]
   - Upgrade syntax to newer versions of Python
-* - [check-added-large-files]
+- - [check-added-large-files]
   - Prevent giant files from being committed
-* - [check-toml]
+- - [check-toml]
   - Validate [TOML] files
-* - [check-yaml]
+- - [check-yaml]
   - Validate [YAML] files
-* - [end-of-file-fixer]
+- - [end-of-file-fixer]
   - Ensure files are terminated by a single newline
-* - [trailing-whitespace]
+- - [trailing-whitespace]
   - Ensure lines do not contain trailing whitespace
 
 :::
@@ -1788,33 +1788,33 @@ and links to their lists of error codes.
 :::{list-table} Flake8 plugins
 :widths: auto
 
-* - [pyflakes]
+- - [pyflakes]
   - Find invalid Python code
   - [F][pyflakes codes]
-* - [pycodestyle]
-  - Enforce style conventions from `PEP 8`_
+- - [pycodestyle]
+  - Enforce style conventions from `PEP 8`\_
   - [E,W][pycodestyle codes]
-* - [pep8-naming]
-  - Enforce naming conventions from `PEP 8`_
+- - [pep8-naming]
+  - Enforce naming conventions from `PEP 8`\_
   - [N][pep8-naming codes]
-* - [pydocstyle] / [flake8-docstrings] 
-  - Enforce docstring conventions from `PEP 257`_
+- - [pydocstyle] / [flake8-docstrings]
+  - Enforce docstring conventions from `PEP 257`\_
   - [D][pydocstyle codes]
-* - [flake8-rst-docstrings]
-  - Find invalid reStructuredText_ in docstrings
+- - [flake8-rst-docstrings]
+  - Find invalid reStructuredText\_ in docstrings
   - [RST][flake8-rst-docstrings codes]
-* - [flake8-bugbear]
+- - [flake8-bugbear]
   - Detect bugs and design problems
   - [B][flake8-bugbear codes]
-* - [mccabe]
+- - [mccabe]
   - Limit the code complexity
   - [C][mccabe codes]
-* - [darglint]
+- - [darglint]
   - Detect inaccurate docstrings
   - [DAR][darglint codes]
-* - [Bandit] / [flake8-bandit]
+- - [Bandit] / [flake8-bandit]
   - Detect common security issues
-  - [S][Bandit codes]
+  - [S][bandit codes]
 
 :::
 
@@ -2070,19 +2070,19 @@ It manages the following dependencies:
 :header-rows: 1
 :widths: auto
 
-* - Type of dependency
+- - Type of dependency
   - Managed files
   - See also
-* - Python
+- - Python
   - `poetry.lock`
   - [Managing Dependencies](managing-dependencies)
-* - Python
+- - Python
   - `docs/requirements.txt`
   - [Read the Docs](read-the-docs-integration)
-* - Python
+- - Python
   - `.github/workflows/constraints.txt`
   - [Workflow constraints](workflow-constraints)
-* - GitHub Action
+- - GitHub Action
   - `.github/workflows/*.yml`
   - [GitHub Actions workflows](github-actions-workflows)
 
@@ -2165,19 +2165,19 @@ The {{ HPC }} defines the following workflows:
 :header-rows: 1
 :widths: auto
 
-* - Workflow
+- - Workflow
   - File
   - Description
   - Trigger
-* - [Tests](the-tests-workflow)
+- - [Tests](the-tests-workflow)
   - `tests.yml`
   - Run the test suite with [Nox]
   - Push, PR
-* - [Release](the-release-workflow)
+- - [Release](the-release-workflow)
   - `release.yml`
   - Upload the package to [PyPI]
   - Push (default branch)
-* - [Labeler](the-labeler-workflow)
+- - [Labeler](the-labeler-workflow)
   - `labeler.yml`
   - Manage GitHub project labels
   - Push (default branch)
@@ -2191,25 +2191,25 @@ Workflows use the following GitHub Actions:
 :::{list-table} GitHub Actions
 :widths: auto
 
-* - [actions/cache]
+- - [actions/cache]
   - Cache dependencies and build outputs
-* - [actions/checkout]
+- - [actions/checkout]
   - Check out the Git repository
-* - [actions/download-artifact]
+- - [actions/download-artifact]
   - Download artifacts from workflows
-* - [actions/setup-python]
+- - [actions/setup-python]
   - Set up workflows with a specific Python version
-* - [actions/upload-artifact]
+- - [actions/upload-artifact]
   - Upload artifacts from workflows
-* - [codecov/codecov-action]
+- - [codecov/codecov-action]
   - Upload coverage to Codecov
-* - [crazy-max/ghaction-github-labeler]
+- - [crazy-max/ghaction-github-labeler]
   - Manage labels on GitHub as code
-* - [pypa/gh-action-pypi-publish]
+- - [pypa/gh-action-pypi-publish]
   - Upload packages to PyPI and TestPyPI
-* - [release-drafter/release-drafter]
+- - [release-drafter/release-drafter]
   - Draft and publish GitHub Releases
-* - [salsify/action-detect-and-tag-new-version]
+- - [salsify/action-detect-and-tag-new-version]
   - Detect and tag new versions in a repository
 
 :::
@@ -2258,31 +2258,31 @@ as shown in the table below:
 :::{list-table} Jobs in the Tests workflow
 :widths: auto
 
-* - Nox session
+- - Nox session
   - Platform
   - Python versions
-* - [pre-commit](the-pre-commit-session)
+- - [pre-commit](the-pre-commit-session)
   - Ubuntu
   - 3.10
-* - [safety](the-safety-session)
+- - [safety](the-safety-session)
   - Ubuntu
   - 3.10
-* - [mypy](the-mypy-session)
+- - [mypy](the-mypy-session)
   - Ubuntu
   - 3.10, 3.9, 3.8, 3.7
-* - [tests](the-tests-session)
+- - [tests](the-tests-session)
   - Ubuntu
   - 3.10, 3.9, 3.8, 3.7
-* - [tests](the-tests-session)
+- - [tests](the-tests-session)
   - Windows
   - 3.10
-* - [tests](the-tests-session)
+- - [tests](the-tests-session)
   - macOS
   - 3.10
-* - [coverage](the-coverage-session)
+- - [coverage](the-coverage-session)
   - Ubuntu
   - 3.10
-* - [docs-build](the-docs-build-session)
+- - [docs-build](the-docs-build-session)
   - Ubuntu
   - 3.10
 
@@ -2331,9 +2331,9 @@ The tokens need to be stored as secrets in the repository settings on GitHub:
 :::{list-table} Secrets
 :widths: auto
 
-* - `PYPI_TOKEN`
+- - `PYPI_TOKEN`
   - [PyPI] API token
-* - `TEST_PYPI_TOKEN`
+- - `TEST_PYPI_TOKEN`
   - [TestPyPI] API token
 
 :::
