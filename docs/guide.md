@@ -4,13 +4,8 @@ substitutions:
 ---
 
 <!--
-TODO
-
-- convert tables to native Markdown
-- fix section references (look for underscore or angular brackets)
-- check that {{ HPC }} works inside admonitions
-
--->
+  - TODO convert tables to native Markdown
+  -->
 
 # User Guide
 
@@ -18,8 +13,8 @@ This is the user guide
 for the [Hypermodern Python Cookiecutter],
 a Python template based on the [Hypermodern Python] article series.
 
-If you're in a hurry, check out the {doc}`quickstart guide <quickstart>`
-and the {ref}`tutorials <Tutorials>`.
+If you're in a hurry, check out the [quickstart guide](quickstart)
+and the [tutorials](tutorials).
 
 ## Introduction
 
@@ -154,7 +149,7 @@ $ pyenv install 3.9.10
 $ pyenv install 3.10.2
 ```
 
-After creating your project (see {ref}`below <Creating a project>`),
+After creating your project (see [below](creating-a-project)),
 you can make these Python versions accessible in the project directory,
 using the following command:
 
@@ -235,25 +230,45 @@ using a subdirectory with the same name as your project.
 
 Here is a complete list of the project variables defined by this template:
 
-```{eval-rst}
-.. table:: Project variables
-   :widths: auto
+:::{list-table} Project variables
+:header-rows: 1
+:widths: auto
 
-   ====================== ================================= ===================================
-   Variable               Description                       Example
-   ====================== ================================= ===================================
-   ``project_name``       Project name on PyPI and GitHub   ``hypermodern-python``
-   ``package_name``       Import name of the package        ``hypermodern_python``
-   ``friendly_name``      Friendly project name             ``Hypermodern Python``
-   ``author``             Primary author                    Katherine Johnson
-   ``email``              E-mail address of the author      katherine@example.com
-   ``github_user``        GitHub username of the author     ``katherine``
-   ``version``            Initial project version           ``0.0.0``
-   ``copyright_year``     The project copyright year        ``2022``
-   ``license``            The project license               ``MIT``
-   ``development_status`` Development status of the project ``Development Status :: 3 - Alpha``
-   ====================== ================================= ===================================
-```
+- - Variable
+  - Description
+  - Example
+- - `project_name`
+  - Project name on PyPI and GitHub
+  - `hypermodern-python`
+- - `package_name`
+  - Import name of the package
+  - `hypermodern_python`
+- - `friendly_name`
+  - Friendly project name
+  - `Hypermodern Python`
+- - `author`
+  - Primary author
+  - Katherine Johnson
+- - `email`
+  - E-mail address of the author
+  - katherine@example.com
+- - `github_user`
+  - GitHub username of the author
+  - `katherine`
+- - `version`
+  - Initial project version
+  - `0.0.0`
+- - `copyright_year`
+  - The project copyright year
+  - `2022`
+- - `license`
+  - The project license
+  - `MIT`
+- - `development_status`
+  - Development status of the project
+  - `Development Status :: 3 - Alpha`
+
+:::
 
 :::{note}
 The initial project version should be the latest release on [PyPI],
@@ -318,7 +333,7 @@ $ git push --set-upstream origin main
 ```
 
 Now may be a good time to set up Continuous Integration for your repository.
-Refer to the section {ref}`External services`
+Refer to the section [External services](external-services)
 for detailed instructions.
 
 ## Project overview
@@ -329,34 +344,37 @@ This section provides an overview of all the files generated for your project.
 
 Let's start with the directory layout:
 
-```{eval-rst}
-.. table:: Directories
-   :widths: auto
+:::{list-table} Directories
+:widths: auto
 
-   ===================================== ===============================
-   ``src/<package>``                     Python package
-   ``tests``                             Test suite
-   ``docs``                              Documentation
-   ``.github/workflows``                 GitHub Actions workflows
-   ===================================== ===============================
-```
+- - `src/<package>`
+  - Python package
+- - `tests`
+  - Test suite
+- - `docs`
+  - Documentation
+- - `.github/workflows`
+  - GitHub Actions workflows
+
+:::
 
 The Python package is located in the `src/<package>` directory.
-For more details on these files, refer to the section {ref}`The initial package`.
+For more details on these files, refer to the section [The initial package](the-initial-package).
 
-```{eval-rst}
-.. table:: Python package
-   :widths: auto
+:::{list-table} Python package
+:widths: auto
 
-   ===================================== ===============================
-   ``src/<project>/py.typed``            Marker file for `PEP 561`_
-   ``src/<project>/__init__.py``         Package initialization
-   ``src/<project>/__main__.py``         Command-line interface
-   ===================================== ===============================
-```
+* - `src/<project>/py.typed`
+  - Marker file for [PEP 561][pep 561]
+* - `src/<project>/__init__.py`
+  - Package initialization
+* - `src/<project>/__main__.py`
+  - Command-line interface
+
+:::
 
 The test suite is located in the `tests` directory.
-For more details on these files, refer to the section {ref}`The test suite`.
+For more details on these files, refer to the section [The test suite](the-test-suite).
 
 ```{eval-rst}
 .. table:: Test suite
@@ -384,8 +402,8 @@ The documentation files in the top-level directory are rendered on [GitHub]:
 ```
 
 The files in the `docs` directory are
-built using {ref}`Sphinx <Documentation>` and [MyST].
-The Sphinx documentation is hosted on {ref}`Read the Docs <Read the Docs integration>`:
+built using [Sphinx](documentation) and [MyST].
+The Sphinx documentation is hosted on [Read the Docs](read-the-docs-integration):
 
 ```{eval-rst}
 .. table:: Documentation files (Sphinx)
@@ -401,67 +419,80 @@ The Sphinx documentation is hosted on {ref}`Read the Docs <Read the Docs integra
    ===================== =======================================================
 ```
 
-The `.github/workflows` directory contains the {ref}`GitHub Actions workflows <GitHub Actions workflows>`:
+The `.github/workflows` directory contains the [GitHub Actions workflows](github-actions-workflows):
 
-```{eval-rst}
-.. table:: GitHub Actions workflows
-   :widths: auto
+:::{list-table} GitHub Actions workflows
+:widths: auto
 
-   ======================= ===============================
-   ``release.yml``         :ref:`The Release workflow`
-   ``tests.yml``           :ref:`The Tests workflow`
-   ``labeler.yml``         :ref:`The Labeler workflow`
-   ======================= ===============================
-```
+* - `release.yml`
+  - [The Release workflow](the-release-workflow)
+* - `tests.yml`
+  - [The Tests workflow](the-tests-workflow)
+* - `labeler.yml`
+  - [The Labeler workflow](the-labeler-workflow)
+
+:::
 
 The project contains many configuration files for developer tools.
 Most of these are located in the top-level directory.
 The table below lists these files,
 and links each file to a section with more details.
 
-```{eval-rst}
-.. table:: Configuration files
-   :widths: auto
+:::{list-table} Configuration files
+:widths: auto
 
-   ===================================== ========================================
-   ``.cookiecutter.json``                :ref:`Project variables <Creating a project>`
-   ``.darglint``                         Configuration for :ref:`darglint <darglint integration>`
-   ``.github/dependabot.yml``            Configuration for :ref:`Dependabot <Dependabot integration>`
-   ``.flake8``                           Configuration for :ref:`Flake8 <The Flake8 hook>`
-   ``.gitattributes``                    `Git attributes <.gitattributes_>`__
-   ``.gitignore``                        `Git ignore file <.gitignore_>`__
-   ``.github/release-drafter.yml``       Configuration for :ref:`Release Drafter <The Release workflow>`
-   ``.github/labels.yml``                Configuration for :ref:`GitHub Labeler <The Labeler workflow>`
-   ``.pre-commit-config.yaml``           Configuration for :ref:`pre-commit <Linting with pre-commit>`
-   ``.readthedocs.yml``                  Configuration for :ref:`Read the Docs <Read the Docs integration>`
-   ``codecov.yml``                       Configuration for :ref:`Codecov <Codecov integration>`
-   ``docs/conf.py``                      Configuration for :ref:`Sphinx <Documentation>`
-   ``noxfile.py``                        Configuration for :ref:`Nox <Using Nox>`
-   ``pyproject.toml``                    Configuration for :ref:`Poetry <Using Poetry>`,
-                                         :ref:`Coverage.py <The coverage session>`,
-                                         :ref:`isort <The isort hook>`,
-                                         and :ref:`mypy <Type-checking with mypy>`
-   ===================================== ========================================
-```
+* - `.cookiecutter.json`
+  - [Project variables](creating-a-project)
+* - `.darglint`
+  - Configuration for [darglint](darglint-integration)
+* - `.github/dependabot.yml`
+  - Configuration for [Dependabot](dependabot-integration)
+* - `.flake8`
+  - Configuration for [Flake8](the-flake8-hook)
+* - `.gitattributes`
+  - [Git attributes][.gitattributes]
+* - `.gitignore`
+  - [Git ignore file][.gitignore]
+* - `.github/release-drafter.yml`
+  - Configuration for [Release Drafter](the-release-workflow)
+* - `.github/labels.yml`
+  - Configuration for [GitHub Labeler](the-labeler-workflow)
+* - `.pre-commit-config.yaml`
+  - Configuration for [pre-commit](linting-with-pre-commit)
+* - `.readthedocs.yml`
+  - Configuration for [Read the Docs](read-the-docs-integration)
+* - `codecov.yml`
+  - Configuration for [Codecov](codecov-integration)
+* - `docs/conf.py`
+  - Configuration for [Sphinx](documentation)
+* - `noxfile.py`
+  - Configuration for [Nox](using-nox)
+* - `pyproject.toml`
+  - Configuration for [Poetry](using-poetry),
+    [Coverage.py](the-coverage-session),
+    [isort](the-isort-hook),
+    and [mypy](type-checking-with-mypy)
 
-The `pyproject.toml` file is described in more detail {ref}`below <The pyproject.toml file>`.
+:::
 
-{ref}`Dependencies <Managing dependencies>` are managed by [Poetry]
-and declared in the {ref}`pyproject.toml <The pyproject.toml file>` file.
+The `pyproject.toml` file is described in more detail [below](the-pyproject-toml-file).
+
+[Dependencies](managing-dependencies) are managed by [Poetry]
+and declared in the [pyproject.toml](the-pyproject-toml-file) file.
 The table below lists some additional files with pinned dependencies.
 Follow the links for more details on these.
 
-```{eval-rst}
-.. table:: Dependency files
-   :widths: auto
+:::{list-table} Dependency files
+:widths: auto
 
-   ===================================== ================================
-   ``poetry.lock``                       :ref:`Poetry lock file <The lock file>`
-   ``docs/requirements.txt``             Requirements file for :ref:`Read the Docs <Read the Docs integration>`
-   ``.github/workflows/constraints.txt`` Constraints file for :ref:`GitHub Actions workflows <Workflow constraints>`
-   ===================================== ================================
+* - `poetry.lock`
+  - [Poetry lock file](the-lock-file)
+* - `docs/requirements.txt`
+  - Requirements file for [Read the Docs](read-the-docs-integration)
+* - `.github/workflows/constraints.txt`
+  - Constraints file for [GitHub Actions workflows](workflow-constraints)
 
-```
+:::
 
 (the-initial-package)=
 
@@ -539,7 +570,7 @@ It also provides a [test fixture] using [click.testing.CliRunner],
 a helper class for invoking the program from within tests.
 
 For details on how to run the test suite,
-refer to the section {ref}`The tests session`.
+refer to the section [The tests session](the-tests-session).
 
 (documentation)=
 
@@ -620,11 +651,11 @@ The `docs` directory contains two more files:
   This file is only used on Read the Docs.
 
 The project documentation is built and hosted on
-{ref}`Read the Docs <Read the Docs integration>`,
+[Read the Docs](read-the-docs-integration),
 and uses the [furo] Sphinx theme.
 
 You can also build the documentation locally using Nox,
-see {ref}`The docs session`.
+see [The docs session](the-docs-session).
 
 ## Packaging
 
@@ -646,17 +677,19 @@ specified in [PEP 517][pep 517] and [518][pep 518]:
 - The `tool` table contains sub-tables
   where tools can store configuration under their [PyPI] name.
 
-```{eval-rst}
-.. table:: Tool configurations in pyproject.toml
-   :widths: auto
+:::{list-table} Tool configurations in pyproject.toml
+:widths: auto
 
-   ======================= ===============================
-   ``tool.coverage``       Configuration for Coverage.py_
-   ``tool.isort``          Configuration for isort_
-   ``tool.mypy``           Configuration for mypy_
-   ``tool.poetry``         Configuration for Poetry_
-   ======================= ===============================
-```
+* - `tool.coverage`
+  - Configuration for [Coverage.py]
+* - `tool.isort`
+  - Configuration for [isort]
+* - `tool.mypy`
+  - Configuration for [mypy]
+* - `tool.poetry`
+  - Configuration for [Poetry]
+
+:::
 
 The `tool.poetry` table
 contains the metadata for your package,
@@ -785,39 +818,59 @@ a library for creating command-line interfaces.
 The template also comes with various development dependencies.
 See the table below for an overview of the dependencies of generated projects:
 
-```{eval-rst}
-.. table:: Dependencies
-   :widths: auto
+:::{list-table} Dependencies
+:widths: auto
 
-   ====================== ====================================================================================
-   black_                 The uncompromising code formatter.
-   click_                 Composable command line interface toolkit
-   coverage__             Code coverage measurement for Python
-   darglint_              A utility for ensuring Google-style docstrings stay up to date with the source code.
-   flake8_                the modular source code checker: pep8 pyflakes and co
-   flake8-bandit_         Automated security testing with bandit and flake8.
-   flake8-bugbear_        A plugin for flake8 finding likely bugs and design problems in your program.
-   flake8-docstrings_     Extension for flake8 which uses pydocstyle to check docstrings
-   flake8-rst-docstrings_ Python docstring reStructuredText (RST) validator
-   furo_                  A clean customisable Sphinx documentation theme.
-   isort_                 A Python utility / library to sort Python imports.
-   mypy_                  Optional static typing for Python
-   pep8-naming_           Check PEP-8 naming conventions, plugin for flake8
-   pre-commit_            A framework for managing and maintaining multi-language pre-commit hooks.
-   pre-commit-hooks_      Some out-of-the-box hooks for pre-commit.
-   pygments_              Pygments is a syntax highlighting package written in Python.
-   pytest_                pytest: simple powerful testing with Python
-   pyupgrade_             A tool to automatically upgrade syntax for newer versions.
-   safety_                Checks installed dependencies for known vulnerabilities.
-   sphinx_                Python documentation generator
-   sphinx-autobuild_      Rebuild Sphinx documentation on changes, with live-reload in the browser.
-   sphinx-click_          Sphinx extension that automatically documents click applications
-   typeguard_             Run-time type checker for Python
-   xdoctest_              A rewrite of the builtin doctest module
-   ====================== ====================================================================================
+* - [black]
+  - The uncompromising code formatter.
+* - [click]
+  - Composable command line interface toolkit
+* - [coverage][Coverage.py]
+  - Code coverage measurement for Python
+* - [darglint]
+  - A utility for ensuring Google-style docstrings stay up to date with the source code.
+* - [flake8]
+  - the modular source code checker: pep8 pyflakes and co
+* - [flake8-bandit]
+  - Automated security testing with bandit and flake8.
+* - [flake8-bugbear]
+  - A plugin for flake8 finding likely bugs and design problems in your program.
+* - [flake8-docstrings]
+  - Extension for flake8 which uses pydocstyle to check docstrings
+* - [flake8-rst-docstrings]
+  - Python docstring reStructuredText (RST) validator
+* - [furo]
+  - A clean customisable Sphinx documentation theme.
+* - [isort]
+  - A Python utility / library to sort Python imports.
+* - [mypy]
+  - Optional static typing for Python
+* - [pep8-naming]
+  - Check PEP-8 naming conventions, plugin for flake8
+* - [pre-commit]
+  - A framework for managing and maintaining multi-language pre-commit hooks.
+* - [pre-commit-hooks]
+  - Some out-of-the-box hooks for pre-commit.
+* - [pygments]
+  - Pygments is a syntax highlighting package written in Python.
+* - [pytest]
+  - pytest: simple powerful testing with Python
+* - [pyupgrade]
+  - A tool to automatically upgrade syntax for newer versions.
+* - [safety]
+  - Checks installed dependencies for known vulnerabilities.
+* - [sphinx]
+  - Python documentation generator
+* - [sphinx-autobuild]
+  - Rebuild Sphinx documentation on changes, with live-reload in the browser.
+* - [sphinx-click]
+  - Sphinx extension that automatically documents click applications
+* - [typeguard]
+  - Run-time type checker for Python
+* - [xdoctest]
+  - A rewrite of the builtin doctest module
 
-__ Coverage.py_
-```
+:::
 
 (using-poetry)=
 
@@ -849,7 +902,7 @@ It is recommended to remove the upper bound from the version constraint added by
 1. Edit `pyproject.toml` to replace `^1.2.3` with `>=1.2.3` in the dependency entry
 2. Update `poetry.lock` using the command `poetry lock --no-update`
 
-See [Version constraints] for more details.
+See [Version constraints](version-constraints) for more details.
 :::
 
 Use the command [poetry remove] to remove a dependency from your package:
@@ -865,7 +918,7 @@ $ poetry update foobar
 ```
 
 :::{note}
-Dependencies in the {{ HPC }} are managed by {ref}`Dependabot <Dependabot integration>`.
+Dependencies in the {{ HPC }} are managed by [Dependabot](dependabot-integration).
 When newer versions of dependencies become available,
 Dependabot updates the `poetry.lock` file and submits a pull request.
 :::
@@ -968,7 +1021,7 @@ $ poetry run pytest
 
 While it is handy to have developer tools available in the Poetry environment,
 it is usually recommended to run these using Nox,
-as described in the section {ref}`Using Nox`.
+as described in the section [Using Nox](using-nox).
 
 ### Building and distributing the package
 
@@ -977,7 +1030,7 @@ With the {{ HPC }},
 building and distributing your package
 is taken care of by [GitHub Actions].
 For more information,
-see the section {ref}`The Release workflow`.
+see the section [The Release workflow](the-release-workflow).
 :::
 
 This section gives a short overview of
@@ -1065,14 +1118,14 @@ $ nox
 ```
 
 This includes tests, linters, type checks, and more.
-For the full list, please refer to the table [below][table of nox sessions].
+For the full list, please refer to the table [below](table-of-nox-sessions).
 
 The list of sessions run by default can be configured
 by editing `nox.options.sessions` in `noxfile.py`.
-Currently the list only excludes the [docs session][the docs session]
+Currently the list only excludes the [docs session](the-docs-session)
 (which spawns an HTTP server)
-and the [coverage session][the coverage session]
-(which is triggered by the [tests session][the tests session]).
+and the [coverage session](the-coverage-session)
+(which is triggered by the [tests session](the-tests-session)).
 
 You can also run a specific Nox session, using the `--session` option.
 For example, build the documentation like this:
@@ -1112,25 +1165,52 @@ $ nox --session=tests -- tests/test_main.py
 
 The following table gives an overview of the available Nox sessions:
 
-```{eval-rst}
-.. table:: Nox sessions
-   :widths: auto
+:::{list-table} Nox sessions
+:header-rows: 1
+:widths: auto
 
-   ========================================== ===================================== ================== =========
-   Session                                    Description                           Python              Default
-   ========================================== ===================================== ================== =========
-   :ref:`coverage <The coverage session>`     Report coverage with Coverage.py_     ``3.10``              (✓)
-   :ref:`docs <The docs session>`             Build and serve Sphinx_ documentation ``3.10``
-   :ref:`docs-build <The docs-build session>` Build Sphinx_ documentation           ``3.10``               ✓
-   :ref:`mypy <The mypy session>`             Type-check with mypy_                 ``3.7`` … ``3.10``     ✓
-   :ref:`pre-commit <The pre-commit session>` Lint with pre-commit_                 ``3.10``               ✓
-   :ref:`safety <The safety session>`         Scan dependencies with Safety_        ``3.10``               ✓
-   :ref:`tests <The tests session>`           Run tests with pytest_                ``3.7`` … ``3.10``     ✓
-   :ref:`typeguard <The typeguard session>`   Type-check with Typeguard_            ``3.10``               ✓
-   :ref:`xdoctest <The xdoctest session>`     Run examples with xdoctest_           ``3.7`` … ``3.10``     ✓
-   ========================================== ===================================== ================== =========
+* - Session
+  - Description
+  - Python
+  - Default
+* - [coverage](the-coverage-session)
+  - Report coverage with [Coverage.py]
+  - `3.10`
+  - (✓)
+* - [docs](the-docs-session)
+  - Build and serve [Sphinx] documentation 
+  - `3.10`
+  -
+* - [docs-build](the-docs-build-session)
+  - Build [Sphinx] documentation
+  - `3.10`
+  - ✓
+* - [mypy](the-mypy-session)
+  - Type-check with [mypy]
+  - `3.7` … `3.10`
+  - ✓
+* - [pre-commit](the-pre-commit-session)
+  - Lint with [pre-commit]
+  - `3.10`
+  - ✓
+* - [safety](the-safety-session)
+  - Scan dependencies with [Safety]
+  - `3.10`
+  - ✓
+* - [tests](the-tests-session)
+  - Run tests with [pytest]
+  - `3.7` … `3.10`
+  - ✓
+* - [typeguard](the-typeguard-session)
+  - Type-check with [Typeguard]
+  - `3.10`
+  - ✓
+* - [xdoctest](the-xdoctest-session)
+  - Run examples with [xdoctest]
+  - `3.7` … `3.10`
+  - ✓
 
-```
+:::
 
 (the-docs-session)=
 
@@ -1174,7 +1254,7 @@ This Nox session always runs with the current major release of Python.
 ### The mypy session
 
 [mypy] is the pioneer and _de facto_ reference implementation of static type checking in Python.
-Learn more about it in the section {ref}`Type-checking with mypy`.
+Learn more about it in the section [Type-checking with mypy](type-checking-with-mypy).
 
 Run mypy using Nox:
 
@@ -1202,7 +1282,7 @@ $ nox --session=mypy -- src/<package>/__main__.py
 ### The pre-commit session
 
 [pre-commit] is a multi-language linter framework and a Git hook manager.
-Learn more about it in the section {ref}`Linting with pre-commit`.
+Learn more about it in the section [Linting with pre-commit](linting-with-pre-commit).
 
 Run pre-commit from Nox using the `pre-commit` session:
 
@@ -1243,7 +1323,7 @@ This session always runs with the current stable release of Python.
 ### The tests session
 
 Tests are written using the [pytest] testing framework.
-Learn more about it in the section {ref}`The test suite`.
+Learn more about it in the section [The test suite](the-test-suite).
 
 Run the test suite using the Nox session `tests`:
 
@@ -1287,7 +1367,7 @@ while running its test suite.
 
 The coverage session prints a detailed coverage report to the terminal,
 combining the coverage data collected
-during the {ref}`tests session <The tests session>`.
+during the [tests session](the-tests-session).
 If the total coverage is below 100%,
 the coverage session fails.
 Code coverage is measured using [Coverage.py].
@@ -1320,8 +1400,8 @@ Coverage is measured for the package as well as [the test suite itself][batcheld
 During continuous integration,
 coverage data is uploaded to the [Codecov] reporting service.
 For details, see the sections about
-{ref}`Codecov <Codecov integration>` and
-{ref}`The Tests workflow`.
+[Codecov](codecov-integration) and
+[The Tests workflow](the-tests-workflow).
 
 (the-typeguard-session)=
 
@@ -1345,7 +1425,7 @@ $ nox --session=typeguard
 ```
 
 The typeguard session runs the test suite with runtime type-checking enabled.
-It is similar to the {ref}`tests session <The tests session>`,
+It is similar to the [tests session](the-tests-session),
 with the difference that your package is instrumented by Typeguard.
 
 This session always runs with the current stable release of Python.
@@ -1427,7 +1507,7 @@ Run the pre-commit session explicitly like this:
 $ nox --session=pre-commit
 ```
 
-The session is described in more detail in the section {ref}`The pre-commit session`.
+The session is described in more detail in the section [The pre-commit session](the-pre-commit-session).
 
 ### Running pre-commit from git
 
@@ -1603,23 +1683,31 @@ For example, use `poetry run flake8 <file>` to lint a modified file with Flake8.
 
 The {{ HPC }} comes with a pre-commit configuration consisting of the following hooks:
 
-```{eval-rst}
-.. table:: pre-commit hooks
-   :widths: auto
+:::{list-table} pre-commit hooks
+:widths: auto
 
-   ======================== ===============================================
-   `black <Black_>`__       Run the Black_ code formatter
-   `flake8 <Flake8_>`__     Run the Flake8_ linter
-   isort_                   Rewrite source code to sort Python imports
-   `prettier <Prettier_>`__ Run the Prettier_ code formatter
-   pyupgrade_               Upgrade syntax to newer versions of Python
-   check-added-large-files_ Prevent giant files from being committed
-   check-toml_              Validate TOML_ files
-   check-yaml_              Validate YAML_ files
-   end-of-file-fixer_       Ensure files are terminated by a single newline
-   trailing-whitespace_     Ensure lines do not contain trailing whitespace
-   ======================== ===============================================
-```
+* - [black]
+  - Run the [Black] code formatter
+* - [flake8]
+  - Run the [Flake8] linter
+* - [isort]
+  - Rewrite source code to sort Python imports
+* - [prettier]
+  - Run the [Prettier] code formatter
+* - [pyupgrade]
+  - Upgrade syntax to newer versions of Python
+* - [check-added-large-files]
+  - Prevent giant files from being committed
+* - [check-toml]
+  - Validate [TOML] files
+* - [check-yaml]
+  - Validate [YAML] files
+* - [end-of-file-fixer]
+  - Ensure files are terminated by a single newline
+* - [trailing-whitespace]
+  - Ensure lines do not contain trailing whitespace
+
+:::
 
 ### The Black hook
 
@@ -1639,7 +1727,7 @@ and the {{ HPC }} uses none of them.
 ### The Flake8 hook
 
 [Flake8] is an extensible linter framework for Python.
-For more details, see the section {ref}`Linting with Flake8`.
+For more details, see the section [Linting with Flake8].
 
 (the-isort-hook)=
 
@@ -1682,7 +1770,7 @@ from the [pre-commit-hooks] repository.
 [Flake8] is an extensible linter framework for Python,
 and a command-line utility to run the linters on your source code.
 The {{ HPC }} integrates Flake8 via a [pre-commit] hook,
-see the section {ref}`The Flake8 hook`.
+see the section [The Flake8 hook](the-flake8-hook).
 
 The configuration file for Flake8 and its extensions
 is named `.flake8` and located in the project directory.
@@ -1697,23 +1785,38 @@ Flake8 comes with a rich ecosystem of plugins.
 The following table lists the Flake8 plugins used by the {{ HPC }},
 and links to their lists of error codes.
 
-```{eval-rst}
-.. table:: Flake8 plugins
-   :widths: auto
+:::{list-table} Flake8 plugins
+:widths: auto
 
-   ================================ ============================================= ======================================
-   pyflakes_                        Find invalid Python code                      `F <pyflakes codes_>`__
-   pycodestyle_                     Enforce style conventions from `PEP 8`_       `E,W <pycodestyle codes_>`__
-   pep8-naming_                     Enforce naming conventions from `PEP 8`_      `N <pep8-naming codes_>`__
-   pydocstyle_ / flake8-docstrings_ Enforce docstring conventions from `PEP 257`_ `D <pydocstyle codes_>`__
-   flake8-rst-docstrings_           Find invalid reStructuredText_ in docstrings  `RST <flake8-rst-docstrings codes_>`__
-   flake8-bugbear_                  Detect bugs and design problems               `B <flake8-bugbear codes_>`__
-   mccabe_                          Limit the code complexity                     `C <mccabe codes_>`__
-   darglint_                        Detect inaccurate docstrings                  `DAR <darglint codes_>`__
-   Bandit_ / flake8-bandit_         Detect common security issues                 `S <Bandit codes_>`__
-   ================================ ============================================= ======================================
+* - [pyflakes]
+  - Find invalid Python code
+  - [F][pyflakes codes]
+* - [pycodestyle]
+  - Enforce style conventions from `PEP 8`_
+  - [E,W][pycodestyle codes]
+* - [pep8-naming]
+  - Enforce naming conventions from `PEP 8`_
+  - [N][pep8-naming codes]
+* - [pydocstyle] / [flake8-docstrings] 
+  - Enforce docstring conventions from `PEP 257`_
+  - [D][pydocstyle codes]
+* - [flake8-rst-docstrings]
+  - Find invalid reStructuredText_ in docstrings
+  - [RST][flake8-rst-docstrings codes]
+* - [flake8-bugbear]
+  - Detect bugs and design problems
+  - [B][flake8-bugbear codes]
+* - [mccabe]
+  - Limit the code complexity
+  - [C][mccabe codes]
+* - [darglint]
+  - Detect inaccurate docstrings
+  - [DAR][darglint codes]
+* - [Bandit] / [flake8-bandit]
+  - Detect common security issues
+  - [S][Bandit codes]
 
-```
+:::
 
 ### pyflakes
 
@@ -1875,11 +1978,11 @@ or command-line parsers.
 :::
 
 [mypy] is the pioneer and _de facto_ reference implementation of static type checking in Python.
-Invoke mypy via Nox, as explained in the section {ref}`The mypy session`.
+Invoke mypy via Nox, as explained in the section [The mypy session](the-mypy-session).
 
 mypy is configured in the `pyproject.toml` file,
 using the `tool.mypy` table. For details about supported configuration
-options, see the [official reference][https://mypy.readthedocs.io/en/stable/config_file.html].
+options, see the [official reference][mypy configuration].
 
 The {{ HPC }} enables several configuration options which are off by default.
 The following options are enabled for strictness and enhanced output:
@@ -1915,7 +2018,7 @@ Follow these steps to set up PyPI for your repository:
    add a secret named `PYPI_TOKEN` with the token you just copied.
 
 PyPI is integrated with your repository
-via the {ref}`Release workflow <The Release workflow>`.
+via the [Release workflow](the-release-workflow).
 
 ### TestPyPI
 
@@ -1931,7 +2034,7 @@ Follow these steps to set up TestPyPI for your repository:
    add a secret named `TEST_PYPI_TOKEN` with the token you just copied.
 
 TestPyPI is integrated with your repository
-via the {ref}`Release workflow <The Release workflow>`.
+via the [Release workflow](the-release-workflow).
 
 (codecov-integration)=
 
@@ -1945,11 +2048,11 @@ Follow these steps to set up Codecov for your repository:
 2. Install their GitHub app.
 
 The configuration is included in the repository,
-in the file [codecov.yml][https://docs.codecov.io/docs/codecov-yaml].
+in the file [codecov.yml][codecov configuration].
 
 Codecov integrates with your repository
 via its GitHub app.
-The {ref}`Tests workflow <The Tests workflow>` uploads the coverage data.
+The [Tests workflow](the-tests-workflow) uploads the coverage data.
 
 (dependabot-integration)=
 
@@ -1963,20 +2066,27 @@ The configuration is included in the repository, in the file [.github/dependabot
 
 It manages the following dependencies:
 
-```{eval-rst}
-.. table::
-   :widths: auto
+:::{list-table}
+:header-rows: 1
+:widths: auto
 
-   =================== ===================================== ================================================
-   Type of dependency  Managed files                         See also
-   =================== ===================================== ================================================
-   Python              ``poetry.lock``                       :ref:`Managing Dependencies`
-   Python              ``docs/requirements.txt``             :ref:`Read the Docs <Read the Docs integration>`
-   Python              ``.github/workflows/constraints.txt`` :ref:`Workflow constraints`
-   GitHub Action       ``.github/workflows/*.yml``           :ref:`GitHub Actions workflows`
-   =================== ===================================== ================================================
+* - Type of dependency
+  - Managed files
+  - See also
+* - Python
+  - `poetry.lock`
+  - [Managing Dependencies](managing-dependencies)
+* - Python
+  - `docs/requirements.txt`
+  - [Read the Docs](read-the-docs-integration)
+* - Python
+  - `.github/workflows/constraints.txt`
+  - [Workflow constraints](workflow-constraints)
+* - GitHub Action
+  - `.github/workflows/*.yml`
+  - [GitHub Actions workflows](github-actions-workflows)
 
-```
+:::
 
 (read-the-docs-integration)=
 
@@ -2015,7 +2125,7 @@ For the sake of brevity and maintainability,
 only direct dependencies are included.
 
 :::{note}
-The requirements file is managed by {ref}`Dependabot <Dependabot integration>`.
+The requirements file is managed by [Dependabot](dependabot-integration).
 When newer versions of the build dependencies become available,
 Dependabot updates the requirements file and submits a pull request.
 When adding or removing Sphinx extensions using Poetry,
@@ -2051,44 +2161,61 @@ from the _Actions_ tab in your GitHub repository.
 
 The {{ HPC }} defines the following workflows:
 
-```{eval-rst}
-.. table:: GitHub Actions workflows
-   :widths: auto
+:::{list-table} GitHub Actions workflows
+:header-rows: 1
+:widths: auto
 
-   ===================================================== ======================== ==================================== =====================
-   Workflow                                              File                     Description                          Trigger
-   ===================================================== ======================== ==================================== =====================
-   :ref:`Tests <The Tests workflow>`                     ``tests.yml``            Run the test suite with Nox_         Push, PR
-   :ref:`Release <The Release workflow>`                 ``release.yml``          Upload the package to PyPI_          Push (default branch)
-   :ref:`Labeler <The Labeler workflow>`                 ``labeler.yml``          Manage GitHub project labels         Push (default branch)
-   ===================================================== ======================== ==================================== =====================
+* - Workflow
+  - File
+  - Description
+  - Trigger
+* - [Tests](the-tests-workflow)
+  - `tests.yml`
+  - Run the test suite with [Nox]
+  - Push, PR
+* - [Release](the-release-workflow)
+  - `release.yml`
+  - Upload the package to [PyPI]
+  - Push (default branch)
+* - [Labeler](the-labeler-workflow)
+  - `labeler.yml`
+  - Manage GitHub project labels
+  - Push (default branch)
 
-```
+:::
 
 ### Overview of GitHub Actions
 
 Workflows use the following GitHub Actions:
 
-```{eval-rst}
-.. table:: GitHub Actions
-   :widths: auto
+:::{list-table} GitHub Actions
+:widths: auto
 
-   ============================================ =========================================================
-   `actions/cache`_                             Cache dependencies and build outputs
-   `actions/checkout`_                          Check out the Git repository
-   `actions/download-artifact`_                 Download artifacts from workflows
-   `actions/setup-python`_                      Set up workflows with a specific Python version
-   `actions/upload-artifact`_                   Upload artifacts from workflows
-   `codecov/codecov-action`_                    Upload coverage to Codecov
-   `crazy-max/ghaction-github-labeler`_         Manage labels on GitHub as code
-   `pypa/gh-action-pypi-publish`_               Upload packages to PyPI and TestPyPI
-   `release-drafter/release-drafter`_           Draft and publish GitHub Releases
-   `salsify/action-detect-and-tag-new-version`_ Detect and tag new versions in a repository
-   ============================================ =========================================================
-```
+* - [actions/cache]
+  - Cache dependencies and build outputs
+* - [actions/checkout]
+  - Check out the Git repository
+* - [actions/download-artifact]
+  - Download artifacts from workflows
+* - [actions/setup-python]
+  - Set up workflows with a specific Python version
+* - [actions/upload-artifact]
+  - Upload artifacts from workflows
+* - [codecov/codecov-action]
+  - Upload coverage to Codecov
+* - [crazy-max/ghaction-github-labeler]
+  - Manage labels on GitHub as code
+* - [pypa/gh-action-pypi-publish]
+  - Upload packages to PyPI and TestPyPI
+* - [release-drafter/release-drafter]
+  - Draft and publish GitHub Releases
+* - [salsify/action-detect-and-tag-new-version]
+  - Detect and tag new versions in a repository
+
+:::
 
 :::{note}
-GitHub Actions used by the workflows are managed by {ref}`Dependabot <Dependabot integration>`.
+GitHub Actions used by the workflows are managed by [Dependabot](dependabot-integration).
 When newer versions of GitHub Actions become available,
 Dependabot updates the workflows that use them and submits a pull request.
 :::
@@ -2108,7 +2235,7 @@ These dependencies are pinned using a [constraints file]
 located in `.github/workflow/constraints.txt`.
 
 :::{note}
-The constraints file is managed by {ref}`Dependabot <Dependabot integration>`.
+The constraints file is managed by [Dependabot](dependabot-integration).
 When newer versions of the tools become available,
 Dependabot updates the constraints file and submits a pull request.
 :::
@@ -2128,23 +2255,38 @@ Selected Nox sessions also run on Windows and macOS,
 and with older Python versions,
 as shown in the table below:
 
-```{eval-rst}
-.. table:: Jobs in the Tests workflow
-   :widths: auto
+:::{list-table} Jobs in the Tests workflow
+:widths: auto
 
-   ========================================== ====================== ==================
-   Nox session                                Platform               Python versions
-   ========================================== ====================== ==================
-   :ref:`pre-commit <The pre-commit session>` Ubuntu                 3.10
-   :ref:`safety <The safety session>`         Ubuntu                 3.10
-   :ref:`mypy <The mypy session>`             Ubuntu                 3.10, 3.9, 3.8, 3.7
-   :ref:`tests <The tests session>`           Ubuntu                 3.10, 3.9, 3.8, 3.7
-   :ref:`tests <The tests session>`           Windows                3.10
-   :ref:`tests <The tests session>`           macOS                  3.10
-   :ref:`coverage <The coverage session>`     Ubuntu                 3.10
-   :ref:`docs-build <The docs-build session>` Ubuntu                 3.10
-   ========================================== ====================== ==================
-```
+* - Nox session
+  - Platform
+  - Python versions
+* - [pre-commit](the-pre-commit-session)
+  - Ubuntu
+  - 3.10
+* - [safety](the-safety-session)
+  - Ubuntu
+  - 3.10
+* - [mypy](the-mypy-session)
+  - Ubuntu
+  - 3.10, 3.9, 3.8, 3.7
+* - [tests](the-tests-session)
+  - Ubuntu
+  - 3.10, 3.9, 3.8, 3.7
+* - [tests](the-tests-session)
+  - Windows
+  - 3.10
+* - [tests](the-tests-session)
+  - macOS
+  - 3.10
+* - [coverage](the-coverage-session)
+  - Ubuntu
+  - 3.10
+* - [docs-build](the-docs-build-session)
+  - Ubuntu
+  - 3.10
+
+:::
 
 The workflow uploads the generated documentation as a [workflow artifact][github actions artifacts].
 Building the documentation only serves the purpose of catching issues in pull requests.
@@ -2152,7 +2294,7 @@ Builds on [Read the Docs] happen independently.
 
 The workflow also uploads coverage data to [Codecov] after running tests.
 It generates a coverage report in [Cobertura] XML format,
-using the {ref}`coverage session <The coverage session>`.
+using the [coverage session](the-coverage-session).
 The report is uploaded
 using the official [Codecov GitHub Action][codecov/codecov-action].
 
@@ -2186,15 +2328,15 @@ The Release workflow uses API tokens to access [PyPI] and [TestPyPI].
 You can generate these tokens from your account settings on these services.
 The tokens need to be stored as secrets in the repository settings on GitHub:
 
-```{eval-rst}
-.. table:: Secrets
-   :widths: auto
+:::{list-table} Secrets
+:widths: auto
 
-   =================== ===================
-   ``PYPI_TOKEN``      PyPI_ API token
-   ``TEST_PYPI_TOKEN`` TestPyPI_ API token
-   =================== ===================
-```
+* - `PYPI_TOKEN`
+  - [PyPI] API token
+* - `TEST_PYPI_TOKEN`
+  - [TestPyPI] API token
+
+:::
 
 The Release workflow uses the following GitHub Actions:
 
@@ -2250,13 +2392,13 @@ The GitHub Labeler configuration is located in `.github/labels.yml`.
 
 ## Tutorials
 
-First, make sure you have all the {ref}`requirements <Installation>` installed.
+First, make sure you have all the [requirements](installation) installed.
 
 (how-to-test-your-project)=
 
 ### How to test your project
 
-Run the test suite using {ref}`Nox <Using Nox>`:
+Run the test suite using [Nox](using-Nox):
 
 ```console
 $ nox -r
@@ -2285,13 +2427,13 @@ $ poetry run <project>
 ### How to make code changes
 
 1. Run the tests,
-   {ref}`as explained above <How to test your project>`.<br>
+   [as explained above](how-to-test-your-project).<br>
    All tests should pass.
 2. Add a failing test
-   {ref}`under the tests directory <The test suite>`.<br>
+   [under the tests directory](the-test-suite).<br>
    Run the tests again to verify that your test fails.
 3. Make your changes to the package,
-   {ref}`under the src directory <The initial package>`.<br>
+   [under the src directory](the-initial-package).<br>
    Run the tests to verify that all tests pass again.
 
 ### How to push code changes
@@ -2317,7 +2459,7 @@ $ git push --set-upstream origin my-topic-branch
 
 The push triggers the following automated steps:
 
-- {ref}`The test suite runs against your branch <The Tests workflow>`.
+- [The test suite runs against your branch](the-tests-workflow).
 
 ### How to open a pull request
 
@@ -2327,7 +2469,7 @@ Open a pull request for your branch on GitHub:
 2. Click **New pull request**.
 3. Enter the title for the pull request.
 4. Enter a description for the pull request.
-5. Apply a {ref}`label identifying the type of change <The Release workflow>`
+5. Apply a [label identifying the type of change](the-release-workflow)
 6. Click **Create pull request**.
 
 Release notes are pre-filled with the titles of merged pull requests.
@@ -2344,9 +2486,9 @@ merge the pull request using the squash-merge strategy (recommended):
 
 This triggers the following automated steps:
 
-- {ref}`The test suite runs against the main branch <The Tests workflow>`.
-- {ref}`The draft GitHub Release is updated <The Release workflow>`.
-- {ref}`A pre-release of the package is uploaded to TestPyPI <The Release workflow>`.
+- [The test suite runs against the main branch](the-tests-workflow).
+- [The draft GitHub Release is updated](the-release-workflow).
+- [A pre-release of the package is uploaded to TestPyPI](the-release-workflow).
 - [Read the Docs] rebuilds the _latest_ version of the documentation.
 
 In your local repository,
@@ -2400,7 +2542,7 @@ go through the following checklist:
 - All pull requests for the release have been merged.
 
 Merging the pull request triggers the
-{ref}`Release workflow <The Release workflow>`.
+[Release workflow](the-release-workflow).
 This workflow performs the following automated steps:
 
 - Publish the package on PyPI.
@@ -2449,6 +2591,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 [click.testing.clirunner]: https://click.palletsprojects.com/en/7.x/testing/
 [click]: https://click.palletsprojects.com/
 [cobertura]: https://cobertura.github.io/cobertura/
+[codecov configuration]: https://docs.codecov.io/docs/codecov-yaml
 [codecov/codecov-action]: https://github.com/codecov/codecov-action
 [codecov]: https://codecov.io/
 [constraints file]: https://pip.pypa.io/en/stable/user_guide/#constraints-files
@@ -2510,6 +2653,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 [mccabe codes]: https://github.com/PyCQA/mccabe#plugin-for-flake8
 [mccabe]: https://github.com/PyCQA/mccabe
 [mit license]: https://opensource.org/licenses/MIT
+[mypy configuration]: https://mypy.readthedocs.io/en/stable/config_file.html
 [mypy]: http://mypy-lang.org/
 [myst]: https://myst-parser.readthedocs.io/
 [napoleon]: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
