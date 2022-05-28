@@ -3,10 +3,6 @@ substitutions:
   HPC: "*Hypermodern Python Cookiecutter*"
 ---
 
-<!--
-  - TODO convert tables to native Markdown
-  -->
-
 # User Guide
 
 This is the user guide
@@ -376,48 +372,54 @@ For more details on these files, refer to the section [The initial package](the-
 The test suite is located in the `tests` directory.
 For more details on these files, refer to the section [The test suite](the-test-suite).
 
-```{eval-rst}
-.. table:: Test suite
-   :widths: auto
+:::{list-table} Test suite
+:widths: auto
 
-   ===================================== ===============================
-   ``tests/__init__.py``                 Test package initialization
-   ``tests/test_main.py``                Test cases for ``__main__``
-   ===================================== ===============================
-```
+- - `tests/__init__.py`
+  - Test package initialization
+- - `tests/test_main.py`
+  - Test cases for `__main__`
+
+:::
 
 The project documentation is written in [Markdown].
 The documentation files in the top-level directory are rendered on [GitHub]:
 
-```{eval-rst}
-.. table:: Documentation files (top-level)
-   :widths: auto
+:::{list-table} Documentation files (top-level)
+:widths: auto
 
-   ====================== ============================================
-   ``README.md``          Project description for GitHub and PyPI
-   ``CONTRIBUTING.md``    Contributor Guide
-   ``CODE_OF_CONDUCT.md`` Code of Conduct
-   ``LICENSE``            License
-   ====================== ============================================
-```
+- - `README.md`
+  - Project description for GitHub and PyPI
+- - `CONTRIBUTING.md`
+  - Contributor Guide
+- - `CODE_OF_CONDUCT.md`
+  - Code of Conduct
+- - `LICENSE`
+  - License
+
+:::
 
 The files in the `docs` directory are
 built using [Sphinx](documentation) and [MyST].
 The Sphinx documentation is hosted on [Read the Docs](read-the-docs-integration):
 
-```{eval-rst}
-.. table:: Documentation files (Sphinx)
-   :widths: auto
+:::{list-table} Documentation files (Sphinx)
+:widths: auto
 
-   ===================== =======================================================
-   ``index.md``          Main document
-   ``contributing.md``   Contributor Guide (via include)
-   ``codeofconduct.md``  Code of Conduct (via include)
-   ``license.md``        License (via include)
-   ``reference.md``      API reference
-   ``usage.md``          Command-line reference
-   ===================== =======================================================
-```
+- - `index.md`
+  - Main document
+- - `contributing.md`
+  - Contributor Guide (via include)
+- - `codeofconduct.md`
+  - Code of Conduct (via include)
+- - `license.md`
+  - License (via include)
+- - `reference.md`
+  - API reference
+- - `usage.md`
+  - Command-line reference
+
+:::
 
 The `.github/workflows` directory contains the [GitHub Actions workflows](github-actions-workflows):
 
