@@ -20,6 +20,7 @@ linkcheck_ignore = [
     "https://github.com/PyCQA/mccabe#",
     "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
     "https://cookiecutter-hypermodern-python.readthedocs.io",
+    "https://badgen.net/badge/status/alpha/d8624d",
 ]
 myst_enable_extensions = [
     "colon_fence",
