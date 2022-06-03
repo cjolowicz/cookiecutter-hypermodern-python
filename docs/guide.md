@@ -58,7 +58,7 @@ Here is a detailed list of features for this Python template:
 
 The {{ HPC }} uses [Calendar Versioning] with a `YYYY.MM.DD` versioning scheme.
 
-The current stable release is [2021.11.26].
+The current stable release is [2022.6.3].
 
 (installation)=
 
@@ -210,11 +210,11 @@ $ poetry self update
 
 Create a project from this template
 by pointing Cookiecutter to its [GitHub repository][hypermodern python cookiecutter].
-Use the `--checkout` option with the [current stable release][2021.11.26]:
+Use the `--checkout` option with the [current stable release][2022.6.3]:
 
 ```console
 $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-  --checkout="2021.11.26"
+  --checkout="2022.6.3"
 ```
 
 Cookiecutter downloads the template,
@@ -2581,7 +2581,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 [.github/dependabot.yml]: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
 [.gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 [.readthedocs.yml]: https://docs.readthedocs.io/en/stable/config-file/v2.html
-[2021.11.26]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.11.26
+[2022.6.3]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2022.6.3
 [__main__]: https://docs.python.org/3/library/__main__.html
 [abstract syntax tree]: https://docs.python.org/3/library/ast.html
 [actions/cache]: https://github.com/actions/cache

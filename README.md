@@ -48,7 +48,7 @@
 ## Usage
 
 ```console
-$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2021.11.26
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2022.6.3
 ```
 
 ## Features

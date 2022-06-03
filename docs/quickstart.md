@@ -31,7 +31,7 @@ Generate a Python project:
 
 ```console
 $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-  --checkout="2021.11.26"
+  --checkout="2022.6.3"
 ```
 
 Change to the root directory of your new project,
