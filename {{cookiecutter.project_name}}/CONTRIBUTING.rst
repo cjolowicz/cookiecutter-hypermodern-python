@@ -43,7 +43,7 @@ Request features on the `Issue Tracker`_.
 How to set up your development environment
 ------------------------------------------
 
-You need Python 3.7+ and the following tools:
+You need Python 3.8+ and the following tools:
 
 - Nox_
 
