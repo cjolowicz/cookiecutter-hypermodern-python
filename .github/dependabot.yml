@@ -7,10 +7,3 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
-
-  - directory: "/{{cookiecutter.project_name}}"
-    package-ecosystem: "github-actions"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "maintenance"

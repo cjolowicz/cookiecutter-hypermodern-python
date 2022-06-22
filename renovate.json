@@ -1,0 +1,9 @@
+{
+    "extends": ["group:all"],
+    "enabledManagers": ["github-actions"],
+    "github-actions": {
+        "fileMatch": [
+            "^{{cookiecutter.project_name}}\/((workflow-templates|\\.github\/workflows)\/[^/]+\\.ya?ml$|action\\.ya?ml$)"
+        ]
+    }
+}
