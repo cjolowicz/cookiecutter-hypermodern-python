@@ -2,7 +2,7 @@ pip==22.1.2
 cookiecutter==2.1.1
 cutty==0.18.0
 nox==2022.1.7
-nox-poetry==1.0.0
+nox-poetry==1.0.1
 poetry==1.1.13
 pre-commit==2.19.0
 virtualenv==20.14.1
