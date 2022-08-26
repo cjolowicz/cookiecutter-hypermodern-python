@@ -1,9 +1,15 @@
 {
     "extends": ["group:all"],
-    "enabledManagers": ["github-actions"],
+    "enabledManagers": ["github-actions", "pre-commit"],
     "github-actions": {
         "fileMatch": [
             "^{{cookiecutter.project_name}}\/((workflow-templates|\\.github\/workflows)\/[^/]+\\.ya?ml$|action\\.ya?ml$)"
+        ]
+    },
+    "pre-commit": {
+        "fileMatch": [
+            "^.pre-commit-config.yaml$",
+            "^{{cookiecutter.project_name}}/.pre-commit-config.yaml$"
         ]
     },
     "includeForks": true
