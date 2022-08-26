@@ -1,0 +1,46 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 1 * * *'  # every day at 01:05
+
+env:
+  FORCE_COLOR: "1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - uses: wntrblm/nox@2022.8.7
+    - name: Install cruft
+      run: |
+        pip install cruft
+        cruft create -y --extra-context '{"project_name": "testing-123"}' .
+
+    - name: Initialize repository
+      run: |
+        cd testing-123
+        git init
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "init"
+
+    - name: Run nox
+      run: |
+        cd testing-123
+        nox
+        nox -s lint safety build dev
