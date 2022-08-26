@@ -3,7 +3,6 @@ name: Release
 on:
   release:
     types: [published]
-
   workflow_dispatch:
 
 env:
@@ -33,6 +32,7 @@ jobs:
       run: nox -s build
 
     - name: Upload package
+      if: github.event_name == 'release'
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         password: ${{"{{"}} secrets.PYPI_TOKEN {{"}}"}}
