@@ -18,21 +18,38 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        context:
+        - {project_name: testing-123}
+        - {project_name: testing-123-with-docs, docs: true}
+
+    name: ${{ matrix.context.project_name }}
     steps:
     - name: Check out the repository
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
-    - uses: wntrblm/nox@2022.8.7
-    - name: Install cruft
+    - name: Setup nox
+      uses: wntrblm/nox@2022.8.7
+
+    - name: Generate template via cruft
       run: |
         pip install cruft
-        cruft create -y --extra-context '{"project_name": "testing-123"}' .
+        cruft create -y --extra-context '${{ toJSON(matrix.context) }}' .
+
+    - name: Show directory structure and file contents
+      run: |
+        cd ${{ matrix.context.project_name }}
+        echo "::group::tree" && tree -a && echo "::endgroup::"
+        echo "::group::.cruft.json" && cat .cruft.json && echo "::endgroup::"
+        echo "::group::setup.cfg" && cat setup.cfg && echo "::endgroup::"
+        echo "::group::CONTRIBUTING.rst" && cat CONTRIBUTING.rst && echo "::endgroup::"
 
     - name: Initialize repository
       run: |
-        cd testing-123
+        cd ${{ matrix.context.project_name }}
         git init
         git config user.name github-actions
         git config user.email github-actions@github.com
@@ -41,6 +58,6 @@ jobs:
 
     - name: Run nox
       run: |
-        cd testing-123
+        cd ${{ matrix.context.project_name }}
         nox
         nox -s lint safety build dev

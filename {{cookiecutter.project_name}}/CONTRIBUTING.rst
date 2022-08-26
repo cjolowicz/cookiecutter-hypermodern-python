@@ -8,13 +8,17 @@ welcomes contributions in the form of bug reports, feature requests, and pull re
 Here is a list of important resources for contributors:
 
 - `Source Code`_
+{%- if cookiecutter.docs != "False" %}
 - `Documentation`_
+{%- endif %}
 - `Issue Tracker`_
 - `Code of Conduct`_
 
 .. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _Source Code: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-.. _Documentation: https://{{cookiecutter.project_name}}.readthedocs.io/
+{%- if cookiecutter.docs != "False" %}
+.. _Documentation: https://docs.iterative.ai/{{ cookiecutter.project_name }}
+{%- endif %}
 .. _Issue Tracker: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 
 How to report a bug
