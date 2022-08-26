@@ -46,6 +46,8 @@ jobs:
         echo "::group::.cruft.json" && cat .cruft.json && echo "::endgroup::"
         echo "::group::setup.cfg" && cat setup.cfg && echo "::endgroup::"
         echo "::group::CONTRIBUTING.rst" && cat CONTRIBUTING.rst && echo "::endgroup::"
+        echo "::group::noxfile.py" && cat noxfile.py && echo "::endgroup::"
+        echo "::group::tests.yml" && cat .github/workflows/tests.yml && echo "::endgroup::"
 
     - name: Initialize repository
       run: |
@@ -60,4 +62,4 @@ jobs:
       run: |
         cd ${{ matrix.context.project_name }}
         nox
-        nox -s lint safety build dev
+        nox -s lint safety build dev ${{ matrix.context.docs && 'docs'}}

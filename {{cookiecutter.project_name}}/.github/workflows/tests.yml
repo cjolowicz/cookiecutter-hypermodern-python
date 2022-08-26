@@ -51,3 +51,7 @@ jobs:
 
     - name: Build package
       run: nox -s build
+{% if cookiecutter.docs != "False" %}
+    - name: Build docs
+      run: nox -s docs
+{% endif -%}

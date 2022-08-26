@@ -9,6 +9,14 @@ nox.options.sessions = "lint", "tests"
 locations = "src", "tests"
 
 
+{% if cookiecutter.docs != "False" -%}
+@nox.session
+def docs(session: nox.Session) -> None:
+    session.install(".[docs]")
+    session.run("mkdocs", "build")
+
+
+{% endif -%}
 @nox.session(python=["3.8", "3.9", "3.10"])
 def tests(session: nox.Session) -> None:
     session.install(".[tests]")
