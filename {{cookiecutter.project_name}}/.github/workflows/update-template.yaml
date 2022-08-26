@@ -1,24 +1,29 @@
-
 name: Update template
 
 on:
   schedule:
     - cron: '5 1 * * *'  # every day at 01:05
-
   workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Install deps
-      run: pip install cruft
-    - name: Update template
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Update template via cruft
       id: update
       run: |
+        pip install cruft
         cruft update -y
         echo "::set-output name=changes::$(git diff)"
+
     - name: Create PR
       if: {% raw %}${{ steps.update.outputs.changes != '' }}{% endraw %}
       uses: peter-evans/create-pull-request@v4
