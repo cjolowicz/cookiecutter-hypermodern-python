@@ -20,10 +20,5 @@
         "Development Status :: 5 - Production/Stable",
         "Development Status :: 6 - Mature",
         "Development Status :: 7 - Inactive"
-    ],
-    "_copy_without_render": [
-        ".github/workflows/release.yaml",
-        ".github/workflows/tests.yaml",
-        ".github/workflows/update-template.yaml"
     ]
 }

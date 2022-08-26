@@ -10,13 +10,13 @@ env:
   FORCE_COLOR: "1"
 
 concurrency:
-  group: ${{"{{"}} github.workflow {{"}}"}}-${{"{{"}} github.head_ref || github.run_id {{"}}"}}
+  group: {% raw %}${{ github.workflow }}-${{ github.head_ref || github.run_id }}{% endraw %}
   cancel-in-progress: true
 
 jobs:
   tests:
     timeout-minutes: 10
-    runs-on: ${{"{{"}} matrix.os {{"}}"}}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     strategy:
       fail-fast: false
       matrix:
@@ -29,10 +29,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Set up Python ${{"{{"}} matrix.pyv {{"}}"}}
+    - name: Set up Python {% raw %}${{ matrix.pyv }}{% endraw %}
       uses: actions/setup-python@v4
       with:
-        python-version: ${{"{{"}} matrix.pyv {{"}}"}}
+        python-version: {% raw %}${{ matrix.pyv }}{% endraw %}
 
     - name: Upgrade pip and nox
       run: |
@@ -44,7 +44,7 @@ jobs:
       run: nox -s lint safety
 
     - name: Run tests
-      run: nox -s tests-${{"{{"}} matrix.pyv {{"}}"}} -- --cov-report=xml
+      run: nox -s tests-{% raw %}${{ matrix.pyv }}{% endraw %} -- --cov-report=xml
 
     - name: Upload coverage report
       uses: codecov/codecov-action@v3.1.0
