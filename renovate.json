@@ -1,6 +1,6 @@
 {
     "extends": ["group:all", ":dependencyDashboard"],
-    "enabledManagers": ["github-actions", "pre-commit"],
+    "enabledManagers": ["github-actions", "pre-commit", "regex"],
     "github-actions": {
         "fileMatch": [
             "^{{cookiecutter.project_name}}\/((workflow-templates|\\.github\/workflows)\/[^/]+\\.ya?ml$|action\\.ya?ml$)"
