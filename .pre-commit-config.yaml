@@ -2,7 +2,7 @@ default_language_version:
   python: python3
 repos:
   - repo: https://github.com/psf/black
-    rev: 21.11b1
+    rev: 22.6.0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -13,6 +13,7 @@ repos:
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
+      - id: check json
       - id: check-toml
       - id: check-yaml
       - id: debug-statements
@@ -37,9 +38,8 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-bandit
-          - flake8-broken-line
-          - flake8-bugbear
-          - flake8-comprehensions
-          - flake8-debugger
-          - flake8-string-format
+          - flake8-broken-line==0.5.0
+          - flake8-bugbear==22.8.22
+          - flake8-comprehensions==3.10.0
+          - flake8-debugger==4.1.2
+          - flake8-string-format==0.3.0

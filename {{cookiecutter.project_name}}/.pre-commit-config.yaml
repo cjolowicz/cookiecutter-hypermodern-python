@@ -12,8 +12,9 @@ repos:
       - id: check-case-conflict
       - id: check-docstring-first
       - id: check-executables-have-shebangs
-      - id: check-toml
       - id: check-merge-conflict
+      - id: check-json
+      - id: check-toml
       - id: check-yaml
       - id: debug-statements
       - id: end-of-file-fixer
@@ -37,8 +38,8 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-broken-line==0.5.0  # renovate: datasource=pypi
-          - flake8-bugbear==22.8.22  # renovate: datasource=pypi
-          - flake8-comprehensions==3.10.0  # renovate: datasource=pypi
-          - flake8-debugger==4.1.2  # renovate: datasource=pypi
-          - flake8-string-format==0.3.0  # renovate: datasource=pypi
+          - flake8-broken-line==0.5.0
+          - flake8-bugbear==22.8.22
+          - flake8-comprehensions==3.10.0
+          - flake8-debugger==4.1.2
+          - flake8-string-format==0.3.0

@@ -13,5 +13,17 @@
             "^{{cookiecutter.project_name}}/.pre-commit-config.yaml$"
         ]
     },
-    "includeForks": true
+    "includeForks": true,
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "^.pre-commit-config.yaml$",
+                "^{{cookiecutter.project_name}}/.pre-commit-config.yaml$"
+            ],
+            "matchStrings": [
+                "\\s*- (?<depName>.*?)==(?<currentValue>.*?)\\s+"
+            ],
+            "datasourceTemplate": "pypi"
+        }
+    ]
 }
