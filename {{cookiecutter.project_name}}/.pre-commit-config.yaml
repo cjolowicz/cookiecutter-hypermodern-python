@@ -12,7 +12,7 @@ repos:
       - id: check-case-conflict
       - id: check-docstring-first
       - id: check-executables-have-shebangs
-      - id: check json
+      - id: check-json
       - id: check-merge-conflict
       - id: check-toml
       - id: check-yaml
