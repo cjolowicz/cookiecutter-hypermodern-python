@@ -1,5 +1,5 @@
 {
-    "extends": ["group:all"],
+    "extends": ["group:all", ":dependencyDashboard"],
     "enabledManagers": ["github-actions", "pre-commit"],
     "github-actions": {
         "fileMatch": [
