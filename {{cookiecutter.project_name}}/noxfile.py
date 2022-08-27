@@ -17,7 +17,7 @@ def docs(session: nox.Session) -> None:
 
 
 {% endif -%}
-@nox.session(python=["3.8", "3.9", "3.10"])
+@nox.session(python=["3.8", "3.9", "3.10", "3.11", "pypy3.8", "pypy3.9"])
 def tests(session: nox.Session) -> None:
     session.install(".[tests]")
     session.run(

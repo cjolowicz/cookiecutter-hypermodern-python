@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   tests:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,6 +34,8 @@ jobs:
 
     - name: Setup nox
       uses: wntrblm/nox@2022.8.7
+      with:
+        python-versions: "3.8, 3.9, 3.10, 3.11-dev, pypy-3.8, pypy-3.9"
 
     - name: Generate template via cruft
       run: |
