@@ -44,7 +44,6 @@ jobs:
         nox --version
 
     - name: Lint code and check dependencies
-      continue-on-error: {% raw %}${{ matrix.nox_pyv == '3.11' }}{% endraw %}
       run: nox -s lint safety
 
     - name: Run tests
