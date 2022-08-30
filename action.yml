@@ -1,0 +1,66 @@
+name: Update iterative/py-template
+description: "Update py-template generated template"
+branding:
+  icon: package
+  color: purple
+
+runs:
+  using: composite
+  steps:
+  - name: Set up Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.10'
+
+  - name: Install cruft
+    shell: bash
+    run: pip install cruft==2.11.1  # renovate: datasource=pypi
+
+  - name: Update template via cruft
+    shell: bash
+    id: cruft
+    run: |
+      echo "::set-output name=template::$(cat .cruft.json | jq '.template' -r)"
+      echo "::set-output name=old_commit::$(cat .cruft.json | jq '.commit' -r)"
+      cruft update -y
+      echo "::set-output name=new_commit::$(cat .cruft.json | jq '.commit' -r)"
+
+  - name: Check current state
+    shell: bash
+    run: |
+      git status --untracked-files=all
+      git diff
+
+  - name: Try to apply reject hunks
+    shell: bash
+    id: apply-rejects
+    run: |
+      for reject in $(git ls-files --others --exclude-standard '*.rej'); do
+        file=${reject%.rej}
+        cat ${reject}
+        patch -p1 --merge --no-backup-if-mismatch ${file} < ${reject} || echo "  - \`${file}\`" >> /tmp/conflicts
+        rm ${reject}
+        echo
+      echo "::set-output name=conflicts::$(cat /tmp/conflicts)"
+      done
+
+  - name: Check diff
+    id: diff
+    shell: bash
+    run: |
+      git status --untracked-files=all
+      echo "::set-output name=changes::$(git diff)"
+
+  - name: Create PR
+    if: ${{ steps.diff.outputs.changes != '' }}
+    uses: peter-evans/create-pull-request@v4
+    with:
+      commit-message: update template
+      title: update template
+      body: |
+        Automated changes to update template with ${{ steps.cruft.outputs.template }}.
+
+        ${{ steps.apply-rejects.outputs.conflicts != '' && 'There may be merge conflicts in these files that may need to be resolved manually:' || '' }}
+        ${{ steps.apply-rejects.outputs.conflicts }}
+
+        __See Changelog__: ${{ steps.cruft.outputs.template }}/compare/${{ steps.cruft.outputs.old_commit }}...${{ steps.cruft.outputs.new_commit }}.
