@@ -29,7 +29,8 @@
             "fileMatch": ["action.yml"],
             "matchStrings": [
                 "(?<depName>\\S+)==(?<currentValue>.*?)\\s+#\\s*renovate:\\s*?datasource=(?<datasource>.*?)$"
-            ]
+            ],
+            "datasourceTemplate": "pypi"
         }
     ]
 }
