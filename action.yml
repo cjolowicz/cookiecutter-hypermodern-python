@@ -3,6 +3,10 @@ description: "Update py-template generated template"
 branding:
   icon: package
   color: purple
+inputs:
+  token:
+    description: 'GITHUB_TOKEN or a `repo` scoped Personal Access Token (PAT)'
+    default: ${{ github.token }}
 
 runs:
   using: composite
@@ -55,6 +59,7 @@ runs:
     if: ${{ steps.diff.outputs.changes != '' }}
     uses: peter-evans/create-pull-request@v4
     with:
+      token: ${{ inputs.token }}
       commit-message: update template
       title: update template
       body: |
