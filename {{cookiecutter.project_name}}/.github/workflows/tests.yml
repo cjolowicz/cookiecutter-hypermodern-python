@@ -50,7 +50,7 @@ jobs:
       run: nox -s tests-{% raw %}${{ matrix.nox_pyv || matrix.pyv }}{% endraw %} -- --cov-report=xml
 
     - name: Upload coverage report
-      uses: codecov/codecov-action@v3.1.0
+      uses: codecov/codecov-action@v3.1.1
 
     - name: Build package
       run: nox -s build
