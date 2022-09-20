@@ -12,5 +12,5 @@ jobs:
     - name: Check out the repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: Update template
       uses: iterative/py-template@main
