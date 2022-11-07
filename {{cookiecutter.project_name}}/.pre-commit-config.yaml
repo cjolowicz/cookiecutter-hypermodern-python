@@ -2,7 +2,7 @@ default_language_version:
   python: python3
 repos:
   - repo: https://github.com/psf/black
-    rev: 22.8.0
+    rev: 22.10.0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -24,11 +24,11 @@ repos:
       - id: sort-simple-yaml
       - id: trailing-whitespace
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.1
+    rev: v2.2.2
     hooks:
       - id: codespell
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.38.0
+    rev: v3.2.0
     hooks:
       - id: pyupgrade
   - repo: https://github.com/PyCQA/isort
@@ -41,8 +41,8 @@ repos:
       - id: flake8
         additional_dependencies:
           - flake8-bandit==4.1.1
-          - flake8-broken-line==0.5.0
-          - flake8-bugbear==22.9.11
-          - flake8-comprehensions==3.10.0
+          - flake8-broken-line==0.6.0
+          - flake8-bugbear==22.10.27
+          - flake8-comprehensions==3.10.1
           - flake8-debugger==4.1.2
           - flake8-string-format==0.3.0
