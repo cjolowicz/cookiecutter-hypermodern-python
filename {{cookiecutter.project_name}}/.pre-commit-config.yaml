@@ -27,6 +27,7 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
+        additional_dependencies: ["tomli"]
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.2.0
     hooks:
@@ -40,9 +41,14 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-bandit==4.1.1
           - flake8-broken-line==0.6.0
           - flake8-bugbear==22.10.27
           - flake8-comprehensions==3.10.1
           - flake8-debugger==4.1.2
           - flake8-string-format==0.3.0
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+        args: [-c, pyproject.toml]
+        additional_dependencies: ["toml"]
