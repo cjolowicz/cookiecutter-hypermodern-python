@@ -24,10 +24,10 @@ runs:
     shell: bash
     id: cruft
     run: |
-      echo "::set-output name=template::$(cat .cruft.json | jq '.template' -r)"
-      echo "::set-output name=old_commit::$(cat .cruft.json | jq '.commit' -r)"
+      echo "template=$(cat .cruft.json | jq '.template' -r)" >> $GITHUB_OUTPUT
+      echo "old_commit=$(cat .cruft.json | jq '.commit' -r)" >> $GITHUB_OUTPUT
       cruft update -y
-      echo "::set-output name=new_commit::$(cat .cruft.json | jq '.commit' -r)"
+      echo "new_commit=$(cat .cruft.json | jq '.commit' -r)" >> $GITHUB_OUTPUT
 
   - name: Check current state
     shell: bash
@@ -45,7 +45,7 @@ runs:
         patch -p1 --merge --no-backup-if-mismatch ${file} < ${reject} || echo "  - \`${file}\`" >> /tmp/conflicts
         rm ${reject}
         echo
-      echo "::set-output name=conflicts::$(cat /tmp/conflicts)"
+      echo "conflicts=$(cat /tmp/conflicts)" >> $GITHUB_OUTPUT
       done
 
   - name: Check diff
@@ -53,7 +53,7 @@ runs:
     shell: bash
     run: |
       git status --untracked-files=all
-      echo "::set-output name=changes::$(git diff)"
+      echo "changes=$(git diff)" >> $GITHUB_OUTPUT
 
   - name: Create PR
     if: ${{ steps.diff.outputs.changes != '' }}
