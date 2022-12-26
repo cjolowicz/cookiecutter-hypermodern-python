@@ -4,5 +4,5 @@ cutty==0.18.0
 nox==2022.1.7
 nox-poetry==1.0.1
 poetry==1.1.13
-pre-commit==2.19.0
+pre-commit==2.21.0
 virtualenv==20.14.1
