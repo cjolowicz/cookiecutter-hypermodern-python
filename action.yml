@@ -45,8 +45,9 @@ runs:
         patch -p1 --merge --no-backup-if-mismatch ${file} < ${reject} || echo "  - \`${file}\`" >> /tmp/conflicts
         rm ${reject}
         echo
+
       echo 'conflicts<<EOF' >> $GITHUB_OUTPUT
-      cat /tmp/conflicts >> $GITHUB_OUTPUT
+      test -f /tmp/conflicts && cat file.txt cat /tmp/conflicts >> $GITHUB_OUTPUT
       echo 'EOF' >> $GITHUB_OUTPUT
       done
 
