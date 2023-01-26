@@ -35,7 +35,7 @@ Features
 - Security audit with Bandit_ and Safety_
 - setuptools as backend, build as frontend
 
-The template supports Python 3.8, 3.9, and 3.10.
+The template supports Python 3.8, 3.9, 3.10 and 3.11.
 
 .. features-end
 
