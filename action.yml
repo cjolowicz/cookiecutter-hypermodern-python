@@ -18,7 +18,7 @@ runs:
 
   - name: Install cruft
     shell: bash
-    run: pip install cruft==2.11.1  # renovate: datasource=pypi
+    run: pip install cruft==2.12.0  # renovate: datasource=pypi
 
   - name: Update template via cruft
     shell: bash
