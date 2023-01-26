@@ -45,7 +45,9 @@ runs:
         patch -p1 --merge --no-backup-if-mismatch ${file} < ${reject} || echo "  - \`${file}\`" >> /tmp/conflicts
         rm ${reject}
         echo
-      echo "conflicts=$(cat /tmp/conflicts)" >> $GITHUB_OUTPUT
+      echo 'conflicts<<EOF' >> $GITHUB_OUTPUT
+      cat /tmp/conflicts >> $GITHUB_OUTPUT
+      echo 'EOF' >> $GITHUB_OUTPUT
       done
 
   - name: Check diff
@@ -53,7 +55,9 @@ runs:
     shell: bash
     run: |
       git status --untracked-files=all
-      echo "changes=$(git diff)" >> $GITHUB_OUTPUT
+      echo 'changes<<EOF' >> $GITHUB_OUTPUT
+      git diff >> $GITHUB_OUTPUT
+      echo 'EOF' >> $GITHUB_OUTPUT
 
   - name: Create PR
     if: ${{ steps.diff.outputs.changes != '' }}
