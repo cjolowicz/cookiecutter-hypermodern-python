@@ -47,7 +47,7 @@ runs:
         echo
 
       echo 'conflicts<<EOF' >> $GITHUB_OUTPUT
-      test -f /tmp/conflicts && cat file.txt cat /tmp/conflicts >> $GITHUB_OUTPUT
+      test -f /tmp/conflicts && cat /tmp/conflicts >> $GITHUB_OUTPUT
       echo 'EOF' >> $GITHUB_OUTPUT
       done
 
