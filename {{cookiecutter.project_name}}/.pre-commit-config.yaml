@@ -34,16 +34,15 @@ repos:
       - id: pyupgrade
         args: [--py38-plus]
   - repo: https://github.com/PyCQA/isort
-    rev: 5.11.4
+    rev: 5.12.0
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/flake8
-    rev: 5.0.4
+    rev: 6.0.0
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-broken-line==0.6.0
-          - flake8-bugbear==22.10.27
+          - flake8-bugbear==23.1.20
           - flake8-comprehensions==3.10.1
           - flake8-debugger==4.1.2
           - flake8-string-format==0.3.0
