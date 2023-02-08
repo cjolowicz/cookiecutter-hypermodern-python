@@ -85,6 +85,9 @@ $ nox -s pre-commit -- install
 1. Sign up at [GitHub].
 2. Create an empty repository for your project.
 3. Follow the instructions to push an existing repository from the command line.
+4. Make sure that the GitHub Actions have write permissions to the repository.
+   This is required for the release-drafter and labeler workflows to work. 
+   This setting can be found under Settings -> Actions -> General -> Workflow permissions -> Read and write permissions
 
 ### PyPI
 
