@@ -39,7 +39,7 @@
   color: 7057ff
 - name: help wanted
   description: Extra attention is needed
-  color: 008672
+  color: "008672"
 - name: invalid
   description: This doesn't seem right
   color: e4e669
