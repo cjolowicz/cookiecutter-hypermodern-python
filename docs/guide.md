@@ -214,8 +214,7 @@ by pointing Cookiecutter to its [GitHub repository][hypermodern python cookiecut
 Use the `--checkout` option with the [current stable release][2022.6.3]:
 
 ```console
-$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-  --checkout="2022.6.3"
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout="2022.6.3"
 ```
 
 Cookiecutter downloads the template,

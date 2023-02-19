@@ -30,8 +30,7 @@ It is recommended to set up Python 3.7, 3.8, 3.9, 3.10 using [pyenv].
 Generate a Python project:
 
 ```console
-$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-  --checkout="2022.6.3"
+$ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout="2022.6.3"
 ```
 
 Change to the root directory of your new project,
