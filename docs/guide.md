@@ -1,6 +1,7 @@
 ---
-substitutions:
-  HPC: "*Hypermodern Python Cookiecutter*"
+myst:
+  substitutions:
+    HPC: "*Hypermodern Python Cookiecutter*"
 ---
 
 # User Guide
