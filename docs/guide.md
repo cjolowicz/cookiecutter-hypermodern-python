@@ -2003,7 +2003,6 @@ The following options are enabled for strictness and enhanced output:
 - {option}`warn_unreachable <mypy --warn-unreachable>`
 - {option}`pretty <mypy --pretty>`
 - {option}`show_column_numbers <mypy --show-column-numbers>`
-- {option}`show_error_codes <mypy --show-error-codes>`
 - {option}`show_error_context <mypy --show-error-context>`
 
 (external-services)=
