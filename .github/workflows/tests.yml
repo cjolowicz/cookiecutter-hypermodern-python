@@ -75,7 +75,7 @@ jobs:
           restore-keys: |
             ${{ steps.cache_key.outputs.result }}-
       - name: Run test suite using Nox
-        run: nox --force-color
+        run: nox --force-color --python=${{ matrix.python-version }}
         working-directory: hypermodern-python
       - name: Install dependencies using Poetry
         run: poetry install --ansi
