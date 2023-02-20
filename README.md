@@ -86,7 +86,7 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 [click]: https://click.palletsprojects.com/
 [codecov]: https://codecov.io/
 [coverage.py]: https://coverage.readthedocs.io/
-[dependabot]: https://github.com/dependabot/dependabot-core#dependabot
+[dependabot]: https://github.com/dependabot/dependabot-core
 [flake8]: http://flake8.pycqa.org
 [furo]: https://pradyunsg.me/furo/
 [github actions]: https://github.com/features/actions
