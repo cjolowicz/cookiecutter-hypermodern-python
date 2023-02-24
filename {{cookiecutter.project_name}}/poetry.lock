@@ -401,20 +401,23 @@ pydocstyle = ">=2.1"
 
 [[package]]
 name = "flake8-rst-docstrings"
-version = "0.2.5"
-description = "Python docstring reStructuredText (RST) validator"
+version = "0.3.0"
+description = "Python docstring reStructuredText (RST) validator for flake8"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 files = [
-    {file = "flake8-rst-docstrings-0.2.5.tar.gz", hash = "sha256:4fe93f997dea45d9d3c8bd220f12f0b6c359948fb943b5b48021a3f927edd816"},
-    {file = "flake8_rst_docstrings-0.2.5-py3-none-any.whl", hash = "sha256:b99d9041b769b857efe45a448dc8c71b1bb311f9cacbdac5de82f96498105082"},
+    {file = "flake8-rst-docstrings-0.3.0.tar.gz", hash = "sha256:d1ce22b4bd37b73cd86b8d980e946ef198cfcc18ed82fedb674ceaa2f8d1afa4"},
+    {file = "flake8_rst_docstrings-0.3.0-py3-none-any.whl", hash = "sha256:f8c3c6892ff402292651c31983a38da082480ad3ba253743de52989bdc84ca1c"},
 ]
 
 [package.dependencies]
-flake8 = ">=3.0.0"
+flake8 = ">=3"
 pygments = "*"
 restructuredtext-lint = "*"
+
+[package.extras]
+develop = ["build", "twine"]
 
 [[package]]
 name = "furo"
