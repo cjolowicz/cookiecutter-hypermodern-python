@@ -67,6 +67,7 @@ runs:
       token: ${{ inputs.token }}
       commit-message: update template
       title: update template
+      draft: true
       body: |
         Automated changes to update template with ${{ steps.cruft.outputs.template }}.
 
