@@ -1,4 +1,4 @@
-pip==23.0.1
+pip==23.1
 cookiecutter==2.1.1
 cutty==0.18.0
 nox==2022.11.21
