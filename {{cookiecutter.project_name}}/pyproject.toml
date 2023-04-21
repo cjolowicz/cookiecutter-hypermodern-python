@@ -24,27 +24,31 @@ Changelog = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.proj
 python = "^3.7"
 click = ">=8.0.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.test.dependencies]
+pytest = ">=6.2.5"
+coverage = {extras = ["toml"], version = "^6.1"}
+xdoctest = {extras = ["colors"], version = ">=0.15.10"}
+
+[tool.poetry.group.dev.dependencies]
 Pygments = ">=2.10.0"
 bandit = ">=1.7.4"
 black = ">=21.10b0"
-coverage = {extras = ["toml"], version = ">=6.2"}
 darglint = ">=1.8.1"
 ruff = ">=0.0.262"
-furo = ">=2021.11.12"
 isort = ">=5.10.1"
 mypy = ">=0.930"
 pep8-naming = ">=0.12.1"
 pre-commit = ">=2.16.0"
 pre-commit-hooks = ">=4.1.0"
-pytest = ">=6.2.5"
 pyupgrade = ">=2.29.1"
 safety = ">=1.10.3"
+typeguard = ">=2.13.3"
+
+[tool.poetry.group.docs.dependencies]
+furo = ">=2021.11.12"
 sphinx = ">=4.3.2"
 sphinx-autobuild = ">=2021.3.14"
 sphinx-click = ">=3.0.2"
-typeguard = ">=2.13.3"
-xdoctest = {extras = ["colors"], version = ">=0.15.10"}
 myst-parser = {version = ">=0.16.1"}
 
 [tool.poetry.scripts]
