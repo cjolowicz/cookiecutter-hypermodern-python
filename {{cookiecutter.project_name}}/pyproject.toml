@@ -30,10 +30,7 @@ bandit = ">=1.7.4"
 black = ">=21.10b0"
 coverage = {extras = ["toml"], version = ">=6.2"}
 darglint = ">=1.8.1"
-flake8 = ">=4.0.1"
-flake8-bugbear = ">=21.9.2"
-flake8-docstrings = ">=1.6.0"
-flake8-rst-docstrings = ">=0.2.5"
+ruff = ">=0.0.262"
 furo = ">=2021.11.12"
 isort = ">=5.10.1"
 mypy = ">=0.930"
@@ -77,6 +74,25 @@ pretty = true
 show_column_numbers = true
 show_error_context = true
 
+[tool.ruff]
+ignore = ["E501"]
+line-length = 80
+select = [
+    "B",
+    "B9",
+    "C",
+    "D",
+    "E",
+    "F",
+    "N",
+    "W",
+]
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.pydocstyle]
+convention = "google"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
