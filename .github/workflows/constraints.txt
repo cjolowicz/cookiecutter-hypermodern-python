@@ -1,7 +1,7 @@
 pip==23.1.2
 cookiecutter==2.1.1
 cutty==0.18.0
-nox==2022.11.21
+nox==2023.4.22
 nox-poetry==1.0.2
 poetry==1.5.0
 pre-commit==3.3.2
