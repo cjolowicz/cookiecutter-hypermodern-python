@@ -57,6 +57,11 @@ Run an interactive Python session:
 $ poetry install
 $ poetry run python
 ```
+Some IDEs (e.g. Visual Studio Code) will not recognize the virtual environment created by `poetry`. Resolve this by creating the virtualenv within the project path:
+```console
+$ poetry config virtualenvs.in-project true
+```
+and reload your IDE as needed.
 
 ## Testing
 
