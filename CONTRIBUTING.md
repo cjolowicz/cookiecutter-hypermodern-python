@@ -137,7 +137,7 @@ After publishing the release, the following automated steps are triggered:
 [documentation]: https://cookiecutter-hypermodern-python.readthedocs.io/
 [github]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [issue tracker]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
-[mit license]: https://opensource.org/licenses/MIT
+[mit license]: https://opensource.org/license/mit/
 [nox]: https://nox.thea.codes/
 [nox-poetry]: https://nox-poetry.readthedocs.io/
 [poetry]: https://python-poetry.org/
