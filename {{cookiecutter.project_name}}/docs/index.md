@@ -5,6 +5,7 @@ end-before: <!-- github-only -->
 ```
 
 [license]: license
+[code of conduct]: codeofconduct
 [contributor guide]: contributing
 [command-line reference]: usage
 

@@ -11,6 +11,7 @@
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)][code of conduct]
 
 [pypi status]: https://pypi.org/project/{{cookiecutter.project_name}}/
 [read the docs]: https://{{cookiecutter.project_name}}.readthedocs.io/
@@ -67,5 +68,6 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 <!-- github-only -->
 
 [license]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/LICENSE
+[code of conduct]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/CODE_OF_CONDUCT.md
 [contributor guide]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/CONTRIBUTING.md
 [command-line reference]: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
