@@ -76,7 +76,7 @@ All images on the
 [associated blog][hypermodern python] show
 [past visions][retrofuturism] of the future.
 
-[cookiecutter]: https://github.com/audreyr/cookiecutter
+[cookiecutter]: https://github.com/cookiecutter/cookiecutter
 [hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 [hypermodernism]: https://en.wikipedia.org/wiki/Hypermodernism_(chess)
 [retrofuturism]: https://en.wikipedia.org/wiki/Retrofuturism

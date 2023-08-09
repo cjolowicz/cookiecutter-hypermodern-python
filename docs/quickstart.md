@@ -156,10 +156,10 @@ by applying labels to them, like this:
 
 <!-- table-release-drafter-sections-end -->
 
-[codecov]: https://codecov.io/
-[cookiecutter]: https://github.com/audreyr/cookiecutter
+[codecov]: https://about.codecov.io/
+[cookiecutter]: https://github.com/cookiecutter/cookiecutter
 [github]: https://github.com/
-[install-poetry.py]: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
+[install-poetry.py]: https://install.python-poetry.org/
 [nox]: https://nox.thea.codes/
 [nox-poetry]: https://nox-poetry.readthedocs.io/
 [pipx]: https://pipxproject.github.io/pipx/

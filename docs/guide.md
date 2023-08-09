@@ -182,10 +182,11 @@ Install [Cookiecutter] using pipx:
 $ pipx install cookiecutter
 ```
 
-Install [Poetry] by downloading and running [install-poetry.py]:
+Install [Poetry] by running the poetry installer script available at
+[install.python-poetry.org]:
 
 ```console
-$ python install-poetry.py
+$ curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 Install [Nox] and [nox-poetry] using pipx:
@@ -2577,7 +2578,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 
 [--reuse-existing-virtualenvs]: https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs
 [.gitattributes]: https://git-scm.com/book/en/Customizing-Git-Git-Attributes
-[.github/dependabot.yml]: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+[.github/dependabot.yml]: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 [.gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 [.readthedocs.yml]: https://docs.readthedocs.io/en/stable/config-file/v2.html
 [2022.6.3]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2022.6.3
@@ -2602,22 +2603,22 @@ You can also read the articles on [this blog][hypermodern python blog].
 [click.testing.clirunner]: https://click.palletsprojects.com/en/7.x/testing/
 [click]: https://click.palletsprojects.com/
 [cobertura]: https://cobertura.github.io/cobertura/
-[codecov configuration]: https://docs.codecov.io/docs/codecov-yaml
+[codecov configuration]: https://docs.codecov.com/docs/codecov-yaml
 [codecov/codecov-action]: https://github.com/codecov/codecov-action
-[codecov]: https://codecov.io/
+[codecov]: https://about.codecov.io/
 [constraints file]: https://pip.pypa.io/en/stable/user_guide/#constraints-files
 [contributor covenant]: https://www.contributor-covenant.org
-[cookiecutter]: https://github.com/audreyr/cookiecutter
+[cookiecutter]: https://github.com/cookiecutter/cookiecutter
 [coverage.py]: https://coverage.readthedocs.io/
 [crazy-max/ghaction-github-labeler]: https://github.com/crazy-max/ghaction-github-labeler
 [cupper]: https://github.com/senseyeio/cupper
-[curl]: https://curl.haxx.se
+[curl]: https://curl.se
 [cyclomatic complexity]: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 [darglint codes]: https://github.com/terrencepreilly/darglint#error-codes
 [darglint]: https://github.com/terrencepreilly/darglint
-[dependabot docs]: https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
+[dependabot docs]: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates
 [dependabot issue 4435]: https://github.com/dependabot/dependabot-core/issues/4435
-[dependabot]: https://dependabot.com/
+[dependabot]: https://github.com/features/security/
 [dev-prod parity]: https://12factor.net/dev-prod-parity
 [editable install]: https://pip.pypa.io/en/stable/cli/pip_install/#install-editable
 [end-of-file-fixer]: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
@@ -2625,7 +2626,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 [flake8-bandit]: https://github.com/tylerwince/flake8-bandit
 [flake8-bugbear codes]: https://github.com/PyCQA/flake8-bugbear#list-of-warnings
 [flake8-bugbear]: https://github.com/PyCQA/flake8-bugbear
-[flake8-docstrings]: https://gitlab.com/pycqa/flake8-docstrings
+[flake8-docstrings]: https://github.com/pycqa/flake8-docstrings
 [flake8-rst-docstrings codes]: https://github.com/peterjc/flake8-rst-docstrings#flake8-validation-codes
 [flake8-rst-docstrings]: https://github.com/peterjc/flake8-rst-docstrings
 [flake8]: http://flake8.pycqa.org
@@ -2634,12 +2635,12 @@ You can also read the articles on [this blog][hypermodern python blog].
 [gabor version]: https://bernat.tech/posts/version-numbers/
 [git hook]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 [git]: https://www.git-scm.com
-[github actions artifacts]: https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts
-[github actions runners]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
-[github actions syntax]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+[github actions artifacts]: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+[github actions runners]: https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+[github actions syntax]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 [github actions]: https://github.com/features/actions
 [github labeler]: https://github.com/marketplace/actions/github-labeler
-[github release]: https://help.github.com/en/github/administering-a-repository/about-releases
+[github release]: https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
 [github renaming]: https://github.com/github/renaming
 [github]: https://github.com/
 [google docstring style]: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
@@ -2653,7 +2654,7 @@ You can also read the articles on [this blog][hypermodern python blog].
 [hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 [import hook]: https://docs.python.org/3/reference/import.html#import-hooks
-[install-poetry.py]: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
+[install.python-poetry.org]: https://install.python-poetry.org
 [isort black profile]: https://pycqa.github.io/isort/docs/configuration/black_compatibility.html
 [isort force_single_line]: https://pycqa.github.io/isort/docs/configuration/options.html#force-single-line
 [isort lines_after_imports]: https://pycqa.github.io/isort/docs/configuration/options.html#lines-after-imports
@@ -2663,20 +2664,20 @@ You can also read the articles on [this blog][hypermodern python blog].
 [markdown]: https://spec.commonmark.org/current/
 [mccabe codes]: https://github.com/PyCQA/mccabe#plugin-for-flake8
 [mccabe]: https://github.com/PyCQA/mccabe
-[mit license]: https://opensource.org/licenses/MIT
+[mit license]: https://opensource.org/license/mit/
 [mypy configuration]: https://mypy.readthedocs.io/en/stable/config_file.html
-[mypy]: http://mypy-lang.org/
+[mypy]: https://mypy-lang.org/
 [myst]: https://myst-parser.readthedocs.io/
 [napoleon]: https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
 [nox-poetry]: https://nox-poetry.readthedocs.io/
 [nox]: https://nox.thea.codes/
 [package metadata]: https://packaging.python.org/en/latest/specifications/core-metadata/
-[pep 257]: http://www.python.org/dev/peps/pep-0257/
-[pep 440]: https://www.python.org/dev/peps/pep-0440/
-[pep 517]: https://www.python.org/dev/peps/pep-0517/
-[pep 518]: https://www.python.org/dev/peps/pep-0518/
-[pep 561]: https://www.python.org/dev/peps/pep-0561/
-[pep 8]: http://www.python.org/dev/peps/pep-0008/
+[pep 257]: https://peps.python.org/pep-0257/
+[pep 440]: https://peps.python.org/pep-0440/
+[pep 517]: https://peps.python.org/pep-0517/
+[pep 518]: https://peps.python.org/pep-0518/
+[pep 561]: https://peps.python.org/pep-0561/
+[pep 8]: https://peps.python.org/pep-0008/
 [pep8-naming codes]: https://github.com/pycqa/pep8-naming#pep-8-naming-conventions
 [pep8-naming]: https://github.com/pycqa/pep8-naming
 [pip install]: https://pip.pypa.io/en/stable/reference/pip_install/
