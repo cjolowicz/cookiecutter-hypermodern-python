@@ -10,6 +10,10 @@ env:
 
 jobs:
   release:
+    environment: pypi
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repository
@@ -34,5 +38,3 @@ jobs:
     - name: Upload package
       if: github.event_name == 'release'
       uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        password: ${{"{{"}} secrets.PYPI_TOKEN {{"}}"}}
