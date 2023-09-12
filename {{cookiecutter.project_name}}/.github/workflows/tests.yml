@@ -27,7 +27,7 @@ jobs:
 
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -49,7 +49,7 @@ jobs:
       run: nox -s tests-{% raw %}${{ matrix.nox_pyv || matrix.pyv }}{% endraw %} -- --cov-report=xml
 
     - name: Upload coverage report
-      uses: codecov/codecov-action@v3.1.1
+      uses: codecov/codecov-action@v3.1.4
 
     - name: Build package
       run: nox -s build

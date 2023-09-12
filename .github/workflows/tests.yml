@@ -28,12 +28,12 @@ jobs:
     name: ${{ matrix.context.project_name }}
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
     - name: Setup nox
-      uses: wntrblm/nox@2022.11.21
+      uses: wntrblm/nox@2023.04.22
       with:
         python-versions: "3.8, 3.9, 3.10, 3.11, pypy-3.8, pypy-3.9"
 

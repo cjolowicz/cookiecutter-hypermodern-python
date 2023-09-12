@@ -18,7 +18,7 @@ runs:
 
   - name: Install cruft
     shell: bash
-    run: pip install cruft==2.12.0  # renovate: datasource=pypi
+    run: pip install cruft==2.15.0  # renovate: datasource=pypi
 
   - name: Update template via cruft
     shell: bash
@@ -62,7 +62,7 @@ runs:
 
   - name: Create PR
     if: ${{ steps.diff.outputs.changes != '' }}
-    uses: peter-evans/create-pull-request@v4
+    uses: peter-evans/create-pull-request@v5
     with:
       token: ${{ inputs.token }}
       commit-message: update template
