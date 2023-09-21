@@ -3,19 +3,11 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
-  - package-ecosystem: pip
-    directory: "/.github/workflows"
-    schedule:
-      interval: weekly
-  - package-ecosystem: pip
-    directory: "/docs"
-    schedule:
-      interval: weekly
+      interval: daily
   - package-ecosystem: pip
     directory: "/"
     schedule:
-      interval: weekly
+      interval: daily
     versioning-strategy: lockfile-only
     allow:
-      - dependency-type: "all"
+      - dependency-type: "production"
