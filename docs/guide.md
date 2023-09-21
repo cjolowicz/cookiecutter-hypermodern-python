@@ -445,8 +445,6 @@ and links each file to a section with more details.
 
 - - `.cookiecutter.json`
   - [Project variables](creating-a-project)
-- - `.darglint`
-  - Configuration for [darglint](darglint-integration)
 - - `.github/dependabot.yml`
   - Configuration for [Dependabot](dependabot-integration)
 - - `.flake8`
@@ -839,8 +837,6 @@ See the table below for an overview of the dependencies of generated projects:
   - Composable command line interface toolkit
 - - [coverage][coverage.py]
   - Code coverage measurement for Python
-- - [darglint]
-  - A utility for ensuring Google-style docstrings stay up to date with the source code.
 - - [flake8]
   - the modular source code checker: pep8 pyflakes and co
 - - [flake8-bandit]
@@ -1643,8 +1639,7 @@ def precommit(session: Session) -> None:
     ...
     session.install(
         "awesome-linter",  # Install awesome-linter
-        "black",
-        "darglint",
+        "black",        
         ...
     )
 ```
@@ -1821,9 +1816,6 @@ and links to their lists of error codes.
 - - [mccabe]
   - Limit the code complexity
   - [C][mccabe codes]
-- - [darglint]
-  - Detect inaccurate docstrings
-  - [DAR][darglint codes]
 - - [Bandit] / [flake8-bandit]
   - Detect common security issues
   - [S][bandit codes]
@@ -1935,19 +1927,6 @@ The tool is included with [Flake8].
 
 The {{ HPC }} limits code complexity to a value of 10.
 
-(darglint-integration)=
-
-### darglint
-
-[darglint] checks that docstring descriptions match function definitions.
-The tool has its own configuration file, named `.darglint`.
-
-[Error codes][darglint codes] are prefixed by `DAR` for "darglint".
-
-The {{ HPC }} allows one-line docstrings without function signatures.
-Multi-line docstrings must
-specify the function signatures completely and correctly,
-using [Google docstring style].
 
 ### Bandit
 
@@ -2613,8 +2592,6 @@ You can also read the articles on [this blog][hypermodern python blog].
 [cupper]: https://github.com/senseyeio/cupper
 [curl]: https://curl.haxx.se
 [cyclomatic complexity]: https://en.wikipedia.org/wiki/Cyclomatic_complexity
-[darglint codes]: https://github.com/terrencepreilly/darglint#error-codes
-[darglint]: https://github.com/terrencepreilly/darglint
 [dependabot docs]: https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
 [dependabot issue 4435]: https://github.com/dependabot/dependabot-core/issues/4435
 [dependabot]: https://dependabot.com/

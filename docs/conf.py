@@ -16,7 +16,6 @@ linkcheck_ignore = [
     "https://github.com/peterjc/flake8-rst-docstrings#",
     "https://github.com/pre-commit/pre-commit-hooks#",
     "https://github.com/pycqa/pep8-naming#",
-    "https://github.com/terrencepreilly/darglint#",
     "https://github.com/PyCQA/mccabe#",
     "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
     "https://cookiecutter-hypermodern-python.readthedocs.io",
