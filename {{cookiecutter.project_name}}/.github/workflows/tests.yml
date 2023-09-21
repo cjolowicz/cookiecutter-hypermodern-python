@@ -12,21 +12,27 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { python: "3.10", os: "ubuntu-latest", session: "pre-commit" }
-          - { python: "3.10", os: "ubuntu-latest", session: "safety" }
+          # mypy
+          - { python: "3.12", os: "ubuntu-latest", session: "mypy" }
+          - { python: "3.11", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.10", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.9", os: "ubuntu-latest", session: "mypy" }
           - { python: "3.8", os: "ubuntu-latest", session: "mypy" }
-          - { python: "3.7", os: "ubuntu-latest", session: "mypy" }
+          # testes
+          - { python: "3.12", os: "ubuntu-latest", session: "tests" }
+          - { python: "3.11", os: "ubuntu-latest", session: "tests" }
           - { python: "3.10", os: "ubuntu-latest", session: "tests" }
           - { python: "3.9", os: "ubuntu-latest", session: "tests" }
           - { python: "3.8", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.7", os: "ubuntu-latest", session: "tests" }
-          - { python: "3.10", os: "windows-latest", session: "tests" }
-          - { python: "3.10", os: "macos-latest", session: "tests" }
-          - { python: "3.10", os: "ubuntu-latest", session: "typeguard" }
-          - { python: "3.10", os: "ubuntu-latest", session: "xdoctest" }
-          - { python: "3.10", os: "ubuntu-latest", session: "docs-build" }
+          # tests mac / windows
+          - { python: "3.11", os: "windows-latest", session: "tests" }
+          - { python: "3.11", os: "macos-latest", session: "tests" }
+          # misc
+          - { python: "3.11", os: "ubuntu-latest", session: "pre-commit" }
+          - { python: "3.11", os: "ubuntu-latest", session: "safety" }
+          - { python: "3.11", os: "ubuntu-latest", session: "typeguard" }
+          - { python: "3.11", os: "ubuntu-latest", session: "xdoctest" }
+          - { python: "3.11", os: "ubuntu-latest", session: "docs-build" }
 
     env:
       NOXSESSION: ${{"{{"}} matrix.session {{"}}"}}
@@ -41,6 +47,7 @@ jobs:
         uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{"{{"}} matrix.python {{"}}"}}
+          allow-prereleases: true
 
       - name: Upgrade pip
         run: |

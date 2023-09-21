@@ -6,12 +6,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { python-version: "3.10", os: ubuntu-latest }
+          # other OS's
           - { python-version: "3.10", os: windows-latest }
           - { python-version: "3.10", os: macos-latest }
+          # Ubuntu
+          - { python-version: "3.12", os: ubuntu-latest }
+          - { python-version: "3.11", os: ubuntu-latest }
+          - { python-version: "3.10", os: ubuntu-latest }
           - { python-version: "3.9", os: ubuntu-latest }
           - { python-version: "3.8", os: ubuntu-latest }
-          - { python-version: "3.7", os: ubuntu-latest }
     name: Python ${{ matrix.python-version }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -21,6 +24,7 @@ jobs:
       - uses: actions/setup-python@v4.6.1
         with:
           python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
       - name: Install tools using pip
         working-directory: cookiecutter-hypermodern-python
         run: |

@@ -101,12 +101,12 @@ py -VV
 Both of these commands should display the latest Python version, 3.10.
 
 For local testing with multiple Python versions,
-repeat these steps for the latest bugfix releases of Python 3.7+,
+repeat these steps for the latest bugfix releases of Python 3.8+,
 with the following changes:
 
 - Do _not_ enable the option to add Python to the `PATH` environment variable.
 - `py -VV` and `python -VV` should still display the version of the latest stable release.
-- `py -X.Y -VV` (e.g. `py -3.7 -VV`) should display the exact version you just installed.
+- `py -X.Y -VV` (e.g. `py -3.8 -VV`) should display the exact version you just installed.
 
 Note that binary installers are not provided for security releases.
 
@@ -137,13 +137,14 @@ Install the Python build dependencies for your platform,
 using one of the commands listed in the [official instructions][pyenv wiki].
 
 Install the latest point release of every supported Python version.
-This project template supports Python 3.7, 3.8, 3.9, and 3.10.
+This project template supports Python 3.8, 3.9, 3.10, 3.11 and 3.12.
 
 ```console
-$ pyenv install 3.7.12
 $ pyenv install 3.8.12
 $ pyenv install 3.9.10
 $ pyenv install 3.10.2
+$ pyenv install 3.11.2
+$ pyenv install 3.12.2
 ```
 
 After creating your project (see [below](creating-a-project)),
@@ -151,12 +152,12 @@ you can make these Python versions accessible in the project directory,
 using the following command:
 
 ```console
-$ pyenv local 3.10.2 3.9.10 3.8.12 3.7.12
+$ pyenv local 3.12.2 3.11.2 3.10.2 3.9.10 3.8.12
 ```
 
 The first version listed is the one used when you type plain `python`.
 Every version can be used by invoking `python<major.minor>`.
-For example, use `python3.7` to invoke Python 3.7.
+For example, use `python3.8` to invoke Python 3.8.
 
 ### Requirements
 
@@ -977,10 +978,11 @@ for every Python version supported by your project,
 and easily switch between them:
 
 ```console
-$ poetry env use 3.7
 $ poetry env use 3.8
 $ poetry env use 3.9
 $ poetry env use 3.10
+$ poetry env use 3.11
+$ poetry env use 3.12
 ```
 
 Only one Poetry environment can be active at any time.
@@ -1195,27 +1197,27 @@ The following table gives an overview of the available Nox sessions:
   - ✓
 - - [mypy](the-mypy-session)
   - Type-check with [mypy]
-  - `3.7` … `3.10`
+  - `3.8` … `3.12`
   - ✓
 - - [pre-commit](the-pre-commit-session)
   - Lint with [pre-commit]
-  - `3.10`
+  - `3.11`
   - ✓
 - - [safety](the-safety-session)
   - Scan dependencies with [Safety]
-  - `3.10`
+  - `3.11`
   - ✓
 - - [tests](the-tests-session)
   - Run tests with [pytest]
-  - `3.7` … `3.10`
+  - `3.8` … `3.12`
   - ✓
 - - [typeguard](the-typeguard-session)
   - Type-check with [Typeguard]
-  - `3.10`
+  - `3.11`
   - ✓
 - - [xdoctest](the-xdoctest-session)
   - Run examples with [xdoctest]
-  - `3.7` … `3.10`
+  - `3.8` … `3.12`
   - ✓
 
 :::
@@ -2253,28 +2255,28 @@ as shown in the table below:
   - Python versions
 - - [pre-commit](the-pre-commit-session)
   - Ubuntu
-  - 3.10
+  - 3.11
 - - [safety](the-safety-session)
   - Ubuntu
-  - 3.10
+  - 3.11
 - - [mypy](the-mypy-session)
   - Ubuntu
-  - 3.10, 3.9, 3.8, 3.7
+  - 3.12, 3.11, 3.10, 3.9, 3.8
 - - [tests](the-tests-session)
   - Ubuntu
-  - 3.10, 3.9, 3.8, 3.7
+  - 3.12, 3.11, 3.10, 3.9, 3.8
 - - [tests](the-tests-session)
   - Windows
-  - 3.10
+  - 3.11
 - - [tests](the-tests-session)
   - macOS
-  - 3.10
+  - 3.11
 - - [coverage](the-coverage-session)
   - Ubuntu
-  - 3.10
+  - 3.11
 - - [docs-build](the-docs-build-session)
   - Ubuntu
-  - 3.10
+  - 3.11
 
 :::
 
