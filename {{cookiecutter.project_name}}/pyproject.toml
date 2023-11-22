@@ -4,6 +4,56 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 
+[project]
+name = "{{ cookiecutter.project_name }}"
+description = "{{ cookiecutter.short_description or cookiecutter.friendly_name }}"
+readme = "README.rst"
+license = {text = "{{ cookiecutter.license }}"}
+authors = [{ name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.email }}" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "{{cookiecutter.development_status}}",
+]
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = []
+
+[project.urls]
+Issues = "https://github.com/{{cookiecutter.github_user}}/{{ cookiecutter.project_name }}/issues"
+Source = "https://github.com/{{cookiecutter.github_user}}/{{ cookiecutter.project_name }}"
+
+[project.optional-dependencies]
+{%- if cookiecutter.docs != "False" %}
+docs = [
+    "mkdocs==1.5.2",
+    "mkdocs-gen-files==0.5.0",
+    "mkdocs-material==9.3.1",
+    "mkdocs-section-index==0.3.6",
+    "mkdocstrings-python==1.6.3",
+]
+{%- endif %}
+tests = [
+    "pytest==7.2.0",
+    "pytest-sugar==0.9.5",
+    "pytest-cov==3.0.0",
+    "pytest-mock==3.8.2",
+    "mypy==0.971",
+]
+dev = [
+    "{{ cookiecutter.project_name }}[tests]",
+{%- if cookiecutter.docs != "False" %}
+    "{{ cookiecutter.project_name }}[docs]",
+{%- endif %}
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
 [tool.pytest.ini_options]
 addopts = "-ra"
 
