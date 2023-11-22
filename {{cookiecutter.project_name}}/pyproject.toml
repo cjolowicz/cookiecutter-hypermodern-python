@@ -4,29 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-
-[tool.isort]
-profile = "black"
-known_first_party = ["{{ cookiecutter.package_name }}"]
-line_length = 88
-
 [tool.pytest.ini_options]
 addopts = "-ra"
 
@@ -63,19 +40,5 @@ warn_redundant_casts = true
 warn_unreachable = true
 files = ["src", "tests"]
 
-[tool.pylint.format]
-max-line-length = 88
-
-[tool.pylint.message_control]
-enable = ["c-extension-no-member", "no-else-return"]
-
-[tool.pylint.variables]
-dummy-variables-rgx = "_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_"
-ignored-argument-names = "_.*|^ignored_|^unused_|args|kwargs"
-
 [tool.codespell]
 ignore-words-list = " "
-
-[tool.bandit]
-exclude_dirs = ["tests"]
-skips = ["B101"]
