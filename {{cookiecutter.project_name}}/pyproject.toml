@@ -92,3 +92,62 @@ files = ["src", "tests"]
 
 [tool.codespell]
 ignore-words-list = " "
+
+[tool.ruff]
+ignore = [
+    "S101", # assert
+    "PLR2004", # magic-value-comparison
+    "PLW2901", # redefined-loop-name
+    "ISC001", # single-line-implicit-string-concatenation
+    "SIM105", # suppressible-exception
+    "SIM108", # if-else-block-instead-of-if-exp
+]
+select = [
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "C90", # mccabe
+    "W", # pycodestyle - Warning
+    "E", # pycodestyle - Error
+    "F", # pyflakes
+    "I", # isort
+    "T10", # flake8-debugger
+    "S", # flake8-bandit
+    "PL", # pylint
+    "TCH", # flake8-type-checking
+    "UP", # pyupgrade
+    "N", # pep8-naming
+    "PIE", # flake8-pie
+    "ASYNC", # flake8-async
+    "EXE", # flake8-executable
+    "ISC", # flake8-implicit-str-concat
+    "SIM", # flake8-simplify
+    "ASYNC", # flake8-async
+    "INP", # flake8-no-pep420
+    "EXE", # flake8-executable
+    "PYI", # flake8-pyi
+    "RSE", # flake8-raise
+    "SLOT", # flake8-slots
+    "PGH", # pygrep hooks
+    "FLY", # flynt
+    "RUF", # ruff
+    "G", # flake8-logging-format
+    "A", # flake8-builtins
+    "TRY", # tryceratops
+    "DTZ", # flake8-datetimez
+    "RET", # flake8-return
+    "PT", # flake8-pytest-style
+    "ARG", # flake8-unused-arguments
+    "SLF", # flake8-self
+    "ICN", # flake8-import-conventions
+]
+show-source = true
+show-fixes = true
+
+[tool.ruff.per-file-ignores]
+"tests/**" = ["S", "ARG001", "ARG002"]
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ cookiecutter.package_name }}"]
