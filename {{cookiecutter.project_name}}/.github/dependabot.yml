@@ -7,12 +7,6 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
-    # Update via cruft
-    ignore:
-      - dependency-name: "mkdocs*"
-      - dependency-name: "pytest*"
-      - dependency-name: "pylint"
-      - dependency-name: "mypy"
 
   - directory: "/"
     package-ecosystem: "github-actions"
@@ -20,10 +14,3 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
-    # Update via cruft
-    ignore:
-      - dependency-name: "actions/checkout"
-      - dependency-name: "actions/setup-python"
-      - dependency-name: "pypa/gh-action-pypi-publish"
-      - dependency-name: "codecov/codecov-action"
-      - dependency-name: "peter-evans/create-pull-request"
