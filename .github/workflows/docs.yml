@@ -14,7 +14,7 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt nox
       - name: Build documentation
         run: nox --force-color --session=docs
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: docs
           path: docs/_build
